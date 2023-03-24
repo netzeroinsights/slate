@@ -32,7 +32,7 @@ Every endpoint is to be called starting with the domain https://api.netzeroinsig
 
 ## Login
 
-> To authorize, use this code:
+> To login, use this code:
 
 ```shell
 curl -v -X POST "https://api.netzeroinsights.com/security/formLogin" \
@@ -41,6 +41,8 @@ curl -v -X POST "https://api.netzeroinsights.com/security/formLogin" \
 ```
 
 > Make sure to replace `YOUR_USERNAME` and `YOUR_PASSWORD` with your credentials.
+> 
+> Using the -v ("verbose") flag lets you see the full response, in which you can find the **Session Cookie**.
 
 Before using any other API, you should first login using the following endpoint:
 
@@ -73,6 +75,32 @@ Our API expects the **Session Cookie** to be included in all API requests to the
 <aside class="notice">
 You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 </aside>
+
+## Logout
+
+> To logout, use this code:
+
+```shell
+curl -v --cookie "JSESSIONID=EXAMPLE_SESSION_ID" -X GET "https://api.netzeroinsights.com/security/logout"
+```
+
+> Make sure to replace `EXAMPLE_SESSION_ID` with your **Session Cookie**
+
+To close the session, you should use the following endpoint:
+
+Request Type | URL
+--------- | -----------
+GET | /security/logout
+
+It takes no parameter, and has the following response code:
+
+Response code | Meaning
+--------- | -----------
+200 | Session terminated
+
+Please note that manually closing a session is not required, since it will be closed bye the server after
+30 minutes. This endpoint is mainly used if you need to use different accounts.
+
 
 # Kittens
 
