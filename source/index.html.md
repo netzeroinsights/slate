@@ -3,7 +3,6 @@ title: Net Zero Insights API documentation
 
 language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
   - shell
-  - python
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -35,19 +34,13 @@ Every endpoint is to be called starting with the domain https://api.netzeroinsig
 
 > To authorize, use this code:
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
+curl -v -X POST "https://api.netzeroinsights.com/security/formLogin" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-d "username=YOUR_USERNAME&password=YOUR_PASSWORD"
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `YOUR_USERNAME` and `YOUR_PASSWORD` with your credentials.
 
 Before using any other API, you should first login using the following endpoint:
 
@@ -73,24 +66,17 @@ Please note that in case of a 200 response, you will also get a **Session Cookie
 as it will be needed for using all the other endpoints. The session cookie expires after 30 minutes of
 session inactivity.
 
-Our API expects the **Session Cookie** to be included in all API requests to the server in a header that looks like the following:
+Our API expects the **Session Cookie** to be included in all API requests to the server, like this:
 
-`Authorization: meowmeowmeow`
+`JSESSIONID=EXAMPLE_SESSION_ID`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 </aside>
 
 # Kittens
 
 ## Get All Kittens
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
 
 ```shell
 curl "http://example.com/api/kittens" \
@@ -137,13 +123,6 @@ Remember — a happy kitten is an authenticated kitten!
 
 ## Get a Specific Kitten
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
 ```shell
 curl "http://example.com/api/kittens/2" \
   -H "Authorization: meowmeowmeow"
@@ -176,13 +155,6 @@ Parameter | Description
 ID | The ID of the kitten to retrieve
 
 ## Delete a Specific Kitten
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
 
 ```shell
 curl "http://example.com/api/kittens/2" \
