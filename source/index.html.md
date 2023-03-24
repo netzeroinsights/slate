@@ -29,7 +29,35 @@ Our REST APIs give all the functionalities needed to interact with our database.
 
 To get your account, please contact us at [matteo@netzeroinsights.com](mailto:matteo@netzeroinsights.com).
 
-# Authentication
+Every endpoint is to be called starting with the domain https://api.netzeroinsights.com
+
+# Security
+
+## Login
+
+Before using any other API, you should first login using the following endpoint:
+
+Request Type | URL
+--------- | -----------
+POST | /security/formLogin
+
+With the following two parameters:
+
+Parameter name | Parameter value
+--------- | -----------
+username | provided by Net Zero Insights
+password | provided by Net Zero Insights
+
+The possible response codes are:
+
+Response code | Meaning
+--------- | -----------
+200 | Login successful
+400 | Login failed
+
+Please note that in case of a 200 response, you will also get a **Session Cookie**. You should save this,
+as it will be needed for using all the other endpoints. The session cookie expires after 30 minutes of
+session inactivity.
 
 > To authorize, use this code:
 
