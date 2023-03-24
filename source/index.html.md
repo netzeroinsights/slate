@@ -35,30 +35,6 @@ Every endpoint is to be called starting with the domain https://api.netzeroinsig
 
 ## Login
 
-Before using any other API, you should first login using the following endpoint:
-
-Request Type | URL
---------- | -----------
-POST | /security/formLogin
-
-With the following two parameters:
-
-Parameter name | Parameter value
---------- | -----------
-username | provided by Net Zero Insights
-password | provided by Net Zero Insights
-
-The possible response codes are:
-
-Response code | Meaning
---------- | -----------
-200 | Login successful
-400 | Login failed
-
-Please note that in case of a 200 response, you will also get a **Session Cookie**. You should save this,
-as it will be needed for using all the other endpoints. The session cookie expires after 30 minutes of
-session inactivity.
-
 > To authorize, use this code:
 
 ```ruby
@@ -87,9 +63,31 @@ let api = kittn.authorize('meowmeowmeow');
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Before using any other API, you should first login using the following endpoint:
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Request Type | URL
+--------- | -----------
+POST | /security/formLogin
+
+With the following two parameters:
+
+Parameter name | Parameter value
+--------- | -----------
+username | provided by Net Zero Insights
+password | provided by Net Zero Insights
+
+The possible response codes are:
+
+Response code | Meaning
+--------- | -----------
+200 | Login successful
+400 | Login failed
+
+Please note that in case of a 200 response, you will also get a **Session Cookie**. You should save this,
+as it will be needed for using all the other endpoints. The session cookie expires after 30 minutes of
+session inactivity.
+
+Our API expects the **Session Cookie** to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
