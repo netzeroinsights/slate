@@ -356,8 +356,62 @@
 <p>Our REST APIs give all the functionalities needed to interact with our database. All these services are exclusively usable with https standard, and only after having been authenticated.</p>
 
 <p>To get your account, please contact us at <a href="mailto:matteo@netzeroinsights.com">matteo@netzeroinsights.com</a>.</p>
+
+<p>Every endpoint is to be called starting with the domain https://api.netzeroinsights.com</p>
 <h1 id='security'>Security</h1><h2 id='login'>Login</h2>
 <p>Before using any other API, you should first login using the following endpoint:</p>
+
+<table><thead>
+<tr>
+<th>Request Type</th>
+<th>URL</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>POST</td>
+<td>/security/formLogin</td>
+</tr>
+</tbody></table>
+
+<p>With the following two parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>provided by Net Zero Insights</td>
+</tr>
+<tr>
+<td>password</td>
+<td>provided by Net Zero Insights</td>
+</tr>
+</tbody></table>
+
+<p>The possible response codes are:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Login successful</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Login failed</td>
+</tr>
+</tbody></table>
+
+<p>Please note that in case of a 200 response, you will also get a <strong>Session Cookie</strong>. You should save this,
+as it will be needed for using all the other endpoints. The session cookie expires after 30 minutes of
+session inactivity.</p>
 
 <blockquote>
 <p>To authorize, use this code:</p>
