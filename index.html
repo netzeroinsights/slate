@@ -321,6 +321,9 @@
                   <li>
                     <a href="#login" class="toc-h2 toc-link" data-title="Login">Login</a>
                   </li>
+                  <li>
+                    <a href="#logout" class="toc-h2 toc-link" data-title="Logout">Logout</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -357,7 +360,7 @@
 <p>Every endpoint is to be called starting with the domain https://api.netzeroinsights.com</p>
 <h1 id='security'>Security</h1><h2 id='login'>Login</h2>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>To login, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/security/formLogin"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> <span class="se">\</span>
@@ -365,6 +368,8 @@
 </code></pre></div>
 <blockquote>
 <p>Make sure to replace <code>YOUR_USERNAME</code> and <code>YOUR_PASSWORD</code> with your credentials.</p>
+
+<p>Using the -v (&quot;verbose&quot;) flag lets you see the full response, in which you can find the <strong>Session Cookie</strong>.</p>
 </blockquote>
 
 <p>Before using any other API, you should first login using the following endpoint:</p>
@@ -428,6 +433,46 @@ session inactivity.</p>
 <aside class="notice">
 You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 </aside>
+<h2 id='logout'>Logout</h2>
+<blockquote>
+<p>To logout, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s2">"JSESSIONID=EXAMPLE_SESSION_ID"</span> <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/security/logout"</span>
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>EXAMPLE_SESSION_ID</code> with your <strong>Session Cookie</strong></p>
+</blockquote>
+
+<p>To close the session, you should use the following endpoint:</p>
+
+<table><thead>
+<tr>
+<th>Request Type</th>
+<th>URL</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>/security/logout</td>
+</tr>
+</tbody></table>
+
+<p>It takes no parameter, and has the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Session terminated</td>
+</tr>
+</tbody></table>
+
+<p>Please note that manually closing a session is not required, since it will be closed bye the server after
+30 minutes. This endpoint is mainly used if you need to use different accounts.</p>
 <h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
 </code></pre></div>
