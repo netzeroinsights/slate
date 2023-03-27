@@ -458,6 +458,9 @@
                   <li>
                     <a href="#investor" class="toc-h2 toc-link" data-title="Investor">Investor</a>
                   </li>
+                  <li>
+                    <a href="#contact" class="toc-h2 toc-link" data-title="Contact">Contact</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -465,7 +468,7 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://netzeroinsights.com'>Visit our website</a></li>
             <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -475,7 +478,7 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Our REST APIs give all the functionalities needed to interact with our database. All these services are exclusively usable with https standard, and only after having been authenticated.</p>
 
-<p>To get your account, please contact us at <a href="mailto:matteo@netzeroinsights.com">matteo@netzeroinsights.com</a>.</p>
+<p>For brevity, the possible error codes for all the calls are at the bottom of the document.</p>
 
 <p>Every endpoint is to be called starting with the domain https://api.netzeroinsights.com</p>
 <h1 id='security'>Security</h1><h2 id='login'>Login</h2>
@@ -576,68 +579,120 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get startup list, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/getStartupList'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/getStartupList'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
-<span class="nt">-d</span> <span class="s1">'{"limit": 5, "offset": 0, "inclued":{}, "exclude": {}, "sorting": {}}'</span>
+<span class="nt">-d</span> <span class="s1">'{"limit": 5, "offset": 0, "include":{}, "exclude": {}, "sorting": {}}'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the startups matching your request, with the format specified at section <a href="#startup-search">Startup Search</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
   </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal ID"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"domain"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"pitchLine"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fundingAmount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fundingString"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fundingAmountUSD"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fundingStringUSD"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"fundingRangeID"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fundingRange"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w"> 
-    </span><span class="s2">"fundingRangeUSD"</span><span class="w"> 
-    </span><span class="s2">"fundingRangeIDUSD"</span><span class="w"> 
-    </span><span class="s2">"lastRoundDate"</span><span class="w"> 
-    </span><span class="s2">"foundedDate"</span><span class="w"> 
-    </span><span class="s2">"countryID"</span><span class="w">
-    </span><span class="s2">"country"</span><span class="w">
-    </span><span class="s2">"city"</span><span class="w">
-    </span><span class="s2">"continent
-    email
-    phone
-    sizeID
-    size
-    stageID
-    stage 
-    linkedinURL 
-    twitterURL 
-    facebookURL 
-    directURL 
-    sustainabilityMetric 
-    sustainabilityMetricID 
-    lastRoundAmount 
-    lastRoundAmountUSD 
-    lastRoundAmountString 
-    lastRoundAmountStringUSD 
-    lastRoundType 
-    revenueEuro 
-    revenueYear
-    tags 
-    fundingTypes
-    sdgs 
-    isFundRaising 
-    roundCount 
-    roundWithDateCount 
-    reviewDate
-  }
-], 
-"</span><span class="err">count</span><span class="s2">" : 
-}
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">72592</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Net Zero Insights"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/v1679698613/Startups/egykhqdli5njwqeqgdgb.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://netzeroinsights.com/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eutopiagreen.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pitchLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Net Zero Insights develops and operates the Net Platform: a market intelligence platform for climate tech startups and SMEs.&lt;br&gt;&lt;br&gt;It offers access to the largest climate tech startup database, allowing users to stay up-to-date on the latest innovation, trends and deals in the climate tech industry. The platform covers organizations globally and provides data-points, such as funding rounds, patents, and direct contacts to founders and C-Suite, to help users make well-informed decisions. The platform's smart search features and email notifications make it easy for users to track organizations.&lt;br&gt;&lt;br&gt;The platform is also supported by a team of analysts who ensure data accuracy and are available for technical support within the subscription."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. The Net0 market intelligence platform enables decision makers and market players to gain insight into the climate technology VC space. A platform matching greentech project to the resources they need - for free. A platform to connect greentech projects with the resources they need to take off. Data, insights and updates on the climate tech venture space. We help decision makers scout and assess the climate tech solutions they need to make the transition happen. </span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2">Sort over 45K+ climate startups in Europe and North America, and gain access to hard-to-find data such as patents, contacts, impact metrics, traction, fundings and deals. </span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2">Our end goal is to simplify access to meaningful data about climate innovation to investors, governments, policy makers, researchers and business developers.</span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2">Why don't you give a try for free and share your feedback later with us  https://bit.ly/netzero-freetrial We help decision makers scout and assess the climate tech solutions they need to make the transition happen.  Sort over 45K+ climate startups in Europe and North America, and gain access to hard-to-find data such as patents, contacts, impact metrics, traction, fundings and deals.  Our end goal is to simplify access to meaningful data about climate innovation to investors, governments, policy makers, researchers and business developers. Why dont you give a try for free and share your feedback later with us  https://bit.ly/netzero-freetrial  Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. I get back to you as we've just launched an AI-powered platform to access information about thousands of climate startups in. Eutopia is an AI-powered platform to access information about thousands of green startups in Europe. The most comprehensive database of climate tech startups and SMEs in Europe and North America. Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. ket A social business mapping innovative green startups to provide market players with insights, analytics, and consulting on the future of green technology.We are working on a platform to find information about green startups and technologies with the aim of putting greentech innovation in front of decision-makers Eutopia is a social business mapping innovative green startups to provide market players with insights, analytics, and consulting on the future of green technology. We have developed a web-based platform to find information about green startups and technologies with the aim of putting green innovation in front of decision-makers. Book a demo at: ??????????://??????????.??????/????1??????????????????????????5 For each venture, the platform includes information such as sector of activity, technologies employed, climate impact, SDGs, and generic info like financials, commercial stage, founded date, employees number and more. Eutopia sources its data by crawling news, company websites on the internet, asking directly to startups, establishing key partnerships with green accelerators and events and thanks to its in-house data team. ?????? ?????? ?? ?????????? ??????????????? ?????? ???????????????? ???? ??????????????: ??????????://????????????????????????.??????/????????????????"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">320000.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"320K"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">326273.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"326.3K"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingRangeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 500K"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastRoundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-01T02:00:00.000+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sustainabilityMetric"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.41335288</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foundedDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">2020</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"countryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">172</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Portugal"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lisbon"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@netzeroinsights.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+351 934 529 622"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sizeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11-50"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"stageID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Early"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"linkedinURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/company/12649435/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"twitterURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/netzeroinsights/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"facebookURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://facebook.com/netzeroinsights/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"net-zero-insights-72592"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sustainabilityMetricID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastRoundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">320000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastRoundAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">326273</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastRoundAmountString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"320K"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastRoundAmountStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"326.3K"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastRoundType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Seed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"tagTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"definition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Storage, manipulation, management, movement, control, display, switching, interchange, transmission or processing of data through data centres, including edge computing."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EU activity"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EU taxonomy"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">488</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data processing, hosting and related activities"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"tagTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"technology"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artificial intelligence (AI)"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"fundingTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Equity"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"sdgs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13. Climate action"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingRangeUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 500K"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingRangeIDUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"alternativeNames"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Eutopia Green"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Net0i"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Eutopia"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"legalNames"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">" Net Zero Insights Unipessoal Lda"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Net Zero Insights Holding Limited"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"numberOfGrants"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42080</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"eutopiaScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="p">[</span><span class="err">omissis...</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">[</span><span class="err">omissis...</span><span class="p">]</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>To search our startup database you should use the following endpoint:</p>
 
@@ -657,91 +712,131 @@ Please note that manually closing a session is not required, since it will be cl
 <td>200</td>
 <td>Request successful</td>
 </tr>
-<tr>
-<td>402</td>
-<td>You have reached the maximum number of searches allowed for your subscription</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
-</tr>
 </tbody></table>
 <h1 id='startup-detail'>Startup Detail</h1>
 <p>All the information related to a startup is divided into different sections: </p>
 
 <ol>
-<li>Startup Overview and Taxonomy</li>
-<li>Startup Patents</li>
-<li>Startup Investors</li>
-<li>Startup Contacts</li>
-<li>Startup Funding round</li>
+<li><a href="#startup-overview-and-taxonomy">Overview and Taxonomy</a></li>
+<li><a href="#startup-patents">Patents</a></li>
+<li><a href="#startup-investors">Investors</a></li>
+<li><a href="#startup-contacts">Contacts</a></li>
+<li><a href="#startup-funding-rounds">Funding Rounds</a></li>
 </ol>
 
 <p>Additionally, for each funding round, you can get the investors and the sources using the following endpoints:</p>
 
 <ol>
-<li>Funding round investors</li>
-<li>Funding round sources</li>
+<li><a href="#funding-round-investors">Investors</a></li>
+<li><a href="#funding-round-sources">Sources</a></li>
 </ol>
 <h2 id='startup-overview-and-taxonomy'>Startup Overview and Taxonomy</h2>
 <blockquote>
 <p>To get a startup overview and taxonomy, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getStartup/[directLink]"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getStartup/net-zero-insights-72592"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested startup, with the format specified at section <a href="#startup">Startup</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"domain"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"pitchLine"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fundingAmount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fundingString"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fundingAmountUSD"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fundingStringUSD"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"fundingRangeID"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fundingRange"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w"> 
-    </span><span class="s2">"fundingRangeUSD"</span><span class="w"> 
-    </span><span class="s2">"fundingRangeIDUSD"</span><span class="w"> 
-    </span><span class="s2">"lastRoundDate"</span><span class="w"> 
-    </span><span class="s2">"foundedDate"</span><span class="w"> 
-    </span><span class="s2">"countryID"</span><span class="w">
-    </span><span class="s2">"country"</span><span class="w">
-    </span><span class="s2">"city"</span><span class="w">
-    </span><span class="s2">"continent
-    email
-    phone
-    sizeID
-    size
-    stageID
-    stage 
-    linkedinURL 
-    twitterURL 
-    facebookURL 
-    directURL 
-    sustainabilityMetric 
-    sustainabilityMetricID 
-    lastRoundAmount 
-    lastRoundAmountUSD 
-    lastRoundAmountString 
-    lastRoundAmountStringUSD 
-    lastRoundType 
-    revenueEuro 
-    revenueYear
-    tags 
-    fundingTypes
-    sdgs 
-    isFundRaising 
-    roundCount 
-    roundWithDateCount 
-    reviewDate
-  }
+  </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">72592</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Net Zero Insights"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/v1679698613/Startups/egykhqdli5njwqeqgdgb.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://netzeroinsights.com/"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eutopiagreen.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pitchLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Net Zero Insights develops and operates the Net Platform: a market intelligence platform for climate tech startups and SMEs.&lt;br&gt;&lt;br&gt;It offers access to the largest climate tech startup database, allowing users to stay up-to-date on the latest innovation, trends and deals in the climate tech industry. The platform covers organizations globally and provides data-points, such as funding rounds, patents, and direct contacts to founders and C-Suite, to help users make well-informed decisions. The platform's smart search features and email notifications make it easy for users to track organizations.&lt;br&gt;&lt;br&gt;The platform is also supported by a team of analysts who ensure data accuracy and are available for technical support within the subscription."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. The Net0 market intelligence platform enables decision makers and market players to gain insight into the climate technology VC space. A platform matching greentech project to the resources they need - for free. A platform to connect greentech projects with the resources they need to take off. Data, insights and updates on the climate tech venture space. We help decision makers scout and assess the climate tech solutions they need to make the transition happen. </span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2">Sort over 45K+ climate startups in Europe and North America, and gain access to hard-to-find data such as patents, contacts, impact metrics, traction, fundings and deals. </span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2">Our end goal is to simplify access to meaningful data about climate innovation to investors, governments, policy makers, researchers and business developers.</span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2">Why don't you give a try for free and share your feedback later with us  https://bit.ly/netzero-freetrial We help decision makers scout and assess the climate tech solutions they need to make the transition happen.  Sort over 45K+ climate startups in Europe and North America, and gain access to hard-to-find data such as patents, contacts, impact metrics, traction, fundings and deals.  Our end goal is to simplify access to meaningful data about climate innovation to investors, governments, policy makers, researchers and business developers. Why dont you give a try for free and share your feedback later with us  https://bit.ly/netzero-freetrial  Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. I get back to you as we've just launched an AI-powered platform to access information about thousands of climate startups in. Eutopia is an AI-powered platform to access information about thousands of green startups in Europe. The most comprehensive database of climate tech startups and SMEs in Europe and North America. Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. ket A social business mapping innovative green startups to provide market players with insights, analytics, and consulting on the future of green technology.We are working on a platform to find information about green startups and technologies with the aim of putting greentech innovation in front of decision-makers Eutopia is a social business mapping innovative green startups to provide market players with insights, analytics, and consulting on the future of green technology. We have developed a web-based platform to find information about green startups and technologies with the aim of putting green innovation in front of decision-makers. Book a demo at: ??????????://??????????.??????/????1??????????????????????????5 For each venture, the platform includes information such as sector of activity, technologies employed, climate impact, SDGs, and generic info like financials, commercial stage, founded date, employees number and more. Eutopia sources its data by crawling news, company websites on the internet, asking directly to startups, establishing key partnerships with green accelerators and events and thanks to its in-house data team. ?????? ?????? ?? ?????????? ??????????????? ?????? ???????????????? ???? ??????????????: ??????????://????????????????????????.??????/????????????????"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fundingAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">320000.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fundingString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"320K"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fundingAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">326273.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fundingStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"326.3K"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fundingRangeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fundingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 500K"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastRoundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-01T02:00:00.000+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sustainabilityMetric"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.41335288</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"foundedDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">2020</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"countryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">172</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Portugal"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lisbon"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@netzeroinsights.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+351 934 529 622"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sizeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11-50"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"stageID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Early"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"linkedinURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/company/12649435/"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"twitterURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/netzeroinsights/"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"facebookURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://facebook.com/netzeroinsights/"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"net-zero-insights-72592"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sustainabilityMetricID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastRoundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">320000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastRoundAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">326273</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastRoundAmountString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"320K"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastRoundAmountStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"326.3K"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastRoundType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Seed"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"tagTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"definition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Storage, manipulation, management, movement, control, display, switching, interchange, transmission or processing of data through data centres, including edge computing."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EU activity"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EU taxonomy"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">488</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data processing, hosting and related activities"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"tagTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"technology"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artificial intelligence (AI)"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"fundingTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"Equity"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"sdgs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13. Climate action"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fundingRangeUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 500K"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fundingRangeIDUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"alternativeNames"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"Eutopia Green"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Net0i"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Eutopia"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"legalNames"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">" Net Zero Insights Unipessoal Lda"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Net Zero Insights Holding Limited"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"numberOfGrants"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42080</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"eutopiaScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>To get a startup overview and taxonomy you should use the following endpoint:</p>
 
@@ -759,42 +854,47 @@ Please note that manually closing a session is not required, since it will be cl
 <td>200</td>
 <td>Request successful</td>
 </tr>
-<tr>
-<td>402</td>
-<td>You have reached the maximum number of searches allowed for your subscription</td>
-</tr>
-<tr>
-<td>404</td>
-<td>The requested startup does not exist</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
-</tr>
 </tbody></table>
 <h2 id='startup-patents'>Startup Patents</h2>
 <blockquote>
 <p>To get a startup overview and taxonomy, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/patents/[clientID]"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/patents/668"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested patents, with the format specified at section <a href="#patent">Patent</a>.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w"> 
-    </span><span class="s2">"googlePatentsUrl"</span><span class="w"> 
-    </span><span class="s2">"filingDate"</span><span class="w"> 
-    </span><span class="s2">"publicationDate"</span><span class="w"> 
-    </span><span class="s2">"patentAbstract"</span><span class="w"> 
-    </span><span class="s2">"title"</span><span class="w"> 
-    </span><span class="s2">"jurisdiction"</span><span class="w"> 
-    </span><span class="s2">"jurisdictionName"</span><span class="w"> 
-    </span><span class="s2">"publicationNumber"</span><span class="w"> 
-    </span><span class="s2">"familyId"</span><span class="w"> 
-    </span><span class="s2">"clientId"</span><span class="w"> 
-    </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> 
-  </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">54136</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"googlePatentsUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patents.google.com/patent/DE112015006427A5/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filingDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-07T22:00:00.000+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"publicationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-27T23:00:00.000+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"patentAbstract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Process For The Production Of Synthetically Produced Methane (57)/Gaseous And/Or Liquid Hydrocarbons (114, 115, 116, 117). For This Purpose, Hydrogen (44, 84, 150) From An Electrolytic Arrangement (41, 81, 151, 159) Which Is Operated By Means Of Regeneratively Generated Electric Energy And Carbon Dioxide (19, 46, 86) Are Synthesized In A Methane Synthesis (Figs. 2-48) Or Fischer-Tropsch Synthesis (Figs. 3-96) Or Other Suitable Hydrocarbon Synthesis, The Carbon Dioxide (19, 46, 86) Being Produced From An Air/Gas Flow (3, 134) By Means Of A Carbon Dioxide Recovery System (Fig. 1). The Carbon Dioxide (19, 46, 86) Is Obtained From The Air/Gas Flow (3, 134) In The Carbon Dioxide Recovery System (Fig. 1) By Way Of A Reversible Adsorption Process. Also A Production System (57) For The Production Of Synthetically Produced Methane/Gaseous And/Or Liquid Hydrocarbons (114, 115, 116, 117), In Particular For Carrying Out The Production Process According To The Invention, Comprising An Electrolytic Arrangement (41, 81, 151, 159) Which Is Operated By Means Of Regeneratively Generated Electric Energy (42, 82, 153) For Producing Hydrogen (44, 84, 150), A Carbon Dioxide Recovery System (Fig. 1) For Producing Carbon Dioxide (19, 46, 86) From An Air/Gas Flow (3, 134) And A Methane (Fig. 2) Or Fischer-Tropsch Synthesis (Fig. 3) Or Any Other Suitable Hydrocarbon Synthesis For Synthesizing Hydrogen (44, 84, 150) And Carbon Dioxide (19, 45, 86) To Methane (57)/Gaseous And/Or Liquid Hydrocarbons (114, 115, 116, 117)."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Production Process And Production System For Producing Methane / Gaseous And/Or Liquid Hydrocarbons"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jurisdiction"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"publicationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DE-112015006427-A5"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"familyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1078</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">668</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jurisdictionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Germany"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">54137</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"googlePatentsUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patents.google.com/patent/WO2016161998A1/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filingDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-07T22:00:00.000+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"publicationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-12T22:00:00.000+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"patentAbstract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Process For The Production Of Synthetically Produced Methane (57)/Gaseous And/Or Liquid Hydrocarbons (114, 115, 116, 117). For This Purpose, Hydrogen (44, 84, 150) From An Electrolytic Arrangement (41, 81, 151, 159) Which Is Operated By Means Of Regeneratively Generated Electric Energy And Carbon Dioxide (19, 46, 86) Are Synthesized In A Methane Synthesis (Figs. 2-48) Or Fischer-Tropsch Synthesis (Figs. 3-96) Or Other Suitable Hydrocarbon Synthesis, The Carbon Dioxide (19, 46, 86) Being Produced From An Air/Gas Flow (3, 134) By Means Of A Carbon Dioxide Recovery System (Fig. 1). The Carbon Dioxide (19, 46, 86) Is Obtained From The Air/Gas Flow (3, 134) In The Carbon Dioxide Recovery System (Fig. 1) By Way Of A Reversible Adsorption Process. Also A Production System (57) For The Production Of Synthetically Produced Methane/Gaseous And/Or Liquid Hydrocarbons (114, 115, 116, 117), In Particular For Carrying Out The Production Process According To The Invention, Comprising An Electrolytic Arrangement (41, 81, 151, 159) Which Is Operated By Means Of Regeneratively Generated Electric Energy (42, 82, 153) For Producing Hydrogen (44, 84, 150), A Carbon Dioxide Recovery System (Fig. 1) For Producing Carbon Dioxide (19, 46, 86) From An Air/Gas Flow (3, 134) And A Methane (Fig. 2) Or Fischer-Tropsch Synthesis (Fig. 3) Or Any Other Suitable Hydrocarbon Synthesis For Synthesizing Hydrogen (44, 84, 150) And Carbon Dioxide (19, 45, 86) To Methane (57)/Gaseous And/Or Liquid Hydrocarbons (114, 115, 116, 117)."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Production Process And Production System For Producing Methane / Gaseous And/Or Liquid Hydrocarbons"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jurisdiction"</span><span class="p">:</span><span class="w"> </span><span class="mi">241</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"publicationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WO-2016161998-A1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"familyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1078</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">668</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jurisdictionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"World"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="w">
+  </span><span class="p">}</span><span class="w"> 
+</span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>To get all the patents of a startup, you should use the following endpoint:</p>
 
@@ -812,30 +912,31 @@ Please note that manually closing a session is not required, since it will be cl
 <td>200</td>
 <td>Request successful</td>
 </tr>
-<tr>
-<td>402</td>
-<td>You have reached the maximum number of searches allowed for your subscription</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
-</tr>
 </tbody></table>
 <h2 id='startup-investors'>Startup Investors</h2>
 <blockquote>
 <p>To get all the investors of a startup, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/investors/[clientID]"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/investors/72592"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested investors, with the format specified at section <a href="#investor">Investor</a>.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal ID"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="w"> 
-    </span><span class="s2">"firstRoundDate"</span><span class="w"> 
-    </span><span class="s2">"roundTypes"</span><span class="w"> 
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15265</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris Goodall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"firstRoundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jul 2022"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roundTypes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Seed"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15316</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miguel de Ros"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"firstRoundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jul 2022"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roundTypes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Seed"</span><span class="w">
   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>To get all the investors of a startup, you should use the following endpoint:</p>
 
@@ -853,31 +954,32 @@ Please note that manually closing a session is not required, since it will be cl
 <td>200</td>
 <td>Request successful</td>
 </tr>
-<tr>
-<td>402</td>
-<td>You have reached the maximum number of searches allowed for your subscription</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
-</tr>
 </tbody></table>
 <h2 id='startup-contacts'>Startup Contacts</h2>
 <blockquote>
-<p>To get all the investors of a given set of funding rounds, use this code:</p>
+<p>To get all the contacts of a startup, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/contacts"</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/contacts"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-<span class="nt">-d</span> <span class="s2">"{'clientID': 5}"</span>
+<span class="nt">-d</span> <span class="s2">"{'clientID': 72592, 'decisionMaker': false, 'roleID': 5}"</span>
 </code></pre></div>
 <blockquote>
-<p>In case of a 200 response, the response body will contain all the requested contacts, with the JSON structured like the following:</p>
+<p>In case of a 200 response, the response body will contain all the requested contacts, with the format specified at section <a href="#contact">Contact</a>.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aafia Tehrim"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Climate Tech Analyst"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tech"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aafia@netzeroinsights.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"linkedinURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.linkedin.com/in/aafia-tehrim-36856920a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"decisionMaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1112723</span><span class="w">
   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>To get all the investors of a given set of funding rounds, you should use the following endpoint:</p>
+<p>To get all contacts of a startup, you should use the following endpoint:</p>
 
 <p><code>POST /contacts</code></p>
 
@@ -893,44 +995,50 @@ Please note that manually closing a session is not required, since it will be cl
 <td>200</td>
 <td>Request successful</td>
 </tr>
-<tr>
-<td>402</td>
-<td>You have reached the maximum number of searches allowed for your subscription</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
-</tr>
 </tbody></table>
 <h2 id='startup-funding-rounds'>Startup Funding rounds</h2>
 <blockquote>
 <p>To get all the funding rounds of a startup, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> GET https://api.netzeroinsights.com/fundingRoundsPrints/[clientID]
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET https://api.netzeroinsights.com/fundingRoundsPrints/72592
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested funding rounds, with the format specified at section <a href="#funding-round">Funding Round</a>.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-     </span><span class="s2">"id"</span><span class="w">
-     </span><span class="s2">"clientID"</span><span class="w">
-     </span><span class="s2">"roundDate"</span><span class="w">
-     </span><span class="s2">"roundType"</span><span class="w">
-     </span><span class="s2">"roundAmount"</span><span class="w">
-     </span><span class="s2">"roundAmountUSD"</span><span class="w">
-     </span><span class="s2">"roundAmountId"</span><span class="w">
-     </span><span class="s2">"clientID"</span><span class="w">
-     </span><span class="s2">"coFundingRoundId"</span><span class="w">
-     </span><span class="s2">"fundingRange"</span><span class="w">
-     </span><span class="s2">"roundInvestors"</span><span class="w">
-     </span><span class="s2">"roundNews"</span><span class="w">
-     </span><span class="s2">"roundCurrency"</span><span class="w">
-     </span><span class="s2">"originalAmount"</span><span class="w">
-     </span><span class="s2">"source"</span><span class="w">
-     </span><span class="s2">"financingInstrument"</span><span class="w">
-     </span><span class="s2">"equityStageID"</span><span class="w">
-     </span><span class="s2">"exitStageID"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">72592</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-01T02:00:00.000+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roundType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Seed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">320000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roundAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">326273.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roundAmountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coFundingRoundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">168677</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fundingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 500K"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roundInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="mi">15265</span><span class="p">,</span><span class="w">
+      </span><span class="mi">15266</span><span class="p">,</span><span class="w">
+      </span><span class="mi">15317</span><span class="p">,</span><span class="w">
+      </span><span class="mi">18450</span><span class="p">,</span><span class="w">
+      </span><span class="mi">15316</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"roundNews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="mi">86510</span><span class="p">,</span><span class="w">
+      </span><span class="mi">87287</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"roundCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andrea_canepa"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"originalRoundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">320000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"valuationAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1600000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"valuationCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"valuationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post-money"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"financingInstrument"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grant"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"equityStageID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"exitStageID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">152398</span><span class="w">
   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>To get all the funding rounds of a startup, you should use the following endpoint:</p>
 
@@ -948,32 +1056,33 @@ Please note that manually closing a session is not required, since it will be cl
 <td>200</td>
 <td>Request successful</td>
 </tr>
-<tr>
-<td>402</td>
-<td>You have reached the maximum number of searches allowed for your subscription</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
-</tr>
 </tbody></table>
 <h2 id='funding-round-investors'>Funding round investors</h2>
 <blockquote>
 <p>To get all the investors of a given set of funding rounds, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> POST https://api.netzeroinsights.com/getFundingRoundInvestors <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST https://api.netzeroinsights.com/getFundingRoundInvestors <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-<span class="nt">-d</span> <span class="s2">"{'coFundingRoundId': 5}"</span>
+<span class="nt">-d</span> <span class="s2">"{[168677]}"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the investors of the requested funding rounds, with the format specified at section <a href="#funding-round-investor">Funding Round Investor</a>.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-     </span><span class="s2">"id"</span><span class="w">
-     </span><span class="s2">"name"</span><span class="w">
-     </span><span class="s2">"website"</span><span class="w">
-     </span><span class="s2">"fundingRoundId"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15265</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris Goodall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://uk.linkedin.com/in/chris-goodall-b2a51510"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fundingRoundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">168677</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15266</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tony Lent"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/in/tony-lent-80096a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fundingRoundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">168677</span><span class="w">
   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>To get all the investors of a given set of funding rounds, you should use the following endpoint:</p>
 
@@ -991,33 +1100,29 @@ Please note that manually closing a session is not required, since it will be cl
 <td>200</td>
 <td>Request successful</td>
 </tr>
-<tr>
-<td>402</td>
-<td>You have reached the maximum number of searches allowed for your subscription</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
-</tr>
 </tbody></table>
 <h2 id='funding-round-sources'>Funding round sources</h2>
 <blockquote>
 <p>To get all the sources of a funding round, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> GET https://api.netzeroinsights.com/roundNewsByRoundID/[coFundingRoundId]
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+ <span class="nt">-X</span> GET https://api.netzeroinsights.com/roundNewsByRoundID/168677
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the sources of a funding rounds, with the format specified at section <a href="#funding-round-source">Funding round source</a>.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-     </span><span class="s2">"id"</span><span class="w">
-     </span><span class="s2">"url"</span><span class="w">
-     </span><span class="s2">"fundingRoundId"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">86510</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"googleTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://netzeroinsights.com/resources/our-updates/net-zero-insights-raises-320k-in-pre-seed-funding-to-develop-climate-tech-market-intelligence-software/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fundingRoundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">168677</span><span class="w">
   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>To get all the sources of a funding round, you should use the following endpoint:</p>
 
-<p><code>POST /getFundingRoundInvestors</code></p>
+<p><code>GET /roundNewsByRoundID/[coFundingRoundId]</code></p>
 
 <p>It takes a single parameter, indicated as ”[coFundingRoundId]” in the example, which is taken from a previous call of the endpoint at Section <a href="#startup-funding-rounds">Startup Funding Rounds</a>, variable ”coFundingRoundId”, and has the following response codes:</p>
 
@@ -1031,17 +1136,9 @@ Please note that manually closing a session is not required, since it will be cl
 <td>200</td>
 <td>Request successful</td>
 </tr>
-<tr>
-<td>402</td>
-<td>You have reached the maximum number of searches allowed for your subscription</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
-</tr>
 </tbody></table>
 <h1 id='filters-structure'>Filters structure</h1><h2 id='main-filter'>Main Filter</h2>
-<p>This is the main filter used when searching for startups or funding rounds. It contains two simple fields (”offset” and ”limit”) and some complex ones (i.e.: ”include”, ”sorting”) defined further in this document.</p>
+<p>This is the main filter used when searching for startups. It contains two simple fields (”offset” and ”limit”) and some complex ones (i.e.: ”include”, ”sorting”) defined further in this document.</p>
 
 <table><thead>
 <tr>
@@ -1058,7 +1155,7 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>offset</td>
 <td>int</td>
-<td>Number of results skipped</td>
+<td>Number of pages (of size &quot;limit&quot;) skipped</td>
 </tr>
 <tr>
 <td>sorting</td>
@@ -1295,7 +1392,7 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>clientID</td>
 <td>int</td>
-<td>ClientID of the requested startup, taken from a pre- vious call of <a href="#startup-list">Startup List</a></td>
+<td>ClientID of the requested startup, taken from a previous call of <a href="#startup-list">Startup List</a></td>
 </tr>
 <tr>
 <td>decisionMaker</td>
@@ -1304,7 +1401,7 @@ Please note that manually closing a session is not required, since it will be cl
 </tr>
 <tr>
 <td>roleID</td>
-<td>List of int</td>
+<td>int</td>
 <td>Optional, contact role, see Section <a href="#role">Role</a> for accepted values</td>
 </tr>
 </tbody></table>
@@ -1801,19 +1898,26 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the list of the currently available tags, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com//getEnabledTags"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getEnabledTags"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the available tags, with the JSON structured like the following:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d printing"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"advanced material"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>To get the list of the currently available tags, you should use the following endpoint:</p>
 
-<p><code>POST /getEnabledTags</code></p>
+<p><code>GET /getEnabledTags</code></p>
 
 <p>It takes no parameter, and has the following response codes:</p>
 
@@ -1826,34 +1930,34 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>200</td>
 <td>Request successful</td>
-</tr>
-<tr>
-<td>401</td>
-<td>You are not logged in</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
 </tr>
 </tbody></table>
 <h2 id='investors'>Investors</h2>
 <blockquote>
 <p>To get the list of the currently available investors, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com//getInvestorsForFilter"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getInvestorsForFilter"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the available investors, with the JSON structured like the following:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"website"</span><span class="w"> </span><span class="p">:</span><span class="w"> 
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">142</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hevella Capital"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.hevella-capital.com/"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">143</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IBB Ventures"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.ibbventures.de/"</span><span class="w">
   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>To get the list of the currently available investors, you should use the following endpoint:</p>
 
-<p><code>POST /getInvestorsForFilter</code></p>
+<p><code>GET /getInvestorsForFilter</code></p>
 
 <p>It takes no parameter, and has the following response codes:</p>
 
@@ -1866,33 +1970,32 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>200</td>
 <td>Request successful</td>
-</tr>
-<tr>
-<td>401</td>
-<td>You are not logged in</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
 </tr>
 </tbody></table>
 <h2 id='funding-type'>Funding Type</h2>
 <blockquote>
 <p>To get the list of the currently available funding types, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/basic/getFundingTypes"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getFundingTypes"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the available funding types, with the JSON structured like the following:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> 
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accelerator/incubator"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acquisition"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">66</span><span class="w">
   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>To get the list of the currently available investors, you should use the following endpoint:</p>
+<p>To get the list of the currently available funding types, you should use the following endpoint:</p>
 
-<p><code>POST /basic/getFundingTypes</code></p>
+<p><code>GET /getFundingTypes</code></p>
 
 <p>It takes no parameter, and has the following response codes:</p>
 
@@ -1906,32 +2009,41 @@ Please note that manually closing a session is not required, since it will be cl
 <td>200</td>
 <td>Request successful</td>
 </tr>
-<tr>
-<td>401</td>
-<td>You are not logged in</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
-</tr>
 </tbody></table>
 <h2 id='searchable-locations'>Searchable Locations</h2>
 <blockquote>
 <p>To get the list of the searchable locations, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/searchLocation/[location]"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/searchLocation/london"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the matching searchable locations, with the JSON structured like the following:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"countryID"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cityName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"adminName4"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"countryName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"continentName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cityID"</span><span class="p">:</span><span class="w"> </span><span class="mi">112253</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adminID4"</span><span class="p">:</span><span class="w"> </span><span class="mi">3113</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adminName4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"England"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">225</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"continentID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"continentName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">928071</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cityID"</span><span class="p">:</span><span class="w"> </span><span class="mi">14534</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adminID4"</span><span class="p">:</span><span class="w"> </span><span class="mi">514</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adminName4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ontario"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"continentID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"continentName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">775779</span><span class="w">
   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>To get the list of the searchable locations, you should use the following endpoint:</p>
 
@@ -1948,14 +2060,6 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>200</td>
 <td>Request successful</td>
-</tr>
-<tr>
-<td>401</td>
-<td>You are not logged in</td>
-</tr>
-<tr>
-<td>500</td>
-<td>An error has occurred, please see the the response body for more information</td>
 </tr>
 </tbody></table>
 <h1 id='responses-structure'>Responses structure</h1><h2 id='startup-search'>Startup search</h2>
@@ -2374,6 +2478,42 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Types of round in which the investor appeared</td>
 </tr>
 </tbody></table>
+<h2 id='contact'>Contact</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Person name</td>
+</tr>
+<tr>
+<td>role</td>
+<td>Person role</td>
+</tr>
+<tr>
+<td>department</td>
+<td>Person department</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Person email</td>
+</tr>
+<tr>
+<td>linkedinURL</td>
+<td>Person LinkedIn URL</td>
+</tr>
+<tr>
+<td>decisionMaker</td>
+<td>True if the person has decision making capabilities</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Internal person ID</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <p>The Net Zero Insights API uses the following error codes:</p>
 
@@ -2390,6 +2530,10 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>401</td>
 <td>Unauthorized -- Your credentials are wrong.</td>
+</tr>
+<tr>
+<td>402</td>
+<td>You have reached the maximum number of searches allowed for your subscription.</td>
 </tr>
 <tr>
 <td>403</td>
