@@ -107,56 +107,51 @@ Please note that manually closing a session is not required, since it will be cl
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 -X POST 'https://api.netzeroinsights.com/getStartupList' \
 -H 'Content-Type: application/json' \                 
--d '{"limit": 5, "offset": 0, "include":{}, "exclude": {}, "sorting": {}}'
+-d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "sorting": {}}'
 ```
 
 > In case of a 200 response, the response body will contain the startups matching your request, with the format specified at section [Startup Search](#startup-search).
 
 ```json
 {
-  "count": 5,
+  "count": 54856,
   "results": [
     {
-      "clientID": 72592,
-      "name": "Net Zero Insights",
-      "logo": "https://res.cloudinary.com/eutop-1/image/upload/v1679698613/Startups/egykhqdli5njwqeqgdgb.jpg",
-      "website": "https://netzeroinsights.com/",
-      "domain": "netzeroinsights.com",
-      "pitchLine": "Net Zero Insights develops and operates the Net Platform: a market intelligence platform for climate tech startups and SMEs.<br><br>It offers access to the largest climate tech startup database, allowing users to stay up-to-date on the latest innovation, trends and deals in the climate tech industry. The platform covers organizations globally and provides data-points, such as funding rounds, patents, and direct contacts to founders and C-Suite, to help users make well-informed decisions. The platform's smart search features and email notifications make it easy for users to track organizations.<br><br>The platform is also supported by a team of analysts who ensure data accuracy and are available for technical support within the subscription.",
-      "description": "Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. The Net0 market intelligence platform enables decision makers and market players to gain insight into the climate technology VC space. A platform matching greentech project to the resources they need - for free. A platform to connect greentech projects with the resources they need to take off. Data, insights and updates on the climate tech venture space. We help decision makers scout and assess the climate tech solutions they need to make the transition happen. \n \nSort over 45K+ climate startups in Europe and North America, and gain access to hard-to-find data such as patents, contacts, impact metrics, traction, fundings and deals. \n \nOur end goal is to simplify access to meaningful data about climate innovation to investors, governments, policy makers, researchers and business developers.\n \nWhy don't you give a try for free and share your feedback later with us  https://bit.ly/netzero-freetrial We help decision makers scout and assess the climate tech solutions they need to make the transition happen.  Sort over 45K+ climate startups in Europe and North America, and gain access to hard-to-find data such as patents, contacts, impact metrics, traction, fundings and deals.  Our end goal is to simplify access to meaningful data about climate innovation to investors, governments, policy makers, researchers and business developers. Why dont you give a try for free and share your feedback later with us  https://bit.ly/netzero-freetrial  Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. I get back to you as we've just launched an AI-powered platform to access information about thousands of climate startups in. Eutopia is an AI-powered platform to access information about thousands of green startups in Europe. The most comprehensive database of climate tech startups and SMEs in Europe and North America. Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. ket A social business mapping innovative green startups to provide market players with insights, analytics, and consulting on the future of green technology.We are working on a platform to find information about green startups and technologies with the aim of putting greentech innovation in front of decision-makers Eutopia is a social business mapping innovative green startups to provide market players with insights, analytics, and consulting on the future of green technology. We have developed a web-based platform to find information about green startups and technologies with the aim of putting green innovation in front of decision-makers. Book a demo at: ??????????://??????????.??????/????1??????????????????????????5 For each venture, the platform includes information such as sector of activity, technologies employed, climate impact, SDGs, and generic info like financials, commercial stage, founded date, employees number and more. Eutopia sources its data by crawling news, company websites on the internet, asking directly to startups, establishing key partnerships with green accelerators and events and thanks to its in-house data team. ?????? ?????? ?? ?????????? ??????????????? ?????? ???????????????? ???? ??????????????: ??????????://????????????????????????.??????/????????????????",
-      "fundingAmount": 320000.0,
-      "fundingString": "320K",
-      "fundingAmountUSD": 326273.0,
-      "fundingStringUSD": "326.3K",
-      "fundingRangeID": 1,
-      "fundingRange": "0 - 500K",
-      "lastRoundDate": "2022-07-01T02:00:00.000+00:00",
-      "sustainabilityMetric": 0.41335288,
-      "foundedDate": 2020,
-      "countryID": 172,
-      "country": "Portugal",
-      "city": "Lisbon",
+      "clientID": 668,
+      "name": "Sunfire",
+      "logo": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1676009885/Startups/idgakaw4vpykudzpl978.jpg",
+      "website": "http://www.sunfire.de",
+      "domain": "sunfire.de",
+      "pitchLine": "Sunfire develops and manufactures industrial electrolysers for the production of renewable hydrogen and syngas.<br><br>The electrolyzers - based on alkaline and solid oxide technologies - are producing hydrogen and Syngas and are meant to decarbonize energy-intensive and climate-conscious businesses. The company either uses renewable electricity and water to produce green hydrogen, or includes captured CO2 in the process to produce renewable syngas which can be transferred into hydrocarbon products. Main applications for the produced fuels are refineries, steel manufacturing, chemicals, mobility, and the utility sector.<br><br>Sunfire develops an innovation that contributes to:<br>Climate change mitigation by producing green hydrogen and renewable syngas.<br>",
+      "description": "Developer of industrial electrolyzers designed to convert renewable electrical energy into fuels and gases. Innovative technology: Sunfire offers modular power plants and electrolysis systems to produce renewable energy, hydrogen and syngas. Provider of energy conversion technologies, including solid oxide fuel cells and renewable synthetic fuels based on solid oxide electrolyzers. Sunfire is an electrolysis company that designs and manufactures systems for the production of renewable industrial gas and fuel. A World Without Fossil Fuels. Sunfire develops and markets efficient energy supply concepts, which focus on the transformation of regenerative power into liquid petrol (power-to-liquids) or gas (power-to-gas). Develops and produces high-temperature fuel cells which facilitate the generation of electric power and heat. Developer of industrial electrolyzers designed to convert renewable electrical energy into fuels and gases. The company's renewable hydrogen and syngas as substitutes for fossil energy sources and offer electrolyzers based on alkaline and solid oxide (SOEC) technologies, enabling chemical, fuel, and steel industries to transform of energy Established in 2010 and based in Dresden, Germany, Sunfire is a world-leading industrial electrolysis company with two differentiated technologies. We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost-effective production of renewable hydrogen, syngas and e-Fuel.\n\nSunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group  global leaders in the renewable fuel and steel business. With more than 500 employees located in Germany and Switzerland and a well-established partner network, we realize large electrolysis projects to deliver on our promise: Creating a world without fossil fuels! Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat.\n\nSunfires vision is to make regenerative energy from sources such as wind farms, hydropower plants, and photovoltaic systems available wherever and whenever it is needed  not just when the wind is blowing, the waves are crashing or the sun is shining. Established in 2010 and based in Dresden, Germany, Sunfire is a world-leading industrial electrolysis company with two differentiated technologies. We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost-effective production of renewable hydrogen, syngas and e-Fuel.Sunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group  global leaders in the renewable fuel and steel business. With more than 500 employees located in Germany and Switzerland and a well-established partner network, we realize large electrolysis projects to deliver on our promise: Creating a world without fossil fuels! ognised global leader for off-grid and CHP units based on solide oxide fuel cell technology. Renewables Everywhere. With the co-electrolysis of Sunfire, CO2-neutral synthetic crude oil can be produced from water in combination with carbon dioxide and green electricity via syngas. A breakthrough fuel cell and electrolyser technology replacingtheconventional fossil fuel used in your car with CO2 neutral fuel created from green power, water and CO2 fromtheatmosphere. CO2 & Hydrogen. Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat. Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat. Sunfires vision is to make regenerative energy from sources such as wind farms, hydropower plants, and photovoltaic systems available wherever and whenever it is needed  not just when the wind is blowing, the waves are crashing or the sun is shining. Sunfire develops and produces high temperature electrolyzers SOEC and high temperature fuel cells SOFC . As water vapour is used in electrolysis efficiencies of up to H methane and about for fuels are achieved.Customer ProblemTarget groups are energy chemical refinery and utility companies. Energy suppliers can work on a more efficient supply at certain points as the fuel cells can also use hydrocarbons.Business ModelSunfire offers its technology in the fields of CHP off grid production and hydrogen fuels. The product is then sold directly for individual orders.USPIn niche markets the special requirements and simpler logistics can give this system an economic advantage. Sunfire s entry markets are therefore small gas customers off grid applications and CHP plants for real estate.",
+      "fundingAmount": 2.8E8,
+      "fundingString": "280M",
+      "fundingAmountUSD": 3.1753658E8,
+      "fundingStringUSD": "318M",
+      "fundingRangeID": 9,
+      "fundingRange": ">250M",
+      "lastRoundDate": "2022-07-14T00:00:00.000+00:00",
+      "sustainabilityMetric": 0.9335,
+      "foundedDate": 2010,
+      "countryID": 80,
+      "country": "Germany",
+      "city": "Dresden",
       "continent": "Europe",
-      "email": "info@netzeroinsights.com",
-      "phone": "+351 934 529 622",
+      "email": "info@sunfire.de",
+      "phone": "+49 351 8967970",
       "sizeID": 2,
-      "size": "11-50",
-      "stageID": 2,
-      "stage": "Early",
-      "linkedinURL": "https://www.linkedin.com/company/12649435/",
-      "twitterURL": "https://twitter.com/netzeroinsights/",
-      "facebookURL": "https://facebook.com/netzeroinsights/",
-      "directURL": "net-zero-insights-72592",
-      "sustainabilityMetricID": 2,
-      "lastRoundAmount": 320000,
-      "lastRoundAmountUSD": 326273,
-      "lastRoundAmountString": "320K",
-      "lastRoundAmountStringUSD": "326.3K",
-      "lastRoundType": "Pre-Seed",
+      "size": "11 - 50",
+      "stageID": 4,
+      "stage": "Scaling",
+      "linkedinURL": "https://www.linkedin.com/company/sunfire-gmbh/",
+      "twitterURL": "https://twitter.com/sunfire_dresden/",
+      "facebookURL": "https://facebook.com/1382355191983196/",
+      "directURL": "sunfire-668",
+      "sustainabilityMetricID": 4,
+      "lastRoundType": "Late VC",
       "tags": [
         {
           "tagTypeId": 74,
-          "definition": "Storage, manipulation, management, movement, control, display, switching, interchange, transmission or processing of data through data centres, including edge computing.",
           "tagType": {
             "id": 74,
             "tagType": "EU activity",
@@ -167,56 +162,49 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
               "platformOrder": 1
             }
           },
-          "id": 488,
+          "id": 405,
           "filterable": true,
-          "label": "Data processing, hosting and related activities"
+          "label": "Manufacture of equipment for the production and use of hydrogen"
         },
         {
-          "tagTypeId": 3,
+          "tagTypeId": 11,
           "tagType": {
-            "id": 3,
-            "tagType": "technology",
-            "platformOrder": 3,
+            "id": 11,
+            "tagType": "environmental objective",
+            "platformOrder": 7,
             "tagFamily": {
-              "id": 2,
-              "tagFamily": "Solutions",
-              "platformOrder": 2
+              "id": 1,
+              "tagFamily": "EU taxonomy",
+              "platformOrder": 1
             }
           },
-          "id": 14,
+          "id": 374,
           "filterable": true,
-          "label": "artificial intelligence (AI)"
+          "label": "climate change mitigation"
         }
       ],
       "fundingTypes": [
+        "Grant",
         "Equity"
       ],
       "sdgs": [
+        {
+          "id": 7,
+          "label": "7. Affordable and clean energy"
+        },
         {
           "id": 13,
           "label": "13. Climate action"
         }
       ],
       "note": "",
-      "fundingRangeUSD": "0 - 500K",
-      "fundingRangeIDUSD": 1,
-      "alternativeNames": [
-        "Eutopia Green",
-        "Net0i",
-        "Eutopia"
-      ],
-      "legalNames": [
-        " Net Zero Insights Unipessoal Lda",
-        "Net Zero Insights Holding Limited"
-      ],
-      "numberOfGrants": 1,
-      "id": 42080,
-      "eutopiaScore": 41
-    },
-    {
-      [omissis...]
-    },
-    [omissis...]
+      "fundingRangeUSD": ">250M",
+      "fundingRangeIDUSD": 9,
+      "numberOfEquityRounds": 8,
+      "numberOfGrants": 2,
+      "id": 527,
+      "eutopiaScore": 93
+    }
   ]
 }
 ```
@@ -254,53 +242,56 @@ Additionally, for each funding round, you can get the investors and the sources 
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/getStartup/net-zero-insights-72592"
+-X GET "https://api.netzeroinsights.com/getStartup/sunfire-668"
 ```
 
 > In case of a 200 response, the response body will contain the requested startup, with the format specified at section [Startup](#startup).
 
 ```json
-  {
-  "clientID": 72592,
-  "name": "Net Zero Insights",
-  "logo": "https://res.cloudinary.com/eutop-1/image/upload/v1679698613/Startups/egykhqdli5njwqeqgdgb.jpg",
-  "website": "https://netzeroinsights.com/",
-  "domain": "eutopiagreen.com",
-  "pitchLine": "Net Zero Insights develops and operates the Net Platform: a market intelligence platform for climate tech startups and SMEs.<br><br>It offers access to the largest climate tech startup database, allowing users to stay up-to-date on the latest innovation, trends and deals in the climate tech industry. The platform covers organizations globally and provides data-points, such as funding rounds, patents, and direct contacts to founders and C-Suite, to help users make well-informed decisions. The platform's smart search features and email notifications make it easy for users to track organizations.<br><br>The platform is also supported by a team of analysts who ensure data accuracy and are available for technical support within the subscription.",
-  "description": "Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. The Net0 market intelligence platform enables decision makers and market players to gain insight into the climate technology VC space. A platform matching greentech project to the resources they need - for free. A platform to connect greentech projects with the resources they need to take off. Data, insights and updates on the climate tech venture space. We help decision makers scout and assess the climate tech solutions they need to make the transition happen. \n \nSort over 45K+ climate startups in Europe and North America, and gain access to hard-to-find data such as patents, contacts, impact metrics, traction, fundings and deals. \n \nOur end goal is to simplify access to meaningful data about climate innovation to investors, governments, policy makers, researchers and business developers.\n \nWhy don't you give a try for free and share your feedback later with us  https://bit.ly/netzero-freetrial We help decision makers scout and assess the climate tech solutions they need to make the transition happen.  Sort over 45K+ climate startups in Europe and North America, and gain access to hard-to-find data such as patents, contacts, impact metrics, traction, fundings and deals.  Our end goal is to simplify access to meaningful data about climate innovation to investors, governments, policy makers, researchers and business developers. Why dont you give a try for free and share your feedback later with us  https://bit.ly/netzero-freetrial  Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. I get back to you as we've just launched an AI-powered platform to access information about thousands of climate startups in. Eutopia is an AI-powered platform to access information about thousands of green startups in Europe. The most comprehensive database of climate tech startups and SMEs in Europe and North America. Provider of a web platform to access information about climate tech startups such as climate impact, patents, financials, traction, contacts, and more. ket A social business mapping innovative green startups to provide market players with insights, analytics, and consulting on the future of green technology.We are working on a platform to find information about green startups and technologies with the aim of putting greentech innovation in front of decision-makers Eutopia is a social business mapping innovative green startups to provide market players with insights, analytics, and consulting on the future of green technology. We have developed a web-based platform to find information about green startups and technologies with the aim of putting green innovation in front of decision-makers. Book a demo at: ??????????://??????????.??????/????1??????????????????????????5 For each venture, the platform includes information such as sector of activity, technologies employed, climate impact, SDGs, and generic info like financials, commercial stage, founded date, employees number and more. Eutopia sources its data by crawling news, company websites on the internet, asking directly to startups, establishing key partnerships with green accelerators and events and thanks to its in-house data team. ?????? ?????? ?? ?????????? ??????????????? ?????? ???????????????? ???? ??????????????: ??????????://????????????????????????.??????/????????????????",
-  "fundingAmount": 320000.0,
-  "fundingString": "320K",
-  "fundingAmountUSD": 326273.0,
-  "fundingStringUSD": "326.3K",
-  "fundingRangeID": 1,
-  "fundingRange": "0 - 500K",
-  "lastRoundDate": "2022-07-01T02:00:00.000+00:00",
-  "sustainabilityMetric": 0.41335288,
-  "foundedDate": 2020,
-  "countryID": 172,
-  "country": "Portugal",
-  "city": "Lisbon",
+{
+  "clientID": 668,
+  "name": "Sunfire",
+  "logo": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1676009885/Startups/idgakaw4vpykudzpl978.jpg",
+  "website": "http://www.sunfire.de",
+  "domain": "sunfire.de",
+  "pitchLine": "Sunfire develops and manufactures industrial electrolysers for the production of renewable hydrogen and syngas.<br><br>The electrolyzers - based on alkaline and solid oxide technologies - are producing hydrogen and Syngas and are meant to decarbonize energy-intensive and climate-conscious businesses. The company either uses renewable electricity and water to produce green hydrogen, or includes captured CO2 in the process to produce renewable syngas which can be transferred into hydrocarbon products. Main applications for the produced fuels are refineries, steel manufacturing, chemicals, mobility, and the utility sector.<br><br>Sunfire develops an innovation that contributes to:<br>Climate change mitigation by producing green hydrogen and renewable syngas.<br>",
+  "description": "Developer of industrial electrolyzers designed to convert renewable electrical energy into fuels and gases. Innovative technology: Sunfire offers modular power plants and electrolysis systems to produce renewable energy, hydrogen and syngas. Provider of energy conversion technologies, including solid oxide fuel cells and renewable synthetic fuels based on solid oxide electrolyzers. Sunfire is an electrolysis company that designs and manufactures systems for the production of renewable industrial gas and fuel. A World Without Fossil Fuels. Sunfire develops and markets efficient energy supply concepts, which focus on the transformation of regenerative power into liquid petrol (power-to-liquids) or gas (power-to-gas). Develops and produces high-temperature fuel cells which facilitate the generation of electric power and heat. Developer of industrial electrolyzers designed to convert renewable electrical energy into fuels and gases. The company's renewable hydrogen and syngas as substitutes for fossil energy sources and offer electrolyzers based on alkaline and solid oxide (SOEC) technologies, enabling chemical, fuel, and steel industries to transform of energy Established in 2010 and based in Dresden, Germany, Sunfire is a world-leading industrial electrolysis company with two differentiated technologies. We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost-effective production of renewable hydrogen, syngas and e-Fuel.\n\nSunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group  global leaders in the renewable fuel and steel business. With more than 500 employees located in Germany and Switzerland and a well-established partner network, we realize large electrolysis projects to deliver on our promise: Creating a world without fossil fuels! Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat.\n\nSunfires vision is to make regenerative energy from sources such as wind farms, hydropower plants, and photovoltaic systems available wherever and whenever it is needed  not just when the wind is blowing, the waves are crashing or the sun is shining. Established in 2010 and based in Dresden, Germany, Sunfire is a world-leading industrial electrolysis company with two differentiated technologies. We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost-effective production of renewable hydrogen, syngas and e-Fuel.Sunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group  global leaders in the renewable fuel and steel business. With more than 500 employees located in Germany and Switzerland and a well-established partner network, we realize large electrolysis projects to deliver on our promise: Creating a world without fossil fuels! ognised global leader for off-grid and CHP units based on solide oxide fuel cell technology. Renewables Everywhere. With the co-electrolysis of Sunfire, CO2-neutral synthetic crude oil can be produced from water in combination with carbon dioxide and green electricity via syngas. A breakthrough fuel cell and electrolyser technology replacingtheconventional fossil fuel used in your car with CO2 neutral fuel created from green power, water and CO2 fromtheatmosphere. CO2 & Hydrogen. Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat. Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat. Sunfires vision is to make regenerative energy from sources such as wind farms, hydropower plants, and photovoltaic systems available wherever and whenever it is needed  not just when the wind is blowing, the waves are crashing or the sun is shining. Sunfire develops and produces high temperature electrolyzers SOEC and high temperature fuel cells SOFC . As water vapour is used in electrolysis efficiencies of up to H methane and about for fuels are achieved.Customer ProblemTarget groups are energy chemical refinery and utility companies. Energy suppliers can work on a more efficient supply at certain points as the fuel cells can also use hydrocarbons.Business ModelSunfire offers its technology in the fields of CHP off grid production and hydrogen fuels. The product is then sold directly for individual orders.USPIn niche markets the special requirements and simpler logistics can give this system an economic advantage. Sunfire s entry markets are therefore small gas customers off grid applications and CHP plants for real estate.",
+  "fundingAmount": 2.8E8,
+  "fundingString": "280M",
+  "fundingAmountUSD": 3.1753658E8,
+  "fundingStringUSD": "318M",
+  "fundingRangeID": 9,
+  "fundingRange": ">250M",
+  "lastRoundDate": "2022-07-14T00:00:00.000+00:00",
+  "aggregationDate": "2022-05-23T14:09:44.703+00:00",
+  "acquisitionDate": "2021-05-25T00:00:00.000+00:00",
+  "sustainabilityMetric": 0.9335,
+  "foundedDate": 2010,
+  "countryID": 80,
+  "cityID": 34891,
+  "admin3ID": 32298,
+  "admin4ID": 74793,
+  "continentID": 3,
+  "country": "Germany",
+  "city": "Dresden",
+  "admin3": "Kreisfreie Stadt Dresden",
+  "admin4": "Dresden",
   "continent": "Europe",
-  "email": "info@netzeroinsights.com",
-  "phone": "+351 934 529 622",
+  "email": "info@sunfire.de",
+  "phone": "+49 351 8967970",
   "sizeID": 2,
-  "size": "11-50",
-  "stageID": 2,
-  "stage": "Early",
-  "linkedinURL": "https://www.linkedin.com/company/12649435/",
-  "twitterURL": "https://twitter.com/netzeroinsights/",
-  "facebookURL": "https://facebook.com/netzeroinsights/",
-  "directURL": "net-zero-insights-72592",
-  "sustainabilityMetricID": 2,
-  "lastRoundAmount": 320000,
-  "lastRoundAmountUSD": 326273,
-  "lastRoundAmountString": "320K",
-  "lastRoundAmountStringUSD": "326.3K",
-  "lastRoundType": "Pre-Seed",
+  "size": "11 - 50",
+  "stageID": 4,
+  "stage": "Scaling",
+  "linkedinURL": "https://www.linkedin.com/company/sunfire-gmbh/",
+  "twitterURL": "https://twitter.com/sunfire_dresden/",
+  "facebookURL": "https://facebook.com/1382355191983196/",
+  "directURL": "sunfire-668",
+  "sustainabilityMetricID": 4,
+  "lastRoundType": "Late VC",
   "tags": [
     {
       "tagTypeId": 74,
-      "definition": "Storage, manipulation, management, movement, control, display, switching, interchange, transmission or processing of data through data centres, including edge computing.",
       "tagType": {
         "id": 74,
         "tagType": "EU activity",
@@ -311,51 +302,54 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
           "platformOrder": 1
         }
       },
-      "id": 488,
+      "id": 405,
       "filterable": true,
-      "label": "Data processing, hosting and related activities"
+      "label": "Manufacture of equipment for the production and use of hydrogen"
     },
     {
-      "tagTypeId": 3,
+      "tagTypeId": 11,
       "tagType": {
-        "id": 3,
-        "tagType": "technology",
-        "platformOrder": 3,
+        "id": 11,
+        "tagType": "environmental objective",
+        "platformOrder": 7,
         "tagFamily": {
-          "id": 2,
-          "tagFamily": "Solutions",
-          "platformOrder": 2
+          "id": 1,
+          "tagFamily": "EU taxonomy",
+          "platformOrder": 1
         }
       },
-      "id": 14,
+      "id": 374,
       "filterable": true,
-      "label": "artificial intelligence (AI)"
+      "label": "climate change mitigation"
     }
   ],
   "fundingTypes": [
+    "Grant",
     "Equity"
   ],
   "sdgs": [
+    {
+      "id": 7,
+      "label": "7. Affordable and clean energy"
+    },
     {
       "id": 13,
       "label": "13. Climate action"
     }
   ],
   "note": "",
-  "fundingRangeUSD": "0 - 500K",
-  "fundingRangeIDUSD": 1,
-  "alternativeNames": [
-    "Eutopia Green",
-    "Net0i",
-    "Eutopia"
-  ],
-  "legalNames": [
-    " Net Zero Insights Unipessoal Lda",
-    "Net Zero Insights Holding Limited"
-  ],
-  "numberOfGrants": 1,
-  "id": 42080,
-  "eutopiaScore": 41
+  "platformOrder": 285.0,
+  "roundCount": 10,
+  "roundWithDateCount": 10,
+  "fundingRangeUSD": ">250M",
+  "fundingRangeIDUSD": 9,
+  "profileQuality": 0.9545454545454546,
+  "webtext": "A world without fossil fuels Over decades, we have been excessively consuming coal, crude oil and natural gas, releasing billions of tons of CO2 into the atmosphere. Sunfires mission is to replace these fossil fuels with renewable energy, turning renewable electricity  and captured CO2  into renewable gases and liquids. We empower industries to transform Sunfire brings renewables everywhere. Our electrolyzers produce renewable hydrogen and syngas, a mixture of hydrogen and carbon monoxide, from renewable electricity, water steam and captured CO2. With our electrolysis solutions, we help energy-intensive industries and climate-conscious businesses to decarbonize entire value chains: From logistics over material inputs to energy supply. Hydrogen Sunfire-HyLink electrolyzers produce renewable hydrogen  the feedstock and energy carrier that decarbonizes industries as well as the energy and mobility sector. Syngas Sunfire-SynLink electrolyzers produce renewable syngas  the feed gas for different hydrocarbon products such as e-Fuel and chemicals. Electrolysis Solutions Sunfires electrolyzers based on Alkaline and solid oxide (SOEC) technologies are the optimal electrolysis solution for all hydrogen and syngas applications. High temperature SOEC electrolyzers are the preferred choice for industrial applications when steam (and CO2) is available. For all applications without or limited steam availability, Sunfires ultra-reliable pressurized Alkaline electrolyzers are the cost-effective solution for hydrogen production. Alkaline Electrolyzers The established electrolysis solution for renewable hydrogen production in any setting. With several decades of proven system runtime, our Alkaline electrolyzers are the reliable, ready-to-use solution for large hydrogen projects. Durability Alkaline electrolyzers are the rock-solid electrolysis solution with a proven system lifetime of at least 90,000 operating hours. They are ideally suited for any hydrogen project in which reliability and robustness is of elevated importance. High Pressure Alkaline electrolyzers deliver hydrogen at a pressure of 30 bar(g). As most hydrogen off-takers require hydrogen at high pressure, the electrolyzers eliminate the need for costly investments into additional downstream compression units. SOEC Electrolyzers The game-changing electrolysis solution for industrial settings. Running at 850 C, SOEC electrolyzers utilize industrial off-heat to process water steam (and CO2) to renewable hydrogen or syngas at lowest electricity costs. Conversion Effieciency SOEC electrolyzers target the largest cost driver in hydrogen and syngas production: renewable electricity. By integrating off-heat from industrial processes, our SOECs achieve an electrical efficiency of up to 84 %LHV to AC, realizing substantial savings on renewable electricity. Co-electrolysis SOEC electrolyzers can process water and CO2 to syngas  in one single process step. The co-electrolysis capability generates a substantial efficiency and cost advantage over conventional two-step syngas production pathways using a reverse-water-gas-shift reactor. Latest News Activities beyond electrolysis Sunfire is not only recognized as a leading industrial electrolysis company - we also offer an off-grid power supply solution based on solid oxide fuel cell (SOFC) technology. Sunfire-Remote enables clean and reliable power supply in moderate and harsh environments. Next A world without fossil fuels Over decades, we have been excessively consuming coal, crude oil and natural gas, releasing billions of tons of CO2 into the atmosphere. Sunfires mission is to replace these fossil fuels with renewable energy, turning renewable electricity  and captured CO2  into renewable gases and liquids. We empower industries to transform Sunfire brings renewables everywhere. Our electrolyzers produce renewable hydrogen and syngas, a mixture of hydrogen and carbon monoxide, from renewable electricity, water steam and captured CO2. With our electrolysis solutions, we help energy-intensive industries and climate-conscious businesses to decarbonize entire value chains: From logistics over material inputs to energy supply. Hydrogen Sunfire-HyLink electrolyzers produce renewable hydrogen  the feedstock and energy carrier that decarbonizes industries as well as the energy and mobility sector. Syngas Sunfire-SynLink electrolyzers produce renewable syngas  the feed gas for different hydrocarbon products such as e-Fuel and chemicals. Learn more Electrolysis Solutions Sunfires electrolyzers based on Alkaline and solid oxide (SOEC) technologies are the optimal electrolysis solution for all hydrogen and syngas applications. High temperature SOEC electrolyzers are the preferred choice for industrial applications when steam (and CO2) is available. For all applications without or limited steam availability, Sunfires ultra-reliable pressurized Alkaline electrolyzers are the cost-effective solution for hydrogen production. Alkaline Electrolyzers The established electrolysis solution for renewable hydrogen production in any setting. With several decades of proven system runtime, our Alkaline electrolyzers are the reliable, ready-to-use solution for large hydrogen projects. Durability Alkaline electrolyzers are the rock-solid electrolysis solution with a proven system lifetime of at least 90,000 operating hours. They are ideally suited for any hydrogen project in which reliability and robustness is of elevated importance. High Pressure Alkaline electrolyzers deliver hydrogen at a pressure of 30 bar(g). As most hydrogen off-takers require hydrogen at high pressure, the electrolyzers eliminate the need for costly investments into additional downstream compression units. Read more SOEC Electrolyzers The game-changing electrolysis solution for industrial settings. Running at 850 C, SOEC electrolyzers utilize industrial off-heat to process water steam (and CO2) to renewable hydrogen or syngas at lowest electricity costs. Conversion Effieciency SOEC electrolyzers target the largest cost driver in hydrogen and syngas production: renewable electricity. By integrating off-heat from industrial processes, our SOECs achieve an electrical efficiency of up to 84 %LHV to AC, realizing substantial savings on renewable electricity. Co-electrolysis SOEC electrolyzers can process water and CO2 to syngas  in one single process step. The co-electrolysis capability generates a substantial efficiency and cost advantage over conventional two-step syngas production pathways using a reverse-water-gas-shift reactor. A world without fossil fuels Over decades, we have been excessively consuming coal, crude oil and natural gas, releasing billions of tons of CO 2 into the atmosphere. Sunfires mission is to replace these fossil fuels with renewable energy, turning renewable electricity  and captured CO 2  into renewable gases and liquids. We empower industries to transform Sunfire brings renewables everywhere. Our electrolyzers produce renewable hydrogen and syngas, a mixture of hydrogen and carbon monoxide, from renewable electricity, water steam and captured CO 2 . With our electrolysis solutions, we help energy-intensive industries and climate-conscious businesses to decarbonize entire value chains: From logistics over material inputs to energy supply.",
+  "numberOfEquityRounds": 8,
+  "numberOfGrants": 2,
+  "id": 527,
+  "fundRaising": false,
+  "eutopiaScore": 93
 }
 ```
 
@@ -429,7 +423,7 @@ Response code | Meaning
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/investors/72592"
+-X GET "https://api.netzeroinsights.com/investors/668"
 ```
 
 > In case of a 200 response, the response body will contain the requested investors, with the format specified at section [Investor](#investor).
@@ -437,16 +431,16 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```json
 [
   {
-    "id": 15265,
-    "name": "Chris Goodall",
+    "id": 13333,
+    "name": "Amazon Climate Pledge Fund",
     "firstRoundDate": "Jul 2022",
-    "roundTypes": "Pre-Seed"
+    "roundTypes": "Late VC"
   },
   {
-    "id": 15316,
-    "name": "Miguel de Ros",
-    "firstRoundDate": "Jul 2022",
-    "roundTypes": "Pre-Seed"
+    "id": 19364,
+    "name": "IPCEI",
+    "firstRoundDate": "Jun 2022",
+    "roundTypes": "Grant"
   }
 ]
 ```
@@ -469,7 +463,7 @@ Response code | Meaning
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 -X POST "https://api.netzeroinsights.com/contacts" \
 -H "Content-Type: application/json" \
--d "{'clientID': 72592, 'decisionMaker': false, 'roleID': 5}"
+-d "{'clientID': 668, 'decisionMaker': false, 'roleID': 5}"
 ```
 
 > In case of a 200 response, the response body will contain all the requested contacts, with the format specified at section [Contact](#contact).
@@ -477,13 +471,22 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```json
 [
   {
-    "name": "Aafia Tehrim",
-    "role": "Climate Tech Analyst",
+    "name": "Hergen Wolf",
+    "role": "Director Product Management",
     "department": "Tech",
-    "email": "aafia@netzeroinsights.com",
-    "linkedinURL": "http://www.linkedin.com/in/aafia-tehrim-36856920a",
-    "decisionMaker": false,
-    "id": 1112723
+    "email": "hergenthore.wolf@sunfire.de",
+    "linkedinURL": "http://www.linkedin.com/in/hergen-wolf",
+    "decisionMaker": true,
+    "id": 1170662
+  },
+  {
+    "name": "David Hering",
+    "role": "Head Of Production",
+    "department": "Tech",
+    "email": "david.hering@sunfire.de",
+    "linkedinURL": "http://www.linkedin.com/in/david-hering-07a169247",
+    "decisionMaker": true,
+    "id": 1170669
   }
 ]
 ```
@@ -504,7 +507,7 @@ Response code | Meaning
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET https://api.netzeroinsights.com/fundingRoundsPrints/72592
+-X GET https://api.netzeroinsights.com/fundingRoundsPrints/668
 ```
 
 > In case of a 200 response, the response body will contain the requested funding rounds, with the format specified at section [Funding Round](#funding-round).
@@ -512,35 +515,42 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```json
 [
   {
-    "clientId": 72592,
-    "roundDate": "2022-07-01T02:00:00.000+00:00",
-    "roundType": "Pre-Seed",
-    "roundAmount": 320000.0,
-    "roundAmountUSD": 326273.0,
-    "roundAmountId": 1,
-    "coFundingRoundId": 168677,
-    "fundingRange": "0 - 500K",
+    "clientId": 668,
+    "roundDate": "2022-07-14T00:00:00.000+00:00",
+    "roundType": "Late VC",
+    "roundAmount": 0.0,
+    "coFundingRoundId": 138720,
     "roundInvestors": [
-      15265,
-      15266,
-      15317,
-      18450,
-      15316
+      13333
     ],
     "roundNews": [
-      86510,
-      87287
+      58824,
+      58825,
+      58826
     ],
-    "roundCurrency": "EUR",
-    "source": "andrea_canepa",
-    "originalRoundAmount": 320000.0,
-    "valuationAmount": "1600000",
-    "valuationCurrency": "EUR",
-    "valuationType": "post-money",
-    "financingInstrument": "Grant",
-    "equityStageID": 2,
+    "source": "pratik_gohil",
+    "financingInstrument": "Equity",
+    "equityStageID": 4,
     "exitStageID": 1,
-    "id": 152398
+    "id": 143791
+  },
+  {
+    "clientId": 668,
+    "roundDate": "2022-07-01T00:00:00.000+00:00",
+    "roundType": "Grant",
+    "roundAmount": 0.0,
+    "coFundingRoundId": 177701,
+    "roundInvestors": [
+      19364
+    ],
+    "roundNews": [
+      72998
+    ],
+    "source": "sharmila_bojan",
+    "financingInstrument": "Grant",
+    "equityStageID": 5,
+    "exitStageID": 1,
+    "id": 154414
   }
 ]
 ```
@@ -563,7 +573,7 @@ Response code | Meaning
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 -X POST https://api.netzeroinsights.com/getFundingRoundInvestors \
 -H "Content-Type: application/json" \
--d "{[168677]}"
+-d "{[86971]}"
 ```
 
 > In case of a 200 response, the response body will contain all the investors of the requested funding rounds, with the format specified at section [Funding Round Investor](#funding-round-investor).
@@ -571,16 +581,22 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```json
 [
   {
-    "id": 15265,
-    "name": "Chris Goodall",
-    "website": "https://uk.linkedin.com/in/chris-goodall-b2a51510",
-    "fundingRoundId": 168677
+    "id": 10140,
+    "name": "Blue Earth Capital",
+    "website": "https://blueearth.capital/",
+    "fundingRoundId": 86971
   },
   {
-    "id": 15266,
-    "name": "Tony Lent",
-    "website": "https://www.linkedin.com/in/tony-lent-80096a",
-    "fundingRoundId": 168677
+    "id": 3222,
+    "name": "Carbon Direct Capital Management",
+    "website": "https://carbon-direct.com/",
+    "fundingRoundId": 86971
+  },
+  {
+    "id": 6970,
+    "name": "Copenhagen Infrastructure Partners",
+    "website": "https://cipartners.dk/",
+    "fundingRoundId": 86971
   }
 ]
 ```
@@ -601,7 +617,7 @@ Response code | Meaning
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
- -X GET https://api.netzeroinsights.com/roundNewsByRoundID/168677
+ -X GET https://api.netzeroinsights.com/roundNewsByRoundID/86971
 ```
 
 > In case of a 200 response, the response body will contain all the sources of a funding rounds, with the format specified at section [Funding round source](#funding-round-source).
@@ -609,10 +625,19 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```json
 [
   {
-    "id": 86510,
-    "googleTitle": "",
-    "url": "https://netzeroinsights.com/resources/our-updates/net-zero-insights-raises-320k-in-pre-seed-funding-to-develop-climate-tech-market-intelligence-software/",
-    "fundingRoundId": 168677
+    "id": 50021,
+    "url": "https://www.sunfire.de/en/news/detail/sunfire-secures-further-growth-capital-and-an-agreement-for-up-to-640-mw-electrolysis-offtake",
+    "fundingRoundId": 86971
+  },
+  {
+    "id": 39628,
+    "url": "https://tech.eu/2022/03/24/sunfire-gets-eur195-million-backing-to-support-european-energy-independence",
+    "fundingRoundId": 86971
+  },
+  {
+    "id": 39629,
+    "url": "https://renewablesnow.com/news/sunfire-raises-eur-86m-to-scale-electrolysers-production-778402/",
+    "fundingRoundId": 86971
   }
 ]
 ```
