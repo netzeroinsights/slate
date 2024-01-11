@@ -107,10 +107,10 @@ Please note that manually closing a session is not required, since it will be cl
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 -X POST 'https://api.netzeroinsights.com/getStartupList' \
 -H 'Content-Type: application/json' \                 
--d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "sorting": {}}'
+-d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
 
-> In case of a 200 response, the response body will contain the startups matching your request, with the format specified at section [Startup Search](#startup-search).
+> In case of a 200 response, the response body will contain all the startups matching your request, with the format specified at section [Startup Search](#startup-search).
 
 ```json
 {
@@ -652,19 +652,269 @@ Response code | Meaning
 --------- | -----------
 200 | Request successful
 
+# Deals List
+
+> To get the deals list, use this code:
+
+```shell
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X POST 'https://api.netzeroinsights.com/getFundingRoundList' \
+-H 'Content-Type: application/json' \                 
+-d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
+```
+
+> In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section [Deals Search](#deals-search).
+
+```json
+{
+  "roundsTotalFunding": 5.38828746078E11,
+  "selectedCurrency": "USD",
+  "count": 52018,
+  "results": [
+    {
+      "clientId": 5051,
+      "clientName": "Lightmatter",
+      "clientLogoURL": "https://res.cloudinary.com/eutop-1/image/upload/b_white/v1685627341/Startups/rshobgpyjrff2mxdubu0.jpg",
+      "clientPitchLine": "Lightmatter specializes in developing advanced computing solutions using an approach known as photonic computing. <br><br>Lightmatter provides photonic processors, utilizing light instead of electrons for faster and more energy-efficient computations. Their technology integrates optical components into existing semiconductor manufacturing processes, enabling faster data transfer rates while minimizing environmental impact. Lightmatter's photonic processors are designed for demanding applications such as AI, machine learning, and data analytics, providing faster training and inference times. <br><br>Lightmatter develops an innovation that contributes to:<br>Climate change mitigation by providing an energy-efficient alternative to traditional electronic processors.",
+      "clientHQ": "United States",
+      "clientCityHQ": "Boston",
+      "clientCountryCode": "US",
+      "clientCountryID": 226,
+      "clientContinentID": 4,
+      "clientFoundedDate": "2017",
+      "roundDate": "2024-01-10T14:58:00.000+00:00",
+      "roundType": "Series C",
+      "roundAmount": 0.0,
+      "roundInvestors": [
+        10729
+      ],
+      "roundInvestorPOJOs": [
+        {
+          "id": 10729,
+          "name": "Sip Global Partners",
+          "website": "https://sipgp.com/",
+          "fundingRoundId": 437610
+        }
+      ],
+      "roundNewsPOJOs": [
+        {
+          "id": 127597,
+          "title": "",
+          "url": "https://www.finsmes.com/2024/01/lightmatter-receives-follow-on-investment-from-sip-global-partners-now-valued-at-1-2b.html",
+          "coFundingRoundID": 437610
+        },
+        {
+          "id": 99932,
+          "title": "",
+          "url": "",
+          "coFundingRoundID": 437610
+        }
+      ],
+      "numberOfRounds": 8,
+      "totalFunding": 3.77524344E8,
+      "totalFundingUSD": 4.22E8,
+      "totalFundingString": "378M",
+      "totalFundingStringUSD": "422M",
+      "roundNumber": 6,
+      "financingInstrument": "Equity",
+      "lastRound": true,
+      "equityStageID": 4,
+      "exitStageID": 1,
+      "id": 437610
+    }
+  ]
+}
+```
+
+To search our deals database you should use the following endpoint:
+
+`POST /getFundingRoundList`
+
+With a JSON request body in the format specified at the section [Main Filter](#main-filter).
+
+The possible response codes are:
+
+Response code | Meaning
+--------- | -----------
+200 | Request successful
+
+# Investors List
+
+> To get the investors list, use this code:
+
+```shell
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X POST 'https://api.netzeroinsights.com/getInvestorList' \
+-H 'Content-Type: application/json' \                 
+-d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
+```
+
+> In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section [Investors Search](#investors-search).
+
+```json
+{
+  "count": 22736,
+  "totalFunding": 5.3894282550809375E11,
+  "results": [
+    {
+      "investorID": 31522,
+      "name": "Johannes Reck",
+      "description": "Co-Founder & CEO at GetYourGuide.",
+      "linkedInURL": "https://www.linkedin.com/in/johannesreck/",
+      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1703301964/Investors/kjaifkplzbgioerv6ufh.jpg",
+      "numberOfDeals": 3,
+      "numberOfDealsFiltered": 3,
+      "lastDealType": "Pre-Seed",
+      "lastDealDate": "2022-05-24T06:56:00.000+00:00",
+      "note": "",
+      "primaryTypeID": 44,
+      "primaryType": "Angel",
+      "secondaryTypes": [],
+      "investments": [
+        {
+          "id": 103304,
+          "clientID": 133823,
+          "url": "tacto-133823",
+          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/b_white/v1702653069/Startups/v7smvvz8vasm8fg1vfjy.jpg",
+          "name": "Tacto",
+          "pitchline": "Tacto helps mid-sized industrial organizations manage the rising complexity of supply chains.<br><br>Tacto's central operating system automates procurement workflows, ensuring compliance and sustainability in the supply chain. The software streamlines material sourcing and automates manual tasks related to regulatory compliance, including requirements from various Supply Chain Acts. It utilizes AI technology and advanced analytics to identify cost-saving opportunities in procurement spend by analyzing price developments in key cost drivers across the entire article portfolio.<br><br>Tacto develops an innovation that contributes to:<br>Climate change mitigation by enabling supply chain optimization.",
+          "country": "Germany",
+          "totalFunding": 55300000,
+          "totalFundingUSD": 60433297,
+          "lastRoundType": "Early VC",
+          "lastRoundAmount": 50000000,
+          "lastRoundAmountUSD": 54599708,
+          "lastRoundDate": "2023-12-12",
+          "investorSince": "2020-12-07T12:03:00.000+00:00"
+        },
+        {
+          "id": 78453,
+          "clientID": 102940,
+          "url": "navit-102940",
+          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
+          "name": "NAVIT",
+          "pitchline": "NAVIT enables businesses to provide their employees with sustainable and flexible transportation options, accompanied by automated CO2 footprint calculations and offsetting.<br><br>NAVIT offers a platform that simplifies the management of employee mobility budgets through contemporary transportation options like car-sharing, bike subscriptions, and public transportation. By providing a monthly mobility budget, NAVIT eliminates the need for administrative tracking and allows employees to select their preferred mode of transportation, such as shared mobility, rented bikes or cars, or using fuel/charge cards for their personal vehicles. Additionally, the platform helps businesses measure, report, and offset their mobility-relevant carbon footprints.<br><br>NAVIT develops an innovation that contributes to:<br>Climate change mitigation by enabling carbon offsetting.<br>The transition to a circular economy by promoting shared mobility.",
+          "country": "Germany",
+          "totalFunding": 3500000,
+          "totalFundingUSD": 3846066,
+          "lastRoundType": "Seed",
+          "lastRoundAmount": 3500000,
+          "lastRoundAmountUSD": 3846066,
+          "lastRoundDate": "2023-04-24",
+          "investorSince": "2022-05-24T06:56:00.000+00:00"
+        }
+      ],
+      "coInvestors": [
+        {
+          "id": 25583,
+          "investorID": 31521,
+          "name": "Torsten Reil",
+          "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1703301895/Investors/oyjit8cen1fbmxaw31ag.jpg",
+          "investorType": "Angel",
+          "numberOfCoInvestments": 2
+        },
+        {
+          "id": 390,
+          "investorID": 2231,
+          "name": "Visionaries Club",
+          "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1691489048/Investors/v6p86exktszwvalmrtvm.jpg",
+          "investorType": "Venture Capital",
+          "country": "Germany",
+          "numberOfCoInvestments": 2
+        },
+        {
+          "id": 2781,
+          "investorID": 9433,
+          "name": "Michael Wax",
+          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
+          "investorType": "Angel",
+          "numberOfCoInvestments": 2
+        },
+        {
+          "id": 2697,
+          "investorID": 9194,
+          "name": "Uvc Partners",
+          "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1688443543/Investors/yavw0khx5vvqwz7zxvcv.jpg",
+          "investorType": "Venture Capital",
+          "country": "Germany",
+          "numberOfCoInvestments": 2
+        },
+        {
+          "id": 6557,
+          "investorID": 17643,
+          "name": "Hanno Renner",
+          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
+          "investorType": "Angel",
+          "country": "Germany",
+          "numberOfCoInvestments": 2
+        },
+        {
+          "id": 14220,
+          "investorID": 664,
+          "name": "Cherry Ventures",
+          "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1691449060/Investors/lakn7t317zcr3aa3qnse.jpg",
+          "investorType": "Private Equity",
+          "country": "Germany",
+          "numberOfCoInvestments": 1
+        },
+        {
+          "id": 13112,
+          "investorID": 26676,
+          "name": "Arabella Capital",
+          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
+          "numberOfCoInvestments": 1
+        },
+        {
+          "id": 25989,
+          "investorID": 31868,
+          "name": "Christoph Bornschein",
+          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
+          "investorType": "Angel",
+          "numberOfCoInvestments": 1
+        },
+        {
+          "id": 25990,
+          "investorID": 31869,
+          "name": "Javier Suarez",
+          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
+          "investorType": "Angel",
+          "numberOfCoInvestments": 1
+        }
+      ]
+    }
+  ]
+}
+```
+
+To search our investors database you should use the following endpoint:
+
+`POST /getInvestorList`
+
+With a JSON request body in the format specified at the section [Main Filter](#main-filter).
+
+The possible response codes are:
+
+Response code | Meaning
+--------- | -----------
+200 | Request successful
+
 # Filters structure
 
 ## Main Filter
 
 This is the main filter used when searching for startups. It contains two simple fields (”offset” and ”limit”) and some complex ones (i.e.: ”include”, ”sorting”) defined further in this document.
 
-Parameter name | Parameter type | Description
---------- | ----------- | -------------------
-limit | int | Maximum number of results shown
-offset | int | Number of pages (of size "limit") skipped
-sorting | Section [Sorting](#sorting) | Order of the results
-include | Section [Startups Filter](#startups-filter) | Filters related to startups which should be included in the result
-exclude | Section [Startups Filter](#startups-filter) | Filters related to startups which should be excluded in the result
+ Parameter name      | Parameter type                                | Description                                                        
+---------------------|-----------------------------------------------|--------------------------------------------------------------------
+ limit               | int                                           | Maximum number of results shown                                    
+ offset              | int                                           | Number of pages (of size "limit") skipped                          
+ sorting             | Section [Sorting](#sorting)                   | Order of the results                                               
+ include             | Section [Startups Filter](#startups-filter)   | Filters related to startups which should be included in the result 
+ exclude             | Section [Startups Filter](#startups-filter)   | Filters related to startups which should be excluded in the result 
+ fundingRoundInclude | Section [Deals Filter](#deals-filter)         | Filters related to deals which should be included in the result 
+ fundingRoundExclude | Section [Deals Filter](#deals-filter)         | Filters related to deals which should be excluded in the result 
+ investorInclude     | Section [Investors Filter](#investors-filter) | Filters related to investors which should be included in the result 
+ investorExclude     | Section [Investors Filter](#investors-filter) | Filters related to investors which should be excluded in the result 
 
 ## Sorting
 
