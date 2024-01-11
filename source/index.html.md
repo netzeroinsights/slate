@@ -976,7 +976,7 @@ fundRaising | List of string | Use ”fundRaising” to see all the companies li
  lastRoundDays        | List of int                                 | Maximun number of days passed since the deal was closed
  amountFrom           | int                                         | Minimum deal amount                                                                                            
  amountTo             | int                                         | Maximum deal amount                                                                                            
- types                | List of string                              | See Section [Deal Type](#deal-type) for the accepted values                                                  
+ types                | List of int                                 | See Section [Deal Type](#deal-type) for the accepted values                                                  
  allowNullAmounts     | boolean                                     | When searching with deal amount filters, if true, include deals with no deal amount                            
  numberFrom           | int                                         | Minimum deal number for the company                                                                            
  numberTo             | int                                         | Maximum deal number for the company                                                                            
