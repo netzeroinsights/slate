@@ -998,7 +998,7 @@ This is the main filter used when searching for startups. It contains two simple
 | investorSearchableLocations | List of int    | See Section [Searchable Locations](#searchable-locations) for the accepted values                                            |
 | investorRegions             | List of int    | See Section [Investor Regions](#investor-regions) for accepted values                                                        |
 | coInvestors                 | List of int    | See Section [Investors](#investors) for accepted values                                                                      |
-| investments                 | List of int    | Using the endpoint [Startup List](#startups-list) it's possible to fetch their clientIDs to be used here                     |
+| investments                 | List of int    | Using the endpoint [Startup List](#startup-list) it's possible to fetch their clientIDs to be used here                      |
 | investorIDs                 | List of int    | See Section [Investors](#investors) for accepted values                                                                      |
 | investorFoundedDatesFrom    | date           | Starting founded date of the investor                                                                                        |
 | investorFoundedDatesTo      | date           | Maximum founded date of the investor                                                                                         |
