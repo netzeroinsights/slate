@@ -465,6 +465,53 @@
               </ul>
           </li>
           <li>
+            <a href="#taxonomy-page" class="toc-h1 toc-link" data-title="Taxonomy Page">Taxonomy Page</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#taxonomy-graph-items-of-parent-item" class="toc-h2 toc-link" data-title="Taxonomy Graph Items of Parent Item">Taxonomy Graph Items of Parent Item</a>
+                  </li>
+                  <li>
+                    <a href="#top-companies" class="toc-h2 toc-link" data-title="Top Companies">Top Companies</a>
+                  </li>
+                  <li>
+                    <a href="#top-investors" class="toc-h2 toc-link" data-title="Top Investors">Top Investors</a>
+                  </li>
+                  <li>
+                    <a href="#all-taxonomy-items" class="toc-h2 toc-link" data-title="All Taxonomy Items">All Taxonomy Items</a>
+                  </li>
+                  <li>
+                    <a href="#taxonomy-item" class="toc-h2 toc-link" data-title="Taxonomy Item">Taxonomy Item</a>
+                  </li>
+                  <li>
+                    <a href="#taxonomy-item-relation" class="toc-h2 toc-link" data-title="Taxonomy Item Relation">Taxonomy Item Relation</a>
+                  </li>
+                  <li>
+                    <a href="#taxonomy-item-relations-by-parentid" class="toc-h2 toc-link" data-title="Taxonomy Item Relations by ParentID">Taxonomy Item Relations by ParentID</a>
+                  </li>
+                  <li>
+                    <a href="#taxonomy-item-relations-by-childid" class="toc-h2 toc-link" data-title="Taxonomy Item Relations by ChildID">Taxonomy Item Relations by ChildID</a>
+                  </li>
+                  <li>
+                    <a href="#trls" class="toc-h2 toc-link" data-title="TRLs">TRLs</a>
+                  </li>
+                  <li>
+                    <a href="#tags-2" class="toc-h2 toc-link" data-title="Tags">Tags</a>
+                  </li>
+                  <li>
+                    <a href="#tag-type" class="toc-h2 toc-link" data-title="Tag Type">Tag Type</a>
+                  </li>
+                  <li>
+                    <a href="#tag-family" class="toc-h2 toc-link" data-title="Tag Family">Tag Family</a>
+                  </li>
+                  <li>
+                    <a href="#tag-template" class="toc-h2 toc-link" data-title="Tag Template">Tag Template</a>
+                  </li>
+                  <li>
+                    <a href="#map-card" class="toc-h2 toc-link" data-title="Map Card">Map Card</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -2540,6 +2587,1590 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Internal person ID</td>
 </tr>
 </tbody></table>
+<h1 id='taxonomy-page'>Taxonomy Page</h1><h2 id='taxonomy-graph-items-of-parent-item'>Taxonomy Graph Items of Parent Item</h2>
+<blockquote>
+<p>To get Taxonomy Graph Item list without any parameter, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the available taxonomy graph items, with the JSON structured like the following:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions map"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Solutions Map simplifies your exploration of climate tech solutions. We've categorized over 200 solutions into Challenge Areas like Energy, Industry, Transport, and more. When you choose a solution, you can dive into its sub-solutions if they exist. You can also access insights, active investors, and information about startups and SMEs for each solution."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tagID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1399</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"companyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">39491</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dealCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">41425</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">424336443804</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">473836670179</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasChildren"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">347</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deep Dives map"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Deep Dives offers a meticulous mapping of the most innovative and extensively researched fields in the realm of Climate Tech. These curated maps serve as a direct, technologically advanced interface, simplifying navigation through the intricate landscape of climate technology. Users can seamlessly delve into specific areas such as Cement and Concrete, Carbon Offset and Markets, Marine Energy, and Hydrogen, gaining valuable insights into advancements, sub-solutions, and active investors. "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tagID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1412</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"companyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">68748</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dealCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">-9223372036854775808</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">-9223372036854775808</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasChildren"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">359</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Software map"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Software Map is a comprehensive visual representation that outlines the diverse array of software solutions within the climate tech landscape. This map provides a detailed overview of software applications tailored to address climate challenges across various sectors, including energy, transport, industry, food and agriculture, built environment, natural environment, and more. "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tagID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1823</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"companyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">68850</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dealCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">-9223372036854775808</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">-9223372036854775808</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasChildren"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">660</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>To get a list of child Taxonomy Graph Items of a parent item, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/Biofuel'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>Or</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/2'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the available child items of a parent item by ID or label, with the JSON structured like the following:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bioethanol"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bioethanol is produced through the fermentation of organic materials, such as crops like corn, and sugarcane, or cellulose-rich feedstocks like switchgrass. This process converts the sugars within these materials into ethanol using microorganisms. Bioethanol is a key player in the quest for sustainable transportation fuels, as it can be blended with gasoline to reduce greenhouse gas emissions and dependence on fossil fuels. When compared to other sustainable fuels like biodiesel or synthetic fuels, bioethanol has specific advantages, such as its compatibility with existing gasoline engines and infrastructure."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tagID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1093</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"companyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dealCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasChildren"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bio-Oil"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bio-oil is produced from biomass sources like wood chips, agricultural residues, or algae. It is typically created through a process called pyrolysis or fast pyrolysis, which involves heating biomass in the absence of oxygen to break it down into a liquid form. Bio-oil can be used as a replacement for traditional fossil fuels in applications such as power generation and heating, and it can also serve as a feedstock for the production of biofuels and other valuable chemicals. Compared to other sustainable fuels like bioethanol or biodiesel, bio-oil offers advantages such as a higher energy density and the potential for versatile applications."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tagID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1094</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"companyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dealCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">1924706</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">2264121</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasChildren"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h2 id='top-companies'>Top Companies</h2>
+<blockquote>
+<p>To get Top Companies of a Taxonomy Graph Item, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/topCompanies/1783'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain at most 3 available companies of the specified item by ID, with the JSON structured like the following:
+<code>json
+[
+    {
+        &quot;clientID&quot;: 112504,
+        &quot;name&quot;: &quot;R3Energise&quot;,
+        &quot;logo&quot;: &quot;https://res.cloudinary.com/eutop-1/image/upload/b_white/v1690205436/Startups/owsivo12opurbi23pgr7.jpg&quot;,
+        &quot;website&quot;: &quot;https://www.r3energise.com/&quot;,
+        &quot;domain&quot;: &quot;r3energise.com&quot;,
+        &quot;pitchLine&quot;: &quot;R3Energise aims to support vessel operators in their transition to cleaner operations for their existing fleet. The ideal client grants R3Energise the opportunity to perform a feasibility study to assess the most suitable arrangement for their vessel, minimising the impact on their operations, CAPEX/OPEX and the environment. With our expertise ranging from CTV’s to ferries, survey vessels to SOV’s, R3Energise is a reliable partner in taking on these challenges and advising its clients.&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;fundingAmount&quot;: 124343.0,
+        &quot;fundingString&quot;: &quot;124K&quot;,
+        &quot;fundingAmountUSD&quot;: 134097.0,
+        &quot;fundingStringUSD&quot;: &quot;134K&quot;,
+        &quot;fundingRangeID&quot;: 1,
+        &quot;fundingRange&quot;: &quot;0 - 500K&quot;,
+        &quot;lastRoundDate&quot;: &quot;2023-01-01T13:31:00.000+00:00&quot;,
+        &quot;sustainabilityMetric&quot;: 0.2769792,
+        &quot;foundedDate&quot;: 2023,
+        &quot;georowID&quot;: 928883,
+        &quot;countryID&quot;: 225,
+        &quot;country&quot;: &quot;United Kingdom&quot;,
+        &quot;city&quot;: &quot;Colchester&quot;,
+        &quot;continent&quot;: &quot;Europe&quot;,
+        &quot;email&quot;: &quot;info@r3energise.com&quot;,
+        &quot;phone&quot;: &quot;+44 7794 369903&quot;,
+        &quot;stageID&quot;: 1,
+        &quot;stage&quot;: &quot;Ideation&quot;,
+        &quot;linkedinURL&quot;: &quot;https://www.linkedin.com/company/r3energise-ltd/&quot;,
+        &quot;directURL&quot;: &quot;r3energise-112504&quot;,
+        &quot;sustainabilityMetricID&quot;: 2,
+        &quot;lastRoundAmount&quot;: 124343,
+        &quot;lastRoundAmountUSD&quot;: 134097,
+        &quot;lastRoundAmountString&quot;: &quot;124K&quot;,
+        &quot;lastRoundAmountStringUSD&quot;: &quot;134K&quot;,
+        &quot;lastRoundType&quot;: &quot;Grant&quot;,
+        &quot;tags&quot;: [
+            {
+                &quot;tagTypeId&quot;: 4,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;business model&quot;,
+                    &quot;platformOrder&quot;: 4,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Business models&quot;,
+                        &quot;platformOrder&quot;: 4,
+                        &quot;id&quot;: 4
+                    },
+                    &quot;id&quot;: 4
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 303,
+                &quot;label&quot;: &quot;service&quot;
+            }
+        ],
+        &quot;fundingTypes&quot;: [],
+        &quot;sdgs&quot;: [
+            {
+                &quot;id&quot;: 13,
+                &quot;label&quot;: &quot;13. Climate action&quot;
+            }
+        ],
+        &quot;note&quot;: &quot;&quot;,
+        &quot;roundCount&quot;: 1,
+        &quot;fundingRangeUSD&quot;: &quot;0 - 500K&quot;,
+        &quot;fundingRangeIDUSD&quot;: 1,
+        &quot;intellectualProperty&quot;: true,
+        &quot;numberOfGrants&quot;: 1,
+        &quot;sustainabilityMetricLabel&quot;: &quot;Average impact&quot;,
+        &quot;id&quot;: 85443,
+        &quot;eutopiaScore&quot;: 27
+    },
+    {
+        &quot;clientID&quot;: 102502,
+        &quot;name&quot;: &quot;Crux&quot;,
+        &quot;logo&quot;: &quot;https://res.cloudinary.com/eutop-1/image/upload/b_white/v1681744408/Startups/fecn84loniehxbch8aff.jpg&quot;,
+        &quot;website&quot;: &quot;https://www.cruxclimate.com/&quot;,
+        &quot;domain&quot;: &quot;cruxclimate.com&quot;,
+        &quot;pitchLine&quot;: &quot;Crux develops software solutions to enable streamlined and efficient transactions, providing enhanced access to financing for clean energy projects.&lt;br&gt;&lt;br&gt;Crux specializes in simplifying and streamlining the financing process for corporations, developers, syndicators, and financial institutions by focusing on transferable tax credits and the inflation reduction act. &lt;br&gt;&lt;br&gt;Crux develops an innovation that contributes to:&lt;br&gt;Climate change mitigation by facilitating the deployment of renewable energy solutions.&quot;,
+        &quot;description&quot;: &quot;The ecosystem for developers tax credit buyers and financial institutions to transact manage transferable tax credits br Crux serves as an ecosystem facilitating the management and transfer of tax credits br br Crux Climate is a digital marketplace that specializes in facilitating the acquisition and utilization of tax credits in the realm of clean energy\nCrux serves as an ecosystem facilitating the management and transfer of tax credits br br Crux Climate is a digital marketplace that specializes in facilitating the acquisition and utilization of tax credits in the realm of clean energy\nWith a primary focus on creating an accessible and efficient ecosystem for clean energy developers tax credit buyers and financial institutions br br Crux develops an innovation that contributes to br Climate change mitigation by facilitating the deployment of renewable energy solutions\nThe ecosystem for developers tax credit buyers and financial institutions to transact manage transferable tax credits br The ecosystem for developers tax credit buyers and financial institutions to transact manage transferable tax credits\nCrux develops software solutions to enable streamlined and efficient transactions providing enhanced access to financing for clean energy projects br br Crux specializes in simplifying and streamlining the financing process for corporations developers syndicators and financial institutions by focusing on transferable tax credits and the inflation reduction act\nbr br Crux develops an innovation that contributes to br Climate change mitigation by facilitating the deployment of renewable energy solutions&quot;,
+        &quot;fundingAmount&quot;: 8105481.0,
+        &quot;fundingString&quot;: &quot;8.11M&quot;,
+        &quot;fundingAmountUSD&quot;: 8850000.0,
+        &quot;fundingStringUSD&quot;: &quot;8.85M&quot;,
+        &quot;fundingRangeID&quot;: 4,
+        &quot;fundingRange&quot;: &quot;5M - 10M&quot;,
+        &quot;lastRoundDate&quot;: &quot;2023-06-21T07:47:00.000+00:00&quot;,
+        &quot;sustainabilityMetric&quot;: 0.47289187,
+        &quot;foundedDate&quot;: 2023,
+        &quot;georowID&quot;: 951798,
+        &quot;countryID&quot;: 226,
+        &quot;country&quot;: &quot;United States&quot;,
+        &quot;city&quot;: &quot;Washington&quot;,
+        &quot;continent&quot;: &quot;North America&quot;,
+        &quot;email&quot;: &quot;mail@business.com&quot;,
+        &quot;sizeID&quot;: 1,
+        &quot;size&quot;: &quot;1 - 10&quot;,
+        &quot;stageID&quot;: 2,
+        &quot;stage&quot;: &quot;Early&quot;,
+        &quot;linkedinURL&quot;: &quot;https://www.linkedin.com/company/cruxclimate/&quot;,
+        &quot;twitterURL&quot;: &quot;https://twitter.com/cruxclimate/&quot;,
+        &quot;directURL&quot;: &quot;crux-102502&quot;,
+        &quot;sustainabilityMetricID&quot;: 2,
+        &quot;lastRoundAmount&quot;: 3919175,
+        &quot;lastRoundAmountUSD&quot;: 4250000,
+        &quot;lastRoundAmountString&quot;: &quot;3.92M&quot;,
+        &quot;lastRoundAmountStringUSD&quot;: &quot;4.25M&quot;,
+        &quot;lastRoundType&quot;: &quot;Seed&quot;,
+        &quot;tags&quot;: [
+            {
+                &quot;tagTypeId&quot;: 4,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;business model&quot;,
+                    &quot;platformOrder&quot;: 4,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Business models&quot;,
+                        &quot;platformOrder&quot;: 4,
+                        &quot;id&quot;: 4
+                    },
+                    &quot;id&quot;: 4
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 237,
+                &quot;label&quot;: &quot;business to business (B2B)&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 4,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;business model&quot;,
+                    &quot;platformOrder&quot;: 4,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Business models&quot;,
+                        &quot;platformOrder&quot;: 4,
+                        &quot;id&quot;: 4
+                    },
+                    &quot;id&quot;: 4
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 295,
+                &quot;label&quot;: &quot;product&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 53,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;revenue model&quot;,
+                    &quot;platformOrder&quot;: 17,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Business models&quot;,
+                        &quot;platformOrder&quot;: 4,
+                        &quot;id&quot;: 4
+                    },
+                    &quot;id&quot;: 53
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 544,
+                &quot;label&quot;: &quot;commerce&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 4,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;business model&quot;,
+                    &quot;platformOrder&quot;: 4,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Business models&quot;,
+                        &quot;platformOrder&quot;: 4,
+                        &quot;id&quot;: 4
+                    },
+                    &quot;id&quot;: 4
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 303,
+                &quot;label&quot;: &quot;service&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 52,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;offering&quot;,
+                    &quot;platformOrder&quot;: 16,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Business models&quot;,
+                        &quot;platformOrder&quot;: 4,
+                        &quot;id&quot;: 4
+                    },
+                    &quot;id&quot;: 52
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 538,
+                &quot;label&quot;: &quot;physical product&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 5,
+                &quot;definition&quot;: &quot;The software sector encompasses organizations that develop or sell software, applications that run on devices such as PCs, mobile phones, tablets, and other smart devices.\n\nThe scope of this sector includes companies involved in system analysis, system designing, programming, testing, conversion, production, and maintenance of the software\n\nInnovative solutions include management software, big data analysis, cloud-based software, software-as-a-service, optimisation software, real time data analysis, monitoring software, AI and machine learning solutions.\n&quot;,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;buzzword&quot;,
+                    &quot;platformOrder&quot;: 5,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                        &quot;platformOrder&quot;: 5,
+                        &quot;id&quot;: 5
+                    },
+                    &quot;id&quot;: 5
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 239,
+                &quot;label&quot;: &quot;software&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 10,
+                &quot;definition&quot;: &quot;The energy sector includes innovations that are in the business of producing or supplying energy such as renewables.\n\nWithin the scope of this climate change challenge are targeted emissions produced by energy systems, namely what concerns the production, conversion, distribution and consumption of energy. \n\nSolutions to mitigate climate change and to adapt to its effects in this challenge include energy management systems, batteries, biofuels, CHP, electromechanical storage, biomass, heat recovery, hydrogen, kinetic energy, energy monitoring and metering, utilities and others.&quot;,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;challenge&quot;,
+                    &quot;platformOrder&quot;: 8,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                        &quot;platformOrder&quot;: 5,
+                        &quot;id&quot;: 5
+                    },
+                    &quot;id&quot;: 10
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 354,
+                &quot;label&quot;: &quot;energy&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 7,
+                &quot;definition&quot;: &quot;Investment Services means any services which involve the management of an investment account or fund, or the giving of advice with respect to the investment and/or reinvestment of assets or funds.\n\nWithin its scope is any service or solution designed to provide access or advice to sustainable investment opportunities.\n\nInnovative solutions include crowdfunding platforms, crowdinvesting, climate-focused investment funds, crowd wisdom investment platforms, etc.&quot;,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;sector&quot;,
+                    &quot;platformOrder&quot;: 2,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                        &quot;platformOrder&quot;: 5,
+                        &quot;id&quot;: 5
+                    },
+                    &quot;id&quot;: 7
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 338,
+                &quot;label&quot;: &quot;investment service&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 7,
+                &quot;definition&quot;: &quot;Financial services is a broad term used to describe the various offerings within the finance industry–encompassing everything from insurance and risk assessment to payments and digital banking technology. \n\nWithin its scope is any financial technology which aims to automate and improve the use and delivery of financial services and products. \n\nSolutions to mitigate climate change aim to catalyze decarbonization across the finance sector. Examples include digital banking, carbon offsetting, climate-focused investments, ESG reporting, blockchain for carbon markets, carbon accounting, innovative payment technologies, lending and crowdfunding platforms, ect.&quot;,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;sector&quot;,
+                    &quot;platformOrder&quot;: 2,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                        &quot;platformOrder&quot;: 5,
+                        &quot;id&quot;: 5
+                    },
+                    &quot;id&quot;: 7
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 333,
+                &quot;label&quot;: &quot;financial service&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 74,
+                &quot;definition&quot;: &quot;Development or use of ICT solutions that are aimed at collecting, transmitting, storing data and at its modelling and use where those activities are predominantly aimed at the provision of data and analytics enabling GHG emission reductions. Such ICT solutions may include, inter alia, the use of decentralized technologies (i.e. distributed ledger technologies), Internet of Things (IoT), 5G and Artificial Intelligence.&quot;,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;EU activity&quot;,
+                    &quot;platformOrder&quot;: 9,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;EU taxonomy&quot;,
+                        &quot;platformOrder&quot;: 12,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;id&quot;: 74
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 489,
+                &quot;label&quot;: &quot;Data-driven solutions for GHG emissions reduction&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 11,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;environmental objective&quot;,
+                    &quot;platformOrder&quot;: 7,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;EU taxonomy&quot;,
+                        &quot;platformOrder&quot;: 12,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;id&quot;: 11
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 374,
+                &quot;label&quot;: &quot;climate change mitigation&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 13,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;EU sector&quot;,
+                    &quot;platformOrder&quot;: 9,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;EU taxonomy&quot;,
+                        &quot;platformOrder&quot;: 12,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;id&quot;: 13
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 398,
+                &quot;label&quot;: &quot;Information and communication&quot;
+            }
+        ],
+        &quot;fundingTypes&quot;: [],
+        &quot;sdgs&quot;: [
+            {
+                &quot;id&quot;: 7,
+                &quot;label&quot;: &quot;7. Affordable and clean energy&quot;
+            },
+            {
+                &quot;id&quot;: 13,
+                &quot;label&quot;: &quot;13. Climate action&quot;
+            }
+        ],
+        &quot;note&quot;: &quot;&quot;,
+        &quot;roundCount&quot;: 2,
+        &quot;fundingRangeUSD&quot;: &quot;5M - 10M&quot;,
+        &quot;fundingRangeIDUSD&quot;: 4,
+        &quot;intellectualProperty&quot;: true,
+        &quot;numberOfEquityRounds&quot;: 2,
+        &quot;sustainabilityMetricLabel&quot;: &quot;Average impact&quot;,
+        &quot;id&quot;: 78403,
+        &quot;eutopiaScore&quot;: 47
+    },
+    {
+        &quot;clientID&quot;: 101360,
+        &quot;name&quot;: &quot;Girasole Energies&quot;,
+        &quot;logo&quot;: &quot;https://res.cloudinary.com/eutop-1/image/upload/b_white/v1680084726/Startups/ft3smshaw7opegkckcvs.jpg&quot;,
+        &quot;website&quot;: &quot;https://girasole-energies.com/&quot;,
+        &quot;domain&quot;: &quot;girasole-energies.com&quot;,
+        &quot;pitchLine&quot;: &quot;Girasole Energies designs and constructs on-grid small and utility-scale solar electricity facilities.&lt;br&gt;&lt;br&gt;Girasole Energies is an independent electricity producer that develops and implements photovoltaic projects. Their solutions include generating solar electricity by installing solar panels on agricultural sheds, new and existing roofs, and parking shades.&lt;br&gt;&lt;br&gt;Girasole Energies develops an innovation that contributes to:&lt;br&gt;Climate change mitigation by the generation of carbon-free electricity.&quot;,
+        &quot;description&quot;: &quot;Girasole Energies produces photovoltaic electricity for low carbon and competitive electricity and operates photovoltaic power plants\nLes clients qui hebergent ces unites de production qu il s agisse d agriculteurs d entreprises ou de collectivites beneficient de contreparties diverses revenu additionnel construction de batiment neuf renovation de grande toiture mise en conformite avec la reglementation ou encore reduction de leur facture d electricite via un contrat d autoconsommation\nGirasole Energies contribue a la transition energetique par la production d une electricite bas carbone locale et competitive\nGirasole Energies produces photovoltaic electricity for low carbon and competitive electricity and operates photovoltaic power plants Girasole Energies concoit developpe finance construit et exploite des projets photovoltaiques de plus de 100 kWc partout en France Independent Power Producer based in France\nGirasole Energies est un producteur francais independant d electricite photovoltaique qui concoit developpe finance construit et exploite des centrales solaires a travers toute la France sur des toitures des parkings et des terrains nus\nGirasole Energies produces photovoltaic electricity for low carbon and competitive electricity and operates photovoltaic power plants&quot;,
+        &quot;fundingAmount&quot;: 9.6E7,
+        &quot;fundingString&quot;: &quot;96M&quot;,
+        &quot;fundingAmountUSD&quot;: 1.02837007E8,
+        &quot;fundingStringUSD&quot;: &quot;103M&quot;,
+        &quot;fundingRangeID&quot;: 7,
+        &quot;fundingRange&quot;: &quot;50M - 100M&quot;,
+        &quot;lastRoundDate&quot;: &quot;2023-03-21T15:04:56.623+00:00&quot;,
+        &quot;sustainabilityMetric&quot;: 0.79992515,
+        &quot;foundedDate&quot;: 2023,
+        &quot;georowID&quot;: 796814,
+        &quot;countryID&quot;: 73,
+        &quot;country&quot;: &quot;France&quot;,
+        &quot;city&quot;: &quot;Boulogne-Billancourt&quot;,
+        &quot;continent&quot;: &quot;Europe&quot;,
+        &quot;email&quot;: &quot;contact@girasole-energies.com&quot;,
+        &quot;phone&quot;: &quot;+331 70 95 00 80&quot;,
+        &quot;sizeID&quot;: 2,
+        &quot;size&quot;: &quot;11 - 50&quot;,
+        &quot;stageID&quot;: 3,
+        &quot;stage&quot;: &quot;Growth&quot;,
+        &quot;linkedinURL&quot;: &quot;https://www.linkedin.com/company/girasole-energies/&quot;,
+        &quot;directURL&quot;: &quot;girasole-energies-101360&quot;,
+        &quot;sustainabilityMetricID&quot;: 4,
+        &quot;lastRoundAmount&quot;: 96000000,
+        &quot;lastRoundAmountUSD&quot;: 102837007,
+        &quot;lastRoundAmountString&quot;: &quot;96M&quot;,
+        &quot;lastRoundAmountStringUSD&quot;: &quot;103M&quot;,
+        &quot;lastRoundType&quot;: &quot;Growth equity&quot;,
+        &quot;tags&quot;: [
+            {
+                &quot;tagTypeId&quot;: 46,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;solution&quot;,
+                    &quot;platformOrder&quot;: 10,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Solutions&quot;,
+                        &quot;platformOrder&quot;: 2,
+                        &quot;id&quot;: 2
+                    },
+                    &quot;id&quot;: 46
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 319,
+                &quot;label&quot;: &quot;photovoltaic&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 64,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;grid tie&quot;,
+                    &quot;platformOrder&quot;: 28,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Solutions&quot;,
+                        &quot;platformOrder&quot;: 2,
+                        &quot;id&quot;: 2
+                    },
+                    &quot;id&quot;: 64
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 607,
+                &quot;label&quot;: &quot;on-grid&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 63,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;energy generation scale&quot;,
+                    &quot;platformOrder&quot;: 27,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Solutions&quot;,
+                        &quot;platformOrder&quot;: 2,
+                        &quot;id&quot;: 2
+                    },
+                    &quot;id&quot;: 63
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 605,
+                &quot;label&quot;: &quot;small scale&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 63,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;energy generation scale&quot;,
+                    &quot;platformOrder&quot;: 27,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Solutions&quot;,
+                        &quot;platformOrder&quot;: 2,
+                        &quot;id&quot;: 2
+                    },
+                    &quot;id&quot;: 63
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 606,
+                &quot;label&quot;: &quot;utility scale&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 77,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;solar site specification&quot;,
+                    &quot;platformOrder&quot;: 40,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Solutions&quot;,
+                        &quot;platformOrder&quot;: 2,
+                        &quot;id&quot;: 2
+                    },
+                    &quot;id&quot;: 77
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 686,
+                &quot;label&quot;: &quot;rooftop&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 77,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;solar site specification&quot;,
+                    &quot;platformOrder&quot;: 40,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Solutions&quot;,
+                        &quot;platformOrder&quot;: 2,
+                        &quot;id&quot;: 2
+                    },
+                    &quot;id&quot;: 77
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 684,
+                &quot;label&quot;: &quot;ground-mounted&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 2,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;energy value chain&quot;,
+                    &quot;platformOrder&quot;: 1,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Value chains&quot;,
+                        &quot;platformOrder&quot;: 3,
+                        &quot;id&quot;: 3
+                    },
+                    &quot;id&quot;: 2
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 132,
+                &quot;label&quot;: &quot;energy generation&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 78,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;solar system value chain&quot;,
+                    &quot;platformOrder&quot;: 41,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Value chains&quot;,
+                        &quot;platformOrder&quot;: 3,
+                        &quot;id&quot;: 3
+                    },
+                    &quot;id&quot;: 78
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 692,
+                &quot;label&quot;: &quot;solar system operation &amp; maintenance&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 51,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;production value chain&quot;,
+                    &quot;platformOrder&quot;: 15,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Value chains&quot;,
+                        &quot;platformOrder&quot;: 3,
+                        &quot;id&quot;: 3
+                    },
+                    &quot;id&quot;: 51
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 536,
+                &quot;label&quot;: &quot;consumer good&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 48,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;electricity value chain&quot;,
+                    &quot;platformOrder&quot;: 12,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Value chains&quot;,
+                        &quot;platformOrder&quot;: 3,
+                        &quot;id&quot;: 3
+                    },
+                    &quot;id&quot;: 48
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 519,
+                &quot;label&quot;: &quot;electricity generation&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 53,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;revenue model&quot;,
+                    &quot;platformOrder&quot;: 17,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Business models&quot;,
+                        &quot;platformOrder&quot;: 4,
+                        &quot;id&quot;: 4
+                    },
+                    &quot;id&quot;: 53
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 544,
+                &quot;label&quot;: &quot;commerce&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 4,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;business model&quot;,
+                    &quot;platformOrder&quot;: 4,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Business models&quot;,
+                        &quot;platformOrder&quot;: 4,
+                        &quot;id&quot;: 4
+                    },
+                    &quot;id&quot;: 4
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 303,
+                &quot;label&quot;: &quot;service&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 52,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;offering&quot;,
+                    &quot;platformOrder&quot;: 16,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Business models&quot;,
+                        &quot;platformOrder&quot;: 4,
+                        &quot;id&quot;: 4
+                    },
+                    &quot;id&quot;: 52
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 538,
+                &quot;label&quot;: &quot;physical product&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 4,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;business model&quot;,
+                    &quot;platformOrder&quot;: 4,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Business models&quot;,
+                        &quot;platformOrder&quot;: 4,
+                        &quot;id&quot;: 4
+                    },
+                    &quot;id&quot;: 4
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 237,
+                &quot;label&quot;: &quot;business to business (B2B)&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 4,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;business model&quot;,
+                    &quot;platformOrder&quot;: 4,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Business models&quot;,
+                        &quot;platformOrder&quot;: 4,
+                        &quot;id&quot;: 4
+                    },
+                    &quot;id&quot;: 4
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 295,
+                &quot;label&quot;: &quot;product&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 10,
+                &quot;definition&quot;: &quot;The energy sector includes innovations that are in the business of producing or supplying energy such as renewables.\n\nWithin the scope of this climate change challenge are targeted emissions produced by energy systems, namely what concerns the production, conversion, distribution and consumption of energy. \n\nSolutions to mitigate climate change and to adapt to its effects in this challenge include energy management systems, batteries, biofuels, CHP, electromechanical storage, biomass, heat recovery, hydrogen, kinetic energy, energy monitoring and metering, utilities and others.&quot;,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;challenge&quot;,
+                    &quot;platformOrder&quot;: 8,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                        &quot;platformOrder&quot;: 5,
+                        &quot;id&quot;: 5
+                    },
+                    &quot;id&quot;: 10
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 354,
+                &quot;label&quot;: &quot;energy&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 5,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;buzzword&quot;,
+                    &quot;platformOrder&quot;: 5,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                        &quot;platformOrder&quot;: 5,
+                        &quot;id&quot;: 5
+                    },
+                    &quot;id&quot;: 5
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 240,
+                &quot;label&quot;: &quot;hardware&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 7,
+                &quot;definition&quot;: &quot;Financial services is a broad term used to describe the various offerings within the finance industry–encompassing everything from insurance and risk assessment to payments and digital banking technology. \n\nWithin its scope is any financial technology which aims to automate and improve the use and delivery of financial services and products. \n\nSolutions to mitigate climate change aim to catalyze decarbonization across the finance sector. Examples include digital banking, carbon offsetting, climate-focused investments, ESG reporting, blockchain for carbon markets, carbon accounting, innovative payment technologies, lending and crowdfunding platforms, ect.&quot;,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;sector&quot;,
+                    &quot;platformOrder&quot;: 2,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                        &quot;platformOrder&quot;: 5,
+                        &quot;id&quot;: 5
+                    },
+                    &quot;id&quot;: 7
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 333,
+                &quot;label&quot;: &quot;financial service&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 5,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;buzzword&quot;,
+                    &quot;platformOrder&quot;: 5,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                        &quot;platformOrder&quot;: 5,
+                        &quot;id&quot;: 5
+                    },
+                    &quot;id&quot;: 5
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 66,
+                &quot;label&quot;: &quot;energy provider&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 7,
+                &quot;definition&quot;: &quot;Electricity is defined as the energy made available for consumption or consumed in the form of electricity or electric power.\n\nWithin the scope of this challenge is any activity related to electricity generation, transmission, distribution and usage.\n\nSolutions to mitigate climate change and to adapt to its effects in this sector include: electricity generation technologies, EV charging stations, electricity distribution, electricity digitalization, electric load management, battery production, photovoltaic system, combined heat and power and others.&quot;,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;sector&quot;,
+                    &quot;platformOrder&quot;: 2,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                        &quot;platformOrder&quot;: 5,
+                        &quot;id&quot;: 5
+                    },
+                    &quot;id&quot;: 7
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 207,
+                &quot;label&quot;: &quot;electricity&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 5,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;buzzword&quot;,
+                    &quot;platformOrder&quot;: 5,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                        &quot;platformOrder&quot;: 5,
+                        &quot;id&quot;: 5
+                    },
+                    &quot;id&quot;: 5
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 158,
+                &quot;label&quot;: &quot;solar energy&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 7,
+                &quot;definition&quot;: &quot;Investment Services means any services which involve the management of an investment account or fund, or the giving of advice with respect to the investment and/or reinvestment of assets or funds.\n\nWithin its scope is any service or solution designed to provide access or advice to sustainable investment opportunities.\n\nInnovative solutions include crowdfunding platforms, crowdinvesting, climate-focused investment funds, crowd wisdom investment platforms, etc.&quot;,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;sector&quot;,
+                    &quot;platformOrder&quot;: 2,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                        &quot;platformOrder&quot;: 5,
+                        &quot;id&quot;: 5
+                    },
+                    &quot;id&quot;: 7
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 338,
+                &quot;label&quot;: &quot;investment service&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 13,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;EU sector&quot;,
+                    &quot;platformOrder&quot;: 9,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;EU taxonomy&quot;,
+                        &quot;platformOrder&quot;: 12,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;id&quot;: 13
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 393,
+                &quot;label&quot;: &quot;Energy&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 11,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;environmental objective&quot;,
+                    &quot;platformOrder&quot;: 7,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;EU taxonomy&quot;,
+                        &quot;platformOrder&quot;: 12,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;id&quot;: 11
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 374,
+                &quot;label&quot;: &quot;climate change mitigation&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 74,
+                &quot;definition&quot;: &quot;Installation, maintenance and repair of renewable energy technologies, on-site.&quot;,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;EU activity&quot;,
+                    &quot;platformOrder&quot;: 9,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;EU taxonomy&quot;,
+                        &quot;platformOrder&quot;: 12,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;id&quot;: 74
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 486,
+                &quot;label&quot;: &quot;Installation, maintenance and repair of renewable energy technologies&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 74,
+                &quot;definition&quot;: &quot;Construction or operation of electricity generation facilities that produce electricity using solar photovoltaic (PV) technology.&quot;,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;EU activity&quot;,
+                    &quot;platformOrder&quot;: 9,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;EU taxonomy&quot;,
+                        &quot;platformOrder&quot;: 12,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;id&quot;: 74
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 421,
+                &quot;label&quot;: &quot;Electricity generation using solar photovoltaic technology&quot;
+            },
+            {
+                &quot;tagTypeId&quot;: 13,
+                &quot;tagType&quot;: {
+                    &quot;tagType&quot;: &quot;EU sector&quot;,
+                    &quot;platformOrder&quot;: 9,
+                    &quot;tagFamily&quot;: {
+                        &quot;tagFamily&quot;: &quot;EU taxonomy&quot;,
+                        &quot;platformOrder&quot;: 12,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;id&quot;: 13
+                },
+                &quot;filterable&quot;: true,
+                &quot;id&quot;: 397,
+                &quot;label&quot;: &quot;Construction and real estate&quot;
+            }
+        ],
+        &quot;fundingTypes&quot;: [],
+        &quot;sdgs&quot;: [
+            {
+                &quot;id&quot;: 7,
+                &quot;label&quot;: &quot;7. Affordable and clean energy&quot;
+            },
+            {
+                &quot;id&quot;: 13,
+                &quot;label&quot;: &quot;13. Climate action&quot;
+            }
+        ],
+        &quot;note&quot;: &quot;&quot;,
+        &quot;roundCount&quot;: 1,
+        &quot;fundingRangeUSD&quot;: &quot;100M - 250M&quot;,
+        &quot;fundingRangeIDUSD&quot;: 8,
+        &quot;lastReviewer&quot;: &quot;pooneh_amini naeini&quot;,
+        &quot;numberOfEquityRounds&quot;: 1,
+        &quot;sustainabilityMetricLabel&quot;: &quot;Very high impact&quot;,
+        &quot;id&quot;: 77426,
+        &quot;eutopiaScore&quot;: 79
+    }
+]
+</code></p>
+</blockquote>
+<h2 id='top-investors'>Top Investors</h2>
+<blockquote>
+<p>To get Top Investors of a Taxonomy Graph Item, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/topInvestors/2'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain at most 3 available investors of the specified item by ID, with the JSON structured like the following:
+<code>json
+[
+    {
+        &quot;investorID&quot;: 72,
+        &quot;name&quot;: &quot;UK Research and Innovation&quot;,
+        &quot;logoURL&quot;: &quot;https://res.cloudinary.com/eutop-1/image/upload/b_white/v1691668219/Investors/ocsr6c10pv9t7xumavd1.jpg&quot;,
+        &quot;numberOfDeals&quot;: 977,
+        &quot;numberOfDealsFiltered&quot;: 31,
+        &quot;id&quot;: 34
+    },
+    {
+        &quot;investorID&quot;: 670,
+        &quot;name&quot;: &quot;Eit Innoenergy&quot;,
+        &quot;logoURL&quot;: &quot;https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1687594145/Investors/epm6ozsmb0awp9ljhvg3.jpg&quot;,
+        &quot;foundedDate&quot;: 2010,
+        &quot;numberOfDeals&quot;: 195,
+        &quot;numberOfDealsFiltered&quot;: 9,
+        &quot;primaryTypeID&quot;: 10,
+        &quot;primaryType&quot;: &quot;Venture Capital&quot;,
+        &quot;id&quot;: 138
+    },
+    {
+        &quot;investorID&quot;: 18606,
+        &quot;name&quot;: &quot;Sosv&quot;,
+        &quot;logoURL&quot;: &quot;https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1692150659/Investors/y4mrqtqfyeexi7yyo12r.jpg&quot;,
+        &quot;foundedDate&quot;: 1994,
+        &quot;numberOfDeals&quot;: 178,
+        &quot;numberOfDealsFiltered&quot;: 3,
+        &quot;primaryTypeID&quot;: 10,
+        &quot;primaryType&quot;: &quot;Venture Capital&quot;,
+        &quot;id&quot;: 20830
+    }
+]
+</code></p>
+</blockquote>
+<h2 id='all-taxonomy-items'>All Taxonomy Items</h2>
+<blockquote>
+<p>To get all Taxonomy Graph Items, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/topInvestors/2'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the available items, with the JSON structured like the following:
+<code>json
+[
+    {
+        &quot;label&quot;: &quot;Alternative Fuell&quot;,
+        &quot;description&quot;: &quot;Alternative fuels are at the forefront of innovation, with notable examples being biofuels and synthetic fuels. Climate tech startups in this domain are dedicated to advancing and applying these alternatives, not only for transportation but also for broader energy applications, including electricity generation and industrial processes. For instance, biofuels sourced from organic materials like crop residues and algae can replace fossil fuels in electricity generation, offering a cleaner and more sustainable energy source. Synthetic fuels, synthesized from carbon dioxide and renewable electricity, provide a carbon-neutral option for various energy-intensive sectors such as heavy industry. &quot;,
+        &quot;tagID&quot;: 1089,
+        &quot;companyCount&quot;: 483,
+        &quot;dealCount&quot;: 522,
+        &quot;totalFunding&quot;: 4569489340,
+        &quot;totalFundingUSD&quot;: 4109548652,
+        &quot;hasChildren&quot;: true,
+        &quot;id&quot;: 1
+    },
+    {
+        &quot;label&quot;: &quot;Biofuel&quot;,
+        &quot;description&quot;: &quot;Biofuels are produced from renewable resources, primarily plant-based feedstocks such as crops, agricultural residues, or algae. Biofuels offer a way to decarbonize sectors that are challenging to electrify, such as aviation and heavy industry, while promoting agricultural sustainability through responsible feedstock sourcing and land-use practices. Some solutions include innovative processes to convert biomass into biofuels, such as biodiesel and bioethanol, through techniques like fermentation and thermochemical conversion.&quot;,
+        &quot;tagID&quot;: 1090,
+        &quot;companyCount&quot;: 70,
+        &quot;dealCount&quot;: 62,
+        &quot;totalFunding&quot;: 1188638956,
+        &quot;totalFundingUSD&quot;: 222394728,
+        &quot;hasChildren&quot;: true,
+        &quot;id&quot;: 2
+    }
+]
+</code></p>
+</blockquote>
+<h2 id='taxonomy-item'>Taxonomy Item</h2>
+<blockquote>
+<p>To get a Taxonomy Graph Item by parameter, ID or label, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/item/2'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>Or</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/item/Biofuel'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain a taxonomy graph item, with the JSON structured like the following:
+<code>json
+{
+    &quot;label&quot;: &quot;Biofuel&quot;,
+    &quot;description&quot;: &quot;Biofuels are produced from renewable resources, primarily plant-based feedstocks such as crops, agricultural residues, or algae. Biofuels offer a way to decarbonize sectors that are challenging to electrify, such as aviation and heavy industry, while promoting agricultural sustainability through responsible feedstock sourcing and land-use practices. Some solutions include innovative processes to convert biomass into biofuels, such as biodiesel and bioethanol, through techniques like fermentation and thermochemical conversion.&quot;,
+    &quot;tagID&quot;: 1090,
+    &quot;companyCount&quot;: 70,
+    &quot;dealCount&quot;: 62,
+    &quot;totalFunding&quot;: 1188638956,
+    &quot;totalFundingUSD&quot;: 222394728,
+    &quot;hasChildren&quot;: true,
+    &quot;id&quot;: 2
+}
+</code></p>
+</blockquote>
+<h2 id='taxonomy-item-relation'>Taxonomy Item Relation</h2>
+<blockquote>
+<p>To get Taxonomy Graph Item Relation list, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/relations'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the available taxonomy graph item relations, with the JSON structured like the following:
+<code>json
+[
+  {
+    &quot;id&quot;: 0,
+    &quot;parentID&quot;: 1,
+    &quot;childID&quot;: 3,
+    &quot;parentLabel&quot;: &quot;Alternative Fuell&quot;,
+    &quot;childLabel&quot;: &quot;Electrofuels&quot;
+  },
+  {
+    &quot;id&quot;: 1,
+    &quot;parentID&quot;: 1,
+    &quot;childID&quot;: 4,
+    &quot;parentLabel&quot;: &quot;Alternative Fuell&quot;,
+    &quot;childLabel&quot;: &quot;Synthetic Fuel&quot;
+  }
+]
+</code></p>
+</blockquote>
+<h2 id='taxonomy-item-relations-by-parentid'>Taxonomy Item Relations by ParentID</h2>
+<blockquote>
+<p>To get Taxonomy Graph Item Relation list by parentID, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/relations/parent/1'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the available taxonomy graph item relations, with the JSON structured like the following:
+<code>json
+[
+  {
+    &quot;id&quot;: 0,
+    &quot;parentID&quot;: 1,
+    &quot;childID&quot;: 3,
+    &quot;parentLabel&quot;: &quot;Alternative Fuell&quot;,
+    &quot;childLabel&quot;: &quot;Electrofuels&quot;
+  },
+  {
+    &quot;id&quot;: 1,
+    &quot;parentID&quot;: 1,
+    &quot;childID&quot;: 4,
+    &quot;parentLabel&quot;: &quot;Alternative Fuell&quot;,
+    &quot;childLabel&quot;: &quot;Synthetic Fuel&quot;
+  }
+]
+</code></p>
+</blockquote>
+<h2 id='taxonomy-item-relations-by-childid'>Taxonomy Item Relations by ChildID</h2>
+<blockquote>
+<p>To get Taxonomy Graph Item Relation list by childID, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/relations/child/24'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the available taxonomy graph item relations, with the JSON structured like the following:
+<code>json
+[
+  {
+    &quot;id&quot;: 0,
+    &quot;parentID&quot;: 22,
+    &quot;childID&quot;: 24,
+    &quot;parentLabel&quot;: &quot;Solar Energy&quot;,
+    &quot;childLabel&quot;: &quot;Photovoltaic&quot;
+  }
+]
+</code></p>
+</blockquote>
+<h2 id='trls'>TRLs</h2>
+<blockquote>
+<p>To get TRLs, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/getTRLs'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the available TRLs, with the JSON structured like the following:
+<code>json
+[
+  {
+    &quot;date&quot;: &quot;2023-08-21T06:46:35.850+00:00&quot;,
+    &quot;id&quot;: 3,
+    &quot;label&quot;: &quot;1-5&quot;
+  },
+  {
+    &quot;date&quot;: &quot;2023-08-21T06:46:35.850+00:00&quot;,
+    &quot;id&quot;: 4,
+    &quot;label&quot;: &quot;6-8&quot;
+  },
+  {
+    &quot;date&quot;: &quot;2023-08-21T06:46:35.850+00:00&quot;,
+    &quot;id&quot;: 2,
+    &quot;label&quot;: &quot;9&quot;
+  }
+]
+</code></p>
+</blockquote>
+<h2 id='tags-2'>Tags</h2>
+<blockquote>
+<p>To get Tag list, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/taxonomy/tags'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span> 
+<span class="nt">-d</span> <span class="s2">"{'offset': 0, 'limit': 3}"</span>               
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the available tags, with the JSON structured like the following:
+<code>json
+{
+  &quot;count&quot;: 1230,
+  &quot;results&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;tagTypeID&quot;: 3,
+      &quot;label&quot;: &quot;3d printing&quot;,
+      &quot;tagFamilyLabel&quot;: &quot;Solutions&quot;,
+      &quot;tagTypeLabel&quot;: &quot;technology&quot;,
+      &quot;customerIDs&quot;: [],
+      &quot;rawSuggestedSearches&quot;: [],
+      &quot;visible&quot;: false,
+      &quot;platform&quot;: true,
+      &quot;filterable&quot;: true,
+      &quot;advancedFilters&quot;: true,
+      &quot;customer&quot;: false
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;tagTypeID&quot;: 5,
+      &quot;label&quot;: &quot;advanced material&quot;,
+      &quot;tagFamilyLabel&quot;: &quot;Buzzwords&quot;,
+      &quot;tagTypeLabel&quot;: &quot;buzzword&quot;,
+      &quot;customerIDs&quot;: [],
+      &quot;rawSuggestedSearches&quot;: [],
+      &quot;visible&quot;: false,
+      &quot;platform&quot;: true,
+      &quot;filterable&quot;: true,
+      &quot;advancedFilters&quot;: true,
+      &quot;customer&quot;: false
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;tagTypeID&quot;: 1,
+      &quot;label&quot;: &quot;advanced metering&quot;,
+      &quot;tagFamilyLabel&quot;: &quot;Buzzwords&quot;,
+      &quot;tagTypeLabel&quot;: &quot;Undefined&quot;,
+      &quot;customerIDs&quot;: [],
+      &quot;rawSuggestedSearches&quot;: [],
+      &quot;visible&quot;: false,
+      &quot;platform&quot;: true,
+      &quot;filterable&quot;: true,
+      &quot;advancedFilters&quot;: true,
+      &quot;customer&quot;: false
+    }
+  ]
+}
+</code></p>
+</blockquote>
+<h2 id='tag-type'>Tag Type</h2>
+<blockquote>
+<p>To get TagType list, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/tagsTypes'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span> 
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the available tag types, with the JSON structured like the following:
+<code>json
+[
+  {
+    &quot;id&quot;: 8,
+    &quot;label&quot;: &quot;sub-challenge&quot;,
+    &quot;platformOrder&quot;: 0,
+    &quot;tagFamily&quot;: {
+      &quot;id&quot;: 5,
+      &quot;label&quot;: &quot;Buzzwords&quot;,
+      &quot;platformOrder&quot;: 5
+    }
+  },
+  {
+    &quot;id&quot;: 2,
+    &quot;label&quot;: &quot;energy value chain&quot;,
+    &quot;platformOrder&quot;: 1,
+    &quot;tagFamily&quot;: {
+      &quot;id&quot;: 3,
+      &quot;label&quot;: &quot;Value chains&quot;,
+      &quot;platformOrder&quot;: 3
+    }
+  }
+]
+</code></p>
+</blockquote>
+<h2 id='tag-family'>Tag Family</h2>
+<blockquote>
+<p>To get TagFamily list, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/tagFamilies'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span> 
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the available tag families, with the JSON structured like the following:
+<code>json
+[
+  {
+    &quot;id&quot;: 2,
+    &quot;label&quot;: &quot;Solutions&quot;,
+    &quot;platformOrder&quot;: 2
+  },
+  {
+    &quot;id&quot;: 3,
+    &quot;label&quot;: &quot;Value chains&quot;,
+    &quot;platformOrder&quot;: 3
+  }
+]
+</code></p>
+</blockquote>
+<h2 id='tag-template'>Tag Template</h2>
+<blockquote>
+<p>To get TagTemplate list, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/tagTemplate/getAll'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span> 
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the available tag templates, with the JSON structured like the following:
+<code>json
+[
+  {
+    &quot;name&quot;: &quot;Net0i Template1&quot;,
+    &quot;tags&quot;: [
+      14,
+      19,
+      113,
+      295,
+      333,
+      537,
+      539,
+      245,
+      237,
+      303
+    ],
+    &quot;id&quot;: 7
+  }
+]
+</code></p>
+</blockquote>
+<h2 id='map-card'>Map Card</h2>
+<blockquote>
+<p>To get MapCard Map, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/mapcard'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span> 
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the available mapcards, with the JSON structured like the following:
+<code>json
+{
+  &quot;marketMapCards&quot;: [
+    {
+      &quot;tagID&quot;: 1090,
+      &quot;totalFunding&quot;: 1188638956,
+      &quot;companyCount&quot;: 70,
+      &quot;itemLabel&quot;: &quot;Biofuel&quot;,
+      &quot;startups&quot;: [{
+        &quot;clientID&quot;: 43258,
+        &quot;name&quot;: &quot;i6 Group Ltd&quot;,
+        &quot;logo&quot;: &quot;https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1666259557/Startups/fw8jtny43cnzencep26q.png&quot;,
+        &quot;pitchLine&quot;: &quot;Operator of a cloud-based digital fuel management platform intended to focus on quality fuelling operations.&quot;,
+        &quot;fundingAmount&quot;: 1.0987141E7,
+        &quot;fundingString&quot;: &quot;11M&quot;,
+        &quot;fundingAmountUSD&quot;: 1.3E7,
+        &quot;fundingStringUSD&quot;: &quot;13M&quot;,
+        &quot;lastRoundDate&quot;: &quot;2022-10-05T00:00:00.000+00:00&quot;,
+        &quot;foundedDate&quot;: 2013,
+        &quot;country&quot;: &quot;United Kingdom&quot;,
+        &quot;city&quot;: &quot;Farnborough&quot;,
+        &quot;size&quot;: &quot;51 - 100&quot;,
+        &quot;directURL&quot;: &quot;i6-group-ltd-43258&quot;,
+        &quot;lastRoundType&quot;: &quot;Accelerator/incubator&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;tagTypeId&quot;: 3,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;technology&quot;,
+              &quot;platformOrder&quot;: 3,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Solutions&quot;,
+                &quot;platformOrder&quot;: 2,
+                &quot;id&quot;: 2
+              },
+              &quot;id&quot;: 3
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 113,
+            &quot;label&quot;: &quot;monitoring and analytics&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 3,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;technology&quot;,
+              &quot;platformOrder&quot;: 3,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Solutions&quot;,
+                &quot;platformOrder&quot;: 2,
+                &quot;id&quot;: 2
+              },
+              &quot;id&quot;: 3
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 299,
+            &quot;label&quot;: &quot;monitoring and metering&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 4,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;business model&quot;,
+              &quot;platformOrder&quot;: 4,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Business models&quot;,
+                &quot;platformOrder&quot;: 4,
+                &quot;id&quot;: 4
+              },
+              &quot;id&quot;: 4
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 295,
+            &quot;label&quot;: &quot;product&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 4,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;business model&quot;,
+              &quot;platformOrder&quot;: 4,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Business models&quot;,
+                &quot;platformOrder&quot;: 4,
+                &quot;id&quot;: 4
+              },
+              &quot;id&quot;: 4
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 303,
+            &quot;label&quot;: &quot;service&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 4,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;business model&quot;,
+              &quot;platformOrder&quot;: 4,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Business models&quot;,
+                &quot;platformOrder&quot;: 4,
+                &quot;id&quot;: 4
+              },
+              &quot;id&quot;: 4
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 304,
+            &quot;label&quot;: &quot;tech developer&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 4,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;business model&quot;,
+              &quot;platformOrder&quot;: 4,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Business models&quot;,
+                &quot;platformOrder&quot;: 4,
+                &quot;id&quot;: 4
+              },
+              &quot;id&quot;: 4
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 237,
+            &quot;label&quot;: &quot;business to business (B2B)&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 5,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;buzzword&quot;,
+              &quot;platformOrder&quot;: 5,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                &quot;platformOrder&quot;: 5,
+                &quot;id&quot;: 5
+              },
+              &quot;id&quot;: 5
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 83,
+            &quot;label&quot;: &quot;fuel efficiency&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 5,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;buzzword&quot;,
+              &quot;platformOrder&quot;: 5,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                &quot;platformOrder&quot;: 5,
+                &quot;id&quot;: 5
+              },
+              &quot;id&quot;: 5
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 121,
+            &quot;label&quot;: &quot;operation, inspection &amp; maintenance&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 5,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;buzzword&quot;,
+              &quot;platformOrder&quot;: 5,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                &quot;platformOrder&quot;: 5,
+                &quot;id&quot;: 5
+              },
+              &quot;id&quot;: 5
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 368,
+            &quot;label&quot;: &quot;mobility&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 10,
+            &quot;definition&quot;: &quot;The transportation sector deals with the technology, logistics and infrastructure employed for movement of people and goods via air, road, rail or water.\n\nThe scope of this sector includes air freight and logistics, airlines, marine, railroads, trucking, airport services, highways and rail tracks, and marine ports and services. Additionally, public and private vehicles and traffic management are also significant aspects of transportation.\n\nSome solutions emerging from this sector are electric and hybrid vehicles, transport infrastructure, charging stations, smart parking, traffic management, fleet management, ride sharing and others.&quot;,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;challenge&quot;,
+              &quot;platformOrder&quot;: 8,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                &quot;platformOrder&quot;: 5,
+                &quot;id&quot;: 5
+              },
+              &quot;id&quot;: 10
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 355,
+            &quot;label&quot;: &quot;transport&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 5,
+            &quot;definition&quot;: &quot;The fuel sector is concerned with the production and development of green fuels.\n\nWithin the scope of this climate change sector is the development of alternative fuels like hydrogen and the production of derived fuels like biogas, syngas, bioethanol.\n\nSolutions to mitigate climate change and to adapt to its effects in this sector include the production of alternative fuels like biofuels, biogas, bioethanol, synthetic fuel, e-fuels, green hydrogen, fuel monitoring software, fuel efficiency and others.\n&quot;,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;buzzword&quot;,
+              &quot;platformOrder&quot;: 5,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                &quot;platformOrder&quot;: 5,
+                &quot;id&quot;: 5
+              },
+              &quot;id&quot;: 5
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 323,
+            &quot;label&quot;: &quot;fuel&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 101,
+            &quot;definition&quot;: &quot;Biofuels are produced from renewable resources, primarily plant-based feedstocks such as crops, agricultural residues, or algae. Biofuels offer a way to decarbonize sectors that are challenging to electrify, such as aviation and heavy industry, while promoting agricultural sustainability through responsible feedstock sourcing and land-use practices. Some solutions include innovative processes to convert biomass into biofuels, such as biodiesel and bioethanol, through techniques like fermentation and thermochemical conversion.&quot;,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;Key Product Value Chains&quot;,
+              &quot;platformOrder&quot;: 62,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                &quot;platformOrder&quot;: 5,
+                &quot;id&quot;: 5
+              },
+              &quot;id&quot;: 101
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 1090,
+            &quot;label&quot;: &quot;Biofuel&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 5,
+            &quot;definition&quot;: &quot;The software sector encompasses organizations that develop or sell software, applications that run on devices such as PCs, mobile phones, tablets, and other smart devices.\n\nThe scope of this sector includes companies involved in system analysis, system designing, programming, testing, conversion, production, and maintenance of the software\n\nInnovative solutions include management software, big data analysis, cloud-based software, software-as-a-service, optimisation software, real time data analysis, monitoring software, AI and machine learning solutions.\n&quot;,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;buzzword&quot;,
+              &quot;platformOrder&quot;: 5,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                &quot;platformOrder&quot;: 5,
+                &quot;id&quot;: 5
+              },
+              &quot;id&quot;: 5
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 239,
+            &quot;label&quot;: &quot;software&quot;
+          },
+          {
+            &quot;tagTypeId&quot;: 10,
+            &quot;definition&quot;: &quot;The energy sector includes innovations that are in the business of producing or supplying energy such as renewables.\n\nWithin the scope of this climate change challenge are targeted emissions produced by energy systems, namely what concerns the production, conversion, distribution and consumption of energy. \n\nSolutions to mitigate climate change and to adapt to its effects in this challenge include energy management systems, batteries, biofuels, CHP, electromechanical storage, biomass, heat recovery, hydrogen, kinetic energy, energy monitoring and metering, utilities and others.&quot;,
+            &quot;tagType&quot;: {
+              &quot;tagType&quot;: &quot;challenge&quot;,
+              &quot;platformOrder&quot;: 8,
+              &quot;tagFamily&quot;: {
+                &quot;tagFamily&quot;: &quot;Buzzwords&quot;,
+                &quot;platformOrder&quot;: 5,
+                &quot;id&quot;: 5
+              },
+              &quot;id&quot;: 10
+            },
+            &quot;filterable&quot;: true,
+            &quot;id&quot;: 354,
+            &quot;label&quot;: &quot;energy&quot;
+          }
+        ],
+        &quot;fundingTypes&quot;: [
+          &quot;Equity&quot;
+        ],
+        &quot;sdgs&quot;: [
+          {
+            &quot;id&quot;: 7,
+            &quot;label&quot;: &quot;7. Affordable and clean energy&quot;
+          },
+          {
+            &quot;id&quot;: 13,
+            &quot;label&quot;: &quot;13. Climate action&quot;
+          }
+        ],
+        &quot;note&quot;: &quot;&quot;,
+        &quot;id&quot;: 24657
+      }]
+    }
+  ]
+}
+</code></p>
+</blockquote>
 <h1 id='errors'>Errors</h1>
 <p>The Net Zero Insights API uses the following error codes:</p>
 
