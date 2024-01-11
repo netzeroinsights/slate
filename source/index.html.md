@@ -426,7 +426,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 -X GET "https://api.netzeroinsights.com/investors/668"
 ```
 
-> In case of a 200 response, the response body will contain the requested investors, with the format specified at section [Investor](#investor).
+> In case of a 200 response, the response body will contain the requested investors, with the format specified at section [Investor](#investor-core).
 
 ```json
 [
@@ -1561,14 +1561,14 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | clientId          | Client ID of the startup                                   |
 | status            | Patent status, see Section [Patent Status](#patent-status) |
 
-## Investor
+## Investor Core
 
-| Name           | Content                                                                           |
-|----------------|-----------------------------------------------------------------------------------|
-| id             | Internal investor ID                                                              |
-| name           | Investor name                                                                     |
-| firstRoundDate | Date of the first round of the company in which the in- vestor made an appearance |
-| roundTypes     | Types of round in which the investor appeared                                     |
+| Name           | Content                                                                         |
+|----------------|---------------------------------------------------------------------------------|
+| id             | Internal investor ID                                                            |
+| name           | Investor name                                                                   |
+| firstRoundDate | Date of the first round of the company in which the investor made an appearance |
+| roundTypes     | Types of round in which the investor appeared                                   |
 
 ## Contact
 
@@ -1581,6 +1581,47 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | linkedinURL   | Person LinkedIn URL                                 |
 | decisionMaker | True if the person has decision making capabilities |
 | id            | Internal person ID                                  |
+
+## Investor search
+
+| Name         | Content                                                               |
+|--------------|-----------------------------------------------------------------------|
+| results      | List of Section [Investor](#investor)                                 |
+| count        | Total number of results, regardless of the ”limit” parameter          |
+| totalFunding | Total funding from the investors, regardless of the ”limit” parameter |
+
+## Investor
+
+| Name                  | Content                                                  |
+|-----------------------|----------------------------------------------------------|
+| id                    | Internal ID                                              |
+| investorID            | Investor ID                                              |
+| name                  | Name                                                     |
+| description           | Description fetched from the investor website            |
+| website               | Investor website                                         |
+| city                  | City name                                                |
+| country               | Country name                                             |
+| continent             | Continent name                                           |
+| linkedInURL           | URL to investor LinkedIn                                 |
+| twitterURL            | URL to investor Twitter                                  |
+| facebookURL           | URL to investor Facebook                                 |
+| email                 | Investor main email                                      |
+| phone                 | Investor main phone                                      |
+| size                  | Investor number of employees range                       |
+| sizeID                | Investor number of employees range ID                    |
+| foundedDate           | Founded date                                             |
+| numberOfDeals         | Number of deals                                          |
+| numberOfDealsFiltered | Number of filtered deals                                 |
+| lastDealType          | Type of the last deal                                    |
+| lastDealDate          | Date of the last deal                                    |
+| lastRoundAmount       | Last round amount in EUR                                 |
+| lastRoundAmountUSD    | Last round amount in USD                                 |
+| note                  | Note on the investor                                     |
+| primaryTypeID         | Primary type ID                                          |
+| primaryType           | TODO                                                     |
+| secondaryTypes        | TODO                                                     |
+| investments           | List of companies that have been invested in             |
+| coInvestors           | List of investors that have invested in mutual companies |
 
 # Taxonomy Page
 
