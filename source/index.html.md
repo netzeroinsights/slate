@@ -714,7 +714,7 @@ patentsCountFrom | int | Minimum number of patents
 patentsCountTo | int | Maximum number of patents
 fundRaising | List of string | Use ”fundRaising” to see all the companies likely to fundraise
 
-## FundingRound Filter
+## Deals Filter
 
 Parameter name | Parameter type | Description
 --------- |------| -------------------
