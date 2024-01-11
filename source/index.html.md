@@ -1289,6 +1289,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain at most 3 available companies of the specified item by ID, with the JSON structured like the following:
+
 ```json
 [
     {
@@ -2127,6 +2128,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain at most 3 available investors of the specified item by ID, with the JSON structured like the following:
+
 ```json
 [
     {
@@ -2173,6 +2175,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain all the available items, with the JSON structured like the following:
+
 ```json
 [
     {
@@ -2219,6 +2222,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain a taxonomy graph item, with the JSON structured like the following:
+
 ```json
 {
     "label": "Biofuel",
@@ -2244,6 +2248,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain all the available taxonomy graph item relations, with the JSON structured like the following:
+
 ```json
 [
   {
@@ -2274,6 +2279,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain all the available taxonomy graph item relations, with the JSON structured like the following:
+
 ```json
 [
   {
@@ -2305,6 +2311,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain all the available taxonomy graph item relations, with the JSON structured like the following:
+
 ```json
 [
   {
@@ -2329,6 +2336,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain all the available TRLs, with the JSON structured like the following:
+
 ```json
 [
   {
@@ -2362,6 +2370,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain the available tags, with the JSON structured like the following:
+
 ```json
 {
   "count": 1230,
@@ -2424,6 +2433,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain the available tag types, with the JSON structured like the following:
+
 ```json
 [
   {
@@ -2460,6 +2470,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain the available tag families, with the JSON structured like the following:
+
 ```json
 [
   {
@@ -2487,6 +2498,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain the available tag templates, with the JSON structured like the following:
+
 ```json
 [
   {
@@ -2519,6 +2531,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```
 
 > In case of a 200 response, the response body will contain the available mapcards, with the JSON structured like the following:
+
 ```json
 {
   "marketMapCards": [
