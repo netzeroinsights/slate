@@ -50,16 +50,16 @@ Before using any other API, you should first login using the following endpoint:
 
 With the following two parameters:
 
-Parameter name | Parameter value
---------- | -----------
-username | provided by Net Zero Insights
-password | provided by Net Zero Insights
+| Parameter name | Parameter value               |
+|----------------|-------------------------------|
+| username       | provided by Net Zero Insights |
+| password       | provided by Net Zero Insights |
 
 The possible response codes are:
 
-Response code | Meaning
---------- | -----------
-200 | Login successful
+| Response code | Meaning          |
+|---------------|------------------|
+| 200           | Login successful |
 
 Please note that in case of a 200 response, you will also get a **Session Cookie**. You should save this,
 as it will be needed for using all the other endpoints. The session cookie expires after 30 minutes of
@@ -90,9 +90,9 @@ To close the session, you should use the following endpoint:
 
 It takes no parameter, and has the following response code:
 
-Response code | Meaning
---------- | -----------
-200 | Session terminated
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Session terminated |
 
 <aside class="notice">
 Please note that manually closing a session is not required, since it will be closed bye the server after
@@ -217,9 +217,9 @@ With a JSON request body in the format specified at the section [Main Filter](#m
 
 The possible response codes are:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 # Startup Detail
 
@@ -359,9 +359,9 @@ To get a startup overview and taxonomy you should use the following endpoint:
 
 It takes a single parameter, indicated as ”[directLink]” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”directLink”, and has the following response codes:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Startup Patents
 
@@ -413,9 +413,9 @@ To get all the patents of a startup, you should use the following endpoint:
 
 It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”clientID”, and has the following response codes:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Startup Investors
 
@@ -451,9 +451,9 @@ To get all the investors of a startup, you should use the following endpoint:
 
 It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”clientID”, and has the following response codes:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Startup Contacts
 
@@ -497,9 +497,9 @@ To get all contacts of a startup, you should use the following endpoint:
 
 With a JSON request body in the format specified at the Section [Contacts Filter](#contacts-filter), and has the following response codes:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Startup Funding rounds
 
@@ -561,9 +561,9 @@ To get all the funding rounds of a startup, you should use the following endpoin
 
 It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”clientID”, and has the following response codes:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Funding round investors
 
@@ -607,9 +607,9 @@ To get all the investors of a given set of funding rounds, you should use the fo
 
 The request body should be a list of round IDs, which you can get from previous calls of [Startup Funding Rounds](#startup-funding-rounds), variable ”coFundingRoundId”, and has the following response codes:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Funding round sources
 
@@ -648,9 +648,9 @@ To get all the sources of a funding round, you should use the following endpoint
 
 It takes a single parameter, indicated as ”[coFundingRoundId]” in the example, which is taken from a previous call of the endpoint at Section [Startup Funding Rounds](#startup-funding-rounds), variable ”coFundingRoundId”, and has the following response codes:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 # Deals List
 
@@ -734,9 +734,9 @@ With a JSON request body in the format specified at the section [Main Filter](#m
 
 The possible response codes are:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 # Investors List
 
@@ -894,9 +894,9 @@ With a JSON request body in the format specified at the section [Main Filter](#m
 
 The possible response codes are:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 # Filters structure
 
@@ -904,285 +904,282 @@ Response code | Meaning
 
 This is the main filter used when searching for startups. It contains two simple fields (”offset” and ”limit”) and some complex ones (i.e.: ”include”, ”sorting”) defined further in this document.
 
- Parameter name      | Parameter type                                | Description                                                        
----------------------|-----------------------------------------------|--------------------------------------------------------------------
- limit               | int                                           | Maximum number of results shown                                    
- offset              | int                                           | Number of pages (of size "limit") skipped                          
- sorting             | Section [Sorting](#sorting)                   | Order of the results                                               
- include             | Section [Startups Filter](#startups-filter)   | Filters related to startups which should be included in the result 
- exclude             | Section [Startups Filter](#startups-filter)   | Filters related to startups which should be excluded in the result 
- fundingRoundInclude | Section [Deals Filter](#deals-filter)         | Filters related to deals which should be included in the result 
- fundingRoundExclude | Section [Deals Filter](#deals-filter)         | Filters related to deals which should be excluded in the result 
- investorInclude     | Section [Investors Filter](#investors-filter) | Filters related to investors which should be included in the result 
- investorExclude     | Section [Investors Filter](#investors-filter) | Filters related to investors which should be excluded in the result 
+| Parameter name      | Parameter type                                | Description                                                         |
+|---------------------|-----------------------------------------------|---------------------------------------------------------------------|
+| limit               | int                                           | Maximum number of results shown                                     |
+| offset              | int                                           | Number of pages (of size "limit") skipped                           |
+| sorting             | Section [Sorting](#sorting)                   | Order of the results                                                |
+| include             | Section [Startups Filter](#startups-filter)   | Filters related to startups which should be included in the result  |
+| exclude             | Section [Startups Filter](#startups-filter)   | Filters related to startups which should be excluded in the result  |
+| fundingRoundInclude | Section [Deals Filter](#deals-filter)         | Filters related to deals which should be included in the result     |
+| fundingRoundExclude | Section [Deals Filter](#deals-filter)         | Filters related to deals which should be excluded in the result     |
+| investorInclude     | Section [Investors Filter](#investors-filter) | Filters related to investors which should be included in the result | 
+| investorExclude     | Section [Investors Filter](#investors-filter) | Filters related to investors which should be excluded in the result |
 
 ## Sorting
 
-Parameter name | Parameter type | Description
---------- | ----------- | -------------------
-column | string | See Section [Sortable Columns](#sortable-columns) for the available options
-direction | string | The only options available are ”ASC” and ”DESC”
+| Parameter name | Parameter type | Description                                                                 |
+|----------------|----------------|-----------------------------------------------------------------------------|
+| column         | string         | See Section [Sortable Columns](#sortable-columns) for the available options |
+| direction      | string         | The only options available are ”ASC” and ”DESC”                             |
 
 ## Startups Filter
 
-Parameter name | Parameter type | Description
---------- | ----------- | -------------------
-searchableLocations | List of int | See Section [Searchable Locations](#searchable-locations) for the accepted values
-sizes | List of Section [Size](#size) | Number of employees
-stages | List of int | Growth stage, see Section [Stages](#stages) for accepted values
-fundings | List of int | Total funding range, see Section [Fundings](#fundings) for accepted val- ues
-fundingsFrom | int | Minimum total funding
-fundingsTo | int | Maximum total funding
-tags | List of int | See Section [Tags](#tags) for accepted values
-sustainabilities | List of int | See Section [Sustainabilities](#sustainabilities) for accepted values
-foundedDates | List of Section [Founded Date](#founded-date) | Startup founded date
-acquisitionDateFrom | date | Starting date for when the startup has been inserted into our database
-acquisitionDateTo | date | Maximum date for when the startup has been in- serted into our database
-foundedDatesFrom | date | Starting founded date
-foundedDatesTo | date | Maximum founded date
-raisedDateFrom | date | Starting date for any round
-raisedDateTo | date | Maximum date for any round
-lastRoundDates | List of Section [Last Round Date](#last-round-date) | Date range for last round
-lastRoundDatesFrom | date | Starting date for last round
-lastRoundDatesTo | date | Maximum date for last round
-fundingTypes | List of Section [Funding Type](#funding-type) | Funding type for any round
-sdgs | List of int | Sustainable development goals, see Section [SDGs](#sdgs) for accepted values
-wildcards | List of string | Any match of the keywords in the name/pitchline/description
-wildcardsFields | List of Section [Wildcard Fields](#wildcard-fields) | Select on which fields to match the wildcards
-investors | List of int | See Section [Investors](#investors) for the accepted values
-lastFundingTypes | List of Section [Funding Type](#funding-type) | Funding type for last round
-lastFundingsFrom | List of int | Minimum last round amount
-lastFundingsTo | List of int | Maximum last round amount
-patentSearch | List of string | Any match of the keywords in any patent description
-patentsStatus | List of Section [Patent Status](#patent-status) | Status of any patent
-applicationDateFrom | Date | Starting application date for any patent
-applicationDateTo | Date | Maximum application date for any patent
-grantedDateFrom | Date | Starting granted date for any patent
-grantedDateTo | Date | Maximum granted date for any patent
-patentOffice | List of int | See Section [Searchable Locations](#searchable-locations) for the accepted values
-patentsCountFrom | int | Minimum number of patents
-patentsCountTo | int | Maximum number of patents
-fundRaising | List of string | Use ”fundRaising” to see all the companies likely to fundraise
+| Parameter name      | Parameter type                                      | Description                                                                       |
+|---------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------|
+| searchableLocations | List of int                                         | See Section [Searchable Locations](#searchable-locations) for the accepted values |
+| sizes               | List of Section [Size](#size)                       | Number of employees                                                               |
+| stages              | List of int                                         | Growth stage, see Section [Stages](#stages) for accepted values                   |
+| fundings            | List of int                                         | Total funding range, see Section [Fundings](#fundings) for accepted val- ues      |
+| fundingsFrom        | int                                                 | Minimum total funding                                                             |
+| fundingsTo          | int                                                 | Maximum total funding                                                             |
+| tags                | List of int                                         | See Section [Tags](#tags) for accepted values                                     |
+| sustainabilities    | List of int                                         | See Section [Sustainabilities](#sustainabilities) for accepted values             |
+| foundedDates        | List of Section [Founded Date](#founded-date)       | Startup founded date                                                              |
+| acquisitionDateFrom | date                                                | Starting date for when the startup has been inserted into our database            |
+| acquisitionDateTo   | date                                                | Maximum date for when the startup has been in- serted into our database           |
+| foundedDatesFrom    | date                                                | Starting founded date                                                             |
+| foundedDatesTo      | date                                                | Maximum founded date                                                              |
+| raisedDateFrom      | date                                                | Starting date for any round                                                       |
+| raisedDateTo        | date                                                | Maximum date for any round                                                        |
+| lastRoundDates      | List of Section [Last Round Date](#last-round-date) | Date range for last round                                                         |
+| lastRoundDatesFrom  | date                                                | Starting date for last round                                                      |
+| lastRoundDatesTo    | date                                                | Maximum date for last round                                                       |
+| fundingTypes        | List of Section [Funding Type](#funding-type)       | Funding type for any round                                                        |
+| sdgs                | List of int                                         | Sustainable development goals, see Section [SDGs](#sdgs) for accepted values      |
+| wildcards           | List of string                                      | Any match of the keywords in the name/pitchline/description                       |
+| wildcardsFields     | List of Section [Wildcard Fields](#wildcard-fields) | Select on which fields to match the wildcards                                     |
+| investors           | List of int                                         | See Section [Investors](#investors) for the accepted values                       |
+| lastFundingTypes    | List of Section [Funding Type](#funding-type)       | Funding type for last round                                                       |
+| lastFundingsFrom    | List of int                                         | Minimum last round amount                                                         |
+| lastFundingsTo      | List of int                                         | Maximum last round amount                                                         |
+| patentSearch        | List of string                                      | Any match of the keywords in any patent description                               |
+| patentsStatus       | List of Section [Patent Status](#patent-status)     | Status of any patent                                                              |
+| applicationDateFrom | Date                                                | Starting application date for any patent                                          |
+| applicationDateTo   | Date                                                | Maximum application date for any patent                                           |
+| grantedDateFrom     | Date                                                | Starting granted date for any patent                                              |
+| grantedDateTo       | Date                                                | Maximum granted date for any patent                                               |
+| patentOffice        | List of int                                         | See Section [Searchable Locations](#searchable-locations) for the accepted values |
+| patentsCountFrom    | int                                                 | Minimum number of patents                                                         |
+| patentsCountTo      | int                                                 | Maximum number of patents                                                         |
+| fundRaising         | List of string                                      | Use ”fundRaising” to see all the companies likely to fundraise                    |
 
 ## Deals Filter
 
- Parameter name       | Parameter type                              | Description                                                                                                    
-----------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------
- dates                | List of RoundDate [Round Date](#round-date) | See Section [Round Date](#round-date) for the accepted values                                                  
- acquisitionDateFrom  | Date                                        | Starting date for when the deal has been inserted into our database                                            
- acquisitionDateTo    | Date                                        | Maximum date for when the deal has been inserted into our database                                             
- datesFrom            | Date                                        | Starting date for when the deal has been closed                                                                
- datesTo              | Date                                        | Maximum date for when the deal has been closed                                                                 
- lastRoundDays        | List of int                                 | Maximun number of days passed since the deal was closed                                                        
- amount               | List of int                                 | See Section [Round Amount](#round-amount) for the accepted values                                              
- amountFrom           | int                                         | Minimum deal amount                                                                                            
- amountTo             | int                                         | Maximum deal amount                                                                                            
- types                | List of string                              | See Section [Round Type](#round-type) for the accepted values                                                  
- allowNullAmounts     | boolean                                     | When searching with deal amount filters, if true, include deals with no deal amount                            
- numberFrom           | int                                         | Minimum deal number for the company                                                                            
- numberTo             | int                                         | Maximum deal number for the company                                                                            
- investors            | List of int                                 | Using the [Investor List](#investors-list) endpoints, it is possible to fetch the investors' IDs to insert here 
- totalFunding         | List of int                                 | See Section [Total Funding](#total-funding) for the accepted values                                            
- totalFundingFrom     | int                                         | Minimum total funding of the company                                                                           
- totalFundingTo       | int                                         | Maximum total funding of the company                                                                           
- financingInstruments | List of string                              | See Section [Financing Instruments](#financing-instrument) for the accepted values                             
- equityStages         | List of int                                 | See Section [Equity Stage](#equity-stage) for the accepted values                                              
- exitStages           | List of int                                 | See Section [Exit Stage](#exit-stage) for the accepted values                                                  
+| Parameter name       | Parameter type                              | Description                                                                                                     |                                                                                                    
+|----------------------|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| dates                | List of RoundDate [Round Date](#round-date) | See Section [Round Date](#round-date) for the accepted values                                                   |                                                  
+| acquisitionDateFrom  | Date                                        | Starting date for when the deal has been inserted into our database                                             |                                            
+| acquisitionDateTo    | Date                                        | Maximum date for when the deal has been inserted into our database                                              |                                             
+| datesFrom            | Date                                        | Starting date for when the deal has been closed                                                                 |                                                                
+| datesTo              | Date                                        | Maximum date for when the deal has been closed                                                                  |                                                                 
+| lastRoundDays        | List of int                                 | Maximun number of days passed since the deal was closed                                                         |                                                        
+| amount               | List of int                                 | See Section [Round Amount](#round-amount) for the accepted values                                               |                                              
+| amountFrom           | int                                         | Minimum deal amount                                                                                             |                                                                                            
+| amountTo             | int                                         | Maximum deal amount                                                                                             |                                                                                            
+| types                | List of string                              | See Section [Round Type](#round-type) for the accepted values                                                   |                                                  
+| allowNullAmounts     | boolean                                     | When searching with deal amount filters, if true, include deals with no deal amount                             |                            
+| numberFrom           | int                                         | Minimum deal number for the company                                                                             |                                                                            
+| numberTo             | int                                         | Maximum deal number for the company                                                                             |                                                                            
+| investors            | List of int                                 | Using the [Investor List](#investors-list) endpoints, it is possible to fetch the investors' IDs to insert here | 
+| totalFunding         | List of int                                 | See Section [Total Funding](#total-funding) for the accepted values                                             |                                            
+| totalFundingFrom     | int                                         | Minimum total funding of the company                                                                            |                                                                           
+| totalFundingTo       | int                                         | Maximum total funding of the company                                                                            |                                                                           
+| financingInstruments | List of string                              | See Section [Financing Instruments](#financing-instrument) for the accepted values                              |                             
+| equityStages         | List of int                                 | See Section [Equity Stage](#equity-stage) for the accepted values                                               |                                              
+| exitStages           | List of int                                 | See Section [Exit Stage](#exit-stage) for the accepted values                                                   |                                                  
 
 ## Investors Filter
 
-| Parameter name              | Parameter type | Description                                                                       |
-|-----------------------------|----------------|-----------------------------------------------------------------------------------|
-| investorTypeIDs             | List of int    | See Section [Investor Types](#investor-types) for the accepted values             |
-| includeOtherInvestorTypes   | boolean        | TODO                                                                              |
-| investorDealsFrom           | int            | Minimum number of deals                                                           |
-| investorDealsTo             | int            | Maximum number of deals                                                           |
-| investorSearchableLocations | List of int    | See Section [Searchable Locations](#searchable-locations) for the accepted values |
-| investorRegions             | List of int    | See Section [Investor Regions](#investor-regions) for accepted values             |
-| coInvestors                 | List of int    | See Section [Investors](#investors) for accepted values                           |
-| investments                 | List of int    | TODO                                                                              |
-| investorIDs                 | List of int    | See Section [Investors](#investors) for accepted values                           |
-| investorFoundedDatesFrom    | date           | Starting founded date of the investor                                             |
-| investorFoundedDatesTo      | date           | Maximum founded date of the investor                                              |
-| investorPortfolioIds        | List of int    | TODO                                                                              |
-| mostActive                  | boolean        | TODO                                                                              |
-| mustHaveLogo                | boolean        | TODO                                                                              |
+| Parameter name              | Parameter type | Description                                                                                                                  |
+|-----------------------------|----------------|------------------------------------------------------------------------------------------------------------------------------|
+| investorTypeIDs             | List of int    | See Section [Investor Types](#investor-types) for the accepted values                                                        |
+| includeOtherInvestorTypes   | boolean        | When filtering for investor types, if true, include investors whose secondary types match at least one of the selected types |
+| investorDealsFrom           | int            | Minimum number of deals                                                                                                      |
+| investorDealsTo             | int            | Maximum number of deals                                                                                                      |
+| investorSearchableLocations | List of int    | See Section [Searchable Locations](#searchable-locations) for the accepted values                                            |
+| investorRegions             | List of int    | See Section [Investor Regions](#investor-regions) for accepted values                                                        |
+| coInvestors                 | List of int    | See Section [Investors](#investors) for accepted values                                                                      |
+| investments                 | List of int    | Using the endpoint [Startup List](#startups-list) it's possible to fetch their clientIDs to be used here                     |
+| investorIDs                 | List of int    | See Section [Investors](#investors) for accepted values                                                                      |
+| investorFoundedDatesFrom    | date           | Starting founded date of the investor                                                                                        |
+| investorFoundedDatesTo      | date           | Maximum founded date of the investor                                                                                         |
 
 ## Contacts Filter
 
-Parameter name | Parameter type | Description
---------- |----------------| -------------------
-clientID | int            | ClientID of the requested startup, taken from a previous call of [Startup List](#startup-list)
-decisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities
-roleID | int            | Optional, contact role, see Section [Role](#role) for accepted values
+| Parameter name | Parameter type | Description                                                                                    |
+|----------------|----------------|------------------------------------------------------------------------------------------------|
+| clientID       | int            | ClientID of the requested startup, taken from a previous call of [Startup List](#startup-list) |
+| decisionMaker  | boolean        | Optional, if true only returns contacts with decision making capabilities                      |
+| roleID         | int            | Optional, contact role, see Section [Role](#role) for accepted values                          |
 
 # Additional Tables
 
 ## Sortable Columns
 
-Value | Usable for | Description
---------- | ----------- | -------------------
-name | startup | Startup name
-country | startup | Startup country
-website | startup | Startup website
-foundedDate | startup | Startup founded date
-size | startup | Number of employees
-stage | startup | Startup growth stage
-lastRoundDate | startup | Startup last round date
-acquisitionDate | startup | Date of startup insertion into our database
-fundingString | startup | Startup total funding
-lastRoundAmount | startup | Startup last round amount
-lastRoundType | startup | Startup last round type
-sustainabilityMetricID | startup | Startup impact on the ecosystem
-tags | startup | Startup tags
-fundingTypes | startup | Startup funding types
-sdgs | startup | Startup Sustainable Development Goals
+| Value                  | Usable for | Description                                 |
+|------------------------|------------|---------------------------------------------|
+| name                   | startup    | Startup name                                |
+| country                | startup    | Startup country                             |
+| website                | startup    | Startup website                             |
+| foundedDate            | startup    | Startup founded date                        |
+| size                   | startup    | Number of employees                         |
+| stage                  | startup    | Startup growth stage                        |
+| lastRoundDate          | startup    | Startup last round date                     |
+| acquisitionDate        | startup    | Date of startup insertion into our database |
+| fundingString          | startup    | Startup total funding                       |
+| lastRoundAmount        | startup    | Startup last round amount                   |
+| lastRoundType          | startup    | Startup last round type                     |
+| sustainabilityMetricID | startup    | Startup impact on the ecosystem             |
+| tags                   | startup    | Startup tags                                |
+| fundingTypes           | startup    | Startup funding types                       |
+| sdgs                   | startup    | Startup Sustainable Development Goals       |
 
 ## Size
 
-ID | Label
---- | ---- 
-1 | 1-10
-2 | 11-50
-3 | 51-100
-4 | 101-200
-5 | 201-500
-6 | 501-1000
-7 | 1001-5000
-8 | 5001-10000
-9 | 10000+
+| ID | Label      |
+|----|------------|
+| 1  | 1-10       |
+| 2  | 11-50      |
+| 3  | 51-100     |
+| 4  | 101-200    |
+| 5  | 201-500    |
+| 6  | 501-1000   |
+| 7  | 1001-5000  |
+| 8  | 5001-10000 |
+| 9  | 10000+     |
 
 ## Founded Date
 
-ID | Label
---- | ----
-1 | This year
-2 | Last year
-3 | Last 3 years
-4 | Last 5 years
+| ID | Label        |
+|----|--------------|
+| 1  | This year    |
+| 2  | Last year    |
+| 3  | Last 3 years |
+| 4  | Last 5 years |
 
 ## Last Round Date
 
-ID | Label
---- | ----
-1 | Last month
-2 | Last semester
-3 | Last year
+| ID | Label         |
+|----|---------------|
+| 1  | Last month    |
+| 2  | Last semester |
+| 3  | Last year     |
 
 ## Wildcard Fields
 
-Label |
------- |
-pitchLine |
-description | 
-websiteContent |
+| Label          |
+|----------------|
+| pitchLine      |
+| description    | 
+| websiteContent |
 
 ## Patent Status
 
-Label |
------- |
-granted |
-pending |
+| Label   |
+|---------|
+| granted |
+| pending |
 
 ## Stages
 
-ID | Label
---- | ----
-1 | Ideation
-2 | Early
-3 | Growth
-4 | Scaling
+| ID | Label    |
+|----|----------|
+| 1  | Ideation |
+| 2  | Early    |
+| 3  | Growth   |
+| 4  | Scaling  |
 
 ## Fundings
 
-ID | Label
---- | ----
-1 | 0 - 500K
-2 | 500K - 1M
-3 | 1M-5M
-4 | 5M-10M
-5 | 10M - 25M
-6 | 25M - 50M
-7 | 50M - 100M
-8 | 100M - 250M
-9 | 250+M
+| ID | Label       |
+|----|-------------|
+| 1  | 0 - 500K    |
+| 2  | 500K - 1M   |
+| 3  | 1M-5M       |
+| 4  | 5M-10M      |
+| 5  | 10M - 25M   |
+| 6  | 25M - 50M   |
+| 7  | 50M - 100M  |
+| 8  | 100M - 250M |
+| 9  | 250+M       |
 
 ## Sustainabilities
 
-ID | Label
---- | ----
-1 | Low impact
-2 | Average impact
-3 | High impact
-4 | Very high impact
+| ID | Label            |
+|----|------------------|
+| 1  | Low impact       |
+| 2  | Average impact   |
+| 3  | High impact      |
+| 4  | Very high impact |
 
 ## Round Date
 
-ID | Label
---- | ----
-1 | Last Month
-2 | Last Quarter
-3 | Last Semester
-4 | Last Year
-5 | YTD
+| ID | Label         |
+|----|---------------|
+| 1  | Last Month    |
+| 2  | Last Quarter  |
+| 3  | Last Semester |
+| 4  | Last Year     |
+| 5  | YTD           |
 
 ## SDGs
 
-ID | Label
---- | ----
-1 | 1. No poverty
-2 | 2. Zero hunger
-3 | 3. Good health and well-being
-4 | 4. Quality education
-5 | 5. Gender equality
-6 | 6. Clean water and sanitation
-7 | 7. Affordable and clean energy
-8 | 8. Decent work and economic growth
-9 | 9. Industry, innovation, and infrastructure
-10 | 10. Reduced inequalities
-11 | 11. Sustainable cities and communities
-12 | 12. Responsible consumption and production
-13 | 13. Climate action
-14 | 14. Life below water
-15 | 15. Life on land
-16 | 16. Peace justice and strong institutions
-17 | 17. Partenrships
+| ID | Label                                       |
+|----|---------------------------------------------|
+| 1  | 1. No poverty                               |
+| 2  | 2. Zero hunger                              |
+| 3  | 3. Good health and well-being               |
+| 4  | 4. Quality education                        |
+| 5  | 5. Gender equality                          |
+| 6  | 6. Clean water and sanitation               |
+| 7  | 7. Affordable and clean energy              |
+| 8  | 8. Decent work and economic growth          |
+| 9  | 9. Industry, innovation, and infrastructure |
+| 10 | 10. Reduced inequalities                    |
+| 11 | 11. Sustainable cities and communities      |
+| 12 | 12. Responsible consumption and production  |
+| 13 | 13. Climate action                          |
+| 14 | 14. Life below water                        |
+| 15 | 15. Life on land                            |
+| 16 | 16. Peace justice and strong institutions   |
+| 17 | 17. Partenrships                            |
 
 ## Financing Instrument
 
-Label |
------- |
-Debt |
-Equity | 
-Grant |
+| Label  |
+|--------|
+| Debt   |
+| Equity | 
+| Grant  |
 
 ## Equity Stage
 
-ID | Label
---- | ----
-1 | Other
-2 | Pre-seed and seed
-3 | Early stage
-4 | Late stage
+| ID | Label             |
+|----|-------------------|
+| 1  | Other             |
+| 2  | Pre-seed and seed |
+| 3  | Early stage       |
+| 4  | Late stage        |
 
 ## Exit Stage
 
-ID | Label
---- | ----
-1 | Venture
-2 | Exit
-3 | Post Exit
+| ID | Label     |
+|----|-----------|
+| 1  | Venture   |
+| 2  | Exit      |
+| 3  | Post Exit |
 
 ## Role
 
-ID | Label
---- | ----
-1 | Fouder
-2 | HR
-3 | Sales
-4 | Marketing / PR
-5 | Tech
-6 | C-Suite
+| ID | Label          |
+|----|----------------|
+| 1  | Fouder         |
+| 2  | HR             |
+| 3  | Sales          |
+| 4  | Marketing / PR |
+| 5  | Tech           |
+| 6  | C-Suite        |
 
 ## Investor Types
 
@@ -1274,9 +1271,9 @@ To get the list of the currently available tags, you should use the following en
 
 It takes no parameter, and has the following response codes:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Investors
 
@@ -1310,9 +1307,9 @@ To get the list of the currently available investors, you should use the followi
 
 It takes no parameter, and has the following response codes:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Funding Type
 
@@ -1344,9 +1341,9 @@ To get the list of the currently available funding types, you should use the fol
 
 It takes no parameter, and has the following response codes:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Searchable Locations
 
@@ -1392,151 +1389,151 @@ To get the list of the searchable locations, you should use the following endpoi
 
 It takes a single parameter, indicated as ”[location]” in the example, which is a string used to filter the locations and has the following response codes:
 
-Response code | Meaning
---------- | -----------
-200 | Request successful
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 # Responses structure
 
 ## Startup search
 
-Name | Content
---------- | -----------
-results | List of Section [Startup](#startup)
-count | Total number of results, regardless of the ”limit” parameter
+| Name    | Content                                                      |
+|---------|--------------------------------------------------------------|
+| results | List of Section [Startup](#startup)                          |
+| count   | Total number of results, regardless of the ”limit” parameter |
 
 ## Startup
 
-Name | Content
---------- | -----------
-id | Internal ID
-clientID | Startup ID
-name | Name
-logo | URL to company’s logo
-website | Company website
-domain | Company website domain
-pitchLine | Pitchline
-description | Description fetched from the company website
-fundingAmount | Company total funding in EUR
-fundingString | Company total funding in EUR, formatted
-fundingAmountUSD | Company total funding in USD
-fundingStringUSD | Company total funding in USD, formatted
-fundingRangeID | Company total funding range ID
-fundingRange | Company total funding range
-fundingRangeUSD | Company total funding range in USD
-fundingRangeIDUSD | Company total funding range ID in USD
-lastRoundDate | Date of the last round
-foundedDate | Founded date
-countryID | Country ID
-country | Country name
-city | City name
-continent | Continent name
-email | Company main email
-phone | Company main phone
-sizeID | Company number of employees range ID
-size | Company number of employees range
-stageID | Company growth stage ID
-stage | Company growth stage
-linkedinURL | URL to company LinkedIn
-twitterURL | URL to company Twitter
-facebookURL | URL to company Facebook
-directURL | URL to our company page
-sustainabilityMetric | Company climate impact metric
-sustainabilityMetricID | Company climate impact metric range ID
-lastRoundAmount | Last round amount in EUR
-lastRoundAmountUSD | Last round amount in USD
-lastRoundAmountString | Last round amount in EUR, formatted
-lastRoundAmountStringUSD | Last round amount in USD, formatted
-lastRoundType | Last round type
-revenueEuro | Total company revenue
-revenueYear | Year related to the ”revenueEuro” field
-tags | Company tags
-fundingTypes | Funding types of any round
-sdgs | Sustainable Development Goals
-isFundRaising | Company likelihood to fundraise
-roundCount | Number of rounds
-roundWithDateCount | Number of rounds with a date available
-reviewDate | Date of latest company review by our analysts
+| Name                     | Content                                       |
+|--------------------------|-----------------------------------------------|
+| id                       | Internal ID                                   |
+| clientID                 | Startup ID                                    |
+| name                     | Name                                          |
+| logo                     | URL to company’s logo                         |
+| website                  | Company website                               |
+| domain                   | Company website domain                        |
+| pitchLine                | Pitchline                                     |
+| description              | Description fetched from the company website  |
+| fundingAmount            | Company total funding in EUR                  |
+| fundingString            | Company total funding in EUR, formatted       |
+| fundingAmountUSD         | Company total funding in USD                  |
+| fundingStringUSD         | Company total funding in USD, formatted       |
+| fundingRangeID           | Company total funding range ID                |
+| fundingRange             | Company total funding range                   |
+| fundingRangeUSD          | Company total funding range in USD            |
+| fundingRangeIDUSD        | Company total funding range ID in USD         |
+| lastRoundDate            | Date of the last round                        |
+| foundedDate              | Founded date                                  |
+| countryID                | Country ID                                    |
+| country                  | Country name                                  |
+| city                     | City name                                     |
+| continent                | Continent name                                |
+| email                    | Company main email                            |
+| phone                    | Company main phone                            |
+| sizeID                   | Company number of employees range ID          |
+| size                     | Company number of employees range             |
+| stageID                  | Company growth stage ID                       |
+| stage                    | Company growth stage                          |
+| linkedinURL              | URL to company LinkedIn                       |
+| twitterURL               | URL to company Twitter                        |
+| facebookURL              | URL to company Facebook                       |
+| directURL                | URL to our company page                       |
+| sustainabilityMetric     | Company climate impact metric                 |
+| sustainabilityMetricID   | Company climate impact metric range ID        |
+| lastRoundAmount          | Last round amount in EUR                      |
+| lastRoundAmountUSD       | Last round amount in USD                      |
+| lastRoundAmountString    | Last round amount in EUR, formatted           |
+| lastRoundAmountStringUSD | Last round amount in USD, formatted           |
+| lastRoundType            | Last round type                               |
+| revenueEuro              | Total company revenue                         |
+| revenueYear              | Year related to the ”revenueEuro” field       |
+| tags                     | Company tags                                  |
+| fundingTypes             | Funding types of any round                    |
+| sdgs                     | Sustainable Development Goals                 |
+| isFundRaising            | Company likelihood to fundraise               |
+| roundCount               | Number of rounds                              |
+| roundWithDateCount       | Number of rounds with a date available        |
+| reviewDate               | Date of latest company review by our analysts |
 
 
 
 
 ## Funding round
 
-Name | Content
---------- | -----------
-id | Internal funding round ID
-clientID | Startup ID
-roundDate | Date of the round
-roundType | Type of the round
-roundAmount | Amount of the round (EUR)
-roundAmountUSD | Amount of the round (USD)
-roundAmountId | ID of the amount range
-coFundingRoundId | Additional internal funding round ID
-fundingRange | Amount range
-roundInvestors | List of IDs of all the investors of the round
-roundNews | List of IDs of all the sources of the round
-roundCurrency | Original currency of the round
-originalAmount | Round amount in original currency
-source | Name of the analyst who inserted the round
-financingInstrument | Financing instrument
-equityStageID | Equity stage ID, see Section [Equity Stage](#equity-stage)
-exitStageID | Exit stage ID, see Section [Exit Stage](#exit-stage)
+| Name                | Content                                                    |
+|---------------------|------------------------------------------------------------|
+| id                  | Internal funding round ID                                  |
+| clientID            | Startup ID                                                 |
+| roundDate           | Date of the round                                          |
+| roundType           | Type of the round                                          |
+| roundAmount         | Amount of the round (EUR)                                  |
+| roundAmountUSD      | Amount of the round (USD)                                  |
+| roundAmountId       | ID of the amount range                                     |
+| coFundingRoundId    | Additional internal funding round ID                       |
+| fundingRange        | Amount range                                               |
+| roundInvestors      | List of IDs of all the investors of the round              |
+| roundNews           | List of IDs of all the sources of the round                |
+| roundCurrency       | Original currency of the round                             |
+| originalAmount      | Round amount in original currency                          |
+| source              | Name of the analyst who inserted the round                 |
+| financingInstrument | Financing instrument                                       |
+| equityStageID       | Equity stage ID, see Section [Equity Stage](#equity-stage) |
+| exitStageID         | Exit stage ID, see Section [Exit Stage](#exit-stage)       |
 
 ## Funding round investor
 
-Name | Content
---------- | -----------
-id | Internal investor ID
-name | Investor name
-website | Investor website
-fundingRoundId | Funding round ID
+| Name           | Content              |
+|----------------|----------------------|
+| id             | Internal investor ID |
+| name           | Investor name        |
+| website        | Investor website     |
+| fundingRoundId | Funding round ID     |
 
 ## Funding round source
 
-Name | Content
---------- | -----------
-id | Internal source ID
-url | Source url
-fundingRoundId | Funding round ID
+| Name           | Content            |
+|----------------|--------------------|
+| id             | Internal source ID |
+| url            | Source url         |
+| fundingRoundId | Funding round ID   |
 
 ## Patent
 
-Name | Content
---------- | -----------
-id | Internal patent ID
-googlePatentsUrl | Patent url
-filingDate | Filing date
-publicationDate | Pubblication date
-patentAbstract | Patent abstract
-title | Patent title
-jurisdiction | Country ID where the patent has been filed
-jurisdictionName | Name of the country where the patent has been filed
-publicationNumber | External patent ID
-familyId | Internal patent family ID
-clientId | Client ID of the startup
-status | Patent status, see Section [Patent Status](#patent-status)
+| Name              | Content                                                    |
+|-------------------|------------------------------------------------------------|
+| id                | Internal patent ID                                         |
+| googlePatentsUrl  | Patent url                                                 |
+| filingDate        | Filing date                                                |
+| publicationDate   | Pubblication date                                          |
+| patentAbstract    | Patent abstract                                            |
+| title             | Patent title                                               |
+| jurisdiction      | Country ID where the patent has been filed                 |
+| jurisdictionName  | Name of the country where the patent has been filed        |
+| publicationNumber | External patent ID                                         |
+| familyId          | Internal patent family ID                                  |
+| clientId          | Client ID of the startup                                   |
+| status            | Patent status, see Section [Patent Status](#patent-status) |
 
 ## Investor
 
-Name | Content
---------- | -----------
-id | Internal investor ID
-name | Investor name
-firstRoundDate | Date of the first round of the company in which the in- vestor made an appearance
-roundTypes | Types of round in which the investor appeared
+| Name           | Content                                                                           |
+|----------------|-----------------------------------------------------------------------------------|
+| id             | Internal investor ID                                                              |
+| name           | Investor name                                                                     |
+| firstRoundDate | Date of the first round of the company in which the in- vestor made an appearance |
+| roundTypes     | Types of round in which the investor appeared                                     |
 
 ## Contact
 
-Name | Content
---------- | -----------
-name | Person name
-role | Person role
-department | Person department
-email | Person email
-linkedinURL | Person LinkedIn URL
-decisionMaker | True if the person has decision making capabilities
-id | Internal person ID
+| Name          | Content                                             |
+|---------------|-----------------------------------------------------|
+| name          | Person name                                         |
+| role          | Person role                                         |
+| department    | Person department                                   |
+| email         | Person email                                        |
+| linkedinURL   | Person LinkedIn URL                                 |
+| decisionMaker | True if the person has decision making capabilities |
+| id            | Internal person ID                                  |
 
 # Taxonomy Page
 
