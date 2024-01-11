@@ -1502,7 +1502,14 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | roundWithDateCount       | Number of rounds with a date available        |
 | reviewDate               | Date of latest company review by our analysts |
 
+## Deal search
 
+| Name               | Content                                                      |
+|--------------------|--------------------------------------------------------------|
+| results            | List of Section [Funding round](#deal)                       |
+| count              | Total number of results, regardless of the ”limit” parameter |
+| roundsTotalFunding | Total amount of results, regardless of the ”limit” parameter |
+| selectedCurrency   | Selected currency of the user                                |    
 
 
 ## Funding round
