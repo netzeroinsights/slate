@@ -714,6 +714,34 @@ patentsCountFrom | int | Minimum number of patents
 patentsCountTo | int | Maximum number of patents
 fundRaising | List of string | Use ”fundRaising” to see all the companies likely to fundraise
 
+## FundingRound Filter
+
+Parameter name | Parameter type | Description
+--------- |------| -------------------
+dates | List of RoundDate [Round Date](#round-date) | See Section [Round Date](#round-date) for the accepted values
+acquisitionDateFrom | Date | Starting date for when the fundingRound has been inserted into our database
+acquisitionDateTo | Date | Maximum date for when the fundingRound has been inserted into our database
+datesFrom | Date | TODO
+datesTo | Date | TODO
+lastRoundDays | List of int | TODO
+amount | List of int | TODO
+amountFrom | int | TODO
+amountTo | int | TODO
+types | List of string | TODO
+allowNullAmounts | boolean | TODO
+first | List of string | TODO
+last | List of string | TODO
+numberFrom | int | TODO
+numberTo | int | TODO
+investors | List of int | See Section [Investors](#investors) for the accepted values
+totalFunding | List of int | TODO
+totalFundingFrom | int | TODO
+totalFundingTo | int | TODO
+financingInstruments | List of string | TODO
+equityStages | List of int | TODO
+exitStages | List of int | TODO
+ids | List of int | TODO
+
 ## Contacts Filter
 
 Parameter name | Parameter type | Description
