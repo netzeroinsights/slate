@@ -469,6 +469,12 @@
                     <a href="#startup" class="toc-h2 toc-link" data-title="Startup">Startup</a>
                   </li>
                   <li>
+                    <a href="#deal" class="toc-h2 toc-link" data-title="Deal">Deal</a>
+                  </li>
+                  <li>
+                    <a href="#deal-search" class="toc-h2 toc-link" data-title="Deal search">Deal search</a>
+                  </li>
+                  <li>
                     <a href="#funding-round" class="toc-h2 toc-link" data-title="Funding round">Funding round</a>
                   </li>
                   <li>
@@ -3207,6 +3213,222 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>reviewDate</td>
 <td>Date of latest company review by our analysts</td>
+</tr>
+</tbody></table>
+<h2 id='deal'>Deal</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Internal funding round ID</td>
+</tr>
+<tr>
+<td>clientId</td>
+<td>Startup ID</td>
+</tr>
+<tr>
+<td>clientName</td>
+<td>Startup name</td>
+</tr>
+<tr>
+<td>clientLogoURL</td>
+<td>URL to startup&#39;s logo</td>
+</tr>
+<tr>
+<td>clientPitchLine</td>
+<td>Startup pitchLine</td>
+</tr>
+<tr>
+<td>clientHQ</td>
+<td>Startup headquarters</td>
+</tr>
+<tr>
+<td>clientCityHQ</td>
+<td>Startup city&#39;s headquarters</td>
+</tr>
+<tr>
+<td>clientCountryCode</td>
+<td>Startup country code</td>
+</tr>
+<tr>
+<td>clientCountryID</td>
+<td>Startup country ID</td>
+</tr>
+<tr>
+<td>clientContinentID</td>
+<td>Startup continent ID</td>
+</tr>
+<tr>
+<td>clientFoundedDate</td>
+<td>Startup founded date</td>
+</tr>
+<tr>
+<td>roundDate</td>
+<td>Date of the round</td>
+</tr>
+<tr>
+<td>acquisitionDate</td>
+<td>Date of startup insertion into our database</td>
+</tr>
+<tr>
+<td>roundType</td>
+<td>Type of the round</td>
+</tr>
+<tr>
+<td>roundAmount</td>
+<td>Amount of the round (EUR)</td>
+</tr>
+<tr>
+<td>roundAmountUSD</td>
+<td>Amount of the round (USD)</td>
+</tr>
+<tr>
+<td>roundAmountString</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>roundAmountStringUSD</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>roundAmountRangeID</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>roundAmountRangeIDUSD</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>roundInvestors</td>
+<td>List of IDs of all the investors of the round</td>
+</tr>
+<tr>
+<td>roundInvestorPOJOs</td>
+<td>List of IDs of all the investor DTOs of the round</td>
+</tr>
+<tr>
+<td>roundNews</td>
+<td>List of IDs of all the sources of the round</td>
+</tr>
+<tr>
+<td>roundNewsPOJOs</td>
+<td>List of IDs of all the source DTOs of the round</td>
+</tr>
+<tr>
+<td>roundCurrency</td>
+<td>Original currency of the round</td>
+</tr>
+<tr>
+<td>originalRoundAmount</td>
+<td>Round amount in original currency</td>
+</tr>
+<tr>
+<td>numberOfRounds</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>totalFundingRangeID</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>totalFundingRangeIDUSD</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>totalFunding</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>totalFundingUSD</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>totalFundingString</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>totalFundingStringUSD</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>roundNumber</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>financingInstrument</td>
+<td>Financing instrument</td>
+</tr>
+<tr>
+<td>lastRound</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Name of the analyst who inserted the round</td>
+</tr>
+<tr>
+<td>syncDate</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>valuationAmount</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>valuationCurrency</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>valuationType</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>hideValuation</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>equityStageID</td>
+<td>Equity stage ID, see Section <a href="#equity-stage">Equity Stage</a></td>
+</tr>
+<tr>
+<td>exitStageID</td>
+<td>Exit stage ID, see Section <a href="#exit-stage">Exit Stage</a></td>
+</tr>
+<tr>
+<td>insertionDate</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>lastSeenDate</td>
+<td>TODO</td>
+</tr>
+</tbody></table>
+<h2 id='deal-search'>Deal search</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>results</td>
+<td>List of Section <a href="#deal">Deal</a></td>
+</tr>
+<tr>
+<td>count</td>
+<td>Total number of results, regardless of the ”limit” parameter</td>
+</tr>
+<tr>
+<td>roundsTotalFunding</td>
+<td>Total amount of results, regardless of the ”limit” parameter</td>
+</tr>
+<tr>
+<td>selectedCurrency</td>
+<td>Selected currency of the user</td>
 </tr>
 </tbody></table>
 <h2 id='funding-round'>Funding round</h2>
