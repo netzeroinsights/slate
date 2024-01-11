@@ -481,10 +481,16 @@
                     <a href="#patent" class="toc-h2 toc-link" data-title="Patent">Patent</a>
                   </li>
                   <li>
-                    <a href="#investor" class="toc-h2 toc-link" data-title="Investor">Investor</a>
+                    <a href="#investor-core" class="toc-h2 toc-link" data-title="Investor Core">Investor Core</a>
                   </li>
                   <li>
                     <a href="#contact" class="toc-h2 toc-link" data-title="Contact">Contact</a>
+                  </li>
+                  <li>
+                    <a href="#investor-search" class="toc-h2 toc-link" data-title="Investor search">Investor search</a>
+                  </li>
+                  <li>
+                    <a href="#investor" class="toc-h2 toc-link" data-title="Investor">Investor</a>
                   </li>
               </ul>
           </li>
@@ -987,7 +993,7 @@ Please note that manually closing a session is not required, since it will be cl
 <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/investors/668"</span>
 </code></pre></div>
 <blockquote>
-<p>In case of a 200 response, the response body will contain the requested investors, with the format specified at section <a href="#investor">Investor</a>.</p>
+<p>In case of a 200 response, the response body will contain the requested investors, with the format specified at section <a href="#investor-core">Investor</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -3379,7 +3385,7 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Patent status, see Section <a href="#patent-status">Patent Status</a></td>
 </tr>
 </tbody></table>
-<h2 id='investor'>Investor</h2>
+<h2 id='investor-core'>Investor Core</h2>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -3396,7 +3402,7 @@ Please note that manually closing a session is not required, since it will be cl
 </tr>
 <tr>
 <td>firstRoundDate</td>
-<td>Date of the first round of the company in which the in- vestor made an appearance</td>
+<td>Date of the first round of the company in which the investor made an appearance</td>
 </tr>
 <tr>
 <td>roundTypes</td>
@@ -3437,6 +3443,146 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>id</td>
 <td>Internal person ID</td>
+</tr>
+</tbody></table>
+<h2 id='investor-search'>Investor search</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>results</td>
+<td>List of Section <a href="#investor">Investor</a></td>
+</tr>
+<tr>
+<td>count</td>
+<td>Total number of results, regardless of the ”limit” parameter</td>
+</tr>
+<tr>
+<td>totalFunding</td>
+<td>Total funding from the investors, regardless of the ”limit” parameter</td>
+</tr>
+</tbody></table>
+<h2 id='investor'>Investor</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>investorID</td>
+<td>Investor ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Description fetched from the investor website</td>
+</tr>
+<tr>
+<td>website</td>
+<td>Investor website</td>
+</tr>
+<tr>
+<td>city</td>
+<td>City name</td>
+</tr>
+<tr>
+<td>country</td>
+<td>Country name</td>
+</tr>
+<tr>
+<td>continent</td>
+<td>Continent name</td>
+</tr>
+<tr>
+<td>linkedInURL</td>
+<td>URL to investor LinkedIn</td>
+</tr>
+<tr>
+<td>twitterURL</td>
+<td>URL to investor Twitter</td>
+</tr>
+<tr>
+<td>facebookURL</td>
+<td>URL to investor Facebook</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Investor main email</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>Investor main phone</td>
+</tr>
+<tr>
+<td>size</td>
+<td>Investor number of employees range</td>
+</tr>
+<tr>
+<td>sizeID</td>
+<td>Investor number of employees range ID</td>
+</tr>
+<tr>
+<td>foundedDate</td>
+<td>Founded date</td>
+</tr>
+<tr>
+<td>numberOfDeals</td>
+<td>Number of deals</td>
+</tr>
+<tr>
+<td>numberOfDealsFiltered</td>
+<td>Number of filtered deals</td>
+</tr>
+<tr>
+<td>lastDealType</td>
+<td>Type of the last deal</td>
+</tr>
+<tr>
+<td>lastDealDate</td>
+<td>Date of the last deal</td>
+</tr>
+<tr>
+<td>lastRoundAmount</td>
+<td>Last round amount in EUR</td>
+</tr>
+<tr>
+<td>lastRoundAmountUSD</td>
+<td>Last round amount in USD</td>
+</tr>
+<tr>
+<td>note</td>
+<td>Note on the investor</td>
+</tr>
+<tr>
+<td>primaryTypeID</td>
+<td>Primary type ID</td>
+</tr>
+<tr>
+<td>primaryType</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>secondaryTypes</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>investments</td>
+<td>List of companies that have been invested in</td>
+</tr>
+<tr>
+<td>coInvestors</td>
+<td>List of investors that have invested in mutual companies</td>
 </tr>
 </tbody></table>
 <h1 id='taxonomy-page'>Taxonomy Page</h1><h2 id='taxonomy-graph-items-of-parent-item'>Taxonomy Graph Items of Parent Item</h2>
