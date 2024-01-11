@@ -965,7 +965,7 @@ This is the main filter used when searching for startups. It contains two simple
 | fundRaising         | List of string                                      | Use ”fundRaising” to see all the companies likely to fundraise                    |
 
 ## Deals Filter
-
+ 
 | Parameter name       | Parameter type                              | Description                                                                                                     |                                                                                                    
 |----------------------|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | dates                | List of RoundDate [Round Date](#round-date) | See Section [Round Date](#round-date) for the accepted values                                                   |                                                  
@@ -973,16 +973,14 @@ This is the main filter used when searching for startups. It contains two simple
 | acquisitionDateTo    | Date                                        | Maximum date for when the deal has been inserted into our database                                              |                                             
 | datesFrom            | Date                                        | Starting date for when the deal has been closed                                                                 |                                                                
 | datesTo              | Date                                        | Maximum date for when the deal has been closed                                                                  |                                                                 
-| lastRoundDays        | List of int                                 | Maximun number of days passed since the deal was closed                                                         |                                                        
-| amount               | List of int                                 | See Section [Round Amount](#round-amount) for the accepted values                                               |                                              
+| lastRoundDays        | List of int                                 | Maximun number of days passed since the deal was closed                                                         |
 | amountFrom           | int                                         | Minimum deal amount                                                                                             |                                                                                            
 | amountTo             | int                                         | Maximum deal amount                                                                                             |                                                                                            
-| types                | List of string                              | See Section [Round Type](#round-type) for the accepted values                                                   |                                                  
+| types                | List of int                                 | See Section [Deal Type](#deal-type) for the accepted values                                                     |                                                  
 | allowNullAmounts     | boolean                                     | When searching with deal amount filters, if true, include deals with no deal amount                             |                            
 | numberFrom           | int                                         | Minimum deal number for the company                                                                             |                                                                            
 | numberTo             | int                                         | Maximum deal number for the company                                                                             |                                                                            
-| investors            | List of int                                 | Using the [Investor List](#investors-list) endpoints, it is possible to fetch the investors' IDs to insert here | 
-| totalFunding         | List of int                                 | See Section [Total Funding](#total-funding) for the accepted values                                             |                                            
+| investors            | List of int                                 | Using the [Investor List](#investors-list) endpoints, it is possible to fetch the investors' IDs to insert here |
 | totalFundingFrom     | int                                         | Minimum total funding of the company                                                                            |                                                                           
 | totalFundingTo       | int                                         | Maximum total funding of the company                                                                            |                                                                           
 | financingInstruments | List of string                              | See Section [Financing Instruments](#financing-instrument) for the accepted values                              |                             
@@ -1169,6 +1167,44 @@ This is the main filter used when searching for startups. It contains two simple
 | 1  | Venture   |
 | 2  | Exit      |
 | 3  | Post Exit |
+
+## Deal Type
+
+| ID  | Label                 |
+|-----|-----------------------|
+| 65  | Accelerator/incubator |
+| 66  | Acquisition           |
+| 70  | Convertible note      |
+| 75  | Debt                  |
+| 76  | Early VC              |
+| 79  | Grant                 |
+| 80  | Growth equity         |
+| 81  | ICO                   |
+| 82  | IPO                   |
+| 83  | Late VC               |
+| 84  | Merger                |
+| 85  | PIPE                  |
+| 88  | SPAC                  |
+| 89  | Seed                  |
+| 91  | Series A              |
+| 92  | Series B              |
+| 93  | Series C              |
+| 94  | Series D              |
+| 95  | Series E              |
+| 96  | Series F              |
+| 97  | Series G              |
+| 98  | Series H              |
+| 99  | Spinoff/spinout       |
+| 102 | Pre-Seed              |
+| 103 | Secondary transaction |
+| 104 | Bridge                |
+| 105 | In-kind services      |
+| 107 | Award/Prize           |
+| 108 | Private placement     |
+| 109 | Product crowdfunding  |
+| 110 | Equity crowdfunding   |
+| 111 | Debt crowdfunding     |
+| 112 | Revenue financing     |
 
 ## Role
 
