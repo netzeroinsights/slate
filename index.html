@@ -378,6 +378,9 @@
                     <a href="#deals-filter" class="toc-h2 toc-link" data-title="Deals Filter">Deals Filter</a>
                   </li>
                   <li>
+                    <a href="#investors-filter" class="toc-h2 toc-link" data-title="Investors Filter">Investors Filter</a>
+                  </li>
+                  <li>
                     <a href="#contacts-filter" class="toc-h2 toc-link" data-title="Contacts Filter">Contacts Filter</a>
                   </li>
               </ul>
@@ -429,6 +432,12 @@
                   </li>
                   <li>
                     <a href="#role" class="toc-h2 toc-link" data-title="Role">Role</a>
+                  </li>
+                  <li>
+                    <a href="#investor-types" class="toc-h2 toc-link" data-title="Investor Types">Investor Types</a>
+                  </li>
+                  <li>
+                    <a href="#investor-regions" class="toc-h2 toc-link" data-title="Investor Regions">Investor Regions</a>
                   </li>
                   <li>
                     <a href="#tags" class="toc-h2 toc-link" data-title="Tags">Tags</a>
@@ -1861,6 +1870,85 @@ Please note that manually closing a session is not required, since it will be cl
 <td>TODO</td>
 </tr>
 </tbody></table>
+<h2 id='investors-filter'>Investors Filter</h2>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>investorTypeIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#investor-types">Investor Types</a> for the accepted values</td>
+</tr>
+<tr>
+<td>includeOtherInvestorTypes</td>
+<td>boolean</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>investorDealsFrom</td>
+<td>int</td>
+<td>Minimum number of deals</td>
+</tr>
+<tr>
+<td>investorDealsTo</td>
+<td>int</td>
+<td>Maximum number of deals</td>
+</tr>
+<tr>
+<td>investorSearchableLocations</td>
+<td>List of int</td>
+<td>See Section <a href="#searchable-locations">Searchable Locations</a> for the accepted values</td>
+</tr>
+<tr>
+<td>investorRegions</td>
+<td>List of int</td>
+<td>See Section <a href="#investor-regions">Investor Regions</a> for accepted values</td>
+</tr>
+<tr>
+<td>coInvestors</td>
+<td>List of int</td>
+<td>See Section <a href="#investors">Investors</a> for accepted values</td>
+</tr>
+<tr>
+<td>investments</td>
+<td>List of int</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>investorIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#investors">Investors</a> for accepted values</td>
+</tr>
+<tr>
+<td>investorFoundedDatesFrom</td>
+<td>date</td>
+<td>Starting founded date of the investor</td>
+</tr>
+<tr>
+<td>investorFoundedDatesTo</td>
+<td>date</td>
+<td>Maximum founded date of the investor</td>
+</tr>
+<tr>
+<td>investorPortfolioIds</td>
+<td>List of int</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>mostActive</td>
+<td>boolean</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>mustHaveLogo</td>
+<td>boolean</td>
+<td>TODO</td>
+</tr>
+</tbody></table>
 <h2 id='contacts-filter'>Contacts Filter</h2>
 <table><thead>
 <tr>
@@ -2372,6 +2460,222 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>6</td>
 <td>C-Suite</td>
+</tr>
+</tbody></table>
+<h2 id='investor-types'>Investor Types</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Investment Bank</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Venture Capital</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Fund Of Funds</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Private Equity</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Hedge Fund</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Corporate Venture Capital</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Angel Group</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Asset Manager</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Family Office</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Government</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Angel</td>
+</tr>
+<tr>
+<td>46</td>
+<td>Accelerator/Incubator</td>
+</tr>
+<tr>
+<td>53</td>
+<td>University</td>
+</tr>
+<tr>
+<td>57</td>
+<td>Real Estate</td>
+</tr>
+<tr>
+<td>59</td>
+<td>Lender/Debt Provider</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Limited Partner</td>
+</tr>
+<tr>
+<td>62</td>
+<td>Infrastructure</td>
+</tr>
+<tr>
+<td>63</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>64</td>
+<td>Corporation</td>
+</tr>
+<tr>
+<td>68</td>
+<td>Commercial Banks</td>
+</tr>
+<tr>
+<td>69</td>
+<td>Non-Profit Organisation</td>
+</tr>
+<tr>
+<td>70</td>
+<td>Advisory Firm</td>
+</tr>
+<tr>
+<td>71</td>
+<td>Wealth Management Firm</td>
+</tr>
+<tr>
+<td>72</td>
+<td>Investment Company</td>
+</tr>
+<tr>
+<td>73</td>
+<td>Insurance Company</td>
+</tr>
+<tr>
+<td>74</td>
+<td>Sovereign Wealth Fund</td>
+</tr>
+</tbody></table>
+<h2 id='investor-regions'>Investor Regions</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Alpine countries</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Balkan peninsula</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Baltics</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Benelux</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Central Europe</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Danubian countries</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Eastern Europe</td>
+</tr>
+<tr>
+<td>8</td>
+<td>European Union</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Eurozone</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Iberian Peninsula</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Mediterranean countries</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Nordics</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Northern Europe</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Scandinavian peninsula</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Southern Europe</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Western Europe</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td>19</td>
+<td>US Midwest</td>
+</tr>
+<tr>
+<td>20</td>
+<td>US Northeast</td>
+</tr>
+<tr>
+<td>21</td>
+<td>US Southeast</td>
+</tr>
+<tr>
+<td>22</td>
+<td>US West</td>
+</tr>
+<tr>
+<td>23</td>
+<td>US East Coast</td>
+</tr>
+<tr>
+<td>24</td>
+<td>US West Coast</td>
+</tr>
+<tr>
+<td>25</td>
+<td>US Southwest</td>
 </tr>
 </tbody></table>
 <h2 id='tags'>Tags</h2>
