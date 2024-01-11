@@ -966,31 +966,26 @@ fundRaising | List of string | Use ”fundRaising” to see all the companies li
 
 ## Deals Filter
 
-Parameter name | Parameter type | Description
---------- |------| -------------------
-dates | List of RoundDate [Round Date](#round-date) | See Section [Round Date](#round-date) for the accepted values
-acquisitionDateFrom | Date | Starting date for when the fundingRound has been inserted into our database
-acquisitionDateTo | Date | Maximum date for when the fundingRound has been inserted into our database
-datesFrom | Date | TODO
-datesTo | Date | TODO
-lastRoundDays | List of int | TODO
-amount | List of int | TODO
-amountFrom | int | TODO
-amountTo | int | TODO
-types | List of string | TODO
-allowNullAmounts | boolean | TODO
-first | List of string | TODO
-last | List of string | TODO
-numberFrom | int | TODO
-numberTo | int | TODO
-investors | List of int | See Section [Investors](#investors) for the accepted values
-totalFunding | List of int | TODO
-totalFundingFrom | int | TODO
-totalFundingTo | int | TODO
-financingInstruments | List of string | TODO
-equityStages | List of int | TODO
-exitStages | List of int | TODO
-ids | List of int | TODO
+ Parameter name       | Parameter type                              | Description                                                                                                    
+----------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------
+ dates                | List of RoundDate [Round Date](#round-date) | See Section [Round Date](#round-date) for the accepted values                                                  
+ acquisitionDateFrom  | Date                                        | Starting date for when the deal has been inserted into our database                                            
+ acquisitionDateTo    | Date                                        | Maximum date for when the deal has been inserted into our database                                             
+ datesFrom            | Date                                        | Starting date for when the deal has been closed                                                                
+ datesTo              | Date                                        | Maximum date for when the deal has been closed                                                                 
+ lastRoundDays        | List of int                                 | Maximun number of days passed since the deal was closed
+ amountFrom           | int                                         | Minimum deal amount                                                                                            
+ amountTo             | int                                         | Maximum deal amount                                                                                            
+ types                | List of string                              | See Section [Deal Type](#deal-type) for the accepted values                                                  
+ allowNullAmounts     | boolean                                     | When searching with deal amount filters, if true, include deals with no deal amount                            
+ numberFrom           | int                                         | Minimum deal number for the company                                                                            
+ numberTo             | int                                         | Maximum deal number for the company                                                                            
+ investors            | List of int                                 | Using the [Investor List](#investors-list) endpoints, it is possible to fetch the investors' IDs to insert here
+ totalFundingFrom     | int                                         | Minimum total funding of the company                                                                           
+ totalFundingTo       | int                                         | Maximum total funding of the company                                                                           
+ financingInstruments | List of string                              | See Section [Financing Instruments](#financing-instrument) for the accepted values                             
+ equityStages         | List of int                                 | See Section [Equity Stage](#equity-stage) for the accepted values                                              
+ exitStages           | List of int                                 | See Section [Exit Stage](#exit-stage) for the accepted values                                                  
 
 ## Contacts Filter
 
@@ -1024,17 +1019,17 @@ sdgs | startup | Startup Sustainable Development Goals
 
 ## Size
 
-ID | Label
---- | ---- 
-1 | 1-10
-2 | 11-50
-3 | 51-100
-4 | 101-200
-5 | 201-500
-6 | 501-1000
-7 | 1001-5000
-8 | 5001-10000
-9 | 10000+
+| ID | Label      |
+|----|------------|
+| 1  | 1-10       |
+| 2  | 11-50      |
+| 3  | 51-100     |
+| 4  | 101-200    |
+| 5  | 201-500    |
+| 6  | 501-1000   |
+| 7  | 1001-5000  |
+| 8  | 5001-10000 |
+| 9  | 10000+     |
 
 ## Founded Date
 
@@ -1156,6 +1151,44 @@ ID | Label
 1 | Venture
 2 | Exit
 3 | Post Exit
+
+## Deal Type
+
+| ID  | Label                 |
+|-----|-----------------------|
+| 65  | Accelerator/incubator |
+| 66  | Acquisition           |
+| 70  | Convertible note      |
+| 75  | Debt                  |
+| 76  | Early VC              |
+| 79  | Grant                 |
+| 80  | Growth equity         |
+| 81  | ICO                   |
+| 82  | IPO                   |
+| 83  | Late VC               |
+| 84  | Merger                |
+| 85  | PIPE                  |
+| 88  | SPAC                  |
+| 89  | Seed                  |
+| 91  | Series A              |
+| 92  | Series B              |
+| 93  | Series C              |
+| 94  | Series D              |
+| 95  | Series E              |
+| 96  | Series F              |
+| 97  | Series G              |
+| 98  | Series H              |
+| 99  | Spinoff/spinout       |
+| 102 | Pre-Seed              |
+| 103 | Secondary transaction |
+| 104 | Bridge                |
+| 105 | In-kind services      |
+| 107 | Award/Prize           |
+| 108 | Private placement     |
+| 109 | Product crowdfunding  |
+| 110 | Equity crowdfunding   |
+| 111 | Debt crowdfunding     |
+| 112 | Revenue financing     |
 
 ## Role
 
