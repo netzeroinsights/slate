@@ -994,22 +994,19 @@ ids | List of int | TODO
 
 ## Investors Filter
 
-| Parameter name              | Parameter type | Description                                                                       |
-|-----------------------------|----------------|-----------------------------------------------------------------------------------|
-| investorTypeIDs             | List of int    | See Section [Investor Types](#investor-types) for the accepted values             |
-| includeOtherInvestorTypes   | boolean        | TODO                                                                              |
-| investorDealsFrom           | int            | Minimum number of deals                                                           |
-| investorDealsTo             | int            | Maximum number of deals                                                           |
-| investorSearchableLocations | List of int    | See Section [Searchable Locations](#searchable-locations) for the accepted values |
-| investorRegions             | List of int    | See Section [Investor Regions](#investor-regions) for accepted values             |
-| coInvestors                 | List of int    | See Section [Investors](#investors) for accepted values                           |
-| investments                 | List of int    | TODO                                                                              |
-| investorIDs                 | List of int    | See Section [Investors](#investors) for accepted values                           |
-| investorFoundedDatesFrom    | date           | Starting founded date of the investor                                             |
-| investorFoundedDatesTo      | date           | Maximum founded date of the investor                                              |
-| investorPortfolioIds        | List of int    | TODO                                                                              |
-| mostActive                  | boolean        | TODO                                                                              |
-| mustHaveLogo                | boolean        | TODO                                                                              |
+| Parameter name              | Parameter type | Description                                                                                                                  |
+|-----------------------------|----------------|------------------------------------------------------------------------------------------------------------------------------|
+| investorTypeIDs             | List of int    | See Section [Investor Types](#investor-types) for the accepted values                                                        |
+| includeOtherInvestorTypes   | boolean        | When filtering for investor types, if true, include investors whose secondary types match at least one of the selected types |
+| investorDealsFrom           | int            | Minimum number of deals                                                                                                      |
+| investorDealsTo             | int            | Maximum number of deals                                                                                                      |
+| investorSearchableLocations | List of int    | See Section [Searchable Locations](#searchable-locations) for the accepted values                                            |
+| investorRegions             | List of int    | See Section [Investor Regions](#investor-regions) for accepted values                                                        |
+| coInvestors                 | List of int    | See Section [Investors](#investors) for accepted values                                                                      |
+| investments                 | List of int    | Using the endpoint [Startup List](#startups-list) it's possible to fetch their clientIDs to be used here                     |
+| investorIDs                 | List of int    | See Section [Investors](#investors) for accepted values                                                                      |
+| investorFoundedDatesFrom    | date           | Starting founded date of the investor                                                                                        |
+| investorFoundedDatesTo      | date           | Maximum founded date of the investor                                                                                         |
 
 ## Contacts Filter
 
