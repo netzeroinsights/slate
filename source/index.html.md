@@ -1451,56 +1451,99 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 
 ## Startup
 
-| Name                     | Content                                       |
-|--------------------------|-----------------------------------------------|
-| id                       | Internal ID                                   |
-| clientID                 | Startup ID                                    |
-| name                     | Name                                          |
-| logo                     | URL to company’s logo                         |
-| website                  | Company website                               |
-| domain                   | Company website domain                        |
-| pitchLine                | Pitchline                                     |
-| description              | Description fetched from the company website  |
-| fundingAmount            | Company total funding in EUR                  |
-| fundingString            | Company total funding in EUR, formatted       |
-| fundingAmountUSD         | Company total funding in USD                  |
-| fundingStringUSD         | Company total funding in USD, formatted       |
-| fundingRangeID           | Company total funding range ID                |
-| fundingRange             | Company total funding range                   |
-| fundingRangeUSD          | Company total funding range in USD            |
-| fundingRangeIDUSD        | Company total funding range ID in USD         |
-| lastRoundDate            | Date of the last round                        |
-| foundedDate              | Founded date                                  |
-| countryID                | Country ID                                    |
-| country                  | Country name                                  |
-| city                     | City name                                     |
-| continent                | Continent name                                |
-| email                    | Company main email                            |
-| phone                    | Company main phone                            |
-| sizeID                   | Company number of employees range ID          |
-| size                     | Company number of employees range             |
-| stageID                  | Company growth stage ID                       |
-| stage                    | Company growth stage                          |
-| linkedinURL              | URL to company LinkedIn                       |
-| twitterURL               | URL to company Twitter                        |
-| facebookURL              | URL to company Facebook                       |
-| directURL                | URL to our company page                       |
-| sustainabilityMetric     | Company climate impact metric                 |
-| sustainabilityMetricID   | Company climate impact metric range ID        |
-| lastRoundAmount          | Last round amount in EUR                      |
-| lastRoundAmountUSD       | Last round amount in USD                      |
-| lastRoundAmountString    | Last round amount in EUR, formatted           |
-| lastRoundAmountStringUSD | Last round amount in USD, formatted           |
-| lastRoundType            | Last round type                               |
-| revenueEuro              | Total company revenue                         |
-| revenueYear              | Year related to the ”revenueEuro” field       |
-| tags                     | Company tags                                  |
-| fundingTypes             | Funding types of any round                    |
-| sdgs                     | Sustainable Development Goals                 |
-| isFundRaising            | Company likelihood to fundraise               |
-| roundCount               | Number of rounds                              |
-| roundWithDateCount       | Number of rounds with a date available        |
-| reviewDate               | Date of latest company review by our analysts |
+| Name                           | Content                                       |
+|--------------------------------|-----------------------------------------------|
+| id                             | Internal ID                                   |
+| visible                        | TODO                                          |
+| clientID                       | Startup ID                                    |
+| name                           | Name                                          |
+| logo                           | URL to company’s logo                         |
+| website                        | Company website                               |
+| domain                         | Company website domain                        |
+| pitchLine                      | Pitchline                                     |
+| pitchLineNoPunctuation         | TODO                                          |
+| description                    | Description fetched from the company website  |
+| uniqueSellingProposition       | TODO                                          |
+| impact                         | TODO                                          |
+| fundingAmount                  | Company total funding in EUR                  |
+| fundingString                  | Company total funding in EUR, formatted       |
+| fundingAmountUSD               | Company total funding in USD                  |
+| fundingStringUSD               | Company total funding in USD, formatted       |
+| fundingRange                   | Company total funding range                   |
+| fundingRangeID                 | Company total funding range ID                |
+| fundingRangeUSD                | Company total funding range in USD            |
+| fundingRangeIDUSD              | Company total funding range ID in USD         |
+| lastRoundDate                  | Date of the last round                        |
+| aggregationDate                | TODO                                          |
+| acquisitionDate                | TODO                                          |
+| foundedDate                    | Founded date                                  |
+| georowID                       | TODO                                          |
+| country                        | Country name                                  |
+| countryID                      | Country ID                                    |
+| city                           | City name                                     |
+| cityID                         | City ID                                       |
+| continent                      | Continent name                                |
+| continentID                    | Continent ID                                  |
+| admin1                         | TODO                                          |
+| admin2                         | TODO                                          |
+| admin3                         | TODO                                          |
+| admin4                         | TODO                                          |
+| admin1ID                       | TODO                                          |
+| admin2ID                       | TODO                                          |
+| admin3ID                       | TODO                                          |
+| admin4ID                       | TODO                                          |
+| email                          | Company main email                            |
+| phone                          | Company main phone                            |
+| size                           | Company number of employees range             |
+| sizeID                         | Company number of employees range ID          |
+| stage                          | Company growth stage                          |
+| stageID                        | Company growth stage ID                       |
+| employeesRange                 | TODO                                          |
+| linkedinURL                    | URL to company LinkedIn                       |
+| twitterURL                     | URL to company Twitter                        |
+| facebookURL                    | URL to company Facebook                       |
+| directURL                      | URL to our company page                       |
+| sustainabilityMetric           | Company climate impact metric                 |
+| sustainabilityMetricID         | Company climate impact metric range ID        |
+| sustainabilityMetricLabel      | TODO                                          |
+| lastRoundAmount                | Last round amount in EUR                      |
+| lastRoundAmountUSD             | Last round amount in USD                      |
+| lastRoundAmountString          | Last round amount in EUR, formatted           |
+| lastRoundAmountStringUSD       | Last round amount in USD, formatted           |
+| lastRoundType                  | Last round type                               |
+| revenueEuro                    | Total company revenue                         |
+| revenueYear                    | Year related to the ”revenueEuro” field       |
+| tags                           | Company tags                                  |
+| trl                            | TODO                                          |
+| trlID                          | TODO                                          |
+| trlAcquisitionDate             | TODO                                          |
+| fundingTypes                   | Funding types of any round                    |
+| sdgs                           | Sustainable Development Goals                 |
+| note                           | TODO                                          |
+| platformOrder                  | TODO                                          |
+| investorPartnerSet             | TODO                                          |
+| companyContactSet              | TODO                                          |
+| isFundRaising                  | Company likelihood to fundraise               |
+| currentlyFundraising           | TODO                                          |
+| currentlyFundraisingDate       | TODO                                          |
+| roundCount                     | Number of rounds                              |
+| roundWithDateCount             | Number of rounds with a date available        |
+| lastReviewer                   | TODO                                          |
+| reviewDate                     | Date of latest company review by our analysts |
+| profileQuality                 | TODO                                          |
+| alternativeNames               | TODO                                          |
+| legalNames                     | TODO                                          |
+| webtext                        | TODO                                          |
+| intellectualProperty           | TODO                                          |
+| pitchdeckURL                   | TODO                                          |
+| lastPostMoneyValuation         | TODO                                          |
+| lastPostMoneyValuationCurrency | TODO                                          |
+| lastSeenDate                   | TODO                                          |
+| numberOfEquityRounds           | TODO                                          |
+| numberOfDebtRounds             | TODO                                          |
+| numberOfGrants                 | TODO                                          |
+| employeesGrowthJSON            | TODO                                          |
+| eutopiaScore                   | TODO                                          |
 
 ## Deal
         
