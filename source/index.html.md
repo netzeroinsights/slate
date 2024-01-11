@@ -426,7 +426,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 -X GET "https://api.netzeroinsights.com/investors/668"
 ```
 
-> In case of a 200 response, the response body will contain the requested investors, with the format specified at section [Investor](#investor).
+> In case of a 200 response, the response body will contain the requested investors, with the format specified at section [Investor](#investor-core).
 
 ```json
 [
@@ -1502,7 +1502,65 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | roundWithDateCount       | Number of rounds with a date available        |
 | reviewDate               | Date of latest company review by our analysts |
 
+## Deal
+        
+| Name                   | Content                                                    |
+|------------------------|------------------------------------------------------------|
+| id                     | Internal funding round ID                                  |
+| clientId               | Startup ID                                                 |
+| clientName             | Startup name                                               |
+| clientLogoURL          | URL to startup's logo                                      |
+| clientPitchLine        | Startup pitchLine                                          |
+| clientHQ               | Startup headquarters                                       |
+| clientCityHQ           | Startup city's headquarters                                |
+| clientCountryCode      | Startup country code                                       |
+| clientCountryID        | Startup country ID                                         |
+| clientContinentID      | Startup continent ID                                       |
+| clientFoundedDate      | Startup founded date                                       |
+| roundDate              | Date of the round                                          |
+| acquisitionDate        | Date of startup insertion into our database                |
+| roundType              | Type of the round                                          |
+| roundAmount            | Amount of the round (EUR)                                  |
+| roundAmountUSD         | Amount of the round (USD)                                  |
+| roundAmountString      | TODO                                                       |
+| roundAmountStringUSD   | TODO                                                       |
+| roundAmountRangeID     | TODO                                                       |
+| roundAmountRangeIDUSD  | TODO                                                       |
+| roundInvestors         | List of IDs of all the investors of the round              |
+| roundInvestorPOJOs     | List of IDs of all the investor DTOs of the round          |
+| roundNews              | List of IDs of all the sources of the round                |
+| roundNewsPOJOs         | List of IDs of all the source DTOs of the round            |
+| roundCurrency          | Original currency of the round                             |
+| originalRoundAmount    | Round amount in original currency                          |
+| numberOfRounds         | TODO                                                       |        
+| totalFundingRangeID    | TODO                                                       |        
+| totalFundingRangeIDUSD | TODO                                                       |        
+| totalFunding           | TODO                                                       |        
+| totalFundingUSD        | TODO                                                       |        
+| totalFundingString     | TODO                                                       |
+| totalFundingStringUSD  | TODO                                                       |
+| roundNumber            | TODO                                                       |
+| financingInstrument    | Financing instrument                                       |
+| lastRound              | TODO                                                       |
+| source                 | Name of the analyst who inserted the round                 |
+| syncDate               | TODO                                                       |
+| valuationAmount        | TODO                                                       |
+| valuationCurrency      | TODO                                                       |
+| valuationType          | TODO                                                       |
+| hideValuation          | TODO                                                       |
+| equityStageID          | Equity stage ID, see Section [Equity Stage](#equity-stage) |
+| exitStageID            | Exit stage ID, see Section [Exit Stage](#exit-stage)       |  
+| insertionDate          | TODO                                                       |
+| lastSeenDate           | TODO                                                       |
 
+## Deal search
+
+| Name               | Content                                                      |
+|--------------------|--------------------------------------------------------------|
+| results            | List of Section [Deal](#deal)                                |
+| count              | Total number of results, regardless of the ”limit” parameter |
+| roundsTotalFunding | Total amount of results, regardless of the ”limit” parameter |
+| selectedCurrency   | Selected currency of the user                                |    
 
 
 ## Funding round
@@ -1561,14 +1619,14 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | clientId          | Client ID of the startup                                   |
 | status            | Patent status, see Section [Patent Status](#patent-status) |
 
-## Investor
+## Investor Core
 
-| Name           | Content                                                                           |
-|----------------|-----------------------------------------------------------------------------------|
-| id             | Internal investor ID                                                              |
-| name           | Investor name                                                                     |
-| firstRoundDate | Date of the first round of the company in which the in- vestor made an appearance |
-| roundTypes     | Types of round in which the investor appeared                                     |
+| Name           | Content                                                                         |
+|----------------|---------------------------------------------------------------------------------|
+| id             | Internal investor ID                                                            |
+| name           | Investor name                                                                   |
+| firstRoundDate | Date of the first round of the company in which the investor made an appearance |
+| roundTypes     | Types of round in which the investor appeared                                   |
 
 ## Contact
 
@@ -1581,6 +1639,47 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | linkedinURL   | Person LinkedIn URL                                 |
 | decisionMaker | True if the person has decision making capabilities |
 | id            | Internal person ID                                  |
+
+## Investor search
+
+| Name         | Content                                                               |
+|--------------|-----------------------------------------------------------------------|
+| results      | List of Section [Investor](#investor)                                 |
+| count        | Total number of results, regardless of the ”limit” parameter          |
+| totalFunding | Total funding from the investors, regardless of the ”limit” parameter |
+
+## Investor
+
+| Name                  | Content                                                  |
+|-----------------------|----------------------------------------------------------|
+| id                    | Internal ID                                              |
+| investorID            | Investor ID                                              |
+| name                  | Name                                                     |
+| description           | Description fetched from the investor website            |
+| website               | Investor website                                         |
+| city                  | City name                                                |
+| country               | Country name                                             |
+| continent             | Continent name                                           |
+| linkedInURL           | URL to investor LinkedIn                                 |
+| twitterURL            | URL to investor Twitter                                  |
+| facebookURL           | URL to investor Facebook                                 |
+| email                 | Investor main email                                      |
+| phone                 | Investor main phone                                      |
+| size                  | Investor number of employees range                       |
+| sizeID                | Investor number of employees range ID                    |
+| foundedDate           | Founded date                                             |
+| numberOfDeals         | Number of deals                                          |
+| numberOfDealsFiltered | Number of filtered deals                                 |
+| lastDealType          | Type of the last deal                                    |
+| lastDealDate          | Date of the last deal                                    |
+| lastRoundAmount       | Last round amount in EUR                                 |
+| lastRoundAmountUSD    | Last round amount in USD                                 |
+| note                  | Note on the investor                                     |
+| primaryTypeID         | Primary type ID                                          |
+| primaryType           | TODO                                                     |
+| secondaryTypes        | TODO                                                     |
+| investments           | List of companies that have been invested in             |
+| coInvestors           | List of investors that have invested in mutual companies |
 
 # Taxonomy Page
 
