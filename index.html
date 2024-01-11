@@ -431,6 +431,9 @@
                     <a href="#exit-stage" class="toc-h2 toc-link" data-title="Exit Stage">Exit Stage</a>
                   </li>
                   <li>
+                    <a href="#deal-type" class="toc-h2 toc-link" data-title="Deal Type">Deal Type</a>
+                  </li>
+                  <li>
                     <a href="#role" class="toc-h2 toc-link" data-title="Role">Role</a>
                   </li>
                   <li>
@@ -1785,11 +1788,6 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Maximun number of days passed since the deal was closed</td>
 </tr>
 <tr>
-<td>amount</td>
-<td>List of int</td>
-<td>See Section <a href="#round-amount">Round Amount</a> for the accepted values</td>
-</tr>
-<tr>
 <td>amountFrom</td>
 <td>int</td>
 <td>Minimum deal amount</td>
@@ -1801,8 +1799,8 @@ Please note that manually closing a session is not required, since it will be cl
 </tr>
 <tr>
 <td>types</td>
-<td>List of string</td>
-<td>See Section <a href="#round-type">Round Type</a> for the accepted values</td>
+<td>List of int</td>
+<td>See Section <a href="#deal-type">Deal Type</a> for the accepted values</td>
 </tr>
 <tr>
 <td>allowNullAmounts</td>
@@ -1823,11 +1821,6 @@ Please note that manually closing a session is not required, since it will be cl
 <td>investors</td>
 <td>List of int</td>
 <td>Using the <a href="#investors-list">Investor List</a> endpoints, it is possible to fetch the investors&#39; IDs to insert here</td>
-</tr>
-<tr>
-<td>totalFunding</td>
-<td>List of int</td>
-<td>See Section <a href="#total-funding">Total Funding</a> for the accepted values</td>
 </tr>
 <tr>
 <td>totalFundingFrom</td>
@@ -2398,6 +2391,146 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>3</td>
 <td>Post Exit</td>
+</tr>
+</tbody></table>
+<h2 id='deal-type'>Deal Type</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>65</td>
+<td>Accelerator/incubator</td>
+</tr>
+<tr>
+<td>66</td>
+<td>Acquisition</td>
+</tr>
+<tr>
+<td>70</td>
+<td>Convertible note</td>
+</tr>
+<tr>
+<td>75</td>
+<td>Debt</td>
+</tr>
+<tr>
+<td>76</td>
+<td>Early VC</td>
+</tr>
+<tr>
+<td>79</td>
+<td>Grant</td>
+</tr>
+<tr>
+<td>80</td>
+<td>Growth equity</td>
+</tr>
+<tr>
+<td>81</td>
+<td>ICO</td>
+</tr>
+<tr>
+<td>82</td>
+<td>IPO</td>
+</tr>
+<tr>
+<td>83</td>
+<td>Late VC</td>
+</tr>
+<tr>
+<td>84</td>
+<td>Merger</td>
+</tr>
+<tr>
+<td>85</td>
+<td>PIPE</td>
+</tr>
+<tr>
+<td>88</td>
+<td>SPAC</td>
+</tr>
+<tr>
+<td>89</td>
+<td>Seed</td>
+</tr>
+<tr>
+<td>91</td>
+<td>Series A</td>
+</tr>
+<tr>
+<td>92</td>
+<td>Series B</td>
+</tr>
+<tr>
+<td>93</td>
+<td>Series C</td>
+</tr>
+<tr>
+<td>94</td>
+<td>Series D</td>
+</tr>
+<tr>
+<td>95</td>
+<td>Series E</td>
+</tr>
+<tr>
+<td>96</td>
+<td>Series F</td>
+</tr>
+<tr>
+<td>97</td>
+<td>Series G</td>
+</tr>
+<tr>
+<td>98</td>
+<td>Series H</td>
+</tr>
+<tr>
+<td>99</td>
+<td>Spinoff/spinout</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Pre-Seed</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Secondary transaction</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Bridge</td>
+</tr>
+<tr>
+<td>105</td>
+<td>In-kind services</td>
+</tr>
+<tr>
+<td>107</td>
+<td>Award/Prize</td>
+</tr>
+<tr>
+<td>108</td>
+<td>Private placement</td>
+</tr>
+<tr>
+<td>109</td>
+<td>Product crowdfunding</td>
+</tr>
+<tr>
+<td>110</td>
+<td>Equity crowdfunding</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Debt crowdfunding</td>
+</tr>
+<tr>
+<td>112</td>
+<td>Revenue financing</td>
 </tr>
 </tbody></table>
 <h2 id='role'>Role</h2>
