@@ -946,6 +946,8 @@ This is the main filter used when searching for startups. It contains two simple
 | lastRoundDates      | List of Section [Last Round Date](#last-round-date) | Date range for last round                                                         |
 | lastRoundDatesFrom  | date                                                | Starting date for last round                                                      |
 | lastRoundDatesTo    | date                                                | Maximum date for last round                                                       |
+| numberOfRoundFrom   | int                                                 | Minimum number of rounds done by the company                                      |
+| numberOfRoundTo     | int                                                 | Maximum number of rounds done by the company                                      |
 | fundingTypes        | List of Section [Funding Type](#funding-type)       | Funding type for any round                                                        |
 | sdgs                | List of int                                         | Sustainable development goals, see Section [SDGs](#sdgs) for accepted values      |
 | wildcards           | List of string                                      | Any match of the keywords in the name/pitchline/description                       |
