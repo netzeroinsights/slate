@@ -987,6 +987,25 @@ fundRaising | List of string | Use ”fundRaising” to see all the companies li
  equityStages         | List of int                                 | See Section [Equity Stage](#equity-stage) for the accepted values                                              
  exitStages           | List of int                                 | See Section [Exit Stage](#exit-stage) for the accepted values                                                  
 
+## Investors Filter
+
+| Parameter name              | Parameter type | Description                                                                       |
+|-----------------------------|----------------|-----------------------------------------------------------------------------------|
+| investorTypeIDs             | List of int    | See Section [Investor Types](#investor-types) for the accepted values             |
+| includeOtherInvestorTypes   | boolean        | TODO                                                                              |
+| investorDealsFrom           | int            | Minimum number of deals                                                           |
+| investorDealsTo             | int            | Maximum number of deals                                                           |
+| investorSearchableLocations | List of int    | See Section [Searchable Locations](#searchable-locations) for the accepted values |
+| investorRegions             | List of int    | See Section [Investor Regions](#investor-regions) for accepted values             |
+| coInvestors                 | List of int    | See Section [Investors](#investors) for accepted values                           |
+| investments                 | List of int    | TODO                                                                              |
+| investorIDs                 | List of int    | See Section [Investors](#investors) for accepted values                           |
+| investorFoundedDatesFrom    | date           | Starting founded date of the investor                                             |
+| investorFoundedDatesTo      | date           | Maximum founded date of the investor                                              |
+| investorPortfolioIds        | List of int    | TODO                                                                              |
+| mostActive                  | boolean        | TODO                                                                              |
+| mustHaveLogo                | boolean        | TODO                                                                              |
+
 ## Contacts Filter
 
 Parameter name | Parameter type | Description
@@ -1200,6 +1219,66 @@ ID | Label
 4 | Marketing / PR
 5 | Tech
 6 | C-Suite
+
+## Investor Types
+
+| ID | Label                     |
+|----|---------------------------|
+| 1  | Investment Bank           |
+| 10 | Venture Capital           |
+| 11 | Fund Of Funds             |
+| 14 | Private Equity            |
+| 17 | Hedge Fund                |
+| 23 | Corporate Venture Capital |
+| 24 | Angel Group               |
+| 34 | Asset Manager             |
+| 35 | Family Office             |
+| 41 | Government                |
+| 44 | Angel                     |
+| 46 | Accelerator/Incubator     |
+| 53 | University                |
+| 57 | Real Estate               |
+| 59 | Lender/Debt Provider      |
+| 61 | Limited Partner           |
+| 62 | Infrastructure            |
+| 63 | Other                     |
+| 64 | Corporation               |
+| 68 | Commercial Banks          |
+| 69 | Non-Profit Organisation   |
+| 70 | Advisory Firm             |
+| 71 | Wealth Management Firm    |
+| 72 | Investment Company        |
+| 73 | Insurance Company         |
+| 74 | Sovereign Wealth Fund     |
+
+## Investor Regions
+
+| ID | Label                   |
+|----|-------------------------|
+| 1  | Alpine countries        |
+| 2  | Balkan peninsula        |
+| 3  | Baltics                 |
+| 4  | Benelux                 |
+| 5  | Central Europe          |
+| 6  | Danubian countries      |
+| 7  | Eastern Europe          |
+| 8  | European Union          |
+| 9  | Eurozone                |
+| 10 | Iberian Peninsula       |
+| 11 | Mediterranean countries |
+| 12 | Nordics                 |
+| 13 | Northern Europe         |
+| 14 | Scandinavian peninsula  |
+| 15 | Southern Europe         |
+| 16 | Western Europe          |
+| 17 | Europe                  |
+| 19 | US Midwest              |
+| 20 | US Northeast            |
+| 21 | US Southeast            |
+| 22 | US West                 |
+| 23 | US East Coast           |
+| 24 | US West Coast           |
+| 25 | US Southwest            |
 
 ## Tags
 
