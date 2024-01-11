@@ -1584,9 +1584,63 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 
 # Taxonomy Page
 
-## Taxonomy Graph Items of Parent Item
+Our taxonomy is a way to visualise the relation between different topics.
 
-> To get Taxonomy Graph Item list without any parameter, use this code:
+## All Taxonomy Items
+
+> To get all Taxonomy Graph Items, use this code:
+
+```shell
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/itemDtos' \
+-H 'Content-Type: application/json' \                 
+```
+
+> In case of a 200 response, the response body will contain all the available items, with the JSON structured like the following:
+
+```json
+[
+  {
+    "label": "Alternative Fuel",
+    "description": "Alternative fuels are at the forefront of innovation, with notable examples being biofuels and synthetic fuels. Solutions in this domain are dedicated to advancing and applying these alternatives, not only for transportation but also for broader energy applications, including electricity generation and industrial processes.",
+    "tagID": 995,
+    "tagName": "Alternative Fuel",
+    "rawSuggestedSearches": [
+      "{\"include\": {\"tags\": [323], \"wildcardsFields\": [\"pitchLine\"]}, \"exclude\": {\"tags\": [212, 220, 224]}}"
+    ],
+    "id": 1
+  },
+  {
+    "label": "Biofuel",
+    "description": "Biofuels are produced from renewable resources, primarily plant-based feedstocks such as crops, agricultural residues, or algae. Biofuels offer a way to decarbonize sectors that are challenging to electrify, such as aviation and heavy industry, while promoting agricultural sustainability through responsible feedstock sourcing and land-use practices. Some solutions include innovative processes to convert biomass into biofuels, such as biodiesel and bioethanol, through techniques like fermentation and thermochemical conversion.",
+    "tagID": 996,
+    "tagName": "Biofuel",
+    "rawSuggestedSearches": [
+      "{\"include\":{\"tags\":[20,374]},\"exclude\":{},\"fundingRoundInclude\":{},\"fundingRoundExclude\":{},\"investorInclude\":{},\"investorExclude\":{}}",
+      "{\"include\":{\"wildcardsFields\":[\"pitchLine\"],\"regexpFields\":[\"pitchLine\"],\"regexps\":[\"produc[a-z]{0,5}[^A-z0-9]+([A-z0-9]+[^A-z0-9]+){0,5}biofuel[a-z]{0,5}\"]},\"exclude\":{},\"fundingRoundInclude\":{},\"fundingRoundExclude\":{},\"investorInclude\":{},\"investorExclude\":{}}",
+      "{\"include\":{\"wildcardsFields\":[\"pitchLine\"],\"regexpFields\":[\"pitchLine\"],\"regexps\":[\"manufactur[a-z]{0,5}[^A-z0-9]+([A-z0-9]+[^A-z0-9]+){0,5}biofuel[a-z]{0,5}\"]},\"exclude\":{},\"fundingRoundInclude\":{},\"fundingRoundExclude\":{},\"investorInclude\":{},\"investorExclude\":{}}",
+      "{\"include\":{\"wildcardsFields\":[\"pitchLine\"],\"regexpFields\":[\"pitchLine\",\"description\"],\"regexps\":[\"offer[a-z]{0,5}[^A-z0-9]+([A-z0-9]+[^A-z0-9]+){0,5}biofuel[a-z]{0,5}\"]},\"exclude\":{},\"fundingRoundInclude\":{},\"fundingRoundExclude\":{},\"investorInclude\":{},\"investorExclude\":{}}",
+      "{\"include\":{\"tags\":[20],\"wildcards\":[\"biofuel\"],\"wildcardsFields\":[\"pitchLine\"],\"regexpFields\":[\"pitchLine\"]},\"exclude\":{},\"fundingRoundInclude\":{},\"fundingRoundExclude\":{},\"investorInclude\":{},\"investorExclude\":{}}",
+      "{\"include\":{\"wildcardsFields\":[\"pitchLine\"],\"regexpFields\":[\"pitchLine\",\"description\"],\"regexps\":[\"develop[a-z]{0,5}[^A-z0-9]+([A-z0-9]+[^A-z0-9]+){0,5}biofuel[a-z]{0,5}\"]},\"exclude\":{},\"fundingRoundInclude\":{},\"fundingRoundExclude\":{},\"investorInclude\":{},\"investorExclude\":{}}"
+    ],
+    "id": 2
+  }
+]
+```
+
+To get all the taxonomy items you should use the following endpoint:
+
+`GET /taxonomy/itemDtos`
+
+The possible response codes are:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
+
+## Level 0 Taxonomy Graph Items
+
+> To get Taxonomy Graph Item list without any parents (which means they are the top level of our taxonomy), use this code:
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
@@ -1634,7 +1688,21 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ]
 ```
 
-> To get a list of child Taxonomy Graph Items of a parent item, use this code:
+To get all the level 0 taxonomy items you should use the following endpoint:
+
+`GET /taxonomy/graph`
+
+The possible response codes are:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
+
+These are the top-most items of our taxonomy, and all the other items are related to them, either directly or through another item(s)
+
+## Taxonomy Graph children Items
+
+> To get the list of children Taxonomy Graph Items of a parent item, use this code:
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
@@ -1649,7 +1717,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 -H 'Content-Type: application/json' \                 
 ```
 
-> In case of a 200 response, the response body will contain all the available child items of a parent item by ID or label, with the JSON structured like the following:
+> In case of a 200 response, the response body will contain all the available children items of a parent item by ID or label, with the JSON structured like the following:
  
 ```json
 [
@@ -1675,6 +1743,18 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
   }
 ]
 ```
+
+To get all the children taxonomy items of a parent item, you should use the following endpoint:
+
+`GET /taxonomy/graph/{parentID}`
+
+Where the parameter `parentID` can either be the parent item ID or the parent item label.
+
+The possible response codes are:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Top Companies
 
@@ -1758,762 +1838,21 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
         "sustainabilityMetricLabel": "Average impact",
         "id": 85443,
         "eutopiaScore": 27
-    },
-    {
-        "clientID": 102502,
-        "name": "Crux",
-        "logo": "https://res.cloudinary.com/eutop-1/image/upload/b_white/v1681744408/Startups/fecn84loniehxbch8aff.jpg",
-        "website": "https://www.cruxclimate.com/",
-        "domain": "cruxclimate.com",
-        "pitchLine": "Crux develops software solutions to enable streamlined and efficient transactions, providing enhanced access to financing for clean energy projects.<br><br>Crux specializes in simplifying and streamlining the financing process for corporations, developers, syndicators, and financial institutions by focusing on transferable tax credits and the inflation reduction act. <br><br>Crux develops an innovation that contributes to:<br>Climate change mitigation by facilitating the deployment of renewable energy solutions.",
-        "description": "The ecosystem for developers tax credit buyers and financial institutions to transact manage transferable tax credits br Crux serves as an ecosystem facilitating the management and transfer of tax credits br br Crux Climate is a digital marketplace that specializes in facilitating the acquisition and utilization of tax credits in the realm of clean energy\nCrux serves as an ecosystem facilitating the management and transfer of tax credits br br Crux Climate is a digital marketplace that specializes in facilitating the acquisition and utilization of tax credits in the realm of clean energy\nWith a primary focus on creating an accessible and efficient ecosystem for clean energy developers tax credit buyers and financial institutions br br Crux develops an innovation that contributes to br Climate change mitigation by facilitating the deployment of renewable energy solutions\nThe ecosystem for developers tax credit buyers and financial institutions to transact manage transferable tax credits br The ecosystem for developers tax credit buyers and financial institutions to transact manage transferable tax credits\nCrux develops software solutions to enable streamlined and efficient transactions providing enhanced access to financing for clean energy projects br br Crux specializes in simplifying and streamlining the financing process for corporations developers syndicators and financial institutions by focusing on transferable tax credits and the inflation reduction act\nbr br Crux develops an innovation that contributes to br Climate change mitigation by facilitating the deployment of renewable energy solutions",
-        "fundingAmount": 8105481.0,
-        "fundingString": "8.11M",
-        "fundingAmountUSD": 8850000.0,
-        "fundingStringUSD": "8.85M",
-        "fundingRangeID": 4,
-        "fundingRange": "5M - 10M",
-        "lastRoundDate": "2023-06-21T07:47:00.000+00:00",
-        "sustainabilityMetric": 0.47289187,
-        "foundedDate": 2023,
-        "georowID": 951798,
-        "countryID": 226,
-        "country": "United States",
-        "city": "Washington",
-        "continent": "North America",
-        "email": "mail@business.com",
-        "sizeID": 1,
-        "size": "1 - 10",
-        "stageID": 2,
-        "stage": "Early",
-        "linkedinURL": "https://www.linkedin.com/company/cruxclimate/",
-        "twitterURL": "https://twitter.com/cruxclimate/",
-        "directURL": "crux-102502",
-        "sustainabilityMetricID": 2,
-        "lastRoundAmount": 3919175,
-        "lastRoundAmountUSD": 4250000,
-        "lastRoundAmountString": "3.92M",
-        "lastRoundAmountStringUSD": "4.25M",
-        "lastRoundType": "Seed",
-        "tags": [
-            {
-                "tagTypeId": 4,
-                "tagType": {
-                    "tagType": "business model",
-                    "platformOrder": 4,
-                    "tagFamily": {
-                        "tagFamily": "Business models",
-                        "platformOrder": 4,
-                        "id": 4
-                    },
-                    "id": 4
-                },
-                "filterable": true,
-                "id": 237,
-                "label": "business to business (B2B)"
-            },
-            {
-                "tagTypeId": 4,
-                "tagType": {
-                    "tagType": "business model",
-                    "platformOrder": 4,
-                    "tagFamily": {
-                        "tagFamily": "Business models",
-                        "platformOrder": 4,
-                        "id": 4
-                    },
-                    "id": 4
-                },
-                "filterable": true,
-                "id": 295,
-                "label": "product"
-            },
-            {
-                "tagTypeId": 53,
-                "tagType": {
-                    "tagType": "revenue model",
-                    "platformOrder": 17,
-                    "tagFamily": {
-                        "tagFamily": "Business models",
-                        "platformOrder": 4,
-                        "id": 4
-                    },
-                    "id": 53
-                },
-                "filterable": true,
-                "id": 544,
-                "label": "commerce"
-            },
-            {
-                "tagTypeId": 4,
-                "tagType": {
-                    "tagType": "business model",
-                    "platformOrder": 4,
-                    "tagFamily": {
-                        "tagFamily": "Business models",
-                        "platformOrder": 4,
-                        "id": 4
-                    },
-                    "id": 4
-                },
-                "filterable": true,
-                "id": 303,
-                "label": "service"
-            },
-            {
-                "tagTypeId": 52,
-                "tagType": {
-                    "tagType": "offering",
-                    "platformOrder": 16,
-                    "tagFamily": {
-                        "tagFamily": "Business models",
-                        "platformOrder": 4,
-                        "id": 4
-                    },
-                    "id": 52
-                },
-                "filterable": true,
-                "id": 538,
-                "label": "physical product"
-            },
-            {
-                "tagTypeId": 5,
-                "definition": "The software sector encompasses organizations that develop or sell software, applications that run on devices such as PCs, mobile phones, tablets, and other smart devices.\n\nThe scope of this sector includes companies involved in system analysis, system designing, programming, testing, conversion, production, and maintenance of the software\n\nInnovative solutions include management software, big data analysis, cloud-based software, software-as-a-service, optimisation software, real time data analysis, monitoring software, AI and machine learning solutions.\n",
-                "tagType": {
-                    "tagType": "buzzword",
-                    "platformOrder": 5,
-                    "tagFamily": {
-                        "tagFamily": "Buzzwords",
-                        "platformOrder": 5,
-                        "id": 5
-                    },
-                    "id": 5
-                },
-                "filterable": true,
-                "id": 239,
-                "label": "software"
-            },
-            {
-                "tagTypeId": 10,
-                "definition": "The energy sector includes innovations that are in the business of producing or supplying energy such as renewables.\n\nWithin the scope of this climate change challenge are targeted emissions produced by energy systems, namely what concerns the production, conversion, distribution and consumption of energy. \n\nSolutions to mitigate climate change and to adapt to its effects in this challenge include energy management systems, batteries, biofuels, CHP, electromechanical storage, biomass, heat recovery, hydrogen, kinetic energy, energy monitoring and metering, utilities and others.",
-                "tagType": {
-                    "tagType": "challenge",
-                    "platformOrder": 8,
-                    "tagFamily": {
-                        "tagFamily": "Buzzwords",
-                        "platformOrder": 5,
-                        "id": 5
-                    },
-                    "id": 10
-                },
-                "filterable": true,
-                "id": 354,
-                "label": "energy"
-            },
-            {
-                "tagTypeId": 7,
-                "definition": "Investment Services means any services which involve the management of an investment account or fund, or the giving of advice with respect to the investment and/or reinvestment of assets or funds.\n\nWithin its scope is any service or solution designed to provide access or advice to sustainable investment opportunities.\n\nInnovative solutions include crowdfunding platforms, crowdinvesting, climate-focused investment funds, crowd wisdom investment platforms, etc.",
-                "tagType": {
-                    "tagType": "sector",
-                    "platformOrder": 2,
-                    "tagFamily": {
-                        "tagFamily": "Buzzwords",
-                        "platformOrder": 5,
-                        "id": 5
-                    },
-                    "id": 7
-                },
-                "filterable": true,
-                "id": 338,
-                "label": "investment service"
-            },
-            {
-                "tagTypeId": 7,
-                "definition": "Financial services is a broad term used to describe the various offerings within the finance industry–encompassing everything from insurance and risk assessment to payments and digital banking technology. \n\nWithin its scope is any financial technology which aims to automate and improve the use and delivery of financial services and products. \n\nSolutions to mitigate climate change aim to catalyze decarbonization across the finance sector. Examples include digital banking, carbon offsetting, climate-focused investments, ESG reporting, blockchain for carbon markets, carbon accounting, innovative payment technologies, lending and crowdfunding platforms, ect.",
-                "tagType": {
-                    "tagType": "sector",
-                    "platformOrder": 2,
-                    "tagFamily": {
-                        "tagFamily": "Buzzwords",
-                        "platformOrder": 5,
-                        "id": 5
-                    },
-                    "id": 7
-                },
-                "filterable": true,
-                "id": 333,
-                "label": "financial service"
-            },
-            {
-                "tagTypeId": 74,
-                "definition": "Development or use of ICT solutions that are aimed at collecting, transmitting, storing data and at its modelling and use where those activities are predominantly aimed at the provision of data and analytics enabling GHG emission reductions. Such ICT solutions may include, inter alia, the use of decentralized technologies (i.e. distributed ledger technologies), Internet of Things (IoT), 5G and Artificial Intelligence.",
-                "tagType": {
-                    "tagType": "EU activity",
-                    "platformOrder": 9,
-                    "tagFamily": {
-                        "tagFamily": "EU taxonomy",
-                        "platformOrder": 12,
-                        "id": 1
-                    },
-                    "id": 74
-                },
-                "filterable": true,
-                "id": 489,
-                "label": "Data-driven solutions for GHG emissions reduction"
-            },
-            {
-                "tagTypeId": 11,
-                "tagType": {
-                    "tagType": "environmental objective",
-                    "platformOrder": 7,
-                    "tagFamily": {
-                        "tagFamily": "EU taxonomy",
-                        "platformOrder": 12,
-                        "id": 1
-                    },
-                    "id": 11
-                },
-                "filterable": true,
-                "id": 374,
-                "label": "climate change mitigation"
-            },
-            {
-                "tagTypeId": 13,
-                "tagType": {
-                    "tagType": "EU sector",
-                    "platformOrder": 9,
-                    "tagFamily": {
-                        "tagFamily": "EU taxonomy",
-                        "platformOrder": 12,
-                        "id": 1
-                    },
-                    "id": 13
-                },
-                "filterable": true,
-                "id": 398,
-                "label": "Information and communication"
-            }
-        ],
-        "fundingTypes": [],
-        "sdgs": [
-            {
-                "id": 7,
-                "label": "7. Affordable and clean energy"
-            },
-            {
-                "id": 13,
-                "label": "13. Climate action"
-            }
-        ],
-        "note": "",
-        "roundCount": 2,
-        "fundingRangeUSD": "5M - 10M",
-        "fundingRangeIDUSD": 4,
-        "intellectualProperty": true,
-        "numberOfEquityRounds": 2,
-        "sustainabilityMetricLabel": "Average impact",
-        "id": 78403,
-        "eutopiaScore": 47
-    },
-    {
-        "clientID": 101360,
-        "name": "Girasole Energies",
-        "logo": "https://res.cloudinary.com/eutop-1/image/upload/b_white/v1680084726/Startups/ft3smshaw7opegkckcvs.jpg",
-        "website": "https://girasole-energies.com/",
-        "domain": "girasole-energies.com",
-        "pitchLine": "Girasole Energies designs and constructs on-grid small and utility-scale solar electricity facilities.<br><br>Girasole Energies is an independent electricity producer that develops and implements photovoltaic projects. Their solutions include generating solar electricity by installing solar panels on agricultural sheds, new and existing roofs, and parking shades.<br><br>Girasole Energies develops an innovation that contributes to:<br>Climate change mitigation by the generation of carbon-free electricity.",
-        "description": "Girasole Energies produces photovoltaic electricity for low carbon and competitive electricity and operates photovoltaic power plants\nLes clients qui hebergent ces unites de production qu il s agisse d agriculteurs d entreprises ou de collectivites beneficient de contreparties diverses revenu additionnel construction de batiment neuf renovation de grande toiture mise en conformite avec la reglementation ou encore reduction de leur facture d electricite via un contrat d autoconsommation\nGirasole Energies contribue a la transition energetique par la production d une electricite bas carbone locale et competitive\nGirasole Energies produces photovoltaic electricity for low carbon and competitive electricity and operates photovoltaic power plants Girasole Energies concoit developpe finance construit et exploite des projets photovoltaiques de plus de 100 kWc partout en France Independent Power Producer based in France\nGirasole Energies est un producteur francais independant d electricite photovoltaique qui concoit developpe finance construit et exploite des centrales solaires a travers toute la France sur des toitures des parkings et des terrains nus\nGirasole Energies produces photovoltaic electricity for low carbon and competitive electricity and operates photovoltaic power plants",
-        "fundingAmount": 9.6E7,
-        "fundingString": "96M",
-        "fundingAmountUSD": 1.02837007E8,
-        "fundingStringUSD": "103M",
-        "fundingRangeID": 7,
-        "fundingRange": "50M - 100M",
-        "lastRoundDate": "2023-03-21T15:04:56.623+00:00",
-        "sustainabilityMetric": 0.79992515,
-        "foundedDate": 2023,
-        "georowID": 796814,
-        "countryID": 73,
-        "country": "France",
-        "city": "Boulogne-Billancourt",
-        "continent": "Europe",
-        "email": "contact@girasole-energies.com",
-        "phone": "+331 70 95 00 80",
-        "sizeID": 2,
-        "size": "11 - 50",
-        "stageID": 3,
-        "stage": "Growth",
-        "linkedinURL": "https://www.linkedin.com/company/girasole-energies/",
-        "directURL": "girasole-energies-101360",
-        "sustainabilityMetricID": 4,
-        "lastRoundAmount": 96000000,
-        "lastRoundAmountUSD": 102837007,
-        "lastRoundAmountString": "96M",
-        "lastRoundAmountStringUSD": "103M",
-        "lastRoundType": "Growth equity",
-        "tags": [
-            {
-                "tagTypeId": 46,
-                "tagType": {
-                    "tagType": "solution",
-                    "platformOrder": 10,
-                    "tagFamily": {
-                        "tagFamily": "Solutions",
-                        "platformOrder": 2,
-                        "id": 2
-                    },
-                    "id": 46
-                },
-                "filterable": true,
-                "id": 319,
-                "label": "photovoltaic"
-            },
-            {
-                "tagTypeId": 64,
-                "tagType": {
-                    "tagType": "grid tie",
-                    "platformOrder": 28,
-                    "tagFamily": {
-                        "tagFamily": "Solutions",
-                        "platformOrder": 2,
-                        "id": 2
-                    },
-                    "id": 64
-                },
-                "filterable": true,
-                "id": 607,
-                "label": "on-grid"
-            },
-            {
-                "tagTypeId": 63,
-                "tagType": {
-                    "tagType": "energy generation scale",
-                    "platformOrder": 27,
-                    "tagFamily": {
-                        "tagFamily": "Solutions",
-                        "platformOrder": 2,
-                        "id": 2
-                    },
-                    "id": 63
-                },
-                "filterable": true,
-                "id": 605,
-                "label": "small scale"
-            },
-            {
-                "tagTypeId": 63,
-                "tagType": {
-                    "tagType": "energy generation scale",
-                    "platformOrder": 27,
-                    "tagFamily": {
-                        "tagFamily": "Solutions",
-                        "platformOrder": 2,
-                        "id": 2
-                    },
-                    "id": 63
-                },
-                "filterable": true,
-                "id": 606,
-                "label": "utility scale"
-            },
-            {
-                "tagTypeId": 77,
-                "tagType": {
-                    "tagType": "solar site specification",
-                    "platformOrder": 40,
-                    "tagFamily": {
-                        "tagFamily": "Solutions",
-                        "platformOrder": 2,
-                        "id": 2
-                    },
-                    "id": 77
-                },
-                "filterable": true,
-                "id": 686,
-                "label": "rooftop"
-            },
-            {
-                "tagTypeId": 77,
-                "tagType": {
-                    "tagType": "solar site specification",
-                    "platformOrder": 40,
-                    "tagFamily": {
-                        "tagFamily": "Solutions",
-                        "platformOrder": 2,
-                        "id": 2
-                    },
-                    "id": 77
-                },
-                "filterable": true,
-                "id": 684,
-                "label": "ground-mounted"
-            },
-            {
-                "tagTypeId": 2,
-                "tagType": {
-                    "tagType": "energy value chain",
-                    "platformOrder": 1,
-                    "tagFamily": {
-                        "tagFamily": "Value chains",
-                        "platformOrder": 3,
-                        "id": 3
-                    },
-                    "id": 2
-                },
-                "filterable": true,
-                "id": 132,
-                "label": "energy generation"
-            },
-            {
-                "tagTypeId": 78,
-                "tagType": {
-                    "tagType": "solar system value chain",
-                    "platformOrder": 41,
-                    "tagFamily": {
-                        "tagFamily": "Value chains",
-                        "platformOrder": 3,
-                        "id": 3
-                    },
-                    "id": 78
-                },
-                "filterable": true,
-                "id": 692,
-                "label": "solar system operation & maintenance"
-            },
-            {
-                "tagTypeId": 51,
-                "tagType": {
-                    "tagType": "production value chain",
-                    "platformOrder": 15,
-                    "tagFamily": {
-                        "tagFamily": "Value chains",
-                        "platformOrder": 3,
-                        "id": 3
-                    },
-                    "id": 51
-                },
-                "filterable": true,
-                "id": 536,
-                "label": "consumer good"
-            },
-            {
-                "tagTypeId": 48,
-                "tagType": {
-                    "tagType": "electricity value chain",
-                    "platformOrder": 12,
-                    "tagFamily": {
-                        "tagFamily": "Value chains",
-                        "platformOrder": 3,
-                        "id": 3
-                    },
-                    "id": 48
-                },
-                "filterable": true,
-                "id": 519,
-                "label": "electricity generation"
-            },
-            {
-                "tagTypeId": 53,
-                "tagType": {
-                    "tagType": "revenue model",
-                    "platformOrder": 17,
-                    "tagFamily": {
-                        "tagFamily": "Business models",
-                        "platformOrder": 4,
-                        "id": 4
-                    },
-                    "id": 53
-                },
-                "filterable": true,
-                "id": 544,
-                "label": "commerce"
-            },
-            {
-                "tagTypeId": 4,
-                "tagType": {
-                    "tagType": "business model",
-                    "platformOrder": 4,
-                    "tagFamily": {
-                        "tagFamily": "Business models",
-                        "platformOrder": 4,
-                        "id": 4
-                    },
-                    "id": 4
-                },
-                "filterable": true,
-                "id": 303,
-                "label": "service"
-            },
-            {
-                "tagTypeId": 52,
-                "tagType": {
-                    "tagType": "offering",
-                    "platformOrder": 16,
-                    "tagFamily": {
-                        "tagFamily": "Business models",
-                        "platformOrder": 4,
-                        "id": 4
-                    },
-                    "id": 52
-                },
-                "filterable": true,
-                "id": 538,
-                "label": "physical product"
-            },
-            {
-                "tagTypeId": 4,
-                "tagType": {
-                    "tagType": "business model",
-                    "platformOrder": 4,
-                    "tagFamily": {
-                        "tagFamily": "Business models",
-                        "platformOrder": 4,
-                        "id": 4
-                    },
-                    "id": 4
-                },
-                "filterable": true,
-                "id": 237,
-                "label": "business to business (B2B)"
-            },
-            {
-                "tagTypeId": 4,
-                "tagType": {
-                    "tagType": "business model",
-                    "platformOrder": 4,
-                    "tagFamily": {
-                        "tagFamily": "Business models",
-                        "platformOrder": 4,
-                        "id": 4
-                    },
-                    "id": 4
-                },
-                "filterable": true,
-                "id": 295,
-                "label": "product"
-            },
-            {
-                "tagTypeId": 10,
-                "definition": "The energy sector includes innovations that are in the business of producing or supplying energy such as renewables.\n\nWithin the scope of this climate change challenge are targeted emissions produced by energy systems, namely what concerns the production, conversion, distribution and consumption of energy. \n\nSolutions to mitigate climate change and to adapt to its effects in this challenge include energy management systems, batteries, biofuels, CHP, electromechanical storage, biomass, heat recovery, hydrogen, kinetic energy, energy monitoring and metering, utilities and others.",
-                "tagType": {
-                    "tagType": "challenge",
-                    "platformOrder": 8,
-                    "tagFamily": {
-                        "tagFamily": "Buzzwords",
-                        "platformOrder": 5,
-                        "id": 5
-                    },
-                    "id": 10
-                },
-                "filterable": true,
-                "id": 354,
-                "label": "energy"
-            },
-            {
-                "tagTypeId": 5,
-                "tagType": {
-                    "tagType": "buzzword",
-                    "platformOrder": 5,
-                    "tagFamily": {
-                        "tagFamily": "Buzzwords",
-                        "platformOrder": 5,
-                        "id": 5
-                    },
-                    "id": 5
-                },
-                "filterable": true,
-                "id": 240,
-                "label": "hardware"
-            },
-            {
-                "tagTypeId": 7,
-                "definition": "Financial services is a broad term used to describe the various offerings within the finance industry–encompassing everything from insurance and risk assessment to payments and digital banking technology. \n\nWithin its scope is any financial technology which aims to automate and improve the use and delivery of financial services and products. \n\nSolutions to mitigate climate change aim to catalyze decarbonization across the finance sector. Examples include digital banking, carbon offsetting, climate-focused investments, ESG reporting, blockchain for carbon markets, carbon accounting, innovative payment technologies, lending and crowdfunding platforms, ect.",
-                "tagType": {
-                    "tagType": "sector",
-                    "platformOrder": 2,
-                    "tagFamily": {
-                        "tagFamily": "Buzzwords",
-                        "platformOrder": 5,
-                        "id": 5
-                    },
-                    "id": 7
-                },
-                "filterable": true,
-                "id": 333,
-                "label": "financial service"
-            },
-            {
-                "tagTypeId": 5,
-                "tagType": {
-                    "tagType": "buzzword",
-                    "platformOrder": 5,
-                    "tagFamily": {
-                        "tagFamily": "Buzzwords",
-                        "platformOrder": 5,
-                        "id": 5
-                    },
-                    "id": 5
-                },
-                "filterable": true,
-                "id": 66,
-                "label": "energy provider"
-            },
-            {
-                "tagTypeId": 7,
-                "definition": "Electricity is defined as the energy made available for consumption or consumed in the form of electricity or electric power.\n\nWithin the scope of this challenge is any activity related to electricity generation, transmission, distribution and usage.\n\nSolutions to mitigate climate change and to adapt to its effects in this sector include: electricity generation technologies, EV charging stations, electricity distribution, electricity digitalization, electric load management, battery production, photovoltaic system, combined heat and power and others.",
-                "tagType": {
-                    "tagType": "sector",
-                    "platformOrder": 2,
-                    "tagFamily": {
-                        "tagFamily": "Buzzwords",
-                        "platformOrder": 5,
-                        "id": 5
-                    },
-                    "id": 7
-                },
-                "filterable": true,
-                "id": 207,
-                "label": "electricity"
-            },
-            {
-                "tagTypeId": 5,
-                "tagType": {
-                    "tagType": "buzzword",
-                    "platformOrder": 5,
-                    "tagFamily": {
-                        "tagFamily": "Buzzwords",
-                        "platformOrder": 5,
-                        "id": 5
-                    },
-                    "id": 5
-                },
-                "filterable": true,
-                "id": 158,
-                "label": "solar energy"
-            },
-            {
-                "tagTypeId": 7,
-                "definition": "Investment Services means any services which involve the management of an investment account or fund, or the giving of advice with respect to the investment and/or reinvestment of assets or funds.\n\nWithin its scope is any service or solution designed to provide access or advice to sustainable investment opportunities.\n\nInnovative solutions include crowdfunding platforms, crowdinvesting, climate-focused investment funds, crowd wisdom investment platforms, etc.",
-                "tagType": {
-                    "tagType": "sector",
-                    "platformOrder": 2,
-                    "tagFamily": {
-                        "tagFamily": "Buzzwords",
-                        "platformOrder": 5,
-                        "id": 5
-                    },
-                    "id": 7
-                },
-                "filterable": true,
-                "id": 338,
-                "label": "investment service"
-            },
-            {
-                "tagTypeId": 13,
-                "tagType": {
-                    "tagType": "EU sector",
-                    "platformOrder": 9,
-                    "tagFamily": {
-                        "tagFamily": "EU taxonomy",
-                        "platformOrder": 12,
-                        "id": 1
-                    },
-                    "id": 13
-                },
-                "filterable": true,
-                "id": 393,
-                "label": "Energy"
-            },
-            {
-                "tagTypeId": 11,
-                "tagType": {
-                    "tagType": "environmental objective",
-                    "platformOrder": 7,
-                    "tagFamily": {
-                        "tagFamily": "EU taxonomy",
-                        "platformOrder": 12,
-                        "id": 1
-                    },
-                    "id": 11
-                },
-                "filterable": true,
-                "id": 374,
-                "label": "climate change mitigation"
-            },
-            {
-                "tagTypeId": 74,
-                "definition": "Installation, maintenance and repair of renewable energy technologies, on-site.",
-                "tagType": {
-                    "tagType": "EU activity",
-                    "platformOrder": 9,
-                    "tagFamily": {
-                        "tagFamily": "EU taxonomy",
-                        "platformOrder": 12,
-                        "id": 1
-                    },
-                    "id": 74
-                },
-                "filterable": true,
-                "id": 486,
-                "label": "Installation, maintenance and repair of renewable energy technologies"
-            },
-            {
-                "tagTypeId": 74,
-                "definition": "Construction or operation of electricity generation facilities that produce electricity using solar photovoltaic (PV) technology.",
-                "tagType": {
-                    "tagType": "EU activity",
-                    "platformOrder": 9,
-                    "tagFamily": {
-                        "tagFamily": "EU taxonomy",
-                        "platformOrder": 12,
-                        "id": 1
-                    },
-                    "id": 74
-                },
-                "filterable": true,
-                "id": 421,
-                "label": "Electricity generation using solar photovoltaic technology"
-            },
-            {
-                "tagTypeId": 13,
-                "tagType": {
-                    "tagType": "EU sector",
-                    "platformOrder": 9,
-                    "tagFamily": {
-                        "tagFamily": "EU taxonomy",
-                        "platformOrder": 12,
-                        "id": 1
-                    },
-                    "id": 13
-                },
-                "filterable": true,
-                "id": 397,
-                "label": "Construction and real estate"
-            }
-        ],
-        "fundingTypes": [],
-        "sdgs": [
-            {
-                "id": 7,
-                "label": "7. Affordable and clean energy"
-            },
-            {
-                "id": 13,
-                "label": "13. Climate action"
-            }
-        ],
-        "note": "",
-        "roundCount": 1,
-        "fundingRangeUSD": "100M - 250M",
-        "fundingRangeIDUSD": 8,
-        "lastReviewer": "pooneh_amini naeini",
-        "numberOfEquityRounds": 1,
-        "sustainabilityMetricLabel": "Very high impact",
-        "id": 77426,
-        "eutopiaScore": 79
     }
 ]
 ```
+
+To get the top companies of a taxonomy item you should use the following endpoint:
+
+`GET /taxonomy/graph/topCompanies/{itemID}`
+
+Where the parameter `itemID` is the taxonomy item ID.
+
+The possible response codes are:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Top Investors
 
@@ -2562,44 +1901,17 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ]
 ```
 
-## All Taxonomy Items
+To get the top investors of a taxonomy item you should use the following endpoint:
 
-> To get all Taxonomy Graph Items, use this code:
+`GET /taxonomy/graph/topInvestors/{itemID}`
 
-```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/graph/topInvestors/2' \
--H 'Content-Type: application/json' \                 
-```
+Where the parameter `itemID` is the taxonomy item ID.
 
-> In case of a 200 response, the response body will contain all the available items, with the JSON structured like the following:
+The possible response codes are:
 
-```json
-[
-    {
-        "label": "Alternative Fuell",
-        "description": "Alternative fuels are at the forefront of innovation, with notable examples being biofuels and synthetic fuels. Climate tech startups in this domain are dedicated to advancing and applying these alternatives, not only for transportation but also for broader energy applications, including electricity generation and industrial processes. For instance, biofuels sourced from organic materials like crop residues and algae can replace fossil fuels in electricity generation, offering a cleaner and more sustainable energy source. Synthetic fuels, synthesized from carbon dioxide and renewable electricity, provide a carbon-neutral option for various energy-intensive sectors such as heavy industry. ",
-        "tagID": 1089,
-        "companyCount": 483,
-        "dealCount": 522,
-        "totalFunding": 4569489340,
-        "totalFundingUSD": 4109548652,
-        "hasChildren": true,
-        "id": 1
-    },
-    {
-        "label": "Biofuel",
-        "description": "Biofuels are produced from renewable resources, primarily plant-based feedstocks such as crops, agricultural residues, or algae. Biofuels offer a way to decarbonize sectors that are challenging to electrify, such as aviation and heavy industry, while promoting agricultural sustainability through responsible feedstock sourcing and land-use practices. Some solutions include innovative processes to convert biomass into biofuels, such as biodiesel and bioethanol, through techniques like fermentation and thermochemical conversion.",
-        "tagID": 1090,
-        "companyCount": 70,
-        "dealCount": 62,
-        "totalFunding": 1188638956,
-        "totalFundingUSD": 222394728,
-        "hasChildren": true,
-        "id": 2
-    }
-]
-```
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Taxonomy Item
 
@@ -2635,36 +1947,17 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 }
 ```
 
-## Taxonomy Item Relation
+To get a single taxonomy item you should use the following endpoint:
 
-> To get Taxonomy Graph Item Relation list, use this code:
+`GET /taxonomy/item/{itemID}`
 
-```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/relations' \
--H 'Content-Type: application/json' \                 
-```
+Where the parameter `itemID` can either be the item ID or the item label.
 
-> In case of a 200 response, the response body will contain all the available taxonomy graph item relations, with the JSON structured like the following:
+The possible response codes are:
 
-```json
-[
-  {
-    "id": 0,
-    "parentID": 1,
-    "childID": 3,
-    "parentLabel": "Alternative Fuell",
-    "childLabel": "Electrofuels"
-  },
-  {
-    "id": 1,
-    "parentID": 1,
-    "childID": 4,
-    "parentLabel": "Alternative Fuell",
-    "childLabel": "Synthetic Fuel"
-  }
-]
-```
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Taxonomy Item Relations by ParentID
 
@@ -2697,6 +1990,17 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ]
 ```
 
+To get all the parent-children relations of a taxonomy item you should use the following endpoint:
+
+`GET /relations/parent/{itemID}`
+
+Where the parameter `itemID` is the taxonomy item ID.
+
+The possible response codes are:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## Taxonomy Item Relations by ChildID
 
@@ -2722,6 +2026,17 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ]
 ```
 
+To get all the child-parents relations of a taxonomy item you should use the following endpoint:
+
+`GET /relations/child/{itemID}`
+
+Where the parameter `itemID` is the taxonomy item ID.
+
+The possible response codes are:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
 
 ## TRLs
 
