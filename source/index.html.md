@@ -1502,11 +1502,62 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | roundWithDateCount       | Number of rounds with a date available        |
 | reviewDate               | Date of latest company review by our analysts |
 
+## Deal
+        
+| Name                   | Content                                                    |
+|------------------------|------------------------------------------------------------|
+| id                     | Internal funding round ID                                  |
+| clientId               | Startup ID                                                 |
+| clientName             | Startup name                                               |
+| clientLogoURL          | URL to startup's logo                                      |
+| clientPitchLine        | Startup pitchLine                                          |
+| clientHQ               | Startup headquarters                                       |
+| clientCityHQ           | Startup city's headquarters                                |
+| clientCountryCode      | Startup country code                                       |
+| clientCountryID        | Startup country ID                                         |
+| clientContinentID      | Startup continent ID                                       |
+| clientFoundedDate      | Startup founded date                                       |
+| roundDate              | Date of the round                                          |
+| acquisitionDate        | Date of startup insertion into our database                |
+| roundType              | Type of the round                                          |
+| roundAmount            | Amount of the round (EUR)                                  |
+| roundAmountUSD         | Amount of the round (USD)                                  |
+| roundAmountString      | TODO                                                       |
+| roundAmountStringUSD   | TODO                                                       |
+| roundAmountRangeID     | TODO                                                       |
+| roundAmountRangeIDUSD  | TODO                                                       |
+| roundInvestors         | List of IDs of all the investors of the round              |
+| roundInvestorPOJOs     | List of IDs of all the investor DTOs of the round          |
+| roundNews              | List of IDs of all the sources of the round                |
+| roundNewsPOJOs         | List of IDs of all the source DTOs of the round            |
+| roundCurrency          | Original currency of the round                             |
+| originalRoundAmount    | Round amount in original currency                          |
+| numberOfRounds         | TODO                                                       |        
+| totalFundingRangeID    | TODO                                                       |        
+| totalFundingRangeIDUSD | TODO                                                       |        
+| totalFunding           | TODO                                                       |        
+| totalFundingUSD        | TODO                                                       |        
+| totalFundingString     | TODO                                                       |
+| totalFundingStringUSD  | TODO                                                       |
+| roundNumber            | TODO                                                       |
+| financingInstrument    | Financing instrument                                       |
+| lastRound              | TODO                                                       |
+| source                 | Name of the analyst who inserted the round                 |
+| syncDate               | TODO                                                       |
+| valuationAmount        | TODO                                                       |
+| valuationCurrency      | TODO                                                       |
+| valuationType          | TODO                                                       |
+| hideValuation          | TODO                                                       |
+| equityStageID          | Equity stage ID, see Section [Equity Stage](#equity-stage) |
+| exitStageID            | Exit stage ID, see Section [Exit Stage](#exit-stage)       |  
+| insertionDate          | TODO                                                       |
+| lastSeenDate           | TODO                                                       |
+
 ## Deal search
 
 | Name               | Content                                                      |
 |--------------------|--------------------------------------------------------------|
-| results            | List of Section [Funding round](#deal)                       |
+| results            | List of Section [Deal](#deal)                                |
 | count              | Total number of results, regardless of the ”limit” parameter |
 | roundsTotalFunding | Total amount of results, regardless of the ”limit” parameter |
 | selectedCurrency   | Selected currency of the user                                |    
