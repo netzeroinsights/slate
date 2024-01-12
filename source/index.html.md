@@ -1626,6 +1626,122 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | numberOfGrants                 | Number of company deals of type Grante                   |
 | employeesGrowthJSON            | Historical aggregation of the employees fluctuation      |
 
+> In case of a 200 response, the response body will contain the startup matching your request, with the format specified at section [Startup](#startup).
+
+```json
+{
+  "clientID": 423,
+  "name": "Kraftblock",
+  "logo": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1692811618/Startups/a6oc6tki76sjozctvy78.jpg",
+  "website": "http://www.kraftblock.com",
+  "domain": "kraftblock.com",
+  "pitchLine": "Kraftblock specializes in advanced thermal energy storage technology.<br><br>Kraftblock's core technology is multi-purpose, high-temperature energy storage that stores heat up to extreme temperatures in upcycled material. The systems either recycle waste heat or generate green heat via green power.<br><br>Kraftblock develops an innovation that contributes to:<br>Climate change mitigation by enabling industrial companies to replace fossil energy with renewable energy and recycle industrial waste heat.<br>The transition to a circular economy by using recycled material.",
+  "description": "Kraftblock is the energy storage based on a bottom up materials development which enables the energy transition to 100 renewables in an ecological and economical sensfull way Kraftblock develops multifunctional energy storage solutions for heat and power that can enable the energy transition in industry with 30 and 60 MWh containers with efficient transformation also into electricity due to high storage temperature The company s systems store thermal energy from room temperature produced up to 85 from recycled materials and can store waste heat or converted power up to 1 300 C district heating or even repurposed conventional power plants which is preventive ecological fire retardant in ceilings floors fires from breaking out enabling customers to protect themselves during a fire outbreak and ensure safety It is universally applicable Power to Heat Heat to X and very cost effective thanks to the modular system",
+  "fundingAmount": 23127686,
+  "fundingString": "23.1M",
+  "fundingAmountUSD": 25622914,
+  "fundingStringUSD": "25.6M",
+  "fundingRangeID": 5,
+  "fundingRange": "10M - 25M",
+  "lastRoundDate": "2023-08-08T14:47:00.000+00:00",
+  "sustainabilityMetric": 0.9335,
+  "foundedDate": 2014,
+  "georowID": 817557,
+  "countryID": 80,
+  "country": "Germany",
+  "city": "Saarbrücken",
+  "continent": "Europe",
+  "email": "welcome@kraftblock.com",
+  "phone": "+49 6897 936161",
+  "sizeID": 2,
+  "size": "11 - 50",
+  "stageID": 4,
+  "stage": "Scaling",
+  "linkedinURL": "https://www.linkedin.com/company/kraftblock/",
+  "twitterURL": "https://twitter.com/kraftblocke/",
+  "facebookURL": "https://facebook.com/kraftblock-575213782930847/",
+  "directURL": "kraftblock-423",
+  "sustainabilityMetricID": 4,
+  "lastRoundAmount": 18327686,
+  "lastRoundAmountUSD": 20000000,
+  "lastRoundAmountString": "18.3M",
+  "lastRoundAmountStringUSD": "20M",
+  "lastRoundType": "Series B",
+  "tags": [
+    {
+      "tagTypeId": 11,
+      "tagType": {
+        "tagType": "environmental objective",
+        "platformOrder": 7,
+        "tagFamily": {
+          "tagFamily": "EU taxonomy",
+          "platformOrder": 1,
+          "id": 1
+        },
+        "id": 11
+      },
+      "filterable": true,
+      "id": 377,
+      "label": "the transition to a circular economy"
+    },
+    {
+      "tagTypeId": 13,
+      "tagType": {
+        "tagType": "EU sector",
+        "platformOrder": 9,
+        "tagFamily": {
+          "tagFamily": "EU taxonomy",
+          "platformOrder": 1,
+          "id": 1
+        },
+        "id": 13
+      },
+      "filterable": true,
+      "id": 392,
+      "label": "Manufacturing"
+    }
+  ],
+  "trls": [
+    {
+      "date": "2023-08-14T17:01:30.977+00:00",
+      "label": "9",
+      "id": 2
+    }
+  ],
+  "fundingTypes": [
+    "Grant",
+    "Equity"
+  ],
+  "sdgs": [
+    {
+      "id": 7,
+      "label": "7. Affordable and clean energy"
+    },
+    {
+      "id": 12,
+      "label": "12. Responsible consumption and production"
+    },
+    {
+      "id": 13,
+      "label": "13. Climate action"
+    }
+  ],
+  "note": "",
+  "roundCount": 7,
+  "fundingRangeUSD": "25M - 50M",
+  "fundingRangeIDUSD": 6,
+  "reviewDate": "2023-08-14T17:01:37.410+00:00",
+  "lastReviewer": "amirhossein_mohammadghasemi",
+  "lastSeenDate": "2024-01-12T08:38:17.433+00:00",
+  "numberOfEquityRounds": 4,
+  "numberOfGrants": 1,
+  "sustainabilityMetricLabel": "Very high impact",
+  "employeesGrowthJSON": "[\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2021,\n      \"day\": 1\n    },\n    \"employeeCount\": 19\n  },\n  {\n    \"dateOn\": {\n      \"month\": 1,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 11,\n    \"employeeCount\": 21\n  },\n  {\n    \"dateOn\": {\n      \"month\": 2,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 22\n  },\n  {\n    \"dateOn\": {\n      \"month\": 3,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 23\n  },\n  {\n    \"dateOn\": {\n      \"month\": 4,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 23\n  },\n  {\n    \"dateOn\": {\n      \"month\": 5,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 24\n  },\n  {\n    \"dateOn\": {\n      \"month\": 6,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 24\n  },\n  {\n    \"dateOn\": {\n      \"month\": 7,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 25\n  },\n  {\n    \"dateOn\": {\n      \"month\": 8,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 26\n  },\n  {\n    \"dateOn\": {\n      \"month\": 9,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": -4,\n    \"employeeCount\": 25\n  },\n  {\n    \"dateOn\": {\n      \"month\": 10,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 26\n  },\n  {\n    \"dateOn\": {\n      \"month\": 11,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 27\n  },\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 27\n  },\n  {\n    \"dateOn\": {\n      \"month\": 1,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 27\n  },\n  {\n    \"dateOn\": {\n      \"month\": 2,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 27\n  },\n  {\n    \"dateOn\": {\n      \"month\": 3,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": -4,\n    \"employeeCount\": 26\n  },\n  {\n    \"dateOn\": {\n      \"month\": 4,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": -4,\n    \"employeeCount\": 25\n  },\n  {\n    \"dateOn\": {\n      \"month\": 5,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": -4,\n    \"employeeCount\": 24\n  },\n  {\n    \"dateOn\": {\n      \"month\": 6,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 24\n  },\n  {\n    \"dateOn\": {\n      \"month\": 7,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": -4,\n    \"employeeCount\": 23\n  },\n  {\n    \"dateOn\": {\n      \"month\": 8,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 23\n  },\n  {\n    \"dateOn\": {\n      \"month\": 9,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 13,\n    \"employeeCount\": 26\n  },\n  {\n    \"dateOn\": {\n      \"month\": 10,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 12,\n    \"employeeCount\": 29\n  },\n  {\n    \"dateOn\": {\n      \"month\": 11,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 3,\n    \"employeeCount\": 30\n  },\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 30\n  }\n]",
+  "id": 20186,
+  "eutopiaScore": 93
+}
+```
+
 ## Deal
         
 | Name                   | Content                                                    |
