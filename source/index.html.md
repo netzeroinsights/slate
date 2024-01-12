@@ -251,76 +251,566 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 {
   "clientID": 668,
   "name": "Sunfire",
-  "logo": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1676009885/Startups/idgakaw4vpykudzpl978.jpg",
+  "logo": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1695114255/Startups/pwiujiclbklqjftnt16h.jpg",
   "website": "http://www.sunfire.de",
   "domain": "sunfire.de",
   "pitchLine": "Sunfire develops and manufactures industrial electrolysers for the production of renewable hydrogen and syngas.<br><br>The electrolyzers - based on alkaline and solid oxide technologies - are producing hydrogen and Syngas and are meant to decarbonize energy-intensive and climate-conscious businesses. The company either uses renewable electricity and water to produce green hydrogen, or includes captured CO2 in the process to produce renewable syngas which can be transferred into hydrocarbon products. Main applications for the produced fuels are refineries, steel manufacturing, chemicals, mobility, and the utility sector.<br><br>Sunfire develops an innovation that contributes to:<br>Climate change mitigation by producing green hydrogen and renewable syngas.<br>",
-  "description": "Developer of industrial electrolyzers designed to convert renewable electrical energy into fuels and gases. Innovative technology: Sunfire offers modular power plants and electrolysis systems to produce renewable energy, hydrogen and syngas. Provider of energy conversion technologies, including solid oxide fuel cells and renewable synthetic fuels based on solid oxide electrolyzers. Sunfire is an electrolysis company that designs and manufactures systems for the production of renewable industrial gas and fuel. A World Without Fossil Fuels. Sunfire develops and markets efficient energy supply concepts, which focus on the transformation of regenerative power into liquid petrol (power-to-liquids) or gas (power-to-gas). Develops and produces high-temperature fuel cells which facilitate the generation of electric power and heat. Developer of industrial electrolyzers designed to convert renewable electrical energy into fuels and gases. The company's renewable hydrogen and syngas as substitutes for fossil energy sources and offer electrolyzers based on alkaline and solid oxide (SOEC) technologies, enabling chemical, fuel, and steel industries to transform of energy Established in 2010 and based in Dresden, Germany, Sunfire is a world-leading industrial electrolysis company with two differentiated technologies. We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost-effective production of renewable hydrogen, syngas and e-Fuel.\n\nSunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group  global leaders in the renewable fuel and steel business. With more than 500 employees located in Germany and Switzerland and a well-established partner network, we realize large electrolysis projects to deliver on our promise: Creating a world without fossil fuels! Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat.\n\nSunfires vision is to make regenerative energy from sources such as wind farms, hydropower plants, and photovoltaic systems available wherever and whenever it is needed  not just when the wind is blowing, the waves are crashing or the sun is shining. Established in 2010 and based in Dresden, Germany, Sunfire is a world-leading industrial electrolysis company with two differentiated technologies. We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost-effective production of renewable hydrogen, syngas and e-Fuel.Sunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group  global leaders in the renewable fuel and steel business. With more than 500 employees located in Germany and Switzerland and a well-established partner network, we realize large electrolysis projects to deliver on our promise: Creating a world without fossil fuels! ognised global leader for off-grid and CHP units based on solide oxide fuel cell technology. Renewables Everywhere. With the co-electrolysis of Sunfire, CO2-neutral synthetic crude oil can be produced from water in combination with carbon dioxide and green electricity via syngas. A breakthrough fuel cell and electrolyser technology replacingtheconventional fossil fuel used in your car with CO2 neutral fuel created from green power, water and CO2 fromtheatmosphere. CO2 & Hydrogen. Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat. Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat. Sunfires vision is to make regenerative energy from sources such as wind farms, hydropower plants, and photovoltaic systems available wherever and whenever it is needed  not just when the wind is blowing, the waves are crashing or the sun is shining. Sunfire develops and produces high temperature electrolyzers SOEC and high temperature fuel cells SOFC . As water vapour is used in electrolysis efficiencies of up to H methane and about for fuels are achieved.Customer ProblemTarget groups are energy chemical refinery and utility companies. Energy suppliers can work on a more efficient supply at certain points as the fuel cells can also use hydrocarbons.Business ModelSunfire offers its technology in the fields of CHP off grid production and hydrogen fuels. The product is then sold directly for individual orders.USPIn niche markets the special requirements and simpler logistics can give this system an economic advantage. Sunfire s entry markets are therefore small gas customers off grid applications and CHP plants for real estate.",
-  "fundingAmount": 2.8E8,
-  "fundingString": "280M",
-  "fundingAmountUSD": 3.1753658E8,
-  "fundingStringUSD": "318M",
+  "description": "Sunfire develops and produces high temperature electrolyzers SOEC and high temperature fuel cells SOFC Provider of energy conversion technologies including solid oxide fuel cells and renewable synthetic fuels based on solid oxide electrolyzers The solid oxide cells SOCs used for the conversion process are also used as generators to provide electricity and heat Sunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group global leaders in the renewable fuel and steel business Innovative technology Sunfire offers modular power plants and electrolysis systems to produce renewable energy hydrogen and syngas Energy suppliers can work on a more efficient supply at certain points as the fuel cells can also use hydrocarbons Business ModelSunfire offers its technology in the fields of CHP off grid production and hydrogen fuels With more than 500 employees located in Germany and Switzerland and a well established partner network we realize large electrolysis projects to deliver on our promise Creating a world without fossil fuels The company s renewable hydrogen and syngas as substitutes for fossil energy sources and offer electrolyzers based on alkaline and solid oxide technologies enabling chemical fuel and steel industries to transform energy Sunfire s entry markets are therefore small gas customers off grid applications and CHP plants for real estate Developer of industrial electrolyzers designed to convert renewable electrical energy into fuels and gases We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost effective production of renewable hydrogen syngas and e Fuel These substitutes for mineral oil and natural gas known as e Gas e Fuel or e Chemicals replace fossil fuels in existing infrastructures We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost effective production of renewable hydrogen syngas and e Fuel Sunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group global leaders in the renewable fuel and steel business As water vapour is used in electrolysis efficiencies of up to H methane and about for fuels are achieved Customer ProblemTarget groups are energy chemical refinery and utility companies The product is then sold directly for individual orders USPIn niche markets the special requirements and simpler logistics can give this system an economic advantage Sunfire is an electrolysis company that designs and manufactures systems for the production of renewable industrial gas and fuel Established in 2010 and based in Dresden Germany Sunfire is a world leading industrial electrolysis company with two differentiated technologies Sunfire develops and markets efficient energy supply concepts which focus on the transformation of regenerative power into liquid petrol power to liquids or gas power to gas Sunfire s vision is to make regenerative energy from sources such as wind farms hydropower plants and photovoltaic systems available wherever and whenever it is needed not just when the wind is blowing the waves are crashing or the sun is shining",
+  "fundingAmount": 449000000,
+  "fundingString": "449M",
+  "fundingAmountUSD": 501968139,
+  "fundingStringUSD": "502M",
   "fundingRangeID": 9,
   "fundingRange": ">250M",
-  "lastRoundDate": "2022-07-14T00:00:00.000+00:00",
-  "aggregationDate": "2022-05-23T14:09:44.703+00:00",
-  "acquisitionDate": "2021-05-25T00:00:00.000+00:00",
+  "lastRoundDate": "2023-08-31T06:52:00.000+00:00",
   "sustainabilityMetric": 0.9335,
   "foundedDate": 2010,
+  "georowID": 814818,
   "countryID": 80,
-  "cityID": 34891,
-  "admin3ID": 32298,
-  "admin4ID": 74793,
-  "continentID": 3,
   "country": "Germany",
   "city": "Dresden",
-  "admin3": "Kreisfreie Stadt Dresden",
-  "admin4": "Dresden",
   "continent": "Europe",
   "email": "info@sunfire.de",
   "phone": "+49 351 8967970",
-  "sizeID": 2,
-  "size": "11 - 50",
+  "sizeID": 5,
+  "size": "201 - 500",
   "stageID": 4,
   "stage": "Scaling",
   "linkedinURL": "https://www.linkedin.com/company/sunfire-gmbh/",
   "twitterURL": "https://twitter.com/sunfire_dresden/",
-  "facebookURL": "https://facebook.com/1382355191983196/",
+  "facebookURL": "https://facebook.com/sunfire.dresden/",
   "directURL": "sunfire-668",
   "sustainabilityMetricID": 4,
-  "lastRoundType": "Late VC",
+  "lastRoundAmount": 169000000,
+  "lastRoundAmountUSD": 184431559,
+  "lastRoundAmountString": "169M",
+  "lastRoundAmountStringUSD": "184M",
+  "lastRoundType": "Grant",
   "tags": [
-    {
-      "tagTypeId": 74,
-      "tagType": {
-        "id": 74,
-        "tagType": "EU activity",
-        "platformOrder": 9,
-        "tagFamily": {
-          "id": 1,
-          "tagFamily": "EU taxonomy",
-          "platformOrder": 1
-        }
-      },
-      "id": 405,
-      "filterable": true,
-      "label": "Manufacture of equipment for the production and use of hydrogen"
-    },
     {
       "tagTypeId": 11,
       "tagType": {
-        "id": 11,
         "tagType": "environmental objective",
         "platformOrder": 7,
         "tagFamily": {
-          "id": 1,
           "tagFamily": "EU taxonomy",
-          "platformOrder": 1
-        }
+          "platformOrder": 1,
+          "id": 1
+        },
+        "id": 11
       },
-      "id": 374,
       "filterable": true,
+      "id": 374,
       "label": "climate change mitigation"
+    },
+    {
+      "tagTypeId": 74,
+      "tagType": {
+        "tagType": "EU activity",
+        "platformOrder": 9,
+        "tagFamily": {
+          "tagFamily": "EU taxonomy",
+          "platformOrder": 1,
+          "id": 1
+        },
+        "id": 74
+      },
+      "filterable": true,
+      "id": 405,
+      "label": "Manufacture of equipment for the production and use of hydrogen"
+    },
+    {
+      "tagTypeId": 13,
+      "tagType": {
+        "tagType": "EU sector",
+        "platformOrder": 9,
+        "tagFamily": {
+          "tagFamily": "EU taxonomy",
+          "platformOrder": 1,
+          "id": 1
+        },
+        "id": 13
+      },
+      "filterable": true,
+      "id": 392,
+      "label": "Manufacturing"
+    },
+    {
+      "tagTypeId": 46,
+      "tagType": {
+        "tagType": "solution",
+        "platformOrder": 10,
+        "tagFamily": {
+          "tagFamily": "Solutions",
+          "platformOrder": 2,
+          "id": 2
+        },
+        "id": 46
+      },
+      "filterable": true,
+      "id": 514,
+      "label": "alkaline electrolysis cell (AEC)"
+    },
+    {
+      "tagTypeId": 49,
+      "tagType": {
+        "tagType": "hydrogen colour",
+        "platformOrder": 13,
+        "tagFamily": {
+          "tagFamily": "Solutions",
+          "platformOrder": 2,
+          "id": 2
+        },
+        "id": 49
+      },
+      "filterable": true,
+      "id": 523,
+      "label": "green hydrogen"
+    },
+    {
+      "tagTypeId": 61,
+      "tagType": {
+        "tagType": "fuel aggregate state",
+        "platformOrder": 25,
+        "tagFamily": {
+          "tagFamily": "Solutions",
+          "platformOrder": 2,
+          "id": 2
+        },
+        "id": 61
+      },
+      "filterable": true,
+      "id": 591,
+      "label": "liquid fuel"
+    },
+    {
+      "tagTypeId": 3,
+      "tagType": {
+        "tagType": "technology",
+        "platformOrder": 3,
+        "tagFamily": {
+          "tagFamily": "Solutions",
+          "platformOrder": 2,
+          "id": 2
+        },
+        "id": 3
+      },
+      "filterable": true,
+      "id": 974,
+      "label": "Electrofuels"
+    },
+    {
+      "tagTypeId": 62,
+      "tagType": {
+        "tagType": "fuel feedstock",
+        "platformOrder": 26,
+        "tagFamily": {
+          "tagFamily": "Solutions",
+          "platformOrder": 2,
+          "id": 2
+        },
+        "id": 62
+      },
+      "filterable": true,
+      "id": 599,
+      "label": "CO2 as feedstock"
+    },
+    {
+      "tagTypeId": 3,
+      "tagType": {
+        "tagType": "technology",
+        "platformOrder": 3,
+        "tagFamily": {
+          "tagFamily": "Solutions",
+          "platformOrder": 2,
+          "id": 2
+        },
+        "id": 3
+      },
+      "filterable": true,
+      "id": 20,
+      "label": "biofuel"
+    },
+    {
+      "tagTypeId": 3,
+      "definition": "",
+      "tagType": {
+        "tagType": "technology",
+        "platformOrder": 3,
+        "tagFamily": {
+          "tagFamily": "Solutions",
+          "platformOrder": 2,
+          "id": 2
+        },
+        "id": 3
+      },
+      "filterable": true,
+      "id": 1917,
+      "label": "Catalytic Processes"
+    },
+    {
+      "tagTypeId": 46,
+      "tagType": {
+        "tagType": "solution",
+        "platformOrder": 10,
+        "tagFamily": {
+          "tagFamily": "Solutions",
+          "platformOrder": 2,
+          "id": 2
+        },
+        "id": 46
+      },
+      "filterable": true,
+      "id": 511,
+      "label": "solid oxide electrolyser cell (SOEC)"
+    },
+    {
+      "tagTypeId": 46,
+      "tagType": {
+        "tagType": "solution",
+        "platformOrder": 10,
+        "tagFamily": {
+          "tagFamily": "Solutions",
+          "platformOrder": 2,
+          "id": 2
+        },
+        "id": 46
+      },
+      "filterable": true,
+      "id": 604,
+      "label": "syngas"
+    },
+    {
+      "tagTypeId": 46,
+      "tagType": {
+        "tagType": "solution",
+        "platformOrder": 10,
+        "tagFamily": {
+          "tagFamily": "Solutions",
+          "platformOrder": 2,
+          "id": 2
+        },
+        "id": 46
+      },
+      "filterable": false,
+      "id": 831,
+      "label": "Fischer-Tropsch synthesis"
+    },
+    {
+      "tagTypeId": 47,
+      "tagType": {
+        "tagType": "fuel value chain",
+        "platformOrder": 11,
+        "tagFamily": {
+          "tagFamily": "Value chains",
+          "platformOrder": 3,
+          "id": 3
+        },
+        "id": 47
+      },
+      "filterable": true,
+      "id": 515,
+      "label": "fuel production"
+    },
+    {
+      "tagTypeId": 51,
+      "tagType": {
+        "tagType": "production value chain",
+        "platformOrder": 15,
+        "tagFamily": {
+          "tagFamily": "Value chains",
+          "platformOrder": 3,
+          "id": 3
+        },
+        "id": 51
+      },
+      "filterable": true,
+      "id": 535,
+      "label": "industrial good"
+    },
+    {
+      "tagTypeId": 2,
+      "tagType": {
+        "tagType": "energy value chain",
+        "platformOrder": 1,
+        "tagFamily": {
+          "tagFamily": "Value chains",
+          "platformOrder": 3,
+          "id": 3
+        },
+        "id": 2
+      },
+      "filterable": true,
+      "id": 67,
+      "label": "energy storage"
+    },
+    {
+      "tagTypeId": 2,
+      "tagType": {
+        "tagType": "energy value chain",
+        "platformOrder": 1,
+        "tagFamily": {
+          "tagFamily": "Value chains",
+          "platformOrder": 3,
+          "id": 3
+        },
+        "id": 2
+      },
+      "filterable": true,
+      "id": 132,
+      "label": "energy generation"
+    },
+    {
+      "tagTypeId": 4,
+      "tagType": {
+        "tagType": "business model",
+        "platformOrder": 4,
+        "tagFamily": {
+          "tagFamily": "Business models",
+          "platformOrder": 4,
+          "id": 4
+        },
+        "id": 4
+      },
+      "filterable": true,
+      "id": 237,
+      "label": "business to business (B2B)"
+    },
+    {
+      "tagTypeId": 4,
+      "tagType": {
+        "tagType": "business model",
+        "platformOrder": 4,
+        "tagFamily": {
+          "tagFamily": "Business models",
+          "platformOrder": 4,
+          "id": 4
+        },
+        "id": 4
+      },
+      "filterable": true,
+      "id": 295,
+      "label": "product"
+    },
+    {
+      "tagTypeId": 53,
+      "tagType": {
+        "tagType": "revenue model",
+        "platformOrder": 17,
+        "tagFamily": {
+          "tagFamily": "Business models",
+          "platformOrder": 4,
+          "id": 4
+        },
+        "id": 53
+      },
+      "filterable": true,
+      "id": 544,
+      "label": "commerce"
+    },
+    {
+      "tagTypeId": 52,
+      "tagType": {
+        "tagType": "offering",
+        "platformOrder": 16,
+        "tagFamily": {
+          "tagFamily": "Business models",
+          "platformOrder": 4,
+          "id": 4
+        },
+        "id": 52
+      },
+      "filterable": true,
+      "id": 538,
+      "label": "physical product"
+    },
+    {
+      "tagTypeId": 4,
+      "tagType": {
+        "tagType": "business model",
+        "platformOrder": 4,
+        "tagFamily": {
+          "tagFamily": "Business models",
+          "platformOrder": 4,
+          "id": 4
+        },
+        "id": 4
+      },
+      "filterable": true,
+      "id": 304,
+      "label": "tech developer"
+    },
+    {
+      "tagTypeId": 10,
+      "definition": "The energy sector includes innovations that are in the business of producing or supplying energy such as renewables.\n\nWithin the scope of this climate change challenge are targeted emissions produced by energy systems, namely what concerns the production, conversion, distribution and consumption of energy. \n\nSolutions to mitigate climate change and to adapt to its effects in this challenge include energy management systems, batteries, biofuels, CHP, electromechanical storage, biomass, heat recovery, hydrogen, kinetic energy, energy monitoring and metering, utilities and others.",
+      "tagType": {
+        "tagType": "challenge",
+        "platformOrder": -1,
+        "tagFamily": {
+          "tagFamily": "Buzzwords",
+          "platformOrder": 5,
+          "id": 5
+        },
+        "id": 10
+      },
+      "filterable": true,
+      "id": 354,
+      "label": "energy"
+    },
+    {
+      "tagTypeId": 10,
+      "definition": "GHG capture, removal and storage refers to the various combinations of GHG removal technologies with their sequestration methodologies.\n\nWithin the scope of this challenge is the capturing and removal of existing greenhouse gas emissions from the atmosphere or from sites of industrial processes and technologies that ensure they are stored permanently.\n\nSolutions relating to capturing and removing GHGs include soil alkalinity enhancement, direct air capture plants, enhanced oil recovery and others. Whilst innovations relating to storage of captured GHG include geologic solidification of CO2.\n",
+      "tagType": {
+        "tagType": "challenge",
+        "platformOrder": -1,
+        "tagFamily": {
+          "tagFamily": "Buzzwords",
+          "platformOrder": 5,
+          "id": 5
+        },
+        "id": 10
+      },
+      "filterable": true,
+      "id": 362,
+      "label": "GHG capture, removal and storage"
+    },
+    {
+      "tagTypeId": 5,
+      "tagType": {
+        "tagType": "buzzword",
+        "platformOrder": 5,
+        "tagFamily": {
+          "tagFamily": "Buzzwords",
+          "platformOrder": 5,
+          "id": 5
+        },
+        "id": 5
+      },
+      "filterable": true,
+      "id": 17,
+      "label": "aviation"
+    },
+    {
+      "tagTypeId": 7,
+      "definition": "Electricity is defined as the energy made available for consumption or consumed in the form of electricity or electric power.\n\nWithin the scope of this challenge is any activity related to electricity generation, transmission, distribution and usage.\n\nSolutions to mitigate climate change and to adapt to its effects in this sector include: electricity generation technologies, EV charging stations, electricity distribution, electricity digitalization, electric load management, battery production, photovoltaic system, combined heat and power and others.",
+      "tagType": {
+        "tagType": "sector",
+        "platformOrder": 2,
+        "tagFamily": {
+          "tagFamily": "Buzzwords",
+          "platformOrder": 5,
+          "id": 5
+        },
+        "id": 7
+      },
+      "filterable": true,
+      "id": 207,
+      "label": "electricity"
+    },
+    {
+      "tagTypeId": 90,
+      "tagType": {
+        "tagType": "Fuel type",
+        "platformOrder": 53,
+        "tagFamily": {
+          "tagFamily": "Buzzwords",
+          "platformOrder": 5,
+          "id": 5
+        },
+        "id": 90
+      },
+      "filterable": true,
+      "id": 977,
+      "label": "e-syngas"
+    },
+    {
+      "tagTypeId": 5,
+      "tagType": {
+        "tagType": "buzzword",
+        "platformOrder": 5,
+        "tagFamily": {
+          "tagFamily": "Buzzwords",
+          "platformOrder": 5,
+          "id": 5
+        },
+        "id": 5
+      },
+      "filterable": true,
+      "id": 240,
+      "label": "hardware"
+    },
+    {
+      "tagTypeId": 5,
+      "definition": "The fuel sector is concerned with the production and development of green fuels.\n\nWithin the scope of this climate change sector is the development of alternative fuels like hydrogen and the production of derived fuels like biogas, syngas, bioethanol.\n\nSolutions to mitigate climate change and to adapt to its effects in this sector include the production of alternative fuels like biofuels, biogas, bioethanol, synthetic fuel, e-fuels, green hydrogen, fuel monitoring software, fuel efficiency and others.\n",
+      "tagType": {
+        "tagType": "buzzword",
+        "platformOrder": 5,
+        "tagFamily": {
+          "tagFamily": "Buzzwords",
+          "platformOrder": 5,
+          "id": 5
+        },
+        "id": 5
+      },
+      "filterable": true,
+      "id": 323,
+      "label": "fuel"
+    },
+    {
+      "tagTypeId": 10,
+      "definition": "The transportation sector deals with the technology, logistics and infrastructure employed for movement of people and goods via air, road, rail or water.\n\nThe scope of this sector includes air freight and logistics, airlines, marine, railroads, trucking, airport services, highways and rail tracks, and marine ports and services. Additionally, public and private vehicles and traffic management are also significant aspects of transportation.\n\nSome solutions emerging from this sector are electric and hybrid vehicles, transport infrastructure, charging stations, smart parking, traffic management, fleet management, ride sharing and others.",
+      "tagType": {
+        "tagType": "challenge",
+        "platformOrder": -1,
+        "tagFamily": {
+          "tagFamily": "Buzzwords",
+          "platformOrder": 5,
+          "id": 5
+        },
+        "id": 10
+      },
+      "filterable": true,
+      "id": 355,
+      "label": "transport"
+    },
+    {
+      "tagTypeId": 5,
+      "tagType": {
+        "tagType": "buzzword",
+        "platformOrder": 5,
+        "tagFamily": {
+          "tagFamily": "Buzzwords",
+          "platformOrder": 5,
+          "id": 5
+        },
+        "id": 5
+      },
+      "filterable": true,
+      "id": 212,
+      "label": "hydrogen"
+    },
+    {
+      "tagTypeId": 5,
+      "tagType": {
+        "tagType": "buzzword",
+        "platformOrder": 5,
+        "tagFamily": {
+          "tagFamily": "Buzzwords",
+          "platformOrder": 5,
+          "id": 5
+        },
+        "id": 5
+      },
+      "filterable": true,
+      "id": 21,
+      "label": "waste to energy"
+    }
+  ],
+  "trls": [
+    {
+      "date": "2023-12-06T12:36:34.167+00:00",
+      "label": "6-8",
+      "id": 4
     }
   ],
   "fundingTypes": [
@@ -338,17 +828,17 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
     }
   ],
   "note": "",
-  "platformOrder": 285.0,
-  "roundCount": 10,
-  "roundWithDateCount": 10,
+  "roundCount": 11,
   "fundingRangeUSD": ">250M",
   "fundingRangeIDUSD": 9,
-  "profileQuality": 0.9545454545454546,
-  "webtext": "A world without fossil fuels Over decades, we have been excessively consuming coal, crude oil and natural gas, releasing billions of tons of CO2 into the atmosphere. Sunfires mission is to replace these fossil fuels with renewable energy, turning renewable electricity  and captured CO2  into renewable gases and liquids. We empower industries to transform Sunfire brings renewables everywhere. Our electrolyzers produce renewable hydrogen and syngas, a mixture of hydrogen and carbon monoxide, from renewable electricity, water steam and captured CO2. With our electrolysis solutions, we help energy-intensive industries and climate-conscious businesses to decarbonize entire value chains: From logistics over material inputs to energy supply. Hydrogen Sunfire-HyLink electrolyzers produce renewable hydrogen  the feedstock and energy carrier that decarbonizes industries as well as the energy and mobility sector. Syngas Sunfire-SynLink electrolyzers produce renewable syngas  the feed gas for different hydrocarbon products such as e-Fuel and chemicals. Electrolysis Solutions Sunfires electrolyzers based on Alkaline and solid oxide (SOEC) technologies are the optimal electrolysis solution for all hydrogen and syngas applications. High temperature SOEC electrolyzers are the preferred choice for industrial applications when steam (and CO2) is available. For all applications without or limited steam availability, Sunfires ultra-reliable pressurized Alkaline electrolyzers are the cost-effective solution for hydrogen production. Alkaline Electrolyzers The established electrolysis solution for renewable hydrogen production in any setting. With several decades of proven system runtime, our Alkaline electrolyzers are the reliable, ready-to-use solution for large hydrogen projects. Durability Alkaline electrolyzers are the rock-solid electrolysis solution with a proven system lifetime of at least 90,000 operating hours. They are ideally suited for any hydrogen project in which reliability and robustness is of elevated importance. High Pressure Alkaline electrolyzers deliver hydrogen at a pressure of 30 bar(g). As most hydrogen off-takers require hydrogen at high pressure, the electrolyzers eliminate the need for costly investments into additional downstream compression units. SOEC Electrolyzers The game-changing electrolysis solution for industrial settings. Running at 850 C, SOEC electrolyzers utilize industrial off-heat to process water steam (and CO2) to renewable hydrogen or syngas at lowest electricity costs. Conversion Effieciency SOEC electrolyzers target the largest cost driver in hydrogen and syngas production: renewable electricity. By integrating off-heat from industrial processes, our SOECs achieve an electrical efficiency of up to 84 %LHV to AC, realizing substantial savings on renewable electricity. Co-electrolysis SOEC electrolyzers can process water and CO2 to syngas  in one single process step. The co-electrolysis capability generates a substantial efficiency and cost advantage over conventional two-step syngas production pathways using a reverse-water-gas-shift reactor. Latest News Activities beyond electrolysis Sunfire is not only recognized as a leading industrial electrolysis company - we also offer an off-grid power supply solution based on solid oxide fuel cell (SOFC) technology. Sunfire-Remote enables clean and reliable power supply in moderate and harsh environments. Next A world without fossil fuels Over decades, we have been excessively consuming coal, crude oil and natural gas, releasing billions of tons of CO2 into the atmosphere. Sunfires mission is to replace these fossil fuels with renewable energy, turning renewable electricity  and captured CO2  into renewable gases and liquids. We empower industries to transform Sunfire brings renewables everywhere. Our electrolyzers produce renewable hydrogen and syngas, a mixture of hydrogen and carbon monoxide, from renewable electricity, water steam and captured CO2. With our electrolysis solutions, we help energy-intensive industries and climate-conscious businesses to decarbonize entire value chains: From logistics over material inputs to energy supply. Hydrogen Sunfire-HyLink electrolyzers produce renewable hydrogen  the feedstock and energy carrier that decarbonizes industries as well as the energy and mobility sector. Syngas Sunfire-SynLink electrolyzers produce renewable syngas  the feed gas for different hydrocarbon products such as e-Fuel and chemicals. Learn more Electrolysis Solutions Sunfires electrolyzers based on Alkaline and solid oxide (SOEC) technologies are the optimal electrolysis solution for all hydrogen and syngas applications. High temperature SOEC electrolyzers are the preferred choice for industrial applications when steam (and CO2) is available. For all applications without or limited steam availability, Sunfires ultra-reliable pressurized Alkaline electrolyzers are the cost-effective solution for hydrogen production. Alkaline Electrolyzers The established electrolysis solution for renewable hydrogen production in any setting. With several decades of proven system runtime, our Alkaline electrolyzers are the reliable, ready-to-use solution for large hydrogen projects. Durability Alkaline electrolyzers are the rock-solid electrolysis solution with a proven system lifetime of at least 90,000 operating hours. They are ideally suited for any hydrogen project in which reliability and robustness is of elevated importance. High Pressure Alkaline electrolyzers deliver hydrogen at a pressure of 30 bar(g). As most hydrogen off-takers require hydrogen at high pressure, the electrolyzers eliminate the need for costly investments into additional downstream compression units. Read more SOEC Electrolyzers The game-changing electrolysis solution for industrial settings. Running at 850 C, SOEC electrolyzers utilize industrial off-heat to process water steam (and CO2) to renewable hydrogen or syngas at lowest electricity costs. Conversion Effieciency SOEC electrolyzers target the largest cost driver in hydrogen and syngas production: renewable electricity. By integrating off-heat from industrial processes, our SOECs achieve an electrical efficiency of up to 84 %LHV to AC, realizing substantial savings on renewable electricity. Co-electrolysis SOEC electrolyzers can process water and CO2 to syngas  in one single process step. The co-electrolysis capability generates a substantial efficiency and cost advantage over conventional two-step syngas production pathways using a reverse-water-gas-shift reactor. A world without fossil fuels Over decades, we have been excessively consuming coal, crude oil and natural gas, releasing billions of tons of CO 2 into the atmosphere. Sunfires mission is to replace these fossil fuels with renewable energy, turning renewable electricity  and captured CO 2  into renewable gases and liquids. We empower industries to transform Sunfire brings renewables everywhere. Our electrolyzers produce renewable hydrogen and syngas, a mixture of hydrogen and carbon monoxide, from renewable electricity, water steam and captured CO 2 . With our electrolysis solutions, we help energy-intensive industries and climate-conscious businesses to decarbonize entire value chains: From logistics over material inputs to energy supply.",
+  "reviewDate": "2023-09-13T08:23:40.747+00:00",
+  "lastReviewer": "pratibha_agarwal",
+  "lastSeenDate": "2024-01-12T07:47:14.580+00:00",
   "numberOfEquityRounds": 8,
-  "numberOfGrants": 2,
+  "numberOfGrants": 3,
+  "sustainabilityMetricLabel": "Very high impact",
+  "employeesGrowthJSON": "[\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2021,\n      \"day\": 1\n    },\n    \"employeeCount\": 152\n  },\n  {\n    \"dateOn\": {\n      \"month\": 1,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 3,\n    \"employeeCount\": 157\n  },\n  {\n    \"dateOn\": {\n      \"month\": 2,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 1,\n    \"employeeCount\": 158\n  },\n  {\n    \"dateOn\": {\n      \"month\": 3,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 164\n  },\n  {\n    \"dateOn\": {\n      \"month\": 4,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 2,\n    \"employeeCount\": 168\n  },\n  {\n    \"dateOn\": {\n      \"month\": 5,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 177\n  },\n  {\n    \"dateOn\": {\n      \"month\": 6,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 186\n  },\n  {\n    \"dateOn\": {\n      \"month\": 7,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 194\n  },\n  {\n    \"dateOn\": {\n      \"month\": 8,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 204\n  },\n  {\n    \"dateOn\": {\n      \"month\": 9,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 6,\n    \"employeeCount\": 216\n  },\n  {\n    \"dateOn\": {\n      \"month\": 10,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 11,\n    \"employeeCount\": 239\n  },\n  {\n    \"dateOn\": {\n      \"month\": 11,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 6,\n    \"employeeCount\": 253\n  },\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 3,\n    \"employeeCount\": 261\n  },\n  {\n    \"dateOn\": {\n      \"month\": 1,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 2,\n    \"employeeCount\": 266\n  },\n  {\n    \"dateOn\": {\n      \"month\": 2,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 3,\n    \"employeeCount\": 275\n  },\n  {\n    \"dateOn\": {\n      \"month\": 3,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 285\n  },\n  {\n    \"dateOn\": {\n      \"month\": 4,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 1,\n    \"employeeCount\": 289\n  },\n  {\n    \"dateOn\": {\n      \"month\": 5,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 3,\n    \"employeeCount\": 298\n  },\n  {\n    \"dateOn\": {\n      \"month\": 6,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 311\n  },\n  {\n    \"dateOn\": {\n      \"month\": 7,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 2,\n    \"employeeCount\": 318\n  },\n  {\n    \"dateOn\": {\n      \"month\": 8,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 2,\n    \"employeeCount\": 323\n  },\n  {\n    \"dateOn\": {\n      \"month\": 9,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 336\n  },\n  {\n    \"dateOn\": {\n      \"month\": 10,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 354\n  },\n  {\n    \"dateOn\": {\n      \"month\": 11,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 1,\n    \"employeeCount\": 359\n  },\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 359\n  }\n]",
   "id": 527,
-  "fundRaising": false,
   "eutopiaScore": 93
 }
 ```
