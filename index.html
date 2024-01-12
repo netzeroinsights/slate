@@ -357,6 +357,9 @@
               </ul>
           </li>
           <li>
+            <a href="#investor-detail" class="toc-h1 toc-link" data-title="Investor Detail">Investor Detail</a>
+          </li>
+          <li>
             <a href="#deals-list" class="toc-h1 toc-link" data-title="Deals List">Deals List</a>
           </li>
           <li>
@@ -1216,6 +1219,97 @@ Please note that manually closing a session is not required, since it will be cl
 <p><code>GET /roundNewsByRoundID/[coFundingRoundId]</code></p>
 
 <p>It takes a single parameter, indicated as ”[coFundingRoundId]” in the example, which is taken from a previous call of the endpoint at Section <a href="#startup-funding-rounds">Startup Funding Rounds</a>, variable ”coFundingRoundId”, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+</tbody></table>
+<h1 id='investor-detail'>Investor Detail</h1>
+<blockquote>
+<p>To get the details of an Investor, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getInvestor/10000"</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested investor, with the format specified at section <a href="#investor">Investor</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Intergen"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InterGen is a private ScaleUp fund and talent matching program based in Calgary, Canada.&lt;br&gt;&lt;br&gt;The company was founded in 2018 with a belief that the talent and expertise responsible for making Alberta the economic envy of the entire continent for the last twenty years can be leveraged to build the companies that will define the next twenty years - and beyond. InterGen only invests in companies and CEOs that meet the criteria of having revenue of approximately $1M-$5M per year, with rare exceptions below $1M. The firm prefers to invest in seed-stage, early-stage, and later-stage companies in information technology, SaaS, TMT, oil, and gas sectors in Alberta. InterGen offers educational programming, events, and networking opportunities to help businesses learn as they grow. The company has a strong network of retired and transitioning executives looking to engage with innovative companies emerging from start-up to scale-up."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://intergenconnect.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calgary"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"linkedInURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/company/intergencanada/"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"twitterURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/intergenscaleup/"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"marcy@intergenconnect.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1692058153/Investors/q3r0z1bzarioblbxnjmn.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 - 10"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sizeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"foundedDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">2018</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfDeals"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfDealsFiltered"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastDealType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Late VC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastDealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T00:00:00.000+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastRoundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3294864</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastRoundAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">3750000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"primaryTypeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"primaryType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Capital"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"secondaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"investments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16936</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">31143</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"osperity-31143"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1680109363/Startups/ihumccybullkimhjsinh.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Osperity"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pitchline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Osperity develops a cloud-based platform designed to offer intelligent visual monitoring services.&lt;br&gt;&lt;br&gt;Osperity is a leading provider of AI-driven intelligent visual monitoring and alerting solutions for industrial operations. Their platform offers customizable exception-based management, remote site inspections, automated asset monitoring, and seamless integration with industrial sensors and systems, delivering business cost savings, risk mitigation, and operational efficiency.&lt;br&gt;&lt;br&gt;Osperity develops an innovation that contributes to:&lt;br&gt;Climate change mitigation by providing a platform that offers visual monitoring services."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">6283832</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">7200000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastRoundType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Late VC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastRoundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3294864</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastRoundAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">3750000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastRoundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"investorSince"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T00:00:00.000+00:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"coInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16495</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">6998</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Evok Innovations"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1692355453/Investors/eek442rreqwc5qnaqtyw.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"investorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Capital"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5573</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">15357</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shell"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1691834266/Investors/ov8ccgpalypyqaofecwl.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get the investor information, you should use the following endpoint:</p>
+
+<p><code>GET /getInvestor/[investorID]</code></p>
+
+<p>It takes a single parameter, indicated as ”[investorID]” in the example, and has the following response codes:</p>
 
 <table><thead>
 <tr>
