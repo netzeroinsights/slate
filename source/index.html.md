@@ -652,6 +652,93 @@ It takes a single parameter, indicated as ”[coFundingRoundId]” in the exampl
 |---------------|--------------------|
 | 200           | Request successful |
 
+# Investor Detail
+
+> To get the details of an Investor, use this code:
+
+```shell
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/getInvestor/10000"
+```
+
+> In case of a 200 response, the response body will contain the requested investor, with the format specified at section [Investor](#investor).
+
+```json
+{
+  "investorID": 10000,
+  "name": "Intergen",
+  "description": "InterGen is a private ScaleUp fund and talent matching program based in Calgary, Canada.<br><br>The company was founded in 2018 with a belief that the talent and expertise responsible for making Alberta the economic envy of the entire continent for the last twenty years can be leveraged to build the companies that will define the next twenty years - and beyond. InterGen only invests in companies and CEOs that meet the criteria of having revenue of approximately $1M-$5M per year, with rare exceptions below $1M. The firm prefers to invest in seed-stage, early-stage, and later-stage companies in information technology, SaaS, TMT, oil, and gas sectors in Alberta. InterGen offers educational programming, events, and networking opportunities to help businesses learn as they grow. The company has a strong network of retired and transitioning executives looking to engage with innovative companies emerging from start-up to scale-up.",
+  "website": "https://intergenconnect.com",
+  "city": "Calgary",
+  "country": "Canada",
+  "continent": "North America",
+  "linkedInURL": "https://www.linkedin.com/company/intergencanada/",
+  "twitterURL": "https://twitter.com/intergenscaleup/",
+  "email": "marcy@intergenconnect.com",
+  "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1692058153/Investors/q3r0z1bzarioblbxnjmn.jpg",
+  "size": "1 - 10",
+  "sizeID": 1,
+  "foundedDate": 2018,
+  "numberOfDeals": 1,
+  "numberOfDealsFiltered": 1,
+  "lastDealType": "Late VC",
+  "lastDealDate": "2018-12-14T00:00:00.000+00:00",
+  "lastRoundAmount": 3294864,
+  "lastRoundAmountUSD": 3750000,
+  "note": "",
+  "primaryTypeID": 10,
+  "primaryType": "Venture Capital",
+  "secondaryTypes": [],
+  "investments": [
+    {
+      "id": 16936,
+      "clientID": 31143,
+      "url": "osperity-31143",
+      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1680109363/Startups/ihumccybullkimhjsinh.jpg",
+      "name": "Osperity",
+      "pitchline": "Osperity develops a cloud-based platform designed to offer intelligent visual monitoring services.<br><br>Osperity is a leading provider of AI-driven intelligent visual monitoring and alerting solutions for industrial operations. Their platform offers customizable exception-based management, remote site inspections, automated asset monitoring, and seamless integration with industrial sensors and systems, delivering business cost savings, risk mitigation, and operational efficiency.<br><br>Osperity develops an innovation that contributes to:<br>Climate change mitigation by providing a platform that offers visual monitoring services.",
+      "country": "Canada",
+      "totalFunding": 6283832,
+      "totalFundingUSD": 7200000,
+      "lastRoundType": "Late VC",
+      "lastRoundAmount": 3294864,
+      "lastRoundAmountUSD": 3750000,
+      "lastRoundDate": "2018-12-14",
+      "investorSince": "2018-12-14T00:00:00.000+00:00"
+    }
+  ],
+  "coInvestors": [
+    {
+      "id": 16495,
+      "investorID": 6998,
+      "name": "Evok Innovations",
+      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1692355453/Investors/eek442rreqwc5qnaqtyw.jpg",
+      "investorType": "Venture Capital",
+      "country": "United States",
+      "numberOfCoInvestments": 1
+    },
+    {
+      "id": 5573,
+      "investorID": 15357,
+      "name": "Shell",
+      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1691834266/Investors/ov8ccgpalypyqaofecwl.jpg",
+      "country": "United Kingdom",
+      "numberOfCoInvestments": 1
+    }
+  ]
+}
+```
+
+To get the investor information, you should use the following endpoint:
+
+`GET /getInvestor/[investorID]`
+
+It takes a single parameter, indicated as ”[investorID]” in the example, and has the following response codes:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
+
 # Deals List
 
 > To get the deals list, use this code:
