@@ -24,7 +24,7 @@ meta:
 
 Our REST APIs give all the functionalities needed to interact with our database. All these services are exclusively usable with https standard, and only after having been authenticated.
 
-For brevity, the possible error codes for all the calls are at the bottom of the document.
+For brevity, the possible error codes for all endpoints are at the end of the document.
 
 Every endpoint is to be called starting with the domain https://api.netzeroinsights.com
 
