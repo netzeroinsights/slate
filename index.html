@@ -2916,21 +2916,52 @@ Please note that manually closing a session is not required, since it will be cl
 <p>To get the list of the currently available tags, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getEnabledTags"</span>
+<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/taxonomy/tags"</span>
+<span class="nt">-d</span> <span class="s1">'{"name": "bio", "offset": 0, "limit": 5}'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the available tags, with the JSON structured like the following:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d printing"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"advanced material"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagTypeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biofuel"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagFamilyLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagTypeLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"technology"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagTypeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biomimicry"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagFamilyLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buzzwords"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagTypeLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Undefined"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagTypeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bioplastic"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagFamilyLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buzzwords"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagTypeLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buzzword"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagTypeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biotechnology"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagFamilyLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagTypeLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"technology"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">194</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagTypeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biochar (BC)"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagFamilyLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagTypeLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"solution"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>To get the list of the currently available tags, you should use the following endpoint:</p>
 
