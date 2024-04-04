@@ -1105,6 +1105,16 @@ This is the main filter used when searching for startups. It contains two simple
 | decisionMaker  | boolean        | Optional, if true only returns contacts with decision making capabilities                      |
 | roleID         | int            | Optional, contact role, see Section [Role](#role) for accepted values                          |
 
+## Tag Filter
+
+This is the tag filter used when searching for tags.
+
+| Parameter name      | Parameter type                                | Description                                |
+|---------------------|-----------------------------------------------|--------------------------------------------|
+| limit               | int                                           | Maximum number of results shown            |
+| offset              | int                                           | Number of pages (of size "limit") skipped  |
+| name                | string                                        | Fetch only the tags containing this string |
+
 # Additional Tables
 
 ## Sortable Columns
@@ -1312,7 +1322,7 @@ This is the main filter used when searching for startups. It contains two simple
 
 | ID | Label          |
 |----|----------------|
-| 1  | Fouder         |
+| 1  | Founder        |
 | 2  | HR             |
 | 3  | Sales          |
 | 4  | Marketing / PR |
@@ -1436,9 +1446,11 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 
 To get the list of the currently available tags, you should use the following endpoint:
 
-`GET /getEnabledTags`
+`POST /taxonomy/tags`
 
-It takes no parameter, and has the following response codes:
+With a JSON request body in the format specified at the section [Tag Filter](#tag-filter).
+
+The possible response codes are:
 
 | Response code | Meaning            |
 |---------------|--------------------|
