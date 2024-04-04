@@ -1386,7 +1386,7 @@ This is the main filter used when searching for startups. It contains two simple
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 -X POST "https://api.netzeroinsights.com/taxonomy/tags"
--d '{"name": "bio", "isPlatform": true, "isFilterable": true, "isVisible": true, "offset": 0, "limit": 5}'
+-d '{"name": "bio", "offset": 0, "limit": 5}'
 ```
 
 > In case of a 200 response, the response body will contain all the available tags, with the JSON structured like the following:
@@ -1400,70 +1400,35 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
       "tagTypeID": 3,
       "label": "biofuel",
       "tagFamilyLabel": "Solutions",
-      "tagTypeLabel": "technology",
-      "customerIDs": [],
-      "rawSuggestedSearches": [],
-      "visible": true,
-      "platform": true,
-      "filterable": true,
-      "customer": false,
-      "advancedFilters": true
+      "tagTypeLabel": "technology"
     },
     {
       "id": 22,
       "tagTypeID": 1,
       "label": "biomimicry",
       "tagFamilyLabel": "Buzzwords",
-      "tagTypeLabel": "Undefined",
-      "customerIDs": [],
-      "rawSuggestedSearches": [],
-      "visible": true,
-      "platform": false,
-      "filterable": true,
-      "customer": false,
-      "advancedFilters": true
+      "tagTypeLabel": "Undefined"
     },
     {
       "id": 24,
       "tagTypeID": 5,
       "label": "bioplastic",
       "tagFamilyLabel": "Buzzwords",
-      "tagTypeLabel": "buzzword",
-      "customerIDs": [],
-      "rawSuggestedSearches": [],
-      "visible": true,
-      "platform": true,
-      "filterable": true,
-      "customer": false,
-      "advancedFilters": true
+      "tagTypeLabel": "buzzword"
     },
     {
       "id": 25,
       "tagTypeID": 3,
       "label": "biotechnology",
       "tagFamilyLabel": "Solutions",
-      "tagTypeLabel": "technology",
-      "customerIDs": [],
-      "rawSuggestedSearches": [],
-      "visible": true,
-      "platform": true,
-      "filterable": true,
-      "customer": false,
-      "advancedFilters": true
+      "tagTypeLabel": "technology"
     },
     {
       "id": 194,
       "tagTypeID": 46,
       "label": "biochar (BC)",
       "tagFamilyLabel": "Solutions",
-      "tagTypeLabel": "solution",
-      "customerIDs": [],
-      "rawSuggestedSearches": [],
-      "visible": true,
-      "platform": true,
-      "filterable": true,
-      "customer": false,
-      "advancedFilters": true
+      "tagTypeLabel": "solution"
     }
   ]
 }
