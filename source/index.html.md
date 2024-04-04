@@ -1385,22 +1385,88 @@ This is the main filter used when searching for startups. It contains two simple
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/getEnabledTags"
+-X POST "https://api.netzeroinsights.com/taxonomy/tags"
+-d '{"name": "bio", "isPlatform": true, "isFilterable": true, "isVisible": true, "offset": 0, "limit": 5}'
 ```
 
 > In case of a 200 response, the response body will contain all the available tags, with the JSON structured like the following:
      
 ```json
-[
-  {
-    "name": "3d printing",
-    "id": 1
-  },
-  {
-    "name": "advanced material",
-    "id": 2
-  }
-]
+{
+  "count": 75,
+  "results": [
+    {
+      "id": 20,
+      "tagTypeID": 3,
+      "label": "biofuel",
+      "tagFamilyLabel": "Solutions",
+      "tagTypeLabel": "technology",
+      "customerIDs": [],
+      "rawSuggestedSearches": [],
+      "visible": true,
+      "platform": true,
+      "filterable": true,
+      "customer": false,
+      "advancedFilters": true
+    },
+    {
+      "id": 22,
+      "tagTypeID": 1,
+      "label": "biomimicry",
+      "tagFamilyLabel": "Buzzwords",
+      "tagTypeLabel": "Undefined",
+      "customerIDs": [],
+      "rawSuggestedSearches": [],
+      "visible": true,
+      "platform": false,
+      "filterable": true,
+      "customer": false,
+      "advancedFilters": true
+    },
+    {
+      "id": 24,
+      "tagTypeID": 5,
+      "label": "bioplastic",
+      "tagFamilyLabel": "Buzzwords",
+      "tagTypeLabel": "buzzword",
+      "customerIDs": [],
+      "rawSuggestedSearches": [],
+      "visible": true,
+      "platform": true,
+      "filterable": true,
+      "customer": false,
+      "advancedFilters": true
+    },
+    {
+      "id": 25,
+      "tagTypeID": 3,
+      "label": "biotechnology",
+      "tagFamilyLabel": "Solutions",
+      "tagTypeLabel": "technology",
+      "customerIDs": [],
+      "rawSuggestedSearches": [],
+      "visible": true,
+      "platform": true,
+      "filterable": true,
+      "customer": false,
+      "advancedFilters": true
+    },
+    {
+      "id": 194,
+      "tagTypeID": 46,
+      "label": "biochar (BC)",
+      "tagFamilyLabel": "Solutions",
+      "tagTypeLabel": "solution",
+      "customerIDs": [],
+      "rawSuggestedSearches": [],
+      "visible": true,
+      "platform": true,
+      "filterable": true,
+      "customer": false,
+      "advancedFilters": true
+    }
+  ]
+}
 ```
 
 To get the list of the currently available tags, you should use the following endpoint:
