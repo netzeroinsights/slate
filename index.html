@@ -386,6 +386,9 @@
                   <li>
                     <a href="#contacts-filter" class="toc-h2 toc-link" data-title="Contacts Filter">Contacts Filter</a>
                   </li>
+                  <li>
+                    <a href="#tag-filter" class="toc-h2 toc-link" data-title="Tag Filter">Tag Filter</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2046,6 +2049,32 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Optional, contact role, see Section <a href="#role">Role</a> for accepted values</td>
 </tr>
 </tbody></table>
+<h2 id='tag-filter'>Tag Filter</h2>
+<p>This is the tag filter used when searching for tags.</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>int</td>
+<td>Maximum number of results shown</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>int</td>
+<td>Number of pages (of size &quot;limit&quot;) skipped</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Fetch only the tags containing this string</td>
+</tr>
+</tbody></table>
 <h1 id='additional-tables'>Additional Tables</h1><h2 id='sortable-columns'>Sortable Columns</h2>
 <table><thead>
 <tr>
@@ -2672,7 +2701,7 @@ Please note that manually closing a session is not required, since it will be cl
 </thead><tbody>
 <tr>
 <td>1</td>
-<td>Fouder</td>
+<td>Founder</td>
 </tr>
 <tr>
 <td>2</td>
@@ -2965,9 +2994,11 @@ Please note that manually closing a session is not required, since it will be cl
 </span></code></pre></div>
 <p>To get the list of the currently available tags, you should use the following endpoint:</p>
 
-<p><code>GET /getEnabledTags</code></p>
+<p><code>POST /taxonomy/tags</code></p>
 
-<p>It takes no parameter, and has the following response codes:</p>
+<p>With a JSON request body in the format specified at the section <a href="#tag-filter">Tag Filter</a>.</p>
+
+<p>The possible response codes are:</p>
 
 <table><thead>
 <tr>
