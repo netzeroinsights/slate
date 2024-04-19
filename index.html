@@ -528,6 +528,9 @@
                     <a href="#taxonomy-item" class="toc-h2 toc-link" data-title="Taxonomy Item">Taxonomy Item</a>
                   </li>
                   <li>
+                    <a href="#taxonomy-items-by-company" class="toc-h2 toc-link" data-title="Taxonomy Items by Company">Taxonomy Items by Company</a>
+                  </li>
+                  <li>
                     <a href="#taxonomy-item-relations-by-parentid" class="toc-h2 toc-link" data-title="Taxonomy Item Relations by ParentID">Taxonomy Item Relations by ParentID</a>
                   </li>
                   <li>
@@ -4529,6 +4532,94 @@ Please note that manually closing a session is not required, since it will be cl
 <p><code>GET /taxonomy/item/{itemID}</code></p>
 
 <p>Where the parameter <code>itemID</code> can either be the item ID or the item label.</p>
+
+<p>The possible response codes are:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+</tbody></table>
+<h2 id='taxonomy-items-by-company'>Taxonomy Items by Company</h2>
+<blockquote>
+<p>To get the Taxonomy Graph Items by company, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/items/company/10'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the available taxonomy graph items of the company, with the JSON structured like the following:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">154</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Construction Materials"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Construction material solutions refer to innovative and sustainable materials, techniques, and technologies aimed at reducing the environmental impact of the construction industry. These solutions encompass the development and utilization of eco-friendly materials like recycled composites, low-carbon concrete, and bio-based polymers, as well as circular economy applications such as construction materials marketplaces."</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alternative Cement and Concrete"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alternative cement and concrete refer to innovative materials and construction methods designed to significantly reduce the environmental impact of traditional cement and concrete production. These solutions aim to lower carbon emissions, energy consumption, and resource depletion associated with the construction industry. They often incorporate complete or partial cement substitutes, production process improvement, and others."</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">270</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Built Environment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The term ‘built environment’ broadly refers to the human-made environment that provides the setting for human activity.</span><span class="se">\n\n</span><span class="s2">Within the scope of this climate change challenge are targeted emissions produced by the construction and operation of homes, buildings, streets, urban infrastructure and spaces. </span><span class="se">\n\n</span><span class="s2">Solutions to mitigate climate change and to adapt to its effects in this challenge include construction materials, ecodesign, smart city technologies, building management systems, air quality management and others.</span><span class="se">\n</span><span class="s2">"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">275</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Industry"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Industry includes sectors of the economy that mainly produce capital goods to be used in manufacturing.</span><span class="se">\n\n</span><span class="s2">The scope of this challenge includes the manufacturing of petrochemicals and plastics, electrical and electronics, textile &amp; fashion, chemicals, heavy machinery and equipment, pharmaceuticals among other sectors of the economy.</span><span class="se">\n\n</span><span class="s2">Solutions to mitigate climate change and to adapt to its effects in this challenge include electrical equipment manufacturing, industrial efficiency software, automated manufacturing processes, 3D printing and others.</span><span class="se">\n</span><span class="s2">"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">347</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions map"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Solutions Map simplifies your exploration of climate tech solutions. We've categorized over 200 solutions into Challenge Areas like Energy, Industry, Transport, and more. When you choose a solution, you can dive into its sub-solutions if they exist. You can also access insights, active investors, and information about startups and SMEs for each solution."</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">348</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cement and Concrete"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This solution map is focused on climate technologies in Cement and Concrete. From alternative cementitious materials like fly ash and slag to cutting-edge production enhancements such as carbon capture technologies, the page covers a wide spectrum of solutions. Delve into information about the entire value chain, gaining insights into sustainable practices from raw material extraction to final disposal."</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">359</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deep Dives map"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Deep Dives offers a meticulous mapping of the most innovative and extensively researched fields in the realm of Climate Tech. These curated maps serve as a direct, technologically advanced interface, simplifying navigation through the intricate landscape of climate technology. Users can seamlessly delve into specific areas such as Cement and Concrete, Carbon Offset and Markets, Marine Energy, and Hydrogen, gaining valuable insights into advancements, sub-solutions, and active investors. "</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">360</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cement Value Chain"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Cement Value Chain includes the following steps Clinker Production, Cement Grinding, Concrete Production, and Concrete Recycling. Each step comprises innovation to decrease the GHG emissions for the Cement and Concrete industry."</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">363</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Concrete Production"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Concrete production is witnessing transformative innovations in the field of carbon capture and utilization (CCU) technologies, involving CO2 injection and carbon curing. Advanced concrete formulations incorporate supplementary cementitious materials (SCMs) such as fly ash and slag, lowering the carbon intensity of concrete. Moreover, the integration of recycled aggregates, sourced from demolished structures, significantly diminishes the environmental impact of concrete production. "</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">462</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carbon Capture, Utilization and Storage (CCUS)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carbon Capture, Utilization, and Storage (CCUS) is the process of capturing carbon dioxide (CO2) emissions from fossil power generation and industrial processes for storage deep underground or re-use. The scope of this sector includes companies and activities related to carbon capture from industrial emissions or flue gas, usage (CCU), and storage (CCS). Some innovations within this technology include energy-efficient capture units, mineralization technologies, carbon storage in materials such as cement, etc. "</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">660</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Software map"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Software Map is a comprehensive visual representation that outlines the diverse array of software solutions within the climate tech landscape. This map provides a detailed overview of software applications tailored to address climate challenges across various sectors, including energy, transport, industry, food and agriculture, built environment, natural environment, and more. "</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the taxonomy items of the company you should use the following endpoint:</p>
+
+<p><code>GET /taxonomy/items/company/{clientID}</code></p>
+
+<p>Where the parameter <code>clientID</code> is the ID of the company.</p>
 
 <p>The possible response codes are:</p>
 
