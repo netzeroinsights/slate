@@ -2299,6 +2299,90 @@ The possible response codes are:
 |---------------|--------------------|
 | 200           | Request successful |
 
+## Taxonomy Items by Company
+
+> To get the Taxonomy Graph Items by company, use this code:
+
+```shell
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/items/company/10' \
+-H 'Content-Type: application/json' \                 
+```
+
+> In case of a 200 response, the response body will contain all the available taxonomy graph items of the company, with the JSON structured like the following:
+
+```json
+[
+  {
+    "id": 154,
+    "label": "Construction Materials",
+    "description": "Construction material solutions refer to innovative and sustainable materials, techniques, and technologies aimed at reducing the environmental impact of the construction industry. These solutions encompass the development and utilization of eco-friendly materials like recycled composites, low-carbon concrete, and bio-based polymers, as well as circular economy applications such as construction materials marketplaces."
+  },
+  {
+    "id": 160,
+    "label": "Alternative Cement and Concrete",
+    "description": "Alternative cement and concrete refer to innovative materials and construction methods designed to significantly reduce the environmental impact of traditional cement and concrete production. These solutions aim to lower carbon emissions, energy consumption, and resource depletion associated with the construction industry. They often incorporate complete or partial cement substitutes, production process improvement, and others."
+  },
+  {
+    "id": 270,
+    "label": "Built Environment",
+    "description": "The term ‘built environment’ broadly refers to the human-made environment that provides the setting for human activity.\n\nWithin the scope of this climate change challenge are targeted emissions produced by the construction and operation of homes, buildings, streets, urban infrastructure and spaces. \n\nSolutions to mitigate climate change and to adapt to its effects in this challenge include construction materials, ecodesign, smart city technologies, building management systems, air quality management and others.\n"
+  },
+  {
+    "id": 275,
+    "label": "Industry",
+    "description": "Industry includes sectors of the economy that mainly produce capital goods to be used in manufacturing.\n\nThe scope of this challenge includes the manufacturing of petrochemicals and plastics, electrical and electronics, textile & fashion, chemicals, heavy machinery and equipment, pharmaceuticals among other sectors of the economy.\n\nSolutions to mitigate climate change and to adapt to its effects in this challenge include electrical equipment manufacturing, industrial efficiency software, automated manufacturing processes, 3D printing and others.\n"
+  },
+  {
+    "id": 347,
+    "label": "Solutions map",
+    "description": "The Solutions Map simplifies your exploration of climate tech solutions. We've categorized over 200 solutions into Challenge Areas like Energy, Industry, Transport, and more. When you choose a solution, you can dive into its sub-solutions if they exist. You can also access insights, active investors, and information about startups and SMEs for each solution."
+  },
+  {
+    "id": 348,
+    "label": "Cement and Concrete",
+    "description": "This solution map is focused on climate technologies in Cement and Concrete. From alternative cementitious materials like fly ash and slag to cutting-edge production enhancements such as carbon capture technologies, the page covers a wide spectrum of solutions. Delve into information about the entire value chain, gaining insights into sustainable practices from raw material extraction to final disposal."
+  },
+  {
+    "id": 359,
+    "label": "Deep Dives map",
+    "description": "The Deep Dives offers a meticulous mapping of the most innovative and extensively researched fields in the realm of Climate Tech. These curated maps serve as a direct, technologically advanced interface, simplifying navigation through the intricate landscape of climate technology. Users can seamlessly delve into specific areas such as Cement and Concrete, Carbon Offset and Markets, Marine Energy, and Hydrogen, gaining valuable insights into advancements, sub-solutions, and active investors. "
+  },
+  {
+    "id": 360,
+    "label": "Cement Value Chain",
+    "description": "The Cement Value Chain includes the following steps Clinker Production, Cement Grinding, Concrete Production, and Concrete Recycling. Each step comprises innovation to decrease the GHG emissions for the Cement and Concrete industry."
+  },
+  {
+    "id": 363,
+    "label": "Concrete Production",
+    "description": "Concrete production is witnessing transformative innovations in the field of carbon capture and utilization (CCU) technologies, involving CO2 injection and carbon curing. Advanced concrete formulations incorporate supplementary cementitious materials (SCMs) such as fly ash and slag, lowering the carbon intensity of concrete. Moreover, the integration of recycled aggregates, sourced from demolished structures, significantly diminishes the environmental impact of concrete production. "
+  },
+  {
+    "id": 462,
+    "label": "Carbon Capture, Utilization and Storage (CCUS)",
+    "description": "Carbon Capture, Utilization, and Storage (CCUS) is the process of capturing carbon dioxide (CO2) emissions from fossil power generation and industrial processes for storage deep underground or re-use. The scope of this sector includes companies and activities related to carbon capture from industrial emissions or flue gas, usage (CCU), and storage (CCS). Some innovations within this technology include energy-efficient capture units, mineralization technologies, carbon storage in materials such as cement, etc. "
+  },
+  {
+    "id": 660,
+    "label": "Software map",
+    "description": "The Software Map is a comprehensive visual representation that outlines the diverse array of software solutions within the climate tech landscape. This map provides a detailed overview of software applications tailored to address climate challenges across various sectors, including energy, transport, industry, food and agriculture, built environment, natural environment, and more. "
+  }
+]
+```
+
+To get the taxonomy items of the company you should use the following endpoint:
+
+`GET /taxonomy/items/company/{clientID}`
+
+Where the parameter `clientID` is the ID of the company.
+
+The possible response codes are:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
+
 ## Taxonomy Item Relations by ParentID
 
 > To get Taxonomy Graph Item Relation list by parentID, use this code:
