@@ -1019,9 +1019,10 @@ This is the main filter used when searching for startups. It contains two simple
 | Parameter name      | Parameter type                                      | Description                                                                       |
 |---------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------|
 | searchableLocations | List of int                                         | See Section [Searchable Locations](#searchable-locations) for the accepted values |
-| sizes               | List of Section [Size](#size)                       | Number of employees                                                               |
 | stages              | List of int                                         | Growth stage, see Section [Stages](#stages) for accepted values                   |
 | fundings            | List of int                                         | Total funding range, see Section [Fundings](#fundings) for accepted val- ues      |
+| employeesFrom       | int                                                 | Minimum number of employees                                                       |
+| employeesTo         | int                                                 | Maximum number of employees                                                       |
 | fundingsFrom        | int                                                 | Minimum total funding                                                             |
 | fundingsTo          | int                                                 | Maximum total funding                                                             |
 | tags                | List of int                                         | See Section [Tags](#tags) for accepted values                                     |
@@ -1136,20 +1137,6 @@ This is the tag filter used when searching for tags.
 | tags                   | startup    | Startup tags                                |
 | fundingTypes           | startup    | Startup funding types                       |
 | sdgs                   | startup    | Startup Sustainable Development Goals       |
-
-## Size
-
-| ID | Label      |
-|----|------------|
-| 1  | 1-10       |
-| 2  | 11-50      |
-| 3  | 51-100     |
-| 4  | 101-200    |
-| 5  | 201-500    |
-| 6  | 501-1000   |
-| 7  | 1001-5000  |
-| 8  | 5001-10000 |
-| 9  | 10000+     |
 
 ## Founded Date
 
