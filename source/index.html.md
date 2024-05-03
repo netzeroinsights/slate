@@ -1063,12 +1063,11 @@ This is the main filter used when searching for startups. It contains two simple
  
 | Parameter name       | Parameter type                              | Description                                                                                                     |                                                                                                    
 |----------------------|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| dates                | List of RoundDate [Round Date](#round-date) | See Section [Round Date](#round-date) for the accepted values                                                   |                                                  
 | acquisitionDateFrom  | Date                                        | Starting date for when the deal has been inserted into our database                                             |                                            
 | acquisitionDateTo    | Date                                        | Maximum date for when the deal has been inserted into our database                                              |                                             
 | datesFrom            | Date                                        | Starting date for when the deal has been closed                                                                 |                                                                
 | datesTo              | Date                                        | Maximum date for when the deal has been closed                                                                  |                                                                 
-| lastRoundDays        | List of int                                 | Maximun number of days passed since the deal was closed                                                         |
+| lastRoundDays        | List of int                                 | Maximum number of days passed since the deal was closed                                                         |
 | amountFrom           | int                                         | Minimum deal amount                                                                                             |                                                                                            
 | amountTo             | int                                         | Maximum deal amount                                                                                             |                                                                                            
 | types                | List of int                                 | See Section [Deal Type](#deal-type) for the accepted values                                                     |                                                  
@@ -1209,16 +1208,6 @@ This is the tag filter used when searching for tags.
 | 2  | Average impact   |
 | 3  | High impact      |
 | 4  | Very high impact |
-
-## Round Date
-
-| ID | Label         |
-|----|---------------|
-| 1  | Last Month    |
-| 2  | Last Quarter  |
-| 3  | Last Semester |
-| 4  | Last Year     |
-| 5  | YTD           |
 
 ## SDGs
 
