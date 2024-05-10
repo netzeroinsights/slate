@@ -743,6 +743,55 @@ It takes a single parameter, indicated as ”[investorID]” in the example, and
 |---------------|--------------------|
 | 200           | Request successful |
 
+## Investor Contacts
+
+> To get all the contacts of an investor, use this code:
+
+```shell
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X POST "https://api.netzeroinsights.com/investor/contacts" \
+-H "Content-Type: application/json" \
+-d "{'investorID': 16328, 'decisionMaker': false}"
+```
+
+> In case of a 200 response, the response body will contain all the requested contacts, with the format specified at section [Investor Contact](#investor-contact).
+
+```json
+[
+  {
+    "name": "Lewis Liu",
+    "role": "Venture Partner",
+    "linkedinURL": "http://www.linkedin.com/in/lewisliu",
+    "decisionMaker": true,
+    "id": 2317638
+  },
+  {
+    "name": "Arielle Schacter",
+    "role": "Investor",
+    "linkedinURL": "http://www.linkedin.com/in/arielle-schacter-26b8192b",
+    "decisionMaker": false,
+    "id": 2317639
+  },
+  {
+    "name": "Monika Burniston",
+    "role": "Executive Assistant",
+    "linkedinURL": "http://www.linkedin.com/in/monika-burniston-83702840",
+    "decisionMaker": false,
+    "id": 2317640
+  }
+]
+```
+
+To get all contacts of an investor, you should use the following endpoint:
+
+`POST /investor/contacts`
+
+With a JSON request body in the format specified at the Section [Investor Contacts Filter](#investor-contacts-filter), and has the following response codes:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
+
 # Deals List
 
 > To get the deals list, use this code:
@@ -754,7 +803,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 -d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
 
-> In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section [Deals Search](#deals-search).
+> In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section [Deals Search](#deal-search).
 
 ```json
 {
@@ -840,7 +889,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 -d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
 
-> In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section [Investors Search](#investors-search).
+> In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section [Investors Search](#investor-search).
 
 ```json
 {
@@ -1104,6 +1153,13 @@ This is the main filter used when searching for startups. It contains two simple
 | clientID       | int            | ClientID of the requested startup, taken from a previous call of [Startup List](#startup-list) |
 | decisionMaker  | boolean        | Optional, if true only returns contacts with decision making capabilities                      |
 | roleID         | int            | Optional, contact role, see Section [Role](#role) for accepted values                          |
+
+## Investor Contacts Filter
+
+| Parameter name | Parameter type | Description                                                                                          |
+|----------------|----------------|------------------------------------------------------------------------------------------------------|
+| investorID     | int            | InvestorID of the requested investor, taken from a previous call of [Investor List](#investors-list) |
+| decisionMaker  | boolean        | Optional, if true only returns contacts with decision making capabilities                            |
 
 ## Tag Filter
 
@@ -1936,6 +1992,17 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | secondaryTypes        | Secondary investor types                                 |
 | investments           | List of companies that have been invested in             |
 | coInvestors           | List of investors that have invested in mutual companies |
+
+## Investor Contact
+
+| Name          | Content                                             |
+|---------------|-----------------------------------------------------|
+| name          | Person name                                         |
+| role          | Person role                                         |
+| email         | Person email                                        |
+| linkedinURL   | Person LinkedIn URL                                 |
+| decisionMaker | True if the person has decision making capabilities |
+| id            | Internal person ID                                  |
 
 # Taxonomy Page
 
