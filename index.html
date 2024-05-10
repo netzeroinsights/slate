@@ -358,6 +358,11 @@
           </li>
           <li>
             <a href="#investor-detail" class="toc-h1 toc-link" data-title="Investor Detail">Investor Detail</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#investor-contacts" class="toc-h2 toc-link" data-title="Investor Contacts">Investor Contacts</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#deals-list" class="toc-h1 toc-link" data-title="Deals List">Deals List</a>
@@ -385,6 +390,9 @@
                   </li>
                   <li>
                     <a href="#contacts-filter" class="toc-h2 toc-link" data-title="Contacts Filter">Contacts Filter</a>
+                  </li>
+                  <li>
+                    <a href="#investor-contacts-filter" class="toc-h2 toc-link" data-title="Investor Contacts Filter">Investor Contacts Filter</a>
                   </li>
                   <li>
                     <a href="#tag-filter" class="toc-h2 toc-link" data-title="Tag Filter">Tag Filter</a>
@@ -497,6 +505,9 @@
                   </li>
                   <li>
                     <a href="#investor" class="toc-h2 toc-link" data-title="Investor">Investor</a>
+                  </li>
+                  <li>
+                    <a href="#investor-contact" class="toc-h2 toc-link" data-title="Investor Contact">Investor Contact</a>
                   </li>
               </ul>
           </li>
@@ -1326,6 +1337,59 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Request successful</td>
 </tr>
 </tbody></table>
+<h2 id='investor-contacts'>Investor Contacts</h2>
+<blockquote>
+<p>To get all the contacts of an investor, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/investor/contacts"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-d</span> <span class="s2">"{'investorID': 16328, 'decisionMaker': false}"</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the requested contacts, with the format specified at section <a href="#investor-contact">Investor Contact</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lewis Liu"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Partner"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"linkedinURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.linkedin.com/in/lewisliu"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"decisionMaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2317638</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arielle Schacter"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"linkedinURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.linkedin.com/in/arielle-schacter-26b8192b"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"decisionMaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2317639</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monika Burniston"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Executive Assistant"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"linkedinURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.linkedin.com/in/monika-burniston-83702840"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"decisionMaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2317640</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get all contacts of an investor, you should use the following endpoint:</p>
+
+<p><code>POST /investor/contacts</code></p>
+
+<p>With a JSON request body in the format specified at the Section <a href="#investor-contacts-filter">Investor Contacts Filter</a>, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+</tbody></table>
 <h1 id='deals-list'>Deals List</h1>
 <blockquote>
 <p>To get the deals list, use this code:</p>
@@ -1336,7 +1400,7 @@ Please note that manually closing a session is not required, since it will be cl
 <span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
 </code></pre></div>
 <blockquote>
-<p>In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section <a href="#deals-search">Deals Search</a>.</p>
+<p>In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section <a href="#deal-search">Deals Search</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"roundsTotalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.38828746078E11</span><span class="p">,</span><span class="w">
@@ -1426,7 +1490,7 @@ Please note that manually closing a session is not required, since it will be cl
 <span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
 </code></pre></div>
 <blockquote>
-<p>In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section <a href="#investors-search">Investors Search</a>.</p>
+<p>In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section <a href="#investor-search">Investors Search</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22736</span><span class="p">,</span><span class="w">
@@ -2044,6 +2108,25 @@ Please note that manually closing a session is not required, since it will be cl
 <td>roleID</td>
 <td>int</td>
 <td>Optional, contact role, see Section <a href="#role">Role</a> for accepted values</td>
+</tr>
+</tbody></table>
+<h2 id='investor-contacts-filter'>Investor Contacts Filter</h2>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>investorID</td>
+<td>int</td>
+<td>InvestorID of the requested investor, taken from a previous call of <a href="#investors-list">Investor List</a></td>
+</tr>
+<tr>
+<td>decisionMaker</td>
+<td>boolean</td>
+<td>Optional, if true only returns contacts with decision making capabilities</td>
 </tr>
 </tbody></table>
 <h2 id='tag-filter'>Tag Filter</h2>
@@ -4107,6 +4190,38 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>coInvestors</td>
 <td>List of investors that have invested in mutual companies</td>
+</tr>
+</tbody></table>
+<h2 id='investor-contact'>Investor Contact</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Person name</td>
+</tr>
+<tr>
+<td>role</td>
+<td>Person role</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Person email</td>
+</tr>
+<tr>
+<td>linkedinURL</td>
+<td>Person LinkedIn URL</td>
+</tr>
+<tr>
+<td>decisionMaker</td>
+<td>True if the person has decision making capabilities</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Internal person ID</td>
 </tr>
 </tbody></table>
 <h1 id='taxonomy-page'>Taxonomy Page</h1>
