@@ -1076,6 +1076,7 @@ This is the main filter used when searching for startups. It contains two simple
 | fundingsTo          | int                                                 | Maximum total funding                                                             |
 | tags                | List of int                                         | See Section [Tags](#tags) for accepted values                                     |
 | trls                | List of int                                         | See Section [TRLs](#trls) for accepted values                                     |
+| financialStageIDs   | List of int                                         | See Section [Financial Stages](#financial-stages) for accepted values             |
 | sustainabilities    | List of int                                         | See Section [Sustainabilities](#sustainabilities) for accepted values             |
 | foundedDates        | List of Section [Founded Date](#founded-date)       | Startup founded date                                                              |
 | acquisitionDateFrom | date                                                | Starting date for when the startup has been inserted into our database            |
@@ -1241,6 +1242,16 @@ This is the tag filter used when searching for tags.
 | 2  | 9     |
 | 3  | 1-5   |
 | 4  | 6-8   |
+
+## Financial Stages
+
+| ID | Label               |
+|----|---------------------|
+| 1  | Pre-Seed stage (VC) |
+| 2  | Seed stage (VC)     |
+| 3  | Early stage (VC)    |
+| 4  | Late stage (VC)     |
+| 5  | PE-growth stage     |
 
 ## Fundings
 
