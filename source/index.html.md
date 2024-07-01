@@ -131,6 +131,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
       "fundingRangeID": 9,
       "fundingRange": ">250M",
       "lastRoundDate": "2022-07-14T00:00:00.000+00:00",
+      "acquisitionDate": "2022-12-27T19:17:16.663+00:00",
       "sustainabilityMetric": 0.9335,
       "foundedDate": 2010,
       "countryID": 80,
@@ -263,6 +264,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
   "fundingRangeID": 9,
   "fundingRange": ">250M",
   "lastRoundDate": "2023-08-31T06:52:00.000+00:00",
+  "acquisitionDate": "2022-12-27T19:17:16.663+00:00",
   "sustainabilityMetric": 0.9335,
   "foundedDate": 2010,
   "georowID": 814818,
@@ -1079,7 +1081,7 @@ This is the main filter used when searching for startups. It contains two simple
 | sustainabilities    | List of int                                         | See Section [Sustainabilities](#sustainabilities) for accepted values             |
 | foundedDates        | List of Section [Founded Date](#founded-date)       | Startup founded date                                                              |
 | acquisitionDateFrom | date                                                | Starting date for when the startup has been inserted into our database            |
-| acquisitionDateTo   | date                                                | Maximum date for when the startup has been in- serted into our database           |
+| acquisitionDateTo   | date                                                | Maximum date for when the startup has been inserted into our database             |
 | foundedDatesFrom    | date                                                | Starting founded date                                                             |
 | foundedDatesTo      | date                                                | Maximum founded date                                                              |
 | raisedDateFrom      | date                                                | Starting date for any round                                                       |
