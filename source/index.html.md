@@ -1077,6 +1077,7 @@ This is the main filter used when searching for startups. It contains two simple
 | fundingsFrom        | int                                                 | Minimum total funding                                                             |
 | fundingsTo          | int                                                 | Maximum total funding                                                             |
 | tags                | List of int                                         | See Section [Tags](#tags) for accepted values                                     |
+| tagsMode            | string                                              | Logical AND or OR operators for filtering startups by the given tags              |
 | trls                | List of int                                         | See Section [TRLs](#trls) for accepted values                                     |
 | sustainabilities    | List of int                                         | See Section [Sustainabilities](#sustainabilities) for accepted values             |
 | foundedDates        | List of Section [Founded Date](#founded-date)       | Startup founded date                                                              |
@@ -1109,6 +1110,8 @@ This is the main filter used when searching for startups. It contains two simple
 | patentsCountFrom    | int                                                 | Minimum number of patents                                                         |
 | patentsCountTo      | int                                                 | Maximum number of patents                                                         |
 | fundRaising         | List of string                                      | Use ”fundRaising” to see all the companies likely to fundraise                    |
+| taxonomyItems       | List of int                                         | See Section [Taxonomy Items](#Taxonomy-Item) for accepted values                  |
+| taxonomyItemsMode   | string                                              | Logical AND or OR operators for filtering startups by the given taxonomy items    |
 
 ## Deals Filter
  
