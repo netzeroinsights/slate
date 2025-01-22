@@ -105,7 +105,7 @@ Please note that manually closing a session is not required, since it will be cl
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST 'https://api.netzeroinsights.com/getStartupList' \
+-X POST 'https://api.netzeroinsights.com/companies' \
 -H 'Content-Type: application/json' \                 
 -d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
@@ -119,92 +119,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
     {
       "clientID": 668,
       "name": "Sunfire",
-      "logo": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1676009885/Startups/idgakaw4vpykudzpl978.jpg",
-      "website": "http://www.sunfire.de",
-      "domain": "sunfire.de",
-      "pitchLine": "Sunfire develops and manufactures industrial electrolysers for the production of renewable hydrogen and syngas.<br><br>The electrolyzers - based on alkaline and solid oxide technologies - are producing hydrogen and Syngas and are meant to decarbonize energy-intensive and climate-conscious businesses. The company either uses renewable electricity and water to produce green hydrogen, or includes captured CO2 in the process to produce renewable syngas which can be transferred into hydrocarbon products. Main applications for the produced fuels are refineries, steel manufacturing, chemicals, mobility, and the utility sector.<br><br>Sunfire develops an innovation that contributes to:<br>Climate change mitigation by producing green hydrogen and renewable syngas.<br>",
-      "description": "Developer of industrial electrolyzers designed to convert renewable electrical energy into fuels and gases. Innovative technology: Sunfire offers modular power plants and electrolysis systems to produce renewable energy, hydrogen and syngas. Provider of energy conversion technologies, including solid oxide fuel cells and renewable synthetic fuels based on solid oxide electrolyzers. Sunfire is an electrolysis company that designs and manufactures systems for the production of renewable industrial gas and fuel. A World Without Fossil Fuels. Sunfire develops and markets efficient energy supply concepts, which focus on the transformation of regenerative power into liquid petrol (power-to-liquids) or gas (power-to-gas). Develops and produces high-temperature fuel cells which facilitate the generation of electric power and heat. Developer of industrial electrolyzers designed to convert renewable electrical energy into fuels and gases. The company's renewable hydrogen and syngas as substitutes for fossil energy sources and offer electrolyzers based on alkaline and solid oxide (SOEC) technologies, enabling chemical, fuel, and steel industries to transform of energy Established in 2010 and based in Dresden, Germany, Sunfire is a world-leading industrial electrolysis company with two differentiated technologies. We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost-effective production of renewable hydrogen, syngas and e-Fuel.\n\nSunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group  global leaders in the renewable fuel and steel business. With more than 500 employees located in Germany and Switzerland and a well-established partner network, we realize large electrolysis projects to deliver on our promise: Creating a world without fossil fuels! Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat.\n\nSunfires vision is to make regenerative energy from sources such as wind farms, hydropower plants, and photovoltaic systems available wherever and whenever it is needed  not just when the wind is blowing, the waves are crashing or the sun is shining. Established in 2010 and based in Dresden, Germany, Sunfire is a world-leading industrial electrolysis company with two differentiated technologies. We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost-effective production of renewable hydrogen, syngas and e-Fuel.Sunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group  global leaders in the renewable fuel and steel business. With more than 500 employees located in Germany and Switzerland and a well-established partner network, we realize large electrolysis projects to deliver on our promise: Creating a world without fossil fuels! ognised global leader for off-grid and CHP units based on solide oxide fuel cell technology. Renewables Everywhere. With the co-electrolysis of Sunfire, CO2-neutral synthetic crude oil can be produced from water in combination with carbon dioxide and green electricity via syngas. A breakthrough fuel cell and electrolyser technology replacingtheconventional fossil fuel used in your car with CO2 neutral fuel created from green power, water and CO2 fromtheatmosphere. CO2 & Hydrogen. Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat. Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat. Sunfires vision is to make regenerative energy from sources such as wind farms, hydropower plants, and photovoltaic systems available wherever and whenever it is needed  not just when the wind is blowing, the waves are crashing or the sun is shining. Sunfire develops and produces high temperature electrolyzers SOEC and high temperature fuel cells SOFC . As water vapour is used in electrolysis efficiencies of up to H methane and about for fuels are achieved.Customer ProblemTarget groups are energy chemical refinery and utility companies. Energy suppliers can work on a more efficient supply at certain points as the fuel cells can also use hydrocarbons.Business ModelSunfire offers its technology in the fields of CHP off grid production and hydrogen fuels. The product is then sold directly for individual orders.USPIn niche markets the special requirements and simpler logistics can give this system an economic advantage. Sunfire s entry markets are therefore small gas customers off grid applications and CHP plants for real estate.",
-      "fundingAmount": 2.8E8,
-      "fundingString": "280M",
-      "fundingAmountUSD": 3.1753658E8,
-      "fundingStringUSD": "318M",
-      "fundingRangeID": 9,
-      "fundingRange": ">250M",
-      "lastRoundDate": "2022-07-14T00:00:00.000+00:00",
-      "acquisitionDate": "2021-05-25T00:00:00.000+00:00",
-      "sustainabilityMetric": 0.9335,
-      "foundedDate": 2010,
-      "countryID": 80,
-      "country": "Germany",
-      "city": "Dresden",
-      "continent": "Europe",
-      "email": "info@sunfire.de",
-      "phone": "+49 351 8967970",
-      "sizeID": 2,
-      "size": "11 - 50",
-      "stageID": 4,
-      "stage": "Scaling",
-      "linkedinURL": "https://www.linkedin.com/company/sunfire-gmbh/",
-      "twitterURL": "https://twitter.com/sunfire_dresden/",
-      "facebookURL": "https://facebook.com/1382355191983196/",
-      "directURL": "sunfire-668",
-      "sustainabilityMetricID": 4,
-      "lastRoundType": "Late VC",
-      "tags": [
-        {
-          "tagTypeId": 74,
-          "tagType": {
-            "id": 74,
-            "tagType": "EU activity",
-            "platformOrder": 9,
-            "tagFamily": {
-              "id": 1,
-              "tagFamily": "EU taxonomy",
-              "platformOrder": 1
-            }
-          },
-          "id": 405,
-          "filterable": true,
-          "label": "Manufacture of equipment for the production and use of hydrogen"
-        },
-        {
-          "tagTypeId": 11,
-          "tagType": {
-            "id": 11,
-            "tagType": "environmental objective",
-            "platformOrder": 7,
-            "tagFamily": {
-              "id": 1,
-              "tagFamily": "EU taxonomy",
-              "platformOrder": 1
-            }
-          },
-          "id": 374,
-          "filterable": true,
-          "label": "climate change mitigation"
-        }
-      ],
-      "fundingTypes": [
-        "Grant",
-        "Equity"
-      ],
-      "sdgs": [
-        {
-          "id": 7,
-          "label": "7. Affordable and clean energy"
-        },
-        {
-          "id": 13,
-          "label": "13. Climate action"
-        }
-      ],
-      "note": "",
-      "fundingRangeUSD": ">250M",
-      "fundingRangeIDUSD": 9,
-      "numberOfEquityRounds": 8,
-      "numberOfGrants": 2,
-      "id": 527,
-      "eutopiaScore": 93
+      "website": "http://www.sunfire.de"
     }
   ]
 }
@@ -212,7 +127,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 
 To search our startup database you should use the following endpoint:
 
-`POST /getStartupList`
+`POST /companies`
 
 With a JSON request body in the format specified at the section [Main Filter](#main-filter).
 
@@ -800,7 +715,7 @@ With a JSON request body in the format specified at the Section [Investor Contac
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST 'https://api.netzeroinsights.com/getFundingRoundList' \
+-X POST 'https://api.netzeroinsights.com/fundingRounds' \
 -H 'Content-Type: application/json' \                 
 -d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
@@ -809,60 +724,12 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 
 ```json
 {
-  "roundsTotalFunding": 5.38828746078E11,
-  "selectedCurrency": "USD",
   "count": 52018,
   "results": [
     {
-      "clientId": 5051,
-      "clientName": "Lightmatter",
-      "clientLogoURL": "https://res.cloudinary.com/eutop-1/image/upload/b_white/v1685627341/Startups/rshobgpyjrff2mxdubu0.jpg",
-      "clientPitchLine": "Lightmatter specializes in developing advanced computing solutions using an approach known as photonic computing. <br><br>Lightmatter provides photonic processors, utilizing light instead of electrons for faster and more energy-efficient computations. Their technology integrates optical components into existing semiconductor manufacturing processes, enabling faster data transfer rates while minimizing environmental impact. Lightmatter's photonic processors are designed for demanding applications such as AI, machine learning, and data analytics, providing faster training and inference times. <br><br>Lightmatter develops an innovation that contributes to:<br>Climate change mitigation by providing an energy-efficient alternative to traditional electronic processors.",
-      "clientHQ": "United States",
-      "clientCityHQ": "Boston",
-      "clientCountryCode": "US",
-      "clientCountryID": 226,
-      "clientContinentID": 4,
-      "clientFoundedDate": "2017",
-      "roundDate": "2024-01-10T14:58:00.000+00:00",
-      "roundType": "Series C",
-      "roundAmount": 0.0,
-      "roundInvestors": [
-        10729
-      ],
-      "roundInvestorPOJOs": [
-        {
-          "id": 10729,
-          "name": "Sip Global Partners",
-          "website": "https://sipgp.com/",
-          "fundingRoundId": 437610
-        }
-      ],
-      "roundNewsPOJOs": [
-        {
-          "id": 127597,
-          "title": "",
-          "url": "https://www.finsmes.com/2024/01/lightmatter-receives-follow-on-investment-from-sip-global-partners-now-valued-at-1-2b.html",
-          "coFundingRoundID": 437610
-        },
-        {
-          "id": 99932,
-          "title": "",
-          "url": "",
-          "coFundingRoundID": 437610
-        }
-      ],
-      "numberOfRounds": 8,
-      "totalFunding": 3.77524344E8,
-      "totalFundingUSD": 4.22E8,
-      "totalFundingString": "378M",
-      "totalFundingStringUSD": "422M",
-      "roundNumber": 6,
-      "financingInstrument": "Equity",
-      "lastRound": true,
-      "equityStageID": 4,
-      "exitStageID": 1,
-      "id": 437610
+      "dealID": 425794,
+      "clientID": 5051,
+      "clientName": "Lightmatter"
     }
   ]
 }
@@ -870,7 +737,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 
 To search our deals database you should use the following endpoint:
 
-`POST /getFundingRoundList`
+`POST /fundingRounds`
 
 With a JSON request body in the format specified at the section [Main Filter](#main-filter).
 
@@ -886,7 +753,7 @@ The possible response codes are:
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST 'https://api.netzeroinsights.com/getInvestorList' \
+-X POST 'https://api.netzeroinsights.com/investors' \
 -H 'Content-Type: application/json' \                 
 -d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
@@ -896,133 +763,11 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```json
 {
   "count": 22736,
-  "totalFunding": 5.3894282550809375E11,
   "results": [
     {
-      "investorID": 31522,
-      "name": "Johannes Reck",
-      "description": "Co-Founder & CEO at GetYourGuide.",
-      "linkedInURL": "https://www.linkedin.com/in/johannesreck/",
-      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1703301964/Investors/kjaifkplzbgioerv6ufh.jpg",
-      "numberOfDeals": 3,
-      "numberOfDealsFiltered": 3,
-      "lastDealType": "Pre-Seed",
-      "lastDealDate": "2022-05-24T06:56:00.000+00:00",
-      "note": "",
-      "primaryTypeID": 44,
-      "primaryType": "Angel",
-      "secondaryTypes": [],
-      "investments": [
-        {
-          "id": 103304,
-          "clientID": 133823,
-          "url": "tacto-133823",
-          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/b_white/v1702653069/Startups/v7smvvz8vasm8fg1vfjy.jpg",
-          "name": "Tacto",
-          "pitchline": "Tacto helps mid-sized industrial organizations manage the rising complexity of supply chains.<br><br>Tacto's central operating system automates procurement workflows, ensuring compliance and sustainability in the supply chain. The software streamlines material sourcing and automates manual tasks related to regulatory compliance, including requirements from various Supply Chain Acts. It utilizes AI technology and advanced analytics to identify cost-saving opportunities in procurement spend by analyzing price developments in key cost drivers across the entire article portfolio.<br><br>Tacto develops an innovation that contributes to:<br>Climate change mitigation by enabling supply chain optimization.",
-          "country": "Germany",
-          "totalFunding": 55300000,
-          "totalFundingUSD": 60433297,
-          "lastRoundType": "Early VC",
-          "lastRoundAmount": 50000000,
-          "lastRoundAmountUSD": 54599708,
-          "lastRoundDate": "2023-12-12",
-          "investorSince": "2020-12-07T12:03:00.000+00:00"
-        },
-        {
-          "id": 78453,
-          "clientID": 102940,
-          "url": "navit-102940",
-          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
-          "name": "NAVIT",
-          "pitchline": "NAVIT enables businesses to provide their employees with sustainable and flexible transportation options, accompanied by automated CO2 footprint calculations and offsetting.<br><br>NAVIT offers a platform that simplifies the management of employee mobility budgets through contemporary transportation options like car-sharing, bike subscriptions, and public transportation. By providing a monthly mobility budget, NAVIT eliminates the need for administrative tracking and allows employees to select their preferred mode of transportation, such as shared mobility, rented bikes or cars, or using fuel/charge cards for their personal vehicles. Additionally, the platform helps businesses measure, report, and offset their mobility-relevant carbon footprints.<br><br>NAVIT develops an innovation that contributes to:<br>Climate change mitigation by enabling carbon offsetting.<br>The transition to a circular economy by promoting shared mobility.",
-          "country": "Germany",
-          "totalFunding": 3500000,
-          "totalFundingUSD": 3846066,
-          "lastRoundType": "Seed",
-          "lastRoundAmount": 3500000,
-          "lastRoundAmountUSD": 3846066,
-          "lastRoundDate": "2023-04-24",
-          "investorSince": "2022-05-24T06:56:00.000+00:00"
-        }
-      ],
-      "coInvestors": [
-        {
-          "id": 25583,
-          "investorID": 31521,
-          "name": "Torsten Reil",
-          "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1703301895/Investors/oyjit8cen1fbmxaw31ag.jpg",
-          "investorType": "Angel",
-          "numberOfCoInvestments": 2
-        },
-        {
-          "id": 390,
-          "investorID": 2231,
-          "name": "Visionaries Club",
-          "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1691489048/Investors/v6p86exktszwvalmrtvm.jpg",
-          "investorType": "Venture Capital",
-          "country": "Germany",
-          "numberOfCoInvestments": 2
-        },
-        {
-          "id": 2781,
-          "investorID": 9433,
-          "name": "Michael Wax",
-          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
-          "investorType": "Angel",
-          "numberOfCoInvestments": 2
-        },
-        {
-          "id": 2697,
-          "investorID": 9194,
-          "name": "Uvc Partners",
-          "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1688443543/Investors/yavw0khx5vvqwz7zxvcv.jpg",
-          "investorType": "Venture Capital",
-          "country": "Germany",
-          "numberOfCoInvestments": 2
-        },
-        {
-          "id": 6557,
-          "investorID": 17643,
-          "name": "Hanno Renner",
-          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
-          "investorType": "Angel",
-          "country": "Germany",
-          "numberOfCoInvestments": 2
-        },
-        {
-          "id": 14220,
-          "investorID": 664,
-          "name": "Cherry Ventures",
-          "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1691449060/Investors/lakn7t317zcr3aa3qnse.jpg",
-          "investorType": "Private Equity",
-          "country": "Germany",
-          "numberOfCoInvestments": 1
-        },
-        {
-          "id": 13112,
-          "investorID": 26676,
-          "name": "Arabella Capital",
-          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
-          "numberOfCoInvestments": 1
-        },
-        {
-          "id": 25989,
-          "investorID": 31868,
-          "name": "Christoph Bornschein",
-          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
-          "investorType": "Angel",
-          "numberOfCoInvestments": 1
-        },
-        {
-          "id": 25990,
-          "investorID": 31869,
-          "name": "Javier Suarez",
-          "logoURL": "https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png",
-          "investorType": "Angel",
-          "numberOfCoInvestments": 1
-        }
-      ]
+      "investorID": 9156,
+      "name": "The Carlyle Group",
+      "website": "https://www.carlyle.com/"
     }
   ]
 }
@@ -1030,7 +775,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 
 To search our investors database you should use the following endpoint:
 
-`POST /getInvestorList`
+`POST /investors`
 
 With a JSON request body in the format specified at the section [Main Filter](#main-filter).
 
@@ -1039,6 +784,14 @@ The possible response codes are:
 | Response code | Meaning            |
 |---------------|--------------------|
 | 200           | Request successful |
+
+# Deprecated Endpoints
+
+`POST /getStartupList` was replaced with `POST /companies` and it'll will no longer be supported after 1st of August
+
+`POST /getInvestorList` was replaced with `POST /investors` and it'll will no longer be supported after 1st of August
+
+`POST /getFundingRoundList` was replaced with `POST /fundingRounds` and it'll will no longer be supported after 1st of August
 
 # Filters structure
 
@@ -1620,7 +1373,15 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | results | List of Section [Startup](#startup)                          |
 | count   | Total number of results, regardless of the ”limit” parameter |
 
-## Startup
+## Startup 
+
+| Name                           | Content         |
+|--------------------------------|-----------------|
+| clientID                       | Startup ID      |
+| name                           | Company name    |
+| website                        | Company website |
+
+## Startup (Deprecated)
 
 | Name                           | Content                                                  |
 |--------------------------------|----------------------------------------------------------|
@@ -1712,117 +1473,19 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 {
   "clientID": 423,
   "name": "Kraftblock",
-  "logo": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1692811618/Startups/a6oc6tki76sjozctvy78.jpg",
-  "website": "http://www.kraftblock.com",
-  "domain": "kraftblock.com",
-  "pitchLine": "Kraftblock specializes in advanced thermal energy storage technology.<br><br>Kraftblock's core technology is multi-purpose, high-temperature energy storage that stores heat up to extreme temperatures in upcycled material. The systems either recycle waste heat or generate green heat via green power.<br><br>Kraftblock develops an innovation that contributes to:<br>Climate change mitigation by enabling industrial companies to replace fossil energy with renewable energy and recycle industrial waste heat.<br>The transition to a circular economy by using recycled material.",
-  "description": "Kraftblock is the energy storage based on a bottom up materials development which enables the energy transition to 100 renewables in an ecological and economical sensfull way Kraftblock develops multifunctional energy storage solutions for heat and power that can enable the energy transition in industry with 30 and 60 MWh containers with efficient transformation also into electricity due to high storage temperature The company s systems store thermal energy from room temperature produced up to 85 from recycled materials and can store waste heat or converted power up to 1 300 C district heating or even repurposed conventional power plants which is preventive ecological fire retardant in ceilings floors fires from breaking out enabling customers to protect themselves during a fire outbreak and ensure safety It is universally applicable Power to Heat Heat to X and very cost effective thanks to the modular system",
-  "fundingAmount": 23127686,
-  "fundingString": "23.1M",
-  "fundingAmountUSD": 25622914,
-  "fundingStringUSD": "25.6M",
-  "fundingRangeID": 5,
-  "fundingRange": "10M - 25M",
-  "lastRoundDate": "2023-08-08T14:47:00.000+00:00",
-  "sustainabilityMetric": 0.9335,
-  "foundedDate": 2014,
-  "georowID": 817557,
-  "countryID": 80,
-  "country": "Germany",
-  "city": "Saarbrücken",
-  "continent": "Europe",
-  "email": "welcome@kraftblock.com",
-  "phone": "+49 6897 936161",
-  "sizeID": 2,
-  "size": "11 - 50",
-  "stageID": 4,
-  "stage": "Scaling",
-  "linkedinURL": "https://www.linkedin.com/company/kraftblock/",
-  "twitterURL": "https://twitter.com/kraftblocke/",
-  "facebookURL": "https://facebook.com/kraftblock-575213782930847/",
-  "directURL": "kraftblock-423",
-  "sustainabilityMetricID": 4,
-  "lastRoundAmount": 18327686,
-  "lastRoundAmountUSD": 20000000,
-  "lastRoundAmountString": "18.3M",
-  "lastRoundAmountStringUSD": "20M",
-  "lastRoundType": "Series B",
-  "tags": [
-    {
-      "tagTypeId": 11,
-      "tagType": {
-        "tagType": "environmental objective",
-        "platformOrder": 7,
-        "tagFamily": {
-          "tagFamily": "EU taxonomy",
-          "platformOrder": 1,
-          "id": 1
-        },
-        "id": 11
-      },
-      "filterable": true,
-      "id": 377,
-      "label": "the transition to a circular economy"
-    },
-    {
-      "tagTypeId": 13,
-      "tagType": {
-        "tagType": "EU sector",
-        "platformOrder": 9,
-        "tagFamily": {
-          "tagFamily": "EU taxonomy",
-          "platformOrder": 1,
-          "id": 1
-        },
-        "id": 13
-      },
-      "filterable": true,
-      "id": 392,
-      "label": "Manufacturing"
-    }
-  ],
-  "trls": [
-    {
-      "date": "2023-08-14T17:01:30.977+00:00",
-      "label": "9",
-      "id": 2
-    }
-  ],
-  "fundingTypes": [
-    "Grant",
-    "Equity"
-  ],
-  "sdgs": [
-    {
-      "id": 7,
-      "label": "7. Affordable and clean energy"
-    },
-    {
-      "id": 12,
-      "label": "12. Responsible consumption and production"
-    },
-    {
-      "id": 13,
-      "label": "13. Climate action"
-    }
-  ],
-  "note": "",
-  "roundCount": 7,
-  "fundingRangeUSD": "25M - 50M",
-  "fundingRangeIDUSD": 6,
-  "reviewDate": "2023-08-14T17:01:37.410+00:00",
-  "lastReviewer": "amirhossein_mohammadghasemi",
-  "lastSeenDate": "2024-01-12T08:38:17.433+00:00",
-  "numberOfEquityRounds": 4,
-  "numberOfGrants": 1,
-  "sustainabilityMetricLabel": "Very high impact",
-  "employeesGrowthJSON": "[\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2021,\n      \"day\": 1\n    },\n    \"employeeCount\": 19\n  },\n  {\n    \"dateOn\": {\n      \"month\": 1,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 11,\n    \"employeeCount\": 21\n  },\n  {\n    \"dateOn\": {\n      \"month\": 2,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 22\n  },\n  {\n    \"dateOn\": {\n      \"month\": 3,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 23\n  },\n  {\n    \"dateOn\": {\n      \"month\": 4,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 23\n  },\n  {\n    \"dateOn\": {\n      \"month\": 5,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 24\n  },\n  {\n    \"dateOn\": {\n      \"month\": 6,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 24\n  },\n  {\n    \"dateOn\": {\n      \"month\": 7,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 25\n  },\n  {\n    \"dateOn\": {\n      \"month\": 8,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 26\n  },\n  {\n    \"dateOn\": {\n      \"month\": 9,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": -4,\n    \"employeeCount\": 25\n  },\n  {\n    \"dateOn\": {\n      \"month\": 10,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 26\n  },\n  {\n    \"dateOn\": {\n      \"month\": 11,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 27\n  },\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 27\n  },\n  {\n    \"dateOn\": {\n      \"month\": 1,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 27\n  },\n  {\n    \"dateOn\": {\n      \"month\": 2,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 27\n  },\n  {\n    \"dateOn\": {\n      \"month\": 3,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": -4,\n    \"employeeCount\": 26\n  },\n  {\n    \"dateOn\": {\n      \"month\": 4,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": -4,\n    \"employeeCount\": 25\n  },\n  {\n    \"dateOn\": {\n      \"month\": 5,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": -4,\n    \"employeeCount\": 24\n  },\n  {\n    \"dateOn\": {\n      \"month\": 6,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 24\n  },\n  {\n    \"dateOn\": {\n      \"month\": 7,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": -4,\n    \"employeeCount\": 23\n  },\n  {\n    \"dateOn\": {\n      \"month\": 8,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 23\n  },\n  {\n    \"dateOn\": {\n      \"month\": 9,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 13,\n    \"employeeCount\": 26\n  },\n  {\n    \"dateOn\": {\n      \"month\": 10,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 12,\n    \"employeeCount\": 29\n  },\n  {\n    \"dateOn\": {\n      \"month\": 11,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 3,\n    \"employeeCount\": 30\n  },\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 30\n  }\n]",
-  "id": 20186,
-  "eutopiaScore": 93
+  "website": "http://www.kraftblock.com"
 }
 ```
 
 ## Deal
+
+| Name       | Content                                                    |
+|------------|------------------------------------------------------------|
+| dealID     | Internal funding round ID                                  |
+| clientID   | Startup ID                                                 |
+| clientName | Startup name                                               |
+
+## Deal (Deprecated)
         
 | Name                   | Content                                                    |
 |------------------------|------------------------------------------------------------|
@@ -1877,8 +1540,7 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | results            | List of Section [Deal](#deal)                                |
 | count              | Total number of results, regardless of the ”limit” parameter |
 | roundsTotalFunding | Total amount of results, regardless of the ”limit” parameter |
-| selectedCurrency   | Selected currency of the user                                |    
-
+| selectedCurrency   | Selected currency of the user                                |
 
 ## Funding round
 
@@ -1966,6 +1628,14 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | totalFunding | Total funding from the investors, regardless of the ”limit” parameter |
 
 ## Investor
+
+| Name       | Content          |
+|------------|------------------|
+| investorID | Investor ID      |
+| name       | Investor name    |
+| website    | Investor website |
+
+## Investor (Deprecated)
 
 | Name                  | Content                                                  |
 |-----------------------|----------------------------------------------------------|
