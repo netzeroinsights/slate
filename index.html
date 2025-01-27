@@ -371,6 +371,9 @@
             <a href="#investors-list" class="toc-h1 toc-link" data-title="Investors List">Investors List</a>
           </li>
           <li>
+            <a href="#deprecated-endpoints" class="toc-h1 toc-link" data-title="Deprecated Endpoints">Deprecated Endpoints</a>
+          </li>
+          <li>
             <a href="#filters-structure" class="toc-h1 toc-link" data-title="Filters structure">Filters structure</a>
               <ul class="toc-list-h2">
                   <li>
@@ -480,7 +483,13 @@
                     <a href="#startup" class="toc-h2 toc-link" data-title="Startup">Startup</a>
                   </li>
                   <li>
+                    <a href="#startup-deprecated" class="toc-h2 toc-link" data-title="Startup (Deprecated)">Startup (Deprecated)</a>
+                  </li>
+                  <li>
                     <a href="#deal" class="toc-h2 toc-link" data-title="Deal">Deal</a>
+                  </li>
+                  <li>
+                    <a href="#deal-deprecated" class="toc-h2 toc-link" data-title="Deal (Deprecated)">Deal (Deprecated)</a>
                   </li>
                   <li>
                     <a href="#deal-search" class="toc-h2 toc-link" data-title="Deal search">Deal search</a>
@@ -508,6 +517,9 @@
                   </li>
                   <li>
                     <a href="#investor" class="toc-h2 toc-link" data-title="Investor">Investor</a>
+                  </li>
+                  <li>
+                    <a href="#investor-deprecated" class="toc-h2 toc-link" data-title="Investor (Deprecated)">Investor (Deprecated)</a>
                   </li>
                   <li>
                     <a href="#investor-contact" class="toc-h2 toc-link" data-title="Investor Contact">Investor Contact</a>
@@ -663,7 +675,7 @@ Please note that manually closing a session is not required, since it will be cl
 <p>To get startup list, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/getStartupList'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/companies'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 <span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
 </code></pre></div>
@@ -676,99 +688,14 @@ Please note that manually closing a session is not required, since it will be cl
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">668</span><span class="p">,</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sunfire"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1676009885/Startups/idgakaw4vpykudzpl978.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.sunfire.de"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sunfire.de"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"pitchLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sunfire develops and manufactures industrial electrolysers for the production of renewable hydrogen and syngas.&lt;br&gt;&lt;br&gt;The electrolyzers - based on alkaline and solid oxide technologies - are producing hydrogen and Syngas and are meant to decarbonize energy-intensive and climate-conscious businesses. The company either uses renewable electricity and water to produce green hydrogen, or includes captured CO2 in the process to produce renewable syngas which can be transferred into hydrocarbon products. Main applications for the produced fuels are refineries, steel manufacturing, chemicals, mobility, and the utility sector.&lt;br&gt;&lt;br&gt;Sunfire develops an innovation that contributes to:&lt;br&gt;Climate change mitigation by producing green hydrogen and renewable syngas.&lt;br&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Developer of industrial electrolyzers designed to convert renewable electrical energy into fuels and gases. Innovative technology: Sunfire offers modular power plants and electrolysis systems to produce renewable energy, hydrogen and syngas. Provider of energy conversion technologies, including solid oxide fuel cells and renewable synthetic fuels based on solid oxide electrolyzers. Sunfire is an electrolysis company that designs and manufactures systems for the production of renewable industrial gas and fuel. A World Without Fossil Fuels. Sunfire develops and markets efficient energy supply concepts, which focus on the transformation of regenerative power into liquid petrol (power-to-liquids) or gas (power-to-gas). Develops and produces high-temperature fuel cells which facilitate the generation of electric power and heat. Developer of industrial electrolyzers designed to convert renewable electrical energy into fuels and gases. The company's renewable hydrogen and syngas as substitutes for fossil energy sources and offer electrolyzers based on alkaline and solid oxide (SOEC) technologies, enabling chemical, fuel, and steel industries to transform of energy Established in 2010 and based in Dresden, Germany, Sunfire is a world-leading industrial electrolysis company with two differentiated technologies. We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost-effective production of renewable hydrogen, syngas and e-Fuel.</span><span class="se">\n\n</span><span class="s2">Sunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group  global leaders in the renewable fuel and steel business. With more than 500 employees located in Germany and Switzerland and a well-established partner network, we realize large electrolysis projects to deliver on our promise: Creating a world without fossil fuels! Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat.</span><span class="se">\n\n</span><span class="s2">Sunfires vision is to make regenerative energy from sources such as wind farms, hydropower plants, and photovoltaic systems available wherever and whenever it is needed  not just when the wind is blowing, the waves are crashing or the sun is shining. Established in 2010 and based in Dresden, Germany, Sunfire is a world-leading industrial electrolysis company with two differentiated technologies. We develop and manufacture electrolyzers based on SOEC and Alkaline technologies that enable a truly sustainable and cost-effective production of renewable hydrogen, syngas and e-Fuel.Sunfire has been named Global Cleantech 100 company for six consecutive years and is backed by leading strategic and financial investors such as Neste and SMS Group  global leaders in the renewable fuel and steel business. With more than 500 employees located in Germany and Switzerland and a well-established partner network, we realize large electrolysis projects to deliver on our promise: Creating a world without fossil fuels! ognised global leader for off-grid and CHP units based on solide oxide fuel cell technology. Renewables Everywhere. With the co-electrolysis of Sunfire, CO2-neutral synthetic crude oil can be produced from water in combination with carbon dioxide and green electricity via syngas. A breakthrough fuel cell and electrolyser technology replacingtheconventional fossil fuel used in your car with CO2 neutral fuel created from green power, water and CO2 fromtheatmosphere. CO2 &amp; Hydrogen. Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat. Sunfire develops and manufactures systems for renewable industrial gas and fuel production. These substitutes for mineral oil and natural gas, known as e-Gas, e-Fuel or e-Chemicals, replace fossil fuels in existing infrastructures. The solid oxide cells (SOCs) used for the conversion process are also used as generators to provide electricity and heat. Sunfires vision is to make regenerative energy from sources such as wind farms, hydropower plants, and photovoltaic systems available wherever and whenever it is needed  not just when the wind is blowing, the waves are crashing or the sun is shining. Sunfire develops and produces high temperature electrolyzers SOEC and high temperature fuel cells SOFC . As water vapour is used in electrolysis efficiencies of up to H methane and about for fuels are achieved.Customer ProblemTarget groups are energy chemical refinery and utility companies. Energy suppliers can work on a more efficient supply at certain points as the fuel cells can also use hydrocarbons.Business ModelSunfire offers its technology in the fields of CHP off grid production and hydrogen fuels. The product is then sold directly for individual orders.USPIn niche markets the special requirements and simpler logistics can give this system an economic advantage. Sunfire s entry markets are therefore small gas customers off grid applications and CHP plants for real estate."</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fundingAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.8E8</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fundingString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"280M"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fundingAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.1753658E8</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fundingStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"318M"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fundingRangeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fundingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;250M"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lastRoundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-14T00:00:00.000+00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-25T00:00:00.000+00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sustainabilityMetric"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9335</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"foundedDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">2010</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"countryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Germany"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dresden"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@sunfire.de"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+49 351 8967970"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sizeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11 - 50"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"stageID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scaling"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"linkedinURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/company/sunfire-gmbh/"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"twitterURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/sunfire_dresden/"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"facebookURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://facebook.com/1382355191983196/"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sunfire-668"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sustainabilityMetricID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lastRoundType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Late VC"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"tagTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EU activity"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EU taxonomy"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">405</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manufacture of equipment for the production and use of hydrogen"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"tagTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"environmental objective"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EU taxonomy"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">374</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"climate change mitigation"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"fundingTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"Grant"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"Equity"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"sdgs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7. Affordable and clean energy"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13. Climate action"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fundingRangeUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;250M"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fundingRangeIDUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"numberOfEquityRounds"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"numberOfGrants"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">527</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"eutopiaScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.sunfire.de"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>To search our startup database you should use the following endpoint:</p>
 
-<p><code>POST /getStartupList</code></p>
+<p><code>POST /companies</code></p>
 
 <p>With a JSON request body in the format specified at the section <a href="#main-filter">Main Filter</a>.</p>
 
@@ -1400,7 +1327,7 @@ Please note that manually closing a session is not required, since it will be cl
 <p>To get the deals list, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/getFundingRoundList'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/fundingRounds'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 <span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
 </code></pre></div>
@@ -1408,67 +1335,19 @@ Please note that manually closing a session is not required, since it will be cl
 <p>In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section <a href="#deal-search">Deals Search</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"roundsTotalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.38828746078E11</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"selectedCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">52018</span><span class="p">,</span><span class="w">
   </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">5051</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lightmatter"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientLogoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/b_white/v1685627341/Startups/rshobgpyjrff2mxdubu0.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientPitchLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lightmatter specializes in developing advanced computing solutions using an approach known as photonic computing. &lt;br&gt;&lt;br&gt;Lightmatter provides photonic processors, utilizing light instead of electrons for faster and more energy-efficient computations. Their technology integrates optical components into existing semiconductor manufacturing processes, enabling faster data transfer rates while minimizing environmental impact. Lightmatter's photonic processors are designed for demanding applications such as AI, machine learning, and data analytics, providing faster training and inference times. &lt;br&gt;&lt;br&gt;Lightmatter develops an innovation that contributes to:&lt;br&gt;Climate change mitigation by providing an energy-efficient alternative to traditional electronic processors."</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientHQ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientCityHQ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boston"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientCountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientCountryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientContinentID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientFoundedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"roundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-10T14:58:00.000+00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"roundType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Series C"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"roundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"roundInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="mi">10729</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"roundInvestorPOJOs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10729</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sip Global Partners"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://sipgp.com/"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"fundingRoundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">437610</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"roundNewsPOJOs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">127597</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.finsmes.com/2024/01/lightmatter-receives-follow-on-investment-from-sip-global-partners-now-valued-at-1-2b.html"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"coFundingRoundID"</span><span class="p">:</span><span class="w"> </span><span class="mi">437610</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">99932</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"coFundingRoundID"</span><span class="p">:</span><span class="w"> </span><span class="mi">437610</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"numberOfRounds"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.77524344E8</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.22E8</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"totalFundingString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"378M"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"totalFundingStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"422M"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"roundNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"financingInstrument"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Equity"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lastRound"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"equityStageID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"exitStageID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">437610</span><span class="w">
+      </span><span class="nl">"dealID"</span><span class="p">:</span><span class="w"> </span><span class="mi">425794</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">5051</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clientName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lightmatter"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>To search our deals database you should use the following endpoint:</p>
 
-<p><code>POST /getFundingRoundList</code></p>
+<p><code>POST /fundingRounds</code></p>
 
 <p>With a JSON request body in the format specified at the section <a href="#main-filter">Main Filter</a>.</p>
 
@@ -1490,7 +1369,7 @@ Please note that manually closing a session is not required, since it will be cl
 <p>To get the investors list, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/getInvestorList'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/investors'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 <span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
 </code></pre></div>
@@ -1499,140 +1378,18 @@ Please note that manually closing a session is not required, since it will be cl
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22736</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.3894282550809375E11</span><span class="p">,</span><span class="w">
   </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">31522</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Johannes Reck"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Co-Founder &amp; CEO at GetYourGuide."</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"linkedInURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/in/johannesreck/"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1703301964/Investors/kjaifkplzbgioerv6ufh.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"numberOfDeals"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"numberOfDealsFiltered"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lastDealType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Seed"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lastDealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-24T06:56:00.000+00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"primaryTypeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"primaryType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Angel"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"secondaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-      </span><span class="nl">"investments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">103304</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">133823</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tacto-133823"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/b_white/v1702653069/Startups/v7smvvz8vasm8fg1vfjy.jpg"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tacto"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"pitchline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tacto helps mid-sized industrial organizations manage the rising complexity of supply chains.&lt;br&gt;&lt;br&gt;Tacto's central operating system automates procurement workflows, ensuring compliance and sustainability in the supply chain. The software streamlines material sourcing and automates manual tasks related to regulatory compliance, including requirements from various Supply Chain Acts. It utilizes AI technology and advanced analytics to identify cost-saving opportunities in procurement spend by analyzing price developments in key cost drivers across the entire article portfolio.&lt;br&gt;&lt;br&gt;Tacto develops an innovation that contributes to:&lt;br&gt;Climate change mitigation by enabling supply chain optimization."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Germany"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">55300000</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">60433297</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastRoundType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Early VC"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastRoundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastRoundAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">54599708</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastRoundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-12-12"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorSince"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-07T12:03:00.000+00:00"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">78453</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">102940</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navit-102940"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NAVIT"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"pitchline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NAVIT enables businesses to provide their employees with sustainable and flexible transportation options, accompanied by automated CO2 footprint calculations and offsetting.&lt;br&gt;&lt;br&gt;NAVIT offers a platform that simplifies the management of employee mobility budgets through contemporary transportation options like car-sharing, bike subscriptions, and public transportation. By providing a monthly mobility budget, NAVIT eliminates the need for administrative tracking and allows employees to select their preferred mode of transportation, such as shared mobility, rented bikes or cars, or using fuel/charge cards for their personal vehicles. Additionally, the platform helps businesses measure, report, and offset their mobility-relevant carbon footprints.&lt;br&gt;&lt;br&gt;NAVIT develops an innovation that contributes to:&lt;br&gt;Climate change mitigation by enabling carbon offsetting.&lt;br&gt;The transition to a circular economy by promoting shared mobility."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Germany"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">3500000</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">3846066</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastRoundType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seed"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastRoundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3500000</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastRoundAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">3846066</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastRoundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-24"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorSince"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-24T06:56:00.000+00:00"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"coInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25583</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">31521</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Torsten Reil"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1703301895/Investors/oyjit8cen1fbmxaw31ag.jpg"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Angel"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">390</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2231</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visionaries Club"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1691489048/Investors/v6p86exktszwvalmrtvm.jpg"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Capital"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Germany"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2781</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">9433</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Michael Wax"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Angel"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2697</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">9194</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Uvc Partners"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1688443543/Investors/yavw0khx5vvqwz7zxvcv.jpg"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Capital"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Germany"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6557</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">17643</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hanno Renner"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Angel"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Germany"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14220</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">664</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cherry Ventures"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1691449060/Investors/lakn7t317zcr3aa3qnse.jpg"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Private Equity"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Germany"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13112</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">26676</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arabella Capital"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25989</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">31868</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Christoph Bornschein"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Angel"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25990</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">31869</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Javier Suarez"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/v1658420891/New_Empty_Logo_xqsrak.png"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"investorType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Angel"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+      </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">9156</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Carlyle Group"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.carlyle.com/"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>To search our investors database you should use the following endpoint:</p>
 
-<p><code>POST /getInvestorList</code></p>
+<p><code>POST /investors</code></p>
 
 <p>With a JSON request body in the format specified at the section <a href="#main-filter">Main Filter</a>.</p>
 
@@ -1649,6 +1406,12 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Request successful</td>
 </tr>
 </tbody></table>
+<h1 id='deprecated-endpoints'>Deprecated Endpoints</h1>
+<p><code>POST /getStartupList</code> was replaced with <code>POST /companies</code> and it&#39;ll will no longer be supported after 1st of August</p>
+
+<p><code>POST /getInvestorList</code> was replaced with <code>POST /investors</code> and it&#39;ll will no longer be supported after 1st of August</p>
+
+<p><code>POST /getFundingRoundList</code> was replaced with <code>POST /fundingRounds</code> and it&#39;ll will no longer be supported after 1st of August</p>
 <h1 id='filters-structure'>Filters structure</h1><h2 id='main-filter'>Main Filter</h2>
 <p>This is the main filter used when searching for startups. It contains two simple fields (”offset” and ”limit”) and some complex ones (i.e.: ”include”, ”sorting”) defined further in this document.</p>
 
@@ -3226,6 +2989,26 @@ Please note that manually closing a session is not required, since it will be cl
 </tr>
 </thead><tbody>
 <tr>
+<td>clientID</td>
+<td>Startup ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Company name</td>
+</tr>
+<tr>
+<td>website</td>
+<td>Company website</td>
+</tr>
+</tbody></table>
+<h2 id='startup-deprecated'>Startup (Deprecated)</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
 <td>id</td>
 <td>Internal ID</td>
 </tr>
@@ -3557,115 +3340,29 @@ Please note that manually closing a session is not required, since it will be cl
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">423</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kraftblock"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1692811618/Startups/a6oc6tki76sjozctvy78.jpg"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.kraftblock.com"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kraftblock.com"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"pitchLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kraftblock specializes in advanced thermal energy storage technology.&lt;br&gt;&lt;br&gt;Kraftblock's core technology is multi-purpose, high-temperature energy storage that stores heat up to extreme temperatures in upcycled material. The systems either recycle waste heat or generate green heat via green power.&lt;br&gt;&lt;br&gt;Kraftblock develops an innovation that contributes to:&lt;br&gt;Climate change mitigation by enabling industrial companies to replace fossil energy with renewable energy and recycle industrial waste heat.&lt;br&gt;The transition to a circular economy by using recycled material."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kraftblock is the energy storage based on a bottom up materials development which enables the energy transition to 100 renewables in an ecological and economical sensfull way Kraftblock develops multifunctional energy storage solutions for heat and power that can enable the energy transition in industry with 30 and 60 MWh containers with efficient transformation also into electricity due to high storage temperature The company s systems store thermal energy from room temperature produced up to 85 from recycled materials and can store waste heat or converted power up to 1 300 C district heating or even repurposed conventional power plants which is preventive ecological fire retardant in ceilings floors fires from breaking out enabling customers to protect themselves during a fire outbreak and ensure safety It is universally applicable Power to Heat Heat to X and very cost effective thanks to the modular system"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fundingAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">23127686</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fundingString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.1M"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fundingAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">25622914</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fundingStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.6M"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fundingRangeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fundingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10M - 25M"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"lastRoundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-08-08T14:47:00.000+00:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sustainabilityMetric"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9335</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"foundedDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">2014</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"georowID"</span><span class="p">:</span><span class="w"> </span><span class="mi">817557</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"countryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Germany"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saarbrücken"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"welcome@kraftblock.com"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+49 6897 936161"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sizeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11 - 50"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"stageID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scaling"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"linkedinURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/company/kraftblock/"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"twitterURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/kraftblocke/"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"facebookURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://facebook.com/kraftblock-575213782930847/"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kraftblock-423"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sustainabilityMetricID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"lastRoundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">18327686</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"lastRoundAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000000</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"lastRoundAmountString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18.3M"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"lastRoundAmountStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20M"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"lastRoundType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Series B"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"tagTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"environmental objective"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EU taxonomy"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">377</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"the transition to a circular economy"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"tagTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EU sector"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EU taxonomy"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">392</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manufacturing"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"trls"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-08-14T17:01:30.977+00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"fundingTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"Grant"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Equity"</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"sdgs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7. Affordable and clean energy"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12. Responsible consumption and production"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13. Climate action"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"roundCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fundingRangeUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25M - 50M"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fundingRangeIDUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"reviewDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-08-14T17:01:37.410+00:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"lastReviewer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amirhossein_mohammadghasemi"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"lastSeenDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-12T08:38:17.433+00:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"numberOfEquityRounds"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"numberOfGrants"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sustainabilityMetricLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Very high impact"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"employeesGrowthJSON"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 12,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2021,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 19</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 1,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 11,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 21</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 2,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 22</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 3,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 23</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 23</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 24</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 6,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 24</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 7,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 25</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 8,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 26</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 9,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: -4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 25</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 10,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 26</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 11,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 27</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 12,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 27</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 1,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 27</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 2,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 27</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 3,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: -4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 26</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: -4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 25</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: -4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 24</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 6,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 24</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 7,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: -4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 23</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 8,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 23</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 9,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 13,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 26</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 10,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 12,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 29</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 11,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 3,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 30</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 12,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 30</span><span class="se">\n</span><span class="s2">  }</span><span class="se">\n</span><span class="s2">]"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20186</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"eutopiaScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="w">
+  </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.kraftblock.com"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='deal'>Deal</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dealID</td>
+<td>Internal funding round ID</td>
+</tr>
+<tr>
+<td>clientID</td>
+<td>Startup ID</td>
+</tr>
+<tr>
+<td>clientName</td>
+<td>Startup name</td>
+</tr>
+</tbody></table>
+<h2 id='deal-deprecated'>Deal (Deprecated)</h2>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4126,6 +3823,26 @@ Please note that manually closing a session is not required, since it will be cl
 </tr>
 </tbody></table>
 <h2 id='investor'>Investor</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>investorID</td>
+<td>Investor ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Investor name</td>
+</tr>
+<tr>
+<td>website</td>
+<td>Investor website</td>
+</tr>
+</tbody></table>
+<h2 id='investor-deprecated'>Investor (Deprecated)</h2>
 <table><thead>
 <tr>
 <th>Name</th>
