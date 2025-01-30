@@ -276,9 +276,9 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 
 To get a startup overview and taxonomy you should use the following endpoint:
 
-`GET /getStartup/[directLink]`
+`GET /getStartup/[clientID]`
 
-It takes a single parameter, indicated as ”[directLink]” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”directLink”, and has the following response codes:
+It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”clientID”, and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
