@@ -1381,10 +1381,10 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 
 | Name    | Content                                                      |
 |---------|--------------------------------------------------------------|
-| results | List of Section [Startup](#startup)                          |
+| results | List of Section [Startup (small)](#startup-(small))          |
 | count   | Total number of results, regardless of the ”limit” parameter |
 
-## Startup 
+## Startup (small)
 
 | Name                           | Content         |
 |--------------------------------|-----------------|
@@ -1392,7 +1392,7 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | name                           | Company name    |
 | website                        | Company website |
 
-## Startup (Deprecated)
+## Startup
 
 | Name                           | Content                                                  |
 |--------------------------------|----------------------------------------------------------|
@@ -1478,17 +1478,7 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | numberOfGrants                 | Number of company deals of type Grante                   |
 | employeesGrowthJSON            | Historical aggregation of the employees fluctuation      |
 
-> In case of a 200 response, the response body will contain the startup matching your request, with the format specified at section [Startup](#startup).
-
-```json
-{
-  "clientID": 423,
-  "name": "Kraftblock",
-  "website": "http://www.kraftblock.com"
-}
-```
-
-## Deal
+## Deal (small)
 
 | Name       | Content                                                    |
 |------------|------------------------------------------------------------|
@@ -1496,7 +1486,7 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | clientID   | Startup ID                                                 |
 | clientName | Startup name                                               |
 
-## Deal (Deprecated)
+## Deal
         
 | Name                   | Content                                                    |
 |------------------------|------------------------------------------------------------|
@@ -1548,7 +1538,7 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 
 | Name               | Content                                                      |
 |--------------------|--------------------------------------------------------------|
-| results            | List of Section [Deal](#deal)                                |
+| results            | List of Section [Deal (small)](#deal-(small))                |
 | count              | Total number of results, regardless of the ”limit” parameter |
 | roundsTotalFunding | Total amount of results, regardless of the ”limit” parameter |
 | selectedCurrency   | Selected currency of the user                                |
@@ -1634,11 +1624,11 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 
 | Name         | Content                                                               |
 |--------------|-----------------------------------------------------------------------|
-| results      | List of Section [Investor](#investor)                                 |
+| results      | List of Section [Investor (small)](#investor-(small))                 |
 | count        | Total number of results, regardless of the ”limit” parameter          |
 | totalFunding | Total funding from the investors, regardless of the ”limit” parameter |
 
-## Investor
+## Investor (small)
 
 | Name       | Content          |
 |------------|------------------|
@@ -1646,7 +1636,7 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | name       | Investor name    |
 | website    | Investor website |
 
-## Investor (Deprecated)
+## Investor
 
 | Name                  | Content                                                  |
 |-----------------------|----------------------------------------------------------|
