@@ -534,7 +534,7 @@ The request body should be a list of round IDs, which you can get from previous 
 
 ## Funding round sources
 
-> To get all the sources of a funding round, use this code:
+> To get all the sources of a specific funding round, use this code:
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
