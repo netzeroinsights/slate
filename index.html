@@ -970,7 +970,7 @@ Please note that manually closing a session is not required, since it will be cl
 <p>To get all the contacts of a startup, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/contacts"</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/contacts/company"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s2">"{'clientID': 668, 'decisionMaker': false, 'roleID': 5}"</span>
 </code></pre></div>
@@ -1000,7 +1000,7 @@ Please note that manually closing a session is not required, since it will be cl
 </span></code></pre></div>
 <p>To get all contacts of a startup, you should use the following endpoint:</p>
 
-<p><code>POST /contacts</code></p>
+<p><code>POST /contacts/company</code></p>
 
 <p>With a JSON request body in the format specified at the Section <a href="#contacts-filter">Contacts Filter</a>, and has the following response codes:</p>
 
@@ -1135,7 +1135,7 @@ Please note that manually closing a session is not required, since it will be cl
 </tbody></table>
 <h2 id='funding-round-sources'>Funding round sources</h2>
 <blockquote>
-<p>To get all the sources of a funding round, use this code:</p>
+<p>To get all the sources of a specific funding round, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
  <span class="nt">-X</span> GET https://api.netzeroinsights.com/roundNewsByRoundID/86971
@@ -1274,7 +1274,7 @@ Please note that manually closing a session is not required, since it will be cl
 <p>To get all the contacts of an investor, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/investor/contacts"</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/contacts/investor"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s2">"{'investorID': 16328, 'decisionMaker': false}"</span>
 </code></pre></div>
@@ -1307,7 +1307,7 @@ Please note that manually closing a session is not required, since it will be cl
 </span></code></pre></div>
 <p>To get all contacts of an investor, you should use the following endpoint:</p>
 
-<p><code>POST /investor/contacts</code></p>
+<p><code>POST /contacts/investor</code></p>
 
 <p>With a JSON request body in the format specified at the Section <a href="#investor-contacts-filter">Investor Contacts Filter</a>, and has the following response codes:</p>
 
