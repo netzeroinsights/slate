@@ -382,7 +382,7 @@ It takes a single parameter, indicated as ”[clientID]” in the example, which
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST "https://api.netzeroinsights.com/contacts" \
+-X POST "https://api.netzeroinsights.com/contacts/company" \
 -H "Content-Type: application/json" \
 -d "{'clientID': 668, 'decisionMaker': false, 'roleID': 5}"
 ```
@@ -414,7 +414,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 
 To get all contacts of a startup, you should use the following endpoint:
 
-`POST /contacts`
+`POST /contacts/company`
 
 With a JSON request body in the format specified at the Section [Contacts Filter](#contacts-filter), and has the following response codes:
 
@@ -666,7 +666,7 @@ It takes a single parameter, indicated as ”[investorID]” in the example, and
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST "https://api.netzeroinsights.com/investor/contacts" \
+-X POST "https://api.netzeroinsights.com/contacts/investor" \
 -H "Content-Type: application/json" \
 -d "{'investorID': 16328, 'decisionMaker': false}"
 ```
@@ -701,7 +701,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 
 To get all contacts of an investor, you should use the following endpoint:
 
-`POST /investor/contacts`
+`POST /contacts/investor`
 
 With a JSON request body in the format specified at the Section [Investor Contacts Filter](#investor-contacts-filter), and has the following response codes:
 
