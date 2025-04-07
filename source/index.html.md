@@ -649,6 +649,122 @@ It takes a single parameter, indicated as ”[coFundingRoundId]” in the exampl
 |---------------|--------------------|
 | 200           | Request successful |
 
+# Deal Detail
+
+> To get the details of a Deal, use this code:
+
+```shell
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/fundingRound/42643"
+```
+
+> In case of a 200 response, the response body will contain the requested deal, with the format specified at section [Deal](#deal).
+
+```json
+{
+  "clientId": 45891,
+  "clientName": "Ecohelix",
+  "clientLogoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1704479512/Startups/p2epr8fhratvldckqbxv.jpg",
+  "clientPitchLine": "Manufacturer of amphiphilic polymers intended for packaging, construction, and cosmetics sectors.",
+  "clientHQ": "Sweden",
+  "clientCityHQ": "Stockholm",
+  "clientCountryCode": "SE",
+  "clientCountryID": 205,
+  "clientContinentID": 3,
+  "clientFoundedDate": "2014",
+  "roundDate": "2021-05-13T00:00:00.000+00:00",
+  "roundType": "Seed",
+  "roundAmount": 1972593.0,
+  "roundAmountUSD": 2395397.0,
+  "roundAmountString": "1.97M",
+  "roundAmountStringUSD": "2.4M",
+  "roundAmountRangeID": 3,
+  "roundAmountRangeIDUSD": 3,
+  "roundInvestorIDs": [
+    136,
+    1811,
+    3686,
+    14896
+  ],
+  "roundInvestors": [
+    {
+      "id": 136,
+      "name": "Molindo Energy",
+      "website": "https://www.molindo.se/",
+      "fundingRoundId": 42643,
+      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1687952923/Investors/orwa0yiqmkjkcdvgo9ec.jpg",
+      "investorSince": "2021-05-13T00:00:00.000+00:00"
+    },
+    {
+      "id": 1811,
+      "name": "European Innovation Council Fund",
+      "website": "https://eic.ec.europa.eu/select-language?destination=/node/1",
+      "fundingRoundId": 42643,
+      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1687345554/Investors/vsvgdeqplej2qwt6vhxe.jpg",
+      "investorSince": "2007-01-01T00:00:00.000+00:00"
+    },
+    {
+      "id": 3686,
+      "name": "Lärarnas Riksförbunds Studerandeförening",
+      "website": "http://ww.lr.se/lrstud",
+      "fundingRoundId": 42643,
+      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1705075824/Investors/ifig49nujrf75l2cy5ow.jpg",
+      "investorSince": "2018-12-14T00:00:00.000+00:00"
+    },
+    {
+      "id": 14896,
+      "name": "Almi",
+      "website": "https://www.almi.se/",
+      "fundingRoundId": 42643,
+      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1690947644/Investors/mhqlfur7jtx2frmxwln6.png",
+      "investorSince": "2009-01-01T00:00:00.000+00:00"
+    }
+  ],
+  "roundNews": [
+    {
+      "id": 1654,
+      "url": "https://nordic9.com/news/ecohelix-announced-raising-sek-20-million/",
+      "title": "Ecohelix announced raising SEK 20 million. | Nordic 9",
+      "coFundingRoundID": 42643
+    },
+    {
+      "id": 47334,
+      "url": "https://www.breakit.se/artikel/28902/ecohelix-ska-gora-din-plast-mindre-dum-mot-miljon-plockar-in-20-miljoner",
+      "coFundingRoundID": 42643
+    }
+  ],
+  "roundCurrency": "SEK",
+  "originalRoundAmount": 2.0E7,
+  "numberOfRounds": 4,
+  "totalFunding": 8172438.0,
+  "totalFundingUSD": 8984881.0,
+  "totalFundingString": "8.17M",
+  "totalFundingStringUSD": "8.98M",
+  "roundNumber": 2,
+  "financingInstrument": "Equity",
+  "lastRound": false,
+  "sizeID": 2,
+  "size": "11 - 50",
+  "trlID": 4,
+  "trl": "6-8",
+  "status": "COMPLETED",
+  "equityStageID": 2,
+  "exitStageID": 1,
+  "id": 42643
+}
+```
+
+To get the deal information, you should use the following endpoint:
+
+`GET /fundingRound/[fundingRoundID]`
+
+It takes a single parameter, indicated as ”[fundingRoundID]” in the example, and has the following response codes:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
+
+
 # Investor Detail
 
 > To get the details of an Investor, use this code:
@@ -780,121 +896,6 @@ To get all contacts of an investor, you should use the following endpoint:
 `POST /contacts/investor`
 
 With a JSON request body in the format specified at the Section [Investor Contacts Filter](#investor-contacts-filter), and has the following response codes:
-
-| Response code | Meaning            |
-|---------------|--------------------|
-| 200           | Request successful |
-
-# Deal Detail
-
-> To get the details of a Deal, use this code:
-
-```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/fundingRound/42643"
-```
-
-> In case of a 200 response, the response body will contain the requested deal, with the format specified at section [Deal](#deal).
-
-```json
-{
-  "clientId": 45891,
-  "clientName": "Ecohelix",
-  "clientLogoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1704479512/Startups/p2epr8fhratvldckqbxv.jpg",
-  "clientPitchLine": "Manufacturer of amphiphilic polymers intended for packaging, construction, and cosmetics sectors.",
-  "clientHQ": "Sweden",
-  "clientCityHQ": "Stockholm",
-  "clientCountryCode": "SE",
-  "clientCountryID": 205,
-  "clientContinentID": 3,
-  "clientFoundedDate": "2014",
-  "roundDate": "2021-05-13T00:00:00.000+00:00",
-  "roundType": "Seed",
-  "roundAmount": 1972593.0,
-  "roundAmountUSD": 2395397.0,
-  "roundAmountString": "1.97M",
-  "roundAmountStringUSD": "2.4M",
-  "roundAmountRangeID": 3,
-  "roundAmountRangeIDUSD": 3,
-  "roundInvestorIDs": [
-    136,
-    1811,
-    3686,
-    14896
-  ],
-  "roundInvestors": [
-    {
-      "id": 136,
-      "name": "Molindo Energy",
-      "website": "https://www.molindo.se/",
-      "fundingRoundId": 42643,
-      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1687952923/Investors/orwa0yiqmkjkcdvgo9ec.jpg",
-      "investorSince": "2021-05-13T00:00:00.000+00:00"
-    },
-    {
-      "id": 1811,
-      "name": "European Innovation Council Fund",
-      "website": "https://eic.ec.europa.eu/select-language?destination=/node/1",
-      "fundingRoundId": 42643,
-      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1687345554/Investors/vsvgdeqplej2qwt6vhxe.jpg",
-      "investorSince": "2007-01-01T00:00:00.000+00:00"
-    },
-    {
-      "id": 3686,
-      "name": "Lärarnas Riksförbunds Studerandeförening",
-      "website": "http://ww.lr.se/lrstud",
-      "fundingRoundId": 42643,
-      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1705075824/Investors/ifig49nujrf75l2cy5ow.jpg",
-      "investorSince": "2018-12-14T00:00:00.000+00:00"
-    },
-    {
-      "id": 14896,
-      "name": "Almi",
-      "website": "https://www.almi.se/",
-      "fundingRoundId": 42643,
-      "logoURL": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1690947644/Investors/mhqlfur7jtx2frmxwln6.png",
-      "investorSince": "2009-01-01T00:00:00.000+00:00"
-    }
-  ],
-  "roundNews": [
-    {
-      "id": 1654,
-      "url": "https://nordic9.com/news/ecohelix-announced-raising-sek-20-million/",
-      "title": "Ecohelix announced raising SEK 20 million. | Nordic 9",
-      "coFundingRoundID": 42643
-    },
-    {
-      "id": 47334,
-      "url": "https://www.breakit.se/artikel/28902/ecohelix-ska-gora-din-plast-mindre-dum-mot-miljon-plockar-in-20-miljoner",
-      "coFundingRoundID": 42643
-    }
-  ],
-  "roundCurrency": "SEK",
-  "originalRoundAmount": 2.0E7,
-  "numberOfRounds": 4,
-  "totalFunding": 8172438.0,
-  "totalFundingUSD": 8984881.0,
-  "totalFundingString": "8.17M",
-  "totalFundingStringUSD": "8.98M",
-  "roundNumber": 2,
-  "financingInstrument": "Equity",
-  "lastRound": false,
-  "sizeID": 2,
-  "size": "11 - 50",
-  "trlID": 4,
-  "trl": "6-8",
-  "status": "COMPLETED",
-  "equityStageID": 2,
-  "exitStageID": 1,
-  "id": 42643
-}
-```
-
-To get the deal information, you should use the following endpoint:
-
-`GET /fundingRound/[fundingRoundID]`
-
-It takes a single parameter, indicated as ”[fundingRoundID]” in the example, and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
