@@ -331,6 +331,12 @@
             <a href="#startup-list" class="toc-h1 toc-link" data-title="Startup List">Startup List</a>
           </li>
           <li>
+            <a href="#deals-list" class="toc-h1 toc-link" data-title="Deals List">Deals List</a>
+          </li>
+          <li>
+            <a href="#investors-list" class="toc-h1 toc-link" data-title="Investors List">Investors List</a>
+          </li>
+          <li>
             <a href="#startup-detail" class="toc-h1 toc-link" data-title="Startup Detail">Startup Detail</a>
               <ul class="toc-list-h2">
                   <li>
@@ -357,18 +363,15 @@
               </ul>
           </li>
           <li>
+            <a href="#deal-detail" class="toc-h1 toc-link" data-title="Deal Detail">Deal Detail</a>
+          </li>
+          <li>
             <a href="#investor-detail" class="toc-h1 toc-link" data-title="Investor Detail">Investor Detail</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#investor-contacts" class="toc-h2 toc-link" data-title="Investor Contacts">Investor Contacts</a>
                   </li>
               </ul>
-          </li>
-          <li>
-            <a href="#deals-list" class="toc-h1 toc-link" data-title="Deals List">Deals List</a>
-          </li>
-          <li>
-            <a href="#investors-list" class="toc-h1 toc-link" data-title="Investors List">Investors List</a>
           </li>
           <li>
             <a href="#deprecated-endpoints" class="toc-h1 toc-link" data-title="Deprecated Endpoints">Deprecated Endpoints</a>
@@ -696,6 +699,90 @@ Please note that manually closing a session is not required, since it will be cl
 <p>To search our startup database you should use the following endpoint:</p>
 
 <p><code>POST /companies</code></p>
+
+<p>With a JSON request body in the format specified at the section <a href="#main-filter">Main Filter</a>.</p>
+
+<p>The possible response codes are:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+</tbody></table>
+<h1 id='deals-list'>Deals List</h1>
+<blockquote>
+<p>To get the deals list, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/fundingRounds'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+<span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section <a href="#deal-search">Deals Search</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">52018</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"dealID"</span><span class="p">:</span><span class="w"> </span><span class="mi">425794</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">5051</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clientName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lightmatter"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To search our deals database you should use the following endpoint:</p>
+
+<p><code>POST /fundingRounds</code></p>
+
+<p>With a JSON request body in the format specified at the section <a href="#main-filter">Main Filter</a>.</p>
+
+<p>The possible response codes are:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+</tbody></table>
+<h1 id='investors-list'>Investors List</h1>
+<blockquote>
+<p>To get the investors list, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/investors'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+<span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section <a href="#investor-search">Investors Search</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22736</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">9156</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Carlyle Group"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.carlyle.com/"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To search our investors database you should use the following endpoint:</p>
+
+<p><code>POST /investors</code></p>
 
 <p>With a JSON request body in the format specified at the section <a href="#main-filter">Main Filter</a>.</p>
 
@@ -1178,6 +1265,125 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Request successful</td>
 </tr>
 </tbody></table>
+<h1 id='deal-detail'>Deal Detail</h1>
+<blockquote>
+<p>To get the details of a Deal, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/fundingRound/42643"</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested deal, with the format specified at section <a href="#deal">Deal</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">45891</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clientName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ecohelix"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clientLogoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1704479512/Startups/p2epr8fhratvldckqbxv.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clientPitchLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manufacturer of amphiphilic polymers intended for packaging, construction, and cosmetics sectors."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clientHQ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sweden"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clientCityHQ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stockholm"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clientCountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clientCountryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">205</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clientContinentID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clientFoundedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"roundDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-13T00:00:00.000+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"roundType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seed"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"roundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">1972593.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"roundAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">2395397.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"roundAmountString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.97M"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"roundAmountStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4M"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"roundAmountRangeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"roundAmountRangeIDUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"roundInvestorIDs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">136</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1811</span><span class="p">,</span><span class="w">
+    </span><span class="mi">3686</span><span class="p">,</span><span class="w">
+    </span><span class="mi">14896</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"roundInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">136</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Molindo Energy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.molindo.se/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingRoundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">42643</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1687952923/Investors/orwa0yiqmkjkcdvgo9ec.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"investorSince"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-13T00:00:00.000+00:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1811</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"European Innovation Council Fund"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://eic.ec.europa.eu/select-language?destination=/node/1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingRoundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">42643</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1687345554/Investors/vsvgdeqplej2qwt6vhxe.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"investorSince"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2007-01-01T00:00:00.000+00:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3686</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lärarnas Riksförbunds Studerandeförening"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ww.lr.se/lrstud"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingRoundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">42643</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1705075824/Investors/ifig49nujrf75l2cy5ow.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"investorSince"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T00:00:00.000+00:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14896</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Almi"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.almi.se/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingRoundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">42643</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1690947644/Investors/mhqlfur7jtx2frmxwln6.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"investorSince"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2009-01-01T00:00:00.000+00:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"roundNews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1654</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://nordic9.com/news/ecohelix-announced-raising-sek-20-million/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ecohelix announced raising SEK 20 million. | Nordic 9"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coFundingRoundID"</span><span class="p">:</span><span class="w"> </span><span class="mi">42643</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47334</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.breakit.se/artikel/28902/ecohelix-ska-gora-din-plast-mindre-dum-mot-miljon-plockar-in-20-miljoner"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coFundingRoundID"</span><span class="p">:</span><span class="w"> </span><span class="mi">42643</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"roundCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEK"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"originalRoundAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0E7</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfRounds"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mf">8172438.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">8984881.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalFundingString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.17M"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalFundingStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.98M"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"roundNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"financingInstrument"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Equity"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastRound"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sizeID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11 - 50"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"trlID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"trl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"equityStageID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"exitStageID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42643</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get the deal information, you should use the following endpoint:</p>
+
+<p><code>GET /fundingRound/[fundingRoundID]</code></p>
+
+<p>It takes a single parameter, indicated as ”[fundingRoundID]” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+</tbody></table>
 <h1 id='investor-detail'>Investor Detail</h1>
 <blockquote>
 <p>To get the details of an Investor, use this code:</p>
@@ -1310,90 +1516,6 @@ Please note that manually closing a session is not required, since it will be cl
 <p><code>POST /contacts/investor</code></p>
 
 <p>With a JSON request body in the format specified at the Section <a href="#investor-contacts-filter">Investor Contacts Filter</a>, and has the following response codes:</p>
-
-<table><thead>
-<tr>
-<th>Response code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>Request successful</td>
-</tr>
-</tbody></table>
-<h1 id='deals-list'>Deals List</h1>
-<blockquote>
-<p>To get the deals list, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/fundingRounds'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
-<span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
-</code></pre></div>
-<blockquote>
-<p>In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section <a href="#deal-search">Deals Search</a>.</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">52018</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"dealID"</span><span class="p">:</span><span class="w"> </span><span class="mi">425794</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">5051</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lightmatter"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>To search our deals database you should use the following endpoint:</p>
-
-<p><code>POST /fundingRounds</code></p>
-
-<p>With a JSON request body in the format specified at the section <a href="#main-filter">Main Filter</a>.</p>
-
-<p>The possible response codes are:</p>
-
-<table><thead>
-<tr>
-<th>Response code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>Request successful</td>
-</tr>
-</tbody></table>
-<h1 id='investors-list'>Investors List</h1>
-<blockquote>
-<p>To get the investors list, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/investors'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
-<span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
-</code></pre></div>
-<blockquote>
-<p>In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section <a href="#investor-search">Investors Search</a>.</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22736</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">9156</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Carlyle Group"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.carlyle.com/"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>To search our investors database you should use the following endpoint:</p>
-
-<p><code>POST /investors</code></p>
-
-<p>With a JSON request body in the format specified at the section <a href="#main-filter">Main Filter</a>.</p>
-
-<p>The possible response codes are:</p>
 
 <table><thead>
 <tr>
