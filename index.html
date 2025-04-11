@@ -360,6 +360,9 @@
                   <li>
                     <a href="#funding-round-sources" class="toc-h2 toc-link" data-title="Funding round sources">Funding round sources</a>
                   </li>
+                  <li>
+                    <a href="#startup-commercial-deals" class="toc-h2 toc-link" data-title="Startup Commercial Deals">Startup Commercial Deals</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -368,6 +371,9 @@
           <li>
             <a href="#investor-detail" class="toc-h1 toc-link" data-title="Investor Detail">Investor Detail</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#investor-commercial-deals" class="toc-h2 toc-link" data-title="Investor Commercial Deals">Investor Commercial Deals</a>
+                  </li>
                   <li>
                     <a href="#investor-contacts" class="toc-h2 toc-link" data-title="Investor Contacts">Investor Contacts</a>
                   </li>
@@ -526,6 +532,9 @@
                   </li>
                   <li>
                     <a href="#investor-contact" class="toc-h2 toc-link" data-title="Investor Contact">Investor Contact</a>
+                  </li>
+                  <li>
+                    <a href="#commercial-deal" class="toc-h2 toc-link" data-title="Commercial Deal">Commercial Deal</a>
                   </li>
               </ul>
           </li>
@@ -808,6 +817,7 @@ Please note that manually closing a session is not required, since it will be cl
 <li><a href="#startup-investors">Investors</a></li>
 <li><a href="#startup-contacts">Contacts</a></li>
 <li><a href="#startup-funding-rounds">Funding Rounds</a></li>
+<li><a href="#startup-commercial-deals">Commercial Deals</a></li>
 </ol>
 
 <p>Additionally, for each funding round, you can get the investors and the sources using the following endpoints:</p>
@@ -865,6 +875,7 @@ Please note that manually closing a session is not required, since it will be cl
   </span><span class="nl">"lastRoundAmountString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"169M"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lastRoundAmountStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"184M"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lastRoundType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grant"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"revenuesRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;500M"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"tagTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
@@ -920,6 +931,18 @@ Please note that manually closing a session is not required, since it will be cl
       </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13. Climate action"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"piFrameworks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adoption"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"definition"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Physical offer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"definition"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
   </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"roundCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
   </span><span class="nl">"fundingRangeUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;250M"</span><span class="p">,</span><span class="w">
@@ -931,6 +954,8 @@ Please note that manually closing a session is not required, since it will be cl
   </span><span class="nl">"numberOfGrants"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="nl">"sustainabilityMetricLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Very high impact"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"employeesGrowthJSON"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 12,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2021,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 152</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 1,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 3,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 157</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 2,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 1,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 158</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 3,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 164</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 2,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 168</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 177</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 6,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 186</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 7,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 194</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 8,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 204</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 9,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 6,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 216</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 10,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 11,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 239</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 11,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 6,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 253</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 12,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 3,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 261</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 1,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 2,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 266</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 2,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 3,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 275</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 3,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 285</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 1,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 289</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 3,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 298</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 6,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 311</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 7,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 2,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 318</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 8,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 2,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 323</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 9,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 336</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 10,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 354</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 11,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 1,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 359</span><span class="se">\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 12,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\n</span><span class="s2">    },</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 359</span><span class="se">\n</span><span class="s2">  }</span><span class="se">\n</span><span class="s2">]"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currentEmployeesCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">431</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">527</span><span class="p">,</span><span class="w">
   </span><span class="nl">"eutopiaScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1265,6 +1290,92 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Request successful</td>
 </tr>
 </tbody></table>
+<h2 id='startup-commercial-deals'>Startup Commercial Deals</h2>
+<blockquote>
+<p>To get all the commercial deals of a startup, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET https://api.netzeroinsights.com/commercial-deals/connected-entities/company/668
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section <a href="#commercial-deal">Commercial Deal</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supply Agreement between P2X Solutions and Sunfire"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P2X Solutions, a Finnish leader in green hydrogen and power-to-x technology, is building Finland’s first industrial-scale green hydrogen and synthetic methane production plant in Harjavalta. The plant will use electrolysis powered by renewable electricity to produce hydrogen, completely emission-free. P2X Solutions has selected the German company Sunfire to supply the electrolysis equipment for the plant, which represents the largest single investment in the project. With the goal of combating climate change and enhancing energy security, P2X Solutions aims to build 1,000 MW of electrolysis capacity by 2031, supporting Finland’s transition to a cleaner and more self-sufficient energy future. The Harjavalta plant will reduce Finland’s CO2 emissions by approximately 40,000 tons per year. The heat and oxygen by-products will also be utilized in industrial processes. Construction of the 20-megawatt facility is scheduled to begin in the fall of 2023, with completion expected in summer 2024."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-22T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"searchableLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"countryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Finland"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FI"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"continentID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"continentName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">790205</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"primaryCommercialDealTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supply Agreement"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"secondaryCommercialDealTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P2X Solutions"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/v1736056027/Startups/hrflwd0bts8srjpfpizk.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">45898</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyer"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/45898"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">358</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sunfire"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/v1725972123/Startups/rmsmnna8ulwlxo7hib6h.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">668</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/668"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">359</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"news"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://p2x.fi/en/p2x-solutions-green-hydrogen-electrolysis-equipment-supply-agreement-signed/"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P2X Solutions’ green hydrogen electrolysis equipment supply agreement signed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-22T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">551</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1517</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get all the commercial deals of a startup, you should use the following endpoint:</p>
+
+<p><code>GET /connected-entities/company/[clientID]</code></p>
+
+<p>It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list">Startup List</a>, variable ”clientID”, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+</tbody></table>
 <h1 id='deal-detail'>Deal Detail</h1>
 <blockquote>
 <p>To get the details of a Deal, use this code:</p>
@@ -1463,6 +1574,121 @@ Please note that manually closing a session is not required, since it will be cl
 <p><code>GET /getInvestor/[investorID]</code></p>
 
 <p>It takes a single parameter, indicated as ”[investorID]” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+</tbody></table>
+<h2 id='investor-commercial-deals'>Investor Commercial Deals</h2>
+<blockquote>
+<p>To get all the commercial deals of an investor, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET https://api.netzeroinsights.com/commercial-deals/connected-entities/investor/668
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section <a href="#commercial-deal">Commercial Deal</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offtake Agreement between Woolworths Group, Samsara Eco, Australian National University and Main Sequence"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Woolworths Group has entered into a commercial agreement with Samsara, an Australian plastic recycling startup founded in partnership with Australian National University (ANU) and CSIRO-backed Main Sequence. The agreement aims to revolutionize plastic packaging recycling by utilizing Samsara's enzyme technology, developed by ANU scientists, to break down used plastic into its basic building blocks for infinite recycling. Woolworths is committed to purchasing the first 5,000 tonnes of Samsara's recycled plastic for its own brand packaging, starting with containers for products like mini tomatoes, with the goal of replacing the need for new plastic production. This collaboration intends to move Samsara's technology from lab to supermarket shelves within the next two years, establishing a commercial recycling plant that will employ approximately 50 people and contribute to a circular economy. The agreement also aims to encourage other retailers and suppliers to adopt this technology, contributing to Australia's National Packaging Target of 50% recycled content in packaging by 2025."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5,000 tonnes of recycled Samsara plastic"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-09-21T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"searchableLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"countryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australia"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"continentID"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"continentName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oceania"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">761925</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"primaryCommercialDealTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offtake Agreement"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"secondaryCommercialDealTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Research and Development Agreement (R&amp;D)"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Woolworths Group"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://eutopstorage.blob.core.windows.net/company-logos/168300%2F1726152129617_woolworths_group_logo.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">168300</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyer"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/168300"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Samsara Eco"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1719502905/Startups/mx9yohyz6gjyfhngenwm.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">88483</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/88483"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australian National University"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/v1729139119/Investors/qhqqbquqegswu6pcs08v.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">35485</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investor/35485"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Main Sequence"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/v1727500653/Investors/v6utgjmfzhdtxfxwvsx9.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1786</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investor/1786"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"news"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.samsaraeco.com/news/woolworths-group-plots-path-to-no-new-plastic-with-australian-innovators"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Woolworths Group plots path to no new plastic with Australian innovators"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-09-21T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">58</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1260</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get all the commercial deals of an investor, you should use the following endpoint:</p>
+
+<p><code>GET /connected-entities/investor/[investorID]</code></p>
+
+<p>It takes a single parameter, indicated as ”[investorID]” in the example, which is taken from a previous call of the endpoint at <a href="#investors-list">Investors List</a>, variable ”investorID”, and has the following response codes:</p>
 
 <table><thead>
 <tr>
@@ -3243,6 +3469,10 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Continent ID</td>
 </tr>
 <tr>
+<td>address</td>
+<td>Address of the company</td>
+</tr>
+<tr>
 <td>admin1</td>
 <td>Administrative region level 1 name</td>
 </tr>
@@ -3359,6 +3589,10 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Year related to the ”revenueEuro” field</td>
 </tr>
 <tr>
+<td>revenuesRange</td>
+<td>Revenue range</td>
+</tr>
+<tr>
 <td>tags</td>
 <td>Company tags</td>
 </tr>
@@ -3381,6 +3615,10 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>sdgs</td>
 <td>Sustainable Development Goals</td>
+</tr>
+<tr>
+<td>piFrameworks</td>
+<td>PI Frameworks</td>
 </tr>
 <tr>
 <td>investorPartnerSet</td>
@@ -3448,11 +3686,23 @@ Please note that manually closing a session is not required, since it will be cl
 </tr>
 <tr>
 <td>numberOfGrants</td>
-<td>Number of company deals of type Grante</td>
+<td>Number of company deals of type Grant</td>
 </tr>
 <tr>
 <td>employeesGrowthJSON</td>
 <td>Historical aggregation of the employees fluctuation</td>
+</tr>
+<tr>
+<td>currentEmployeesCount</td>
+<td>Number of current employees</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Active status of the company</td>
+</tr>
+<tr>
+<td>note</td>
+<td>Note on the company</td>
 </tr>
 </tbody></table>
 <h2 id='deal-small'>Deal (small)</h2>
@@ -3563,20 +3813,20 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Round amount range ID (USD)</td>
 </tr>
 <tr>
-<td>roundInvestors</td>
+<td>roundInvestorsIDs</td>
 <td>List of IDs of all the investors of the round</td>
 </tr>
 <tr>
-<td>roundInvestorPOJOs</td>
-<td>List of IDs of all the investor DTOs of the round</td>
+<td>roundInvestors</td>
+<td>List of all the investor DTOs of the round</td>
 </tr>
 <tr>
-<td>roundNews</td>
+<td>roundNewsIDs</td>
 <td>List of IDs of all the sources of the round</td>
 </tr>
 <tr>
-<td>roundNewsPOJOs</td>
-<td>List of IDs of all the source DTOs of the round</td>
+<td>roundNews</td>
+<td>List of all the source DTOs of the round</td>
 </tr>
 <tr>
 <td>roundCurrency</td>
@@ -4007,6 +4257,10 @@ Please note that manually closing a session is not required, since it will be cl
 <td>URL to investor Facebook</td>
 </tr>
 <tr>
+<td>pitchbookURL</td>
+<td>URL to investor Pitchbook</td>
+</tr>
+<tr>
 <td>email</td>
 <td>Investor main email</td>
 </tr>
@@ -4105,6 +4359,90 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>id</td>
 <td>Internal person ID</td>
+</tr>
+</tbody></table>
+<h2 id='commercial-deal'>Commercial Deal</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Internal commercial deal ID</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Commercial deal title</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Commercial deal description</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Volumetric value of the deal component</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Commercial deal currency</td>
+</tr>
+<tr>
+<td>announcedDate</td>
+<td>Commercial deal announcement date</td>
+</tr>
+<tr>
+<td>startYear</td>
+<td>Commercial deal start year</td>
+</tr>
+<tr>
+<td>endYear</td>
+<td>Commercial deal end year</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>Commercial deal duration</td>
+</tr>
+<tr>
+<td>pricing</td>
+<td>Commercial deal pricing in given currency</td>
+</tr>
+<tr>
+<td>pricingEUR</td>
+<td>Commercial deal pricing in EUR</td>
+</tr>
+<tr>
+<td>pricingUSD</td>
+<td>Commercial deal pricing in USD</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags associated with the commercial deal</td>
+</tr>
+<tr>
+<td>searchableLocations</td>
+<td>Commercial deal locations</td>
+</tr>
+<tr>
+<td>primaryCommercialDealTypes</td>
+<td>Commercial deal primary types</td>
+</tr>
+<tr>
+<td>secondaryCommercialDealTypes</td>
+<td>Commercial deal secondary types</td>
+</tr>
+<tr>
+<td>connectedCompanies</td>
+<td>Companies connected to the commercial deal</td>
+</tr>
+<tr>
+<td>connectedInvestors</td>
+<td>Investors connected to the commercial deal</td>
+</tr>
+<tr>
+<td>news</td>
+<td>News connected to the commercial deal</td>
 </tr>
 </tbody></table>
 <h1 id='taxonomy-page'>Taxonomy Page</h1>
