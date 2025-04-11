@@ -222,6 +222,7 @@ All the information related to a startup is divided into different sections:
 3. [Investors](#startup-investors)
 4. [Contacts](#startup-contacts)
 5. [Funding Rounds](#startup-funding-rounds)
+6. [Commercial Deals](#startup-commercial-deals)
 
 Additionally, for each funding round, you can get the investors and the sources using the following endpoints:
 
@@ -279,6 +280,7 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
   "lastRoundAmountString": "169M",
   "lastRoundAmountStringUSD": "184M",
   "lastRoundType": "Grant",
+  "revenuesRange": ">500M",
   "tags": [
     {
       "tagTypeId": 11,
@@ -334,6 +336,18 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
       "label": "13. Climate action"
     }
   ],
+  "piFrameworks": [
+    {
+      "label": "Adoption",
+      "definition": "",
+      "id": 2
+    },
+    {
+      "label": "Physical offer",
+      "definition": "",
+      "id": 4
+    }
+  ],
   "note": "",
   "roundCount": 11,
   "fundingRangeUSD": ">250M",
@@ -345,6 +359,8 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
   "numberOfGrants": 3,
   "sustainabilityMetricLabel": "Very high impact",
   "employeesGrowthJSON": "[\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2021,\n      \"day\": 1\n    },\n    \"employeeCount\": 152\n  },\n  {\n    \"dateOn\": {\n      \"month\": 1,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 3,\n    \"employeeCount\": 157\n  },\n  {\n    \"dateOn\": {\n      \"month\": 2,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 1,\n    \"employeeCount\": 158\n  },\n  {\n    \"dateOn\": {\n      \"month\": 3,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 164\n  },\n  {\n    \"dateOn\": {\n      \"month\": 4,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 2,\n    \"employeeCount\": 168\n  },\n  {\n    \"dateOn\": {\n      \"month\": 5,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 177\n  },\n  {\n    \"dateOn\": {\n      \"month\": 6,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 186\n  },\n  {\n    \"dateOn\": {\n      \"month\": 7,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 194\n  },\n  {\n    \"dateOn\": {\n      \"month\": 8,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 204\n  },\n  {\n    \"dateOn\": {\n      \"month\": 9,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 6,\n    \"employeeCount\": 216\n  },\n  {\n    \"dateOn\": {\n      \"month\": 10,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 11,\n    \"employeeCount\": 239\n  },\n  {\n    \"dateOn\": {\n      \"month\": 11,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 6,\n    \"employeeCount\": 253\n  },\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2022,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 3,\n    \"employeeCount\": 261\n  },\n  {\n    \"dateOn\": {\n      \"month\": 1,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 2,\n    \"employeeCount\": 266\n  },\n  {\n    \"dateOn\": {\n      \"month\": 2,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 3,\n    \"employeeCount\": 275\n  },\n  {\n    \"dateOn\": {\n      \"month\": 3,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 285\n  },\n  {\n    \"dateOn\": {\n      \"month\": 4,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 1,\n    \"employeeCount\": 289\n  },\n  {\n    \"dateOn\": {\n      \"month\": 5,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 3,\n    \"employeeCount\": 298\n  },\n  {\n    \"dateOn\": {\n      \"month\": 6,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 311\n  },\n  {\n    \"dateOn\": {\n      \"month\": 7,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 2,\n    \"employeeCount\": 318\n  },\n  {\n    \"dateOn\": {\n      \"month\": 8,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 2,\n    \"employeeCount\": 323\n  },\n  {\n    \"dateOn\": {\n      \"month\": 9,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 4,\n    \"employeeCount\": 336\n  },\n  {\n    \"dateOn\": {\n      \"month\": 10,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 5,\n    \"employeeCount\": 354\n  },\n  {\n    \"dateOn\": {\n      \"month\": 11,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 1,\n    \"employeeCount\": 359\n  },\n  {\n    \"dateOn\": {\n      \"month\": 12,\n      \"year\": 2023,\n      \"day\": 1\n    },\n    \"monthlyPercentageDifference\": 0,\n    \"employeeCount\": 359\n  }\n]",
+  "currentEmployeesCount": 431,
+  "active": true,
   "id": 527,
   "eutopiaScore": 93
 }
@@ -649,6 +665,88 @@ It takes a single parameter, indicated as ”[coFundingRoundId]” in the exampl
 |---------------|--------------------|
 | 200           | Request successful |
 
+## Startup Commercial Deals
+
+> To get all the commercial deals of a startup, use this code:
+
+```shell
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET https://api.netzeroinsights.com/commercial-deals/connected-entities/company/668
+```
+
+> In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section [Commercial Deal](#commercial-deal).
+
+```json
+[
+  {
+    "title": "Supply Agreement between P2X Solutions and Sunfire",
+    "description": "P2X Solutions, a Finnish leader in green hydrogen and power-to-x technology, is building Finland’s first industrial-scale green hydrogen and synthetic methane production plant in Harjavalta. The plant will use electrolysis powered by renewable electricity to produce hydrogen, completely emission-free. P2X Solutions has selected the German company Sunfire to supply the electrolysis equipment for the plant, which represents the largest single investment in the project. With the goal of combating climate change and enhancing energy security, P2X Solutions aims to build 1,000 MW of electrolysis capacity by 2031, supporting Finland’s transition to a cleaner and more self-sufficient energy future. The Harjavalta plant will reduce Finland’s CO2 emissions by approximately 40,000 tons per year. The heat and oxygen by-products will also be utilized in industrial processes. Construction of the 20-megawatt facility is scheduled to begin in the fall of 2023, with completion expected in summer 2024.",
+    "announcedDate": "2022-03-22T00:00:00",
+    "searchableLocations": [
+      {
+        "countryID": 72,
+        "countryName": "Finland",
+        "countryCode": "FI",
+        "continentID": 3,
+        "continentName": "Europe",
+        "id": 790205
+      }
+    ],
+    "primaryCommercialDealTypes": [
+      {
+        "label": "Supply Agreement",
+        "id": 7
+      }
+    ],
+    "secondaryCommercialDealTypes": [],
+    "connectedCompanies": [
+      {
+        "name": "P2X Solutions",
+        "logo": "https://res.cloudinary.com/eutopia-3/image/upload/v1736056027/Startups/hrflwd0bts8srjpfpizk.jpg",
+        "clientID": 45898,
+        "commercialDealRole": {
+          "label": "Buyer",
+          "id": 1
+        },
+        "directURL": "organization/45898",
+        "id": 358
+      },
+      {
+        "name": "Sunfire",
+        "logo": "https://res.cloudinary.com/eutopia-3/image/upload/v1725972123/Startups/rmsmnna8ulwlxo7hib6h.jpg",
+        "clientID": 668,
+        "commercialDealRole": {
+          "label": "Seller",
+          "id": 2
+        },
+        "directURL": "organization/668",
+        "id": 359
+      }
+    ],
+    "connectedInvestors": [],
+    "news": [
+      {
+        "url": "https://p2x.fi/en/p2x-solutions-green-hydrogen-electrolysis-equipment-supply-agreement-signed/",
+        "title": "P2X Solutions’ green hydrogen electrolysis equipment supply agreement signed",
+        "date": "2022-03-22T00:00:00",
+        "id": 551
+      }
+    ],
+    "id": 1517
+  }
+]
+```
+
+To get all the commercial deals of a startup, you should use the following endpoint:
+
+`GET /connected-entities/company/[clientID]`
+
+It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”clientID”, and has the following response codes:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
+
 # Deal Detail
 
 > To get the details of a Deal, use this code:
@@ -847,6 +945,117 @@ To get the investor information, you should use the following endpoint:
 `GET /getInvestor/[investorID]`
 
 It takes a single parameter, indicated as ”[investorID]” in the example, and has the following response codes:
+
+| Response code | Meaning            |
+|---------------|--------------------|
+| 200           | Request successful |
+
+## Investor Commercial Deals
+
+> To get all the commercial deals of an investor, use this code:
+
+```shell
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET https://api.netzeroinsights.com/commercial-deals/connected-entities/investor/668
+```
+
+> In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section [Commercial Deal](#commercial-deal).
+
+```json
+[
+  {
+    "title": "Offtake Agreement between Woolworths Group, Samsara Eco, Australian National University and Main Sequence",
+    "description": "Woolworths Group has entered into a commercial agreement with Samsara, an Australian plastic recycling startup founded in partnership with Australian National University (ANU) and CSIRO-backed Main Sequence. The agreement aims to revolutionize plastic packaging recycling by utilizing Samsara's enzyme technology, developed by ANU scientists, to break down used plastic into its basic building blocks for infinite recycling. Woolworths is committed to purchasing the first 5,000 tonnes of Samsara's recycled plastic for its own brand packaging, starting with containers for products like mini tomatoes, with the goal of replacing the need for new plastic production. This collaboration intends to move Samsara's technology from lab to supermarket shelves within the next two years, establishing a commercial recycling plant that will employ approximately 50 people and contribute to a circular economy. The agreement also aims to encourage other retailers and suppliers to adopt this technology, contributing to Australia's National Packaging Target of 50% recycled content in packaging by 2025.",
+    "volume": "5,000 tonnes of recycled Samsara plastic",
+    "announcedDate": "2021-09-21T00:00:00",
+    "searchableLocations": [
+      {
+        "countryID": 13,
+        "countryName": "Australia",
+        "countryCode": "AU",
+        "continentID": 6,
+        "continentName": "Oceania",
+        "id": 761925
+      }
+    ],
+    "primaryCommercialDealTypes": [
+      {
+        "label": "Offtake Agreement",
+        "id": 6
+      }
+    ],
+    "secondaryCommercialDealTypes": [
+      {
+        "label": "Research and Development Agreement (R&D)",
+        "id": 5
+      }
+    ],
+    "connectedCompanies": [
+      {
+        "name": "Woolworths Group",
+        "logo": "https://eutopstorage.blob.core.windows.net/company-logos/168300%2F1726152129617_woolworths_group_logo.jpg",
+        "clientID": 168300,
+        "commercialDealRole": {
+          "label": "Buyer",
+          "id": 1
+        },
+        "directURL": "organization/168300",
+        "id": 39
+      },
+      {
+        "name": "Samsara Eco",
+        "logo": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1719502905/Startups/mx9yohyz6gjyfhngenwm.jpg",
+        "clientID": 88483,
+        "commercialDealRole": {
+          "label": "Seller",
+          "id": 2
+        },
+        "directURL": "organization/88483",
+        "id": 38
+      }
+    ],
+    "connectedInvestors": [
+      {
+        "name": "Australian National University",
+        "logo": "https://res.cloudinary.com/eutop-1/image/upload/v1729139119/Investors/qhqqbquqegswu6pcs08v.jpg",
+        "investorID": 35485,
+        "commercialDealRole": {
+          "label": "Seller",
+          "id": 2
+        },
+        "directURL": "investor/35485",
+        "id": 26
+      },
+      {
+        "name": "Main Sequence",
+        "logo": "https://res.cloudinary.com/eutopia-3/image/upload/v1727500653/Investors/v6utgjmfzhdtxfxwvsx9.jpg",
+        "investorID": 1786,
+        "commercialDealRole": {
+          "label": "Seller",
+          "id": 2
+        },
+        "directURL": "investor/1786",
+        "id": 27
+      }
+    ],
+    "news": [
+      {
+        "url": "https://www.samsaraeco.com/news/woolworths-group-plots-path-to-no-new-plastic-with-australian-innovators",
+        "title": "Woolworths Group plots path to no new plastic with Australian innovators",
+        "date": "2021-09-21T00:00:00",
+        "id": 58
+      }
+    ],
+    "id": 1260
+  }
+]
+```
+
+To get all the commercial deals of an investor, you should use the following endpoint:
+
+`GET /connected-entities/investor/[investorID]`
+
+It takes a single parameter, indicated as ”[investorID]” in the example, which is taken from a previous call of the endpoint at [Investors List](#investors-list), variable ”investorID”, and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
@@ -1540,6 +1749,7 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | cityID                         | City ID                                                  |
 | continent                      | Continent name                                           |
 | continentID                    | Continent ID                                             |
+| address                        | Address of the company                                   |
 | admin1                         | Administrative region level 1 name                       |
 | admin2                         | Administrative region level 2 name                       |
 | admin3                         | Administrative region level 3 name                       |
@@ -1569,12 +1779,14 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | lastRoundType                  | Last round type                                          |
 | revenueEuro                    | Total company revenue                                    |
 | revenueYear                    | Year related to the ”revenueEuro” field                  |
+| revenuesRange                  | Revenue range                                            |
 | tags                           | Company tags                                             |
 | trl                            | Company TRL                                              |
 | trlID                          | Company TRL ID                                           |
 | trlAcquisitionDate             | Last updated date of the company TRL                     |
 | fundingTypes                   | Funding types of any round                               |
 | sdgs                           | Sustainable Development Goals                            |
+| piFrameworks                   | PI Frameworks                                            |
 | investorPartnerSet             | Set of investorIDs                                       |
 | companyContactSet              | Set of contact IDs                                       |
 | isFundRaising                  | Company likelihood to fundraise                          |
@@ -1591,8 +1803,11 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | lastPostMoneyValuationCurrency | Latest post money valuation currency                     |
 | numberOfEquityRounds           | Number of company deals of type Equity                   |
 | numberOfDebtRounds             | Number of company deals of type Debt                     |
-| numberOfGrants                 | Number of company deals of type Grante                   |
+| numberOfGrants                 | Number of company deals of type Grant                    |
 | employeesGrowthJSON            | Historical aggregation of the employees fluctuation      |
+| currentEmployeesCount          | Number of current employees                              |
+| active                         | Active status of the company                             |
+| note                           | Note on the company                                      |
 
 ## Deal (small)
 
@@ -1626,10 +1841,10 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | roundAmountStringUSD   | Formatted amount of the round (USD)                        |
 | roundAmountRangeID     | Round amount range ID (EUR)                                |
 | roundAmountRangeIDUSD  | Round amount range ID (USD)                                |
-| roundInvestors         | List of IDs of all the investors of the round              |
-| roundInvestorPOJOs     | List of IDs of all the investor DTOs of the round          |
-| roundNews              | List of IDs of all the sources of the round                |
-| roundNewsPOJOs         | List of IDs of all the source DTOs of the round            |
+| roundInvestorsIDs      | List of IDs of all the investors of the round              |
+| roundInvestors         | List of all the investor DTOs of the round                 |
+| roundNewsIDs           | List of IDs of all the sources of the round                |
+| roundNews              | List of all the source DTOs of the round                   |
 | roundCurrency          | Original currency of the round                             |
 | originalRoundAmount    | Round amount in original currency                          |
 | numberOfRounds         | Number of rounds of the company                            |        
@@ -1767,6 +1982,7 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | linkedInURL           | URL to investor LinkedIn                                 |
 | twitterURL            | URL to investor Twitter                                  |
 | facebookURL           | URL to investor Facebook                                 |
+| pitchbookURL          | URL to investor Pitchbook                                |
 | email                 | Investor main email                                      |
 | phone                 | Investor main phone                                      |
 | size                  | Investor number of employees range                       |
@@ -1795,6 +2011,30 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 | linkedinURL   | Person LinkedIn URL                                 |
 | decisionMaker | True if the person has decision making capabilities |
 | id            | Internal person ID                                  |
+
+## Commercial Deal
+
+| Name                         | Content                                    |
+|------------------------------|--------------------------------------------|
+| id                           | Internal commercial deal ID                |
+| title                        | Commercial deal title                      |
+| description                  | Commercial deal description                |
+| volume                       | Volumetric value of the deal component     |
+| currency                     | Commercial deal currency                   |
+| announcedDate                | Commercial deal announcement date          |
+| startYear                    | Commercial deal start year                 |
+| endYear                      | Commercial deal end year                   |
+| duration                     | Commercial deal duration                   |
+| pricing                      | Commercial deal pricing in given currency  |
+| pricingEUR                   | Commercial deal pricing in EUR             |
+| pricingUSD                   | Commercial deal pricing in USD             |
+| tags                         | Tags associated with the commercial deal   |
+| searchableLocations          | Commercial deal locations                  |
+| primaryCommercialDealTypes   | Commercial deal primary types              |
+| secondaryCommercialDealTypes | Commercial deal secondary types            |
+| connectedCompanies           | Companies connected to the commercial deal |
+| connectedInvestors           | Investors connected to the commercial deal |
+| news                         | News connected to the commercial deal      |
 
 # Taxonomy Page
 
