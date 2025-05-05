@@ -1175,7 +1175,6 @@ This is the main filter used when searching for startups. It contains two simple
 | sdgs                | List of int                                         | Sustainable development goals, see Section [SDGs](#sdgs) for accepted values      |
 | wildcards           | List of string                                      | Any match of the keywords in the name/pitchline/description                       |
 | wildcardsFields     | List of Section [Wildcard Fields](#wildcard-fields) | Select on which fields to match the wildcards                                     |
-| investors           | List of int                                         | See Section [Investors](#investors) for the accepted values                       |
 | lastFundingTypes    | List of Section [Funding Type](#funding-type)       | Funding type for last round                                                       |
 | lastFundingsFrom    | List of int                                         | Minimum last round amount                                                         |
 | lastFundingsTo      | List of int                                         | Maximum last round amount                                                         |
