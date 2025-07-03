@@ -1194,25 +1194,25 @@ This is the main filter used when searching for startups. It contains two simple
 
 ## Deals Filter
  
-| Parameter name       | Parameter type                              | Description                                                                                                     |                                                                                                    
-|----------------------|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| acquisitionDateFrom  | Date                                        | Starting date for when the deal has been inserted into our database                                             |                                            
-| acquisitionDateTo    | Date                                        | Maximum date for when the deal has been inserted into our database                                              |                                             
-| datesFrom            | Date                                        | Starting date for when the deal has been closed                                                                 |                                                                
-| datesTo              | Date                                        | Maximum date for when the deal has been closed                                                                  |                                                                 
-| lastRoundDays        | List of int                                 | Maximum number of days passed since the deal was closed                                                         |
-| amountFrom           | int                                         | Minimum deal amount                                                                                             |                                                                                            
-| amountTo             | int                                         | Maximum deal amount                                                                                             |                                                                                            
-| types                | List of int                                 | See Section [Deal Type](#deal-type) for the accepted values                                                     |                                                  
-| allowNullAmounts     | boolean                                     | When searching with deal amount filters, if true, include deals with no deal amount                             |                            
-| numberFrom           | int                                         | Minimum deal number for the company                                                                             |                                                                            
-| numberTo             | int                                         | Maximum deal number for the company                                                                             |                                                                            
-| investors            | List of int                                 | Using the [Investor List](#investors-list) endpoints, it is possible to fetch the investors' IDs to insert here |
-| totalFundingFrom     | int                                         | Minimum total funding of the company                                                                            |                                                                           
-| totalFundingTo       | int                                         | Maximum total funding of the company                                                                            |                                                                           
-| financingInstruments | List of string                              | See Section [Financing Instruments](#financing-instrument) for the accepted values                              |                             
-| equityStages         | List of int                                 | See Section [Equity Stage](#equity-stage) for the accepted values                                               |                                              
-| exitStages           | List of int                                 | See Section [Exit Stage](#exit-stage) for the accepted values                                                   |                                                  
+| Parameter name       | Parameter type | Description                                                                                                     |                                                                                                    
+|----------------------|----------------|-----------------------------------------------------------------------------------------------------------------|
+| acquisitionDateFrom  | Date           | Starting date for when the deal has been inserted into our database                                             |                                            
+| acquisitionDateTo    | Date           | Maximum date for when the deal has been inserted into our database                                              |                                             
+| datesFrom            | Date           | Starting date for when the deal has been closed                                                                 |                                                                
+| datesTo              | Date           | Maximum date for when the deal has been closed                                                                  |                                                                 
+| lastRoundDays        | List of int    | Maximum number of days passed since the deal was closed                                                         |
+| amountFrom           | int            | Minimum deal amount                                                                                             |                                                                                            
+| amountTo             | int            | Maximum deal amount                                                                                             |                                                                                            
+| types                | List of string | See Section [Deal Type](#deal-type) for the accepted values                                                     |                                                  
+| allowNullAmounts     | boolean        | When searching with deal amount filters, if true, include deals with no deal amount                             |                            
+| numberFrom           | int            | Minimum deal number for the company                                                                             |                                                                            
+| numberTo             | int            | Maximum deal number for the company                                                                             |                                                                            
+| investors            | List of int    | Using the [Investor List](#investors-list) endpoints, it is possible to fetch the investors' IDs to insert here |
+| totalFundingFrom     | int            | Minimum total funding of the company                                                                            |                                                                           
+| totalFundingTo       | int            | Maximum total funding of the company                                                                            |                                                                           
+| financingInstruments | List of string | See Section [Financing Instruments](#financing-instrument) for the accepted values                              |                             
+| equityStages         | List of int    | See Section [Equity Stage](#equity-stage) for the accepted values                                               |                                              
+| exitStages           | List of int    | See Section [Exit Stage](#exit-stage) for the accepted values                                                   |                                                  
 
 ## Investors Filter
 
