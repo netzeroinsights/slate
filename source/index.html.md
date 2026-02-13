@@ -1148,6 +1148,7 @@ This is the main filter used when searching for startups. It contains two simple
 | Parameter name      | Parameter type                                      | Description                                                                       |
 |---------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------|
 | name                | string                                              | Startup name                                                                      |
+| ids                 | List of int                                         | Startup ids                                                                       |
 | searchableLocations | List of int                                         | See Section [Searchable Locations](#searchable-locations) for the accepted values |
 | stages              | List of int                                         | Growth stage, see Section [Stages](#stages) for accepted values                   |
 | fundings            | List of int                                         | Total funding range, see Section [Fundings](#fundings) for accepted val- ues      |
