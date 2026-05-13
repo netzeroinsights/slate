@@ -1458,34 +1458,41 @@ This is the tag filter used when searching for tags.
 
 ## Investor Types
 
-| ID | Label                     |
-|----|---------------------------|
-| 1  | Investment Bank           |
-| 10 | Venture Capital           |
-| 11 | Fund Of Funds             |
-| 14 | Private Equity            |
-| 17 | Hedge Fund                |
-| 23 | Corporate Venture Capital |
-| 24 | Angel Group               |
-| 34 | Asset Manager             |
-| 35 | Family Office             |
-| 41 | Government                |
-| 44 | Angel                     |
-| 46 | Accelerator/Incubator     |
-| 53 | University                |
-| 57 | Real Estate               |
-| 59 | Lender/Debt Provider      |
-| 61 | Limited Partner           |
-| 62 | Infrastructure            |
-| 63 | Other                     |
-| 64 | Corporation               |
-| 68 | Commercial Banks          |
-| 69 | Non-Profit Organisation   |
-| 70 | Advisory Firm             |
-| 71 | Wealth Management Firm    |
-| 72 | Investment Company        |
-| 73 | Insurance Company         |
-| 74 | Sovereign Wealth Fund     |
+| ID | Label                          |
+|----|--------------------------------|
+| 1  | Investment Bank                |
+| 10 | Venture Capital                |
+| 11 | Fund Of Funds                  |
+| 14 | Private Equity                 |
+| 17 | Hedge Fund                     |
+| 23 | Corporate Venture Capital      |
+| 24 | Angel Group                    |
+| 34 | Asset Manager                  |
+| 35 | Family Office                  |
+| 41 | Government                     |
+| 44 | Angel                          |
+| 46 | Accelerator/Incubator          |
+| 53 | University                     |
+| 57 | Real Estate                    |
+| 59 | Lender/Debt Provider           |
+| 60 | Holding Company                |
+| 61 | Limited Partner                |
+| 62 | Infrastructure                 |
+| 63 | Other                          |
+| 64 | Corporation                    |
+| 68 | Commercial Banks               |
+| 69 | Non-Profit Organisation        |
+| 70 | Advisory Firm                  |
+| 71 | Wealth Management Firm         |
+| 72 | Investment Company             |
+| 73 | Insurance Company              |
+| 74 | Sovereign Wealth Fund          |
+| 75 | Academic/Research Institutions |
+| 77 | Competition/Challenges         |
+| 78 | Pension Fund                   |
+| 79 | Private Capital Firms          |
+| 80 | Foundation                     |
+| 81 | Bank                           |
 
 ## Investor Regions
 
