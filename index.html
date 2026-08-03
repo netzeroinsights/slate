@@ -337,6 +337,9 @@
             <a href="#investors-list" class="toc-h1 toc-link" data-title="Investors List">Investors List</a>
           </li>
           <li>
+            <a href="#commercial-deals-list" class="toc-h1 toc-link" data-title="Commercial Deals List">Commercial Deals List</a>
+          </li>
+          <li>
             <a href="#startup-detail" class="toc-h1 toc-link" data-title="Startup Detail">Startup Detail</a>
               <ul class="toc-list-h2">
                   <li>
@@ -380,6 +383,23 @@
               </ul>
           </li>
           <li>
+            <a href="#commercial-deal-details" class="toc-h1 toc-link" data-title="Commercial Deal Details">Commercial Deal Details</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#connected-entities" class="toc-h2 toc-link" data-title="Connected Entities">Connected Entities</a>
+                  </li>
+                  <li>
+                    <a href="#tags" class="toc-h2 toc-link" data-title="Tags">Tags</a>
+                  </li>
+                  <li>
+                    <a href="#mappings" class="toc-h2 toc-link" data-title="Mappings">Mappings</a>
+                  </li>
+                  <li>
+                    <a href="#news" class="toc-h2 toc-link" data-title="News">News</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#deprecated-endpoints" class="toc-h1 toc-link" data-title="Deprecated Endpoints">Deprecated Endpoints</a>
           </li>
           <li>
@@ -408,6 +428,9 @@
                   </li>
                   <li>
                     <a href="#tag-filter" class="toc-h2 toc-link" data-title="Tag Filter">Tag Filter</a>
+                  </li>
+                  <li>
+                    <a href="#commercial-deals-filter" class="toc-h2 toc-link" data-title="Commercial Deals Filter">Commercial Deals Filter</a>
                   </li>
               </ul>
           </li>
@@ -469,7 +492,7 @@
                     <a href="#investor-regions" class="toc-h2 toc-link" data-title="Investor Regions">Investor Regions</a>
                   </li>
                   <li>
-                    <a href="#tags" class="toc-h2 toc-link" data-title="Tags">Tags</a>
+                    <a href="#tags-2" class="toc-h2 toc-link" data-title="Tags">Tags</a>
                   </li>
                   <li>
                     <a href="#investors" class="toc-h2 toc-link" data-title="Investors">Investors</a>
@@ -479,6 +502,15 @@
                   </li>
                   <li>
                     <a href="#searchable-locations" class="toc-h2 toc-link" data-title="Searchable Locations">Searchable Locations</a>
+                  </li>
+                  <li>
+                    <a href="#commercial-deal-types" class="toc-h2 toc-link" data-title="Commercial Deal Types">Commercial Deal Types</a>
+                  </li>
+                  <li>
+                    <a href="#commercial-deal-roles" class="toc-h2 toc-link" data-title="Commercial Deal Roles">Commercial Deal Roles</a>
+                  </li>
+                  <li>
+                    <a href="#commercial-deal-participants" class="toc-h2 toc-link" data-title="Commercial Deal Participants">Commercial Deal Participants</a>
                   </li>
               </ul>
           </li>
@@ -806,6 +838,130 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>200</td>
 <td>Request successful</td>
+</tr>
+</tbody></table>
+<h1 id='commercial-deals-list'>Commercial Deals List</h1>
+<blockquote>
+<p>To get the commercial deals list, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/commercial-deals/filter?pageSize=1'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+<span class="nt">-d</span> <span class="s1">'{"primaryTypeIDs": [1, 7], "pricingFrom": 15000000, "pricingTo": 20000000}'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the commercial deals matching your request, with the format specified at section <a href="#commercial-deals-filter">Commercial Deals Filter</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supply Agreement between Regional Government of Extremadura and Iberdrola"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Regional Government of Extremadura has awarded Iberdrola Clientes a public procurement contract for the supply of electricity to government buildings, public institutions, and educational centres across Extremadura, Spain. The agreement covers electricity delivery across multiple consumption points and includes additional services such as grid access contract management, meter reading representation, consumption monitoring, and energy management tools, with all supplied electricity backed by guarantees of origin certifying renewable or high-efficiency sources. The contract is valued at €19,287,643.02 (excluding VAT) for a two-year period, with an option to extend for one additional year, and applies to distributed supply points across the regional public sector infrastructure in Extremadura."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-03-30T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pricing"</span><span class="p">:</span><span class="w"> </span><span class="mf">19287643.02</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pricingEUR"</span><span class="p">:</span><span class="w"> </span><span class="mf">19287643.02</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pricingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">22477288.77</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"news"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"searchableLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">199</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">915829</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"primaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supply Agreement"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"secondaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regional Government of Extremadura"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/New_Empty_Logo_xqsrak.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">64106</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"directUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investor/64106"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyer"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Government"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">54018</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Iberdrola"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_503256.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"directUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investor/1693"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">54019</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">39470</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">111</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">111</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To search our commercial deals database, you should use the following endpoint:</p>
+
+<p><code>POST /commercial-deals/filter</code></p>
+
+<p>With a JSON request body in the format specified at the section <a href="#commercial-deals-filter">Commercial Deals Filter</a>.</p>
+
+<p>The possible response codes are:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
 </tr>
 </tbody></table>
 <h1 id='startup-detail'>Startup Detail</h1>
@@ -1294,76 +1450,99 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the commercial deals of a startup, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET https://api.netzeroinsights.com/commercial-deals/connected-entities/company/668
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://api.netzeroinsights.com/commercial-deals/connected-entities/company/37090 <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section <a href="#commercial-deal">Commercial Deal</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supply Agreement between P2X Solutions and Sunfire"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P2X Solutions, a Finnish leader in green hydrogen and power-to-x technology, is building Finland’s first industrial-scale green hydrogen and synthetic methane production plant in Harjavalta. The plant will use electrolysis powered by renewable electricity to produce hydrogen, completely emission-free. P2X Solutions has selected the German company Sunfire to supply the electrolysis equipment for the plant, which represents the largest single investment in the project. With the goal of combating climate change and enhancing energy security, P2X Solutions aims to build 1,000 MW of electrolysis capacity by 2031, supporting Finland’s transition to a cleaner and more self-sufficient energy future. The Harjavalta plant will reduce Finland’s CO2 emissions by approximately 40,000 tons per year. The heat and oxygen by-products will also be utilized in industrial processes. Construction of the 20-megawatt facility is scheduled to begin in the fall of 2023, with completion expected in summer 2024."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-22T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"searchableLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"countryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Finland"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FI"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"continentID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"continentName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">790205</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"primaryCommercialDealTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supply Agreement"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"secondaryCommercialDealTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P2X Solutions"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/v1736056027/Startups/hrflwd0bts8srjpfpizk.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">45898</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyer"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/45898"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">358</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sunfire"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/v1725972123/Startups/rmsmnna8ulwlxo7hib6h.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">668</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/668"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">359</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Strategic Partnership between Groupe Sorégies and Ze Energy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZE Energy and Groupe Sorégies have partnered to equip the Senillé-Saint-Sauveur solar park in Vienne, France, with a battery storage system, making it the first of its kind in continental France. This innovation, supported by the Nouvelle-Aquitaine region, addresses the challenge of solar energy intermittency by storing energy for use when needed, even when the sun isn't shining. ZE Energy's economic model enables the efficient integration and valorization of solar energy into the grid, optimizing its cost-effectiveness and environmental benefits. This collaboration, which includes a successful bid for a long-term RTE tender, involved a two-month installation process with technology partners Entech and Emerson. The project is expected to improve grid stability, enhance the value of solar energy, and pave the way for similar initiatives in France and internationally."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-08T00:00:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"news"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://p2x.fi/en/p2x-solutions-green-hydrogen-electrolysis-equipment-supply-agreement-signed/"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P2X Solutions’ green hydrogen electrolysis equipment supply agreement signed"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-22T00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">551</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ze-energy.com/admin/wp-content/uploads/2021/04/5f7f33137ff6c9b97667c6f8-cpzeenergysaintsauveurvdef.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The sorégies group and the startup ze energy inaugurate the first photovoltaic park equipped with a storage battery"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-08T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">56979</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ze-energy.com/admin/wp-content/uploads/2021/04/5f7f33137ff6c9b97667c6f8-cpzeenergysaintsauveurvdef.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The sorégies group and the startup ze energy inaugurate the first photovoltaic park equipped with a storage battery"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-08T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74682</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1517</span><span class="w">
+    </span><span class="nl">"searchableLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FR"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">806702</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"primaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Strategic Partnership"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"secondaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ze Energy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1789635.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">37090</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"directUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/37090"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Partner"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33385</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Groupe Sorégies"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_509704.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">12271</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"directUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investor/12271"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Partner"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26248</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1257</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>To get all the commercial deals of a startup, you should use the following endpoint:</p>
 
-<p><code>GET /connected-entities/company/[clientID]</code></p>
+<p><code>GET /connected-entities/company/{companyID}</code></p>
 
-<p>It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list">Startup List</a>, variable ”clientID”, and has the following response codes:</p>
+<p>It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list">Startup List</a>, variable “id”, and has the following response codes:</p>
 
 <table><thead>
 <tr>
@@ -1374,6 +1553,10 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>200</td>
 <td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
 <h1 id='deal-detail'>Deal Detail</h1>
@@ -1590,105 +1773,107 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the commercial deals of an investor, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET https://api.netzeroinsights.com/commercial-deals/connected-entities/investor/668
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://api.netzeroinsights.com/commercial-deals/connected-entities/investor/43939 <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section <a href="#commercial-deal">Commercial Deal</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offtake Agreement between Woolworths Group, Samsara Eco, Australian National University and Main Sequence"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Woolworths Group has entered into a commercial agreement with Samsara, an Australian plastic recycling startup founded in partnership with Australian National University (ANU) and CSIRO-backed Main Sequence. The agreement aims to revolutionize plastic packaging recycling by utilizing Samsara's enzyme technology, developed by ANU scientists, to break down used plastic into its basic building blocks for infinite recycling. Woolworths is committed to purchasing the first 5,000 tonnes of Samsara's recycled plastic for its own brand packaging, starting with containers for products like mini tomatoes, with the goal of replacing the need for new plastic production. This collaboration intends to move Samsara's technology from lab to supermarket shelves within the next two years, establishing a commercial recycling plant that will employ approximately 50 people and contribute to a circular economy. The agreement also aims to encourage other retailers and suppliers to adopt this technology, contributing to Australia's National Packaging Target of 50% recycled content in packaging by 2025."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5,000 tonnes of recycled Samsara plastic"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-09-21T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supply Agreement between Evlox and Recover"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In April 2023, Evlox, a prominent denim fabric manufacturer, entered into a three-year partnership with Recover™, a producer of recycled cotton fiber. This agreement commits Evlox to integrating Recover's sustainably produced, high-quality recycled cotton fiber—derived entirely from textile waste—into their denim fabrics. The collaboration aims to advance Evlox's sustainability objectives, particularly those outlined in their 2025 corporate social responsibility program, by reducing reliance on virgin materials and promoting a circular production model. As part of this initiative, Evlox plans to launch </span><span class="se">\"</span><span class="s2">Re-Iconics by Evlox,</span><span class="se">\"</span><span class="s2"> a capsule collection that pays homage to classic denim styles while incorporating Recover's recycled fiber, thereby significantly minimizing environmental impact."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-14T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2026</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"news"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://recoverfiber.com/newsroom/evlox-signs-three-year-deal-with-recover"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Evlox signs three-year deal with Recover™"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-14T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74634</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.businesswire.com/news/home/20230418005189/en/Evlox-Signs-a-Three-year-Agreement-to-Incorporate-Recover%E2%84%A2-Recycled-Cotton-Fiber-in-Their-Denim-Production"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Evlox Signs a Three-year Agreement to Incorporate Recover™ Recycled Cotton Fiber in Their Denim Production</span><span class="se">\r\n</span><span class="s2"> "</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-18T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74635</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
     </span><span class="nl">"searchableLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"countryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australia"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"continentID"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"continentName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oceania"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">761925</span><span class="w">
+        </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spain"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">199</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">915829</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"primaryCommercialDealTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"primaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offtake Agreement"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supply Agreement"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"secondaryCommercialDealTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"secondaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Research and Development Agreement (R&amp;D)"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sustainability Partnership"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Woolworths Group"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://eutopstorage.blob.core.windows.net/company-logos/168300%2F1726152129617_woolworths_group_logo.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">168300</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyer"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/168300"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Samsara Eco"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1719502905/Startups/mx9yohyz6gjyfhngenwm.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"clientID"</span><span class="p">:</span><span class="w"> </span><span class="mi">88483</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/88483"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Recover"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/matpkxj4ergscseibcro.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">75094</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"directUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/75094"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33352</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australian National University"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutop-1/image/upload/v1729139119/Investors/qhqqbquqegswu6pcs08v.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">35485</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investor/35485"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Main Sequence"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/eutopia-3/image/upload/v1727500653/Investors/v6utgjmfzhdtxfxwvsx9.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1786</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"directURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investor/1786"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Evlox"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_514764.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">43939</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"directUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investor/43939"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26227</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"news"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.samsaraeco.com/news/woolworths-group-plots-path-to-no-new-plastic-with-australian-innovators"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Woolworths Group plots path to no new plastic with Australian innovators"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-09-21T00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">58</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1260</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1231</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>To get all the commercial deals of an investor, you should use the following endpoint:</p>
 
-<p><code>GET /connected-entities/investor/[investorID]</code></p>
+<p><code>GET /connected-entities/investor/{investorID}</code></p>
 
-<p>It takes a single parameter, indicated as ”[investorID]” in the example, which is taken from a previous call of the endpoint at <a href="#investors-list">Investors List</a>, variable ”investorID”, and has the following response codes:</p>
+<p>It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at <a href="#investors-list">Investors List</a>, variable “investorID”, and has the following response codes:</p>
 
 <table><thead>
 <tr>
@@ -1699,6 +1884,10 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>200</td>
 <td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
 <h2 id='investor-contacts'>Investor Contacts</h2>
@@ -1752,6 +1941,405 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>200</td>
 <td>Request successful</td>
+</tr>
+</tbody></table>
+<h1 id='commercial-deal-details'>Commercial Deal Details</h1>
+<blockquote>
+<p>To get the details of a commercial deal, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/1230"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested commercial deal, with the format specified at section <a href="#commercial-deal">Commercial Deal</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offtake Agreement between Orange and Ze Energy"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orange and ZE Energy have signed a 15-year corporate power purchase agreement (CPPA) for 90 GWh of solar energy annually. This agreement involves a hybrid solar park under construction in Vert, Landes, France, which combines a 77 MW solar park with a 15 MW/34 MWh battery storage system. This setup allows ZE Energy to provide Orange with stable, competitive renewable energy throughout the day, mitigating the intermittency of solar power. The project, a first in France, is expected to be operational in 2025 and achieve a competitive electricity price by leveraging grid connection savings to finance the battery system. This </span><span class="se">\"</span><span class="s2">hybrid</span><span class="se">\"</span><span class="s2"> model is anticipated to gain traction as solar energy expands and influences electricity prices."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90 GWh of solar energy annually"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-05-14T00:00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"startYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2026</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"endYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2041</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.00</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"news"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://in.marketscreener.com/quote/stock/ORANGE-4649/news/Orange-solar-power-purchase-agreement-with-ZE-Energy-46716737/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orange: solar power purchase agreement with ZE Energy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-05-14T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74632</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://web.archive.org/web/20240516091840/https://www.lesechos.fr/industrie-services/energie-environnement/electricite-comment-orange-contourne-les-montagnes-russes-du-solaire-2095140"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electricity: how Orange is avoiding the solar roller coaster"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-05-16T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74633</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"searchableLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FR"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">806702</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"primaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offtake Agreement"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"secondaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ze Energy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1789635.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">37090</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"directUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/37090"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33351</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orange"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_514709.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">43829</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"directUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investor/43829"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26226</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1230</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get the commercial deal information, you should use the following endpoint:</p>
+
+<p><code>GET /commercial-deals/{commercialDealID}</code></p>
+
+<p>It takes a single parameter, indicated as “commercialDealID” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Reource not found</td>
+</tr>
+</tbody></table>
+<h2 id='connected-entities'>Connected Entities</h2>
+<blockquote>
+<p>To get all the connected entities of a commercial deal, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/connected-entities/1230/2"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ze Energy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1789635.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">37090</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"directUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/37090"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33351</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get the connected entities of a commercial deal, you should use the following endpoint:</p>
+
+<p><code>GET /commercial-deals/connected-entities/{commercialDealID}/{commercialDealRoleID}</code></p>
+
+<p>It takes two parameters, indicated as “commercialDealID” and “commercialDealRoleID” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
+<h2 id='tags'>Tags</h2>
+<blockquote>
+<p>To get all the tags of connected entities of a commercial deal, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/connected-entities/taxonomy/1230"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Battery"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Battery refers to energy storage technologies that store electrical energy for later use. Battery solutions play a crucial role in enabling energy storage, and management of renewable energy storage and electric vehicles. This solution covers a wide range of aspects within the battery industry, including battery and battery component manufacturers, battery management systems, and solutions for the end-of-life stage of batteries."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isCustomCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isCustomMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isUmbrella"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isVisibleCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isVisibleMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isGrouping"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isAdvancedFilters"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"technology"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"synonyms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"rawSearches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-04T17:03:20.177"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">companyInclude</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">tagIDs</span><span class="se">\"</span><span class="s2">:[191]},</span><span class="se">\"</span><span class="s2">companyExclude</span><span class="se">\"</span><span class="s2">:{},</span><span class="se">\"</span><span class="s2">investorInclude</span><span class="se">\"</span><span class="s2">:{},</span><span class="se">\"</span><span class="s2">investorExclude</span><span class="se">\"</span><span class="s2">:{},</span><span class="se">\"</span><span class="s2">dealInclude</span><span class="se">\"</span><span class="s2">:{},</span><span class="se">\"</span><span class="s2">dealExclude</span><span class="se">\"</span><span class="s2">:{},</span><span class="se">\"</span><span class="s2">forScheduledSavedSearchEmail</span><span class="se">\"</span><span class="s2">:false,</span><span class="se">\"</span><span class="s2">sortDirection</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">ASC</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">dealSortDirection</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">DESC</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">companySortField</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">PLATFORM_ORDER</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">investorSortField</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">PLATFORM_ORDER</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">dealSortField</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">DEAL_DATE</span><span class="se">\"</span><span class="s2">}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"strong"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9162</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">191</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the tags of connected entities of a commercial deal, you should use the following endpoint:</p>
+
+<p><code>GET /commercial-deals/connected-entities/taxonomy/{commercialDealID}</code></p>
+
+<p>It takes a single parameter, indicated as “commercialDealID” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
+<h2 id='mappings'>Mappings</h2>
+<blockquote>
+<p>To get all the commercial deal mappings, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/mappings/1230"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supply Agreement between Evlox and Recover"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In April 2023, Evlox, a prominent denim fabric manufacturer, entered into a three-year partnership with Recover™, a producer of recycled cotton fiber. This agreement commits Evlox to integrating Recover's sustainably produced, high-quality recycled cotton fiber—derived entirely from textile waste—into their denim fabrics. The collaboration aims to advance Evlox's sustainability objectives, particularly those outlined in their 2025 corporate social responsibility program, by reducing reliance on virgin materials and promoting a circular production model. As part of this initiative, Evlox plans to launch </span><span class="se">\"</span><span class="s2">Re-Iconics by Evlox,</span><span class="se">\"</span><span class="s2"> a capsule collection that pays homage to classic denim styles while incorporating Recover's recycled fiber, thereby significantly minimizing environmental impact."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-14T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2026</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"news"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://recoverfiber.com/newsroom/evlox-signs-three-year-deal-with-recover"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Evlox signs three-year deal with Recover™"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-14T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74634</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.businesswire.com/news/home/20230418005189/en/Evlox-Signs-a-Three-year-Agreement-to-Incorporate-Recover%E2%84%A2-Recycled-Cotton-Fiber-in-Their-Denim-Production"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Evlox Signs a Three-year Agreement to Incorporate Recover™ Recycled Cotton Fiber in Their Denim Production</span><span class="se">\r\n</span><span class="s2"> "</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-18T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74635</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"searchableLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spain"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">199</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">915829</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"primaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supply Agreement"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"secondaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sustainability Partnership"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Recover"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/matpkxj4ergscseibcro.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">75094</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"directUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization/75094"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33352</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Evlox"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_514764.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">43939</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"directUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investor/43939"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialDealRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26227</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1231</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the mappings of a commercial deal, you should use the following endpoint:</p>
+
+<p><code>GET /commercial-deals/mappings/{commercialDealID}</code></p>
+
+<p>It takes a single parameter, indicated as “commercialDealID” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
+<h2 id='news'>News</h2>
+<blockquote>
+<p>To get all the news of a commercial deal, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/news/1230"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://in.marketscreener.com/quote/stock/ORANGE-4649/news/Orange-solar-power-purchase-agreement-with-ZE-Energy-46716737/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orange: solar power purchase agreement with ZE Energy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-05-14T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74632</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://web.archive.org/web/20240516091840/https://www.lesechos.fr/industrie-services/energie-environnement/electricite-comment-orange-contourne-les-montagnes-russes-du-solaire-2095140"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electricity: how Orange is avoiding the solar roller coaster"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-05-16T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74633</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get the news of a commercial deal, you should use the following endpoint:</p>
+
+<p><code>GET /commercial-deals/news/{commercialDealID}</code></p>
+
+<p>It takes a single parameter, indicated as “commercialDealID” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
 <h1 id='deprecated-endpoints'>Deprecated Endpoints</h1>
@@ -2294,6 +2882,152 @@ Please note that manually closing a session is not required, since it will be cl
 <td>name</td>
 <td>string</td>
 <td>Fetch only the tags containing this string</td>
+</tr>
+</tbody></table>
+<h2 id='commercial-deals-filter'>Commercial Deals Filter</h2>
+<p>This is the commercial deal filter used when searching for commercial deals.</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Filters deals by title (partial or full match)</td>
+</tr>
+<tr>
+<td>announcedDateFrom</td>
+<td>date</td>
+<td>Earliest announced date of the deal</td>
+</tr>
+<tr>
+<td>announcedDateTo</td>
+<td>date</td>
+<td>Latest announced date of the deal</td>
+</tr>
+<tr>
+<td>announcedDaysFrom</td>
+<td>int</td>
+<td>Filters deals announced within the last specified number of days</td>
+</tr>
+<tr>
+<td>startYearFrom</td>
+<td>int</td>
+<td>Minimum start year of the deal</td>
+</tr>
+<tr>
+<td>startYearTo</td>
+<td>int</td>
+<td>Maximum start year of the deal</td>
+</tr>
+<tr>
+<td>endYearFrom</td>
+<td>int</td>
+<td>Minimum end year of the deal</td>
+</tr>
+<tr>
+<td>endYearTo</td>
+<td>int</td>
+<td>Maximum end year of the deal</td>
+</tr>
+<tr>
+<td>durationFrom</td>
+<td>int</td>
+<td>Minimum duration of the deal</td>
+</tr>
+<tr>
+<td>durationTo</td>
+<td>int</td>
+<td>Maximum duration of the deal</td>
+</tr>
+<tr>
+<td>pricingFrom</td>
+<td>int</td>
+<td>Minimum deal pricing</td>
+</tr>
+<tr>
+<td>pricingTo</td>
+<td>int</td>
+<td>Maximum deal pricing</td>
+</tr>
+<tr>
+<td>primaryTypes</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-types">Commercial Deal Types</a> for the accepted values</td>
+</tr>
+<tr>
+<td>secondaryTypes</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-types">Commercial Deal Types</a> for the accepted values</td>
+</tr>
+<tr>
+<td>searchableGeographies</td>
+<td>List of int</td>
+<td>See Section <a href="#searchable-locations">Searchable Locations</a> for the accepted values</td>
+</tr>
+<tr>
+<td>buyerCompanyIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-participants">Commercial Deal Participants</a> for the accepted values</td>
+</tr>
+<tr>
+<td>buyerInvestorIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-participants">Commercial Deal Participants</a> for the accepted values</td>
+</tr>
+<tr>
+<td>sellerCompanyIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-participants">Commercial Deal Participants</a> for the accepted values</td>
+</tr>
+<tr>
+<td>sellerInvestorIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-participants">Commercial Deal Participants</a> for the accepted values</td>
+</tr>
+<tr>
+<td>partnerCompanyIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-participants">Commercial Deal Participants</a> for the accepted values</td>
+</tr>
+<tr>
+<td>partnerInvestorIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-participants">Commercial Deal Participants</a> for the accepted values</td>
+</tr>
+<tr>
+<td>advisorCompanyIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-participants">Commercial Deal Participants</a> for the accepted values</td>
+</tr>
+<tr>
+<td>advisorInvestorIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-participants">Commercial Deal Participants</a> for the accepted values</td>
+</tr>
+<tr>
+<td>participantCompanyIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-participants">Commercial Deal Participants</a> for the accepted values</td>
+</tr>
+<tr>
+<td>participantCompanyIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#commercial-deal-participants">Commercial Deal Participants</a> for the accepted values</td>
+</tr>
+<tr>
+<td>tagsMode</td>
+<td>string</td>
+<td>Specifies how multiple tags are matched (for example, AND or OR)</td>
+</tr>
+<tr>
+<td>tagIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#tags">Tags</a> for accepted values</td>
 </tr>
 </tbody></table>
 <h1 id='additional-tables'>Additional Tables</h1><h2 id='sortable-columns'>Sortable Columns</h2>
@@ -3145,7 +3879,7 @@ Please note that manually closing a session is not required, since it will be cl
 <td>US Southwest</td>
 </tr>
 </tbody></table>
-<h2 id='tags'>Tags</h2>
+<h2 id='tags-2'>Tags</h2>
 <blockquote>
 <p>To get the list of the currently available tags, use this code:</p>
 </blockquote>
@@ -3344,6 +4078,148 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>200</td>
 <td>Request successful</td>
+</tr>
+</tbody></table>
+<h2 id='commercial-deal-types'>Commercial Deal Types</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Strategic Partnership</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Joint Venture</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Memorandum of Understanding (MoU)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Public-Private Partnership (PPP)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Research and Development Agreement (R&amp;D)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Offtake Agreement</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Supply Agreement</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Manufacturing Partnership</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Licensing Agreement</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Letter of Intent (LOI)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Service Agreement</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Distribution Agreement</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Sustainability Partnership</td>
+</tr>
+</tbody></table>
+<h2 id='commercial-deal-roles'>Commercial Deal Roles</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Buyer</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Seller</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Partner</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Advisor</td>
+</tr>
+</tbody></table>
+<h2 id='commercial-deal-participants'>Commercial Deal Participants</h2>
+<blockquote>
+<p>To get the list of companies and/or investors as participants, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/search/company-investor?searchText=energy"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>      
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the matching participants, with the JSON structured like the following:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EnergyLab"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INVESTOR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/New_Empty_Logo_xqsrak.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://energylab.es/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">64348</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">64348</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Energy Leap"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INVESTOR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/New_Empty_Logo_xqsrak.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">37952</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37952</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Energy&amp;+"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPANY"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1936205.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://energy.bzh"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">208261</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">208261</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the list of the participants, you should use the following endpoint:</p>
+
+<p><code>GET /commercial-deals/search/company-investor?searchText={textParam}</code></p>
+
+<p>It takes a single query parameter, indicated as “searchText” in the example, which is a string used to filter the companies and investors and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
 <h1 id='responses-structure'>Responses structure</h1><h2 id='startup-search'>Startup search</h2>
@@ -4458,11 +5334,11 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Commercial deal locations</td>
 </tr>
 <tr>
-<td>primaryCommercialDealTypes</td>
+<td>primaryTypes</td>
 <td>Commercial deal primary types</td>
 </tr>
 <tr>
-<td>secondaryCommercialDealTypes</td>
+<td>secondaryTypes</td>
 <td>Commercial deal secondary types</td>
 </tr>
 <tr>
