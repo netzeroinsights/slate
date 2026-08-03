@@ -213,6 +213,116 @@ The possible response codes are:
 |---------------|--------------------|
 | 200           | Request successful |
 
+# Commercial Deals List
+
+> To get the commercial deals list, use this code:
+
+ ```shell
+curl -X POST 'https://api.netzeroinsights.com/commercial-deals/filter?pageSize=1' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+-H 'Content-Type: application/json' \                 
+-d '{"primaryTypeIDs": [1, 7], "pricingFrom": 15000000, "pricingTo": 20000000}'
+```
+
+> In case of a 200 response, the response body will contain all the commercial deals matching your request, with the format specified at section [Commercial Deals Filter](#commercial-deals-filter).
+
+```json
+{
+  "content": [
+    {
+      "title": "Supply Agreement between Regional Government of Extremadura and Iberdrola",
+      "description": "The Regional Government of Extremadura has awarded Iberdrola Clientes a public procurement contract for the supply of electricity to government buildings, public institutions, and educational centres across Extremadura, Spain. The agreement covers electricity delivery across multiple consumption points and includes additional services such as grid access contract management, meter reading representation, consumption monitoring, and energy management tools, with all supplied electricity backed by guarantees of origin certifying renewable or high-efficiency sources. The contract is valued at €19,287,643.02 (excluding VAT) for a two-year period, with an option to extend for one additional year, and applies to distributed supply points across the regional public sector infrastructure in Extremadura.",
+      "currency": "EUR",
+      "announcedDate": "2026-03-30T00:00:00",
+      "duration": 2,
+      "pricing": 19287643.02,
+      "pricingEUR": 19287643.02,
+      "pricingUSD": 22477288.77,
+      "news": [],
+      "searchableLocations": [
+        {
+          "continent": {
+            "name": "Europe",
+            "id": 3
+          },
+          "country": {
+            "name": "Spain",
+            "continent": {
+              "name": "Europe",
+              "id": 3
+            },
+            "alpha2": "ES",
+            "id": 199
+          },
+          "platformOrder": 10,
+          "isSearchable": true,
+          "id": 915829
+        }
+      ],
+      "primaryTypes": [
+        {
+          "label": "Supply Agreement",
+          "id": 7
+        }
+      ],
+      "secondaryTypes": [],
+      "connectedCompanies": [],
+      "connectedInvestors": [
+        {
+          "name": "Regional Government of Extremadura",
+          "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/New_Empty_Logo_xqsrak.png",
+          "investorID": 64106,
+          "directUrl": "investor/64106",
+          "commercialDealRole": "Buyer",
+          "entityTypes": [
+            {
+              "label": "Government",
+              "id": 4
+            }
+          ],
+          "id": 54018
+        },
+        {
+          "name": "Iberdrola",
+          "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_503256.jpg",
+          "investorID": 1693,
+          "directUrl": "investor/1693",
+          "commercialDealRole": "Seller",
+          "entityTypes": [
+            {
+              "label": "Company",
+              "id": 1
+            }
+          ],
+          "id": 54019
+        }
+      ],
+      "tags": [],
+      "id": 39470
+    }
+  ],
+  "pageSize": 1,
+  "pageNumber": 0,
+  "totalElements": 111,
+  "numberOfElements": 1,
+  "totalPages": 111
+}
+```
+To search our commercial deals database, you should use the following endpoint:
+
+`POST /commercial-deals/filter`
+
+With a JSON request body in the format specified at the section [Commercial Deals Filter](#commercial-deals-filter).
+
+The possible response codes are:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 400           | Bad Request                          |
+| 403           | Forbidden, insufficient access level |
+| 404           | Resource not found                   |
+
 # Startup Detail
 
 All the information related to a startup is divided into different sections: 
@@ -670,8 +780,8 @@ It takes a single parameter, indicated as ”[coFundingRoundId]” in the exampl
 > To get all the commercial deals of a startup, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET https://api.netzeroinsights.com/commercial-deals/connected-entities/company/668
+curl -X GET https://api.netzeroinsights.com/commercial-deals/connected-entities/company/37090 \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section [Commercial Deal](#commercial-deal).
@@ -679,73 +789,97 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```json
 [
   {
-    "title": "Supply Agreement between P2X Solutions and Sunfire",
-    "description": "P2X Solutions, a Finnish leader in green hydrogen and power-to-x technology, is building Finland’s first industrial-scale green hydrogen and synthetic methane production plant in Harjavalta. The plant will use electrolysis powered by renewable electricity to produce hydrogen, completely emission-free. P2X Solutions has selected the German company Sunfire to supply the electrolysis equipment for the plant, which represents the largest single investment in the project. With the goal of combating climate change and enhancing energy security, P2X Solutions aims to build 1,000 MW of electrolysis capacity by 2031, supporting Finland’s transition to a cleaner and more self-sufficient energy future. The Harjavalta plant will reduce Finland’s CO2 emissions by approximately 40,000 tons per year. The heat and oxygen by-products will also be utilized in industrial processes. Construction of the 20-megawatt facility is scheduled to begin in the fall of 2023, with completion expected in summer 2024.",
-    "announcedDate": "2022-03-22T00:00:00",
-    "searchableLocations": [
-      {
-        "countryID": 72,
-        "countryName": "Finland",
-        "countryCode": "FI",
-        "continentID": 3,
-        "continentName": "Europe",
-        "id": 790205
-      }
-    ],
-    "primaryCommercialDealTypes": [
-      {
-        "label": "Supply Agreement",
-        "id": 7
-      }
-    ],
-    "secondaryCommercialDealTypes": [],
-    "connectedCompanies": [
-      {
-        "name": "P2X Solutions",
-        "logo": "https://res.cloudinary.com/eutopia-3/image/upload/v1736056027/Startups/hrflwd0bts8srjpfpizk.jpg",
-        "clientID": 45898,
-        "commercialDealRole": {
-          "label": "Buyer",
-          "id": 1
-        },
-        "directURL": "organization/45898",
-        "id": 358
-      },
-      {
-        "name": "Sunfire",
-        "logo": "https://res.cloudinary.com/eutopia-3/image/upload/v1725972123/Startups/rmsmnna8ulwlxo7hib6h.jpg",
-        "clientID": 668,
-        "commercialDealRole": {
-          "label": "Seller",
-          "id": 2
-        },
-        "directURL": "organization/668",
-        "id": 359
-      }
-    ],
-    "connectedInvestors": [],
+    "title": "Strategic Partnership between Groupe Sorégies and Ze Energy",
+    "description": "ZE Energy and Groupe Sorégies have partnered to equip the Senillé-Saint-Sauveur solar park in Vienne, France, with a battery storage system, making it the first of its kind in continental France. This innovation, supported by the Nouvelle-Aquitaine region, addresses the challenge of solar energy intermittency by storing energy for use when needed, even when the sun isn't shining. ZE Energy's economic model enables the efficient integration and valorization of solar energy into the grid, optimizing its cost-effectiveness and environmental benefits. This collaboration, which includes a successful bid for a long-term RTE tender, involved a two-month installation process with technology partners Entech and Emerson. The project is expected to improve grid stability, enhance the value of solar energy, and pave the way for similar initiatives in France and internationally.",
+    "announcedDate": "2020-10-08T00:00:00",
     "news": [
       {
-        "url": "https://p2x.fi/en/p2x-solutions-green-hydrogen-electrolysis-equipment-supply-agreement-signed/",
-        "title": "P2X Solutions’ green hydrogen electrolysis equipment supply agreement signed",
-        "date": "2022-03-22T00:00:00",
-        "id": 551
+        "url": "https://ze-energy.com/admin/wp-content/uploads/2021/04/5f7f33137ff6c9b97667c6f8-cpzeenergysaintsauveurvdef.pdf",
+        "title": "The sorégies group and the startup ze energy inaugurate the first photovoltaic park equipped with a storage battery",
+        "newsDate": "2020-10-08T00:00:00",
+        "id": 56979
+      },
+      {
+        "url": "https://ze-energy.com/admin/wp-content/uploads/2021/04/5f7f33137ff6c9b97667c6f8-cpzeenergysaintsauveurvdef.pdf",
+        "title": "The sorégies group and the startup ze energy inaugurate the first photovoltaic park equipped with a storage battery",
+        "newsDate": "2020-10-08T00:00:00",
+        "id": 74682
       }
     ],
-    "id": 1517
+    "searchableLocations": [
+      {
+        "continent": {
+          "name": "Europe",
+          "id": 3
+        },
+        "country": {
+          "name": "France",
+          "continent": {
+            "name": "Europe",
+            "id": 3
+          },
+          "alpha2": "FR",
+          "id": 73
+        },
+        "platformOrder": 10,
+        "isSearchable": true,
+        "id": 806702
+      }
+    ],
+    "primaryTypes": [
+      {
+        "label": "Strategic Partnership",
+        "id": 1
+      }
+    ],
+    "secondaryTypes": [],
+    "connectedCompanies": [
+      {
+        "name": "Ze Energy",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1789635.png",
+        "companyID": 37090,
+        "directUrl": "organization/37090",
+        "commercialDealRole": "Partner",
+        "entityTypes": [
+          {
+            "label": "Company",
+            "id": 1
+          }
+        ],
+        "id": 33385
+      }
+    ],
+    "connectedInvestors": [
+      {
+        "name": "Groupe Sorégies",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_509704.jpg",
+        "investorID": 12271,
+        "directUrl": "investor/12271",
+        "commercialDealRole": "Partner",
+        "entityTypes": [
+          {
+            "label": "Company",
+            "id": 1
+          }
+        ],
+        "id": 26248
+      }
+    ],
+    "id": 1257
   }
 ]
 ```
 
 To get all the commercial deals of a startup, you should use the following endpoint:
 
-`GET /connected-entities/company/[clientID]`
+`GET /connected-entities/company/{companyID}`
 
-It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”clientID”, and has the following response codes:
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable “id”, and has the following response codes:
 
-| Response code | Meaning            |
-|---------------|--------------------|
-| 200           | Request successful |
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
 
 # Deal Detail
 
@@ -955,8 +1089,8 @@ It takes a single parameter, indicated as ”[investorID]” in the example, and
 > To get all the commercial deals of an investor, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET https://api.netzeroinsights.com/commercial-deals/connected-entities/investor/668
+curl -X GET https://api.netzeroinsights.com/commercial-deals/connected-entities/investor/43939 \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section [Commercial Deal](#commercial-deal).
@@ -964,102 +1098,105 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 ```json
 [
   {
-    "title": "Offtake Agreement between Woolworths Group, Samsara Eco, Australian National University and Main Sequence",
-    "description": "Woolworths Group has entered into a commercial agreement with Samsara, an Australian plastic recycling startup founded in partnership with Australian National University (ANU) and CSIRO-backed Main Sequence. The agreement aims to revolutionize plastic packaging recycling by utilizing Samsara's enzyme technology, developed by ANU scientists, to break down used plastic into its basic building blocks for infinite recycling. Woolworths is committed to purchasing the first 5,000 tonnes of Samsara's recycled plastic for its own brand packaging, starting with containers for products like mini tomatoes, with the goal of replacing the need for new plastic production. This collaboration intends to move Samsara's technology from lab to supermarket shelves within the next two years, establishing a commercial recycling plant that will employ approximately 50 people and contribute to a circular economy. The agreement also aims to encourage other retailers and suppliers to adopt this technology, contributing to Australia's National Packaging Target of 50% recycled content in packaging by 2025.",
-    "volume": "5,000 tonnes of recycled Samsara plastic",
-    "announcedDate": "2021-09-21T00:00:00",
+    "title": "Supply Agreement between Evlox and Recover",
+    "description": "In April 2023, Evlox, a prominent denim fabric manufacturer, entered into a three-year partnership with Recover™, a producer of recycled cotton fiber. This agreement commits Evlox to integrating Recover's sustainably produced, high-quality recycled cotton fiber—derived entirely from textile waste—into their denim fabrics. The collaboration aims to advance Evlox's sustainability objectives, particularly those outlined in their 2025 corporate social responsibility program, by reducing reliance on virgin materials and promoting a circular production model. As part of this initiative, Evlox plans to launch \"Re-Iconics by Evlox,\" a capsule collection that pays homage to classic denim styles while incorporating Recover's recycled fiber, thereby significantly minimizing environmental impact.",
+    "announcedDate": "2023-04-14T00:00:00",
+    "startYear": 2023,
+    "endYear": 2026,
+    "duration": 3,
+    "news": [
+      {
+        "url": "https://recoverfiber.com/newsroom/evlox-signs-three-year-deal-with-recover",
+        "title": "Evlox signs three-year deal with Recover™",
+        "newsDate": "2023-04-14T00:00:00",
+        "id": 74634
+      },
+      {
+        "url": "https://www.businesswire.com/news/home/20230418005189/en/Evlox-Signs-a-Three-year-Agreement-to-Incorporate-Recover%E2%84%A2-Recycled-Cotton-Fiber-in-Their-Denim-Production",
+        "title": "Evlox Signs a Three-year Agreement to Incorporate Recover™ Recycled Cotton Fiber in Their Denim Production\r\n ",
+        "newsDate": "2023-04-18T00:00:00",
+        "id": 74635
+      }
+    ],
     "searchableLocations": [
       {
-        "countryID": 13,
-        "countryName": "Australia",
-        "countryCode": "AU",
-        "continentID": 6,
-        "continentName": "Oceania",
-        "id": 761925
+        "continent": {
+          "name": "Europe",
+          "id": 3
+        },
+        "country": {
+          "name": "Spain",
+          "continent": {
+            "name": "Europe",
+            "id": 3
+          },
+          "alpha2": "ES",
+          "id": 199
+        },
+        "platformOrder": 10,
+        "isSearchable": true,
+        "id": 915829
       }
     ],
-    "primaryCommercialDealTypes": [
+    "primaryTypes": [
       {
-        "label": "Offtake Agreement",
-        "id": 6
+        "label": "Supply Agreement",
+        "id": 7
       }
     ],
-    "secondaryCommercialDealTypes": [
+    "secondaryTypes": [
       {
-        "label": "Research and Development Agreement (R&D)",
-        "id": 5
+        "label": "Sustainability Partnership",
+        "id": 13
       }
     ],
     "connectedCompanies": [
       {
-        "name": "Woolworths Group",
-        "logo": "https://eutopstorage.blob.core.windows.net/company-logos/168300%2F1726152129617_woolworths_group_logo.jpg",
-        "clientID": 168300,
-        "commercialDealRole": {
-          "label": "Buyer",
-          "id": 1
-        },
-        "directURL": "organization/168300",
-        "id": 39
-      },
-      {
-        "name": "Samsara Eco",
-        "logo": "https://res.cloudinary.com/eutopia-3/image/upload/b_white/v1719502905/Startups/mx9yohyz6gjyfhngenwm.jpg",
-        "clientID": 88483,
-        "commercialDealRole": {
-          "label": "Seller",
-          "id": 2
-        },
-        "directURL": "organization/88483",
-        "id": 38
+        "name": "Recover",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/matpkxj4ergscseibcro.png",
+        "companyID": 75094,
+        "directUrl": "organization/75094",
+        "commercialDealRole": "Seller",
+        "entityTypes": [
+          {
+            "label": "Company",
+            "id": 1
+          }
+        ],
+        "id": 33352
       }
     ],
     "connectedInvestors": [
       {
-        "name": "Australian National University",
-        "logo": "https://res.cloudinary.com/eutop-1/image/upload/v1729139119/Investors/qhqqbquqegswu6pcs08v.jpg",
-        "investorID": 35485,
-        "commercialDealRole": {
-          "label": "Seller",
-          "id": 2
-        },
-        "directURL": "investor/35485",
-        "id": 26
-      },
-      {
-        "name": "Main Sequence",
-        "logo": "https://res.cloudinary.com/eutopia-3/image/upload/v1727500653/Investors/v6utgjmfzhdtxfxwvsx9.jpg",
-        "investorID": 1786,
-        "commercialDealRole": {
-          "label": "Seller",
-          "id": 2
-        },
-        "directURL": "investor/1786",
-        "id": 27
+        "name": "Evlox",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_514764.jpg",
+        "investorID": 43939,
+        "directUrl": "investor/43939",
+        "commercialDealRole": "Buyer",
+        "entityTypes": [
+          {
+            "label": "Investor",
+            "id": 2
+          }
+        ],
+        "id": 26227
       }
     ],
-    "news": [
-      {
-        "url": "https://www.samsaraeco.com/news/woolworths-group-plots-path-to-no-new-plastic-with-australian-innovators",
-        "title": "Woolworths Group plots path to no new plastic with Australian innovators",
-        "date": "2021-09-21T00:00:00",
-        "id": 58
-      }
-    ],
-    "id": 1260
+    "id": 1231
   }
 ]
 ```
 
 To get all the commercial deals of an investor, you should use the following endpoint:
 
-`GET /connected-entities/investor/[investorID]`
+`GET /connected-entities/investor/{investorID}`
 
-It takes a single parameter, indicated as ”[investorID]” in the example, which is taken from a previous call of the endpoint at [Investors List](#investors-list), variable ”investorID”, and has the following response codes:
+It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investors List](#investors-list), variable “investorID”, and has the following response codes:
 
-| Response code | Meaning            |
-|---------------|--------------------|
-| 200           | Request successful |
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
 
 ## Investor Contacts
 
@@ -1109,6 +1246,376 @@ With a JSON request body in the format specified at the Section [Investor Contac
 | Response code | Meaning            |
 |---------------|--------------------|
 | 200           | Request successful |
+
+# Commercial Deal Details
+
+> To get the details of a commercial deal, use this code:
+
+```shell
+curl -X GET "https://api.netzeroinsights.com/commercial-deals/1230" \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain the requested commercial deal, with the format specified at section [Commercial Deal](#commercial-deal).
+
+```json
+{
+  "title": "Offtake Agreement between Orange and Ze Energy",
+  "description": "Orange and ZE Energy have signed a 15-year corporate power purchase agreement (CPPA) for 90 GWh of solar energy annually. This agreement involves a hybrid solar park under construction in Vert, Landes, France, which combines a 77 MW solar park with a 15 MW/34 MWh battery storage system. This setup allows ZE Energy to provide Orange with stable, competitive renewable energy throughout the day, mitigating the intermittency of solar power. The project, a first in France, is expected to be operational in 2025 and achieve a competitive electricity price by leveraging grid connection savings to finance the battery system. This \"hybrid\" model is anticipated to gain traction as solar energy expands and influences electricity prices.",
+  "volume": "90 GWh of solar energy annually",
+  "announcedDate": "2024-05-14T00:00:00",
+  "startYear": 2026,
+  "endYear": 2041,
+  "duration": 15.00,
+  "news": [
+    {
+      "url": "https://in.marketscreener.com/quote/stock/ORANGE-4649/news/Orange-solar-power-purchase-agreement-with-ZE-Energy-46716737/",
+      "title": "Orange: solar power purchase agreement with ZE Energy",
+      "newsDate": "2024-05-14T00:00:00",
+      "id": 74632
+    },
+    {
+      "url": "https://web.archive.org/web/20240516091840/https://www.lesechos.fr/industrie-services/energie-environnement/electricite-comment-orange-contourne-les-montagnes-russes-du-solaire-2095140",
+      "title": "Electricity: how Orange is avoiding the solar roller coaster",
+      "newsDate": "2024-05-16T00:00:00",
+      "id": 74633
+    }
+  ],
+  "searchableLocations": [
+    {
+      "continent": {
+        "name": "Europe",
+        "id": 3
+      },
+      "country": {
+        "name": "France",
+        "continent": {
+          "name": "Europe",
+          "id": 3
+        },
+        "alpha2": "FR",
+        "id": 73
+      },
+      "platformOrder": 10,
+      "isSearchable": true,
+      "id": 806702
+    }
+  ],
+  "primaryTypes": [
+    {
+      "label": "Offtake Agreement",
+      "id": 6
+    }
+  ],
+  "secondaryTypes": [],
+  "connectedCompanies": [
+    {
+      "name": "Ze Energy",
+      "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1789635.png",
+      "companyID": 37090,
+      "directUrl": "organization/37090",
+      "commercialDealRole": "Seller",
+      "entityTypes": [
+        {
+          "label": "Company",
+          "id": 1
+        }
+      ],
+      "id": 33351
+    }
+  ],
+  "connectedInvestors": [
+    {
+      "name": "Orange",
+      "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_514709.png",
+      "investorID": 43829,
+      "directUrl": "investor/43829",
+      "commercialDealRole": "Buyer",
+      "entityTypes": [
+        {
+          "label": "Company",
+          "id": 1
+        }
+      ],
+      "id": 26226
+    }
+  ],
+  "id": 1230
+}
+```
+
+To get the commercial deal information, you should use the following endpoint:
+
+`GET /commercial-deals/{commercialDealID}`
+
+It takes a single parameter, indicated as “commercialDealID” in the example, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+| 404           | Reource not found                    |
+
+## Connected Entities
+
+> To get all the connected entities of a commercial deal, use this code:
+
+```shell
+curl -X GET "https://api.netzeroinsights.com/commercial-deals/connected-entities/1230/2" \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+```json
+{
+  "connectedInvestors": [],
+  "connectedCompanies": [
+    {
+      "name": "Ze Energy",
+      "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1789635.png",
+      "companyID": 37090,
+      "directUrl": "organization/37090",
+      "commercialDealRole": "Seller",
+      "entityTypes": [
+        {
+          "label": "Company",
+          "id": 1
+        }
+      ],
+      "id": 33351
+    }
+  ]
+}
+```
+
+To get the connected entities of a commercial deal, you should use the following endpoint:
+
+`GET /commercial-deals/connected-entities/{commercialDealID}/{commercialDealRoleID}`
+
+It takes two parameters, indicated as “commercialDealID” and “commercialDealRoleID” in the example, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+
+## Tags
+
+> To get all the tags of connected entities of a commercial deal, use this code:
+
+```shell
+curl -X GET "https://api.netzeroinsights.com/commercial-deals/connected-entities/taxonomy/1230" \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+```json
+[
+  {
+    "label": "Battery",
+    "visibilityStatus": {
+      "visibleTo": "ALL",
+      "id": 1
+    },
+    "description": "Battery refers to energy storage technologies that store electrical energy for later use. Battery solutions play a crucial role in enabling energy storage, and management of renewable energy storage and electric vehicles. This solution covers a wide range of aspects within the battery industry, including battery and battery component manufacturers, battery management systems, and solutions for the end-of-life stage of batteries.",
+    "isCustomCompany": false,
+    "isCustomMap": false,
+    "isUmbrella": false,
+    "isVisibleCompany": true,
+    "isVisibleMap": true,
+    "isSearchable": true,
+    "isGrouping": false,
+    "isAdvancedFilters": true,
+    "tagType": {
+      "label": "technology",
+      "platformOrder": 3,
+      "tagFamily": {
+        "label": "Solutions",
+        "platformOrder": 1,
+        "id": 2
+      },
+      "id": 3
+    },
+    "synonyms": [],
+    "rawSearches": [
+      {
+        "acquisitionDate": "2024-04-04T17:03:20.177",
+        "text": "{\"companyInclude\":{\"tagIDs\":[191]},\"companyExclude\":{},\"investorInclude\":{},\"investorExclude\":{},\"dealInclude\":{},\"dealExclude\":{},\"forScheduledSavedSearchEmail\":false,\"sortDirection\":\"ASC\",\"dealSortDirection\":\"DESC\",\"companySortField\":\"PLATFORM_ORDER\",\"investorSortField\":\"PLATFORM_ORDER\",\"dealSortField\":\"DEAL_DATE\"}",
+        "strong": false,
+        "id": 9162
+      }
+    ],
+    "platformOrder": 160,
+    "id": 191
+  }
+]
+```
+
+To get the tags of connected entities of a commercial deal, you should use the following endpoint:
+
+`GET /commercial-deals/connected-entities/taxonomy/{commercialDealID}`
+
+It takes a single parameter, indicated as “commercialDealID” in the example, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+
+
+## Mappings
+
+> To get all the commercial deal mappings, use this code:
+
+```shell
+curl -X GET "https://api.netzeroinsights.com/commercial-deals/mappings/1230" \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+```json
+[
+  {
+    "title": "Supply Agreement between Evlox and Recover",
+    "description": "In April 2023, Evlox, a prominent denim fabric manufacturer, entered into a three-year partnership with Recover™, a producer of recycled cotton fiber. This agreement commits Evlox to integrating Recover's sustainably produced, high-quality recycled cotton fiber—derived entirely from textile waste—into their denim fabrics. The collaboration aims to advance Evlox's sustainability objectives, particularly those outlined in their 2025 corporate social responsibility program, by reducing reliance on virgin materials and promoting a circular production model. As part of this initiative, Evlox plans to launch \"Re-Iconics by Evlox,\" a capsule collection that pays homage to classic denim styles while incorporating Recover's recycled fiber, thereby significantly minimizing environmental impact.",
+    "announcedDate": "2023-04-14T00:00:00",
+    "startYear": 2023,
+    "endYear": 2026,
+    "duration": 3,
+    "news": [
+      {
+        "url": "https://recoverfiber.com/newsroom/evlox-signs-three-year-deal-with-recover",
+        "title": "Evlox signs three-year deal with Recover™",
+        "newsDate": "2023-04-14T00:00:00",
+        "id": 74634
+      },
+      {
+        "url": "https://www.businesswire.com/news/home/20230418005189/en/Evlox-Signs-a-Three-year-Agreement-to-Incorporate-Recover%E2%84%A2-Recycled-Cotton-Fiber-in-Their-Denim-Production",
+        "title": "Evlox Signs a Three-year Agreement to Incorporate Recover™ Recycled Cotton Fiber in Their Denim Production\r\n ",
+        "newsDate": "2023-04-18T00:00:00",
+        "id": 74635
+      }
+    ],
+    "searchableLocations": [
+      {
+        "continent": {
+          "name": "Europe",
+          "id": 3
+        },
+        "country": {
+          "name": "Spain",
+          "continent": {
+            "name": "Europe",
+            "id": 3
+          },
+          "alpha2": "ES",
+          "id": 199
+        },
+        "platformOrder": 10,
+        "isSearchable": true,
+        "id": 915829
+      }
+    ],
+    "primaryTypes": [
+      {
+        "label": "Supply Agreement",
+        "id": 7
+      }
+    ],
+    "secondaryTypes": [
+      {
+        "label": "Sustainability Partnership",
+        "id": 13
+      }
+    ],
+    "connectedCompanies": [
+      {
+        "name": "Recover",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/matpkxj4ergscseibcro.png",
+        "companyID": 75094,
+        "directUrl": "organization/75094",
+        "commercialDealRole": "Seller",
+        "entityTypes": [
+          {
+            "label": "Company",
+            "id": 1
+          }
+        ],
+        "id": 33352
+      }
+    ],
+    "connectedInvestors": [
+      {
+        "name": "Evlox",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_514764.jpg",
+        "investorID": 43939,
+        "directUrl": "investor/43939",
+        "commercialDealRole": "Buyer",
+        "entityTypes": [
+          {
+            "label": "Investor",
+            "id": 2
+          }
+        ],
+        "id": 26227
+      }
+    ],
+    "id": 1231
+  }
+]
+```
+
+To get the mappings of a commercial deal, you should use the following endpoint:
+
+`GET /commercial-deals/mappings/{commercialDealID}`
+
+It takes a single parameter, indicated as “commercialDealID” in the example, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+
+## News
+
+> To get all the news of a commercial deal, use this code:
+
+```shell
+curl -X GET "https://api.netzeroinsights.com/commercial-deals/news/1230" \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+```json
+{
+  "content": [
+    {
+      "url": "https://in.marketscreener.com/quote/stock/ORANGE-4649/news/Orange-solar-power-purchase-agreement-with-ZE-Energy-46716737/",
+      "title": "Orange: solar power purchase agreement with ZE Energy",
+      "newsDate": "2024-05-14T00:00:00",
+      "id": 74632
+    },
+    {
+      "url": "https://web.archive.org/web/20240516091840/https://www.lesechos.fr/industrie-services/energie-environnement/electricite-comment-orange-contourne-les-montagnes-russes-du-solaire-2095140",
+      "title": "Electricity: how Orange is avoiding the solar roller coaster",
+      "newsDate": "2024-05-16T00:00:00",
+      "id": 74633
+    }
+  ],
+  "pageSize": 15,
+  "pageNumber": 0,
+  "totalElements": 2,
+  "numberOfElements": 2,
+  "totalPages": 1
+}
+```
+
+To get the news of a commercial deal, you should use the following endpoint:
+
+`GET /commercial-deals/news/{commercialDealID}`
+
+It takes a single parameter, indicated as “commercialDealID” in the example, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
 
 # Deprecated Endpoints
 
@@ -1255,6 +1762,40 @@ This is the tag filter used when searching for tags.
 | limit               | int                                           | Maximum number of results shown            |
 | offset              | int                                           | Number of pages (of size "limit") skipped  |
 | name                | string                                        | Fetch only the tags containing this string |
+
+## Commercial Deals Filter
+
+This is the commercial deal filter used when searching for commercial deals.
+
+| Parameter name        | Parameter type | Description                                                                                       |
+|-----------------------|----------------|---------------------------------------------------------------------------------------------------|
+| title                 | string         | Filters deals by title (partial or full match)                                                    |
+| announcedDateFrom     | date           | Earliest announced date of the deal                                                               |
+| announcedDateTo       | date           | Latest announced date of the deal                                                                 |
+| announcedDaysFrom     | int            | Filters deals announced within the last specified number of days                                  |
+| startYearFrom         | int            | Minimum start year of the deal                                                                    |
+| startYearTo           | int            | Maximum start year of the deal                                                                    |
+| endYearFrom           | int            | Minimum end year of the deal                                                                      |
+| endYearTo             | int            | Maximum end year of the deal                                                                      |
+| durationFrom          | int            | Minimum duration of the deal                                                                      |
+| durationTo            | int            | Maximum duration of the deal                                                                      |
+| pricingFrom           | int            | Minimum deal pricing                                                                              |
+| pricingTo             | int            | Maximum deal pricing                                                                              |
+| primaryTypes          | List of int    | See Section [Commercial Deal Types](#commercial-deal-types) for the accepted values               |
+| secondaryTypes        | List of int    | See Section [Commercial Deal Types](#commercial-deal-types) for the accepted values               |
+| searchableGeographies | List of int    | See Section [Searchable Locations](#searchable-locations) for the accepted values                 |
+| buyerCompanyIDs       | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
+| buyerInvestorIDs      | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
+| sellerCompanyIDs      | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
+| sellerInvestorIDs     | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
+| partnerCompanyIDs     | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
+| partnerInvestorIDs    | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
+| advisorCompanyIDs     | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
+| advisorInvestorIDs    | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
+| participantCompanyIDs | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
+| participantCompanyIDs | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
+| tagsMode              | string         | Specifies how multiple tags are matched (for example, AND or OR)                                  |
+| tagIDs                | List of int    | See Section [Tags](#tags) for accepted values                                                     |
 
 # Additional Tables
 
@@ -1708,6 +2249,84 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 |---------------|--------------------|
 | 200           | Request successful |
 
+## Commercial Deal Types
+
+| ID | Label                                    |
+|----|------------------------------------------|
+| 1  | Strategic Partnership                    |
+| 2  | Joint Venture                            |
+| 3  | Memorandum of Understanding (MoU)        |
+| 4  | Public-Private Partnership (PPP)         |
+| 5  | Research and Development Agreement (R&D) |
+| 6  | Offtake Agreement                        |
+| 7  | Supply Agreement                         |
+| 8  | Manufacturing Partnership                |
+| 9  | Licensing Agreement                      |
+| 10 | Letter of Intent (LOI)                   |
+| 11 | Service Agreement                        |
+| 12 | Distribution Agreement                   |
+| 13 | Sustainability Partnership               |
+
+## Commercial Deal Roles
+
+| ID | Label   |
+|----|---------|
+| 1  | Buyer   |
+| 2  | Seller  |
+| 3  | Partner |
+| 4  | Advisor |
+
+## Commercial Deal Participants
+
+> To get the list of companies and/or investors as participants, use this code:
+
+```shell
+curl -X GET "https://api.netzeroinsights.com/commercial-deals/search/company-investor?searchText=energy" \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+-H 'Content-Type: application/json' \       
+```
+
+> In case of a 200 response, the response body will contain all the matching participants, with the JSON structured like the following:
+
+```json
+[
+  {
+    "name": "EnergyLab",
+    "type": "INVESTOR",
+    "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/New_Empty_Logo_xqsrak.png",
+    "website": "https://energylab.es/",
+    "investorID": 64348,
+    "id": 64348
+  },
+  {
+    "name": "Energy Leap",
+    "type": "INVESTOR",
+    "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/New_Empty_Logo_xqsrak.png",
+    "investorID": 37952,
+    "id": 37952
+  },
+  {
+    "name": "Energy&+",
+    "type": "COMPANY",
+    "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1936205.jpg",
+    "website": "https://energy.bzh",
+    "companyID": 208261,
+    "id": 208261
+  }
+]
+```
+
+To get the list of the participants, you should use the following endpoint:
+
+`GET /commercial-deals/search/company-investor?searchText={textParam}`
+
+It takes a single query parameter, indicated as “searchText” in the example, which is a string used to filter the companies and investors and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+
 # Responses structure
 
 ## Startup search
@@ -2022,27 +2641,27 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 
 ## Commercial Deal
 
-| Name                         | Content                                    |
-|------------------------------|--------------------------------------------|
-| id                           | Internal commercial deal ID                |
-| title                        | Commercial deal title                      |
-| description                  | Commercial deal description                |
-| volume                       | Volumetric value of the deal component     |
-| currency                     | Commercial deal currency                   |
-| announcedDate                | Commercial deal announcement date          |
-| startYear                    | Commercial deal start year                 |
-| endYear                      | Commercial deal end year                   |
-| duration                     | Commercial deal duration                   |
-| pricing                      | Commercial deal pricing in given currency  |
-| pricingEUR                   | Commercial deal pricing in EUR             |
-| pricingUSD                   | Commercial deal pricing in USD             |
-| tags                         | Tags associated with the commercial deal   |
-| searchableLocations          | Commercial deal locations                  |
-| primaryCommercialDealTypes   | Commercial deal primary types              |
-| secondaryCommercialDealTypes | Commercial deal secondary types            |
-| connectedCompanies           | Companies connected to the commercial deal |
-| connectedInvestors           | Investors connected to the commercial deal |
-| news                         | News connected to the commercial deal      |
+| Name                | Content                                    |
+|---------------------|--------------------------------------------|
+| id                  | Internal commercial deal ID                |
+| title               | Commercial deal title                      |
+| description         | Commercial deal description                |
+| volume              | Volumetric value of the deal component     |
+| currency            | Commercial deal currency                   |
+| announcedDate       | Commercial deal announcement date          |
+| startYear           | Commercial deal start year                 |
+| endYear             | Commercial deal end year                   |
+| duration            | Commercial deal duration                   |
+| pricing             | Commercial deal pricing in given currency  |
+| pricingEUR          | Commercial deal pricing in EUR             |
+| pricingUSD          | Commercial deal pricing in USD             |
+| tags                | Tags associated with the commercial deal   |
+| searchableLocations | Commercial deal locations                  |
+| primaryTypes        | Commercial deal primary types              |
+| secondaryTypes      | Commercial deal secondary types            |
+| connectedCompanies  | Companies connected to the commercial deal |
+| connectedInvestors  | Investors connected to the commercial deal |
+| news                | News connected to the commercial deal      |
 
 # Taxonomy Page
 
