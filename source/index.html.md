@@ -26,7 +26,8 @@ Our REST APIs give all the functionalities needed to interact with our database.
 
 For brevity, the possible error codes for all endpoints are at the end of the document.
 
-Every endpoint is to be called starting with the domain https://api.netzeroinsights.com
+Every endpoint is to be called starting with the domain https://api-new.netzeroinsights.com for the prod environment 
+or https://api-stage.netzeroinsights.com for the stage environment
 
 # Security
 
@@ -35,42 +36,41 @@ Every endpoint is to be called starting with the domain https://api.netzeroinsig
 > To login, use this code:
 
 ```shell
-curl -v -X POST "https://api.netzeroinsights.com/security/formLogin" \
--H "Content-Type: application/x-www-form-urlencoded" \
--d "username=YOUR_USERNAME&password=YOUR_PASSWORD"
+curl -v -X POST 'https://api-new.netzeroinsights.com/auth/login?email={YOUR_EMAIL}&password={YOUR_PASSWORD}' \
+-d ''
 ```
 
-> Make sure to replace `YOUR_USERNAME` and `YOUR_PASSWORD` with your credentials.
+> Make sure to replace `YOUR_EMAIL` and `YOUR_PASSWORD` with your credentials.
 > 
-> Using the -v ("verbose") flag lets you see the full response, in which you can find the **Session Cookie**.
+> Using the -v ("verbose") flag lets you see the full response, in which you can find the **access_token** in the headers.
 
 Before using any other API, you should first login using the following endpoint:
 
-`POST /security/formLogin`
+`POST /auth/login?email={YOUR_EMAIL}&password={YOUR_PASSWORD}`
 
-With the following two parameters:
+With the following two query parameters:
 
 | Parameter name | Parameter value               |
 |----------------|-------------------------------|
-| username       | provided by Net Zero Insights |
+| email          | provided by Net Zero Insights |
 | password       | provided by Net Zero Insights |
 
 The possible response codes are:
 
-| Response code | Meaning          |
-|---------------|------------------|
-| 200           | Login successful |
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Login successful                     |
+| 403           | Forbidden, insufficient access level |
 
-Please note that in case of a 200 response, you will also get a **Session Cookie**. You should save this,
-as it will be needed for using all the other endpoints. The session cookie expires after 30 minutes of
-session inactivity.
+Please note that in case of a 200 response, you will also get an **access_token** with an expiration duration of 30 days. 
+You should save this, as it will be needed for using all the other endpoints.
 
-Our API expects the **Session Cookie** to be included in all API requests to the server, like this:
+Our API expects the **access_token** to be included in all API requests to the server by the authorization header, like this:
 
-`JSESSIONID=EXAMPLE_SESSION_ID`
+`Authorization: Bearer EXAMPLE_ACCESS_TOKEN`
 
 <aside class="notice">
-You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
+You must replace <code>EXAMPLE_ACCESS_TOKEN</code> with your **access_token**.
 </aside>
 
 ## Logout
@@ -78,34 +78,30 @@ You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 > To logout, use this code:
 
 ```shell
-curl -v --cookie "JSESSIONID=EXAMPLE_SESSION_ID" \
- -X GET "https://api.netzeroinsights.com/security/logout"
+curl -v -X GET 'https://api-new.netzeroinsights.com/auth/logout' \
+ -H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
-> Make sure to replace `EXAMPLE_SESSION_ID` with your **Session Cookie**
+> Make sure to replace `EXAMPLE_ACCESS_TOKEN` with your **access_token**
 
-To close the session, you should use the following endpoint:
+To invalidate the access token, you should use the following endpoint:
 
-`GET /security/logout`
+`GET /auth/logout`
 
 It takes no parameter, and has the following response code:
 
-| Response code | Meaning            |
-|---------------|--------------------|
-| 200           | Session terminated |
-
-<aside class="notice">
-Please note that manually closing a session is not required, since it will be closed bye the server after
-30 minutes. This endpoint is mainly used if you need to use different accounts.
-</aside>
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Login successful                     |
+| 403           | Forbidden, insufficient access level |
 
 # Startup List
 
 > To get startup list, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST 'https://api.netzeroinsights.com/companies' \
+curl -v -X POST 'https://api-new.netzeroinsights.com/companies' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 -H 'Content-Type: application/json' \                 
 -d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
@@ -142,8 +138,8 @@ The possible response codes are:
 > To get the deals list, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST 'https://api.netzeroinsights.com/fundingRounds' \
+curl -v -X POST 'https://api-new.netzeroinsights.com/fundingRounds' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 -H 'Content-Type: application/json' \                 
 -d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
@@ -180,8 +176,8 @@ The possible response codes are:
 > To get the investors list, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST 'https://api.netzeroinsights.com/investors' \
+curl -v -X POST 'https://api-new.netzeroinsights.com/investors' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 -H 'Content-Type: application/json' \                 
 -d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
@@ -218,7 +214,7 @@ The possible response codes are:
 > To get the commercial deals list, use this code:
 
  ```shell
-curl -X POST 'https://api.netzeroinsights.com/commercial-deals/filter?pageSize=1' \
+curl -v -X POST 'https://api-new.netzeroinsights.com/commercial-deals/filter?pageSize=1' \
 -H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 -d '{"primaryTypeIDs": [1, 7], "pricingFrom": 15000000, "pricingTo": 20000000}'
@@ -344,8 +340,8 @@ Additionally, for each funding round, you can get the investors and the sources 
 > To get a startup overview and taxonomy, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/getStartup/sunfire-668"
+curl -v -X GET 'https://api-new.netzeroinsights.com/getStartup/sunfire-668' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain the requested startup, with the format specified at section [Startup](#startup).
@@ -491,8 +487,8 @@ It takes a single parameter, indicated as ”[clientID]” in the example, which
 > To get a startup overview and taxonomy, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/patents/668"
+curl -v -X GET 'https://api-new.netzeroinsights.com/patents/668'
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain the requested patents, with the format specified at section [Patent](#patent).
@@ -545,8 +541,8 @@ It takes a single parameter, indicated as ”[clientID]” in the example, which
 > To get all the investors of a startup, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/investors/668"
+curl -v -X GET 'https://api-new.netzeroinsights.com/investors/668'
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain the requested investors, with the format specified at section [Investor](#investor-core).
@@ -583,8 +579,8 @@ It takes a single parameter, indicated as ”[clientID]” in the example, which
 > To get all the contacts of a startup, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST "https://api.netzeroinsights.com/contacts/company" \
+curl -v -X POST 'https://api-new.netzeroinsights.com/contacts/company' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H "Content-Type: application/json" \
 -d "{'clientID': 668, 'decisionMaker': false, 'roleID': 5}"
 ```
@@ -629,8 +625,8 @@ With a JSON request body in the format specified at the Section [Contacts Filter
 > To get all the funding rounds of a startup, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET https://api.netzeroinsights.com/fundingRoundsPrints/668
+curl -v -X GET 'https://api-new.netzeroinsights.com/fundingRoundsPrints/668' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain the requested funding rounds, with the format specified at section [Funding Round](#funding-round).
@@ -693,8 +689,8 @@ It takes a single parameter, indicated as ”[clientID]” in the example, which
 > To get all the investors of a given set of funding rounds, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST https://api.netzeroinsights.com/getFundingRoundInvestors \
+curl -v -X POST 'https://api-new.netzeroinsights.com/getFundingRoundInvestors' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H "Content-Type: application/json" \
 -d "{[86971]}"
 ```
@@ -739,8 +735,8 @@ The request body should be a list of round IDs, which you can get from previous 
 > To get all the sources of a specific funding round, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
- -X GET https://api.netzeroinsights.com/roundNewsByRoundID/86971
+curl -v -X GET 'https://api-new.netzeroinsights.com/roundNewsByRoundID/86971' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain all the sources of a funding rounds, with the format specified at section [Funding round source](#funding-round-source).
@@ -780,7 +776,7 @@ It takes a single parameter, indicated as ”[coFundingRoundId]” in the exampl
 > To get all the commercial deals of a startup, use this code:
 
 ```shell
-curl -X GET https://api.netzeroinsights.com/commercial-deals/connected-entities/company/37090 \
+curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/company/37090' \
 -H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
@@ -886,8 +882,8 @@ It takes a single parameter, indicated as “companyID” in the example, which 
 > To get the details of a Deal, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/fundingRound/42643"
+curl -v -X GET 'https://api-new.netzeroinsights.com/fundingRound/42643' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain the requested deal, with the format specified at section [Deal](#deal).
@@ -1002,8 +998,8 @@ It takes a single parameter, indicated as ”[fundingRoundID]” in the example,
 > To get the details of an Investor, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/getInvestor/10000"
+curl -v -X GET 'https://api-new.netzeroinsights.com/getInvestor/10000' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain the requested investor, with the format specified at section [Investor](#investor).
@@ -1089,7 +1085,7 @@ It takes a single parameter, indicated as ”[investorID]” in the example, and
 > To get all the commercial deals of an investor, use this code:
 
 ```shell
-curl -X GET https://api.netzeroinsights.com/commercial-deals/connected-entities/investor/43939 \
+curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/investor/43939' \
 -H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
@@ -1203,8 +1199,8 @@ It takes a single parameter, indicated as “investorID” in the example, which
 > To get all the contacts of an investor, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST "https://api.netzeroinsights.com/contacts/investor" \
+curl -v -X POST 'https://api-new.netzeroinsights.com/contacts/investor' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H "Content-Type: application/json" \
 -d "{'investorID': 16328, 'decisionMaker': false}"
 ```
@@ -1252,7 +1248,7 @@ With a JSON request body in the format specified at the Section [Investor Contac
 > To get the details of a commercial deal, use this code:
 
 ```shell
-curl -X GET "https://api.netzeroinsights.com/commercial-deals/1230" \
+curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/1230' \
 -H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
@@ -1354,14 +1350,14 @@ It takes a single parameter, indicated as “commercialDealID” in the example,
 |---------------|--------------------------------------|
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
-| 404           | Reource not found                    |
+| 404           | Resource not found                   |
 
 ## Connected Entities
 
 > To get all the connected entities of a commercial deal, use this code:
 
 ```shell
-curl -X GET "https://api.netzeroinsights.com/commercial-deals/connected-entities/1230/2" \
+curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/1230/2' \
 -H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
@@ -1403,7 +1399,7 @@ It takes two parameters, indicated as “commercialDealID” and “commercialDe
 > To get all the tags of connected entities of a commercial deal, use this code:
 
 ```shell
-curl -X GET "https://api.netzeroinsights.com/commercial-deals/connected-entities/taxonomy/1230" \
+curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/taxonomy/1230' \
 -H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
@@ -1466,7 +1462,7 @@ It takes a single parameter, indicated as “commercialDealID” in the example,
 > To get all the commercial deal mappings, use this code:
 
 ```shell
-curl -X GET "https://api.netzeroinsights.com/commercial-deals/mappings/1230" \
+curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/mappings/1230' \
 -H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
@@ -1578,7 +1574,7 @@ It takes a single parameter, indicated as “commercialDealID” in the example,
 > To get all the news of a commercial deal, use this code:
 
 ```shell
-curl -X GET "https://api.netzeroinsights.com/commercial-deals/news/1230" \
+curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/news/1230' \
 -H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
@@ -2069,8 +2065,8 @@ This is the commercial deal filter used when searching for commercial deals.
 > To get the list of the currently available tags, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X POST "https://api.netzeroinsights.com/taxonomy/tags"
+curl -v -X POST 'https://api-new.netzeroinsights.com/taxonomy/tags' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -d '{"name": "bio", "offset": 0, "limit": 5}'
 ```
 
@@ -2136,8 +2132,8 @@ The possible response codes are:
 > To get the list of the currently available investors, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/getInvestorsForFilter"
+curl -v -X GET 'https://api-new.netzeroinsights.com/getInvestorsForFilter' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain all the available investors, with the JSON structured like the following:
@@ -2172,8 +2168,8 @@ It takes no parameter, and has the following response codes:
 > To get the list of the currently available funding types, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/getFundingTypes"
+curl -v -X GET 'https://api-new.netzeroinsights.com/getFundingTypes' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain all the available funding types, with the JSON structured like the following:
@@ -2206,8 +2202,8 @@ It takes no parameter, and has the following response codes:
 > To get the list of the searchable locations, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET "https://api.netzeroinsights.com/searchLocation/london"
+curl -v -X GET 'https://api-new.netzeroinsights.com/searchLocation/london' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
 > In case of a 200 response, the response body will contain all the matching searchable locations, with the JSON structured like the following:
@@ -2281,7 +2277,7 @@ It takes a single parameter, indicated as ”[location]” in the example, which
 > To get the list of companies and/or investors as participants, use this code:
 
 ```shell
-curl -X GET "https://api.netzeroinsights.com/commercial-deals/search/company-investor?searchText=energy" \
+curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/search/company-investor?searchText=energy' \
 -H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \       
 ```
@@ -2672,8 +2668,8 @@ Our taxonomy is a way to visualise the relation between different topics.
 > To get all Taxonomy Graph Items, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/itemDtos' \
+curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/itemDtos' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -2713,8 +2709,8 @@ The possible response codes are:
 > To get Taxonomy Graph Item list without any parents (which means they are the top level of our taxonomy), use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/graph' \
+curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -2760,15 +2756,15 @@ These are the top-most items of our taxonomy, and all the other items are relate
 > To get the list of children Taxonomy Graph Items of a parent item, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/graph/Biofuel' \
+curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph/Biofuel' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 ```
 > Or
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/graph/2' \
+curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph/2' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -2808,8 +2804,8 @@ The possible response codes are:
 > To get Top Companies of a Taxonomy Graph Item, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/graph/topCompanies/1783' \
+curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph/topCompanies/1783' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -2906,8 +2902,8 @@ The possible response codes are:
 > To get Top Investors of a Taxonomy Graph Item, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/graph/topInvestors/2' \
+curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph/topInvestors/2' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -2965,16 +2961,16 @@ The possible response codes are:
 > To get a Taxonomy Graph Item by parameter, ID or label, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/item/2' \
+curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/item/2' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 ```
 
 > Or
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/item/Biofuel' \
+curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/item/Biofuel' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -3006,8 +3002,8 @@ The possible response codes are:
 > To get the Taxonomy Graph Items by company, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/items/company/10' \
+curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/items/company/10' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -3090,8 +3086,8 @@ The possible response codes are:
 > To get Taxonomy Graph Item Relation list by parentID, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/relations/parent/1' \
+curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/relations/parent/1' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -3133,8 +3129,8 @@ The possible response codes are:
 > To get Taxonomy Graph Item Relation list by childID, use this code:
 
 ```shell
-curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET 'https://api.netzeroinsights.com/taxonomy/relations/child/24' \
+curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/relations/child/24' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 ```
 
