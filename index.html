@@ -325,6 +325,15 @@
                   <li>
                     <a href="#logout" class="toc-h2 toc-link" data-title="Logout">Logout</a>
                   </li>
+                  <li>
+                    <a href="#system-2-0-authentication" class="toc-h2 toc-link" data-title="System 2.0 Authentication">System 2.0 Authentication</a>
+                  </li>
+                  <li>
+                    <a href="#login-system-2-0" class="toc-h2 toc-link" data-title="Login (System 2.0)">Login (System 2.0)</a>
+                  </li>
+                  <li>
+                    <a href="#logout-system-2-0" class="toc-h2 toc-link" data-title="Logout (System 2.0)">Logout (System 2.0)</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -619,7 +628,31 @@
 
 <p>For brevity, the possible error codes for all endpoints are at the end of the document.</p>
 
-<p>Every endpoint is to be called starting with the domain https://api.netzeroinsights.com</p>
+<p>Each endpoint in this documentation should be called using the appropriate domain for the environment and API version you are integrating with.</p>
+
+<table><thead>
+<tr>
+<th>Environment</th>
+<th>Domain</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Legacy Production</td>
+<td><code>https://api.netzeroinsights.com</code></td>
+<td>Base URL for the legacy API</td>
+</tr>
+<tr>
+<td>System 2.0 Production</td>
+<td><code>https://api-new.netzeroinsights.com</code></td>
+<td>Base URL for the System 2.0 production API</td>
+</tr>
+<tr>
+<td>System 2.0 Stage</td>
+<td><code>https://api-stage.netzeroinsights.com</code></td>
+<td>Base URL for the System 2.0 staging API</td>
+</tr>
+</tbody></table>
 <h1 id='security'>Security</h1><h2 id='login'>Login</h2>
 <blockquote>
 <p>To login, use this code:</p>
@@ -714,12 +747,120 @@ You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 Please note that manually closing a session is not required, since it will be closed bye the server after
 30 minutes. This endpoint is mainly used if you need to use different accounts.
 </aside>
+<h2 id='system-2-0-authentication'>System 2.0 Authentication</h2>
+<p>System 2.0 APIs use <strong>JWT Bearer Token</strong> authentication instead of session-based authentication.</p>
+
+<p>Before using any System 2.0 API, you must authenticate using the provided email and password to obtain a JWT access token.</p>
+
+<p>All System 2.0 endpoints require the following header:</p>
+
+<p><code>Authorization: Bearer EXAMPLE_ACCESS_TOKEN</code></p>
+
+<aside class="notice">
+Replace <code>EXAMPLE_ACCESS_TOKEN</code> with the JWT access token returned by the authentication endpoint.
+</aside>
+<h2 id='login-system-2-0'>Login (System 2.0)</h2>
+<blockquote>
+<p>To login, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/auth/login?email={YOUR_EMAIL}&amp;password={YOUR_PASSWORD}'</span> <span class="se">\</span>
+<span class="nt">-d</span> <span class="s1">''</span> 
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>YOUR_EMAIL</code> and <code>YOUR_PASSWORD</code> with your credentials.</p>
+
+<p>Using the -v (&quot;verbose&quot;) flag lets you see the full response, in which you can find the <strong>access_token</strong> in the headers.</p>
+</blockquote>
+
+<p>Before using any other API, you should first login using the following endpoint:</p>
+
+<p><code>POST /auth/login?email={YOUR_EMAIL}&amp;password={YOUR_PASSWORD}</code></p>
+
+<p>With the following two query parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>provided by Net Zero Insights</td>
+</tr>
+<tr>
+<td>password</td>
+<td>provided by Net Zero Insights</td>
+</tr>
+</tbody></table>
+
+<p>The possible response codes are:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Login successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
+
+<p>Please note that in case of a 200 response, you will also get an <strong>access_token</strong> with an expiration duration of 30 days.
+You should save this, as it will be needed for using all the other endpoints.</p>
+
+<p>Our API expects the <strong>access_token</strong> to be included in all API requests to the server by the authorization header, like this:</p>
+
+<p><code>Authorization: Bearer EXAMPLE_ACCESS_TOKEN</code></p>
+
+<aside class="notice">
+You must replace <code>EXAMPLE_ACCESS_TOKEN</code> with your **access_token**.
+JWT access tokens expire after a configurable period. When the token expires, authenticate again to obtain a new access token.
+</aside>
+<h2 id='logout-system-2-0'>Logout (System 2.0)</h2>
+<blockquote>
+<p>To logout, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/auth/logout'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>EXAMPLE_ACCESS_TOKEN</code> with your <strong>access_token</strong></p>
+</blockquote>
+
+<p>To invalidate the access token, you should use the following endpoint:</p>
+
+<p><code>GET /auth/logout</code></p>
+
+<p>It takes no parameter, and has the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Login successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
 <h1 id='startup-list'>Startup List</h1>
 <blockquote>
 <p>To get startup list, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/companies'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/companies'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 <span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
 </code></pre></div>
@@ -760,8 +901,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the deals list, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/fundingRounds'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/fundingRounds'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 <span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
 </code></pre></div>
@@ -802,8 +943,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the investors list, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/investors'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/investors'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 <span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
 </code></pre></div>
@@ -844,7 +985,7 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the commercial deals list, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/commercial-deals/filter?pageSize=1'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/commercial-deals/filter?pageSize=1'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 <span class="nt">-d</span> <span class="s1">'{"primaryTypeIDs": [1, 7], "pricingFrom": 15000000, "pricingTo": 20000000}'</span>
@@ -986,8 +1127,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get a startup overview and taxonomy, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getStartup/sunfire-668"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/getStartup/sunfire-668'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested startup, with the format specified at section <a href="#startup">Startup</a>.</p>
@@ -1137,8 +1278,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get a startup overview and taxonomy, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/patents/668"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/patents/668'</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested patents, with the format specified at section <a href="#patent">Patent</a>.</p>
@@ -1195,8 +1336,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the investors of a startup, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/investors/668"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/investors/668'</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested investors, with the format specified at section <a href="#investor-core">Investor</a>.</p>
@@ -1237,8 +1378,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the contacts of a startup, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/contacts/company"</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/contacts/company'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s2">"{'clientID': 668, 'decisionMaker': false, 'roleID': 5}"</span>
 </code></pre></div>
@@ -1287,8 +1428,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the funding rounds of a startup, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET https://api.netzeroinsights.com/fundingRoundsPrints/668
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/fundingRoundsPrints/668'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested funding rounds, with the format specified at section <a href="#funding-round">Funding Round</a>.</p>
@@ -1355,8 +1496,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the investors of a given set of funding rounds, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST https://api.netzeroinsights.com/getFundingRoundInvestors <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/getFundingRoundInvestors'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s2">"{[86971]}"</span>
 </code></pre></div>
@@ -1405,8 +1546,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the sources of a specific funding round, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
- <span class="nt">-X</span> GET https://api.netzeroinsights.com/roundNewsByRoundID/86971
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/roundNewsByRoundID/86971'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the sources of a funding rounds, with the format specified at section <a href="#funding-round-source">Funding round source</a>.</p>
@@ -1450,7 +1591,7 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the commercial deals of a startup, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://api.netzeroinsights.com/commercial-deals/connected-entities/company/37090 <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/company/37090'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
@@ -1563,8 +1704,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the details of a Deal, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/fundingRound/42643"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/fundingRound/42643'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested deal, with the format specified at section <a href="#deal">Deal</a>.</p>
@@ -1682,8 +1823,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the details of an Investor, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getInvestor/10000"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/getInvestor/10000'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested investor, with the format specified at section <a href="#investor">Investor</a>.</p>
@@ -1773,7 +1914,7 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the commercial deals of an investor, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://api.netzeroinsights.com/commercial-deals/connected-entities/investor/43939 <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/investor/43939'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
@@ -1894,8 +2035,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the contacts of an investor, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/contacts/investor"</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/contacts/investor'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s2">"{'investorID': 16328, 'decisionMaker': false}"</span>
 </code></pre></div>
@@ -1947,7 +2088,7 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the details of a commercial deal, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/1230"</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/commercial-deals/1230'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
@@ -2059,14 +2200,14 @@ Please note that manually closing a session is not required, since it will be cl
 </tr>
 <tr>
 <td>404</td>
-<td>Reource not found</td>
+<td>Resource not found</td>
 </tr>
 </tbody></table>
 <h2 id='connected-entities'>Connected Entities</h2>
 <blockquote>
 <p>To get all the connected entities of a commercial deal, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/connected-entities/1230/2"</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/1230/2'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
@@ -2113,7 +2254,7 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the tags of connected entities of a commercial deal, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/connected-entities/taxonomy/1230"</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/taxonomy/1230'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -2180,7 +2321,7 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the commercial deal mappings, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/mappings/1230"</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/commercial-deals/mappings/1230'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -2297,7 +2438,7 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the news of a commercial deal, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/news/1230"</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/commercial-deals/news/1230'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -3883,8 +4024,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the list of the currently available tags, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/taxonomy/tags"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/tags'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s1">'{"name": "bio", "offset": 0, "limit": 5}'</span>
 </code></pre></div>
 <blockquote>
@@ -3954,8 +4095,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the list of the currently available investors, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getInvestorsForFilter"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/getInvestorsForFilter'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the available investors, with the JSON structured like the following:</p>
@@ -3994,8 +4135,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the list of the currently available funding types, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getFundingTypes"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/getFundingTypes'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the available funding types, with the JSON structured like the following:</p>
@@ -4032,8 +4173,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the list of the searchable locations, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/searchLocation/london"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/searchLocation/london'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the matching searchable locations, with the JSON structured like the following:</p>
@@ -4168,7 +4309,7 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the list of companies and/or investors as participants, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/commercial-deals/search/company-investor?searchText=energy"</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/commercial-deals/search/company-investor?searchText=energy'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>      
 </code></pre></div>
@@ -5360,8 +5501,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all Taxonomy Graph Items, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/itemDtos'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/itemDtos'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -5405,8 +5546,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get Taxonomy Graph Item list without any parents (which means they are the top level of our taxonomy), use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/graph'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -5456,15 +5597,15 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the list of children Taxonomy Graph Items of a parent item, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/Biofuel'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/graph/Biofuel'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
 <p>Or</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/2'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/graph/2'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -5508,8 +5649,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get Top Companies of a Taxonomy Graph Item, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/topCompanies/1783'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/graph/topCompanies/1783'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -5610,8 +5751,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get Top Investors of a Taxonomy Graph Item, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/topInvestors/2'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/graph/topInvestors/2'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -5673,15 +5814,15 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get a Taxonomy Graph Item by parameter, ID or label, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/item/2'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/item/2'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
 <p>Or</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/item/Biofuel'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/item/Biofuel'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -5717,8 +5858,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the Taxonomy Graph Items by company, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/items/company/10'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/items/company/10'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -5805,8 +5946,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get Taxonomy Graph Item Relation list by parentID, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/relations/parent/1'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/relations/parent/1'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -5852,8 +5993,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get Taxonomy Graph Item Relation list by childID, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/relations/child/24'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/relations/child/24'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
