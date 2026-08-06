@@ -30,13 +30,86 @@ Each endpoint in this documentation should be called using the appropriate domai
 
 | Environment           | Domain                                  | Description                                |
 |-----------------------|-----------------------------------------|--------------------------------------------|
-| Legacy Production     | `https://api.netzeroinsights.com`       | Base URL for the legacy API                |
+| System 1.0 Production | `https://api.netzeroinsights.com`       | Base URL for the legacy System 1.0 API     |
 | System 2.0 Production | `https://api-new.netzeroinsights.com`   | Base URL for the System 2.0 production API |
 | System 2.0 Stage      | `https://api-stage.netzeroinsights.com` | Base URL for the System 2.0 staging API    |
 
-# Security
+# System 2.0
 
-## Login
+## Security
+
+### Login
+
+> To login, use this code:
+
+```shell
+curl -v -X POST 'https://api-new.netzeroinsights.com/auth/login?email={YOUR_EMAIL}&password={YOUR_PASSWORD}' \
+-d '' 
+```
+
+> Make sure to replace `YOUR_EMAIL` and `YOUR_PASSWORD` with your credentials.
+>
+> Using the -v ("verbose") flag lets you see the full response, in which you can find the **access_token** in the headers.
+
+System 2.0 APIs use **JWT Bearer Token** authentication instead of session-based authentication.
+
+Before using any other API, you should first login using the following endpoint:
+
+`POST /auth/login?email={YOUR_EMAIL}&password={YOUR_PASSWORD}`
+
+With the following two query parameters:
+
+| Parameter name | Parameter value               |
+|----------------|-------------------------------|
+| email          | provided by Net Zero Insights |
+| password       | provided by Net Zero Insights |
+
+The possible response codes are:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Login successful                     |
+| 403           | Forbidden, insufficient access level |
+
+Please note that in case of a 200 response, you will also get an **access_token** with an expiration duration of 30 days.
+You should save this, as it will be needed for using all the other endpoints.
+
+Our API expects the **access_token** to be included in all API requests to the server by the authorization header, like this:
+
+`Authorization: Bearer EXAMPLE_ACCESS_TOKEN`
+
+<aside class="notice">
+You must replace <code>EXAMPLE_ACCESS_TOKEN</code> with your **access_token**.
+JWT access tokens expire after a configurable period. When the token expires, authenticate again to obtain a new access token.
+</aside>
+
+### Logout
+
+> To logout, use this code:
+
+```shell
+curl -v -X POST 'https://api-new.netzeroinsights.com/auth/logout' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> Make sure to replace `EXAMPLE_ACCESS_TOKEN` with your **access_token**
+
+To invalidate the access token, you should use the following endpoint:
+
+`GET /auth/logout`
+
+It takes no parameter, and has the following response code:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Login successful                     |
+| 403           | Forbidden, insufficient access level |
+
+# System 1.0
+
+## Security
+
+### Login
 
 > To login, use this code:
 
@@ -79,7 +152,7 @@ Our API expects the **Session Cookie** to be included in all API requests to the
 You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 </aside>
 
-## Logout
+### Logout
 
 > To logout, use this code:
 
@@ -104,85 +177,6 @@ It takes no parameter, and has the following response code:
 Please note that manually closing a session is not required, since it will be closed bye the server after
 30 minutes. This endpoint is mainly used if you need to use different accounts.
 </aside>
-
-## System 2.0 Authentication
-
-System 2.0 APIs use **JWT Bearer Token** authentication instead of session-based authentication.
-
-Before using any System 2.0 API, you must authenticate using the provided email and password to obtain a JWT access token.
-
-All System 2.0 endpoints require the following header:
-
-`Authorization: Bearer EXAMPLE_ACCESS_TOKEN`
-
-<aside class="notice">
-Replace <code>EXAMPLE_ACCESS_TOKEN</code> with the JWT access token returned by the authentication endpoint.
-</aside>
-
-## Login (System 2.0)
-
-> To login, use this code:
-
-```shell
-curl -v -X POST 'https://api-new.netzeroinsights.com/auth/login?email={YOUR_EMAIL}&password={YOUR_PASSWORD}' \
--d '' 
-```
-
-> Make sure to replace `YOUR_EMAIL` and `YOUR_PASSWORD` with your credentials.
->
-> Using the -v ("verbose") flag lets you see the full response, in which you can find the **access_token** in the headers.
-
-Before using any other API, you should first login using the following endpoint:
-
-`POST /auth/login?email={YOUR_EMAIL}&password={YOUR_PASSWORD}`
-
-With the following two query parameters:
-
-| Parameter name | Parameter value               |
-|----------------|-------------------------------|
-| email          | provided by Net Zero Insights |
-| password       | provided by Net Zero Insights |
-
-The possible response codes are:
-
-| Response code | Meaning                              |
-|---------------|--------------------------------------|
-| 200           | Login successful                     |
-| 403           | Forbidden, insufficient access level |
-
-Please note that in case of a 200 response, you will also get an **access_token** with an expiration duration of 30 days.
-You should save this, as it will be needed for using all the other endpoints.
-
-Our API expects the **access_token** to be included in all API requests to the server by the authorization header, like this:
-
-`Authorization: Bearer EXAMPLE_ACCESS_TOKEN`
-
-<aside class="notice">
-You must replace <code>EXAMPLE_ACCESS_TOKEN</code> with your **access_token**.
-JWT access tokens expire after a configurable period. When the token expires, authenticate again to obtain a new access token.
-</aside>
-
-## Logout (System 2.0)
-
-> To logout, use this code:
-
-```shell
-curl -v -X POST 'https://api-new.netzeroinsights.com/auth/logout' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
-```
-
-> Make sure to replace `EXAMPLE_ACCESS_TOKEN` with your **access_token**
-
-To invalidate the access token, you should use the following endpoint:
-
-`GET /auth/logout`
-
-It takes no parameter, and has the following response code:
-
-| Response code | Meaning                              |
-|---------------|--------------------------------------|
-| 200           | Login successful                     |
-| 403           | Forbidden, insufficient access level |
 
 # Startup List
 
