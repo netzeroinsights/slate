@@ -317,23 +317,54 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#system-2-0" class="toc-h1 toc-link" data-title="System 2.0">System 2.0</a>
+            <a href="#security-system-2-0" class="toc-h1 toc-link" data-title="Security System 2.0">Security System 2.0</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#security" class="toc-h2 toc-link" data-title="Security">Security</a>
+                    <a href="#login" class="toc-h2 toc-link" data-title="Login">Login</a>
+                  </li>
+                  <li>
+                    <a href="#logout" class="toc-h2 toc-link" data-title="Logout">Logout</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#system-1-0" class="toc-h1 toc-link" data-title="System 1.0">System 1.0</a>
+            <a href="#startup-list-system-2-0" class="toc-h1 toc-link" data-title="Startup List System 2.0">Startup List System 2.0</a>
+          </li>
+          <li>
+            <a href="#filters-structure-system-2-0" class="toc-h1 toc-link" data-title="Filters structure System 2.0">Filters structure System 2.0</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#security-2" class="toc-h2 toc-link" data-title="Security">Security</a>
+                    <a href="#company-sort-fields" class="toc-h2 toc-link" data-title="Company Sort Fields">Company Sort Fields</a>
+                  </li>
+                  <li>
+                    <a href="#mainfilter" class="toc-h2 toc-link" data-title="MainFilter">MainFilter</a>
+                  </li>
+                  <li>
+                    <a href="#company-filter" class="toc-h2 toc-link" data-title="Company Filter">Company Filter</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#startup-list" class="toc-h1 toc-link" data-title="Startup List">Startup List</a>
+            <a href="#response-structures-system-2-0" class="toc-h1 toc-link" data-title="Response structures System 2.0">Response structures System 2.0</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#company-search" class="toc-h2 toc-link" data-title="Company Search">Company Search</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#security-system-1-0" class="toc-h1 toc-link" data-title="Security System 1.0">Security System 1.0</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#login-2" class="toc-h2 toc-link" data-title="Login">Login</a>
+                  </li>
+                  <li>
+                    <a href="#logout-2" class="toc-h2 toc-link" data-title="Logout">Logout</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#startup-list-system-1-0" class="toc-h1 toc-link" data-title="Startup List System 1.0">Startup List System 1.0</a>
           </li>
           <li>
             <a href="#deals-list" class="toc-h1 toc-link" data-title="Deals List">Deals List</a>
@@ -455,6 +486,9 @@
                     <a href="#wildcard-fields" class="toc-h2 toc-link" data-title="Wildcard Fields">Wildcard Fields</a>
                   </li>
                   <li>
+                    <a href="#regexp-fields" class="toc-h2 toc-link" data-title="Regexp Fields">Regexp Fields</a>
+                  </li>
+                  <li>
                     <a href="#patent-status" class="toc-h2 toc-link" data-title="Patent Status">Patent Status</a>
                   </li>
                   <li>
@@ -465,6 +499,12 @@
                   </li>
                   <li>
                     <a href="#financial-stages" class="toc-h2 toc-link" data-title="Financial Stages">Financial Stages</a>
+                  </li>
+                  <li>
+                    <a href="#size-ranges" class="toc-h2 toc-link" data-title="Size Ranges">Size Ranges</a>
+                  </li>
+                  <li>
+                    <a href="#revenue-ranges" class="toc-h2 toc-link" data-title="Revenue Ranges">Revenue Ranges</a>
                   </li>
                   <li>
                     <a href="#fundings" class="toc-h2 toc-link" data-title="Fundings">Fundings</a>
@@ -520,7 +560,7 @@
               </ul>
           </li>
           <li>
-            <a href="#responses-structure" class="toc-h1 toc-link" data-title="Responses structure">Responses structure</a>
+            <a href="#response-structures" class="toc-h1 toc-link" data-title="Response structures">Response structures</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#startup-search" class="toc-h2 toc-link" data-title="Startup search">Startup search</a>
@@ -649,7 +689,7 @@
 <td>Base URL for the System 2.0 staging API</td>
 </tr>
 </tbody></table>
-<h1 id='system-2-0'>System 2.0</h1><h2 id='security'>Security</h2><h3 id='login'>Login</h3>
+<h1 id='security-system-2-0'>Security System 2.0</h1><h2 id='login'>Login</h2>
 <blockquote>
 <p>To login, use this code:</p>
 </blockquote>
@@ -715,7 +755,7 @@ You should save this, as it will be needed for using all the other endpoints.</p
 You must replace <code>EXAMPLE_ACCESS_TOKEN</code> with your **access_token**.
 JWT access tokens expire after a configurable period. When the token expires, authenticate again to obtain a new access token.
 </aside>
-<h3 id='logout'>Logout</h3>
+<h2 id='logout'>Logout</h2>
 <blockquote>
 <p>To logout, use this code:</p>
 </blockquote>
@@ -747,7 +787,636 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
-<h1 id='system-1-0'>System 1.0</h1><h2 id='security-2'>Security</h2><h3 id='login-2'>Login</h3>
+<h1 id='startup-list-system-2-0'>Startup List System 2.0</h1>
+<blockquote>
+<p>To get startup list, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/advanced-filters/companies?pageNumber=0&amp;pageSize=1'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+<span class="nt">-d</span> <span class="s1">'{"companyInclude": {}, "companyExclude": {}}'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the startups matching your request, with the format specified at section <a href="#startup-search">Startup Search</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-09-07T08:33:18.797"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-07-24T11:18:30.783171"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spiritus"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Developer of direct air capture carbon removal process We re a climate tech company at the forefront of DAC technology dedicated to sustainable stewardship of our environment Developer of a Direct Air Capture technology designed to offer a scalable and modular system Spiritus is a climate tech company at the forefront of Direct Air Capture DAC technology Critically Spiritus has developed a particular architecture that mimics the alveoli in the lungs in order to maximize the surface area for carbon dioxide to make contact with the material Developer of a Direct Air Capture technology designed to offer a scalable and modular system The company s system achieves sorption and desorption rates at a fraction of the sorbent cost versus state of the art sorbents under passive DAC conditions enabling clients to experience sustainable stewardship Spiritus Accelerating sustainable stewardship of our climate Spiritus has built a novel approach to direct air carbon capture that relies on a material that absorbs carbon dioxide passively Spiritus is committed to making carbon removal an accessible and practical tool in the global fight against climate change For more information visit Spiritus com Spiritus has built a novel approach to direct air carbon capture that relies on a material that absorbs carbon dioxide passively The company s approach combines the Spiritus Sorbent and the Spiritus Carbon Orchard offering a scalable and modular system for low cost DAC and sequestration DAC S"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pitchLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spiritus specializes in direct-air capture (DAC) carbon removal. &lt;br&gt;&lt;br&gt;Spiritus offers a novel approach to direct air carbon capture that relies on a material that absorbs carbon dioxide passively. They provide a particular architecture that mimics the alveoli in the lungs to maximize the surface area for carbon dioxide to make contact with the material.&lt;br&gt;&lt;br&gt;Opna develops an innovation that contributes to:&lt;br&gt;Climate change mitigation by enabling GHG emissions reduction."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pitchLineNoPunctuation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiritus specializes in direct air capture  dac  carbon removal   br  br spiritus offers a novel approach to direct air carbon capture that relies on a material that absorbs carbon dioxide passively  they provide a particular architecture that mimics the alveoli in the lungs to maximize the surface area for carbon dioxide to make contact with the material  br  br opna develops an innovation that contributes to  br climate change mitigation by enabling ghg emissions reduction"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://spiritus.com/en"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiritus.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact@spiritus.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1(800) 952 5210"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_921400.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foundedYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"searchableLocation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"White Rock"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cityAsciiName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"White Rock"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"adminID4"</span><span class="p">:</span><span class="w"> </span><span class="mi">3152</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"adminName4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Mexico"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1060</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">953852</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"linkedinUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/company/spiritus-cdr"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"twitterUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/SpiritusCDR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">39334712</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingStringEUR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39.3M"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">42475000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42.5M"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingRangeEUR"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">25000000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25M - 50M"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"fundingRangeUSD"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">25000000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25M - 50M"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastDealAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">427528</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealAmountStringEUR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"428K"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealAmountStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500K"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grant"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastDealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-07-09T06:57:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dealCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dealWithDateCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastEquityDeal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-11T06:40:47.64"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-16T07:49:34.941696"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"connectedToInfrastructure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"assetClass"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">610331</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastEquityDealType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Early VC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">76</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"growthStage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Growth"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"financialStage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Series A &amp; B"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastReviewer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amirhossein"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohammadghasemi"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amirhossein@netzeroinsights.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">949</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastReviewDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-09-14T09:49:05.333"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dealsLastReviewer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sharmila"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bojan"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sharmila@netzeroinsights.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">262</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"dealsLastReviewDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-10-03T10:33:47.557"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sizeRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11 - 50"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"currentEmployeesCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"yoYEmployeesGrowth"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.08695652173913043</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qoQEmployeesGrowth"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"yoYCorrespondingQuarter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q4 2025 vs Q4 2024"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qoQCorrespondingQuarter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q4 2025 vs Q3 2025"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7-8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Finalizing"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"referenceYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2026</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"trlReviewDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-08-11T11:02:20.867"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isChampion"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isEmerging"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isNewEntrant"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isAcquired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCommercialBuyer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCommercialPartner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialPartnershipCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialBuyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialAgreementCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isStrategic"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isProjectDeveloper"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trlThreeYearsHorizonPrior"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4-6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mid stage"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"trlThreeYearsPrior"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4-6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mid stage"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastCommercialDeal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Memorandum of Understanding between Aramco and Spiritus"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spiritus has signed a memorandum of understanding with Aramco to establish a framework for strategic collaboration in the direct air capture carbon removal sector. Under the terms of this agreement, the two counterparties intend to explore opportunities to enhance Spiritus' direct air capture technology, initiate potential piloting programs, and execute large-scale deployment of the technology. Additionally, the memorandum outlines mutual efforts to localize Spiritus' supply chain infrastructure within Saudi Arabia, contributing to regional climate initiatives and carbon management goals. The formal signing ceremony was conducted in Riyadh in the presence of the United States Secretary of Energy, Jennifer Granholm, and Saudi Arabia's Energy Minister, Abdulaziz bin Salman Al-Saud. Spiritus' technical approach addresses cost and energy challenges associated with standard carbon removal by reducing power requirements, utilizing passive air collection systems, and deploying a proprietary sorbent material designed to remove carbon from the atmosphere with a tenfold increase in adsorption efficiency."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-05-24T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">39679</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"totalEquityFundingEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">38036605</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalEquityFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">41000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalNonDilutiveFundingEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">1298107</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalNonDilutiveFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">1475000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isFundraising"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"webtext"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where innovation meets sustainability and the future is carbon neutral WE ARE ON A MISSION TO RESHAPE THE WORLD S APPROACH TO CLIMATE CHANGE Spiritus Spiritus stands at the forefront of high quality direct air capture DAC carbon removal bringing to life a groundbreaking solution that captures and sequesters megaton scale CO2 from the atmosphere This is an incredibly hard problem that will require new innovations to bring down cost and accelerate scale With real time monitoring and verification our carbon removal goes beyond estimation it s measurable and provable Scalable DAC on Renewables Our modular design facilitates rapid scale up all while relying on renewable energy sources and existing supply chains to maximum carbon dioxide removal potential Our modular design facilitates rapid scale up all while relying on renewable energy sources and existing supply chains to maximum carbon dioxide removal potential The Carbon Orchard Approach Achieving DAC at high quality and low cost requires a Rubik s Cube solution all key parameters need to be optimized concurrently and complementary to each other In Spiritus we have a combination of a strong approach and team to solve this climate challenge making it our first investment in the DAC area JESSY RIVEST PARTNER AT KHOSLA VENTURES Contact Us Thank you Khosla Ventures has been looking closely at the direct air capture space for years Something went wrong while submitting the form This approach paired with our modular framework enables us to scale quickly to set new standards for sustainability and redefine the DAC landscape Unique Sorbent Process Technology Our novel solid sorbent material drives efficient adsorption and a novel low temperature desorption process capturing carbon dioxide at an unprecedented pace while minimizing energy consumption Measurement Reporting Verification Trust transparency and impact This 30M Series A investment will catalyze the widespread deployment of DAC ensuring that growth does not come at the expense of our environment David Delfassy TDK Ventures Our novel solid sorbent material drives efficient adsorption and a novel low temperature desorption process capturing carbon dioxide at an unprecedented pace while minimizing energy consumption Spiritus represents a unique fusion of cutting edge material science and scalable cost efficient carbon removal making it a key enabler of the world s industrial future In Spiritus we have a combination of a strong approach and team to solve this climate challenge making it our first investment in the DAC area Jessy Rivest Partner at Khosla Ventures Direct Air Capture has the potential to play an important role in decarbonizing hard to abate sectors of the economy but until now it has been too expensive to be meaningful Energy Saving Spiritus has innovated on a novel non TVSA desorption process that cuts energy usage by more than half when compared to current methods Faster Adsorption Rapid sorption and desorption rates at a fraction of the sorbent cost versus state of the art sorbents under passive DAC conditions It s exciting to see Spiritus pioneer new technologies for direct air capture that can drive progress for the field and dramatically expand access to the highest quality carbon dioxide removals Trust transparency and impact Investors Khosla Ventures has been looking closely at the direct air capture space for years Breakthrough approaches like Spiritus are needed Our Approach Our approach integrates a novel sorbent material an innovative process design and a modular approach that promises cost efficient and scalable carbon dioxide removal To prevent the worst harms from climate change we will need to remove gigatons of CO2 from the atmosphere annually Your submission has been received Peter Minor PhD Co Founder of Absolute Climate former Director of Science Innovation at Carbon180 Khosla Ventures has been looking closely at the direct air capture space for years Our innovations in sorbent technology and a low temperature desorption process optimize all major drivers of cost energy input sorbent cost and durability adsorption desorption kinetics and facility capex We are excited to partner with Spiritus and bring this important technology to market Bruce Niven Aramco Ventures We are witnessing a pivotal moment in the journey to decarbonize our economies In Spiritus we have a combination of a strong approach and team to solve this climate challenge making it our first investment in the DAC area JESSY RIVEST PARTNER AT KHOSLA VENTURES ACCELERATING SUSTAINABLE STEWARDSHIP OF OUR CLIMATE Where innovation meets sustainability and the future is carbon neutral This 30M Series A investment will catalyze the widespread deployment of DAC ensuring that growth does not come at the expense of our environment David Delfassy TDK Ventures Why Spiritus"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business to Business (B2B)"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer Type"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">125</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pooneh_amini_naeini"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">237</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hardware"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buzzword"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pooneh_amini_naeini"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"fundingTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Equity"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grant"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"numberOfEquityDeals"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"numberOfDebtDeals"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"numberOfGrantDeals"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">117556</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">129877</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">129877</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To search our startup database you should use the following endpoint:</p>
+
+<p><code>POST /advanced-filters/companies?pageNumber={PAGE_NUMBER}&amp;pageSize={PAGE_SIZE}&amp;sortField={SORT_FIELD}&amp;sortDirection={SORT_DIR}</code></p>
+
+<p>With the following optional query parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pageNumber</td>
+<td>Zero-based page number to retrieve (by default 0)</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Number of records to return per page (by default 15)</td>
+</tr>
+<tr>
+<td>sortField</td>
+<td>See Section <a href="#company-sort-fields">Company Sort Fields</a> for the accepted values</td>
+</tr>
+<tr>
+<td>sortDirection</td>
+<td>ASC or DESC (by default ASC)</td>
+</tr>
+</tbody></table>
+
+<p>And a JSON request body in the format specified at the section <a href="#mainfilter">Main Filter</a>.</p>
+
+<p>The possible response codes are:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad request, invalid fields</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
+<h1 id='filters-structure-system-2-0'>Filters structure System 2.0</h1><h2 id='company-sort-fields'>Company Sort Fields</h2>
+<p>The following sort fields are supported for the listing endpoints. If no <strong>sortField</strong> is specified as a query parameter, the results are sorted by <strong>PLATFORM_ORDER</strong> by default.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>NAME</td>
+<td>Sort by company name</td>
+</tr>
+<tr>
+<td>WEBSITE</td>
+<td>Sort by company website</td>
+</tr>
+<tr>
+<td>COUNTRY</td>
+<td>Sort by the company’s country</td>
+</tr>
+<tr>
+<td>CITY</td>
+<td>Sort by the company’s city</td>
+</tr>
+<tr>
+<td>FOUNDED_YEAR</td>
+<td>Sort by the company’s founding year</td>
+</tr>
+<tr>
+<td>ACQUISITION_DATE</td>
+<td>Sort by the date of insertion into our database</td>
+</tr>
+<tr>
+<td>UPDATED_DATE</td>
+<td>Sort by the date the company was last updated</td>
+</tr>
+<tr>
+<td>SIZE</td>
+<td>Sort by company size</td>
+</tr>
+<tr>
+<td>GROWTH_STAGE</td>
+<td>Sort by the company’s growth stage</td>
+</tr>
+<tr>
+<td>LAST_DEAL_DATE</td>
+<td>Sort by the date of the company’s most recent deal</td>
+</tr>
+<tr>
+<td>LAST_DEAL_TYPE</td>
+<td>Sort by the type of the company’s most recent deal</td>
+</tr>
+<tr>
+<td>LAST_DEAL_AMOUNT</td>
+<td>Sort by the amount of the company’s most recent deal</td>
+</tr>
+<tr>
+<td>TOTAL_FUNDING_AMOUNT</td>
+<td>Sort by the company’s total funding amount</td>
+</tr>
+<tr>
+<td>YOY_EMPLOYEE_GROWTH</td>
+<td>Sort by year-over-year employee growth</td>
+</tr>
+<tr>
+<td>QOQ_EMPLOYEE_GROWTH</td>
+<td>Sort by quarter-over-quarter employee growth</td>
+</tr>
+<tr>
+<td>CURRENT_EMPLOYEES_COUNT</td>
+<td>Sort by the current number of employees</td>
+</tr>
+<tr>
+<td>TRL</td>
+<td>Sort by Technology Readiness Level</td>
+</tr>
+<tr>
+<td>PLATFORM_ORDER</td>
+<td>Sort by the default platform order</td>
+</tr>
+</tbody></table>
+<h2 id='mainfilter'>MainFilter</h2>
+<p>This is the main filter used when searching for startups, investors, or deals.</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>companyInclude</td>
+<td>Section <a href="#company-filter">Company Filter</a></td>
+<td>Filters related to startups which should be included in the result</td>
+</tr>
+<tr>
+<td>companyExclude</td>
+<td>Section <a href="#company-filter">Company Filter</a></td>
+<td>Filters related to startups which should be excluded in the result</td>
+</tr>
+<tr>
+<td>investorInclude</td>
+<td>Section <a href="#investors-filter">Investors Filter</a></td>
+<td>Filters related to investors which should be included in the result</td>
+</tr>
+<tr>
+<td>investorExclude</td>
+<td>Section <a href="#investors-filter">Investors Filter</a></td>
+<td>Filters related to investors which should be excluded in the result</td>
+</tr>
+<tr>
+<td>dealInclude</td>
+<td>Section <a href="#deals-filter">Deals Filter</a></td>
+<td>Filters related to deals which should be included in the result</td>
+</tr>
+<tr>
+<td>dealExclude</td>
+<td>Section <a href="#deals-filter">Deals Filter</a></td>
+<td>Filters related to deals which should be excluded in the result</td>
+</tr>
+</tbody></table>
+<h2 id='company-filter'>Company Filter</h2>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Startup name</td>
+</tr>
+<tr>
+<td>domain</td>
+<td>string</td>
+<td>Startup domain</td>
+</tr>
+<tr>
+<td>searchableLocationIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#searchable-locations">Searchable Locations</a> for the accepted values</td>
+</tr>
+<tr>
+<td>financialStageIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#financial-stages">Financial Stages</a> for accepted values</td>
+</tr>
+<tr>
+<td>sizeRangeIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#size-ranges">Size Ranges</a> for accepted values</td>
+</tr>
+<tr>
+<td>revenueRangeIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#revenue-ranges">Revenue Ranges</a> for accepted values</td>
+</tr>
+<tr>
+<td>trlIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#trls">TRLs</a> for accepted values</td>
+</tr>
+<tr>
+<td>foundedYearFrom</td>
+<td>int</td>
+<td>Starting founded year</td>
+</tr>
+<tr>
+<td>foundedYearTo</td>
+<td>int</td>
+<td>Maximum founded year</td>
+</tr>
+<tr>
+<td>totalFundingAmountFrom</td>
+<td>int</td>
+<td>Minimum total funding amount</td>
+</tr>
+<tr>
+<td>totalFundingAmountTo</td>
+<td>int</td>
+<td>Maximum total funding amount</td>
+</tr>
+<tr>
+<td>numberOfDealsFrom</td>
+<td>int</td>
+<td>Minimum number of deals done by the company</td>
+</tr>
+<tr>
+<td>numberOfDealsTo</td>
+<td>int</td>
+<td>Maximum number of deals done by the company</td>
+</tr>
+<tr>
+<td>commercialAgreementCountFrom</td>
+<td>int</td>
+<td>Minimum number of commercial agreements</td>
+</tr>
+<tr>
+<td>commercialAgreementCountTo</td>
+<td>int</td>
+<td>Maximum number of commercial agreements</td>
+</tr>
+<tr>
+<td>employeesCountFrom</td>
+<td>int</td>
+<td>Minimum number of employee count</td>
+</tr>
+<tr>
+<td>employeesCountTo</td>
+<td>int</td>
+<td>Maximum number of employee count</td>
+</tr>
+<tr>
+<td>acquisitionDateFrom</td>
+<td>date</td>
+<td>Starting date for when the startup has been inserted into our database</td>
+</tr>
+<tr>
+<td>acquisitionDateTo</td>
+<td>date</td>
+<td>Maximum date for when the startup has been inserted into our database</td>
+</tr>
+<tr>
+<td>employeesGrowthPeriod</td>
+<td>string</td>
+<td>Employee growth period (<code>&quot;Q&quot;</code> (quarter-over-quarter) or <code>&quot;Y&quot;</code> (year-over-year). Default: <code>&quot;Q&quot;</code>)</td>
+</tr>
+<tr>
+<td>employeesGrowthFrom</td>
+<td>int</td>
+<td>Minimum employee growth for the selected period</td>
+</tr>
+<tr>
+<td>employeesGrowthTo</td>
+<td>int</td>
+<td>Maximum employee growth for the selected period</td>
+</tr>
+<tr>
+<td>tagsConceptsMode</td>
+<td>string</td>
+<td>Logical <code>&quot;AND&quot;</code> or <code>&quot;OR&quot;</code> operators for filtering startups by the given tags. Default: <code>&quot;AND&quot;</code></td>
+</tr>
+<tr>
+<td>tagIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#tags">Tags</a> for accepted values</td>
+</tr>
+<tr>
+<td>wildcards</td>
+<td>List of string</td>
+<td>Any match of the keywords in the name/pitchline/description</td>
+</tr>
+<tr>
+<td>wildcardsFields</td>
+<td>List of Section <a href="#wildcard-fields">Wildcard Fields</a></td>
+<td>Select on which fields to match the wildcards</td>
+</tr>
+<tr>
+<td>regexps</td>
+<td>List of string</td>
+<td>Any match of the keywords in the name/pitchline/description</td>
+</tr>
+<tr>
+<td>regexpFields</td>
+<td>List of Section <a href="#wildcard-fields">Regexp Fields</a></td>
+<td>Select on which fields to match the regexps</td>
+</tr>
+<tr>
+<td>onlyActive</td>
+<td>boolean</td>
+<td>If <code>&quot;true&quot;</code>, returns only active startups</td>
+</tr>
+<tr>
+<td>viewed</td>
+<td>boolean</td>
+<td>Filters startups based on whether they have been viewed</td>
+</tr>
+<tr>
+<td>viewedDateFrom</td>
+<td>date</td>
+<td>Earliest viewed date</td>
+</tr>
+<tr>
+<td>viewedDateTo</td>
+<td>date</td>
+<td>Latest viewed date</td>
+</tr>
+<tr>
+<td>topViewed</td>
+<td>boolean</td>
+<td>If <code>&quot;true&quot;</code>, returns only top viewed startups</td>
+</tr>
+<tr>
+<td>hasNotes</td>
+<td>boolean</td>
+<td>If <code>&quot;true&quot;</code>, returns only the startups with notes</td>
+</tr>
+<tr>
+<td>champions</td>
+<td>boolean</td>
+<td>If <code>&quot;true&quot;</code>, returns only champion startups</td>
+</tr>
+<tr>
+<td>newEntrants</td>
+<td>boolean</td>
+<td>If <code>&quot;true&quot;</code>, returns only new entrant startups</td>
+</tr>
+<tr>
+<td>emerging</td>
+<td>boolean</td>
+<td>If <code>&quot;true&quot;</code>, returns only emerging startups</td>
+</tr>
+<tr>
+<td>acquired</td>
+<td>boolean</td>
+<td>If <code>&quot;true&quot;</code>, returns only acquired startups</td>
+</tr>
+<tr>
+<td>strategic</td>
+<td>boolean</td>
+<td>If <code>&quot;true&quot;</code>, returns only strategic startups</td>
+</tr>
+</tbody></table>
+<h1 id='response-structures-system-2-0'>Response structures System 2.0</h1><h2 id='company-search'>Company Search</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>content</td>
+<td>List of Section Company</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Number of records returned per page</td>
+</tr>
+<tr>
+<td>pageNumber</td>
+<td>Zero-based index of the current page</td>
+</tr>
+<tr>
+<td>totalElements</td>
+<td>Total number of records matching the query</td>
+</tr>
+<tr>
+<td>numberOfElements</td>
+<td>Number of records returned in the current page</td>
+</tr>
+<tr>
+<td>totalPages</td>
+<td>Total number of available pages</td>
+</tr>
+</tbody></table>
+<h1 id='security-system-1-0'>Security System 1.0</h1><h2 id='login-2'>Login</h2>
 <blockquote>
 <p>To login, use this code:</p>
 </blockquote>
@@ -808,7 +1477,7 @@ session inactivity.</p>
 <aside class="notice">
 You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 </aside>
-<h3 id='logout-2'>Logout</h3>
+<h2 id='logout-2'>Logout</h2>
 <blockquote>
 <p>To logout, use this code:</p>
 </blockquote>
@@ -841,12 +1510,12 @@ You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 Please note that manually closing a session is not required, since it will be closed bye the server after
 30 minutes. This endpoint is mainly used if you need to use different accounts.
 </aside>
-<h1 id='startup-list'>Startup List</h1>
+<h1 id='startup-list-system-1-0'>Startup List System 1.0</h1>
 <blockquote>
 <p>To get startup list, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/companies'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/companies'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 <span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
 </code></pre></div>
@@ -3301,6 +3970,22 @@ Please note that manually closing a session is not required, since it will be cl
 <td>websiteContent</td>
 </tr>
 </tbody></table>
+<h2 id='regexp-fields'>Regexp Fields</h2>
+<table><thead>
+<tr>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pitchLine</td>
+</tr>
+<tr>
+<td>description</td>
+</tr>
+<tr>
+<td>websiteContent</td>
+</tr>
+</tbody></table>
 <h2 id='patent-status'>Patent Status</h2>
 <table><thead>
 <tr>
@@ -3384,6 +4069,102 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>5</td>
 <td>PE-growth stage</td>
+</tr>
+</tbody></table>
+<h2 id='size-ranges'>Size Ranges</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>1 - 10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>11 - 50</td>
+</tr>
+<tr>
+<td>3</td>
+<td>51 - 100</td>
+</tr>
+<tr>
+<td>4</td>
+<td>101 - 200</td>
+</tr>
+<tr>
+<td>5</td>
+<td>201 - 500</td>
+</tr>
+<tr>
+<td>6</td>
+<td>501 - 1000</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1001 - 5000</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5001 - 10000</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10001+</td>
+</tr>
+</tbody></table>
+<h2 id='revenue-ranges'>Revenue Ranges</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>500K - 1M</td>
+</tr>
+<tr>
+<td>2</td>
+<td>50M - 100M</td>
+</tr>
+<tr>
+<td>3</td>
+<td>10M - 20M</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5M - 10M</td>
+</tr>
+<tr>
+<td>5</td>
+<td>500M - 1B</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2.5M - 5M</td>
+</tr>
+<tr>
+<td>7</td>
+<td>20M - 50M</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1M - 2.5M</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1B+</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0 - 500K</td>
+</tr>
+<tr>
+<td>11</td>
+<td>100M - 500M</td>
 </tr>
 </tbody></table>
 <h2 id='fundings'>Fundings</h2>
@@ -4349,7 +5130,7 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
-<h1 id='responses-structure'>Responses structure</h1><h2 id='startup-search'>Startup search</h2>
+<h1 id='response-structures'>Response structures</h1><h2 id='startup-search'>Startup search</h2>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -5798,7 +6579,7 @@ Please note that manually closing a session is not required, since it will be cl
 </tbody></table>
 <h2 id='taxonomy-item'>Taxonomy Item</h2>
 <blockquote>
-<p>To get a Taxonomy Graph Item by parameter, ID or label, use this code:</p>
+<p>To get a Taxonomy Graph Item by parameter, ID, or label, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/item/2'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
