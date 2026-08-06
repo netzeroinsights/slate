@@ -34,11 +34,9 @@ Each endpoint in this documentation should be called using the appropriate domai
 | System 2.0 Production | `https://api-new.netzeroinsights.com`   | Base URL for the System 2.0 production API |
 | System 2.0 Stage      | `https://api-stage.netzeroinsights.com` | Base URL for the System 2.0 staging API    |
 
-# System 2.0
+# Security System 2.0
 
-## Security
-
-### Login
+## Login
 
 > To login, use this code:
 
@@ -83,7 +81,7 @@ You must replace <code>EXAMPLE_ACCESS_TOKEN</code> with your **access_token**.
 JWT access tokens expire after a configurable period. When the token expires, authenticate again to obtain a new access token.
 </aside>
 
-### Logout
+## Logout
 
 > To logout, use this code:
 
@@ -105,11 +103,355 @@ It takes no parameter, and has the following response code:
 | 200           | Login successful                     |
 | 403           | Forbidden, insufficient access level |
 
-# System 1.0
 
-## Security
+# Startup List System 2.0
 
-### Login
+> To get startup list, use this code:
+
+```shell
+curl -v -X POST 'https://api-new.netzeroinsights.com/advanced-filters/companies?pageNumber=0&pageSize=1' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+-H 'Content-Type: application/json' \                 
+-d '{"companyInclude": {}, "companyExclude": {}}'
+```
+
+> In case of a 200 response, the response body will contain all the startups matching your request, with the format specified at section [Startup Search](#startup-search).
+
+```json
+{
+  "content": [
+    {
+      "acquisitionDate": "2023-09-07T08:33:18.797",
+      "updatedDate": "2026-07-24T11:18:30.783171",
+      "name": "Spiritus",
+      "description": "Developer of direct air capture carbon removal process We re a climate tech company at the forefront of DAC technology dedicated to sustainable stewardship of our environment Developer of a Direct Air Capture technology designed to offer a scalable and modular system Spiritus is a climate tech company at the forefront of Direct Air Capture DAC technology Critically Spiritus has developed a particular architecture that mimics the alveoli in the lungs in order to maximize the surface area for carbon dioxide to make contact with the material Developer of a Direct Air Capture technology designed to offer a scalable and modular system The company s system achieves sorption and desorption rates at a fraction of the sorbent cost versus state of the art sorbents under passive DAC conditions enabling clients to experience sustainable stewardship Spiritus Accelerating sustainable stewardship of our climate Spiritus has built a novel approach to direct air carbon capture that relies on a material that absorbs carbon dioxide passively Spiritus is committed to making carbon removal an accessible and practical tool in the global fight against climate change For more information visit Spiritus com Spiritus has built a novel approach to direct air carbon capture that relies on a material that absorbs carbon dioxide passively The company s approach combines the Spiritus Sorbent and the Spiritus Carbon Orchard offering a scalable and modular system for low cost DAC and sequestration DAC S",
+      "pitchLine": "Spiritus specializes in direct-air capture (DAC) carbon removal. <br><br>Spiritus offers a novel approach to direct air carbon capture that relies on a material that absorbs carbon dioxide passively. They provide a particular architecture that mimics the alveoli in the lungs to maximize the surface area for carbon dioxide to make contact with the material.<br><br>Opna develops an innovation that contributes to:<br>Climate change mitigation by enabling GHG emissions reduction.",
+      "pitchLineNoPunctuation": "spiritus specializes in direct air capture  dac  carbon removal   br  br spiritus offers a novel approach to direct air carbon capture that relies on a material that absorbs carbon dioxide passively  they provide a particular architecture that mimics the alveoli in the lungs to maximize the surface area for carbon dioxide to make contact with the material  br  br opna develops an innovation that contributes to  br climate change mitigation by enabling ghg emissions reduction",
+      "website": "https://spiritus.com/en",
+      "domain": "spiritus.com",
+      "email": "contact@spiritus.com",
+      "phone": "+1(800) 952 5210",
+      "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_921400.png",
+      "foundedYear": 2022,
+      "searchableLocation": {
+        "continent": {
+          "name": "North America",
+          "id": 4
+        },
+        "country": {
+          "name": "United States",
+          "continent": {
+            "name": "North America",
+            "id": 4
+          },
+          "alpha2": "US",
+          "id": 226
+        },
+        "cityName": "White Rock",
+        "cityAsciiName": "White Rock",
+        "adminID4": 3152,
+        "adminName4": "New Mexico",
+        "platformOrder": 1060,
+        "isSearchable": true,
+        "id": 953852
+      },
+      "linkedinUrl": "https://www.linkedin.com/company/spiritus-cdr",
+      "twitterUrl": "https://twitter.com/SpiritusCDR",
+      "fundingAmountEUR": 39334712,
+      "fundingStringEUR": "39.3M",
+      "fundingAmountUSD": 42475000,
+      "fundingStringUSD": "42.5M",
+      "fundingRangeEUR": {
+        "rangeFrom": 25000000,
+        "rangeTo": 50000000,
+        "rangeTextFormat": "25M - 50M",
+        "id": 6
+      },
+      "fundingRangeUSD": {
+        "rangeFrom": 25000000,
+        "rangeTo": 50000000,
+        "rangeTextFormat": "25M - 50M",
+        "id": 6
+      },
+      "lastDealAmountEUR": 427528,
+      "lastDealAmountStringEUR": "428K",
+      "lastDealAmountUSD": 500000,
+      "lastDealAmountStringUSD": "500K",
+      "lastDealType": {
+        "label": "Grant",
+        "filterable": false,
+        "assignable": true,
+        "id": 79
+      },
+      "lastDealDate": "2025-07-09T06:57:00",
+      "dealCount": 7,
+      "dealWithDateCount": 6,
+      "lastEquityDeal": {
+        "acquisitionDate": "2025-04-11T06:40:47.64",
+        "updatedDate": "2026-06-16T07:49:34.941696",
+        "status": "COMPLETED",
+        "connectedToInfrastructure": "NO",
+        "assetClass": {
+          "label": "Venture",
+          "id": 1
+        },
+        "id": 610331
+      },
+      "lastEquityDealType": {
+        "label": "Early VC",
+        "id": 76
+      },
+      "growthStage": {
+        "label": "Growth",
+        "id": 3
+      },
+      "financialStage": {
+        "label": "Series A & B",
+        "id": 3
+      },
+      "lastReviewer": {
+        "name": "Amirhossein",
+        "surname": "Mohammadghasemi",
+        "email": "amirhossein@netzeroinsights.com",
+        "id": 949
+      },
+      "lastReviewDate": "2023-09-14T09:49:05.333",
+      "dealsLastReviewer": {
+        "name": "Sharmila",
+        "surname": "Bojan",
+        "email": "sharmila@netzeroinsights.com",
+        "id": 262
+      },
+      "dealsLastReviewDate": "2025-10-03T10:33:47.557",
+      "sizeRange": {
+        "rangeTextFormat": "11 - 50",
+        "id": 2
+      },
+      "currentEmployeesCount": 50,
+      "yoYEmployeesGrowth": 0.08695652173913043,
+      "qoQEmployeesGrowth": 0.0,
+      "yoYCorrespondingQuarter": "Q4 2025 vs Q4 2024",
+      "qoQCorrespondingQuarter": "Q4 2025 vs Q3 2025",
+      "trl": {
+        "label": "7-8",
+        "description": "Finalizing",
+        "referenceYear": 2026,
+        "id": 11
+      },
+      "trlReviewDate": "2025-08-11T11:02:20.867",
+      "isChampion": false,
+      "isEmerging": true,
+      "isNewEntrant": false,
+      "isAcquired": false,
+      "isCommercialBuyer": false,
+      "isCommercialPartner": true,
+      "commercialPartnershipCount": 1,
+      "commercialBuyCount": 0,
+      "commercialAgreementCount": 1,
+      "isStrategic": false,
+      "isProjectDeveloper": false,
+      "trlThreeYearsHorizonPrior": {
+        "label": "4-6",
+        "description": "Mid stage",
+        "id": 10
+      },
+      "trlThreeYearsPrior": {
+        "label": "4-6",
+        "description": "Mid stage",
+        "id": 10
+      },
+      "lastCommercialDeal": {
+        "title": "Memorandum of Understanding between Aramco and Spiritus",
+        "description": "Spiritus has signed a memorandum of understanding with Aramco to establish a framework for strategic collaboration in the direct air capture carbon removal sector. Under the terms of this agreement, the two counterparties intend to explore opportunities to enhance Spiritus' direct air capture technology, initiate potential piloting programs, and execute large-scale deployment of the technology. Additionally, the memorandum outlines mutual efforts to localize Spiritus' supply chain infrastructure within Saudi Arabia, contributing to regional climate initiatives and carbon management goals. The formal signing ceremony was conducted in Riyadh in the presence of the United States Secretary of Energy, Jennifer Granholm, and Saudi Arabia's Energy Minister, Abdulaziz bin Salman Al-Saud. Spiritus' technical approach addresses cost and energy challenges associated with standard carbon removal by reducing power requirements, utilizing passive air collection systems, and deploying a proprietary sorbent material designed to remove carbon from the atmosphere with a tenfold increase in adsorption efficiency.",
+        "announcedDate": "2024-05-24T00:00:00",
+        "id": 39679
+      },
+      "totalEquityFundingEUR": 38036605,
+      "totalEquityFundingUSD": 41000000,
+      "totalNonDilutiveFundingEUR": 1298107,
+      "totalNonDilutiveFundingUSD": 1475000,
+      "isActive": true,
+      "isFundraising": false,
+      "webtext": "Where innovation meets sustainability and the future is carbon neutral WE ARE ON A MISSION TO RESHAPE THE WORLD S APPROACH TO CLIMATE CHANGE Spiritus Spiritus stands at the forefront of high quality direct air capture DAC carbon removal bringing to life a groundbreaking solution that captures and sequesters megaton scale CO2 from the atmosphere This is an incredibly hard problem that will require new innovations to bring down cost and accelerate scale With real time monitoring and verification our carbon removal goes beyond estimation it s measurable and provable Scalable DAC on Renewables Our modular design facilitates rapid scale up all while relying on renewable energy sources and existing supply chains to maximum carbon dioxide removal potential Our modular design facilitates rapid scale up all while relying on renewable energy sources and existing supply chains to maximum carbon dioxide removal potential The Carbon Orchard Approach Achieving DAC at high quality and low cost requires a Rubik s Cube solution all key parameters need to be optimized concurrently and complementary to each other In Spiritus we have a combination of a strong approach and team to solve this climate challenge making it our first investment in the DAC area JESSY RIVEST PARTNER AT KHOSLA VENTURES Contact Us Thank you Khosla Ventures has been looking closely at the direct air capture space for years Something went wrong while submitting the form This approach paired with our modular framework enables us to scale quickly to set new standards for sustainability and redefine the DAC landscape Unique Sorbent Process Technology Our novel solid sorbent material drives efficient adsorption and a novel low temperature desorption process capturing carbon dioxide at an unprecedented pace while minimizing energy consumption Measurement Reporting Verification Trust transparency and impact This 30M Series A investment will catalyze the widespread deployment of DAC ensuring that growth does not come at the expense of our environment David Delfassy TDK Ventures Our novel solid sorbent material drives efficient adsorption and a novel low temperature desorption process capturing carbon dioxide at an unprecedented pace while minimizing energy consumption Spiritus represents a unique fusion of cutting edge material science and scalable cost efficient carbon removal making it a key enabler of the world s industrial future In Spiritus we have a combination of a strong approach and team to solve this climate challenge making it our first investment in the DAC area Jessy Rivest Partner at Khosla Ventures Direct Air Capture has the potential to play an important role in decarbonizing hard to abate sectors of the economy but until now it has been too expensive to be meaningful Energy Saving Spiritus has innovated on a novel non TVSA desorption process that cuts energy usage by more than half when compared to current methods Faster Adsorption Rapid sorption and desorption rates at a fraction of the sorbent cost versus state of the art sorbents under passive DAC conditions It s exciting to see Spiritus pioneer new technologies for direct air capture that can drive progress for the field and dramatically expand access to the highest quality carbon dioxide removals Trust transparency and impact Investors Khosla Ventures has been looking closely at the direct air capture space for years Breakthrough approaches like Spiritus are needed Our Approach Our approach integrates a novel sorbent material an innovative process design and a modular approach that promises cost efficient and scalable carbon dioxide removal To prevent the worst harms from climate change we will need to remove gigatons of CO2 from the atmosphere annually Your submission has been received Peter Minor PhD Co Founder of Absolute Climate former Director of Science Innovation at Carbon180 Khosla Ventures has been looking closely at the direct air capture space for years Our innovations in sorbent technology and a low temperature desorption process optimize all major drivers of cost energy input sorbent cost and durability adsorption desorption kinetics and facility capex We are excited to partner with Spiritus and bring this important technology to market Bruce Niven Aramco Ventures We are witnessing a pivotal moment in the journey to decarbonize our economies In Spiritus we have a combination of a strong approach and team to solve this climate challenge making it our first investment in the DAC area JESSY RIVEST PARTNER AT KHOSLA VENTURES ACCELERATING SUSTAINABLE STEWARDSHIP OF OUR CLIMATE Where innovation meets sustainability and the future is carbon neutral This 30M Series A investment will catalyze the widespread deployment of DAC ensuring that growth does not come at the expense of our environment David Delfassy TDK Ventures Why Spiritus",
+      "platformOrder": 1,
+      "entityTypes": [
+        {
+          "label": "Company",
+          "id": 1
+        }
+      ],
+      "tags": [
+        {
+          "label": "Business to Business (B2B)",
+          "tagType": {
+            "label": "Customer Type",
+            "id": 125
+          },
+          "source": "pooneh_amini_naeini",
+          "id": 237
+        },
+        {
+          "label": "Hardware",
+          "tagType": {
+            "label": "buzzword",
+            "id": 5
+          },
+          "source": "pooneh_amini_naeini",
+          "id": 240
+        }
+      ],
+      "fundingTypes": [
+        {
+          "label": "Equity",
+          "id": 1
+        },
+        {
+          "label": "Grant",
+          "id": 3
+        }
+      ],
+      "numberOfEquityDeals": 4,
+      "numberOfDebtDeals": 0,
+      "numberOfGrantDeals": 3,
+      "id": 117556
+    }
+  ],
+  "pageSize": 1,
+  "pageNumber": 0,
+  "totalElements": 129877,
+  "numberOfElements": 1,
+  "totalPages": 129877
+}
+```
+
+To search our startup database you should use the following endpoint:
+
+`POST /advanced-filters/companies?pageNumber={PAGE_NUMBER}&pageSize={PAGE_SIZE}&sortField={SORT_FIELD}&sortDirection={SORT_DIR}`
+
+With the following optional query parameters:
+
+| Parameter name | Parameter value                                                                 |
+|----------------|---------------------------------------------------------------------------------|
+| pageNumber     | Zero-based page number to retrieve (by default 0)                               |
+| pageSize       | Number of records to return per page (by default 15)                            |
+| sortField      | See Section [Company Sort Fields](#company-sort-fields) for the accepted values |
+| sortDirection  | ASC or DESC (by default ASC)                                                    |
+
+And a JSON request body in the format specified at the section [Main Filter](#mainfilter).
+
+The possible response codes are:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 400           | Bad request, invalid fields          |
+| 403           | Forbidden, insufficient access level |
+
+# Filters structure System 2.0
+
+## Company Sort Fields
+
+The following sort fields are supported for the listing endpoints. If no **sortField** is specified as a query parameter, the results are sorted by **PLATFORM_ORDER** by default.
+
+| Name                    | Content                                              |
+|-------------------------|------------------------------------------------------|
+| NAME                    | Sort by company name                                 |
+| WEBSITE                 | Sort by company website                              |
+| COUNTRY                 | Sort by the company’s country                        |
+| CITY                    | Sort by the company’s city                           |
+| FOUNDED_YEAR            | Sort by the company’s founding year                  |
+| ACQUISITION_DATE        | Sort by the date of insertion into our database      |
+| UPDATED_DATE            | Sort by the date the company was last updated        |
+| SIZE                    | Sort by company size                                 |
+| GROWTH_STAGE            | Sort by the company’s growth stage                   |
+| LAST_DEAL_DATE          | Sort by the date of the company’s most recent deal   |
+| LAST_DEAL_TYPE          | Sort by the type of the company’s most recent deal   |
+| LAST_DEAL_AMOUNT        | Sort by the amount of the company’s most recent deal |
+| TOTAL_FUNDING_AMOUNT    | Sort by the company’s total funding amount           |
+| YOY_EMPLOYEE_GROWTH     | Sort by year-over-year employee growth               |
+| QOQ_EMPLOYEE_GROWTH     | Sort by quarter-over-quarter employee growth         |
+| CURRENT_EMPLOYEES_COUNT | Sort by the current number of employees              |
+| TRL                     | Sort by Technology Readiness Level                   |
+| PLATFORM_ORDER          | Sort by the default platform order                   |  
+
+## MainFilter
+
+This is the main filter used when searching for startups, investors, or deals.
+
+| Parameter name  | Parameter type                                | Description                                                         |
+|-----------------|-----------------------------------------------|---------------------------------------------------------------------|
+| companyInclude  | Section [Company Filter](#company-filter)     | Filters related to startups which should be included in the result  |
+| companyExclude  | Section [Company Filter](#company-filter)     | Filters related to startups which should be excluded in the result  |
+| investorInclude | Section [Investors Filter](#investors-filter) | Filters related to investors which should be included in the result | 
+| investorExclude | Section [Investors Filter](#investors-filter) | Filters related to investors which should be excluded in the result |
+| dealInclude     | Section [Deals Filter](#deals-filter)         | Filters related to deals which should be included in the result     |
+| dealExclude     | Section [Deals Filter](#deals-filter)         | Filters related to deals which should be excluded in the result     |
+
+## Company Filter
+
+| Parameter name               | Parameter type                                      | Description                                                                                     |
+|------------------------------|-----------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| name                         | string                                              | Startup name                                                                                    |
+| domain                       | string                                              | Startup domain                                                                                  |
+| searchableLocationIDs        | List of int                                         | See Section [Searchable Locations](#searchable-locations) for the accepted values               |
+| financialStageIDs            | List of int                                         | See Section [Financial Stages](#financial-stages) for accepted values                           |
+| sizeRangeIDs                 | List of int                                         | See Section [Size Ranges](#size-ranges) for accepted values                                     |
+| revenueRangeIDs              | List of int                                         | See Section [Revenue Ranges](#revenue-ranges) for accepted values                               |
+| trlIDs                       | List of int                                         | See Section [TRLs](#trls) for accepted values                                                   |
+| foundedYearFrom              | int                                                 | Starting founded year                                                                           |
+| foundedYearTo                | int                                                 | Maximum founded year                                                                            |
+| totalFundingAmountFrom       | int                                                 | Minimum total funding amount                                                                    |
+| totalFundingAmountTo         | int                                                 | Maximum total funding amount                                                                    |
+| numberOfDealsFrom            | int                                                 | Minimum number of deals done by the company                                                     |
+| numberOfDealsTo              | int                                                 | Maximum number of deals done by the company                                                     |
+| commercialAgreementCountFrom | int                                                 | Minimum number of commercial agreements                                                         |
+| commercialAgreementCountTo   | int                                                 | Maximum number of commercial agreements                                                         |
+| employeesCountFrom           | int                                                 | Minimum number of employee count                                                                |
+| employeesCountTo             | int                                                 | Maximum number of employee count                                                                |
+| acquisitionDateFrom          | date                                                | Starting date for when the startup has been inserted into our database                          |
+| acquisitionDateTo            | date                                                | Maximum date for when the startup has been inserted into our database                           |
+| employeesGrowthPeriod        | string                                              | Employee growth period (`"Q"` (quarter-over-quarter) or `"Y"` (year-over-year). Default: `"Q"`) |
+| employeesGrowthFrom          | int                                                 | Minimum employee growth for the selected period                                                 |
+| employeesGrowthTo            | int                                                 | Maximum employee growth for the selected period                                                 |
+| tagsConceptsMode             | string                                              | Logical `"AND"` or `"OR"` operators for filtering startups by the given tags. Default: `"AND"`  |
+| tagIDs                       | List of int                                         | See Section [Tags](#tags) for accepted values                                                   |
+| wildcards                    | List of string                                      | Any match of the keywords in the name/pitchline/description                                     |
+| wildcardsFields              | List of Section [Wildcard Fields](#wildcard-fields) | Select on which fields to match the wildcards                                                   |
+| regexps                      | List of string                                      | Any match of the keywords in the name/pitchline/description                                     |
+| regexpFields                 | List of Section [Regexp Fields](#wildcard-fields)   | Select on which fields to match the regexps                                                     |
+| onlyActive                   | boolean                                             | If `"true"`, returns only active startups                                                       |
+| viewed                       | boolean                                             | Filters startups based on whether they have been viewed                                         |
+| viewedDateFrom               | date                                                | Earliest viewed date                                                                            |
+| viewedDateTo                 | date                                                | Latest viewed date                                                                              |
+| topViewed                    | boolean                                             | If `"true"`, returns only top viewed startups                                                   |
+| hasNotes                     | boolean                                             | If `"true"`, returns only the startups with notes                                               |
+| champions                    | boolean                                             | If `"true"`, returns only champion startups                                                     |
+| newEntrants                  | boolean                                             | If `"true"`, returns only new entrant startups                                                  |
+| emerging                     | boolean                                             | If `"true"`, returns only emerging startups                                                     |
+| acquired                     | boolean                                             | If `"true"`, returns only acquired startups                                                     |
+| strategic                    | boolean                                             | If `"true"`, returns only strategic startups                                                    |
+
+# Response structures System 2.0
+
+## Company Search
+
+| Name             | Content                                        |
+|------------------|------------------------------------------------|
+| content          | List of Section Company                        |
+| pageSize         | Number of records returned per page            |
+| pageNumber       | Zero-based index of the current page           |
+| totalElements    | Total number of records matching the query     |
+| numberOfElements | Number of records returned in the current page |
+| totalPages       | Total number of available pages                |
+
+
+
+
+
+
+# Security System 1.0
+
+## Login
 
 > To login, use this code:
 
@@ -152,7 +494,7 @@ Our API expects the **Session Cookie** to be included in all API requests to the
 You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 </aside>
 
-### Logout
+## Logout
 
 > To logout, use this code:
 
@@ -178,13 +520,13 @@ Please note that manually closing a session is not required, since it will be cl
 30 minutes. This endpoint is mainly used if you need to use different accounts.
 </aside>
 
-# Startup List
+# Startup List System 1.0
 
 > To get startup list, use this code:
 
 ```shell
-curl -v -X POST 'https://api-new.netzeroinsights.com/companies' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X POST 'https://api.netzeroinsights.com/companies' \
 -H 'Content-Type: application/json' \                 
 -d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
@@ -1923,6 +2265,14 @@ This is the commercial deal filter used when searching for commercial deals.
 | description    | 
 | websiteContent |
 
+## Regexp Fields
+
+| Label          |
+|----------------|
+| pitchLine      |
+| description    | 
+| websiteContent |
+
 ## Patent Status
 
 | Label   |
@@ -1956,6 +2306,36 @@ This is the commercial deal filter used when searching for commercial deals.
 | 3  | Early stage (VC)    |
 | 4  | Late stage (VC)     |
 | 5  | PE-growth stage     |
+
+## Size Ranges
+
+| ID | Label        |
+|----|--------------|
+| 1  | 1 - 10       |
+| 2  | 11 - 50      |
+| 3  | 51 - 100     |
+| 4  | 101 - 200    |
+| 5  | 201 - 500    |
+| 6  | 501 - 1000   |
+| 7  | 1001 - 5000  |
+| 8  | 5001 - 10000 |
+| 9  | 10001+       |
+
+## Revenue Ranges
+
+| ID | Label       |
+|----|-------------|
+| 1  | 500K - 1M   |
+| 2  | 50M - 100M  |
+| 3  | 10M - 20M   |
+| 4  | 5M - 10M    |
+| 5  | 500M - 1B   |
+| 6  | 2.5M - 5M   |
+| 7  | 20M - 50M   |
+| 8  | 1M - 2.5M   |
+| 9  | 1B+         |
+| 10 | 0 - 500K    |
+| 11 | 100M - 500M |
 
 ## Fundings
 
@@ -2406,7 +2786,7 @@ It takes a single query parameter, indicated as “searchText” in the example,
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
 
-# Responses structure
+# Response structures
 
 ## Startup search
 
@@ -3041,7 +3421,7 @@ The possible response codes are:
 
 ## Taxonomy Item
 
-> To get a Taxonomy Graph Item by parameter, ID or label, use this code:
+> To get a Taxonomy Graph Item by parameter, ID, or label, use this code:
 
 ```shell
 curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/item/2' \
