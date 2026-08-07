@@ -331,6 +331,9 @@
             <a href="#startup-list-system-2-0" class="toc-h1 toc-link" data-title="Startup List System 2.0">Startup List System 2.0</a>
           </li>
           <li>
+            <a href="#deals-list-system-2-0" class="toc-h1 toc-link" data-title="Deals List System 2.0">Deals List System 2.0</a>
+          </li>
+          <li>
             <a href="#filters-structure-system-2-0" class="toc-h1 toc-link" data-title="Filters structure System 2.0">Filters structure System 2.0</a>
               <ul class="toc-list-h2">
                   <li>
@@ -342,6 +345,9 @@
                   <li>
                     <a href="#company-filter" class="toc-h2 toc-link" data-title="Company Filter">Company Filter</a>
                   </li>
+                  <li>
+                    <a href="#deal-filter" class="toc-h2 toc-link" data-title="Deal Filter">Deal Filter</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -349,6 +355,9 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#company-search" class="toc-h2 toc-link" data-title="Company Search">Company Search</a>
+                  </li>
+                  <li>
+                    <a href="#deal-search" class="toc-h2 toc-link" data-title="Deal Search">Deal Search</a>
                   </li>
               </ul>
           </li>
@@ -367,7 +376,7 @@
             <a href="#startup-list-system-1-0" class="toc-h1 toc-link" data-title="Startup List System 1.0">Startup List System 1.0</a>
           </li>
           <li>
-            <a href="#deals-list" class="toc-h1 toc-link" data-title="Deals List">Deals List</a>
+            <a href="#deals-list-system-1-0" class="toc-h1 toc-link" data-title="Deals List System 1.0">Deals List System 1.0</a>
           </li>
           <li>
             <a href="#investors-list" class="toc-h1 toc-link" data-title="Investors List">Investors List</a>
@@ -519,6 +528,12 @@
                     <a href="#financing-instrument" class="toc-h2 toc-link" data-title="Financing Instrument">Financing Instrument</a>
                   </li>
                   <li>
+                    <a href="#funding-type" class="toc-h2 toc-link" data-title="Funding Type">Funding Type</a>
+                  </li>
+                  <li>
+                    <a href="#asset-class" class="toc-h2 toc-link" data-title="Asset Class">Asset Class</a>
+                  </li>
+                  <li>
                     <a href="#equity-stage" class="toc-h2 toc-link" data-title="Equity Stage">Equity Stage</a>
                   </li>
                   <li>
@@ -543,7 +558,7 @@
                     <a href="#investors" class="toc-h2 toc-link" data-title="Investors">Investors</a>
                   </li>
                   <li>
-                    <a href="#funding-type" class="toc-h2 toc-link" data-title="Funding Type">Funding Type</a>
+                    <a href="#funding-type-2" class="toc-h2 toc-link" data-title="Funding Type">Funding Type</a>
                   </li>
                   <li>
                     <a href="#searchable-locations" class="toc-h2 toc-link" data-title="Searchable Locations">Searchable Locations</a>
@@ -578,7 +593,7 @@
                     <a href="#deal" class="toc-h2 toc-link" data-title="Deal">Deal</a>
                   </li>
                   <li>
-                    <a href="#deal-search" class="toc-h2 toc-link" data-title="Deal search">Deal search</a>
+                    <a href="#deals-search" class="toc-h2 toc-link" data-title="Deals search">Deals search</a>
                   </li>
                   <li>
                     <a href="#funding-round" class="toc-h2 toc-link" data-title="Funding round">Funding round</a>
@@ -792,12 +807,12 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <p>To get startup list, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/advanced-filters/companies?pageNumber=0&amp;pageSize=1'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 <span class="nt">-d</span> <span class="s1">'{"companyInclude": {}, "companyExclude": {}}'</span>
 </code></pre></div>
 <blockquote>
-<p>In case of a 200 response, the response body will contain all the startups matching your request, with the format specified at section <a href="#startup-search">Startup Search</a>.</p>
+<p>In case of a 200 response, the response body will contain all the startups matching your request, with the format specified at section <a href="#company-search">Company Search</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1057,6 +1072,267 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
+<h1 id='deals-list-system-2-0'>Deals List System 2.0</h1>
+<blockquote>
+<p>To get the deals list, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/advanced-filters/deals?pageNumber=0&amp;pageSize=1'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+<span class="nt">-d</span> <span class="s1">'{"dealInclude": {}, "dealExclude": {}}'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section <a href="#deal-search">Deal Search</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-01T13:12:49.387"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-23T04:12:42.861275"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-01T08:18:26.143"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-07-24T11:18:30.783171"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Southeastern Fiber Corporation "</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pitchLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Producer of sustainable fiber-based products intended to transform agricultural byproducts into high-performance materials for the horticulture and professional turf industries. The company's products include dry organic surfactants and soil amendments that use banana fiber to improve soil structure, moisture retention, and water efficiency, enabling gardeners, growers, and all plant people to make more sustainable choices that help the planet with confidence."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pitchLineNoPunctuation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"producer of sustainable fiber based products intended to transform agricultural byproducts into high performance materials for the horticulture and professional turf industries  the company s products include dry organic surfactants and soil amendments that use banana fiber to improve soil structure  moisture retention  and water efficiency  enabling gardeners  growers  and all plant people to make more sustainable choices that help the planet with confidence"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.southeasternfibercorp.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"southeasternfibercorp.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://eutopstorage.blob.core.windows.net/company-logos/230408%2F1780319823124_sP3JACwpwG9ryBbNKBlvuoLCJZ11779682573109_200x200.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"foundedYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"searchableLocation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hickory"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cityAsciiName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hickory"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"adminID4"</span><span class="p">:</span><span class="w"> </span><span class="mi">3125</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"adminName4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North Carolina"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">939462</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1410 13th Street South West"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">389357</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fundingAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">240780</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fundingStringEUR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"241K"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fundingAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">280000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fundingStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"280K"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fundingRangeEUR"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 500K"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fundingRangeUSD"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 500K"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"lastDealAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">240780</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastDealAmountStringEUR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"241K"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastDealAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">280000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastDealAmountStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"280K"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastDealType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Debt"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"lastDealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-26T01:42:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dealCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dealWithDateCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastReviewer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"muthamma@netzeroinsights.com"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3757</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"lastReviewDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-19T17:32:40.777"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isChampion"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isEmerging"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isNewEntrant"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isAcquired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isCommercialBuyer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isCommercialPartner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialPartnershipCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialBuyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"commercialAgreementCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isStrategic"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isProjectDeveloper"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"financialStageLastFiveYears"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Institutional"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"financialStageLastThreeYears"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Institutional"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"financialStageThreeYearsHorizonPrior"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Institutional"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"financialStageThreeYearsPrior"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Institutional"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"financialStageOneYearPrior"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Institutional"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"totalNonDilutiveFundingEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">240780</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalNonDilutiveFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">280000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isFundraising"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">30666</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nanotechnology"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nanotechnology refers to the manipulation and application of materials at the nanometer scale to develop advanced solutions for mitigating climate change and enhancing environmental sustainability. This field leverages the unique properties of nanomaterials, such as increased surface area, enhanced reactivity, and novel physical characteristics, to create more efficient energy storage systems, improve solar cell performance, develop lightweight and strong materials for transportation, enhance carbon capture and sequestration techniques, improve water purification processes, among others.</span><span class="se">\n\n\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isCustomCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isCustomMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isUmbrella"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVisibleCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVisibleMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGrouping"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isAdvancedFilters"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enabling Technology"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">115</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">115</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"alternativeNames"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"legalNames"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">230408</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Debt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">280000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">242415</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">280000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amountStringEUR"</span><span class="p">:</span><span class="w"> </span><span class="s2">" 242K"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amountStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">" 280K"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amountRangeEUR"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 500K"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"amountRangeUSD"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 500K"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"dealNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-26T01:42:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"equityStage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not in scope"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"exitStage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"capitalStage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-seed and seed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"connectedToInfrastructure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Debt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastReviewer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mita"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bhattacharyya"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mita@netzeroinsights.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">106</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastReviewDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-02T05:09:34.497"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mita_bhattacharyya"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"news"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-02T05:10:57.563"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-19T05:51:41.675011"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isGenAI"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.sec.gov/Archives/edgar/data/2136445/000213644526000002/xslFormDX01/primary_doc.xml"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">263077</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"investors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">726460</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">131221</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">131221</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To search our deals database you should use the following endpoint:</p>
+
+<p><code>POST /advanced-filters/deals?pageNumber={PAGE_NUMBER}&amp;pageSize={PAGE_SIZE}&amp;sortField={SORT_FIELD}&amp;sortDirection={SORT_DIR}</code></p>
+
+<p>With a JSON request body in the format specified at the section <a href="#mainfilter">MainFilter</a>.</p>
+
+<p>The possible response codes are:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad request, invalid fields</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
 <h1 id='filters-structure-system-2-0'>Filters structure System 2.0</h1><h2 id='company-sort-fields'>Company Sort Fields</h2>
 <p>The following sort fields are supported for the listing endpoints. If no <strong>sortField</strong> is specified as a query parameter, the results are sorted by <strong>PLATFORM_ORDER</strong> by default.</p>
 
@@ -1140,7 +1416,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
 </tr>
 </tbody></table>
 <h2 id='mainfilter'>MainFilter</h2>
-<p>This is the main filter used when searching for startups, investors, or deals.</p>
+<p>This is the main filter used when searching for startups/companies, investors, or deals.</p>
 
 <table><thead>
 <tr>
@@ -1171,12 +1447,12 @@ JWT access tokens expire after a configurable period. When the token expires, au
 </tr>
 <tr>
 <td>dealInclude</td>
-<td>Section <a href="#deals-filter">Deals Filter</a></td>
+<td>Section <a href="#deal-filter">Deal Filter</a></td>
 <td>Filters related to deals which should be included in the result</td>
 </tr>
 <tr>
 <td>dealExclude</td>
-<td>Section <a href="#deals-filter">Deals Filter</a></td>
+<td>Section <a href="#deal-filter">Deal Filter</a></td>
 <td>Filters related to deals which should be excluded in the result</td>
 </tr>
 </tbody></table>
@@ -1331,7 +1607,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>onlyActive</td>
 <td>boolean</td>
-<td>If <code>&quot;true&quot;</code>, returns only active startups</td>
+<td>If <code>true</code>, returns only active startups</td>
 </tr>
 <tr>
 <td>viewed</td>
@@ -1351,37 +1627,146 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>topViewed</td>
 <td>boolean</td>
-<td>If <code>&quot;true&quot;</code>, returns only top viewed startups</td>
+<td>If <code>true</code>, returns only top viewed startups</td>
 </tr>
 <tr>
 <td>hasNotes</td>
 <td>boolean</td>
-<td>If <code>&quot;true&quot;</code>, returns only the startups with notes</td>
+<td>If <code>true</code>, returns only the startups with notes</td>
 </tr>
 <tr>
 <td>champions</td>
 <td>boolean</td>
-<td>If <code>&quot;true&quot;</code>, returns only champion startups</td>
+<td>If <code>true</code>, returns only champion startups</td>
 </tr>
 <tr>
 <td>newEntrants</td>
 <td>boolean</td>
-<td>If <code>&quot;true&quot;</code>, returns only new entrant startups</td>
+<td>If <code>true</code>, returns only new entrant startups</td>
 </tr>
 <tr>
 <td>emerging</td>
 <td>boolean</td>
-<td>If <code>&quot;true&quot;</code>, returns only emerging startups</td>
+<td>If <code>true</code>, returns only emerging startups</td>
 </tr>
 <tr>
 <td>acquired</td>
 <td>boolean</td>
-<td>If <code>&quot;true&quot;</code>, returns only acquired startups</td>
+<td>If <code>true</code>, returns only acquired startups</td>
 </tr>
 <tr>
 <td>strategic</td>
 <td>boolean</td>
-<td>If <code>&quot;true&quot;</code>, returns only strategic startups</td>
+<td>If <code>true</code>, returns only strategic startups</td>
+</tr>
+</tbody></table>
+<h2 id='deal-filter'>Deal Filter</h2>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>acquisitionDateFrom</td>
+<td>date</td>
+<td>Starting date for when the deal has been inserted into our database</td>
+</tr>
+<tr>
+<td>acquisitionDateTo</td>
+<td>date</td>
+<td>Maximum date for when the deal has been inserted into our database</td>
+</tr>
+<tr>
+<td>datesFrom</td>
+<td>date</td>
+<td>Starting date for when the deal has been closed</td>
+</tr>
+<tr>
+<td>datesTo</td>
+<td>date</td>
+<td>Maximum date for when the deal has been closed</td>
+</tr>
+<tr>
+<td>lastRoundDays</td>
+<td>List of int</td>
+<td>Maximum number of days passed since the deal was closed</td>
+</tr>
+<tr>
+<td>amountFrom</td>
+<td>int</td>
+<td>Minimum deal amount</td>
+</tr>
+<tr>
+<td>amountTo</td>
+<td>int</td>
+<td>Maximum deal amount</td>
+</tr>
+<tr>
+<td>allowNullAmounts</td>
+<td>boolean</td>
+<td>When searching with deal amount filters, if <code>true</code>, include deals with no deal amount</td>
+</tr>
+<tr>
+<td>first</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only the first funding round</td>
+</tr>
+<tr>
+<td>last</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only the most recent funding round</td>
+</tr>
+<tr>
+<td>numberFrom</td>
+<td>int</td>
+<td>Minimum deal number for the company</td>
+</tr>
+<tr>
+<td>numberTo</td>
+<td>int</td>
+<td>Maximum deal number for the company</td>
+</tr>
+<tr>
+<td>totalFundingFrom</td>
+<td>int</td>
+<td>Minimum total funding of the company</td>
+</tr>
+<tr>
+<td>totalFundingTo</td>
+<td>int</td>
+<td>Maximum total funding of the company</td>
+</tr>
+<tr>
+<td>typeIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#deal-type">Deal Type</a> for the accepted values</td>
+</tr>
+<tr>
+<td>investorIDs</td>
+<td>List of int</td>
+<td>Using the <a href="#investors-list">Investor List</a> endpoints, it is possible to fetch the investors&#39; IDs to insert here</td>
+</tr>
+<tr>
+<td>fundingTypeIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#funding-type">Funding Type</a> for the accepted values</td>
+</tr>
+<tr>
+<td>dealCategoryIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#exit-stage">Exit Stage</a> for the accepted values</td>
+</tr>
+<tr>
+<td>assetClassIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#asset-class">Asset Class</a> for the accepted values</td>
+</tr>
+<tr>
+<td>equityStageIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#equity-stage">Equity Stage</a> for the accepted values</td>
 </tr>
 </tbody></table>
 <h1 id='response-structures-system-2-0'>Response structures System 2.0</h1><h2 id='company-search'>Company Search</h2>
@@ -1394,6 +1779,38 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>content</td>
 <td>List of Section Company</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Number of records returned per page</td>
+</tr>
+<tr>
+<td>pageNumber</td>
+<td>Zero-based index of the current page</td>
+</tr>
+<tr>
+<td>totalElements</td>
+<td>Total number of records matching the query</td>
+</tr>
+<tr>
+<td>numberOfElements</td>
+<td>Number of records returned in the current page</td>
+</tr>
+<tr>
+<td>totalPages</td>
+<td>Total number of available pages</td>
+</tr>
+</tbody></table>
+<h2 id='deal-search'>Deal Search</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>content</td>
+<td>List of Section Deals</td>
 </tr>
 <tr>
 <td>pageSize</td>
@@ -1552,17 +1969,17 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Request successful</td>
 </tr>
 </tbody></table>
-<h1 id='deals-list'>Deals List</h1>
+<h1 id='deals-list-system-1-0'>Deals List System 1.0</h1>
 <blockquote>
 <p>To get the deals list, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/fundingRounds'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/fundingRounds'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 <span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
 </code></pre></div>
 <blockquote>
-<p>In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section <a href="#deal-search">Deals Search</a>.</p>
+<p>In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section <a href="#deals-search">Deals Search</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">52018</span><span class="p">,</span><span class="w">
@@ -4327,6 +4744,50 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Grant</td>
 </tr>
 </tbody></table>
+<h2 id='funding-type'>Funding Type</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Equity</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Debt</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Grant</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Other</td>
+</tr>
+</tbody></table>
+<h2 id='asset-class'>Asset Class</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Venture</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Growth</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Buyout</td>
+</tr>
+</tbody></table>
 <h2 id='equity-stage'>Equity Stage</h2>
 <table><thead>
 <tr>
@@ -4349,6 +4810,10 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>4</td>
 <td>Late stage</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Not in scope</td>
 </tr>
 </tbody></table>
 <h2 id='exit-stage'>Exit Stage</h2>
@@ -4898,7 +5363,7 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Request successful</td>
 </tr>
 </tbody></table>
-<h2 id='funding-type'>Funding Type</h2>
+<h2 id='funding-type-2'>Funding Type</h2>
 <blockquote>
 <p>To get the list of the currently available funding types, use this code:</p>
 </blockquote>
@@ -5722,7 +6187,7 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Date of insertion into our database</td>
 </tr>
 </tbody></table>
-<h2 id='deal-search'>Deal search</h2>
+<h2 id='deals-search'>Deals search</h2>
 <table><thead>
 <tr>
 <th>Name</th>
