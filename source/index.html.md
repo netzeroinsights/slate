@@ -588,7 +588,197 @@ To search our deals database you should use the following endpoint:
 
 `POST /advanced-filters/deals?pageNumber={PAGE_NUMBER}&pageSize={PAGE_SIZE}&sortField={SORT_FIELD}&sortDirection={SORT_DIR}`
 
-With a JSON request body in the format specified at the section [MainFilter](#mainfilter).
+With the following optional query parameters:
+
+| Parameter name | Parameter value                                                           |
+|----------------|---------------------------------------------------------------------------|
+| pageNumber     | Zero-based page number to retrieve (by default 0)                         |
+| pageSize       | Number of records to return per page (by default 15)                      |
+| sortField      | See Section [Deal Sort Fields](#deal-sort-fields) for the accepted values |
+| sortDirection  | ASC or DESC (by default ASC)                                              |
+
+And a JSON request body in the format specified at the section [MainFilter](#mainfilter).
+
+The possible response codes are:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 400           | Bad request, invalid fields          |
+| 403           | Forbidden, insufficient access level |
+
+# Investors List System 2.0
+
+> To get the investors list, use this code:
+
+```shell
+curl -v -X POST 'https://api-new.netzeroinsights.com/advanced-filters/investors?pageNumber=0&pageSize=1' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+-H 'Content-Type: application/json' \                 
+-d '{"investorInclude": {}, "investorExclude": {}}'
+```
+
+> In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section [Investor Search](#investor-search).
+
+```json
+{
+  "content": [
+    {
+      "acquisitionDate": "2023-06-15T14:11:50.597",
+      "updatedDate": "2026-06-16T05:33:05.073757",
+      "visibilityStatus": {
+        "visibleTo": "ALL",
+        "id": 1
+      },
+      "name": "Bolt",
+      "description": "Bolt Innovation Group is a pre-seed venture firm investing at the intersection of the digital and physical world.<br><br>They focus on companies leveraging unique technology and valuable data sets to reimagine products, systems, and experiences across the economy. Bolt leads the first round of financing in over 90% of their portfolio companies and is based in Boston, Massachusetts.",
+      "descriptionWithPunctuation": "Bolt leads the first round of financing in over 90 of their portfolio companies and is based in Boston Massachusetts Bolt Innovation Group is a pre seed venture firm investing at the intersection of the digital and physical world br br They focus on companies leveraging unique technology and valuable data sets to reimagine products systems and experiences across the economy",
+      "website": "https://bolt.io",
+      "domain": "bolt.io",
+      "phone": "+1415 742 8418",
+      "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_514040.jpg",
+      "searchableLocation": {
+        "continent": {
+          "name": "North America",
+          "id": 4
+        },
+        "country": {
+          "name": "United States",
+          "continent": {
+            "name": "North America",
+            "id": 4
+          },
+          "alpha2": "US",
+          "id": 226
+        },
+        "cityName": "Newbury",
+        "cityAsciiName": "Newbury",
+        "adminID4": 3162,
+        "adminName4": "New Hampshire",
+        "platformOrder": 60,
+        "isSearchable": true,
+        "id": 955551
+      },
+      "linkedinUrl": "https://www.linkedin.com/company/bolt/",
+      "facebookUrl": "https://facebook.com/boltvc/",
+      "twitterUrl": "https://twitter.com/boltvc/",
+      "foundedYear": 2013,
+      "investorSince": "2015-08-20T00:00:00",
+      "sizeRange": {
+        "rangeTextFormat": "11 - 50",
+        "id": 2
+      },
+      "dealsCount": 18,
+      "dealsFilteredCount": 18,
+      "lastDealAmountEUR": 14713180,
+      "lastDealAmountUSD": "15000000",
+      "lastDealType": {
+        "label": "Series A",
+        "filterable": false,
+        "assignable": true,
+        "id": 91
+      },
+      "lastDealDate": "2022-07-07T00:00:00",
+      "maxDealAmountEUR": 89883284,
+      "maxDealAmountUSD": 95000000,
+      "minDealAmountEUR": 18055,
+      "minDealAmountUSD": 20000,
+      "isLimitedPartner": false,
+      "companyExitCount": 3,
+      "ventureInvestmentCount": 17,
+      "growthInvestmentCount": 1,
+      "infrastructureInvestmentCount": 0,
+      "buyoutInvestmentCount": 0,
+      "commercialPartnershipCount": 0,
+      "acquisitionCount": 0,
+      "equityInvestmentCount": 18,
+      "commercialBuyCount": 0,
+      "isFinancialInvestor": true,
+      "isVentureInvestor": true,
+      "isGrowthInvestor": true,
+      "isInfrastructureInvestor": false,
+      "isBuyoutInvestor": false,
+      "isStrategic": false,
+      "isCommercialBuyer": false,
+      "isEquityInvestor": true,
+      "isAcquirer": false,
+      "isCommercialPartner": false,
+      "platformOrder": 0,
+      "primaryType": {
+        "label": "Venture Capital",
+        "id": 10
+      },
+      "secondaryTypes": [
+        {
+          "label": "Academic/Research Institutions",
+          "id": 75
+        }
+      ],
+      "entityTypes": [],
+      "investments": [
+        {
+          "name": "Desktop Metal",
+          "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1570944.jpg",
+          "pitchLine": "Desktop Metal specialises in 3D printing. \n\nDesktop Metal develops additive manufacturing technologies for producing metal, polymer, and composite parts at scale. Its portfolio includes binder jetting, photopolymer, and sintering-based 3D printing systems, enabling cost-effective and high-speed production of complex components. The company's solutions serve industries such as aerospace, automotive, healthcare, and consumer products, offering design flexibility, material efficiency, and reduced production lead times.\n\nDesktop Metal develops an innovation that contributes to:\nClimate change mitigation by enabling sustainable low-carbon technology.",
+          "country": {
+            "name": "United States",
+            "id": 226
+          },
+          "fundingAmountEUR": 957176958,
+          "fundingAmountUSD": 1107404021,
+          "lastDealAmountEUR": 94613983,
+          "lastDealAmountUSD": 100000000,
+          "lastDealType": {
+            "label": "Convertible note",
+            "filterable": false,
+            "assignable": false,
+            "id": 70
+          },
+          "lastDealDate": "2022-05-10T00:00:00",
+          "id": 4018
+        }
+      ],
+      "coInvestors": [
+        {
+          "name": "White Star Capital",
+          "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_111115.jpg",
+          "country": {
+            "name": "United States",
+            "id": 226
+          },
+          "primaryType": {
+            "label": "Venture Capital",
+            "id": 10
+          },
+          "numberOfCoInvestments": 3,
+          "id": 10405
+        }
+      ],
+      "id": 10393
+    }
+  ],
+  "pageSize": 1,
+  "pageNumber": 0,
+  "totalElements": 48777,
+  "numberOfElements": 1,
+  "totalPages": 48777
+}
+```
+
+To search our investors database you should use the following endpoint:
+
+`POST /advanced-filters/investors?pageNumber={PAGE_NUMBER}&pageSize={PAGE_SIZE}&sortField={SORT_FIELD}&sortDirection={SORT_DIR}`
+
+With the following optional query parameters:
+
+| Parameter name | Parameter value                                                                   |
+|----------------|-----------------------------------------------------------------------------------|
+| pageNumber     | Zero-based page number to retrieve (by default 0)                                 |
+| pageSize       | Number of records to return per page (by default 15)                              |
+| sortField      | See Section [Investor Sort Fields](#investor-sort-fields) for the accepted values |
+| sortDirection  | ASC or DESC (by default ASC)                                                      |
+
+And a JSON request body in the format specified at the section [MainFilter](#mainfilter).
 
 The possible response codes are:
 
@@ -625,18 +815,52 @@ The following sort fields are supported for the listing endpoints. If no **sortF
 | TRL                     | Sort by Technology Readiness Level                   |
 | PLATFORM_ORDER          | Sort by the default platform order                   |  
 
+## Deal Sort Fields
+
+| Name                 | Content                                     |
+|----------------------|---------------------------------------------|
+| COMPANY_NAME         | Sort by company name                        |
+| COMPANY_COUNTRY      | Sort by the company’s country               |
+| COMPANY_CITY         | Sort by the company’s city                  |
+| DEAL_DATE            | Sort by the deal date                       |
+| DEAL_TYPE            | Sort by the deal type                       |
+| DEAL_AMOUNT          | Sort by the deal amount                     |
+| NUMBER_OF_DEALS      | Sort by the company’s total number of deals |
+| TOTAL_FUNDING_AMOUNT | Sort by the company’s total funding amount  |
+
+## Investor Sort Fields
+
+| Name                            | Content                                             |
+|---------------------------------|-----------------------------------------------------|
+| NAME                            | Sort by investor name                               |
+| PRIMARY_TYPE                    | Sort by the investor’s primary type                 |
+| NUMBER_OF_DEALS                 | Sort by the total number of deals                   |
+| LAST_DEAL_DATE                  | Sort by the date of the investor’s most recent deal |
+| LAST_DEAL_TYPE                  | Sort by the type of the investor’s most recent deal |
+| COUNTRY                         | Sort by the investor’s country                      |
+| CITY                            | Sort by the investor’s city                         |
+| VENTURE_INVESTMENT_COUNT        | Sort by the number of venture investments           |
+| GROWTH_INVESTMENT_COUNT         | Sort by the number of growth investments            |
+| INFRASTRUCTURE_INVESTMENT_COUNT | Sort by the number of infrastructure investments    |
+| ACQUISITION_COUNT               | Sort by the number of acquisitions                  |
+| BUYOUT_INVESTMENT_COUNT         | Sort by the number of buyout investments            |
+| EQUITY_INVESTMENT_COUNT         | Sort by the number of equity investments            |
+| COMMERCIAL_BUY_COUNT            | Sort by the number of commercial buy deals          |
+| COMMERCIAL_PARTNERSHIP_COUNT    | Sort by the number of commercial partnerships       |
+| PLATFORM_ORDER                  | Sort by the default platform order                  |  
+
 ## MainFilter
 
 This is the main filter used when searching for startups/companies, investors, or deals.
 
-| Parameter name  | Parameter type                                | Description                                                         |
-|-----------------|-----------------------------------------------|---------------------------------------------------------------------|
-| companyInclude  | Section [Company Filter](#company-filter)     | Filters related to startups which should be included in the result  |
-| companyExclude  | Section [Company Filter](#company-filter)     | Filters related to startups which should be excluded in the result  |
-| investorInclude | Section [Investors Filter](#investors-filter) | Filters related to investors which should be included in the result | 
-| investorExclude | Section [Investors Filter](#investors-filter) | Filters related to investors which should be excluded in the result |
-| dealInclude     | Section [Deal Filter](#deal-filter)           | Filters related to deals which should be included in the result     |
-| dealExclude     | Section [Deal Filter](#deal-filter)           | Filters related to deals which should be excluded in the result     |
+| Parameter name  | Parameter type                              | Description                                                         |
+|-----------------|---------------------------------------------|---------------------------------------------------------------------|
+| companyInclude  | Section [Company Filter](#company-filter)   | Filters related to startups which should be included in the result  |
+| companyExclude  | Section [Company Filter](#company-filter)   | Filters related to startups which should be excluded in the result  |
+| investorInclude | Section [Investor Filter](#investor-filter) | Filters related to investors which should be included in the result | 
+| investorExclude | Section [Investor Filter](#investor-filter) | Filters related to investors which should be excluded in the result |
+| dealInclude     | Section [Deal Filter](#deal-filter)         | Filters related to deals which should be included in the result     |
+| dealExclude     | Section [Deal Filter](#deal-filter)         | Filters related to deals which should be excluded in the result     |
 
 ## Company Filter
 
@@ -707,6 +931,33 @@ This is the main filter used when searching for startups/companies, investors, o
 | assetClassIDs       | List of int    | See Section [Asset Class](#asset-class) for the accepted values                                                 |
 | equityStageIDs      | List of int    | See Section [Equity Stage](#equity-stage) for the accepted values                                               |
 
+## Investor Filter
+
+| Parameter name            | Parameter type | Description                                                                                                                    |
+|---------------------------|----------------|--------------------------------------------------------------------------------------------------------------------------------|
+| name                      | string         | Investor name                                                                                                                  |
+| typeIDs                   | List of int    | See Section [Investor Types](#investor-types) for the accepted values                                                          |
+| includeOtherInvestorTypes | boolean        | When filtering for investor types, if `true`, include investors whose secondary types match at least one of the selected types |
+| searchableLocationIDs     | List of int    | See Section [Searchable Locations](#searchable-locations) for the accepted values                                              |
+| regionIDs                 | List of int    | See Section [Investor Regions](#investor-regions) for accepted values                                                          |
+| coInvestorIDs             | List of int    | See Section [Investors](#investors) for accepted values                                                                        |
+| investmentIDs             | List of int    | Using the endpoint [Company List](#startup-list-system-20) it's possible to fetch their ids to be used here                    |
+| numberOfDealsFrom         | int            | Minimum number of deals                                                                                                        |
+| numberOfDealsTo           | int            | Maximum number of deals                                                                                                        |
+| foundedYearFrom           | int            | Starting founded year of the investor                                                                                          |
+| foundedYearTo             | int            | Maximum founded year of the investor                                                                                           |
+| limitedPartner            | boolean        | If `true`, returns only limited partners                                                                                       |
+| financialInvestor         | boolean        | If `true`, returns only financial investors                                                                                    |
+| ventureInvestor           | boolean        | If `true`, returns only venture investors                                                                                      |
+| growthInvestor            | boolean        | If `true`, returns only growth investors                                                                                       |
+| infrastructureInvestor    | boolean        | If `true`, returns only infrastructure investors                                                                               |
+| buyoutInvestor            | boolean        | If `true`, returns only buyout investors                                                                                       |
+| strategic                 | boolean        | If `true`, returns only strategic investors                                                                                    |
+| commercialBuyer           | boolean        | If `true`, returns only commercial buyers                                                                                      |
+| equityInvestor            | boolean        | If `true`, returns only equity investors                                                                                       |
+| acquirer                  | boolean        | If `true`, returns only acquirers                                                                                              |
+| commercialPartner         | boolean        | If `true`, returns only commercial partners                                                                                    |
+
 # Response structures System 2.0
 
 ## Company Search
@@ -724,7 +975,18 @@ This is the main filter used when searching for startups/companies, investors, o
 
 | Name             | Content                                        |
 |------------------|------------------------------------------------|
-| content          | List of Section Deals                          |
+| content          | List of Section Deal                           |
+| pageSize         | Number of records returned per page            |
+| pageNumber       | Zero-based index of the current page           |
+| totalElements    | Total number of records matching the query     |
+| numberOfElements | Number of records returned in the current page |
+| totalPages       | Total number of available pages                |
+
+## Investor Search
+
+| Name             | Content                                        |
+|------------------|------------------------------------------------|
+| content          | List of Section Investor                       |
 | pageSize         | Number of records returned per page            |
 | pageNumber       | Zero-based index of the current page           |
 | totalElements    | Total number of records matching the query     |
@@ -880,18 +1142,18 @@ The possible response codes are:
 |---------------|--------------------|
 | 200           | Request successful |
 
-# Investors List
+# Investors List System 1.0
 
 > To get the investors list, use this code:
 
 ```shell
-curl -v -X POST 'https://api-new.netzeroinsights.com/investors' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X POST 'https://api.netzeroinsights.com/investors' \
 -H 'Content-Type: application/json' \                 
 -d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
 
-> In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section [Investors Search](#investor-search).
+> In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section [Investors Search](#investors-search).
 
 ```json
 {
@@ -3339,7 +3601,7 @@ It takes a single query parameter, indicated as “searchText” in the example,
 | decisionMaker | True if the person has decision making capabilities |
 | id            | Internal person ID                                  |
 
-## Investor search
+## Investors search
 
 | Name         | Content                                                               |
 |--------------|-----------------------------------------------------------------------|
