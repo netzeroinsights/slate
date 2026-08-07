@@ -334,10 +334,19 @@
             <a href="#deals-list-system-2-0" class="toc-h1 toc-link" data-title="Deals List System 2.0">Deals List System 2.0</a>
           </li>
           <li>
+            <a href="#investors-list-system-2-0" class="toc-h1 toc-link" data-title="Investors List System 2.0">Investors List System 2.0</a>
+          </li>
+          <li>
             <a href="#filters-structure-system-2-0" class="toc-h1 toc-link" data-title="Filters structure System 2.0">Filters structure System 2.0</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#company-sort-fields" class="toc-h2 toc-link" data-title="Company Sort Fields">Company Sort Fields</a>
+                  </li>
+                  <li>
+                    <a href="#deal-sort-fields" class="toc-h2 toc-link" data-title="Deal Sort Fields">Deal Sort Fields</a>
+                  </li>
+                  <li>
+                    <a href="#investor-sort-fields" class="toc-h2 toc-link" data-title="Investor Sort Fields">Investor Sort Fields</a>
                   </li>
                   <li>
                     <a href="#mainfilter" class="toc-h2 toc-link" data-title="MainFilter">MainFilter</a>
@@ -347,6 +356,9 @@
                   </li>
                   <li>
                     <a href="#deal-filter" class="toc-h2 toc-link" data-title="Deal Filter">Deal Filter</a>
+                  </li>
+                  <li>
+                    <a href="#investor-filter" class="toc-h2 toc-link" data-title="Investor Filter">Investor Filter</a>
                   </li>
               </ul>
           </li>
@@ -358,6 +370,9 @@
                   </li>
                   <li>
                     <a href="#deal-search" class="toc-h2 toc-link" data-title="Deal Search">Deal Search</a>
+                  </li>
+                  <li>
+                    <a href="#investor-search" class="toc-h2 toc-link" data-title="Investor Search">Investor Search</a>
                   </li>
               </ul>
           </li>
@@ -379,7 +394,7 @@
             <a href="#deals-list-system-1-0" class="toc-h1 toc-link" data-title="Deals List System 1.0">Deals List System 1.0</a>
           </li>
           <li>
-            <a href="#investors-list" class="toc-h1 toc-link" data-title="Investors List">Investors List</a>
+            <a href="#investors-list-system-1-0" class="toc-h1 toc-link" data-title="Investors List System 1.0">Investors List System 1.0</a>
           </li>
           <li>
             <a href="#commercial-deals-list" class="toc-h1 toc-link" data-title="Commercial Deals List">Commercial Deals List</a>
@@ -614,7 +629,7 @@
                     <a href="#contact" class="toc-h2 toc-link" data-title="Contact">Contact</a>
                   </li>
                   <li>
-                    <a href="#investor-search" class="toc-h2 toc-link" data-title="Investor search">Investor search</a>
+                    <a href="#investors-search" class="toc-h2 toc-link" data-title="Investors search">Investors search</a>
                   </li>
                   <li>
                     <a href="#investor-small" class="toc-h2 toc-link" data-title="Investor (small)">Investor (small)</a>
@@ -1310,7 +1325,241 @@ JWT access tokens expire after a configurable period. When the token expires, au
 
 <p><code>POST /advanced-filters/deals?pageNumber={PAGE_NUMBER}&amp;pageSize={PAGE_SIZE}&amp;sortField={SORT_FIELD}&amp;sortDirection={SORT_DIR}</code></p>
 
-<p>With a JSON request body in the format specified at the section <a href="#mainfilter">MainFilter</a>.</p>
+<p>With the following optional query parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pageNumber</td>
+<td>Zero-based page number to retrieve (by default 0)</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Number of records to return per page (by default 15)</td>
+</tr>
+<tr>
+<td>sortField</td>
+<td>See Section <a href="#deal-sort-fields">Deal Sort Fields</a> for the accepted values</td>
+</tr>
+<tr>
+<td>sortDirection</td>
+<td>ASC or DESC (by default ASC)</td>
+</tr>
+</tbody></table>
+
+<p>And a JSON request body in the format specified at the section <a href="#mainfilter">MainFilter</a>.</p>
+
+<p>The possible response codes are:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad request, invalid fields</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
+<h1 id='investors-list-system-2-0'>Investors List System 2.0</h1>
+<blockquote>
+<p>To get the investors list, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/advanced-filters/investors?pageNumber=0&amp;pageSize=1'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+<span class="nt">-d</span> <span class="s1">'{"investorInclude": {}, "investorExclude": {}}'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section <a href="#investor-search">Investor Search</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-06-15T14:11:50.597"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-16T05:33:05.073757"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bolt"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bolt Innovation Group is a pre-seed venture firm investing at the intersection of the digital and physical world.&lt;br&gt;&lt;br&gt;They focus on companies leveraging unique technology and valuable data sets to reimagine products, systems, and experiences across the economy. Bolt leads the first round of financing in over 90% of their portfolio companies and is based in Boston, Massachusetts."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"descriptionWithPunctuation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bolt leads the first round of financing in over 90 of their portfolio companies and is based in Boston Massachusetts Bolt Innovation Group is a pre seed venture firm investing at the intersection of the digital and physical world br br They focus on companies leveraging unique technology and valuable data sets to reimagine products systems and experiences across the economy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bolt.io"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bolt.io"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1415 742 8418"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_514040.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"searchableLocation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Newbury"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cityAsciiName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Newbury"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"adminID4"</span><span class="p">:</span><span class="w"> </span><span class="mi">3162</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"adminName4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Hampshire"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">955551</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"linkedinUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/company/bolt/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"facebookUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://facebook.com/boltvc/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"twitterUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/boltvc/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foundedYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2013</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"investorSince"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-20T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sizeRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11 - 50"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"dealsCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dealsFilteredCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">14713180</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Series A"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">91</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastDealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-07T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxDealAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">89883284</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxDealAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">95000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minDealAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">18055</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minDealAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isLimitedPartner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companyExitCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ventureInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"growthInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"infrastructureInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyoutInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialPartnershipCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"acquisitionCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"equityInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialBuyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isFinancialInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isVentureInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isGrowthInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isInfrastructureInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isBuyoutInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isStrategic"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCommercialBuyer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isEquityInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isAcquirer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCommercialPartner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"primaryType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Capital"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"secondaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Academic/Research Institutions"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"investments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Desktop Metal"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1570944.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"pitchLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Desktop Metal specialises in 3D printing. </span><span class="se">\n\n</span><span class="s2">Desktop Metal develops additive manufacturing technologies for producing metal, polymer, and composite parts at scale. Its portfolio includes binder jetting, photopolymer, and sintering-based 3D printing systems, enabling cost-effective and high-speed production of complex components. The company's solutions serve industries such as aerospace, automotive, healthcare, and consumer products, offering design flexibility, material efficiency, and reduced production lead times.</span><span class="se">\n\n</span><span class="s2">Desktop Metal develops an innovation that contributes to:</span><span class="se">\n</span><span class="s2">Climate change mitigation by enabling sustainable low-carbon technology."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"fundingAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">957176958</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"fundingAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">1107404021</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastDealAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">94613983</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastDealAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastDealType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Convertible note"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"lastDealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-10T00:00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4018</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"coInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"White Star Capital"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_111115.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"primaryType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Capital"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"numberOfCoInvestments"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10405</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10393</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">48777</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">48777</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To search our investors database you should use the following endpoint:</p>
+
+<p><code>POST /advanced-filters/investors?pageNumber={PAGE_NUMBER}&amp;pageSize={PAGE_SIZE}&amp;sortField={SORT_FIELD}&amp;sortDirection={SORT_DIR}</code></p>
+
+<p>With the following optional query parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pageNumber</td>
+<td>Zero-based page number to retrieve (by default 0)</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Number of records to return per page (by default 15)</td>
+</tr>
+<tr>
+<td>sortField</td>
+<td>See Section <a href="#investor-sort-fields">Investor Sort Fields</a> for the accepted values</td>
+</tr>
+<tr>
+<td>sortDirection</td>
+<td>ASC or DESC (by default ASC)</td>
+</tr>
+</tbody></table>
+
+<p>And a JSON request body in the format specified at the section <a href="#mainfilter">MainFilter</a>.</p>
 
 <p>The possible response codes are:</p>
 
@@ -1415,6 +1664,118 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Sort by the default platform order</td>
 </tr>
 </tbody></table>
+<h2 id='deal-sort-fields'>Deal Sort Fields</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>COMPANY_NAME</td>
+<td>Sort by company name</td>
+</tr>
+<tr>
+<td>COMPANY_COUNTRY</td>
+<td>Sort by the company’s country</td>
+</tr>
+<tr>
+<td>COMPANY_CITY</td>
+<td>Sort by the company’s city</td>
+</tr>
+<tr>
+<td>DEAL_DATE</td>
+<td>Sort by the deal date</td>
+</tr>
+<tr>
+<td>DEAL_TYPE</td>
+<td>Sort by the deal type</td>
+</tr>
+<tr>
+<td>DEAL_AMOUNT</td>
+<td>Sort by the deal amount</td>
+</tr>
+<tr>
+<td>NUMBER_OF_DEALS</td>
+<td>Sort by the company’s total number of deals</td>
+</tr>
+<tr>
+<td>TOTAL_FUNDING_AMOUNT</td>
+<td>Sort by the company’s total funding amount</td>
+</tr>
+</tbody></table>
+<h2 id='investor-sort-fields'>Investor Sort Fields</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>NAME</td>
+<td>Sort by investor name</td>
+</tr>
+<tr>
+<td>PRIMARY_TYPE</td>
+<td>Sort by the investor’s primary type</td>
+</tr>
+<tr>
+<td>NUMBER_OF_DEALS</td>
+<td>Sort by the total number of deals</td>
+</tr>
+<tr>
+<td>LAST_DEAL_DATE</td>
+<td>Sort by the date of the investor’s most recent deal</td>
+</tr>
+<tr>
+<td>LAST_DEAL_TYPE</td>
+<td>Sort by the type of the investor’s most recent deal</td>
+</tr>
+<tr>
+<td>COUNTRY</td>
+<td>Sort by the investor’s country</td>
+</tr>
+<tr>
+<td>CITY</td>
+<td>Sort by the investor’s city</td>
+</tr>
+<tr>
+<td>VENTURE_INVESTMENT_COUNT</td>
+<td>Sort by the number of venture investments</td>
+</tr>
+<tr>
+<td>GROWTH_INVESTMENT_COUNT</td>
+<td>Sort by the number of growth investments</td>
+</tr>
+<tr>
+<td>INFRASTRUCTURE_INVESTMENT_COUNT</td>
+<td>Sort by the number of infrastructure investments</td>
+</tr>
+<tr>
+<td>ACQUISITION_COUNT</td>
+<td>Sort by the number of acquisitions</td>
+</tr>
+<tr>
+<td>BUYOUT_INVESTMENT_COUNT</td>
+<td>Sort by the number of buyout investments</td>
+</tr>
+<tr>
+<td>EQUITY_INVESTMENT_COUNT</td>
+<td>Sort by the number of equity investments</td>
+</tr>
+<tr>
+<td>COMMERCIAL_BUY_COUNT</td>
+<td>Sort by the number of commercial buy deals</td>
+</tr>
+<tr>
+<td>COMMERCIAL_PARTNERSHIP_COUNT</td>
+<td>Sort by the number of commercial partnerships</td>
+</tr>
+<tr>
+<td>PLATFORM_ORDER</td>
+<td>Sort by the default platform order</td>
+</tr>
+</tbody></table>
 <h2 id='mainfilter'>MainFilter</h2>
 <p>This is the main filter used when searching for startups/companies, investors, or deals.</p>
 
@@ -1437,12 +1798,12 @@ JWT access tokens expire after a configurable period. When the token expires, au
 </tr>
 <tr>
 <td>investorInclude</td>
-<td>Section <a href="#investors-filter">Investors Filter</a></td>
+<td>Section <a href="#investor-filter">Investor Filter</a></td>
 <td>Filters related to investors which should be included in the result</td>
 </tr>
 <tr>
 <td>investorExclude</td>
-<td>Section <a href="#investors-filter">Investors Filter</a></td>
+<td>Section <a href="#investor-filter">Investor Filter</a></td>
 <td>Filters related to investors which should be excluded in the result</td>
 </tr>
 <tr>
@@ -1769,6 +2130,125 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>See Section <a href="#equity-stage">Equity Stage</a> for the accepted values</td>
 </tr>
 </tbody></table>
+<h2 id='investor-filter'>Investor Filter</h2>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Investor name</td>
+</tr>
+<tr>
+<td>typeIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#investor-types">Investor Types</a> for the accepted values</td>
+</tr>
+<tr>
+<td>includeOtherInvestorTypes</td>
+<td>boolean</td>
+<td>When filtering for investor types, if <code>true</code>, include investors whose secondary types match at least one of the selected types</td>
+</tr>
+<tr>
+<td>searchableLocationIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#searchable-locations">Searchable Locations</a> for the accepted values</td>
+</tr>
+<tr>
+<td>regionIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#investor-regions">Investor Regions</a> for accepted values</td>
+</tr>
+<tr>
+<td>coInvestorIDs</td>
+<td>List of int</td>
+<td>See Section <a href="#investors">Investors</a> for accepted values</td>
+</tr>
+<tr>
+<td>investmentIDs</td>
+<td>List of int</td>
+<td>Using the endpoint <a href="#startup-list-system-20">Company List</a> it&#39;s possible to fetch their ids to be used here</td>
+</tr>
+<tr>
+<td>numberOfDealsFrom</td>
+<td>int</td>
+<td>Minimum number of deals</td>
+</tr>
+<tr>
+<td>numberOfDealsTo</td>
+<td>int</td>
+<td>Maximum number of deals</td>
+</tr>
+<tr>
+<td>foundedYearFrom</td>
+<td>int</td>
+<td>Starting founded year of the investor</td>
+</tr>
+<tr>
+<td>foundedYearTo</td>
+<td>int</td>
+<td>Maximum founded year of the investor</td>
+</tr>
+<tr>
+<td>limitedPartner</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only limited partners</td>
+</tr>
+<tr>
+<td>financialInvestor</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only financial investors</td>
+</tr>
+<tr>
+<td>ventureInvestor</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only venture investors</td>
+</tr>
+<tr>
+<td>growthInvestor</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only growth investors</td>
+</tr>
+<tr>
+<td>infrastructureInvestor</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only infrastructure investors</td>
+</tr>
+<tr>
+<td>buyoutInvestor</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only buyout investors</td>
+</tr>
+<tr>
+<td>strategic</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only strategic investors</td>
+</tr>
+<tr>
+<td>commercialBuyer</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only commercial buyers</td>
+</tr>
+<tr>
+<td>equityInvestor</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only equity investors</td>
+</tr>
+<tr>
+<td>acquirer</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only acquirers</td>
+</tr>
+<tr>
+<td>commercialPartner</td>
+<td>boolean</td>
+<td>If <code>true</code>, returns only commercial partners</td>
+</tr>
+</tbody></table>
 <h1 id='response-structures-system-2-0'>Response structures System 2.0</h1><h2 id='company-search'>Company Search</h2>
 <table><thead>
 <tr>
@@ -1810,7 +2290,39 @@ JWT access tokens expire after a configurable period. When the token expires, au
 </thead><tbody>
 <tr>
 <td>content</td>
-<td>List of Section Deals</td>
+<td>List of Section Deal</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Number of records returned per page</td>
+</tr>
+<tr>
+<td>pageNumber</td>
+<td>Zero-based index of the current page</td>
+</tr>
+<tr>
+<td>totalElements</td>
+<td>Total number of records matching the query</td>
+</tr>
+<tr>
+<td>numberOfElements</td>
+<td>Number of records returned in the current page</td>
+</tr>
+<tr>
+<td>totalPages</td>
+<td>Total number of available pages</td>
+</tr>
+</tbody></table>
+<h2 id='investor-search'>Investor Search</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>content</td>
+<td>List of Section Investor</td>
 </tr>
 <tr>
 <td>pageSize</td>
@@ -2011,17 +2523,17 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Request successful</td>
 </tr>
 </tbody></table>
-<h1 id='investors-list'>Investors List</h1>
+<h1 id='investors-list-system-1-0'>Investors List System 1.0</h1>
 <blockquote>
 <p>To get the investors list, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/investors'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s1">'https://api.netzeroinsights.com/investors'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 <span class="nt">-d</span> <span class="s1">'{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'</span>
 </code></pre></div>
 <blockquote>
-<p>In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section <a href="#investor-search">Investors Search</a>.</p>
+<p>In case of a 200 response, the response body will contain all the investors matching your request, with the format specified at section <a href="#investors-search">Investors Search</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22736</span><span class="p">,</span><span class="w">
@@ -6447,7 +6959,7 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Internal person ID</td>
 </tr>
 </tbody></table>
-<h2 id='investor-search'>Investor search</h2>
+<h2 id='investors-search'>Investors search</h2>
 <table><thead>
 <tr>
 <th>Name</th>
