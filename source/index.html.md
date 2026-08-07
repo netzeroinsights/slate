@@ -110,12 +110,12 @@ It takes no parameter, and has the following response code:
 
 ```shell
 curl -v -X POST 'https://api-new.netzeroinsights.com/advanced-filters/companies?pageNumber=0&pageSize=1' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
 -H 'Content-Type: application/json' \                 
 -d '{"companyInclude": {}, "companyExclude": {}}'
 ```
 
-> In case of a 200 response, the response body will contain all the startups matching your request, with the format specified at section [Startup Search](#startup-search).
+> In case of a 200 response, the response body will contain all the startups matching your request, with the format specified at section [Company Search](#company-search).
 
 ```json
 {
@@ -347,6 +347,257 @@ The possible response codes are:
 | 400           | Bad request, invalid fields          |
 | 403           | Forbidden, insufficient access level |
 
+# Deals List System 2.0
+
+> To get the deals list, use this code:
+
+```shell
+curl -v -X POST 'https://api-new.netzeroinsights.com/advanced-filters/deals?pageNumber=0&pageSize=1' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+-H 'Content-Type: application/json' \                 
+-d '{"dealInclude": {}, "dealExclude": {}}'
+```
+
+> In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section [Deal Search](#deal-search).
+
+```json
+{
+  "content": [
+    {
+      "acquisitionDate": "2026-06-01T13:12:49.387",
+      "updatedDate": "2026-06-23T04:12:42.861275",
+      "company": {
+        "acquisitionDate": "2026-06-01T08:18:26.143",
+        "updatedDate": "2026-07-24T11:18:30.783171",
+        "visibilityStatus": {
+          "visibleTo": "ALL",
+          "id": 1
+        },
+        "name": "Southeastern Fiber Corporation ",
+        "pitchLine": "Producer of sustainable fiber-based products intended to transform agricultural byproducts into high-performance materials for the horticulture and professional turf industries. The company's products include dry organic surfactants and soil amendments that use banana fiber to improve soil structure, moisture retention, and water efficiency, enabling gardeners, growers, and all plant people to make more sustainable choices that help the planet with confidence.",
+        "pitchLineNoPunctuation": "producer of sustainable fiber based products intended to transform agricultural byproducts into high performance materials for the horticulture and professional turf industries  the company s products include dry organic surfactants and soil amendments that use banana fiber to improve soil structure  moisture retention  and water efficiency  enabling gardeners  growers  and all plant people to make more sustainable choices that help the planet with confidence",
+        "website": "http://www.southeasternfibercorp.com",
+        "domain": "southeasternfibercorp.com",
+        "logoUrl": "https://eutopstorage.blob.core.windows.net/company-logos/230408%2F1780319823124_sP3JACwpwG9ryBbNKBlvuoLCJZ11779682573109_200x200.png",
+        "foundedYear": 2022,
+        "searchableLocation": {
+          "continent": {
+            "name": "North America",
+            "id": 4
+          },
+          "country": {
+            "name": "United States",
+            "continent": {
+              "name": "North America",
+              "id": 4
+            },
+            "alpha2": "US",
+            "id": 226
+          },
+          "cityName": "Hickory",
+          "cityAsciiName": "Hickory",
+          "adminID4": 3125,
+          "adminName4": "North Carolina",
+          "platformOrder": 60,
+          "isSearchable": true,
+          "id": 939462
+        },
+        "address": {
+          "address": "1410 13th Street South West",
+          "id": 389357
+        },
+        "fundingAmountEUR": 240780,
+        "fundingStringEUR": "241K",
+        "fundingAmountUSD": 280000,
+        "fundingStringUSD": "280K",
+        "fundingRangeEUR": {
+          "rangeFrom": 0,
+          "rangeTo": 500000,
+          "rangeTextFormat": "0 - 500K",
+          "id": 1
+        },
+        "fundingRangeUSD": {
+          "rangeFrom": 0,
+          "rangeTo": 500000,
+          "rangeTextFormat": "0 - 500K",
+          "id": 1
+        },
+        "lastDealAmountEUR": 240780,
+        "lastDealAmountStringEUR": "241K",
+        "lastDealAmountUSD": 280000,
+        "lastDealAmountStringUSD": "280K",
+        "lastDealType": {
+          "label": "Debt",
+          "filterable": false,
+          "assignable": true,
+          "id": 75
+        },
+        "lastDealDate": "2026-06-26T01:42:00",
+        "dealCount": 1,
+        "dealWithDateCount": 1,
+        "lastReviewer": {
+          "email": "muthamma@netzeroinsights.com",
+          "id": 3757
+        },
+        "lastReviewDate": "2026-06-19T17:32:40.777",
+        "isChampion": false,
+        "isEmerging": false,
+        "isNewEntrant": false,
+        "isAcquired": false,
+        "isCommercialBuyer": false,
+        "isCommercialPartner": false,
+        "commercialPartnershipCount": 0,
+        "commercialBuyCount": 0,
+        "commercialAgreementCount": 0,
+        "isStrategic": false,
+        "isProjectDeveloper": false,
+        "financialStageLastFiveYears": {
+          "label": "Pre-Institutional",
+          "id": 1
+        },
+        "financialStageLastThreeYears": {
+          "label": "Pre-Institutional",
+          "id": 1
+        },
+        "financialStageThreeYearsHorizonPrior": {
+          "label": "Pre-Institutional",
+          "id": 1
+        },
+        "financialStageThreeYearsPrior": {
+          "label": "Pre-Institutional",
+          "id": 1
+        },
+        "financialStageOneYearPrior": {
+          "label": "Pre-Institutional",
+          "id": 1
+        },
+        "totalNonDilutiveFundingEUR": 240780,
+        "totalNonDilutiveFundingUSD": 280000,
+        "isActive": true,
+        "isFundraising": false,
+        "platformOrder": 30666,
+        "entityTypes": [],
+        "tags": [
+          {
+            "label": "Nanotechnology",
+            "visibilityStatus": {
+              "visibleTo": "ALL",
+              "id": 1
+            },
+            "description": "Nanotechnology refers to the manipulation and application of materials at the nanometer scale to develop advanced solutions for mitigating climate change and enhancing environmental sustainability. This field leverages the unique properties of nanomaterials, such as increased surface area, enhanced reactivity, and novel physical characteristics, to create more efficient energy storage systems, improve solar cell performance, develop lightweight and strong materials for transportation, enhance carbon capture and sequestration techniques, improve water purification processes, among others.\n\n\"",
+            "isCustomCompany": false,
+            "isCustomMap": false,
+            "isUmbrella": false,
+            "isVisibleCompany": true,
+            "isVisibleMap": true,
+            "isSearchable": true,
+            "isGrouping": false,
+            "isAdvancedFilters": true,
+            "tagType": {
+              "label": "Enabling Technology",
+              "platformOrder": -1,
+              "tagFamily": {
+                "label": "Solutions",
+                "platformOrder": 1,
+                "id": 2
+              },
+              "id": 123
+            },
+            "platformOrder": 115,
+            "id": 115
+          }
+        ],
+        "alternativeNames": [],
+        "legalNames": [],
+        "id": 230408
+      },
+      "type": {
+        "label": "Debt",
+        "filterable": false,
+        "assignable": true,
+        "id": 75
+      },
+      "amount": 280000,
+      "currency": "USD",
+      "amountEUR": 242415,
+      "amountUSD": 280000,
+      "amountStringEUR": " 242K",
+      "amountStringUSD": " 280K",
+      "amountRangeEUR": {
+        "rangeFrom": 0,
+        "rangeTo": 500000,
+        "rangeTextFormat": "0 - 500K",
+        "id": 1
+      },
+      "amountRangeUSD": {
+        "rangeFrom": 0,
+        "rangeTo": 500000,
+        "rangeTextFormat": "0 - 500K",
+        "id": 1
+      },
+      "dealNumber": 1,
+      "dealDate": "2026-06-26T01:42:00",
+      "status": "COMPLETED",
+      "equityStage": {
+        "label": "Not in scope",
+        "id": 5
+      },
+      "exitStage": {
+        "label": "Venture",
+        "id": 1
+      },
+      "capitalStage": {
+        "label": "Pre-seed and seed",
+        "id": 0
+      },
+      "connectedToInfrastructure": "NO",
+      "fundingType": {
+        "label": "Debt",
+        "id": 2
+      },
+      "lastReviewer": {
+        "name": "Mita",
+        "surname": "Bhattacharyya",
+        "email": "mita@netzeroinsights.com",
+        "id": 106
+      },
+      "lastReviewDate": "2026-06-02T05:09:34.497",
+      "source": "mita_bhattacharyya",
+      "news": [
+        {
+          "acquisitionDate": "2026-06-02T05:10:57.563",
+          "updatedDate": "2026-06-19T05:51:41.675011",
+          "isGenAI": false,
+          "url": "https://www.sec.gov/Archives/edgar/data/2136445/000213644526000002/xslFormDX01/primary_doc.xml",
+          "id": 263077
+        }
+      ],
+      "investors": [],
+      "id": 726460
+    }
+  ],
+  "pageSize": 1,
+  "pageNumber": 0,
+  "totalElements": 131221,
+  "numberOfElements": 1,
+  "totalPages": 131221
+}
+```
+
+To search our deals database you should use the following endpoint:
+
+`POST /advanced-filters/deals?pageNumber={PAGE_NUMBER}&pageSize={PAGE_SIZE}&sortField={SORT_FIELD}&sortDirection={SORT_DIR}`
+
+With a JSON request body in the format specified at the section [MainFilter](#mainfilter).
+
+The possible response codes are:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 400           | Bad request, invalid fields          |
+| 403           | Forbidden, insufficient access level |
+
 # Filters structure System 2.0
 
 ## Company Sort Fields
@@ -376,7 +627,7 @@ The following sort fields are supported for the listing endpoints. If no **sortF
 
 ## MainFilter
 
-This is the main filter used when searching for startups, investors, or deals.
+This is the main filter used when searching for startups/companies, investors, or deals.
 
 | Parameter name  | Parameter type                                | Description                                                         |
 |-----------------|-----------------------------------------------|---------------------------------------------------------------------|
@@ -384,8 +635,8 @@ This is the main filter used when searching for startups, investors, or deals.
 | companyExclude  | Section [Company Filter](#company-filter)     | Filters related to startups which should be excluded in the result  |
 | investorInclude | Section [Investors Filter](#investors-filter) | Filters related to investors which should be included in the result | 
 | investorExclude | Section [Investors Filter](#investors-filter) | Filters related to investors which should be excluded in the result |
-| dealInclude     | Section [Deals Filter](#deals-filter)         | Filters related to deals which should be included in the result     |
-| dealExclude     | Section [Deals Filter](#deals-filter)         | Filters related to deals which should be excluded in the result     |
+| dealInclude     | Section [Deal Filter](#deal-filter)           | Filters related to deals which should be included in the result     |
+| dealExclude     | Section [Deal Filter](#deal-filter)           | Filters related to deals which should be excluded in the result     |
 
 ## Company Filter
 
@@ -419,17 +670,42 @@ This is the main filter used when searching for startups, investors, or deals.
 | wildcardsFields              | List of Section [Wildcard Fields](#wildcard-fields) | Select on which fields to match the wildcards                                                   |
 | regexps                      | List of string                                      | Any match of the keywords in the name/pitchline/description                                     |
 | regexpFields                 | List of Section [Regexp Fields](#wildcard-fields)   | Select on which fields to match the regexps                                                     |
-| onlyActive                   | boolean                                             | If `"true"`, returns only active startups                                                       |
+| onlyActive                   | boolean                                             | If `true`, returns only active startups                                                         |
 | viewed                       | boolean                                             | Filters startups based on whether they have been viewed                                         |
 | viewedDateFrom               | date                                                | Earliest viewed date                                                                            |
 | viewedDateTo                 | date                                                | Latest viewed date                                                                              |
-| topViewed                    | boolean                                             | If `"true"`, returns only top viewed startups                                                   |
-| hasNotes                     | boolean                                             | If `"true"`, returns only the startups with notes                                               |
-| champions                    | boolean                                             | If `"true"`, returns only champion startups                                                     |
-| newEntrants                  | boolean                                             | If `"true"`, returns only new entrant startups                                                  |
-| emerging                     | boolean                                             | If `"true"`, returns only emerging startups                                                     |
-| acquired                     | boolean                                             | If `"true"`, returns only acquired startups                                                     |
-| strategic                    | boolean                                             | If `"true"`, returns only strategic startups                                                    |
+| topViewed                    | boolean                                             | If `true`, returns only top viewed startups                                                     |
+| hasNotes                     | boolean                                             | If `true`, returns only the startups with notes                                                 |
+| champions                    | boolean                                             | If `true`, returns only champion startups                                                       |
+| newEntrants                  | boolean                                             | If `true`, returns only new entrant startups                                                    |
+| emerging                     | boolean                                             | If `true`, returns only emerging startups                                                       |
+| acquired                     | boolean                                             | If `true`, returns only acquired startups                                                       |
+| strategic                    | boolean                                             | If `true`, returns only strategic startups                                                      |
+
+## Deal Filter
+
+| Parameter name      | Parameter type | Description                                                                                                     |                                                                                                    
+|---------------------|----------------|-----------------------------------------------------------------------------------------------------------------|
+| acquisitionDateFrom | date           | Starting date for when the deal has been inserted into our database                                             |                                            
+| acquisitionDateTo   | date           | Maximum date for when the deal has been inserted into our database                                              |                                             
+| datesFrom           | date           | Starting date for when the deal has been closed                                                                 |                                                                
+| datesTo             | date           | Maximum date for when the deal has been closed                                                                  |                                                                 
+| lastRoundDays       | List of int    | Maximum number of days passed since the deal was closed                                                         |
+| amountFrom          | int            | Minimum deal amount                                                                                             |                                                                                            
+| amountTo            | int            | Maximum deal amount                                                                                             |
+| allowNullAmounts    | boolean        | When searching with deal amount filters, if `true`, include deals with no deal amount                           |
+| first               | boolean        | If `true`, returns only the first funding round                                                                 |
+| last                | boolean        | If `true`, returns only the most recent funding round                                                           |
+| numberFrom          | int            | Minimum deal number for the company                                                                             |                                                                            
+| numberTo            | int            | Maximum deal number for the company                                                                             |
+| totalFundingFrom    | int            | Minimum total funding of the company                                                                            |                                                                           
+| totalFundingTo      | int            | Maximum total funding of the company                                                                            |
+| typeIDs             | List of int    | See Section [Deal Type](#deal-type) for the accepted values                                                     |
+| investorIDs         | List of int    | Using the [Investor List](#investors-list) endpoints, it is possible to fetch the investors' IDs to insert here |
+| fundingTypeIDs      | List of int    | See Section [Funding Type](#funding-type) for the accepted values                                               |
+| dealCategoryIDs     | List of int    | See Section [Exit Stage](#exit-stage) for the accepted values                                                   |
+| assetClassIDs       | List of int    | See Section [Asset Class](#asset-class) for the accepted values                                                 |
+| equityStageIDs      | List of int    | See Section [Equity Stage](#equity-stage) for the accepted values                                               |
 
 # Response structures System 2.0
 
@@ -444,8 +720,16 @@ This is the main filter used when searching for startups, investors, or deals.
 | numberOfElements | Number of records returned in the current page |
 | totalPages       | Total number of available pages                |
 
+## Deal Search
 
-
+| Name             | Content                                        |
+|------------------|------------------------------------------------|
+| content          | List of Section Deals                          |
+| pageSize         | Number of records returned per page            |
+| pageNumber       | Zero-based index of the current page           |
+| totalElements    | Total number of records matching the query     |
+| numberOfElements | Number of records returned in the current page |
+| totalPages       | Total number of available pages                |
 
 
 
@@ -558,18 +842,18 @@ The possible response codes are:
 |---------------|--------------------|
 | 200           | Request successful |
 
-# Deals List
+# Deals List System 1.0
 
 > To get the deals list, use this code:
 
 ```shell
-curl -v -X POST 'https://api-new.netzeroinsights.com/fundingRounds' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X POST 'https://api.netzeroinsights.com/fundingRounds' \
 -H 'Content-Type: application/json' \                 
 -d '{"limit": 1, "offset": 0, "include":{}, "exclude": {}, "fundingRoundInclude":{}, "fundingRoundExclude": {}, "investorInclude":{}, "investorExclude": {}, "sorting": {}}'
 ```
 
-> In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section [Deals Search](#deal-search).
+> In case of a 200 response, the response body will contain all the deals matching your request, with the format specified at section [Deals Search](#deals-search).
 
 ```json
 {
@@ -2390,6 +2674,23 @@ This is the commercial deal filter used when searching for commercial deals.
 | Equity | 
 | Grant  |
 
+## Funding Type
+
+| ID | Label  |
+|----|--------|
+| 1  | Equity |
+| 2  | Debt   |
+| 3  | Grant  |
+| 4  | Other  |
+
+## Asset Class
+
+| ID | Label   |
+|----|---------|
+| 1  | Venture |
+| 2  | Growth  |
+| 3  | Buyout  |
+
 ## Equity Stage
 
 | ID | Label             |
@@ -2398,6 +2699,7 @@ This is the commercial deal filter used when searching for commercial deals.
 | 2  | Pre-seed and seed |
 | 3  | Early stage       |
 | 4  | Late stage        |
+| 5  | Not in scope      |
 
 ## Exit Stage
 
@@ -2951,7 +3253,7 @@ It takes a single query parameter, indicated as “searchText” in the example,
 | exitStageID            | Exit stage ID, see Section [Exit Stage](#exit-stage)       |  
 | insertionDate          | Date of insertion into our database                        |
 
-## Deal search
+## Deals search
 
 | Name               | Content                                                      |
 |--------------------|--------------------------------------------------------------|
