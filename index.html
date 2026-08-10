@@ -340,6 +340,20 @@
             <a href="#commercial-deals-list-system-2-0" class="toc-h1 toc-link" data-title="Commercial Deals List System 2.0">Commercial Deals List System 2.0</a>
           </li>
           <li>
+            <a href="#company-details-system-2-0" class="toc-h1 toc-link" data-title="Company Details System 2.0">Company Details System 2.0</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#company-overview-and-taxonomy" class="toc-h2 toc-link" data-title="Company Overview and Taxonomy">Company Overview and Taxonomy</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#deal-details-system-2-0" class="toc-h1 toc-link" data-title="Deal Details System 2.0">Deal Details System 2.0</a>
+          </li>
+          <li>
+            <a href="#investor-details-system-2-0" class="toc-h1 toc-link" data-title="Investor Details System 2.0">Investor Details System 2.0</a>
+          </li>
+          <li>
             <a href="#commercial-deal-details-system-2-0" class="toc-h1 toc-link" data-title="Commercial Deal Details System 2.0">Commercial Deal Details System 2.0</a>
               <ul class="toc-list-h2">
                   <li>
@@ -420,7 +434,7 @@
             <a href="#investors-list-system-1-0" class="toc-h1 toc-link" data-title="Investors List System 1.0">Investors List System 1.0</a>
           </li>
           <li>
-            <a href="#startup-detail" class="toc-h1 toc-link" data-title="Startup Detail">Startup Detail</a>
+            <a href="#startup-details-system-1-0" class="toc-h1 toc-link" data-title="Startup Details System 1.0">Startup Details System 1.0</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#startup-overview-and-taxonomy" class="toc-h2 toc-link" data-title="Startup Overview and Taxonomy">Startup Overview and Taxonomy</a>
@@ -449,10 +463,10 @@
               </ul>
           </li>
           <li>
-            <a href="#deal-detail" class="toc-h1 toc-link" data-title="Deal Detail">Deal Detail</a>
+            <a href="#deal-details-system-1-0" class="toc-h1 toc-link" data-title="Deal Details System 1.0">Deal Details System 1.0</a>
           </li>
           <li>
-            <a href="#investor-detail" class="toc-h1 toc-link" data-title="Investor Detail">Investor Detail</a>
+            <a href="#investor-details-system-1-0" class="toc-h1 toc-link" data-title="Investor Details System 1.0">Investor Details System 1.0</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#investor-commercial-deals" class="toc-h2 toc-link" data-title="Investor Commercial Deals">Investor Commercial Deals</a>
@@ -1696,6 +1710,574 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>400</td>
 <td>Bad Request</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
+<h1 id='company-details-system-2-0'>Company Details System 2.0</h1><h2 id='company-overview-and-taxonomy'>Company Overview and Taxonomy</h2>
+<blockquote>
+<p>To get a company(startup) overview and taxonomy, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/companies/2657'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested company, with the format specified at section <a href="#startup">Company</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-23T14:09:44.703"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-07-24T11:18:30.783171"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smart Energy Link"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Developer of a smart energy platform designed to optimize energy usage and increase efficiency Add on modules such as Smart Home can be easily complemented regular updates contribute to the fact that the system is constantly being further developed and guarantee a long term investment The company offers advanced data analytics real time monitoring and automation capabilities to provide power economically and ecologically regulate the energy balance optimize self consumption and measure and calculate the energy consumed within communities enabling businesses to reduce energy costs improve sustainability efforts and convert their buildings into profitable power plants Smart Energy Link SEL is a software developer and service provider for captive power solutions in residential and commercial buildings and quarters Smart Energy Link measures controls and manages the energy budget of self consumption communities Smart Energy Link provides energy solutions that ensure cost effectiveness and climate protection Provider of solutions for solar consumption calculator The intelligent system ensures optimum self consumption by controlling all relevant components heat pumps household appliances car charging stations electric water heaters and battery storage Messen steuern abrechnen Smart Energy Link ist die umfassende und individuelle Solarstrom Lsung fr Eigenverbrauchsgemeinschaften Intelligente Energielsungen die Wirtschaftlichkeit und Klimaschutz sicherstellen Die intelligente Steuerung optimiert den Eigenverbrauch von Solarstrom und misst und verrechnet den Energieverbrauch innerhalb von Eigenverbrauchsgemeinschaften Energy management system for captive power solutions Smart Energy Link macht Solarstrom in Mehrparteienhusern und in Siedlungen nutzbar einfach wirtschaftlich und kologisch Efficient use of solar power in apartment buildings optimal control and convenient billing Smart Energy Link SEL lowers energy costs simplifies accounting of service charges and reduces investment for public power supply"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pitchLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Efficient use of solar power in apartment buildings, optimal control and convenient billing."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pitchLineNoPunctuation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"efficient use of solar power in apartment buildings  optimal control and convenient billing"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://smartenergylink.ch/de"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smartenergylink.ch"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@smartenergylink.ch"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+41 31 560 74 26"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1940605.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"foundedYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2017</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"searchableLocation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Switzerland"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">206</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bern"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cityAsciiName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bern"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adminID4"</span><span class="p">:</span><span class="w"> </span><span class="mi">2766</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adminName4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bern"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">917976</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Effingerstrasse 17, 3008 Bern"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">197284</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"linkedinUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/company/smartenergylink"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"twitterUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/SmartEnergyLink"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fundingRangeEUR"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 500K"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"fundingRangeUSD"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 500K"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"lastDealType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Seed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"lastDealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-29T00:00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dealCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dealWithDateCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"growthStage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Early"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"sizeRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11 - 50"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"currentEmployeesCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"yoYEmployeesGrowth"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14814814814814814</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"qoQEmployeesGrowth"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.03333333333333333</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"yoYCorrespondingQuarter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q3 2025 vs Q3 2024"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"qoQCorrespondingQuarter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q3 2025 vs Q2 2025"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isChampion"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isEmerging"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isNewEntrant"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isAcquired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isCommercialBuyer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isCommercialPartner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"commercialPartnershipCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"commercialBuyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"commercialAgreementCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isStrategic"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isProjectDeveloper"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isFundraising"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">112340</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"employeesGrowthJSON"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 1,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 17</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 2,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 17</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 3,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 6,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 18</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 18</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 18</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 6,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 6,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 19</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 7,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 19</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 8,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 19</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 9,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 19</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 10,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 19</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 11,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 20</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 12,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2022,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 20</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 1,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 21</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 2,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 21</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 3,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 22</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 23</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 5,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 23</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 6,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 23</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 7,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 23</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 8,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 23</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 9,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 23</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 10,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 23</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 11,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 24</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 12,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2023,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 8,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 26</span><span class="se">\r\n</span><span class="s2">  },</span><span class="se">\r\n</span><span class="s2">  {</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">dateOn</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">month</span><span class="se">\"</span><span class="s2">: 1,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">year</span><span class="se">\"</span><span class="s2">: 2024,</span><span class="se">\r\n</span><span class="s2">      </span><span class="se">\"</span><span class="s2">day</span><span class="se">\"</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">    },</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">monthlyPercentageDifference</span><span class="se">\"</span><span class="s2">: 4,</span><span class="se">\r\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">employeeCount</span><span class="se">\"</span><span class="s2">: 27</span><span class="se">\r\n</span><span class="s2">  }</span><span class="se">\r\n</span><span class="s2">]"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electricity"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electricity is defined as the energy made available for consumption or consumed in the form of electricity or electric power.</span><span class="se">\n\n</span><span class="s2">Within the scope of this challenge is any activity related to electricity generation, transmission, distribution and usage.</span><span class="se">\n\n</span><span class="s2">Solutions to mitigate climate change and to adapt to its effects in this sector include: electricity generation technologies, EV charging stations, electricity distribution, electricity digitalization, electric load management, battery production, photovoltaic system, combined heat and power and others."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCustomCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCustomMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isUmbrella"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isVisibleCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isVisibleMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isGrouping"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isAdvancedFilters"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buzzword"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"synonyms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"platform_all"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">207</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">207</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"piFrameworks"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"alternativeNames"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"legalNames"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smart Energy Link Ag"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"fundingTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"numberOfEquityDeals"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfDebtDeals"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfGrantDeals"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2657</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get a company overview and taxonomy, you should use the following endpoint:</p>
+
+<p><code>GET /companies/{companyID}</code></p>
+
+<p>It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list-system-20">Startup List</a>, variable “id”, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
+<h1 id='deal-details-system-2-0'>Deal Details System 2.0</h1>
+<blockquote>
+<p>To get the details of the company&#39;s Deals, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/deals/company/16441'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested company&#39;s deals, with the format specified at section <a href="#deal">Deal</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-12T12:02:59.853"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-23T04:12:42.861275"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-23T14:09:44.703"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-07-24T11:18:30.783171"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cypress Creek Renewables"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Follow these guidelines to protect yourself Official communication will always come from our verified company email e g br br Cypress Creek develops and owns utility scale solar and storage projects Cypress sells the renewable energy these solar farms create back to local communities typically at rates lower than fossil fuels Powering A Sustainable Future One Project At A Time National provider of local solar Owns and develops solar farms We will never ask you to enroll in a new communication platform The company utilizes a data driven approach and partners with landowners utility companies development partners and local vendors to develop finance own and operate solar and storage assets as well as offers asset management fleet ownership operations and maintenance services for its owned and third party assets providing local communities with clean and affordable energy solutions ccrenew com If you suspect fraudulent activity or receive suspicious communication please report it immediately to our HR team at HR ccrenew com Your safety is our priority Its mission is to power a sustainable future one project at a time Developer builder and operator of solar facilities Cypress Creek Renewables is a national provider of local solar The company has more than 100 operational projects in USA with a total aggregate capacity of over 2GW Cypress Creek is arenewables IPP br br Cypress Creek develops an innovation that contributes to br Climate change mitigation by enabling carbon free electricity generation We will never ask for payment or financial information during the hiring process Cypress Creek Renewables is a leading national solar company providing clean affordable energy for communities across the United States Cypress Creek engages in the design construction financing and operation of solar energy projects Our team solves problems to successfully develop build and operate solar facilities across the United States It owns 1 7GW of solar has a 12GW pipeline and operates 3 9GW of solar projects through its O M services business Cypress uses a data driven approach to identify and acquire underutilized land on which it builds solar farms ranging from 2 20MW on average and currently owns the largest solar farm east of the Mississippi River Do not share personal information such as your Social Security number bank details or passwords unless you are certain of the recruiter s identity Cypress Creek develops builds and operates solar energy projects They offer services including operation and maintenance project development and financing M A Mergers and Acquisitions EPC contracting Engineering procurement and construction and construction management The company was founded in 2014 and is based in Durham North Carolina With 12 gigawatts of solar energy developed in more than a dozen states Cypress Creek Renewables is one of the country s leading solar companies Cypress Creek is a utility scale solar energy project development company This process guarantees widespread affordable access to clean energy Operator of an integrated solar energy platform intended to develop and operate utility scale and distributed solar projects Cypress Creek Renewables believes solar energy makes the world safer cleaner and better With 12 gigawatts of solar energy developed in more than a dozen states Cypress Creek Renewables is one of the country s leading solar companies Since inception Cypress Creek has developed more than 11GW of solar projects Thank you for helping us maintain a secure job seeking environment Cypress Creek Renewables own develop and finance solar farms ranging in capacity from 2 20MW in USA Please be cautious of fraudulent recruiting activities impersonating our brand and legitimate employers Cypress Creek develops finances owns and operates utility scale and distributed solar and energy storage projects across the United States Cypress Creek Renewables is the American leader in Local Solar"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pitchLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cypress Creek Renewables is a leading American company specializing in the development, ownership, and operation of solar and energy storage projects. Founded in 2014 and headquartered in Santa Monica, California, the company has expanded its presence with additional offices across the United States, including Arizona, Missouri, New York, and North Carolina.</span><span class="se">\n</span><span class="s2">As an integrated solar and storage company, Cypress Creek offers a comprehensive suite of services encompassing project development, engineering, procurement, construction (EPC), financing, asset management, and operations and maintenance (O&amp;M) services. Their mission is to create and operate valuable solar and storage projects that benefit communities for decades, reflecting a commitment to making the world cleaner and healthier."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pitchLineNoPunctuation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cypress creek renewables is a leading american company specializing in the development  ownership  and operation of solar and energy storage projects  founded in 2014 and headquartered in santa monica  california  the company has expanded its presence with additional offices across the united states  including arizona  missouri  new york  and north carolina </span><span class="se">\n</span><span class="s2">as an integrated solar and storage company  cypress creek offers a comprehensive suite of services encompassing project development  engineering  procurement  construction  epc   financing  asset management  and operations and maintenance  o m  services  their mission is to create and operate valuable solar and storage projects that benefit communities for decades  reflecting a commitment to making the world cleaner and healthier"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.ccrenew.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ccrenew.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emily.proutey@ccrenew.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1 310 581 6299"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1654173.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foundedYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2014</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"searchableLocation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Santa Monica"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cityAsciiName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Santa Monica"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"adminID4"</span><span class="p">:</span><span class="w"> </span><span class="mi">3139</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"adminName4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">947716</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3402 Boulevard, Suite 180, 90405"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50698</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"linkedinUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/company/cypress-creek-renewables"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"facebookUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.facebook.com/CypressCreekRenewables"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"twitterUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/CCRSolar"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">1220363116</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingStringEUR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.22B"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">1385383804</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.39B"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundingRangeEUR"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">250000000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999999999</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;250M"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"fundingRangeUSD"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">250000000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999999999</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;250M"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastDealAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">133045775</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealAmountStringEUR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"133M"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">150000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealAmountStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150M"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project Finance"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">114</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastDealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-05-05T14:21:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dealCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"revenueEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">410000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"revenueYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dealWithDateCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastEquityDealType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Series A"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">91</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"growthStage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scaling"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"financialStage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Series A &amp; B"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"dealsLastReviewer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asvitha@netzeroinsights.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3127</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"dealsLastReviewDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-05-06T14:41:08.673"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sizeRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"201 - 500"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"currentEmployeesCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">412</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"yoYEmployeesGrowth"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09574468085106383</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qoQEmployeesGrowth"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.043037974683544304</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"yoYCorrespondingQuarter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q3 2025 vs Q3 2024"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qoQCorrespondingQuarter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q3 2025 vs Q2 2025"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"trlReviewDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-08-09T10:23:39.007"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isChampion"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isEmerging"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isNewEntrant"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isAcquired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCommercialBuyer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCommercialPartner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialPartnershipCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialBuyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialAgreementCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isStrategic"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isProjectDeveloper"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trlFiveYearsPrior"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"trlOneYearPrior"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastCommercialDeal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offtake Agreement between Meta and Cypress Creek Renewables"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cypress Creek Renewables and Meta have signed an Environmental Attribute Purchase Agreement to facilitate the construction and operation of Hanson Solar, a 505MWdc (396MWac) solar facility in Coleman County, Texas. Cypress Creek will develop, own, and operate the facility, which will deliver electricity to the ERCOT grid and support Meta’s goal of achieving 100 percent clean and renewable energy for its operations, including data centers in the region. The project is expected to generate over $80 million in local tax revenue and create more than 300 jobs during construction. Construction is scheduled to begin in 2025, with operations anticipated to commence in 2027."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"396 MWac renewable energy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-02-26T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"startYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2027</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">35268</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastInfrastructureProject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-07-16T03:30:13.603"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-29T10:48:05.189037"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Destiny Energy Storage Project, – Cypress Creek Renewables"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-03-17T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The facility will generate utility-scale solar electricity using a fixed-tilt photovoltaic system rated at 104 MW. It features over 190,000 crystalline silicon modules mounted on steel frame racks spanning approximately 811 acres. The electrical balance-of-system includes DC combiner boxes, inverters, step-up transformers, switchgear, and a collector substation tied into Bonneville Power Administration’s 115 kV transmission line.</span><span class="se">\n\n</span><span class="s2">The project layout is divided into multiple fields with centralized inverter pads and electrical yards. Underground DC cabling connects module strings to combiner boxes, while high-voltage AC connections run overhead to the on-site substation. The modular design allows phased activation to support energy production prior to full completion. Construction is being executed in coordinated segments, enabling early solar operation.</span><span class="se">\n\n</span><span class="s2">Operational targets include generating enough energy to supply 15,000–16,000 homes annually, with system performance and availability optimized through SCADA and IV curve monitoring. The system supports regional clean energy goals and grid stability, with maintenance planned for a multi-decade lifespan.</span><span class="se">\n\n</span><span class="s2">Cypress Creek Renewables is the developer, owner, and operator. PCL Solar serves as the EPC contractor responsible for site preparation, equipment installation, and commissioning. First Citizens Bank Leads the $133 Million Financing. Regional authorities issued site permits in April 2023, and the plant is scheduled for commissioning by mid-2026."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Destiny Energy Storage Project,"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"foak"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"announcedYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2025</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"constructionStartYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2025</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"operationStartYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2026</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200 MW of battery energy storage"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">133000000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">133000000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalFundingEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">122980996</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vansh_chhaparia"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNDER_CONSTRUCTION"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"trl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completed"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"totalEquityFundingEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">562512754</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalEquityFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">650000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalNonDilutiveFundingEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">283556112</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalNonDilutiveFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">327383804</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isFundraising"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"webtext"</span><span class="p">:</span><span class="w"> </span><span class="s2">"We take smart risks we speak up and we make decisions Courage We take smart risks we speak up and we make decisions We come from different backgrounds to do our work together as one team Care We care about the safety and well being of our team our communities and the environment and we carefully deploy our resources Powering the Clean Energy Transition We develop finance own and provide operations and maintenance services for solar and storage assets across the country From development to operation we create and operate valuable solar and storage projects that benefit communities for decades Conviction We are committed to making the world cleaner and healthier We learn and constantly improve We bring the diversity of our team s experience skills and strengths together to create something even greater than the sum of its parts Our Community Partners Join us in Powering a Sustainable Future Our company welcomes and supports a diverse team of innovative thinkers who share our values and are inspired by our mission Who We Are Cypress Creek Renewables is an independent power producer and renewable energy developer leveraging an owner s mindset to create valuable projects that benefit communities for decades We ensure we never give up on our guiding principles A leader in clean energy Key numbers Cypress Creek is a leader in solar and storage producing clean renewable energy to power America s future Conviction Collaboration We care about the safety and well being of our team our communities and the environment and we carefully deploy our resources As a renewables developer and independent power producer we develop finance own and operate solar and storage assets across the country We are committed to making the world cleaner and healthier We re making a difference through our work each and every day 11M metric tons of CO2 offset by our fleet of owned solar and storage projects since inception 3B Invested in projects from inception through the end of 2023 400 team members working together to achieve our mission Learn More About Cypress Creek Led by an experienced management team we develop finance operate and own utility scale solar power plants and battery storage assets across the country We do the right thing when our values are challenged Creativity We innovate to create valuable projects Learn More O M Services Cypress Creek Solutions partners with asset owners to provide a full suite of long term proactive data driven operations and maintenance solutions The Cypress Creek team embraces a culture of continuous improvement Drawing from our experience as an early mover we are actively engaged in developing sensible regulatory policies Our dedicated team is building a cleaner more sustainable future for us all Guided by our shared values and long term owner mindset we use our wealth of experience in both development and operations to create valuable projects that benefit communities for decades Collaboration We come from different backgrounds to do our work together as one team Our team utilizes cutting edge technology real world data and our own deep well of experience to overcome challenges and succeed Making a Difference Cypress Creek s contribution goes beyond solar panels and battery cells installed and megawatts produced We also provide O M services to third party solar and storage owners From finance professionals to operations experts and everyone in between we know that our work is best accomplished together totaling 12GW commercialized by our team 244 000 homes powered by our more than 2GW owned operating project fleet in 2023 3B Invested in projects from inception through the end of 2023 Projects in 24 states totaling 5GW operated by our Cypress Creek Solutions O M team 400 team members working together to achieve our mission A decade of experience developing financing operating and owning solar projects Building a Sustainable Future Sarah Slusser CEO Cypress Creek Renewables Cypress Creek is at the forefront of the American clean energy industry as a developer owner and operator of solar and storage projects across the country Investing in Communities We strive to be a long term partner in the communities where we live operate and develop projects Powering a sustainable future We leverage Cypress Creek s scale to take projects from an idea to steel in the ground providing clean low cost reliable power to our customers We embrace new ideas and find solutions to hard problems 12GW of solar and storage developed 2 4GW of solar and storage owned 5GW operated and maintained for our own fleet and third party customers Development What we do Our Development team creates solar and storage projects using our extensive experience in siting origination community engagement project financing and M A as well as EPC contracting and construction management We hold ourselves and our partners to the highest standard from our community and environmental work to our human rights and supply chain tracing commitments See Where We Operate Commercial Capabilities Cypress Creek Renewables has built a dedicated commercial team to address the growing customer needs in the renewables space Our experienced team is led by a strong set of shared values and a culture of continuous improvement in the work we do every day toward our mission We leverage our experience as an owner and operator to apply lessons learned to each new project we develop Powering a sustainable future one project at a time Cypress Creek Renewables is committed to making the world cleaner and healthier Our team exemplifies this value through our company giving and volunteer work environmental initiatives safety standards and the overall thoughtful approach to every project we undertake We innovate to create valuable projects Learn more Fleet Ownership With 2 4GW spanning 13 states Cypress Creek owns one of the largest U S operating solar and storage portfolios"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">795</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business to Business (B2B)"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business-to-Business (B2B) refers to solutions designed to serve other businesses rather than individual consumers. This includes tools, products, or services used by organisations to operate, measure, or improve their activities. Examples include enterprise software, industrial equipment, or specialised services — where the primary customer is a company, institution, or public sector body, not a private individual."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isCustomCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isCustomMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isUmbrella"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isVisibleCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isVisibleMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isGrouping"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isAdvancedFilters"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer Type"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business models"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">125</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">237</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">237</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"alternativeNames"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"legalNames"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cypress Creek Renewables, Llc"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16441</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project Finance"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">114</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3500000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">3030199999</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">3500000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amountStringEUR"</span><span class="p">:</span><span class="w"> </span><span class="s2">" 3.03B"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amountStringUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">" 3.5B"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amountRangeEUR"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">250000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999999999</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;250M"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"amountRangeUSD"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rangeFrom"</span><span class="p">:</span><span class="w"> </span><span class="mi">250000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"rangeTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999999999</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;250M"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"dealNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-11T12:01:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"equityStage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not in scope"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"exitStage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post Exit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"capitalStage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post exit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"connectedToInfrastructure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fundingType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sharmila_bojan"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"news"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-12T12:02:59.887"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-19T05:51:41.675011"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isGenAI"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.pv-tech.org/cypress-creek-secures-us3-5-billion-to-fund-1-63gw-1-9gwh-solar-plus-storage-project/"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">265345</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"investors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">728142</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the deal information, you should use the following endpoint:</p>
+
+<p><code>GET /deals/company/{companyID}</code></p>
+
+<p>It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list-system-20">Startup List</a>, variable “id”, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
+<h1 id='investor-details-system-2-0'>Investor Details System 2.0</h1>
+<blockquote>
+<p>To get the details of an Investor, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/investors/57352'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested investor, with the format specified at section <a href="#investor">Investor</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-11-22T14:56:38.773"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-16T05:33:05.073757"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RapidRatings"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RapidRatings provides financial health intelligence to businesses worldwide to mitigate risk, strengthen relationships, and drive growth.</span><span class="se">\n\n</span><span class="s2">The company obtain and analyzes third-party financial information to create financial ratings and intelligence. Their primary rating products are the Financial Health Rating (FHR®) and the HealthMark®."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"descriptionWithPunctuation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The company obtain and analyzes third party financial information to create financial ratings and intelligence Their primary rating products are the Financial Health Rating FHR and the HealthMark RapidRatings provides financial health intelligence to businesses worldwide to mitigate risk strengthen relationships and drive growth"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.rapidratings.com/"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rapidratings.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/New_Empty_Logo_xqsrak.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isLimitedPartner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ventureInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"growthInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"infrastructureInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"buyoutInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"commercialPartnershipCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"acquisitionCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"equityInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"commercialBuyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isFinancialInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isVentureInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isGrowthInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isInfrastructureInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isBuyoutInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isStrategic"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isCommercialBuyer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isEquityInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isAcquirer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isCommercialPartner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"primaryType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Corporation"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"secondaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"investments"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"coInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">57352</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get the investor information, you should use the following endpoint:</p>
+
+<p><code>GET /investors/{investorID}</code></p>
+
+<p>It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at <a href="#investors-list-system-20">Investor List</a>, variable “id”, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
 </tr>
 <tr>
 <td>403</td>
@@ -3234,7 +3816,7 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Request successful</td>
 </tr>
 </tbody></table>
-<h1 id='startup-detail'>Startup Detail</h1>
+<h1 id='startup-details-system-1-0'>Startup Details System 1.0</h1>
 <p>All the information related to a startup is divided into different sections: </p>
 
 <ol>
@@ -3256,8 +3838,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get a startup overview and taxonomy, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/getStartup/sunfire-668'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getStartup/sunfire-668"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested startup, with the format specified at section <a href="#startup">Startup</a>.</p>
@@ -3386,11 +3968,11 @@ Please note that manually closing a session is not required, since it will be cl
   </span><span class="nl">"eutopiaScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>To get a startup overview and taxonomy you should use the following endpoint:</p>
+<p>To get a startup overview and taxonomy, you should use the following endpoint:</p>
 
-<p><code>GET /getStartup/[clientID]</code></p>
+<p><code>GET /getStartup/{clientID}</code></p>
 
-<p>It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list">Startup List</a>, variable ”clientID”, and has the following response codes:</p>
+<p>It takes a single parameter, indicated as “clientID” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list-system-10">Startup List</a>, variable “clientID”, and has the following response codes:</p>
 
 <table><thead>
 <tr>
@@ -3829,12 +4411,12 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
-<h1 id='deal-detail'>Deal Detail</h1>
+<h1 id='deal-details-system-1-0'>Deal Details System 1.0</h1>
 <blockquote>
 <p>To get the details of a Deal, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/fundingRound/42643'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/fundingRound/42643"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested deal, with the format specified at section <a href="#deal">Deal</a>.</p>
@@ -3933,9 +4515,9 @@ Please note that manually closing a session is not required, since it will be cl
 </span></code></pre></div>
 <p>To get the deal information, you should use the following endpoint:</p>
 
-<p><code>GET /fundingRound/[fundingRoundID]</code></p>
+<p><code>GET /fundingRound/{fundingRoundID}</code></p>
 
-<p>It takes a single parameter, indicated as ”[fundingRoundID]” in the example, and has the following response codes:</p>
+<p>It takes a single parameter, indicated as “fundingRoundID” in the example, and has the following response codes:</p>
 
 <table><thead>
 <tr>
@@ -3948,12 +4530,12 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Request successful</td>
 </tr>
 </tbody></table>
-<h1 id='investor-detail'>Investor Detail</h1>
+<h1 id='investor-details-system-1-0'>Investor Details System 1.0</h1>
 <blockquote>
 <p>To get the details of an Investor, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/getInvestor/10000'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getInvestor/10000"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested investor, with the format specified at section <a href="#investor">Investor</a>.</p>
@@ -4024,9 +4606,9 @@ Please note that manually closing a session is not required, since it will be cl
 </span></code></pre></div>
 <p>To get the investor information, you should use the following endpoint:</p>
 
-<p><code>GET /getInvestor/[investorID]</code></p>
+<p><code>GET /getInvestor/{investorID}</code></p>
 
-<p>It takes a single parameter, indicated as ”[investorID]” in the example, and has the following response codes:</p>
+<p>It takes a single parameter, indicated as “investorID” in the example, and has the following response codes:</p>
 
 <table><thead>
 <tr>
