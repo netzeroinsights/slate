@@ -345,13 +345,21 @@
                   <li>
                     <a href="#company-overview-and-taxonomy" class="toc-h2 toc-link" data-title="Company Overview and Taxonomy">Company Overview and Taxonomy</a>
                   </li>
+                  <li>
+                    <a href="#company-deals" class="toc-h2 toc-link" data-title="Company Deals">Company Deals</a>
+                  </li>
+                  <li>
+                    <a href="#company-contacts" class="toc-h2 toc-link" data-title="Company Contacts">Company Contacts</a>
+                  </li>
               </ul>
           </li>
           <li>
-            <a href="#deal-details-system-2-0" class="toc-h1 toc-link" data-title="Deal Details System 2.0">Deal Details System 2.0</a>
-          </li>
-          <li>
             <a href="#investor-details-system-2-0" class="toc-h1 toc-link" data-title="Investor Details System 2.0">Investor Details System 2.0</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#investor-contacts" class="toc-h2 toc-link" data-title="Investor Contacts">Investor Contacts</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#commercial-deal-details-system-2-0" class="toc-h1 toc-link" data-title="Commercial Deal Details System 2.0">Commercial Deal Details System 2.0</a>
@@ -397,6 +405,12 @@
                   <li>
                     <a href="#commercial-deals-filter" class="toc-h2 toc-link" data-title="Commercial Deals Filter">Commercial Deals Filter</a>
                   </li>
+                  <li>
+                    <a href="#company-contact-filter" class="toc-h2 toc-link" data-title="Company Contact Filter">Company Contact Filter</a>
+                  </li>
+                  <li>
+                    <a href="#investor-contact-filter" class="toc-h2 toc-link" data-title="Investor Contact Filter">Investor Contact Filter</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -410,6 +424,15 @@
                   </li>
                   <li>
                     <a href="#investor-search" class="toc-h2 toc-link" data-title="Investor Search">Investor Search</a>
+                  </li>
+                  <li>
+                    <a href="#company-contact-search" class="toc-h2 toc-link" data-title="Company Contact Search">Company Contact Search</a>
+                  </li>
+                  <li>
+                    <a href="#investor-contact-search" class="toc-h2 toc-link" data-title="Investor Contact Search">Investor Contact Search</a>
+                  </li>
+                  <li>
+                    <a href="#company-or-investor-contact" class="toc-h2 toc-link" data-title="Company or Investor Contact">Company or Investor Contact</a>
                   </li>
               </ul>
           </li>
@@ -472,7 +495,7 @@
                     <a href="#investor-commercial-deals" class="toc-h2 toc-link" data-title="Investor Commercial Deals">Investor Commercial Deals</a>
                   </li>
                   <li>
-                    <a href="#investor-contacts" class="toc-h2 toc-link" data-title="Investor Contacts">Investor Contacts</a>
+                    <a href="#investor-contacts-2" class="toc-h2 toc-link" data-title="Investor Contacts">Investor Contacts</a>
                   </li>
               </ul>
           </li>
@@ -1896,9 +1919,9 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Resource not found</td>
 </tr>
 </tbody></table>
-<h1 id='deal-details-system-2-0'>Deal Details System 2.0</h1>
+<h2 id='company-deals'>Company Deals</h2>
 <blockquote>
-<p>To get the details of the company&#39;s Deals, use this code:</p>
+<p>To get all the deals of a company(startup), use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/deals/company/16441'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
@@ -2183,7 +2206,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>To get the deal information, you should use the following endpoint:</p>
+<p>To get the company&#39;s deals information, you should use the following endpoint:</p>
 
 <p><code>GET /deals/company/{companyID}</code></p>
 
@@ -2202,6 +2225,100 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>403</td>
 <td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
+<h2 id='company-contacts'>Company Contacts</h2>
+<blockquote>
+<p>To get all the contacts of a company, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/contacts/company'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-d</span> <span class="s2">"{'companyID': 668, 'isDecisionMaker': false, 'departmentID': 5}"</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the requested contacts, with the format specified at section <a href="#company-contact-search">Company Contacts</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-02-02T11:08:38.767"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-12T11:06:56.347613"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ali"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saffari"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Senior Project Engineer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"linkedinUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.linkedin.com/in/asaffari"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ali.saffari@sunfire.de"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"photoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.licdn.com/dms/image/C5603AQH_v4wT2cFCVQ/profile-displayphoto-shrink_200_200/0/1556363105137?e=1699488000&amp;v=beta&amp;t=9Xjf20_AMYx_B1L8a7hz2OUPyw1RwlRDFHfHexRndFg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"externalDbID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54a71775746869730a856114"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"searchableLocation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Germany"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chemnitz"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cityAsciiName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chemnitz"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"adminID4"</span><span class="p">:</span><span class="w"> </span><span class="mi">976</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"adminName4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saxony"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">817454</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"isDecisionMaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"apollo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"departments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tech"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4453577</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get all contacts of a startup, you should use the following endpoint:</p>
+
+<p><code>POST /contacts/company</code></p>
+
+<p>With a JSON request body in the format specified at the Section <a href="#company-contact-filter">Company Contacts Filter</a>, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
 </tr>
 </tbody></table>
 <h1 id='investor-details-system-2-0'>Investor Details System 2.0</h1>
@@ -2278,6 +2395,72 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>200</td>
 <td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
+<h2 id='investor-contacts'>Investor Contacts</h2>
+<blockquote>
+<p>To get all the contacts of an investor, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/contacts/investor'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-d</span> <span class="s2">"{'investorID': 16328, 'isDecisionMaker': false}"</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the requested contacts, with the format specified at section <a href="#investor-contact-search">Investor Contacts</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-05-18T19:55:17.347"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-12T13:27:54.238452"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arielle"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schacter"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"linkedinUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.linkedin.com/in/arielle-schacter-26b8192b"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arielle@kiko.vc"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"photoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.licdn.com/dms/image/D4E03AQGAHlnHTOnkmA/profile-displayphoto-shrink_400_400/0/1685311906817?e=1703721600&amp;v=beta&amp;t=8Sm8B6Y_qy5EO8OwlzMK_Te90Jt_MB-IR_y_LKqxWYA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"externalDbID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d9b0a7a6da987252913ced"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isDecisionMaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"apollo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"departments"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1002443894</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get all contacts of an investor, you should use the following endpoint:</p>
+
+<p><code>POST /contacts/investor</code></p>
+
+<p>With a JSON request body in the format specified at the Section <a href="#investor-contact-filter">Investor Contacts Filter</a>, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
 </tr>
 <tr>
 <td>403</td>
@@ -3500,6 +3683,74 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>See Section <a href="#tags">Tags</a> for accepted values</td>
 </tr>
 </tbody></table>
+<h2 id='company-contact-filter'>Company Contact Filter</h2>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>companyID</td>
+<td>int</td>
+<td>ID of the requested company, taken from a previous call of <a href="#startup-list-system-20">Company List</a></td>
+</tr>
+<tr>
+<td>isDecisionMaker</td>
+<td>boolean</td>
+<td>Optional, if true only returns contacts with decision making capabilities</td>
+</tr>
+<tr>
+<td>departmentID</td>
+<td>int</td>
+<td>Optional, contact role, see Section <a href="#role">Role</a> for accepted values</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>int</td>
+<td>Number of records to return per page</td>
+</tr>
+<tr>
+<td>pageNumber</td>
+<td>int</td>
+<td>Index of the current page</td>
+</tr>
+</tbody></table>
+<h2 id='investor-contact-filter'>Investor Contact Filter</h2>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>investorID</td>
+<td>int</td>
+<td>ID of the requested investor, taken from a previous call of <a href="#investors-list-system-20">Investgor List</a></td>
+</tr>
+<tr>
+<td>isDecisionMaker</td>
+<td>boolean</td>
+<td>Optional, if true only returns contacts with decision making capabilities</td>
+</tr>
+<tr>
+<td>departmentID</td>
+<td>int</td>
+<td>Optional, contact role, see Section <a href="#role">Role</a> for accepted values</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>int</td>
+<td>Number of records to return per page</td>
+</tr>
+<tr>
+<td>pageNumber</td>
+<td>int</td>
+<td>Index of the current page</td>
+</tr>
+</tbody></table>
 <h1 id='response-structures-system-2-0'>Response structures System 2.0</h1><h2 id='company-search'>Company Search</h2>
 <table><thead>
 <tr>
@@ -3594,6 +3845,130 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>totalPages</td>
 <td>Total number of available pages</td>
+</tr>
+</tbody></table>
+<h2 id='company-contact-search'>Company Contact Search</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>content</td>
+<td>List of <a href="#company-or-investor-contact">Contact</a></td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Number of records returned per page</td>
+</tr>
+<tr>
+<td>pageNumber</td>
+<td>Zero-based index of the current page</td>
+</tr>
+<tr>
+<td>totalElements</td>
+<td>Total number of records matching the query</td>
+</tr>
+<tr>
+<td>numberOfElements</td>
+<td>Number of records returned in the current page</td>
+</tr>
+<tr>
+<td>totalPages</td>
+<td>Total number of available pages</td>
+</tr>
+</tbody></table>
+<h2 id='investor-contact-search'>Investor Contact Search</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>content</td>
+<td>List of <a href="#company-or-investor-contact">Contact</a></td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Number of records returned per page</td>
+</tr>
+<tr>
+<td>pageNumber</td>
+<td>Zero-based index of the current page</td>
+</tr>
+<tr>
+<td>totalElements</td>
+<td>Total number of records matching the query</td>
+</tr>
+<tr>
+<td>numberOfElements</td>
+<td>Number of records returned in the current page</td>
+</tr>
+<tr>
+<td>totalPages</td>
+<td>Total number of available pages</td>
+</tr>
+</tbody></table>
+<h2 id='company-or-investor-contact'>Company or Investor Contact</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Contact’s first name</td>
+</tr>
+<tr>
+<td>surname</td>
+<td>Contact’s last name</td>
+</tr>
+<tr>
+<td>position</td>
+<td>Contact’s current job position or title</td>
+</tr>
+<tr>
+<td>linkedinUrl</td>
+<td>URL of the contact’s LinkedIn profile</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Contact’s email address</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>Contact’s phone number</td>
+</tr>
+<tr>
+<td>photoUrl</td>
+<td>URL of the contact’s profile photo</td>
+</tr>
+<tr>
+<td>externalDbID</td>
+<td>Identifier of the contact in the external database</td>
+</tr>
+<tr>
+<td>searchableLocation</td>
+<td>Contact’s location</td>
+</tr>
+<tr>
+<td>isDecisionMaker</td>
+<td><code>true</code> if the person has decision making capabilities</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Source from which the contact information was obtained</td>
+</tr>
+<tr>
+<td>departments</td>
+<td>List of <a href="#role">Contact Departments</a></td>
+</tr>
+<tr>
+<td>id</td>
+<td>Internal ID</td>
 </tr>
 </tbody></table>
 <h1 id='security-system-1-0'>Security System 1.0</h1><h2 id='login-2'>Login</h2>
@@ -4089,8 +4464,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the contacts of a startup, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/contacts/company'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/contacts/company"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s2">"{'clientID': 668, 'decisionMaker': false, 'roleID': 5}"</span>
 </code></pre></div>
@@ -4139,8 +4514,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the funding rounds of a startup, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/fundingRoundsPrints/668'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET https://api.netzeroinsights.com/fundingRoundsPrints/668
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested funding rounds, with the format specified at section <a href="#funding-round">Funding Round</a>.</p>
@@ -4188,9 +4563,9 @@ Please note that manually closing a session is not required, since it will be cl
 </span></code></pre></div>
 <p>To get all the funding rounds of a startup, you should use the following endpoint:</p>
 
-<p><code>GET /fundingRoundsPrints/[clientID]</code></p>
+<p><code>GET /fundingRoundsPrints/{clientID}</code></p>
 
-<p>It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list">Startup List</a>, variable ”clientID”, and has the following response codes:</p>
+<p>It takes a single parameter, indicated as “clientID” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list">Startup List</a>, variable ”clientID”, and has the following response codes:</p>
 
 <table><thead>
 <tr>
@@ -4742,12 +5117,12 @@ Please note that manually closing a session is not required, since it will be cl
 <td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
-<h2 id='investor-contacts'>Investor Contacts</h2>
+<h2 id='investor-contacts-2'>Investor Contacts</h2>
 <blockquote>
 <p>To get all the contacts of an investor, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/contacts/investor'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/contacts/investor"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s2">"{'investorID': 16328, 'decisionMaker': false}"</span>
 </code></pre></div>
@@ -6100,6 +6475,10 @@ Please note that manually closing a session is not required, since it will be cl
 <tr>
 <td>6</td>
 <td>C-Suite</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Operations</td>
 </tr>
 </tbody></table>
 <h2 id='investor-types'>Investor Types</h2>
