@@ -1067,9 +1067,9 @@ It takes a single parameter, indicated as “companyID” in the example, which 
 | 403           | Forbidden, insufficient access level |
 | 404           | Resource not found                   |
 
-# Deal Details System 2.0
+## Company Deals
 
-> To get the details of the company's Deals, use this code:
+> To get all the deals of a company(startup), use this code:
 
 ```shell
 curl -v -X GET 'https://api-new.netzeroinsights.com/deals/company/16441' \
@@ -1357,7 +1357,7 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/deals/company/16441' \
 ]
 ```
 
-To get the deal information, you should use the following endpoint:
+To get the company's deals information, you should use the following endpoint:
 
 `GET /deals/company/{companyID}`
 
@@ -1367,6 +1367,87 @@ It takes a single parameter, indicated as “companyID” in the example, which 
 |---------------|--------------------------------------|
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
+
+## Company Contacts
+
+> To get all the contacts of a company, use this code:
+
+```shell
+curl -v -X POST 'https://api-new.netzeroinsights.com/contacts/company' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+-H "Content-Type: application/json" \
+-d "{'companyID': 668, 'isDecisionMaker': false, 'departmentID': 5}"
+```
+
+> In case of a 200 response, the response body will contain all the requested contacts, with the format specified at section [Company Contacts](#company-contact-search).
+
+```json
+{
+  "content": [
+    {
+      "acquisitionDate": "2024-02-02T11:08:38.767",
+      "updatedDate": "2026-06-12T11:06:56.347613",
+      "name": "Ali",
+      "surname": "Saffari",
+      "position": "Senior Project Engineer",
+      "linkedinUrl": "http://www.linkedin.com/in/asaffari",
+      "email": "ali.saffari@sunfire.de",
+      "photoUrl": "https://media.licdn.com/dms/image/C5603AQH_v4wT2cFCVQ/profile-displayphoto-shrink_200_200/0/1556363105137?e=1699488000&v=beta&t=9Xjf20_AMYx_B1L8a7hz2OUPyw1RwlRDFHfHexRndFg",
+      "externalDbID": "54a71775746869730a856114",
+      "searchableLocation": {
+        "continent": {
+          "name": "Europe",
+          "id": 3
+        },
+        "country": {
+          "name": "Germany",
+          "continent": {
+            "name": "Europe",
+            "id": 3
+          },
+          "alpha2": "DE",
+          "id": 80
+        },
+        "cityName": "Chemnitz",
+        "cityAsciiName": "Chemnitz",
+        "adminID4": 976,
+        "adminName4": "Saxony",
+        "platformOrder": 60,
+        "isSearchable": true,
+        "id": 817454
+      },
+      "isDecisionMaker": false,
+      "source": "apollo",
+      "departments": [
+        {
+          "label": "Tech",
+          "platformOrder": 6,
+          "id": 5
+        }
+      ],
+      "id": 4453577
+    }
+  ],
+  "pageSize": 1,
+  "pageNumber": 0,
+  "totalElements": 10,
+  "numberOfElements": 3,
+  "totalPages": 4
+}
+```
+
+To get all contacts of a startup, you should use the following endpoint:
+
+`POST /contacts/company`
+
+With a JSON request body in the format specified at the Section [Company Contacts Filter](#company-contact-filter), and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
 
 # Investor Details System 2.0
 
@@ -1441,6 +1522,58 @@ It takes a single parameter, indicated as “investorID” in the example, which
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
 | 404           | Resource not found                   |
+
+## Investor Contacts
+
+> To get all the contacts of an investor, use this code:
+
+```shell
+curl -v -X POST 'https://api-new.netzeroinsights.com/contacts/investor' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+-H "Content-Type: application/json" \
+-d "{'investorID': 16328, 'isDecisionMaker': false}"
+```
+> In case of a 200 response, the response body will contain all the requested contacts, with the format specified at section [Investor Contacts](#investor-contact-search).
+
+```json
+{
+  "content": [
+    {
+      "acquisitionDate": "2024-05-18T19:55:17.347",
+      "updatedDate": "2026-06-12T13:27:54.238452",
+      "name": "Arielle",
+      "surname": "Schacter",
+      "position": "Investor",
+      "linkedinUrl": "http://www.linkedin.com/in/arielle-schacter-26b8192b",
+      "email": "arielle@kiko.vc",
+      "photoUrl": "https://media.licdn.com/dms/image/D4E03AQGAHlnHTOnkmA/profile-displayphoto-shrink_400_400/0/1685311906817?e=1703721600&v=beta&t=8Sm8B6Y_qy5EO8OwlzMK_Te90Jt_MB-IR_y_LKqxWYA",
+      "externalDbID": "57d9b0a7a6da987252913ced",
+      "isDecisionMaker": false,
+      "source": "apollo",
+      "departments": [],
+      "id": 1002443894
+    }
+  ],
+  "pageSize": 1,
+  "pageNumber": 0,
+  "totalElements": 2,
+  "numberOfElements": 1,
+  "totalPages": 2
+}
+```
+
+To get all contacts of an investor, you should use the following endpoint:
+
+`POST /contacts/investor`
+
+With a JSON request body in the format specified at the Section [Investor Contacts Filter](#investor-contact-filter), and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
 
 # Commercial Deal Details System 2.0
 
@@ -2015,6 +2148,26 @@ This is the commercial deal filter used when searching for commercial deals.
 | tagsMode              | string         | Specifies how multiple tags are matched (for example, AND or OR)                                  |
 | tagIDs                | List of int    | See Section [Tags](#tags) for accepted values                                                     |
 
+## Company Contact Filter
+
+| Parameter name  | Parameter type | Description                                                                                        |
+|-----------------|----------------|----------------------------------------------------------------------------------------------------|
+| companyID       | int            | ID of the requested company, taken from a previous call of [Company List](#startup-list-system-20) |
+| isDecisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities                          |
+| departmentID    | int            | Optional, contact role, see Section [Role](#role) for accepted values                              |
+| pageSize        | int            | Number of records to return per page                                                               |
+| pageNumber      | int            | Index of the current page                                                                          |
+
+## Investor Contact Filter
+
+| Parameter name  | Parameter type | Description                                                                                             |
+|-----------------|----------------|---------------------------------------------------------------------------------------------------------|
+| investorID      | int            | ID of the requested investor, taken from a previous call of [Investgor List](#investors-list-system-20) |
+| isDecisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities                               |
+| departmentID    | int            | Optional, contact role, see Section [Role](#role) for accepted values                                   |
+| pageSize        | int            | Number of records to return per page                                                                    |
+| pageNumber      | int            | Index of the current page                                                                               |
+
 # Response structures System 2.0
 
 ## Company Search
@@ -2050,6 +2203,44 @@ This is the commercial deal filter used when searching for commercial deals.
 | numberOfElements | Number of records returned in the current page |
 | totalPages       | Total number of available pages                |
 
+## Company Contact Search
+
+| Name             | Content                                         |
+|------------------|-------------------------------------------------|
+| content          | List of [Contact](#company-or-investor-contact) |
+| pageSize         | Number of records returned per page             |
+| pageNumber       | Zero-based index of the current page            |
+| totalElements    | Total number of records matching the query      |
+| numberOfElements | Number of records returned in the current page  |
+| totalPages       | Total number of available pages                 |
+
+## Investor Contact Search
+
+| Name             | Content                                         |
+|------------------|-------------------------------------------------|
+| content          | List of [Contact](#company-or-investor-contact) |
+| pageSize         | Number of records returned per page             |
+| pageNumber       | Zero-based index of the current page            |
+| totalElements    | Total number of records matching the query      |
+| numberOfElements | Number of records returned in the current page  |
+| totalPages       | Total number of available pages                 |
+
+## Company or Investor Contact
+| Name               | Content                                                |
+|--------------------|--------------------------------------------------------|
+| name               | Contact’s first name                                   |
+| surname            | Contact’s last name                                    |
+| position           | Contact’s current job position or title                |
+| linkedinUrl        | URL of the contact’s LinkedIn profile                  |
+| email              | Contact’s email address                                |
+| phone              | Contact’s phone number                                 |
+| photoUrl           | URL of the contact’s profile photo                     |
+| externalDbID       | Identifier of the contact in the external database     |
+| searchableLocation | Contact’s location                                     |
+| isDecisionMaker    | `true` if the person has decision making capabilities  |
+| source             | Source from which the contact information was obtained |
+| departments        | List of [Contact Departments](#role)                   |
+| id                 | Internal ID                                            |
 
 
 # Security System 1.0
@@ -2497,8 +2688,8 @@ It takes a single parameter, indicated as ”[clientID]” in the example, which
 > To get all the contacts of a startup, use this code:
 
 ```shell
-curl -v -X POST 'https://api-new.netzeroinsights.com/contacts/company' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X POST "https://api.netzeroinsights.com/contacts/company" \
 -H "Content-Type: application/json" \
 -d "{'clientID': 668, 'decisionMaker': false, 'roleID': 5}"
 ```
@@ -2543,8 +2734,8 @@ With a JSON request body in the format specified at the Section [Contacts Filter
 > To get all the funding rounds of a startup, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/fundingRoundsPrints/668' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET https://api.netzeroinsights.com/fundingRoundsPrints/668
 ```
 
 > In case of a 200 response, the response body will contain the requested funding rounds, with the format specified at section [Funding Round](#funding-round).
@@ -2594,9 +2785,9 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/fundingRoundsPrints/668' \
 
 To get all the funding rounds of a startup, you should use the following endpoint:
 
-`GET /fundingRoundsPrints/[clientID]`
+`GET /fundingRoundsPrints/{clientID}`
 
-It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”clientID”, and has the following response codes:
+It takes a single parameter, indicated as “clientID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”clientID”, and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
@@ -3117,8 +3308,8 @@ It takes a single parameter, indicated as “investorID” in the example, which
 > To get all the contacts of an investor, use this code:
 
 ```shell
-curl -v -X POST 'https://api-new.netzeroinsights.com/contacts/investor' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X POST "https://api.netzeroinsights.com/contacts/investor" \
 -H "Content-Type: application/json" \
 -d "{'investorID': 16328, 'decisionMaker': false}"
 ```
@@ -3562,6 +3753,7 @@ This is the tag filter used when searching for tags.
 | 4  | Marketing / PR |
 | 5  | Tech           |
 | 6  | C-Suite        |
+| 7  | Operations     |
 
 ## Investor Types
 
