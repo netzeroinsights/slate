@@ -899,6 +899,549 @@ The possible response codes are:
 | 403           | Forbidden, insufficient access level |
 | 404           | Resource not found                   |
 
+# Company Details System 2.0
+
+## Company Overview and Taxonomy
+
+> To get a company(startup) overview and taxonomy, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/companies/2657' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain the requested company, with the format specified at section [Company](#startup).
+
+```json
+{
+  "acquisitionDate": "2022-05-23T14:09:44.703",
+  "updatedDate": "2026-07-24T11:18:30.783171",
+  "visibilityStatus": {
+    "visibleTo": "ALL",
+    "id": 1
+  },
+  "name": "Smart Energy Link",
+  "description": "Developer of a smart energy platform designed to optimize energy usage and increase efficiency Add on modules such as Smart Home can be easily complemented regular updates contribute to the fact that the system is constantly being further developed and guarantee a long term investment The company offers advanced data analytics real time monitoring and automation capabilities to provide power economically and ecologically regulate the energy balance optimize self consumption and measure and calculate the energy consumed within communities enabling businesses to reduce energy costs improve sustainability efforts and convert their buildings into profitable power plants Smart Energy Link SEL is a software developer and service provider for captive power solutions in residential and commercial buildings and quarters Smart Energy Link measures controls and manages the energy budget of self consumption communities Smart Energy Link provides energy solutions that ensure cost effectiveness and climate protection Provider of solutions for solar consumption calculator The intelligent system ensures optimum self consumption by controlling all relevant components heat pumps household appliances car charging stations electric water heaters and battery storage Messen steuern abrechnen Smart Energy Link ist die umfassende und individuelle Solarstrom Lsung fr Eigenverbrauchsgemeinschaften Intelligente Energielsungen die Wirtschaftlichkeit und Klimaschutz sicherstellen Die intelligente Steuerung optimiert den Eigenverbrauch von Solarstrom und misst und verrechnet den Energieverbrauch innerhalb von Eigenverbrauchsgemeinschaften Energy management system for captive power solutions Smart Energy Link macht Solarstrom in Mehrparteienhusern und in Siedlungen nutzbar einfach wirtschaftlich und kologisch Efficient use of solar power in apartment buildings optimal control and convenient billing Smart Energy Link SEL lowers energy costs simplifies accounting of service charges and reduces investment for public power supply",
+  "pitchLine": "Efficient use of solar power in apartment buildings, optimal control and convenient billing.",
+  "pitchLineNoPunctuation": "efficient use of solar power in apartment buildings  optimal control and convenient billing",
+  "website": "https://smartenergylink.ch/de",
+  "domain": "smartenergylink.ch",
+  "email": "info@smartenergylink.ch",
+  "phone": "+41 31 560 74 26",
+  "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1940605.jpg",
+  "foundedYear": 2017,
+  "searchableLocation": {
+    "continent": {
+      "name": "Europe",
+      "id": 3
+    },
+    "country": {
+      "name": "Switzerland",
+      "continent": {
+        "name": "Europe",
+        "id": 3
+      },
+      "alpha2": "CH",
+      "id": 206
+    },
+    "cityName": "Bern",
+    "cityAsciiName": "Bern",
+    "adminID4": 2766,
+    "adminName4": "Bern",
+    "platformOrder": 15,
+    "isSearchable": true,
+    "id": 917976
+  },
+  "address": {
+    "address": "Effingerstrasse 17, 3008 Bern",
+    "id": 197284
+  },
+  "linkedinUrl": "https://www.linkedin.com/company/smartenergylink",
+  "twitterUrl": "https://twitter.com/SmartEnergyLink",
+  "fundingRangeEUR": {
+    "rangeFrom": 0,
+    "rangeTo": 500000,
+    "rangeTextFormat": "0 - 500K",
+    "id": 1
+  },
+  "fundingRangeUSD": {
+    "rangeFrom": 0,
+    "rangeTo": 500000,
+    "rangeTextFormat": "0 - 500K",
+    "id": 1
+  },
+  "lastDealType": {
+    "label": "Pre-Seed",
+    "assignable": true,
+    "filterable": false,
+    "id": 102
+  },
+  "lastDealDate": "2018-01-29T00:00:00",
+  "dealCount": 1,
+  "dealWithDateCount": 0,
+  "growthStage": {
+    "label": "Early",
+    "id": 2
+  },
+  "sizeRange": {
+    "rangeTextFormat": "11 - 50",
+    "id": 2
+  },
+  "currentEmployeesCount": 31,
+  "yoYEmployeesGrowth": 0.14814814814814814,
+  "qoQEmployeesGrowth": 0.03333333333333333,
+  "yoYCorrespondingQuarter": "Q3 2025 vs Q3 2024",
+  "qoQCorrespondingQuarter": "Q3 2025 vs Q2 2025",
+  "isChampion": false,
+  "isEmerging": false,
+  "isNewEntrant": false,
+  "isAcquired": false,
+  "isCommercialBuyer": false,
+  "isCommercialPartner": false,
+  "commercialPartnershipCount": 0,
+  "commercialBuyCount": 0,
+  "commercialAgreementCount": 0,
+  "isStrategic": false,
+  "isProjectDeveloper": false,
+  "isActive": true,
+  "isFundraising": false,
+  "platformOrder": 112340,
+  "employeesGrowthJSON": "[\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 1,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"employeeCount\": 17\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 2,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 17\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 3,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 6,\r\n    \"employeeCount\": 18\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 4,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 18\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 5,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 18\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 6,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 6,\r\n    \"employeeCount\": 19\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 7,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 19\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 8,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 19\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 9,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 19\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 10,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 19\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 11,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 5,\r\n    \"employeeCount\": 20\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 12,\r\n      \"year\": 2022,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 20\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 1,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 5,\r\n    \"employeeCount\": 21\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 2,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 21\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 3,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 5,\r\n    \"employeeCount\": 22\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 4,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 5,\r\n    \"employeeCount\": 23\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 5,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 23\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 6,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 23\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 7,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 23\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 8,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 23\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 9,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 23\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 10,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 0,\r\n    \"employeeCount\": 23\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 11,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 4,\r\n    \"employeeCount\": 24\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 12,\r\n      \"year\": 2023,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 8,\r\n    \"employeeCount\": 26\r\n  },\r\n  {\r\n    \"dateOn\": {\r\n      \"month\": 1,\r\n      \"year\": 2024,\r\n      \"day\": 1\r\n    },\r\n    \"monthlyPercentageDifference\": 4,\r\n    \"employeeCount\": 27\r\n  }\r\n]",
+  "entityTypes": [],
+  "tags": [
+    {
+      "label": "Electricity",
+      "visibilityStatus": {
+        "visibleTo": "ALL",
+        "id": 1
+      },
+      "description": "Electricity is defined as the energy made available for consumption or consumed in the form of electricity or electric power.\n\nWithin the scope of this challenge is any activity related to electricity generation, transmission, distribution and usage.\n\nSolutions to mitigate climate change and to adapt to its effects in this sector include: electricity generation technologies, EV charging stations, electricity distribution, electricity digitalization, electric load management, battery production, photovoltaic system, combined heat and power and others.",
+      "isCustomCompany": false,
+      "isCustomMap": false,
+      "isUmbrella": false,
+      "isVisibleCompany": true,
+      "isVisibleMap": false,
+      "isSearchable": false,
+      "isGrouping": false,
+      "isAdvancedFilters": false,
+      "tagType": {
+        "label": "buzzword",
+        "platformOrder": 5,
+        "tagFamily": {
+          "label": "Solutions",
+          "platformOrder": 1,
+          "id": 2
+        },
+        "id": 5
+      },
+      "synonyms": [],
+      "source": "platform_all",
+      "platformOrder": 207,
+      "id": 207
+    }
+  ],
+  "piFrameworks": [],
+  "alternativeNames": [],
+  "legalNames": [
+    {
+      "name": "Smart Energy Link Ag"
+    }
+  ],
+  "fundingTypes": [],
+  "numberOfEquityDeals": 0,
+  "numberOfDebtDeals": 0,
+  "numberOfGrantDeals": 0,
+  "id": 2657
+}
+```
+
+To get a company overview and taxonomy, you should use the following endpoint:
+
+`GET /companies/{companyID}`
+
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-20), variable “id”, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+| 404           | Resource not found                   |
+
+# Deal Details System 2.0
+
+> To get the details of the company's Deals, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/deals/company/16441' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain the requested company's deals, with the format specified at section [Deal](#deal).
+
+```json
+[
+  {
+    "acquisitionDate": "2026-06-12T12:02:59.853",
+    "updatedDate": "2026-06-23T04:12:42.861275",
+    "company": {
+      "acquisitionDate": "2022-05-23T14:09:44.703",
+      "updatedDate": "2026-07-24T11:18:30.783171",
+      "visibilityStatus": {
+        "visibleTo": "ALL",
+        "id": 1
+      },
+      "name": "Cypress Creek Renewables",
+      "description": "Follow these guidelines to protect yourself Official communication will always come from our verified company email e g br br Cypress Creek develops and owns utility scale solar and storage projects Cypress sells the renewable energy these solar farms create back to local communities typically at rates lower than fossil fuels Powering A Sustainable Future One Project At A Time National provider of local solar Owns and develops solar farms We will never ask you to enroll in a new communication platform The company utilizes a data driven approach and partners with landowners utility companies development partners and local vendors to develop finance own and operate solar and storage assets as well as offers asset management fleet ownership operations and maintenance services for its owned and third party assets providing local communities with clean and affordable energy solutions ccrenew com If you suspect fraudulent activity or receive suspicious communication please report it immediately to our HR team at HR ccrenew com Your safety is our priority Its mission is to power a sustainable future one project at a time Developer builder and operator of solar facilities Cypress Creek Renewables is a national provider of local solar The company has more than 100 operational projects in USA with a total aggregate capacity of over 2GW Cypress Creek is arenewables IPP br br Cypress Creek develops an innovation that contributes to br Climate change mitigation by enabling carbon free electricity generation We will never ask for payment or financial information during the hiring process Cypress Creek Renewables is a leading national solar company providing clean affordable energy for communities across the United States Cypress Creek engages in the design construction financing and operation of solar energy projects Our team solves problems to successfully develop build and operate solar facilities across the United States It owns 1 7GW of solar has a 12GW pipeline and operates 3 9GW of solar projects through its O M services business Cypress uses a data driven approach to identify and acquire underutilized land on which it builds solar farms ranging from 2 20MW on average and currently owns the largest solar farm east of the Mississippi River Do not share personal information such as your Social Security number bank details or passwords unless you are certain of the recruiter s identity Cypress Creek develops builds and operates solar energy projects They offer services including operation and maintenance project development and financing M A Mergers and Acquisitions EPC contracting Engineering procurement and construction and construction management The company was founded in 2014 and is based in Durham North Carolina With 12 gigawatts of solar energy developed in more than a dozen states Cypress Creek Renewables is one of the country s leading solar companies Cypress Creek is a utility scale solar energy project development company This process guarantees widespread affordable access to clean energy Operator of an integrated solar energy platform intended to develop and operate utility scale and distributed solar projects Cypress Creek Renewables believes solar energy makes the world safer cleaner and better With 12 gigawatts of solar energy developed in more than a dozen states Cypress Creek Renewables is one of the country s leading solar companies Since inception Cypress Creek has developed more than 11GW of solar projects Thank you for helping us maintain a secure job seeking environment Cypress Creek Renewables own develop and finance solar farms ranging in capacity from 2 20MW in USA Please be cautious of fraudulent recruiting activities impersonating our brand and legitimate employers Cypress Creek develops finances owns and operates utility scale and distributed solar and energy storage projects across the United States Cypress Creek Renewables is the American leader in Local Solar",
+      "pitchLine": "Cypress Creek Renewables is a leading American company specializing in the development, ownership, and operation of solar and energy storage projects. Founded in 2014 and headquartered in Santa Monica, California, the company has expanded its presence with additional offices across the United States, including Arizona, Missouri, New York, and North Carolina.\nAs an integrated solar and storage company, Cypress Creek offers a comprehensive suite of services encompassing project development, engineering, procurement, construction (EPC), financing, asset management, and operations and maintenance (O&M) services. Their mission is to create and operate valuable solar and storage projects that benefit communities for decades, reflecting a commitment to making the world cleaner and healthier.",
+      "pitchLineNoPunctuation": "cypress creek renewables is a leading american company specializing in the development  ownership  and operation of solar and energy storage projects  founded in 2014 and headquartered in santa monica  california  the company has expanded its presence with additional offices across the united states  including arizona  missouri  new york  and north carolina \nas an integrated solar and storage company  cypress creek offers a comprehensive suite of services encompassing project development  engineering  procurement  construction  epc   financing  asset management  and operations and maintenance  o m  services  their mission is to create and operate valuable solar and storage projects that benefit communities for decades  reflecting a commitment to making the world cleaner and healthier",
+      "website": "http://www.ccrenew.com",
+      "domain": "ccrenew.com",
+      "email": "emily.proutey@ccrenew.com",
+      "phone": "+1 310 581 6299",
+      "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1654173.jpg",
+      "foundedYear": 2014,
+      "searchableLocation": {
+        "continent": {
+          "name": "North America",
+          "id": 4
+        },
+        "country": {
+          "name": "United States",
+          "continent": {
+            "name": "North America",
+            "id": 4
+          },
+          "alpha2": "US",
+          "id": 226
+        },
+        "cityName": "Santa Monica",
+        "cityAsciiName": "Santa Monica",
+        "adminID4": 3139,
+        "adminName4": "California",
+        "platformOrder": 60,
+        "isSearchable": true,
+        "id": 947716
+      },
+      "address": {
+        "address": "3402 Boulevard, Suite 180, 90405",
+        "id": 50698
+      },
+      "linkedinUrl": "https://www.linkedin.com/company/cypress-creek-renewables",
+      "facebookUrl": "https://www.facebook.com/CypressCreekRenewables",
+      "twitterUrl": "https://twitter.com/CCRSolar",
+      "fundingAmountEUR": 1220363116,
+      "fundingStringEUR": "1.22B",
+      "fundingAmountUSD": 1385383804,
+      "fundingStringUSD": "1.39B",
+      "fundingRangeEUR": {
+        "rangeFrom": 250000000,
+        "rangeTo": 999999999999,
+        "rangeTextFormat": ">250M",
+        "id": 9
+      },
+      "fundingRangeUSD": {
+        "rangeFrom": 250000000,
+        "rangeTo": 999999999999,
+        "rangeTextFormat": ">250M",
+        "id": 9
+      },
+      "lastDealAmountEUR": 133045775,
+      "lastDealAmountStringEUR": "133M",
+      "lastDealAmountUSD": 150000000,
+      "lastDealAmountStringUSD": "150M",
+      "lastDealType": {
+        "label": "Project Finance",
+        "filterable": false,
+        "assignable": true,
+        "id": 114
+      },
+      "lastDealDate": "2025-05-05T14:21:00",
+      "dealCount": 10,
+      "revenueEUR": 410000000,
+      "revenueYear": 2023,
+      "dealWithDateCount": 10,
+      "lastEquityDealType": {
+        "label": "Series A",
+        "id": 91
+      },
+      "growthStage": {
+        "label": "Scaling",
+        "id": 4
+      },
+      "financialStage": {
+        "label": "Series A & B",
+        "id": 3
+      },
+      "dealsLastReviewer": {
+        "email": "asvitha@netzeroinsights.com",
+        "id": 3127
+      },
+      "dealsLastReviewDate": "2025-05-06T14:41:08.673",
+      "sizeRange": {
+        "rangeTextFormat": "201 - 500",
+        "id": 5
+      },
+      "currentEmployeesCount": 412,
+      "yoYEmployeesGrowth": 0.09574468085106383,
+      "qoQEmployeesGrowth": 0.043037974683544304,
+      "yoYCorrespondingQuarter": "Q3 2025 vs Q3 2024",
+      "qoQCorrespondingQuarter": "Q3 2025 vs Q2 2025",
+      "trl": {
+        "label": "9",
+        "description": "Completed",
+        "id": 12
+      },
+      "trlReviewDate": "2025-08-09T10:23:39.007",
+      "isChampion": false,
+      "isEmerging": false,
+      "isNewEntrant": false,
+      "isAcquired": false,
+      "isCommercialBuyer": false,
+      "isCommercialPartner": true,
+      "commercialPartnershipCount": 6,
+      "commercialBuyCount": 0,
+      "commercialAgreementCount": 3,
+      "isStrategic": false,
+      "isProjectDeveloper": true,
+      "trlFiveYearsPrior": {
+        "label": "9",
+        "description": "Completed",
+        "id": 12
+      },
+      "trlOneYearPrior": {
+        "label": "9",
+        "description": "Completed",
+        "id": 12
+      },
+      "lastCommercialDeal": {
+        "title": "Offtake Agreement between Meta and Cypress Creek Renewables",
+        "description": "Cypress Creek Renewables and Meta have signed an Environmental Attribute Purchase Agreement to facilitate the construction and operation of Hanson Solar, a 505MWdc (396MWac) solar facility in Coleman County, Texas. Cypress Creek will develop, own, and operate the facility, which will deliver electricity to the ERCOT grid and support Meta’s goal of achieving 100 percent clean and renewable energy for its operations, including data centers in the region. The project is expected to generate over $80 million in local tax revenue and create more than 300 jobs during construction. Construction is scheduled to begin in 2025, with operations anticipated to commence in 2027.",
+        "volume": "396 MWac renewable energy",
+        "announcedDate": "2025-02-26T00:00:00",
+        "startYear": 2027,
+        "id": 35268
+      },
+      "lastInfrastructureProject": {
+        "acquisitionDate": "2025-07-16T03:30:13.603",
+        "updatedDate": "2026-06-29T10:48:05.189037",
+        "name": "Destiny Energy Storage Project, – Cypress Creek Renewables",
+        "announcedDate": "2025-03-17T00:00:00",
+        "description": "The facility will generate utility-scale solar electricity using a fixed-tilt photovoltaic system rated at 104 MW. It features over 190,000 crystalline silicon modules mounted on steel frame racks spanning approximately 811 acres. The electrical balance-of-system includes DC combiner boxes, inverters, step-up transformers, switchgear, and a collector substation tied into Bonneville Power Administration’s 115 kV transmission line.\n\nThe project layout is divided into multiple fields with centralized inverter pads and electrical yards. Underground DC cabling connects module strings to combiner boxes, while high-voltage AC connections run overhead to the on-site substation. The modular design allows phased activation to support energy production prior to full completion. Construction is being executed in coordinated segments, enabling early solar operation.\n\nOperational targets include generating enough energy to supply 15,000–16,000 homes annually, with system performance and availability optimized through SCADA and IV curve monitoring. The system supports regional clean energy goals and grid stability, with maintenance planned for a multi-decade lifespan.\n\nCypress Creek Renewables is the developer, owner, and operator. PCL Solar serves as the EPC contractor responsible for site preparation, equipment installation, and commissioning. First Citizens Bank Leads the $133 Million Financing. Regional authorities issued site permits in April 2023, and the plant is scheduled for commissioning by mid-2026.",
+        "shortName": "Destiny Energy Storage Project,",
+        "foak": false,
+        "announcedYear": 2025,
+        "constructionStartYear": 2025,
+        "operationStartYear": 2026,
+        "capacity": "200 MW of battery energy storage",
+        "totalFunding": 133000000,
+        "totalFundingUSD": 133000000,
+        "totalFundingEUR": 122980996,
+        "source": "vansh_chhaparia",
+        "status": "UNDER_CONSTRUCTION",
+        "trl": {
+          "label": "9",
+          "description": "Completed",
+          "id": 12
+        },
+        "id": 135
+      },
+      "totalEquityFundingEUR": 562512754,
+      "totalEquityFundingUSD": 650000000,
+      "totalNonDilutiveFundingEUR": 283556112,
+      "totalNonDilutiveFundingUSD": 327383804,
+      "isActive": true,
+      "isFundraising": false,
+      "webtext": "We take smart risks we speak up and we make decisions Courage We take smart risks we speak up and we make decisions We come from different backgrounds to do our work together as one team Care We care about the safety and well being of our team our communities and the environment and we carefully deploy our resources Powering the Clean Energy Transition We develop finance own and provide operations and maintenance services for solar and storage assets across the country From development to operation we create and operate valuable solar and storage projects that benefit communities for decades Conviction We are committed to making the world cleaner and healthier We learn and constantly improve We bring the diversity of our team s experience skills and strengths together to create something even greater than the sum of its parts Our Community Partners Join us in Powering a Sustainable Future Our company welcomes and supports a diverse team of innovative thinkers who share our values and are inspired by our mission Who We Are Cypress Creek Renewables is an independent power producer and renewable energy developer leveraging an owner s mindset to create valuable projects that benefit communities for decades We ensure we never give up on our guiding principles A leader in clean energy Key numbers Cypress Creek is a leader in solar and storage producing clean renewable energy to power America s future Conviction Collaboration We care about the safety and well being of our team our communities and the environment and we carefully deploy our resources As a renewables developer and independent power producer we develop finance own and operate solar and storage assets across the country We are committed to making the world cleaner and healthier We re making a difference through our work each and every day 11M metric tons of CO2 offset by our fleet of owned solar and storage projects since inception 3B Invested in projects from inception through the end of 2023 400 team members working together to achieve our mission Learn More About Cypress Creek Led by an experienced management team we develop finance operate and own utility scale solar power plants and battery storage assets across the country We do the right thing when our values are challenged Creativity We innovate to create valuable projects Learn More O M Services Cypress Creek Solutions partners with asset owners to provide a full suite of long term proactive data driven operations and maintenance solutions The Cypress Creek team embraces a culture of continuous improvement Drawing from our experience as an early mover we are actively engaged in developing sensible regulatory policies Our dedicated team is building a cleaner more sustainable future for us all Guided by our shared values and long term owner mindset we use our wealth of experience in both development and operations to create valuable projects that benefit communities for decades Collaboration We come from different backgrounds to do our work together as one team Our team utilizes cutting edge technology real world data and our own deep well of experience to overcome challenges and succeed Making a Difference Cypress Creek s contribution goes beyond solar panels and battery cells installed and megawatts produced We also provide O M services to third party solar and storage owners From finance professionals to operations experts and everyone in between we know that our work is best accomplished together totaling 12GW commercialized by our team 244 000 homes powered by our more than 2GW owned operating project fleet in 2023 3B Invested in projects from inception through the end of 2023 Projects in 24 states totaling 5GW operated by our Cypress Creek Solutions O M team 400 team members working together to achieve our mission A decade of experience developing financing operating and owning solar projects Building a Sustainable Future Sarah Slusser CEO Cypress Creek Renewables Cypress Creek is at the forefront of the American clean energy industry as a developer owner and operator of solar and storage projects across the country Investing in Communities We strive to be a long term partner in the communities where we live operate and develop projects Powering a sustainable future We leverage Cypress Creek s scale to take projects from an idea to steel in the ground providing clean low cost reliable power to our customers We embrace new ideas and find solutions to hard problems 12GW of solar and storage developed 2 4GW of solar and storage owned 5GW operated and maintained for our own fleet and third party customers Development What we do Our Development team creates solar and storage projects using our extensive experience in siting origination community engagement project financing and M A as well as EPC contracting and construction management We hold ourselves and our partners to the highest standard from our community and environmental work to our human rights and supply chain tracing commitments See Where We Operate Commercial Capabilities Cypress Creek Renewables has built a dedicated commercial team to address the growing customer needs in the renewables space Our experienced team is led by a strong set of shared values and a culture of continuous improvement in the work we do every day toward our mission We leverage our experience as an owner and operator to apply lessons learned to each new project we develop Powering a sustainable future one project at a time Cypress Creek Renewables is committed to making the world cleaner and healthier Our team exemplifies this value through our company giving and volunteer work environmental initiatives safety standards and the overall thoughtful approach to every project we undertake We innovate to create valuable projects Learn more Fleet Ownership With 2 4GW spanning 13 states Cypress Creek owns one of the largest U S operating solar and storage portfolios",
+      "platformOrder": 795,
+      "entityTypes": [
+        {
+          "label": "Company",
+          "id": 1
+        }
+      ],
+      "tags": [
+        {
+          "label": "Business to Business (B2B)",
+          "visibilityStatus": {
+            "visibleTo": "ALL",
+            "id": 1
+          },
+          "description": "Business-to-Business (B2B) refers to solutions designed to serve other businesses rather than individual consumers. This includes tools, products, or services used by organisations to operate, measure, or improve their activities. Examples include enterprise software, industrial equipment, or specialised services — where the primary customer is a company, institution, or public sector body, not a private individual.",
+          "isCustomCompany": false,
+          "isCustomMap": false,
+          "isUmbrella": false,
+          "isVisibleCompany": true,
+          "isVisibleMap": true,
+          "isSearchable": true,
+          "isGrouping": false,
+          "isAdvancedFilters": true,
+          "tagType": {
+            "label": "Customer Type",
+            "platformOrder": -1,
+            "tagFamily": {
+              "label": "Business models",
+              "platformOrder": 3,
+              "id": 4
+            },
+            "id": 125
+          },
+          "platformOrder": 237,
+          "id": 237
+        }
+      ],
+      "alternativeNames": [],
+      "legalNames": [
+        {
+          "name": "Cypress Creek Renewables, Llc"
+        }
+      ],
+      "id": 16441
+    },
+    "type": {
+      "label": "Project Finance",
+      "filterable": false,
+      "assignable": true,
+      "id": 114
+    },
+    "amount": 3500000000,
+    "currency": "USD",
+    "amountEUR": 3030199999,
+    "amountUSD": 3500000000,
+    "amountStringEUR": " 3.03B",
+    "amountStringUSD": " 3.5B",
+    "amountRangeEUR": {
+      "rangeFrom": 250000000,
+      "rangeTo": 999999999999,
+      "rangeTextFormat": ">250M",
+      "id": 9
+    },
+    "amountRangeUSD": {
+      "rangeFrom": 250000000,
+      "rangeTo": 999999999999,
+      "rangeTextFormat": ">250M",
+      "id": 9
+    },
+    "dealNumber": 12,
+    "dealDate": "2026-06-11T12:01:00",
+    "status": "COMPLETED",
+    "equityStage": {
+      "label": "Not in scope",
+      "id": 5
+    },
+    "exitStage": {
+      "label": "Post Exit",
+      "id": 3
+    },
+    "capitalStage": {
+      "label": "Post exit",
+      "id": 4
+    },
+    "connectedToInfrastructure": "NO",
+    "fundingType": {
+      "label": "Other",
+      "id": 4
+    },
+    "source": "sharmila_bojan",
+    "news": [
+      {
+        "acquisitionDate": "2026-06-12T12:02:59.887",
+        "updatedDate": "2026-06-19T05:51:41.675011",
+        "isGenAI": true,
+        "url": "https://www.pv-tech.org/cypress-creek-secures-us3-5-billion-to-fund-1-63gw-1-9gwh-solar-plus-storage-project/",
+        "id": 265345
+      }
+    ],
+    "investors": [],
+    "id": 728142
+  }
+]
+```
+
+To get the deal information, you should use the following endpoint:
+
+`GET /deals/company/{companyID}`
+
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-20), variable “id”, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+
+# Investor Details System 2.0
+
+> To get the details of an Investor, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/investors/57352' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain the requested investor, with the format specified at section [Investor](#investor).
+
+```json
+{
+  "acquisitionDate": "2025-11-22T14:56:38.773",
+  "updatedDate": "2026-06-16T05:33:05.073757",
+  "visibilityStatus": {
+    "visibleTo": "ALL",
+    "id": 1
+  },
+  "name": "RapidRatings",
+  "description": "RapidRatings provides financial health intelligence to businesses worldwide to mitigate risk, strengthen relationships, and drive growth.\n\nThe company obtain and analyzes third-party financial information to create financial ratings and intelligence. Their primary rating products are the Financial Health Rating (FHR®) and the HealthMark®.",
+  "descriptionWithPunctuation": "The company obtain and analyzes third party financial information to create financial ratings and intelligence Their primary rating products are the Financial Health Rating FHR and the HealthMark RapidRatings provides financial health intelligence to businesses worldwide to mitigate risk strengthen relationships and drive growth",
+  "website": "https://www.rapidratings.com/",
+  "domain": "rapidratings.com",
+  "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/New_Empty_Logo_xqsrak.png",
+  "isLimitedPartner": false,
+  "ventureInvestmentCount": 0,
+  "growthInvestmentCount": 0,
+  "infrastructureInvestmentCount": 0,
+  "buyoutInvestmentCount": 0,
+  "commercialPartnershipCount": 1,
+  "acquisitionCount": 0,
+  "equityInvestmentCount": 0,
+  "commercialBuyCount": 0,
+  "isFinancialInvestor": false,
+  "isVentureInvestor": false,
+  "isGrowthInvestor": false,
+  "isInfrastructureInvestor": false,
+  "isBuyoutInvestor": false,
+  "isStrategic": true,
+  "isCommercialBuyer": false,
+  "isEquityInvestor": false,
+  "isAcquirer": false,
+  "isCommercialPartner": true,
+  "platformOrder": 1000000,
+  "primaryType": {
+    "label": "Corporation",
+    "id": 64
+  },
+  "secondaryTypes": [],
+  "entityTypes": [
+    {
+      "label": "Company",
+      "id": 1
+    }
+  ],
+  "investments": [],
+  "coInvestors": [],
+  "id": 57352
+}
+```
+
+To get the investor information, you should use the following endpoint:
+
+`GET /investors/{investorID}`
+
+It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investor List](#investors-list-system-20), variable “id”, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+| 404           | Resource not found                   |
+
 # Commercial Deal Details System 2.0
 
 > To get the details of a commercial deal, use this code:
@@ -1694,7 +2237,7 @@ The possible response codes are:
 |---------------|--------------------|
 | 200           | Request successful |
 
-# Startup Detail
+# Startup Details System 1.0
 
 All the information related to a startup is divided into different sections: 
 
@@ -1715,8 +2258,8 @@ Additionally, for each funding round, you can get the investors and the sources 
 > To get a startup overview and taxonomy, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/getStartup/sunfire-668' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/getStartup/sunfire-668"
 ```
 
 > In case of a 200 response, the response body will contain the requested startup, with the format specified at section [Startup](#startup).
@@ -1847,11 +2390,11 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/getStartup/sunfire-668' \
 }
 ```
 
-To get a startup overview and taxonomy you should use the following endpoint:
+To get a startup overview and taxonomy, you should use the following endpoint:
 
-`GET /getStartup/[clientID]`
+`GET /getStartup/{clientID}`
 
-It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”clientID”, and has the following response codes:
+It takes a single parameter, indicated as “clientID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-10), variable “clientID”, and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
@@ -2252,13 +2795,13 @@ It takes a single parameter, indicated as “companyID” in the example, which 
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
 
-# Deal Detail
+# Deal Details System 1.0
 
 > To get the details of a Deal, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/fundingRound/42643' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/fundingRound/42643"
 ```
 
 > In case of a 200 response, the response body will contain the requested deal, with the format specified at section [Deal](#deal).
@@ -2359,22 +2902,22 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/fundingRound/42643' \
 
 To get the deal information, you should use the following endpoint:
 
-`GET /fundingRound/[fundingRoundID]`
+`GET /fundingRound/{fundingRoundID}`
 
-It takes a single parameter, indicated as ”[fundingRoundID]” in the example, and has the following response codes:
+It takes a single parameter, indicated as “fundingRoundID” in the example, and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
 | 200           | Request successful |
 
 
-# Investor Detail
+# Investor Details System 1.0
 
 > To get the details of an Investor, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/getInvestor/10000' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/getInvestor/10000"
 ```
 
 > In case of a 200 response, the response body will contain the requested investor, with the format specified at section [Investor](#investor).
@@ -2447,9 +2990,9 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/getInvestor/10000' \
 
 To get the investor information, you should use the following endpoint:
 
-`GET /getInvestor/[investorID]`
+`GET /getInvestor/{investorID}`
 
-It takes a single parameter, indicated as ”[investorID]” in the example, and has the following response codes:
+It takes a single parameter, indicated as “investorID” in the example, and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
