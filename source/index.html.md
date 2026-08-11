@@ -1449,6 +1449,112 @@ With a JSON request body in the format specified at the Section [Company Contact
 | 403           | Forbidden, insufficient access level    |
 | 404           | Resource not found                      |
 
+## Company Commercial Deals
+
+> To get all the commercial deals of a company, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/company/37090' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section [Commercial Deal](#commercial-deal).
+
+```json
+[
+  {
+    "title": "Service Agreement between Ze Energy and Energy Pool",
+    "description": "ZE Energy has entered into a five-year commercial agreement with Energy Pool, to enhance the real-time optimization and market valuation of green electricity produced at four of ZE Energy’s hybrid sites in France. The agreement covers the Senillé-Saint-Sauveur, Mennetou, Gièvres, and Vert plants, which include both standalone and integrated storage systems, and supports participation in various energy and flexibility markets such as the spot market (EPEX), frequency control reserves (FCR, aFRR), and capacity mechanisms. These assets operate under different revenue models, including a supplementary remuneration contract (CCR) and a corporate power purchase agreement (PPA) with Orange France. Energy Pool will deploy an intelligent control system combining energy management software (EMS) and on-site Flex-Box controllers to optimize electricity dispatch and storage, aiming to maximize asset profitability and secure investor returns. This first-of-its-kind partnership in France for hybrid solar-storage plants marks a pivotal step in integrating flexible, controllable renewable energy into mainstream energy markets across Europe.",
+    "announcedDate": "2025-06-17T00:00:00",
+    "duration": 5,
+    "news": [
+      {
+        "url": "https://www.linkedin.com/posts/zeenergy_ze-energy-et-energy-pool-unissent-leurs-forces-activity-7340679662156591104-8GUH/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACJXpPcBy7-B4jrNGnKax9i25dV6GPDIVdw",
+        "title": "ZE ENERGY  and ENERGY POOL join forces! ",
+        "newsDate": "2025-06-17T00:00:00",
+        "id": 62038
+      },
+      {
+        "url": "https://www.pv-magazine.fr/2025/06/17/ze-energy-fait-appel-a-energy-pool-pour-valoriser-ses-actifs-hybrides-solairestockage/",
+        "title": "ZE Energy calls on Energy Pool to enhance the value of its “solar + storage” hybrid assets\n",
+        "newsDate": "2025-06-17T00:00:00",
+        "id": 62039
+      }
+    ],
+    "searchableLocations": [
+      {
+        "continent": {
+          "name": "Europe",
+          "id": 3
+        },
+        "country": {
+          "name": "France",
+          "continent": {
+            "name": "Europe",
+            "id": 3
+          },
+          "alpha2": "FR",
+          "id": 73
+        },
+        "platformOrder": 10,
+        "isSearchable": true,
+        "id": 806702
+      }
+    ],
+    "primaryTypes": [
+      {
+        "label": "Service Agreement",
+        "id": 11
+      }
+    ],
+    "secondaryTypes": [],
+    "connectedCompanies": [
+      {
+        "name": "Ze Energy",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1789635.png",
+        "companyID": 37090,
+        "directUrl": "organization/37090",
+        "commercialDealRole": "Buyer",
+        "entityTypes": [
+          {
+            "label": "Company",
+            "id": 1
+          }
+        ],
+        "id": 38256
+      },
+      {
+        "name": "Energy Pool",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1746956.jpg",
+        "companyID": 33575,
+        "directUrl": "organization/33575",
+        "commercialDealRole": "Seller",
+        "entityTypes": [
+          {
+            "label": "Company",
+            "id": 1
+          }
+        ],
+        "id": 38257
+      }
+    ],
+    "connectedInvestors": [],
+    "id": 5081
+  }
+]
+```
+
+To get all the commercial deals of a company, you should use the following endpoint:
+
+`GET /commercial-deals/connected-entities/company/{companyID}`
+
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-2-0), variable “id”, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+
 # Investor Details System 2.0
 
 > To get the details of an Investor, use this code:
@@ -1574,6 +1680,124 @@ With a JSON request body in the format specified at the Section [Investor Contac
 | 401           | Unauthorized, wrong user role to access |
 | 403           | Forbidden, insufficient access level    |
 | 404           | Resource not found                      |
+
+## Investor Commercial Deals
+
+> To get all the commercial deals of an investor, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/investor/43939' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section [Commercial Deal](#commercial-deal).
+
+```json
+[
+  {
+    "title": "Supply Agreement between Evlox, Jeanologia and Recover",
+    "description": "REICONICS is a recycled denim capsule collection resulting from a collaboration between Recover™, Evlox, and Jeanologia, aiming to enhance circularity in the denim industry from fiber to finish. Launched on January 29, 2024, the collection features 14 denim styles incorporating up to 32% of Recover's low-impact recycled cotton fiber, sourced from post-industrial textile waste and GRS certified. By integrating Recover's recycled cotton and Jeanologia's innovative finishing technologies—such as laser, G2 ozone, and eFlow—the production of a REICONICS jacket saves up to 760 liters of water compared to traditional methods. Evlox, with a legacy in denim manufacturing since 1846, developed premium fabrics for the collection, reimagining classic denim styles. All garments are made entirely from cellulosic fibers, including sewing threads, to enhance recyclability. This collaboration exemplifies a commitment to sustainable fashion without compromising denim heritage.",
+    "announcedDate": "2023-11-27T00:00:00",
+    "news": [
+      {
+        "url": "https://recoverfiber.com/newsroom/reiconics-jeanologia-evlox-recover",
+        "title": "REICONICS: Recover™ x Evlox x Jeanologia",
+        "newsDate": "2024-01-29T00:00:00",
+        "id": 57694
+      },
+      {
+        "url": "https://worldbiomarketinsights.com/evlox-recover-and-jeanologia-launch-sustainable-denim-capsule-collection/",
+        "title": "Evlox, Recover and Jeanologia launch sustainable denim capsule collection",
+        "newsDate": "2023-11-27T00:00:00",
+        "id": 57695
+      },
+      {
+        "url": "https://recoverfiber.com/newsroom/reiconics-jeanologia-evlox-recover",
+        "title": "REICONICS: Recover™ x Evlox x Jeanologia",
+        "newsDate": "2024-01-29T00:00:00",
+        "id": 75397
+      },
+      {
+        "url": "https://worldbiomarketinsights.com/evlox-recover-and-jeanologia-launch-sustainable-denim-capsule-collection/",
+        "title": "Evlox, Recover and Jeanologia launch sustainable denim capsule collection",
+        "newsDate": "2023-11-27T00:00:00",
+        "id": 75398
+      }
+    ],
+    "searchableLocations": [],
+    "primaryTypes": [
+      {
+        "label": "Supply Agreement",
+        "id": 7
+      }
+    ],
+    "secondaryTypes": [
+      {
+        "label": "Sustainability Partnership",
+        "id": 13
+      }
+    ],
+    "connectedCompanies": [
+      {
+        "name": "Recover",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/matpkxj4ergscseibcro.png",
+        "companyID": 75094,
+        "directUrl": "organization/75094",
+        "commercialDealRole": "Seller",
+        "entityTypes": [
+          {
+            "label": "Company",
+            "id": 1
+          }
+        ],
+        "id": 33864
+      }
+    ],
+    "connectedInvestors": [
+      {
+        "name": "Evlox",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_514764.jpg",
+        "investorID": 43939,
+        "directUrl": "investor/43939",
+        "commercialDealRole": "Buyer",
+        "entityTypes": [
+          {
+            "label": "Investor",
+            "id": 2
+          }
+        ],
+        "id": 26563
+      },
+      {
+        "name": "Jeanologia",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/New_Empty_Logo_xqsrak.png",
+        "investorID": 43429,
+        "directUrl": "investor/43429",
+        "commercialDealRole": "Buyer",
+        "entityTypes": [
+          {
+            "label": "Company",
+            "id": 1
+          }
+        ],
+        "id": 26564
+      }
+    ],
+    "id": 1645
+  }
+]
+```
+
+To get all the commercial deals of an investor, you should use the following endpoint:
+
+`GET /commercial-deals/connected-entities/investor/{investorID}`
+
+It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investors List](#investors-list-system-2-0), variable “investorID”, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
 
 # Commercial Deal Details System 2.0
 
@@ -2150,19 +2374,19 @@ This is the commercial deal filter used when searching for commercial deals.
 
 ## Company Contact Filter
 
-| Parameter name  | Parameter type | Description                                                                                        |
-|-----------------|----------------|----------------------------------------------------------------------------------------------------|
-| companyID       | int            | ID of the requested company, taken from a previous call of [Company List](#startup-list-system-20) |
-| isDecisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities                          |
-| departmentID    | int            | Optional, contact role, see Section [Role](#role) for accepted values                              |
-| pageSize        | int            | Number of records to return per page                                                               |
-| pageNumber      | int            | Index of the current page                                                                          |
+| Parameter name  | Parameter type | Description                                                                                         |
+|-----------------|----------------|-----------------------------------------------------------------------------------------------------|
+| companyID       | int            | ID of the requested company, taken from a previous call of [Company List](#startup-list-system-2-0) |
+| isDecisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities                           |
+| departmentID    | int            | Optional, contact role, see Section [Role](#role) for accepted values                               |
+| pageSize        | int            | Number of records to return per page                                                                |
+| pageNumber      | int            | Index of the current page                                                                           |
 
 ## Investor Contact Filter
 
 | Parameter name  | Parameter type | Description                                                                                             |
 |-----------------|----------------|---------------------------------------------------------------------------------------------------------|
-| investorID      | int            | ID of the requested investor, taken from a previous call of [Investgor List](#investors-list-system-20) |
+| investorID      | int            | ID of the requested investor, taken from a previous call of [Investor List](#investors-list-system-2-0) |
 | isDecisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities                               |
 | departmentID    | int            | Optional, contact role, see Section [Role](#role) for accepted values                                   |
 | pageSize        | int            | Number of records to return per page                                                                    |
@@ -2885,8 +3109,8 @@ It takes a single parameter, indicated as ”[coFundingRoundId]” in the exampl
 > To get all the commercial deals of a startup, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/company/37090' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/commercial-deals/connected-entities/company/37090"
 ```
 
 > In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section [Commercial Deal](#commercial-deal).
@@ -2977,9 +3201,9 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/connected-e
 
 To get all the commercial deals of a startup, you should use the following endpoint:
 
-`GET /connected-entities/company/{companyID}`
+`GET /commercial-deals/connected-entities/company/{companyID}`
 
-It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable “id”, and has the following response codes:
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-1-0), variable “id”, and has the following response codes:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
@@ -3189,13 +3413,13 @@ It takes a single parameter, indicated as “investorID” in the example, and h
 |---------------|--------------------|
 | 200           | Request successful |
 
-## Investor Commercial Deals
+## Investor Commercial Deals  
 
 > To get all the commercial deals of an investor, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/connected-entities/investor/43939' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/commercial-deals/connected-entities/investor/43939"
 ```
 
 > In case of a 200 response, the response body will contain the requested commercial deals, with the format specified at section [Commercial Deal](#commercial-deal).
@@ -3294,9 +3518,9 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/commercial-deals/connected-e
 
 To get all the commercial deals of an investor, you should use the following endpoint:
 
-`GET /connected-entities/investor/{investorID}`
+`GET /commercial-deals/connected-entities/investor/{investorID}`
 
-It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investors List](#investors-list), variable “investorID”, and has the following response codes:
+It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investors List](#investors-list-system-1-0), variable “investorID”, and has the following response codes:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
