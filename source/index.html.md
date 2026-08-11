@@ -2466,6 +2466,129 @@ This is the commercial deal filter used when searching for commercial deals.
 | departments        | List of [Contact Departments](#role)                   |
 | id                 | Internal ID                                            |
 
+# Additional tables System 2.0
+
+## Searchable Locations
+
+> To get searchable locations, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/searchable-locations?location=lisbon' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain all the matching searchable locations, with the JSON structured like the following:
+
+```json
+{
+  "continents": [],
+  "regions": [],
+  "countries": [],
+  "admins": [
+    {
+      "continent": {
+        "name": "Europe",
+        "id": 3
+      },
+      "country": {
+        "name": "Portugal",
+        "continent": {
+          "name": "Europe",
+          "id": 3
+        },
+        "alpha2": "PT",
+        "id": 172
+      },
+      "adminID4": 2197,
+      "adminName4": "Lisbon",
+      "platformOrder": 20,
+      "isSearchable": true,
+      "id": 885755
+    }
+  ],
+  "cities": [
+    {
+      "continent": {
+        "name": "Europe",
+        "id": 3
+      },
+      "country": {
+        "name": "Portugal",
+        "continent": {
+          "name": "Europe",
+          "id": 3
+        },
+        "alpha2": "PT",
+        "id": 172
+      },
+      "cityName": "Lisbon",
+      "cityAsciiName": "Lisbon",
+      "adminID4": 2197,
+      "adminName4": "Lisbon",
+      "platformOrder": 15,
+      "isSearchable": true,
+      "id": 885680
+    },
+    {
+      "continent": {
+        "name": "North America",
+        "id": 4
+      },
+      "country": {
+        "name": "United States",
+        "continent": {
+          "name": "North America",
+          "id": 4
+        },
+        "alpha2": "US",
+        "id": 226
+      },
+      "cityName": "New Lisbon",
+      "cityAsciiName": "New Lisbon",
+      "adminID4": 3121,
+      "adminName4": "Wisconsin",
+      "platformOrder": 1060,
+      "isSearchable": true,
+      "id": 936780
+    },
+    {
+      "continent": {
+        "name": "North America",
+        "id": 4
+      },
+      "country": {
+        "name": "United States",
+        "continent": {
+          "name": "North America",
+          "id": 4
+        },
+        "alpha2": "US",
+        "id": 226
+      },
+      "cityName": "Lisbon Falls",
+      "cityAsciiName": "Lisbon Falls",
+      "adminID4": 3142,
+      "adminName4": "Maine",
+      "platformOrder": 1060,
+      "isSearchable": true,
+      "id": 949372
+    }
+  ]
+}
+```
+
+To get searchable locations, you should use the following endpoint:
+
+`GET /searchable-locations?location={location}`
+
+It takes a single query parameter, indicated as “location” in the example, which is a string used to filter the locations and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+| 404           | Resource not found                   |
+
 
 # Security System 1.0
 
@@ -4188,8 +4311,8 @@ It takes no parameter, and has the following response codes:
 > To get the list of the searchable locations, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/searchLocation/london' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/searchLocation/london"
 ```
 
 > In case of a 200 response, the response body will contain all the matching searchable locations, with the JSON structured like the following:
@@ -4223,9 +4346,9 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/searchLocation/london' \
 
 To get the list of the searchable locations, you should use the following endpoint:
 
-`GET /searchLocation/[location]`
+`GET /searchLocation/{location}`
 
-It takes a single parameter, indicated as ”[location]” in the example, which is a string used to filter the locations and has the following response codes:
+It takes a single parameter, indicated as “location” in the example, which is a string used to filter the locations and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
