@@ -2258,6 +2258,361 @@ It takes a single parameter, indicated as “commercialDealID” in the example,
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
 
+# Infrastructure Project Details System 2.0
+
+> To get the details of an infrastructure project, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/infrastructure-projects/396' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain the requested infrastructure project, with the format specified at section [Infrastructure Project](#infrastructure-project).
+
+```json
+{
+    "acquisitionDate": "2025-09-08T03:30:14.71",
+    "updatedDate": "2026-06-29T10:48:05.189037",
+    "name": "Rice Creek Solar – Origis Energy",
+    "announcedDate": "2024-04-16T00:00:00",
+    "description": "The Rice Creek Solar Project in Putnam County, Florida, is a 75 MW AC ground-mounted photovoltaic facility designed to provide renewable electricity to local municipal utilities through the Florida Municipal Power Agency (FMPA). The site consists of approximately 213,000 PV modules installed on single-axis trackers, enabling maximum energy harvest through continuous adjustment to solar angles. Electricity generated as direct current is routed through distributed string inverters, collected via a medium-voltage underground cabling network, and stepped up at an on-site substation for integration into the regional distribution grid. The infrastructure is engineered to deliver stable power output that can supply the equivalent of around 14,000 households annually.\n\nCivil works include land grading, foundation preparation for tracker systems, construction of internal access roads, cable trenching, and installation of perimeter fencing. The substation compound integrates transformers, switchgear, and grid interconnection equipment, with a SCADA-based control system to monitor plant performance, detect faults, and manage output dispatch. The site layout is optimized to minimize shading losses while maintaining adequate spacing for maintenance access, with dedicated buffer zones separating the active solar field from surrounding land uses. Operational protocols include vegetation management, stormwater control, and system reliability checks aligned with Florida’s regulatory framework.\n\nBeyond headline capacity, the project is designed to contribute consistent solar generation to local municipal utilities, providing mid-day peak support while reducing reliance on fossil-fired resources. Its integration within the municipal grid structure ensures direct delivery to participating communities without the need for long-distance transmission expansion. While the facility does not currently include battery energy storage, its infrastructure has been designed to allow potential hybridization with storage systems in the future, enabling further grid balancing and resilience.\n\nOrigis Energy serves as project developer, EPC manager, and long-term operator. The company oversees permitting, engineering design, procurement of solar modules and trackers, construction management, and eventual operation and maintenance services. Project participants further include specialized engineering and environmental consultants responsible for geotechnical surveys, interconnection studies, and permitting compliance. This coordinated delivery structure ensures that the Rice Creek Solar Project is integrated seamlessly into the municipal grid, aligning its technical performance with the operational requirements of Florida’s local power agencies.",
+    "shortName": "Rice Creek Solar",
+    "foak": false,
+    "announcedYear": 2024,
+    "capacity": "75 MWac of solar power generation",
+    "totalFunding": 207000000,
+    "totalFundingUSD": 207000000,
+    "totalFundingEUR": 191217957,
+    "source": "vansh_chhaparia",
+    "status": "Operating",
+    "trl": {
+        "label": "9",
+        "description": "Completed",
+        "id": 12
+    },
+    "searchableLocations": [
+        {
+            "continent": {
+                "name": "North America",
+                "id": 4
+            },
+            "country": {
+                "name": "United States",
+                "continent": {
+                    "name": "North America",
+                    "id": 4
+                },
+                "alpha2": "US",
+                "id": 226
+            },
+            "cityName": "Palatka",
+            "cityAsciiName": "Palatka",
+            "adminID4": 3131,
+            "adminName4": "Florida",
+            "platformOrder": 60,
+            "isSearchable": true,
+            "id": 943021
+        }
+    ],
+    "connectedCompanies": [
+        {
+            "name": "Origis Energy",
+            "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1723941.jpg",
+            "companyID": 101015,
+            "infrastructureProjectRole": "Project Developer",
+            "infrastructureProjectRole2": "Tech Developer",
+            "entityTypes": [
+                {
+                    "label": "Company",
+                    "id": 1
+                }
+            ],
+            "id": 669
+        },
+        {
+            "name": "Wanzek",
+            "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1968045.png",
+            "companyID": 210611,
+            "infrastructureProjectRole": "Other Project Participant",
+            "entityTypes": [
+                {
+                    "label": "Company",
+                    "id": 1
+                }
+            ],
+            "id": 670
+        }
+    ],
+    "connectedInvestors": [
+        {
+            "name": "Mitsubishi UFJ Financial Group",
+            "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_296823.jpg",
+            "investorID": 6688,
+            "infrastructureProjectRole": "Investor",
+            "entityTypes": [
+                {
+                    "label": "Investor",
+                    "id": 2
+                }
+            ],
+            "id": 202572
+        },
+        {
+            "name": "U.S. Bank",
+            "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_48232.jpg",
+            "investorID": 21805,
+            "infrastructureProjectRole": "Investor",
+            "entityTypes": [
+                {
+                    "label": "Investor",
+                    "id": 2
+                }
+            ],
+            "id": 202573
+        }
+    ],
+    "tags": [
+        {
+            "label": "Energy",
+            "visibilityStatus": {
+                "visibleTo": "ALL",
+                "id": 1
+            },
+            "description": "The energy sector includes innovations that are in the business of producing or supplying energy such as renewables.\n\nWithin the scope of this climate change challenge are targeted emissions produced by energy systems, namely what concerns the production, conversion, distribution and consumption of energy. \n\nSolutions to mitigate climate change and to adapt to its effects in this challenge include energy management systems, batteries, biofuels, CHP, electromechanical storage, biomass, heat recovery, hydrogen, kinetic energy, energy monitoring and metering, utilities and others.",
+            "isCustomCompany": false,
+            "isCustomMap": false,
+            "isUmbrella": false,
+            "isVisibleCompany": true,
+            "isVisibleMap": true,
+            "isSearchable": true,
+            "isGrouping": false,
+            "isAdvancedFilters": true,
+            "tagType": {
+                "label": "challenge",
+                "platformOrder": -1,
+                "tagFamily": {
+                    "label": "Solutions",
+                    "platformOrder": 1,
+                    "id": 2
+                },
+                "id": 10
+            },
+            "synonyms": [],
+            "rawSearches": [],
+            "platformOrder": 4,
+            "id": 354
+        },
+        {
+            "label": "Industry",
+            "visibilityStatus": {
+                "visibleTo": "ALL",
+                "id": 1
+            },
+            "description": "Industry includes sectors of the economy that mainly produce capital goods to be used in manufacturing.\n\nThe scope of this challenge includes the manufacturing of petrochemicals and plastics, electrical and electronics, textile & fashion, chemicals, heavy machinery and equipment, pharmaceuticals among other sectors of the economy.\n\nSolutions to mitigate climate change and to adapt to its effects in this challenge include electrical equipment manufacturing, industrial efficiency software, automated manufacturing processes, 3D printing and others.\n",
+            "isCustomCompany": false,
+            "isCustomMap": false,
+            "isUmbrella": false,
+            "isVisibleCompany": true,
+            "isVisibleMap": true,
+            "isSearchable": true,
+            "isGrouping": false,
+            "isAdvancedFilters": true,
+            "tagType": {
+                "label": "challenge",
+                "platformOrder": -1,
+                "tagFamily": {
+                    "label": "Solutions",
+                    "platformOrder": 1,
+                    "id": 2
+                },
+                "id": 10
+            },
+            "synonyms": [],
+            "rawSearches": [],
+            "platformOrder": 7,
+            "id": 357
+        }
+    ],
+    "id": 396
+}
+```
+To get the infrastructure project information, you should use the following endpoint:
+
+`GET /infrastructure-projects/{infrastructureProjectID}`
+
+It takes a single parameter, indicated as “infrastructureProjectID” in the example, and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
+
+## Connected Entities
+
+> To get all the connected entities of an infrastructure project, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/infrastructure-projects/connected-entities/396/TECH_DEVELOPER' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+```json
+{
+  "connectedInvestors": [],
+  "connectedCompanies": [
+    {
+      "name": "Origis Energy",
+      "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1723941.jpg",
+      "companyID": 101015,
+      "infrastructureProjectRole": "Project Developer",
+      "infrastructureProjectRole2": "Tech Developer",
+      "entityTypes": [
+        {
+          "label": "Company",
+          "id": 1
+        }
+      ],
+      "id": 669
+    }
+  ]
+}
+```
+
+To get the connected entities of an infrastructure project, you should use the following endpoint:
+
+`GET /infrastructure-projects/connected-entities/{infrastructureProjectID}/{role}`
+
+It takes two parameters, indicated as “infrastructureProjectID” and “role” from [Infrastructure Project Roles](#infrastructure-project-roles) in the example, and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
+
+## Tags
+
+> To get all the tags of connected entities of an infrastructure project, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/infrastructure-projects/connected-entities/tags/396' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+```json
+[
+  {
+    "label": "Hydrogen",
+    "visibilityStatus": {
+      "visibleTo": "ALL",
+      "id": 1
+    },
+    "description": "Hydrogen is a energy carrier poised to revolutionize various industries. Its applications span across clean transportation, industrial processes, and energy storage. Hydrogen holds significance due to its potential to decarbonize sectors traditionally reliant on fossil fuels. It can be used to power fuel cell electric vehicles, store excess renewable energy, and replace carbon-intensive processes in manufacturing and agriculture.",
+    "isCustomCompany": false,
+    "isCustomMap": false,
+    "isUmbrella": false,
+    "isVisibleCompany": true,
+    "isVisibleMap": true,
+    "isSearchable": true,
+    "isGrouping": false,
+    "isAdvancedFilters": true,
+    "tagType": {
+      "label": "solution",
+      "platformOrder": 10,
+      "tagFamily": {
+        "label": "Solutions",
+        "platformOrder": 1,
+        "id": 2
+      },
+      "id": 46
+    },
+    "synonyms": [],
+    "rawSearches": [
+      {
+        "acquisitionDate": "2024-04-04T16:58:52.93",
+        "text": "{\"companyInclude\":{\"tagIDs\":[212]},\"companyExclude\":{},\"investorInclude\":{},\"investorExclude\":{},\"dealInclude\":{},\"dealExclude\":{},\"forScheduledSavedSearchEmail\":false,\"sortDirection\":\"ASC\",\"dealSortDirection\":\"DESC\",\"companySortField\":\"PLATFORM_ORDER\",\"investorSortField\":\"PLATFORM_ORDER\",\"dealSortField\":\"DEAL_DATE\"}",
+        "strong": false,
+        "id": 9079
+      }
+    ],
+    "platformOrder": 120,
+    "id": 212
+  }
+]
+```
+
+To get the tags of connected entities of an infrastructure project, you should use the following endpoint:
+
+`GET /infrastructure-projects/connected-entities/tags/{infrastructureProjectID}`
+
+It takes a single parameter, indicated as “infrastructureProjectID” in the example, and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
+
+## News
+
+> To get all the news of an infrastructure project, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/infrastructure-projects/news/396' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+```json
+[
+  {
+    "url": "https://mercomcapital.com/origis-energy-secures-71-million-tax-equity-financing/",
+    "title": "Origis Energy Secures $71 Million Tax Equity Financing",
+    "text": "Origis Energy Secures $71 Million Tax Equity Financing\nThe 75 MW solar project in Florida is near completion\nAugust 12, 2024  Staff  Solar\nproject finance brief\nOrigis Energy, the provider of a vertically integrated renewable energy platform and a solar project developer, announced the close of $71 million in tax equity financing for the development of the 75 MW Rice Creek Solar project in Florida.\n\nThe tax equity financing was secured from U.S. Bank subsidiary U.S. Bancorp Impact Finance, a renewable energy investor. The Rice Creek Solar project is located in Putnam County, Florida, and it is contracted with the Florida Municipal Power Agency (FMPA) for 12 of its participating member municipal utilities.\n\nRice Creek Solar Project is the third solar site in the Florida Municipal Solar Project. It comprises 213,000 solar panels generating enough clean power for approximately 14,000 homes, according to Origis Energy.\n\n“U.S. Bank’s expertise and commitment to the renewable energy market is helping us realize our large solar portfolio. Rice Creek is another example of their support empowering us to scale effectively and bring clean energy projects online,” said Vikas Anand, Chief Executive Officer of Origis Energy. “We applaud FMPA for adding more cost-effective energy resources to meet the growing electricity demand of millions of Floridians, and U.S. Bank for supporting the project.”\n\nLatham & Watkins represented Origis Energy in the transaction, with Akerman serving as Local Counsel. Sheppard Mullin acted as U.S. Bank’s Counsel, with Balch & Bingham serving as Local Counsel.\n\nAccording to Mercom’s 1H and Q2 2024 Solar Funding and M&A report, large-scale project funding in 1H 2024 came to $19.9 billion in 117 deals compared to $14.9 billion in 113 deals in 1H 2023.\n\nThis week, Matrix Renewables, a global renewable energy company, signed a €50 million (~$54.74 million) green loan with the European Investment Bank (EIB) to support the development and construction of five solar projects located in Castilla y Leon and Extremadura, Spain. The projects have a total installed capacity of 240 MW.",
+    "newsDate": "2024-08-12T00:00:00",
+    "infrastructureProject": {
+      "acquisitionDate": "2025-09-08T03:30:14.71",
+      "updatedDate": "2026-06-29T10:48:05.189037",
+      "name": "Rice Creek Solar – Origis Energy",
+      "announcedDate": "2024-04-16T00:00:00",
+      "description": "The Rice Creek Solar Project in Putnam County, Florida, is a 75 MW AC ground-mounted photovoltaic facility designed to provide renewable electricity to local municipal utilities through the Florida Municipal Power Agency (FMPA). The site consists of approximately 213,000 PV modules installed on single-axis trackers, enabling maximum energy harvest through continuous adjustment to solar angles. Electricity generated as direct current is routed through distributed string inverters, collected via a medium-voltage underground cabling network, and stepped up at an on-site substation for integration into the regional distribution grid. The infrastructure is engineered to deliver stable power output that can supply the equivalent of around 14,000 households annually.\n\nCivil works include land grading, foundation preparation for tracker systems, construction of internal access roads, cable trenching, and installation of perimeter fencing. The substation compound integrates transformers, switchgear, and grid interconnection equipment, with a SCADA-based control system to monitor plant performance, detect faults, and manage output dispatch. The site layout is optimized to minimize shading losses while maintaining adequate spacing for maintenance access, with dedicated buffer zones separating the active solar field from surrounding land uses. Operational protocols include vegetation management, stormwater control, and system reliability checks aligned with Florida’s regulatory framework.\n\nBeyond headline capacity, the project is designed to contribute consistent solar generation to local municipal utilities, providing mid-day peak support while reducing reliance on fossil-fired resources. Its integration within the municipal grid structure ensures direct delivery to participating communities without the need for long-distance transmission expansion. While the facility does not currently include battery energy storage, its infrastructure has been designed to allow potential hybridization with storage systems in the future, enabling further grid balancing and resilience.\n\nOrigis Energy serves as project developer, EPC manager, and long-term operator. The company oversees permitting, engineering design, procurement of solar modules and trackers, construction management, and eventual operation and maintenance services. Project participants further include specialized engineering and environmental consultants responsible for geotechnical surveys, interconnection studies, and permitting compliance. This coordinated delivery structure ensures that the Rice Creek Solar Project is integrated seamlessly into the municipal grid, aligning its technical performance with the operational requirements of Florida’s local power agencies.",
+      "shortName": "Rice Creek Solar",
+      "foak": false,
+      "announcedYear": 2024,
+      "capacity": "75 MWac of solar power generation",
+      "totalFunding": 207000000,
+      "totalFundingUSD": 207000000,
+      "totalFundingEUR": 191217957,
+      "source": "vansh_chhaparia",
+      "status": "Operating",
+      "trl": {
+        "label": "9",
+        "description": "Completed",
+        "id": 12
+      },
+      "id": 396
+    },
+    "id": 896
+  }
+]
+```
+
+To get the news of an infrastructure project, you should use the following endpoint:
+
+`GET /infrastructure-projects/news/{infrastructureProjectID}`
+
+It takes a single parameter, indicated as “infrastructureProjectID” in the example, and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
+
 # Filters structure System 2.0
 
 ## Company Sort Fields
@@ -2609,6 +2964,46 @@ This is the commercial deal filter used when searching for commercial deals.
 | source            | Source from which the tag information was obtained                          |
 | platformOrder     | Default platform order of the tag                                           |
 
+## Infrastructure Project
+
+| Name                  | Content                                                                       |
+|-----------------------|-------------------------------------------------------------------------------|
+| id                    | Internal infrastructure project ID                                            |
+| name                  | Name of the infrastructure project                                            |
+| acquisitionDate       | Date when the project was inserted in the database                            |
+| updateDate            | Date when the project was last updated                                        |
+| announcedDate         | Date when the project was announced                                           |
+| description           | Detailed description of the infrastructure project                            |
+| shortName             | Short name or abbreviation of the project                                     |
+| foak                  | Indicates whether the project is a First-of-a-Kind (FOAK) project             |
+| announcedYear         | Year when the project was announced                                           |
+| constructionStartYear | Year when construction is scheduled to start or started                       |
+| operationStartYear    | Year when the project is scheduled to begin or began operations               |
+| decommissionYear      | Year when the project is scheduled to be or was decommissioned                |
+| cancellationYear      | Year when the project was cancelled                                           |
+| lifespan              | Expected or planned operational lifespan of the project                       |
+| capacity              | Capacity of the infrastructure project                                        |
+| specialPurposeVehicle | Special Purpose Vehicle (SPV) associated with the project                     |
+| costCurrency          | Currency of the project cost                                                  |
+| cost                  | Project cost in the original currency                                         |
+| costUSD               | Project cost in USD                                                           |
+| costEUR               | Project cost in EUR                                                           |
+| totalValueDate        | Date associated with the total project value                                  |
+| totalValueCurrency    | Currency of the total project value                                           |
+| totalValue            | Total project value in the original currency                                  |
+| totalValueUSD         | Total project value in USD                                                    |
+| totalValueEUR         | Total project value in EUR                                                    |
+| totalFundingCurrency  | Currency of the total funding                                                 |
+| totalFunding          | Total funding in the original currency                                        |
+| totalFundingUSD       | Total funding in USD                                                          |
+| totalFundingEUR       | Total funding in EUR                                                          |
+| source                | Source from which the project information was obtained                        |
+| trl                   | See Section [TRLs](#trls) for accepted values                                 |
+| searchableLocations   | See Section [Searchable Locations](#searchable-locations) for accepted values |
+| connectedCompanies    | Companies connected to the infrastructure project                             |
+| connectedInvestors    | Investors connected to the infrastructure project                             |
+| tags                  | See Section [Tags](#tags-2) for accepted values                               |
+
 # Additional tables System 2.0
 
 ## Visibility Statuses
@@ -2619,6 +3014,16 @@ This is the commercial deal filter used when searching for commercial deals.
 | 2  | ADMINS_ONLY |
 | 3  | HIDDEN      |
 | 4  | NOT_VISIBLE |
+
+## Infrastructure Project Roles
+
+| Label                     |
+|---------------------------|
+| TECH_DEVELOPER            |
+| PROJECT_DEVELOPER         |
+| INVESTOR                  |
+| ADVISOR                   |
+| OTHER_PROJECT_PARTICIPANT |
 
 ## Searchable Locations
 
