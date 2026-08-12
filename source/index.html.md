@@ -38,7 +38,7 @@ Each endpoint in this documentation should be called using the appropriate domai
 
 ## Login
 
-> To login, use this code:
+> To log in, use this code:
 
 ```shell
 curl -v -X POST 'https://api-new.netzeroinsights.com/auth/login?email={YOUR_EMAIL}&password={YOUR_PASSWORD}' \
@@ -83,7 +83,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
 
 ## Logout
 
-> To logout, use this code:
+> To log out, use this code:
 
 ```shell
 curl -v -X POST 'https://api-new.netzeroinsights.com/auth/logout' \
@@ -96,7 +96,7 @@ To invalidate the access token, you should use the following endpoint:
 
 `GET /auth/logout`
 
-It takes no parameter, and has the following response code:
+It takes no parameter and has the following response code:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
@@ -2304,7 +2304,7 @@ This is the main filter used when searching for startups/companies, investors, o
 | numberTo            | int            | Maximum deal number for the company                                                                             |
 | totalFundingFrom    | int            | Minimum total funding of the company                                                                            |                                                                           
 | totalFundingTo      | int            | Maximum total funding of the company                                                                            |
-| typeIDs             | List of int    | See Section [Deal Type](#deal-type) for the accepted values                                                     |
+| typeIDs             | List of int    | See Section [Deal Type](#deal-types) for the accepted values                                                    |
 | investorIDs         | List of int    | Using the [Investor List](#investors-list) endpoints, it is possible to fetch the investors' IDs to insert here |
 | fundingTypeIDs      | List of int    | See Section [Funding Type](#funding-type) for the accepted values                                               |
 | dealCategoryIDs     | List of int    | See Section [Exit Stage](#exit-stage) for the accepted values                                                   |
@@ -2589,12 +2589,62 @@ It takes a single query parameter, indicated as “location” in the example, w
 | 403           | Forbidden, insufficient access level |
 | 404           | Resource not found                   |
 
+## Deal Types
+
+> To get the list of the currently available deal types, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/deals/types' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain all the available funding types, with the JSON structured like the following:
+
+```json
+[
+  {
+    "label": "Accelerator/incubator",
+    "filterable": false,
+    "assignable": true,
+    "id": 65
+  },
+  {
+    "label": "Acquisition",
+    "filterable": false,
+    "assignable": true,
+    "id": 66
+  },
+  {
+    "label": "Convertible note",
+    "filterable": false,
+    "assignable": true,
+    "id": 70
+  },
+  {
+    "label": "Corporate",
+    "filterable": false,
+    "assignable": false,
+    "id": 71
+  }
+]
+```
+
+To get the list of the currently available funding types, you should use the following endpoint:
+
+`GET /deals/types`
+
+It takes no parameter and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
 
 # Security System 1.0
 
 ## Login
 
-> To login, use this code:
+> To log in, use this code:
 
 ```shell
 curl -v -X POST "https://api.netzeroinsights.com/security/formLogin" \
@@ -2637,7 +2687,7 @@ You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 
 ## Logout
 
-> To logout, use this code:
+> To log out, use this code:
 
 ```shell
 curl -v --cookie "JSESSIONID=EXAMPLE_SESSION_ID" \
@@ -2650,7 +2700,7 @@ To close the session, you should use the following endpoint:
 
 `GET /security/logout`
 
-It takes no parameter, and has the following response code:
+It takes no parameter and has the following response code:
 
 | Response code | Meaning            |
 |---------------|--------------------|
@@ -2943,8 +2993,8 @@ It takes a single parameter, indicated as “clientID” in the example, which i
 > To get a startup overview and taxonomy, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/patents/668'
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/patents/668"
 ```
 
 > In case of a 200 response, the response body will contain the requested patents, with the format specified at section [Patent](#patent).
@@ -3082,7 +3132,7 @@ With a JSON request body in the format specified at the Section [Contacts Filter
 
 ```shell
 curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
--X GET https://api.netzeroinsights.com/fundingRoundsPrints/668
+-X GET "https://api.netzeroinsights.com/fundingRoundsPrints/668"
 ```
 
 > In case of a 200 response, the response body will contain the requested funding rounds, with the format specified at section [Funding Round](#funding-round).
@@ -3145,8 +3195,8 @@ It takes a single parameter, indicated as “clientID” in the example, which i
 > To get all the investors of a given set of funding rounds, use this code:
 
 ```shell
-curl -v -X POST 'https://api-new.netzeroinsights.com/getFundingRoundInvestors' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X POST "https://api.netzeroinsights.com/getFundingRoundInvestors" \
 -H "Content-Type: application/json" \
 -d "{[86971]}"
 ```
@@ -3191,11 +3241,11 @@ The request body should be a list of round IDs, which you can get from previous 
 > To get all the sources of a specific funding round, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/roundNewsByRoundID/86971' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+ -X GET "https://api.netzeroinsights.com/roundNewsByRoundID/86971"
 ```
 
-> In case of a 200 response, the response body will contain all the sources of a funding rounds, with the format specified at section [Funding round source](#funding-round-source).
+> In case of a 200 response, the response body will contain all the sources of a funding round, with the format specified at section [Funding round source](#funding-round-source).
 
 ```json
 [
@@ -4241,8 +4291,8 @@ The possible response codes are:
 > To get the list of the currently available investors, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/getInvestorsForFilter' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/getInvestorsForFilter"
 ```
 
 > In case of a 200 response, the response body will contain all the available investors, with the JSON structured like the following:
@@ -4266,7 +4316,7 @@ To get the list of the currently available investors, you should use the followi
 
 `GET /getInvestorsForFilter`
 
-It takes no parameter, and has the following response codes:
+It takes no parameter and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
@@ -4277,8 +4327,8 @@ It takes no parameter, and has the following response codes:
 > To get the list of the currently available funding types, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/getFundingTypes' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/getFundingTypes"
 ```
 
 > In case of a 200 response, the response body will contain all the available funding types, with the JSON structured like the following:
@@ -4300,7 +4350,7 @@ To get the list of the currently available funding types, you should use the fol
 
 `GET /getFundingTypes`
 
-It takes no parameter, and has the following response codes:
+It takes no parameter and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
