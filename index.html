@@ -388,6 +388,20 @@
               </ul>
           </li>
           <li>
+            <a href="#infrastructure-project-details-system-2-0" class="toc-h1 toc-link" data-title="Infrastructure Project Details System 2.0">Infrastructure Project Details System 2.0</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#connected-entities-2" class="toc-h2 toc-link" data-title="Connected Entities">Connected Entities</a>
+                  </li>
+                  <li>
+                    <a href="#tags-2" class="toc-h2 toc-link" data-title="Tags">Tags</a>
+                  </li>
+                  <li>
+                    <a href="#news-2" class="toc-h2 toc-link" data-title="News">News</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#filters-structure-system-2-0" class="toc-h1 toc-link" data-title="Filters structure System 2.0">Filters structure System 2.0</a>
               <ul class="toc-list-h2">
                   <li>
@@ -452,6 +466,9 @@
                   <li>
                     <a href="#tag" class="toc-h2 toc-link" data-title="Tag">Tag</a>
                   </li>
+                  <li>
+                    <a href="#infrastructure-project" class="toc-h2 toc-link" data-title="Infrastructure Project">Infrastructure Project</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -461,13 +478,16 @@
                     <a href="#visibility-statuses" class="toc-h2 toc-link" data-title="Visibility Statuses">Visibility Statuses</a>
                   </li>
                   <li>
+                    <a href="#infrastructure-project-roles" class="toc-h2 toc-link" data-title="Infrastructure Project Roles">Infrastructure Project Roles</a>
+                  </li>
+                  <li>
                     <a href="#searchable-locations" class="toc-h2 toc-link" data-title="Searchable Locations">Searchable Locations</a>
                   </li>
                   <li>
                     <a href="#deal-types" class="toc-h2 toc-link" data-title="Deal Types">Deal Types</a>
                   </li>
                   <li>
-                    <a href="#tags-2" class="toc-h2 toc-link" data-title="Tags">Tags</a>
+                    <a href="#tags-3" class="toc-h2 toc-link" data-title="Tags">Tags</a>
                   </li>
               </ul>
           </li>
@@ -639,7 +659,7 @@
                     <a href="#investor-regions" class="toc-h2 toc-link" data-title="Investor Regions">Investor Regions</a>
                   </li>
                   <li>
-                    <a href="#tags-3" class="toc-h2 toc-link" data-title="Tags">Tags</a>
+                    <a href="#tags-4" class="toc-h2 toc-link" data-title="Tags">Tags</a>
                   </li>
                   <li>
                     <a href="#investors" class="toc-h2 toc-link" data-title="Investors">Investors</a>
@@ -3240,6 +3260,408 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
+<h1 id='infrastructure-project-details-system-2-0'>Infrastructure Project Details System 2.0</h1>
+<blockquote>
+<p>To get the details of an infrastructure project, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/infrastructure-projects/396'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested infrastructure project, with the format specified at section <a href="#infrastructure-project">Infrastructure Project</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-09-08T03:30:14.71"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-29T10:48:05.189037"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rice Creek Solar – Origis Energy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-16T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Rice Creek Solar Project in Putnam County, Florida, is a 75 MW AC ground-mounted photovoltaic facility designed to provide renewable electricity to local municipal utilities through the Florida Municipal Power Agency (FMPA). The site consists of approximately 213,000 PV modules installed on single-axis trackers, enabling maximum energy harvest through continuous adjustment to solar angles. Electricity generated as direct current is routed through distributed string inverters, collected via a medium-voltage underground cabling network, and stepped up at an on-site substation for integration into the regional distribution grid. The infrastructure is engineered to deliver stable power output that can supply the equivalent of around 14,000 households annually.</span><span class="se">\n\n</span><span class="s2">Civil works include land grading, foundation preparation for tracker systems, construction of internal access roads, cable trenching, and installation of perimeter fencing. The substation compound integrates transformers, switchgear, and grid interconnection equipment, with a SCADA-based control system to monitor plant performance, detect faults, and manage output dispatch. The site layout is optimized to minimize shading losses while maintaining adequate spacing for maintenance access, with dedicated buffer zones separating the active solar field from surrounding land uses. Operational protocols include vegetation management, stormwater control, and system reliability checks aligned with Florida’s regulatory framework.</span><span class="se">\n\n</span><span class="s2">Beyond headline capacity, the project is designed to contribute consistent solar generation to local municipal utilities, providing mid-day peak support while reducing reliance on fossil-fired resources. Its integration within the municipal grid structure ensures direct delivery to participating communities without the need for long-distance transmission expansion. While the facility does not currently include battery energy storage, its infrastructure has been designed to allow potential hybridization with storage systems in the future, enabling further grid balancing and resilience.</span><span class="se">\n\n</span><span class="s2">Origis Energy serves as project developer, EPC manager, and long-term operator. The company oversees permitting, engineering design, procurement of solar modules and trackers, construction management, and eventual operation and maintenance services. Project participants further include specialized engineering and environmental consultants responsible for geotechnical surveys, interconnection studies, and permitting compliance. This coordinated delivery structure ensures that the Rice Creek Solar Project is integrated seamlessly into the municipal grid, aligning its technical performance with the operational requirements of Florida’s local power agencies."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rice Creek Solar"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"foak"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"announcedYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2024</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75 MWac of solar power generation"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">207000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">207000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFundingEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">191217957</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vansh_chhaparia"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Operating"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"searchableLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Palatka"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cityAsciiName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Palatka"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"adminID4"</span><span class="p">:</span><span class="w"> </span><span class="mi">3131</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"adminName4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florida"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">943021</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Origis Energy"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1723941.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">101015</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project Developer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"infrastructureProjectRole2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tech Developer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">669</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wanzek"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1968045.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">210611</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other Project Participant"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">670</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mitsubishi UFJ Financial Group"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_296823.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">6688</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">202572</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U.S. Bank"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_48232.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">21805</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">202573</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Energy"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The energy sector includes innovations that are in the business of producing or supplying energy such as renewables.</span><span class="se">\n\n</span><span class="s2">Within the scope of this climate change challenge are targeted emissions produced by energy systems, namely what concerns the production, conversion, distribution and consumption of energy. </span><span class="se">\n\n</span><span class="s2">Solutions to mitigate climate change and to adapt to its effects in this challenge include energy management systems, batteries, biofuels, CHP, electromechanical storage, biomass, heat recovery, hydrogen, kinetic energy, energy monitoring and metering, utilities and others."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isCustomCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isCustomMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isUmbrella"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVisibleCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVisibleMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGrouping"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isAdvancedFilters"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"challenge"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"synonyms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"rawSearches"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">354</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Industry"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Industry includes sectors of the economy that mainly produce capital goods to be used in manufacturing.</span><span class="se">\n\n</span><span class="s2">The scope of this challenge includes the manufacturing of petrochemicals and plastics, electrical and electronics, textile &amp; fashion, chemicals, heavy machinery and equipment, pharmaceuticals among other sectors of the economy.</span><span class="se">\n\n</span><span class="s2">Solutions to mitigate climate change and to adapt to its effects in this challenge include electrical equipment manufacturing, industrial efficiency software, automated manufacturing processes, 3D printing and others.</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isCustomCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isCustomMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isUmbrella"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVisibleCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVisibleMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGrouping"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isAdvancedFilters"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"challenge"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"synonyms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"rawSearches"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">396</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get the infrastructure project information, you should use the following endpoint:</p>
+
+<p><code>GET /infrastructure-projects/{infrastructureProjectID}</code></p>
+
+<p>It takes a single parameter, indicated as “infrastructureProjectID” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
+<h2 id='connected-entities-2'>Connected Entities</h2>
+<blockquote>
+<p>To get all the connected entities of an infrastructure project, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/infrastructure-projects/connected-entities/396/TECH_DEVELOPER'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Origis Energy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1723941.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">101015</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project Developer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"infrastructureProjectRole2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tech Developer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">669</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get the connected entities of an infrastructure project, you should use the following endpoint:</p>
+
+<p><code>GET /infrastructure-projects/connected-entities/{infrastructureProjectID}/{role}</code></p>
+
+<p>It takes two parameters, indicated as “infrastructureProjectID” and “role” from <a href="#infrastructure-project-roles">Infrastructure Project Roles</a> in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
+<h2 id='tags-2'>Tags</h2>
+<blockquote>
+<p>To get all the tags of connected entities of an infrastructure project, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/infrastructure-projects/connected-entities/tags/396'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hydrogen"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hydrogen is a energy carrier poised to revolutionize various industries. Its applications span across clean transportation, industrial processes, and energy storage. Hydrogen holds significance due to its potential to decarbonize sectors traditionally reliant on fossil fuels. It can be used to power fuel cell electric vehicles, store excess renewable energy, and replace carbon-intensive processes in manufacturing and agriculture."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isCustomCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isCustomMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isUmbrella"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isVisibleCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isVisibleMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isGrouping"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isAdvancedFilters"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"solution"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"synonyms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"rawSearches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-04T16:58:52.93"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">companyInclude</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">tagIDs</span><span class="se">\"</span><span class="s2">:[212]},</span><span class="se">\"</span><span class="s2">companyExclude</span><span class="se">\"</span><span class="s2">:{},</span><span class="se">\"</span><span class="s2">investorInclude</span><span class="se">\"</span><span class="s2">:{},</span><span class="se">\"</span><span class="s2">investorExclude</span><span class="se">\"</span><span class="s2">:{},</span><span class="se">\"</span><span class="s2">dealInclude</span><span class="se">\"</span><span class="s2">:{},</span><span class="se">\"</span><span class="s2">dealExclude</span><span class="se">\"</span><span class="s2">:{},</span><span class="se">\"</span><span class="s2">forScheduledSavedSearchEmail</span><span class="se">\"</span><span class="s2">:false,</span><span class="se">\"</span><span class="s2">sortDirection</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">ASC</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">dealSortDirection</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">DESC</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">companySortField</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">PLATFORM_ORDER</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">investorSortField</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">PLATFORM_ORDER</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">dealSortField</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">DEAL_DATE</span><span class="se">\"</span><span class="s2">}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"strong"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9079</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">212</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the tags of connected entities of an infrastructure project, you should use the following endpoint:</p>
+
+<p><code>GET /infrastructure-projects/connected-entities/tags/{infrastructureProjectID}</code></p>
+
+<p>It takes a single parameter, indicated as “infrastructureProjectID” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
+<h2 id='news-2'>News</h2>
+<blockquote>
+<p>To get all the news of an infrastructure project, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/infrastructure-projects/news/396'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mercomcapital.com/origis-energy-secures-71-million-tax-equity-financing/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Origis Energy Secures $71 Million Tax Equity Financing"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Origis Energy Secures $71 Million Tax Equity Financing</span><span class="se">\n</span><span class="s2">The 75 MW solar project in Florida is near completion</span><span class="se">\n</span><span class="s2">August 12, 2024  Staff  Solar</span><span class="se">\n</span><span class="s2">project finance brief</span><span class="se">\n</span><span class="s2">Origis Energy, the provider of a vertically integrated renewable energy platform and a solar project developer, announced the close of $71 million in tax equity financing for the development of the 75 MW Rice Creek Solar project in Florida.</span><span class="se">\n\n</span><span class="s2">The tax equity financing was secured from U.S. Bank subsidiary U.S. Bancorp Impact Finance, a renewable energy investor. The Rice Creek Solar project is located in Putnam County, Florida, and it is contracted with the Florida Municipal Power Agency (FMPA) for 12 of its participating member municipal utilities.</span><span class="se">\n\n</span><span class="s2">Rice Creek Solar Project is the third solar site in the Florida Municipal Solar Project. It comprises 213,000 solar panels generating enough clean power for approximately 14,000 homes, according to Origis Energy.</span><span class="se">\n\n</span><span class="s2">“U.S. Bank’s expertise and commitment to the renewable energy market is helping us realize our large solar portfolio. Rice Creek is another example of their support empowering us to scale effectively and bring clean energy projects online,” said Vikas Anand, Chief Executive Officer of Origis Energy. “We applaud FMPA for adding more cost-effective energy resources to meet the growing electricity demand of millions of Floridians, and U.S. Bank for supporting the project.”</span><span class="se">\n\n</span><span class="s2">Latham &amp; Watkins represented Origis Energy in the transaction, with Akerman serving as Local Counsel. Sheppard Mullin acted as U.S. Bank’s Counsel, with Balch &amp; Bingham serving as Local Counsel.</span><span class="se">\n\n</span><span class="s2">According to Mercom’s 1H and Q2 2024 Solar Funding and M&amp;A report, large-scale project funding in 1H 2024 came to $19.9 billion in 117 deals compared to $14.9 billion in 113 deals in 1H 2023.</span><span class="se">\n\n</span><span class="s2">This week, Matrix Renewables, a global renewable energy company, signed a €50 million (~$54.74 million) green loan with the European Investment Bank (EIB) to support the development and construction of five solar projects located in Castilla y Leon and Extremadura, Spain. The projects have a total installed capacity of 240 MW."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-08-12T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"infrastructureProject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-09-08T03:30:14.71"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-29T10:48:05.189037"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rice Creek Solar – Origis Energy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-16T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Rice Creek Solar Project in Putnam County, Florida, is a 75 MW AC ground-mounted photovoltaic facility designed to provide renewable electricity to local municipal utilities through the Florida Municipal Power Agency (FMPA). The site consists of approximately 213,000 PV modules installed on single-axis trackers, enabling maximum energy harvest through continuous adjustment to solar angles. Electricity generated as direct current is routed through distributed string inverters, collected via a medium-voltage underground cabling network, and stepped up at an on-site substation for integration into the regional distribution grid. The infrastructure is engineered to deliver stable power output that can supply the equivalent of around 14,000 households annually.</span><span class="se">\n\n</span><span class="s2">Civil works include land grading, foundation preparation for tracker systems, construction of internal access roads, cable trenching, and installation of perimeter fencing. The substation compound integrates transformers, switchgear, and grid interconnection equipment, with a SCADA-based control system to monitor plant performance, detect faults, and manage output dispatch. The site layout is optimized to minimize shading losses while maintaining adequate spacing for maintenance access, with dedicated buffer zones separating the active solar field from surrounding land uses. Operational protocols include vegetation management, stormwater control, and system reliability checks aligned with Florida’s regulatory framework.</span><span class="se">\n\n</span><span class="s2">Beyond headline capacity, the project is designed to contribute consistent solar generation to local municipal utilities, providing mid-day peak support while reducing reliance on fossil-fired resources. Its integration within the municipal grid structure ensures direct delivery to participating communities without the need for long-distance transmission expansion. While the facility does not currently include battery energy storage, its infrastructure has been designed to allow potential hybridization with storage systems in the future, enabling further grid balancing and resilience.</span><span class="se">\n\n</span><span class="s2">Origis Energy serves as project developer, EPC manager, and long-term operator. The company oversees permitting, engineering design, procurement of solar modules and trackers, construction management, and eventual operation and maintenance services. Project participants further include specialized engineering and environmental consultants responsible for geotechnical surveys, interconnection studies, and permitting compliance. This coordinated delivery structure ensures that the Rice Creek Solar Project is integrated seamlessly into the municipal grid, aligning its technical performance with the operational requirements of Florida’s local power agencies."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rice Creek Solar"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foak"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"announcedYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2024</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75 MWac of solar power generation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">207000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">207000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFundingEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">191217957</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vansh_chhaparia"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Operating"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">396</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">896</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the news of an infrastructure project, you should use the following endpoint:</p>
+
+<p><code>GET /infrastructure-projects/news/{infrastructureProjectID}</code></p>
+
+<p>It takes a single parameter, indicated as “infrastructureProjectID” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
 <h1 id='filters-structure-system-2-0'>Filters structure System 2.0</h1><h2 id='company-sort-fields'>Company Sort Fields</h2>
 <p>The following sort fields are supported for the listing endpoints. If no <strong>sortField</strong> is specified as a query parameter, the results are sorted by <strong>PLATFORM_ORDER</strong> by default.</p>
 
@@ -4513,6 +4935,154 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Default platform order of the tag</td>
 </tr>
 </tbody></table>
+<h2 id='infrastructure-project'>Infrastructure Project</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Internal infrastructure project ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Name of the infrastructure project</td>
+</tr>
+<tr>
+<td>acquisitionDate</td>
+<td>Date when the project was inserted in the database</td>
+</tr>
+<tr>
+<td>updateDate</td>
+<td>Date when the project was last updated</td>
+</tr>
+<tr>
+<td>announcedDate</td>
+<td>Date when the project was announced</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Detailed description of the infrastructure project</td>
+</tr>
+<tr>
+<td>shortName</td>
+<td>Short name or abbreviation of the project</td>
+</tr>
+<tr>
+<td>foak</td>
+<td>Indicates whether the project is a First-of-a-Kind (FOAK) project</td>
+</tr>
+<tr>
+<td>announcedYear</td>
+<td>Year when the project was announced</td>
+</tr>
+<tr>
+<td>constructionStartYear</td>
+<td>Year when construction is scheduled to start or started</td>
+</tr>
+<tr>
+<td>operationStartYear</td>
+<td>Year when the project is scheduled to begin or began operations</td>
+</tr>
+<tr>
+<td>decommissionYear</td>
+<td>Year when the project is scheduled to be or was decommissioned</td>
+</tr>
+<tr>
+<td>cancellationYear</td>
+<td>Year when the project was cancelled</td>
+</tr>
+<tr>
+<td>lifespan</td>
+<td>Expected or planned operational lifespan of the project</td>
+</tr>
+<tr>
+<td>capacity</td>
+<td>Capacity of the infrastructure project</td>
+</tr>
+<tr>
+<td>specialPurposeVehicle</td>
+<td>Special Purpose Vehicle (SPV) associated with the project</td>
+</tr>
+<tr>
+<td>costCurrency</td>
+<td>Currency of the project cost</td>
+</tr>
+<tr>
+<td>cost</td>
+<td>Project cost in the original currency</td>
+</tr>
+<tr>
+<td>costUSD</td>
+<td>Project cost in USD</td>
+</tr>
+<tr>
+<td>costEUR</td>
+<td>Project cost in EUR</td>
+</tr>
+<tr>
+<td>totalValueDate</td>
+<td>Date associated with the total project value</td>
+</tr>
+<tr>
+<td>totalValueCurrency</td>
+<td>Currency of the total project value</td>
+</tr>
+<tr>
+<td>totalValue</td>
+<td>Total project value in the original currency</td>
+</tr>
+<tr>
+<td>totalValueUSD</td>
+<td>Total project value in USD</td>
+</tr>
+<tr>
+<td>totalValueEUR</td>
+<td>Total project value in EUR</td>
+</tr>
+<tr>
+<td>totalFundingCurrency</td>
+<td>Currency of the total funding</td>
+</tr>
+<tr>
+<td>totalFunding</td>
+<td>Total funding in the original currency</td>
+</tr>
+<tr>
+<td>totalFundingUSD</td>
+<td>Total funding in USD</td>
+</tr>
+<tr>
+<td>totalFundingEUR</td>
+<td>Total funding in EUR</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Source from which the project information was obtained</td>
+</tr>
+<tr>
+<td>trl</td>
+<td>See Section <a href="#trls">TRLs</a> for accepted values</td>
+</tr>
+<tr>
+<td>searchableLocations</td>
+<td>See Section <a href="#searchable-locations">Searchable Locations</a> for accepted values</td>
+</tr>
+<tr>
+<td>connectedCompanies</td>
+<td>Companies connected to the infrastructure project</td>
+</tr>
+<tr>
+<td>connectedInvestors</td>
+<td>Investors connected to the infrastructure project</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>See Section <a href="#tags-2">Tags</a> for accepted values</td>
+</tr>
+</tbody></table>
 <h1 id='additional-tables-system-2-0'>Additional tables System 2.0</h1><h2 id='visibility-statuses'>Visibility Statuses</h2>
 <table><thead>
 <tr>
@@ -4535,6 +5105,28 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>4</td>
 <td>NOT_VISIBLE</td>
+</tr>
+</tbody></table>
+<h2 id='infrastructure-project-roles'>Infrastructure Project Roles</h2>
+<table><thead>
+<tr>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>TECH_DEVELOPER</td>
+</tr>
+<tr>
+<td>PROJECT_DEVELOPER</td>
+</tr>
+<tr>
+<td>INVESTOR</td>
+</tr>
+<tr>
+<td>ADVISOR</td>
+</tr>
+<tr>
+<td>OTHER_PROJECT_PARTICIPANT</td>
 </tr>
 </tbody></table>
 <h2 id='searchable-locations'>Searchable Locations</h2>
@@ -4726,7 +5318,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
-<h2 id='tags-2'>Tags</h2>
+<h2 id='tags-3'>Tags</h2>
 <blockquote>
 <p>To get the list of the currently available tags, use this code:</p>
 </blockquote>
@@ -7602,7 +8194,7 @@ Please note that manually closing a session is not required, since it will be cl
 <td>US Southwest</td>
 </tr>
 </tbody></table>
-<h2 id='tags-3'>Tags</h2>
+<h2 id='tags-4'>Tags</h2>
 <blockquote>
 <p>To get the list of the currently available tags, use this code:</p>
 </blockquote>
