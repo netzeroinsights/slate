@@ -441,10 +441,16 @@
                     <a href="#investor-contact-search" class="toc-h2 toc-link" data-title="Investor Contact Search">Investor Contact Search</a>
                   </li>
                   <li>
+                    <a href="#tag-search" class="toc-h2 toc-link" data-title="Tag Search">Tag Search</a>
+                  </li>
+                  <li>
                     <a href="#company-or-investor-contact" class="toc-h2 toc-link" data-title="Company or Investor Contact">Company or Investor Contact</a>
                   </li>
                   <li>
                     <a href="#company-investor" class="toc-h2 toc-link" data-title="Company Investor">Company Investor</a>
+                  </li>
+                  <li>
+                    <a href="#tag" class="toc-h2 toc-link" data-title="Tag">Tag</a>
                   </li>
               </ul>
           </li>
@@ -452,10 +458,16 @@
             <a href="#additional-tables-system-2-0" class="toc-h1 toc-link" data-title="Additional tables System 2.0">Additional tables System 2.0</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#visibility-statuses" class="toc-h2 toc-link" data-title="Visibility Statuses">Visibility Statuses</a>
+                  </li>
+                  <li>
                     <a href="#searchable-locations" class="toc-h2 toc-link" data-title="Searchable Locations">Searchable Locations</a>
                   </li>
                   <li>
                     <a href="#deal-types" class="toc-h2 toc-link" data-title="Deal Types">Deal Types</a>
+                  </li>
+                  <li>
+                    <a href="#tags-2" class="toc-h2 toc-link" data-title="Tags">Tags</a>
                   </li>
               </ul>
           </li>
@@ -627,7 +639,7 @@
                     <a href="#investor-regions" class="toc-h2 toc-link" data-title="Investor Regions">Investor Regions</a>
                   </li>
                   <li>
-                    <a href="#tags-2" class="toc-h2 toc-link" data-title="Tags">Tags</a>
+                    <a href="#tags-3" class="toc-h2 toc-link" data-title="Tags">Tags</a>
                   </li>
                   <li>
                     <a href="#investors" class="toc-h2 toc-link" data-title="Investors">Investors</a>
@@ -2330,7 +2342,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
 
 <p><code>GET /investors/company/{companyID}</code></p>
 
-<p>It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list-system-2-0">Startup List</a>, variable “companyID”, and has the following response codes:</p>
+<p>It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list-system-2-0">Startup List</a>, variable “id”, and has the following response codes:</p>
 
 <table><thead>
 <tr>
@@ -3589,7 +3601,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>tagIDs</td>
 <td>List of int</td>
-<td>See Section <a href="#tags">Tags</a> for accepted values</td>
+<td>See Section <a href="#tags-2">Tags</a> for accepted values</td>
 </tr>
 <tr>
 <td>wildcards</td>
@@ -4038,7 +4050,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>tagIDs</td>
 <td>List of int</td>
-<td>See Section <a href="#tags">Tags</a> for accepted values</td>
+<td>See Section <a href="#tags-2">Tags</a> for accepted values</td>
 </tr>
 </tbody></table>
 <h2 id='company-contact-filter'>Company Contact Filter</h2>
@@ -4269,6 +4281,38 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Total number of available pages</td>
 </tr>
 </tbody></table>
+<h2 id='tag-search'>Tag Search</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>content</td>
+<td>List of <a href="#tag">Tag</a></td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Number of records returned per page</td>
+</tr>
+<tr>
+<td>pageNumber</td>
+<td>Zero-based index of the current page</td>
+</tr>
+<tr>
+<td>totalElements</td>
+<td>Total number of records matching the query</td>
+</tr>
+<tr>
+<td>numberOfElements</td>
+<td>Number of records returned in the current page</td>
+</tr>
+<tr>
+<td>totalPages</td>
+<td>Total number of available pages</td>
+</tr>
+</tbody></table>
 <h2 id='company-or-investor-contact'>Company or Investor Contact</h2>
 <table><thead>
 <tr>
@@ -4389,7 +4433,111 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>List of <a href="#fund">Funds</a></td>
 </tr>
 </tbody></table>
-<h1 id='additional-tables-system-2-0'>Additional tables System 2.0</h1><h2 id='searchable-locations'>Searchable Locations</h2>
+<h2 id='tag'>Tag</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>label</td>
+<td>Display name of the tag</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>visibilityStatus</td>
+<td>See Section <a href="#visibility-statuses">Visibility Statuses</a> for accepted values</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Description of the tag</td>
+</tr>
+<tr>
+<td>isCustomCompany</td>
+<td>Indicates whether the tag is a custom company tag</td>
+</tr>
+<tr>
+<td>isCustomMap</td>
+<td>Indicates whether the tag is a custom map tag</td>
+</tr>
+<tr>
+<td>isUmbrella</td>
+<td>Indicates whether the tag is an umbrella tag</td>
+</tr>
+<tr>
+<td>isVisibleCompany</td>
+<td>Indicates whether the tag is visible for companies</td>
+</tr>
+<tr>
+<td>isVisibleMap</td>
+<td>Indicates whether the tag is visible map tag</td>
+</tr>
+<tr>
+<td>isSearchable</td>
+<td>Indicates whether the tag can be used in searches</td>
+</tr>
+<tr>
+<td>isGrouping</td>
+<td>Indicates whether the tag is used for grouping</td>
+</tr>
+<tr>
+<td>isAdvancedFilters</td>
+<td>Indicates whether the tag can be used in advanced filters</td>
+</tr>
+<tr>
+<td>tagType</td>
+<td>Type of the tag</td>
+</tr>
+<tr>
+<td>userIDs</td>
+<td>IDs of users associated with the tag if the tag is custom</td>
+</tr>
+<tr>
+<td>synonyms</td>
+<td>List of synonyms associated with the tag</td>
+</tr>
+<tr>
+<td>rawSearches</td>
+<td>List of raw search terms associated with the tag</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Source from which the tag information was obtained</td>
+</tr>
+<tr>
+<td>platformOrder</td>
+<td>Default platform order of the tag</td>
+</tr>
+</tbody></table>
+<h1 id='additional-tables-system-2-0'>Additional tables System 2.0</h1><h2 id='visibility-statuses'>Visibility Statuses</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>ALL</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ADMINS_ONLY</td>
+</tr>
+<tr>
+<td>3</td>
+<td>HIDDEN</td>
+</tr>
+<tr>
+<td>4</td>
+<td>NOT_VISIBLE</td>
+</tr>
+</tbody></table>
+<h2 id='searchable-locations'>Searchable Locations</h2>
 <blockquote>
 <p>To get searchable locations, use this code:</p>
 </blockquote>
@@ -4562,6 +4710,128 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <p><code>GET /deals/types</code></p>
 
 <p>It takes no parameter and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
+<h2 id='tags-2'>Tags</h2>
+<blockquote>
+<p>To get the list of the currently available tags, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/tags?pageSize=2&amp;pageNumber=0&amp;name=energy'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the available tags, with the format specified at section <a href="#tag-search">Tag Search</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Energy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The energy sector includes innovations that are in the business of producing or supplying energy such as renewables.</span><span class="se">\n\n</span><span class="s2">Within the scope of this climate change challenge are targeted emissions produced by energy systems, namely what concerns the production, conversion, distribution and consumption of energy. </span><span class="se">\n\n</span><span class="s2">Solutions to mitigate climate change and to adapt to its effects in this challenge include energy management systems, batteries, biofuels, CHP, electromechanical storage, biomass, heat recovery, hydrogen, kinetic energy, energy monitoring and metering, utilities and others."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCustomCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCustomMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isUmbrella"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isVisibleCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isVisibleMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isGrouping"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isAdvancedFilters"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"challenge"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"synonyms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"rawSearches"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">354</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"waste to energy unused"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT_VISIBLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"isCustomCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCustomMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isUmbrella"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isVisibleCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isVisibleMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isGrouping"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isAdvancedFilters"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tagType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buzzword"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tagFamily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solutions"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"synonyms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"rawSearches"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">268</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">134</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get the list of the currently available tags, you should use the following endpoint:</p>
+
+<p><code>GET /tags?pageSize={pageSize}&amp;pageNumber={pageNumber}&amp;name={name}</code></p>
+
+<p>With the following optional query parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pageNumber</td>
+<td>Zero-based page number to retrieve (by default 0)</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Number of records to return per page (by default 15)</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String param used to filter tags by name</td>
+</tr>
+</tbody></table>
+
+<p>The possible response codes are:</p>
 
 <table><thead>
 <tr>
@@ -5052,9 +5322,9 @@ Please note that manually closing a session is not required, since it will be cl
 </span></code></pre></div>
 <p>To get all the investors of a startup, you should use the following endpoint:</p>
 
-<p><code>GET /investors/[clientID]</code></p>
+<p><code>GET /investors/{clientID}</code></p>
 
-<p>It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list">Startup List</a>, variable ”clientID”, and has the following response codes:</p>
+<p>It takes a single parameter, indicated as “clientID” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list-system-1-0">Startup List</a>, variable “clientID”, and has the following response codes:</p>
 
 <table><thead>
 <tr>
@@ -5784,7 +6054,7 @@ Please note that manually closing a session is not required, since it will be cl
 
 <p><code>POST /getFundingRoundList</code> was replaced with <code>POST /fundingRounds</code> and it&#39;ll will no longer be supported after 1st of August</p>
 <h1 id='filters-structure'>Filters structure</h1><h2 id='main-filter'>Main Filter</h2>
-<p>This is the main filter used when searching for startups. It contains two simple fields (”offset” and ”limit”) and some complex ones (i.e.: ”include”, ”sorting”) defined further in this document.</p>
+<p>This is the main filter used when searching for startups. It contains two simple fields (“offset” and “limit”) and some complex ones (i.e.: ”include”, ”sorting”) defined further in this document.</p>
 
 <table><thead>
 <tr>
@@ -7332,12 +7602,12 @@ Please note that manually closing a session is not required, since it will be cl
 <td>US Southwest</td>
 </tr>
 </tbody></table>
-<h2 id='tags-2'>Tags</h2>
+<h2 id='tags-3'>Tags</h2>
 <blockquote>
 <p>To get the list of the currently available tags, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/tags'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/taxonomy/tags"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s1">'{"name": "bio", "offset": 0, "limit": 5}'</span>
 </code></pre></div>
 <blockquote>
@@ -8808,13 +9078,13 @@ Please note that manually closing a session is not required, since it will be cl
 </tr>
 </tbody></table>
 <h1 id='taxonomy-page'>Taxonomy Page</h1>
-<p>Our taxonomy is a way to visualise the relation between different topics.</p>
+<p>Our taxonomy is a way to visualize the relation between different topics.</p>
 <h2 id='all-taxonomy-items'>All Taxonomy Items</h2>
 <blockquote>
 <p>To get all Taxonomy Graph Items, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/itemDtos'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/itemDtos'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -8837,7 +9107,7 @@ Please note that manually closing a session is not required, since it will be cl
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>To get all the taxonomy items you should use the following endpoint:</p>
+<p>To get all the taxonomy items, you should use the following endpoint:</p>
 
 <p><code>GET /taxonomy/itemDtos</code></p>
 
@@ -8858,8 +9128,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get Taxonomy Graph Item list without any parents (which means they are the top level of our taxonomy), use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/graph'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -8886,7 +9156,7 @@ Please note that manually closing a session is not required, since it will be cl
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>To get all the level 0 taxonomy items you should use the following endpoint:</p>
+<p>To get all the level 0 taxonomy items, you should use the following endpoint:</p>
 
 <p><code>GET /taxonomy/graph</code></p>
 
@@ -8909,15 +9179,15 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the list of children Taxonomy Graph Items of a parent item, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/graph/Biofuel'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/Biofuel'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
 <p>Or</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/graph/2'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/2'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -8961,8 +9231,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get Top Companies of a Taxonomy Graph Item, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/graph/topCompanies/1783'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/topCompanies/1783'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -9040,7 +9310,7 @@ Please note that manually closing a session is not required, since it will be cl
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>To get the top companies of a taxonomy item you should use the following endpoint:</p>
+<p>To get the top companies of a taxonomy item, you should use the following endpoint:</p>
 
 <p><code>GET /taxonomy/graph/topCompanies/{itemID}</code></p>
 
@@ -9063,8 +9333,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get Top Investors of a Taxonomy Graph Item, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/graph/topInvestors/2'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/graph/topInvestors/2'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -9103,7 +9373,7 @@ Please note that manually closing a session is not required, since it will be cl
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>To get the top investors of a taxonomy item you should use the following endpoint:</p>
+<p>To get the top investors of a taxonomy item, you should use the following endpoint:</p>
 
 <p><code>GET /taxonomy/graph/topInvestors/{itemID}</code></p>
 
@@ -9126,15 +9396,15 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get a Taxonomy Graph Item by parameter, ID, or label, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/item/2'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/item/2'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
 <p>Or</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/item/Biofuel'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/item/Biofuel'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -9170,8 +9440,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the Taxonomy Graph Items by company, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/items/company/10'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/items/company/10'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -9235,7 +9505,7 @@ Please note that manually closing a session is not required, since it will be cl
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>To get the taxonomy items of the company you should use the following endpoint:</p>
+<p>To get the taxonomy items of the company, you should use the following endpoint:</p>
 
 <p><code>GET /taxonomy/items/company/{clientID}</code></p>
 
@@ -9258,8 +9528,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get Taxonomy Graph Item Relation list by parentID, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/relations/parent/1'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/relations/parent/1'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -9282,7 +9552,7 @@ Please note that manually closing a session is not required, since it will be cl
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>To get all the parent-children relations of a taxonomy item you should use the following endpoint:</p>
+<p>To get all the parent-child relations of a taxonomy item, you should use the following endpoint:</p>
 
 <p><code>GET /relations/parent/{itemID}</code></p>
 
@@ -9305,8 +9575,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get Taxonomy Graph Item Relation list by childID, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/taxonomy/relations/child/24'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s1">'https://api.netzeroinsights.com/taxonomy/relations/child/24'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
 </code></pre></div>
 <blockquote>
@@ -9322,7 +9592,7 @@ Please note that manually closing a session is not required, since it will be cl
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>To get all the child-parents relations of a taxonomy item you should use the following endpoint:</p>
+<p>To get all the child-parent relations of a taxonomy item, you should use the following endpoint:</p>
 
 <p><code>GET /relations/child/{itemID}</code></p>
 
