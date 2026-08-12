@@ -1368,6 +1368,96 @@ It takes a single parameter, indicated as “companyID” in the example, which 
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
 
+## Company Investors
+
+> To get all the investors of a company, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/investors/company/57352'
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain the requested investors, with the format specified at section [Company Investor](#company-investor).
+
+```json
+[
+  {
+    "name": "U.S. Department Of Energy (DOE)",
+    "id": 6731,
+    "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_503860.jpg",
+    "firstDealDate": "2021-06-28T00:00:00",
+    "dealTypes": [
+      {
+        "label": "Grant",
+        "filterable": false,
+        "assignable": true,
+        "id": 79
+      }
+    ],
+    "primaryTypes": [
+      {
+        "label": "Government",
+        "id": 41
+      }
+    ],
+    "isStrategic": false,
+    "isFinancial": true,
+    "isVenture": false,
+    "isGrowth": false,
+    "isInfrastructure": false,
+    "isBuyout": false,
+    "funds": [
+      {
+        "name": "Puerto Rico Energy Resilience Fund (PR-ERF)",
+        "thesis": {
+          "label": "Impact",
+          "description": "Refers to investments that seek both financial returns and positive social or environmental outcomes. Impact investors typically focus on issues such as social equality, environmental sustainability, and community development. Climate investing, due to its environmental focus, is often considered part of the broader Impact investing thesis.",
+          "id": 3
+        },
+        "type": {
+          "label": "Venture Early",
+          "description": "Early-stage venture funds focus on companies that have a developed product or service and are seeking capital to scale operations. These funds typically participate in Series A and Series B rounds, helping startups grow their teams, acquire customers, and refine their business models.",
+          "id": 2
+        },
+        "instrument": {
+          "label": "Undisclosed",
+          "description": "This refers to funds where the specific investment instrument, whether equity, debt, or a combination, has not been made public or specified.",
+          "id": 4
+        },
+        "startDate": "2023-02-21T07:45:00",
+        "targetSizeCurrency": "USD",
+        "totalCapitalRaised": 1000000000.00,
+        "totalCapitalRaisedUSD": 1000000000.00,
+        "totalCapitalRaisedEUR": 895829000.00,
+        "totalCapitalRaisedCurrency": "USD",
+        "deployedCapitalCurrency": "USD",
+        "realisedValueCurrency": "USD",
+        "unrealisedValueCurrency": "USD",
+        "managers": [
+          {
+            "name": "U.S. Department Of Energy (DOE)",
+            "id": 6731
+          }
+        ],
+        "source": "soheni_das",
+        "id": 2686
+      }
+    ]
+  }
+]
+```
+
+To get all the investors of a company, you should use the following endpoint:
+
+`GET /investors/company/{companyID}`
+
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-2-0), variable “companyID”, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+
 ## Company Contacts
 
 > To get all the contacts of a company, use this code:
@@ -2450,6 +2540,7 @@ This is the commercial deal filter used when searching for commercial deals.
 | totalPages       | Total number of available pages                 |
 
 ## Company or Investor Contact
+
 | Name               | Content                                                |
 |--------------------|--------------------------------------------------------|
 | name               | Contact’s first name                                   |
@@ -2465,6 +2556,24 @@ This is the commercial deal filter used when searching for commercial deals.
 | source             | Source from which the contact information was obtained |
 | departments        | List of [Contact Departments](#role)                   |
 | id                 | Internal ID                                            |
+
+## Company Investor
+
+| Name             | Content                                                      |
+|------------------|--------------------------------------------------------------|
+| name             | Name of the investor                                         |
+| id               | Internal ID                                                  |
+| logoUrl          | URL of the investor’s logo                                   |
+| firstDealDate    | Date of the investor’s first deal with the company           |
+| dealTypes        | List of deal types associated with the investor              |
+| primaryTypes     | List of the investor’s primary types                         |
+| isStrategic      | Indicates whether the investor is strategic                  |
+| isFinancial      | Indicates whether the investor is a financial investor       |
+| isVenture        | Indicates whether the investor is a venture investor         |
+| isGrowth         | Indicates whether the investor is a growth investor          |
+| isInfrastructure | Indicates whether the investor is an infrastructure investor |
+| isBuyout         | Indicates whether the investor is a buyout investor          |
+| funds            | List of [Funds](#fund)                                       |
 
 # Additional tables System 2.0
 
@@ -3047,8 +3156,8 @@ It takes a single parameter, indicated as ”[clientID]” in the example, which
 > To get all the investors of a startup, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/investors/668'
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET "https://api.netzeroinsights.com/investors/668"
 ```
 
 > In case of a 200 response, the response body will contain the requested investors, with the format specified at section [Investor](#investor-core).
