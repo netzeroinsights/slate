@@ -448,6 +448,9 @@
                   <li>
                     <a href="#searchable-locations" class="toc-h2 toc-link" data-title="Searchable Locations">Searchable Locations</a>
                   </li>
+                  <li>
+                    <a href="#deal-types" class="toc-h2 toc-link" data-title="Deal Types">Deal Types</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -772,7 +775,7 @@
 </tbody></table>
 <h1 id='security-system-2-0'>Security System 2.0</h1><h2 id='login'>Login</h2>
 <blockquote>
-<p>To login, use this code:</p>
+<p>To log in, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/auth/login?email={YOUR_EMAIL}&amp;password={YOUR_PASSWORD}'</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s1">''</span> 
@@ -838,7 +841,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
 </aside>
 <h2 id='logout'>Logout</h2>
 <blockquote>
-<p>To logout, use this code:</p>
+<p>To log out, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/auth/logout'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
@@ -851,7 +854,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
 
 <p><code>GET /auth/logout</code></p>
 
-<p>It takes no parameter, and has the following response code:</p>
+<p>It takes no parameter and has the following response code:</p>
 
 <table><thead>
 <tr>
@@ -3642,7 +3645,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>typeIDs</td>
 <td>List of int</td>
-<td>See Section <a href="#deal-type">Deal Type</a> for the accepted values</td>
+<td>See Section <a href="#deal-types">Deal Type</a> for the accepted values</td>
 </tr>
 <tr>
 <td>investorIDs</td>
@@ -4354,9 +4357,67 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Resource not found</td>
 </tr>
 </tbody></table>
+<h2 id='deal-types'>Deal Types</h2>
+<blockquote>
+<p>To get the list of the currently available deal types, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/deals/types'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain all the available funding types, with the JSON structured like the following:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accelerator/incubator"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acquisition"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">66</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Convertible note"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Corporate"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">71</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the list of the currently available funding types, you should use the following endpoint:</p>
+
+<p><code>GET /deals/types</code></p>
+
+<p>It takes no parameter and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
 <h1 id='security-system-1-0'>Security System 1.0</h1><h2 id='login-2'>Login</h2>
 <blockquote>
-<p>To login, use this code:</p>
+<p>To log in, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/security/formLogin"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> <span class="se">\</span>
@@ -4417,7 +4478,7 @@ You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 </aside>
 <h2 id='logout-2'>Logout</h2>
 <blockquote>
-<p>To logout, use this code:</p>
+<p>To log out, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s2">"JSESSIONID=EXAMPLE_SESSION_ID"</span> <span class="se">\</span>
  <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/security/logout"</span>
@@ -4430,7 +4491,7 @@ You must replace <code>EXAMPLE_SESSION_ID</code> with your **Session Cookie**.
 
 <p><code>GET /security/logout</code></p>
 
-<p>It takes no parameter, and has the following response code:</p>
+<p>It takes no parameter and has the following response code:</p>
 
 <table><thead>
 <tr>
@@ -4747,8 +4808,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get a startup overview and taxonomy, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/patents/668'</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/patents/668"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested patents, with the format specified at section <a href="#patent">Patent</a>.</p>
@@ -4898,7 +4959,7 @@ Please note that manually closing a session is not required, since it will be cl
 <p>To get all the funding rounds of a startup, use this code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
-<span class="nt">-X</span> GET https://api.netzeroinsights.com/fundingRoundsPrints/668
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/fundingRoundsPrints/668"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested funding rounds, with the format specified at section <a href="#funding-round">Funding Round</a>.</p>
@@ -4965,8 +5026,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the investors of a given set of funding rounds, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/getFundingRoundInvestors'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="s2">"https://api.netzeroinsights.com/getFundingRoundInvestors"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s2">"{[86971]}"</span>
 </code></pre></div>
@@ -5015,11 +5076,11 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the sources of a specific funding round, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/roundNewsByRoundID/86971'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+ <span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/roundNewsByRoundID/86971"</span>
 </code></pre></div>
 <blockquote>
-<p>In case of a 200 response, the response body will contain all the sources of a funding rounds, with the format specified at section <a href="#funding-round-source">Funding round source</a>.</p>
+<p>In case of a 200 response, the response body will contain all the sources of a funding round, with the format specified at section <a href="#funding-round-source">Funding round source</a>.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -7183,8 +7244,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the list of the currently available investors, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/getInvestorsForFilter'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getInvestorsForFilter"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the available investors, with the JSON structured like the following:</p>
@@ -7206,7 +7267,7 @@ Please note that manually closing a session is not required, since it will be cl
 
 <p><code>GET /getInvestorsForFilter</code></p>
 
-<p>It takes no parameter, and has the following response codes:</p>
+<p>It takes no parameter and has the following response codes:</p>
 
 <table><thead>
 <tr>
@@ -7223,8 +7284,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get the list of the currently available funding types, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/getFundingTypes'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/getFundingTypes"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain all the available funding types, with the JSON structured like the following:</p>
@@ -7244,7 +7305,7 @@ Please note that manually closing a session is not required, since it will be cl
 
 <p><code>GET /getFundingTypes</code></p>
 
-<p>It takes no parameter, and has the following response codes:</p>
+<p>It takes no parameter and has the following response codes:</p>
 
 <table><thead>
 <tr>
