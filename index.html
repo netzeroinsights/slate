@@ -349,6 +349,9 @@
                     <a href="#company-deals" class="toc-h2 toc-link" data-title="Company Deals">Company Deals</a>
                   </li>
                   <li>
+                    <a href="#company-investors" class="toc-h2 toc-link" data-title="Company Investors">Company Investors</a>
+                  </li>
+                  <li>
                     <a href="#company-contacts" class="toc-h2 toc-link" data-title="Company Contacts">Company Contacts</a>
                   </li>
                   <li>
@@ -439,6 +442,9 @@
                   </li>
                   <li>
                     <a href="#company-or-investor-contact" class="toc-h2 toc-link" data-title="Company or Investor Contact">Company or Investor Contact</a>
+                  </li>
+                  <li>
+                    <a href="#company-investor" class="toc-h2 toc-link" data-title="Company Investor">Company Investor</a>
                   </li>
               </ul>
           </li>
@@ -2228,6 +2234,103 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <p><code>GET /deals/company/{companyID}</code></p>
 
 <p>It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list-system-20">Startup List</a>, variable “id”, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
+<h2 id='company-investors'>Company Investors</h2>
+<blockquote>
+<p>To get all the investors of a company, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/investors/company/57352'</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested investors, with the format specified at section <a href="#company-investor">Company Investor</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U.S. Department Of Energy (DOE)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6731</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_503860.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"firstDealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-06-28T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dealTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grant"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"primaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Government"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isStrategic"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isFinancial"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isVenture"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isGrowth"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isInfrastructure"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isBuyout"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"funds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puerto Rico Energy Resilience Fund (PR-ERF)"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"thesis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Impact"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Refers to investments that seek both financial returns and positive social or environmental outcomes. Impact investors typically focus on issues such as social equality, environmental sustainability, and community development. Climate investing, due to its environmental focus, is often considered part of the broader Impact investing thesis."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Early"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Early-stage venture funds focus on companies that have a developed product or service and are seeking capital to scale operations. These funds typically participate in Series A and Series B rounds, helping startups grow their teams, acquire customers, and refine their business models."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"instrument"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Undisclosed"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This refers to funds where the specific investment instrument, whether equity, debt, or a combination, has not been made public or specified."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-02-21T07:45:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"targetSizeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalCapitalRaised"</span><span class="p">:</span><span class="w"> </span><span class="mf">1000000000.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalCapitalRaisedUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">1000000000.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalCapitalRaisedEUR"</span><span class="p">:</span><span class="w"> </span><span class="mf">895829000.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalCapitalRaisedCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deployedCapitalCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"realisedValueCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"unrealisedValueCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"managers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U.S. Department Of Energy (DOE)"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6731</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"soheni_das"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2686</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get all the investors of a company, you should use the following endpoint:</p>
+
+<p><code>GET /investors/company/{companyID}</code></p>
+
+<p>It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list-system-2-0">Startup List</a>, variable “companyID”, and has the following response codes:</p>
 
 <table><thead>
 <tr>
@@ -4226,6 +4329,66 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Internal ID</td>
 </tr>
 </tbody></table>
+<h2 id='company-investor'>Company Investor</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Name of the investor</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>logoUrl</td>
+<td>URL of the investor’s logo</td>
+</tr>
+<tr>
+<td>firstDealDate</td>
+<td>Date of the investor’s first deal with the company</td>
+</tr>
+<tr>
+<td>dealTypes</td>
+<td>List of deal types associated with the investor</td>
+</tr>
+<tr>
+<td>primaryTypes</td>
+<td>List of the investor’s primary types</td>
+</tr>
+<tr>
+<td>isStrategic</td>
+<td>Indicates whether the investor is strategic</td>
+</tr>
+<tr>
+<td>isFinancial</td>
+<td>Indicates whether the investor is a financial investor</td>
+</tr>
+<tr>
+<td>isVenture</td>
+<td>Indicates whether the investor is a venture investor</td>
+</tr>
+<tr>
+<td>isGrowth</td>
+<td>Indicates whether the investor is a growth investor</td>
+</tr>
+<tr>
+<td>isInfrastructure</td>
+<td>Indicates whether the investor is an infrastructure investor</td>
+</tr>
+<tr>
+<td>isBuyout</td>
+<td>Indicates whether the investor is a buyout investor</td>
+</tr>
+<tr>
+<td>funds</td>
+<td>List of <a href="#fund">Funds</a></td>
+</tr>
+</tbody></table>
 <h1 id='additional-tables-system-2-0'>Additional tables System 2.0</h1><h2 id='searchable-locations'>Searchable Locations</h2>
 <blockquote>
 <p>To get searchable locations, use this code:</p>
@@ -4866,8 +5029,8 @@ Please note that manually closing a session is not required, since it will be cl
 <blockquote>
 <p>To get all the investors of a startup, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/investors/668'</span>
-<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">--cookie</span> <span class="s1">'JSESSIONID=EXAMPLE_SESSION_ID'</span> <span class="se">\</span>
+<span class="nt">-X</span> GET <span class="s2">"https://api.netzeroinsights.com/investors/668"</span>
 </code></pre></div>
 <blockquote>
 <p>In case of a 200 response, the response body will contain the requested investors, with the format specified at section <a href="#investor-core">Investor</a>.</p>
