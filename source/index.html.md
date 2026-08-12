@@ -1451,7 +1451,7 @@ To get all the investors of a company, you should use the following endpoint:
 
 `GET /investors/company/{companyID}`
 
-It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-2-0), variable “companyID”, and has the following response codes:
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-2-0), variable “id”, and has the following response codes:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
@@ -2359,7 +2359,7 @@ This is the main filter used when searching for startups/companies, investors, o
 | employeesGrowthFrom          | int                                                 | Minimum employee growth for the selected period                                                 |
 | employeesGrowthTo            | int                                                 | Maximum employee growth for the selected period                                                 |
 | tagsConceptsMode             | string                                              | Logical `"AND"` or `"OR"` operators for filtering startups by the given tags. Default: `"AND"`  |
-| tagIDs                       | List of int                                         | See Section [Tags](#tags) for accepted values                                                   |
+| tagIDs                       | List of int                                         | See Section [Tags](#tags-2) for accepted values                                                 |
 | wildcards                    | List of string                                      | Any match of the keywords in the name/pitchline/description                                     |
 | wildcardsFields              | List of Section [Wildcard Fields](#wildcard-fields) | Select on which fields to match the wildcards                                                   |
 | regexps                      | List of string                                      | Any match of the keywords in the name/pitchline/description                                     |
@@ -2460,7 +2460,7 @@ This is the commercial deal filter used when searching for commercial deals.
 | participantCompanyIDs | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
 | participantCompanyIDs | List of int    | See Section [Commercial Deal Participants](#commercial-deal-participants) for the accepted values |
 | tagsMode              | string         | Specifies how multiple tags are matched (for example, AND or OR)                                  |
-| tagIDs                | List of int    | See Section [Tags](#tags) for accepted values                                                     |
+| tagIDs                | List of int    | See Section [Tags](#tags-2) for accepted values                                                   |
 
 ## Company Contact Filter
 
@@ -2539,6 +2539,17 @@ This is the commercial deal filter used when searching for commercial deals.
 | numberOfElements | Number of records returned in the current page  |
 | totalPages       | Total number of available pages                 |
 
+## Tag Search
+
+| Name             | Content                                        |
+|------------------|------------------------------------------------|
+| content          | List of [Tag](#tag)                            |
+| pageSize         | Number of records returned per page            |
+| pageNumber       | Zero-based index of the current page           |
+| totalElements    | Total number of records matching the query     |
+| numberOfElements | Number of records returned in the current page |
+| totalPages       | Total number of available pages                |
+
 ## Company or Investor Contact
 
 | Name               | Content                                                |
@@ -2575,7 +2586,39 @@ This is the commercial deal filter used when searching for commercial deals.
 | isBuyout         | Indicates whether the investor is a buyout investor          |
 | funds            | List of [Funds](#fund)                                       |
 
+## Tag
+
+| Name              | Content                                                                     |
+|-------------------|-----------------------------------------------------------------------------|
+| label             | Display name of the tag                                                     |
+| id                | Internal ID                                                                 |
+| visibilityStatus  | See Section [Visibility Statuses](#visibility-statuses) for accepted values |
+| description       | Description of the tag                                                      | 
+| isCustomCompany   | Indicates whether the tag is a custom company tag                           |
+| isCustomMap       | Indicates whether the tag is a custom map tag                               |
+| isUmbrella        | Indicates whether the tag is an umbrella tag                                |
+| isVisibleCompany  | Indicates whether the tag is visible for companies                          |
+| isVisibleMap      | Indicates whether the tag is visible map tag                                |
+| isSearchable      | Indicates whether the tag can be used in searches                           |
+| isGrouping        | Indicates whether the tag is used for grouping                              |
+| isAdvancedFilters | Indicates whether the tag can be used in advanced filters                   |
+| tagType           | Type of the tag                                                             |
+| userIDs           | IDs of users associated with the tag if the tag is custom                   |
+| synonyms          | List of synonyms associated with the tag                                    |
+| rawSearches       | List of raw search terms associated with the tag                            |
+| source            | Source from which the tag information was obtained                          |
+| platformOrder     | Default platform order of the tag                                           |
+
 # Additional tables System 2.0
+
+## Visibility Statuses
+
+| ID | Label       |
+|----|-------------|
+| 1  | ALL         |
+| 2  | ADMINS_ONLY |
+| 3  | HIDDEN      |
+| 4  | NOT_VISIBLE |
 
 ## Searchable Locations
 
@@ -2748,6 +2791,110 @@ It takes no parameter and has the following response codes:
 |---------------|--------------------------------------|
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
+
+## Tags
+
+> To get the list of the currently available tags, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/tags?pageSize=2&pageNumber=0&name=energy' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain all the available tags, with the format specified at section [Tag Search](#tag-search).
+
+```json
+{
+  "content": [
+    {
+      "label": "Energy",
+      "visibilityStatus": {
+        "visibleTo": "ALL",
+        "id": 1
+      },
+      "description": "The energy sector includes innovations that are in the business of producing or supplying energy such as renewables.\n\nWithin the scope of this climate change challenge are targeted emissions produced by energy systems, namely what concerns the production, conversion, distribution and consumption of energy. \n\nSolutions to mitigate climate change and to adapt to its effects in this challenge include energy management systems, batteries, biofuels, CHP, electromechanical storage, biomass, heat recovery, hydrogen, kinetic energy, energy monitoring and metering, utilities and others.",
+      "isCustomCompany": false,
+      "isCustomMap": false,
+      "isUmbrella": false,
+      "isVisibleCompany": true,
+      "isVisibleMap": true,
+      "isSearchable": true,
+      "isGrouping": false,
+      "isAdvancedFilters": true,
+      "tagType": {
+        "label": "challenge",
+        "platformOrder": -1,
+        "tagFamily": {
+          "label": "Solutions",
+          "platformOrder": 1,
+          "id": 2
+        },
+        "id": 10
+      },
+      "synonyms": [],
+      "rawSearches": [],
+      "platformOrder": 4,
+      "id": 354
+    },
+    {
+      "label": "waste to energy unused",
+      "visibilityStatus": {
+        "visibleTo": "NOT_VISIBLE",
+        "id": 4
+      },
+      "isCustomCompany": false,
+      "isCustomMap": false,
+      "isUmbrella": false,
+      "isVisibleCompany": false,
+      "isVisibleMap": false,
+      "isSearchable": false,
+      "isGrouping": false,
+      "isAdvancedFilters": false,
+      "tagType": {
+        "label": "buzzword",
+        "platformOrder": 5,
+        "tagFamily": {
+          "label": "Solutions",
+          "platformOrder": 1,
+          "id": 2
+        },
+        "id": 5
+      },
+      "synonyms": [],
+      "rawSearches": [],
+      "platformOrder": 21,
+      "id": 21
+    }
+  ],
+  "pageSize": 2,
+  "pageNumber": 0,
+  "totalElements": 268,
+  "numberOfElements": 2,
+  "totalPages": 134
+}
+```
+
+To get the list of the currently available tags, you should use the following endpoint:
+
+`GET /tags?pageSize={pageSize}&pageNumber={pageNumber}&name={name}`
+
+With the following optional query parameters:
+
+| Parameter name | Parameter value                                      |
+|----------------|------------------------------------------------------|
+| pageNumber     | Zero-based page number to retrieve (by default 0)    |
+| pageSize       | Number of records to return per page (by default 15) |
+| name           | String param used to filter tags by name             |
+
+The possible response codes are:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+
+
+
 
 # Security System 1.0
 
@@ -3181,9 +3328,9 @@ curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
 
 To get all the investors of a startup, you should use the following endpoint:
 
-`GET /investors/[clientID]`
+`GET /investors/{clientID}`
 
-It takes a single parameter, indicated as ”[clientID]” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable ”clientID”, and has the following response codes:
+It takes a single parameter, indicated as “clientID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-1-0), variable “clientID”, and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
@@ -3870,7 +4017,7 @@ With a JSON request body in the format specified at the Section [Investor Contac
 
 ## Main Filter
 
-This is the main filter used when searching for startups. It contains two simple fields (”offset” and ”limit”) and some complex ones (i.e.: ”include”, ”sorting”) defined further in this document.
+This is the main filter used when searching for startups. It contains two simple fields (“offset” and “limit”) and some complex ones (i.e.: ”include”, ”sorting”) defined further in this document.
 
 | Parameter name      | Parameter type                                | Description                                                         |
 |---------------------|-----------------------------------------------|---------------------------------------------------------------------|
@@ -4333,8 +4480,8 @@ This is the tag filter used when searching for tags.
 > To get the list of the currently available tags, use this code:
 
 ```shell
-curl -v -X POST 'https://api-new.netzeroinsights.com/taxonomy/tags' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X POST "https://api.netzeroinsights.com/taxonomy/tags" \
 -d '{"name": "bio", "offset": 0, "limit": 5}'
 ```
 
@@ -4929,15 +5076,15 @@ It takes a single query parameter, indicated as “searchText” in the example,
 
 # Taxonomy Page
 
-Our taxonomy is a way to visualise the relation between different topics.
+Our taxonomy is a way to visualize the relation between different topics.
 
 ## All Taxonomy Items
 
 > To get all Taxonomy Graph Items, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/itemDtos' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/itemDtos' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -4962,7 +5109,7 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/itemDtos' \
 ]
 ```
 
-To get all the taxonomy items you should use the following endpoint:
+To get all the taxonomy items, you should use the following endpoint:
 
 `GET /taxonomy/itemDtos`
 
@@ -4977,8 +5124,8 @@ The possible response codes are:
 > To get Taxonomy Graph Item list without any parents (which means they are the top level of our taxonomy), use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/graph' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -5007,7 +5154,7 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph' \
 ]
 ```
 
-To get all the level 0 taxonomy items you should use the following endpoint:
+To get all the level 0 taxonomy items, you should use the following endpoint:
 
 `GET /taxonomy/graph`
 
@@ -5024,15 +5171,15 @@ These are the top-most items of our taxonomy, and all the other items are relate
 > To get the list of children Taxonomy Graph Items of a parent item, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph/Biofuel' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/graph/Biofuel' \
 -H 'Content-Type: application/json' \                 
 ```
 > Or
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph/2' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/graph/2' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -5072,8 +5219,8 @@ The possible response codes are:
 > To get Top Companies of a Taxonomy Graph Item, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph/topCompanies/1783' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/graph/topCompanies/1783' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -5153,7 +5300,7 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph/topCompanies/
 ]
 ```
 
-To get the top companies of a taxonomy item you should use the following endpoint:
+To get the top companies of a taxonomy item, you should use the following endpoint:
 
 `GET /taxonomy/graph/topCompanies/{itemID}`
 
@@ -5170,8 +5317,8 @@ The possible response codes are:
 > To get Top Investors of a Taxonomy Graph Item, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph/topInvestors/2' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/graph/topInvestors/2' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -5212,7 +5359,7 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/graph/topInvestors/
 ]
 ```
 
-To get the top investors of a taxonomy item you should use the following endpoint:
+To get the top investors of a taxonomy item, you should use the following endpoint:
 
 `GET /taxonomy/graph/topInvestors/{itemID}`
 
@@ -5229,16 +5376,16 @@ The possible response codes are:
 > To get a Taxonomy Graph Item by parameter, ID, or label, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/item/2' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/item/2' \
 -H 'Content-Type: application/json' \                 
 ```
 
 > Or
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/item/Biofuel' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/item/Biofuel' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -5270,8 +5417,8 @@ The possible response codes are:
 > To get the Taxonomy Graph Items by company, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/items/company/10' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/items/company/10' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -5337,7 +5484,7 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/items/company/10' \
 ]
 ```
 
-To get the taxonomy items of the company you should use the following endpoint:
+To get the taxonomy items of the company, you should use the following endpoint:
 
 `GET /taxonomy/items/company/{clientID}`
 
@@ -5354,8 +5501,8 @@ The possible response codes are:
 > To get Taxonomy Graph Item Relation list by parentID, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/relations/parent/1' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/relations/parent/1' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -5380,7 +5527,7 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/relations/parent/1'
 ]
 ```
 
-To get all the parent-children relations of a taxonomy item you should use the following endpoint:
+To get all the parent-child relations of a taxonomy item, you should use the following endpoint:
 
 `GET /relations/parent/{itemID}`
 
@@ -5397,8 +5544,8 @@ The possible response codes are:
 > To get Taxonomy Graph Item Relation list by childID, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/relations/child/24' \
--H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+curl -v --cookie 'JSESSIONID=EXAMPLE_SESSION_ID' \
+-X GET 'https://api.netzeroinsights.com/taxonomy/relations/child/24' \
 -H 'Content-Type: application/json' \                 
 ```
 
@@ -5416,7 +5563,7 @@ curl -v -X GET 'https://api-new.netzeroinsights.com/taxonomy/relations/child/24'
 ]
 ```
 
-To get all the child-parents relations of a taxonomy item you should use the following endpoint:
+To get all the child-parent relations of a taxonomy item, you should use the following endpoint:
 
 `GET /relations/child/{itemID}`
 
