@@ -380,6 +380,9 @@
                   <li>
                     <a href="#investor-infrastructure-projects" class="toc-h2 toc-link" data-title="Investor Infrastructure Projects">Investor Infrastructure Projects</a>
                   </li>
+                  <li>
+                    <a href="#investor-funds" class="toc-h2 toc-link" data-title="Investor Funds">Investor Funds</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -446,6 +449,9 @@
                   <li>
                     <a href="#investor-contact-filter" class="toc-h2 toc-link" data-title="Investor Contact Filter">Investor Contact Filter</a>
                   </li>
+                  <li>
+                    <a href="#fund-search-request" class="toc-h2 toc-link" data-title="Fund Search Request">Fund Search Request</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -481,6 +487,9 @@
                   <li>
                     <a href="#infrastructure-project" class="toc-h2 toc-link" data-title="Infrastructure Project">Infrastructure Project</a>
                   </li>
+                  <li>
+                    <a href="#fund" class="toc-h2 toc-link" data-title="Fund">Fund</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -491,6 +500,18 @@
                   </li>
                   <li>
                     <a href="#infrastructure-project-roles" class="toc-h2 toc-link" data-title="Infrastructure Project Roles">Infrastructure Project Roles</a>
+                  </li>
+                  <li>
+                    <a href="#fund-search-types" class="toc-h2 toc-link" data-title="Fund Search Types">Fund Search Types</a>
+                  </li>
+                  <li>
+                    <a href="#fund-theses" class="toc-h2 toc-link" data-title="Fund Theses">Fund Theses</a>
+                  </li>
+                  <li>
+                    <a href="#fund-types" class="toc-h2 toc-link" data-title="Fund Types">Fund Types</a>
+                  </li>
+                  <li>
+                    <a href="#fund-instruments" class="toc-h2 toc-link" data-title="Fund Instruments">Fund Instruments</a>
                   </li>
                   <li>
                     <a href="#searchable-locations" class="toc-h2 toc-link" data-title="Searchable Locations">Searchable Locations</a>
@@ -3406,6 +3427,120 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Resource not found</td>
 </tr>
 </tbody></table>
+<h2 id='investor-funds'>Investor Funds</h2>
+<blockquote>
+<p>To get all the funds of an investor, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST <span class="s1">'https://api-new.netzeroinsights.com/funds/search-by-investor'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\ </span>                
+<span class="nt">-d</span> <span class="s1">'{"type": MANAGER, "investorID": 6344}'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested funds, with the format specified at section <a href="#fund">Fund</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acre Venture Partners III "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"thesis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Climate"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Refers to an investment thesis focused on climate-related opportunities. This could involve investments in sectors like renewable energy, sustainable agriculture, or companies working toward decarbonization and addressing climate change."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Early"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Early-stage venture funds focus on companies that have a developed product or service and are seeking capital to scale operations. These funds typically participate in Series A and Series B rounds, helping startups grow their teams, acquire customers, and refine their business models."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"instrument"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Equity"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This refers to funds that invest by purchasing ownership stakes in companies, typically in the form of stocks or shares. Equity investors gain returns through dividends or capital appreciation when the company grows and becomes more valuable."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-20T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-19T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">150000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetSizeUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">150000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetSizeEUR"</span><span class="p">:</span><span class="w"> </span><span class="mf">132209111.11</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetSizeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalCapitalRaised"</span><span class="p">:</span><span class="w"> </span><span class="mi">140000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalCapitalRaisedUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">140000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalCapitalRaisedEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">135550100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalCapitalRaisedCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deployedCapitalCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"realisedValueCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unrealisedValueCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"managers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acre Venture Partners"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6344</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"platform_all"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acre Venture Partners Fund II"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"thesis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Impact"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Refers to investments that seek both financial returns and positive social or environmental outcomes. Impact investors typically focus on issues such as social equality, environmental sustainability, and community development. Climate investing, due to its environmental focus, is often considered part of the broader Impact investing thesis."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Early"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Early-stage venture funds focus on companies that have a developed product or service and are seeking capital to scale operations. These funds typically participate in Series A and Series B rounds, helping startups grow their teams, acquire customers, and refine their business models."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"instrument"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Equity"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This refers to funds that invest by purchasing ownership stakes in companies, typically in the form of stocks or shares. Equity investors gain returns through dividends or capital appreciation when the company grows and becomes more valuable."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-12-27T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">125000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetSizeUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">125000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetSizeEUR"</span><span class="p">:</span><span class="w"> </span><span class="mf">112449040.91</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetSizeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalCapitalRaisedCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deployedCapitalCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"realisedValueCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unrealisedValueCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"managers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acre Venture Partners"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6344</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"platform_all"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get all the funds of an investor, you should use the following endpoint:</p>
+
+<p><code>POST /funds/search-by-investor</code></p>
+
+<p>With a JSON request body in the format specified at the section <a href="#fund-search-request">Fund Search Request</a>.</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
 <h1 id='commercial-deal-details'>Commercial Deal Details</h1>
 <blockquote>
 <p>To get the details of a commercial deal, use this code:</p>
@@ -5075,7 +5210,7 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>departmentID</td>
 <td>int</td>
-<td>Optional, contact role, see Section <a href="#role">Role</a> for accepted values</td>
+<td>Optional, contact role, see section <a href="#role">Role</a> for accepted values</td>
 </tr>
 <tr>
 <td>pageSize</td>
@@ -5086,6 +5221,25 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>pageNumber</td>
 <td>int</td>
 <td>Index of the current page</td>
+</tr>
+</tbody></table>
+<h2 id='fund-search-request'>Fund Search Request</h2>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Specifies the investor’s role in the fund, see section <a href="#fund-search-types">Fund Search Type</a> for accepted values</td>
+</tr>
+<tr>
+<td>investorID</td>
+<td>int</td>
+<td>ID of the requested investor, taken from a previous call of <a href="#investors-list">Investor List</a></td>
 </tr>
 </tbody></table>
 <h1 id='response-structures'>Response structures</h1><h2 id='company-search'>Company Search</h2>
@@ -5628,6 +5782,166 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>See Section <a href="#tags-2">Tags</a> for accepted values</td>
 </tr>
 </tbody></table>
+<h2 id='fund'>Fund</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Internal fund ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Name of the fund</td>
+</tr>
+<tr>
+<td>website</td>
+<td>Fund’s website URL</td>
+</tr>
+<tr>
+<td>thesis</td>
+<td>Investment thesis of the fund, see section <a href="#fund-theses">Fund Theses</a> for accepted values</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Type of the fund, see section <a href="#fund-types">Fund Types</a> for accepted values</td>
+</tr>
+<tr>
+<td>instrument</td>
+<td>Investment instrument used by the fund, see section <a href="#fund-instruments">Fund Instruments</a> for accepted values</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>Fund start date</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>Fund end date</td>
+</tr>
+<tr>
+<td>targetSize</td>
+<td>Target size of the fund in its original currency</td>
+</tr>
+<tr>
+<td>targetSizeUSD</td>
+<td>Target size of the fund in USD</td>
+</tr>
+<tr>
+<td>targetSizeEUR</td>
+<td>Target size of the fund in EUR</td>
+</tr>
+<tr>
+<td>targetSizeCurrency</td>
+<td>Currency of the fund’s target size</td>
+</tr>
+<tr>
+<td>targetSizeDate</td>
+<td>Date associated with the fund’s target size</td>
+</tr>
+<tr>
+<td>totalCapitalRaised</td>
+<td>Total capital raised in the fund’s original currency</td>
+</tr>
+<tr>
+<td>totalCapitalRaisedUSD</td>
+<td>Total capital raised in USD</td>
+</tr>
+<tr>
+<td>totalCapitalRaisedEUR</td>
+<td>Total capital raised in EUR</td>
+</tr>
+<tr>
+<td>totalCapitalRaisedCurrency</td>
+<td>Currency of the total capital raised</td>
+</tr>
+<tr>
+<td>totalCapitalRaisedDate</td>
+<td>Date associated with the total capital raised</td>
+</tr>
+<tr>
+<td>deployedCapital</td>
+<td>Total capital deployed in the fund’s original currency</td>
+</tr>
+<tr>
+<td>deployedCapitalUSD</td>
+<td>Total capital deployed in USD</td>
+</tr>
+<tr>
+<td>deployedCapitalEUR</td>
+<td>Total capital deployed in EUR</td>
+</tr>
+<tr>
+<td>deployedCapitalCurrency</td>
+<td>Currency of the deployed capital</td>
+</tr>
+<tr>
+<td>deployedCapitalDate</td>
+<td>Date associated with the deployed capital</td>
+</tr>
+<tr>
+<td>realisedValue</td>
+<td>Realised value of the fund’s investments in the original currency</td>
+</tr>
+<tr>
+<td>realisedValueUSD</td>
+<td>Realised value of the fund’s investments in USD</td>
+</tr>
+<tr>
+<td>realisedValueEUR</td>
+<td>Realised value of the fund’s investments in EUR</td>
+</tr>
+<tr>
+<td>realisedValueCurrency</td>
+<td>Currency of the realised value</td>
+</tr>
+<tr>
+<td>realisedValueDate</td>
+<td>Date associated with the realised value</td>
+</tr>
+<tr>
+<td>unrealisedValue</td>
+<td>Unrealised value of the fund’s investments in the original currency</td>
+</tr>
+<tr>
+<td>unrealisedValueUSD</td>
+<td>Unrealised value of the fund’s investments in USD</td>
+</tr>
+<tr>
+<td>unrealisedValueEUR</td>
+<td>Unrealised value of the fund’s investments in EUR</td>
+</tr>
+<tr>
+<td>unrealisedValueCurrency</td>
+<td>Currency of the unrealised value</td>
+</tr>
+<tr>
+<td>unrealisedValueDate</td>
+<td>Date associated with the unrealised value</td>
+</tr>
+<tr>
+<td>netIRR</td>
+<td>Net internal rate of return of the fund</td>
+</tr>
+<tr>
+<td>vintageYear</td>
+<td>Year in which the fund was established</td>
+</tr>
+<tr>
+<td>managers</td>
+<td>Investors managing the fund</td>
+</tr>
+<tr>
+<td>limitedPartners</td>
+<td>Investors participating as limited partners in the fund</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Source from which the fund information was obtained</td>
+</tr>
+</tbody></table>
 <h1 id='additional-tables'>Additional tables</h1><h2 id='visibility-statuses'>Visibility Statuses</h2>
 <table><thead>
 <tr>
@@ -5672,6 +5986,99 @@ JWT access tokens expire after a configurable period. When the token expires, au
 </tr>
 <tr>
 <td>OTHER_PROJECT_PARTICIPANT</td>
+</tr>
+</tbody></table>
+<h2 id='fund-search-types'>Fund Search Types</h2>
+<table><thead>
+<tr>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>MANAGER</td>
+</tr>
+<tr>
+<td>PARTNER</td>
+</tr>
+</tbody></table>
+<h2 id='fund-theses'>Fund Theses</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Generalist</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Climate</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Impact</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Undisclosed</td>
+</tr>
+</tbody></table>
+<h2 id='fund-types'>Fund Types</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Venture Pre Seed &amp; Seed</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Venture Early</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Venture Late/Expansion</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Private Equity Growth</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Private Equity Buyout</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Infrastructure</td>
+</tr>
+</tbody></table>
+<h2 id='fund-instruments'>Fund Instruments</h2>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Equity</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Debt</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Equity &amp; Debt</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Undisclosed</td>
 </tr>
 </tbody></table>
 <h2 id='searchable-locations'>Searchable Locations</h2>
