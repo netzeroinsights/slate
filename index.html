@@ -357,6 +357,9 @@
                   <li>
                     <a href="#company-commercial-deals" class="toc-h2 toc-link" data-title="Company Commercial Deals">Company Commercial Deals</a>
                   </li>
+                  <li>
+                    <a href="#company-infrastructure-projects" class="toc-h2 toc-link" data-title="Company Infrastructure Projects">Company Infrastructure Projects</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -367,6 +370,9 @@
                   </li>
                   <li>
                     <a href="#investor-commercial-deals" class="toc-h2 toc-link" data-title="Investor Commercial Deals">Investor Commercial Deals</a>
+                  </li>
+                  <li>
+                    <a href="#investor-infrastructure-projects" class="toc-h2 toc-link" data-title="Investor Infrastructure Projects">Investor Infrastructure Projects</a>
                   </li>
               </ul>
           </li>
@@ -2591,6 +2597,154 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <td>Forbidden, insufficient access level</td>
 </tr>
 </tbody></table>
+<h2 id='company-infrastructure-projects'>Company Infrastructure Projects</h2>
+<blockquote>
+<p>To get all the infrastructure projects of a company, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/infrastructure-projects/connected-entities/company/69965'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested infrastructure projects, with the format specified at section <a href="#infrastructure-project">Infrastructure Project</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-06-25T23:13:06.34"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-29T10:48:05.189037"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wayagamack Mill Carbon Capture Project – Kruger &amp; Mantel"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-11-04T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kruger is investing $23.75 million in a groundbreaking carbon capture and reuse project at its Wayagamack Mill in Québec. This initiative, backed by both Canadian and Québec governments and in partnership with Mantel Capture Inc., will test a novel carbon capture technology using molten borate salt in an industrial setting for the first time. The aim is to directly integrate the system into the mill's steam boiler to achieve carbon neutrality. The two-year test phase begins soon, with full operation expected in fall 2025, potentially leading to widespread deployment across the mill. This project highlights a collaborative effort to reduce emissions and ensure the long-term sustainability of Canada's forestry sector. For this project, Kruger is partnering with the developers of the carbon capture technology, Mantel Capture Inc., a North American start-up founded by engineers and scientists from the Massachusetts Institute of Technology (MIT). Together, they are investing a total of $6.1 million."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wayagamack Mill Carbon Capture Project"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"foak"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"announcedYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2024</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"constructionStartYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2024</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"operationStartYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2025</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFundingCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">23750000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFundingUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">23750000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFundingEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">22343611</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"supratim_mitra"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Announced"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7-8"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Finalizing"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"searchableLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North America"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trois-Rivieres"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cityAsciiName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trois-Rivieres"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"adminID4"</span><span class="p">:</span><span class="w"> </span><span class="mi">513</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"adminName4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quebec"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">1060</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">775524</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kruger"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_636233.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">69965</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project Developer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"infrastructureProjectRole2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mantel"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_311895.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">88039</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project Developer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"infrastructureProjectRole2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Government Of Canada"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_495647.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">7107</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Government"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">202197</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Government of Quebec"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_489966.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">9573</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Government"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">202198</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get all the infrastructure projects of a company, you should use the following endpoint:</p>
+
+<p><code>GET /infrastructure-projects/connected-entities/company/{companyID}</code></p>
+
+<p>It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at <a href="#startup-list">Startup List</a>, variable “id”, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
 <h1 id='investor-details'>Investor Details</h1>
 <blockquote>
 <p>To get the details of an Investor, use this code:</p>
@@ -2864,6 +3018,152 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <tr>
 <td>403</td>
 <td>Forbidden, insufficient access level</td>
+</tr>
+</tbody></table>
+<h2 id='investor-infrastructure-projects'>Investor Infrastructure Projects</h2>
+<blockquote>
+<p>To get all the infrastructure projects of an investor, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/infrastructure-projects/connected-entities/investor/47672'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested infrastructure projects, with the format specified at section <a href="#infrastructure-project">Infrastructure Project</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-06-25T23:03:04.073"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-06-29T10:48:05.189037"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HydroWing Tidal Energy Project – Inyanga Marine Energy Group, Prysmian, iconsys &amp; EireComposites"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"announcedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-12-16T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Inyanga Marine Energy Group has unveiled its 20MW HydroWing tidal energy project for the Morlais site in Wales, integrating Tocardo T3 turbines in a modular, scalable system. Designed for efficient deployment, the HydroWing offers up to 60% cost savings on fixation and a similar boost in energy yield, thanks to features like road-transportable substructures, compact containerized turbines, and plug-and-play installation. The project is backed by the UK Government’s Contracts for Difference (CfD) scheme, which includes a government-backed offtake agreement guaranteeing a fixed price per megawatt-hour (MWh) for the electricity generated. A demonstration is scheduled for 2025, with full deployment planned by 2028, marking a major step toward the global commercialization of tidal stream energy."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HydroWing Tidal Energy Project"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foak"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"announcedYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2024</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"constructionStartYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2025</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"operationStartYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2028</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20 MW of HydroWing tidal energy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"harsha_vardhan"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Under construction"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7-8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Finalizing"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"searchableLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">225</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anglesey"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cityAsciiName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anglesey"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"adminID4"</span><span class="p">:</span><span class="w"> </span><span class="mi">3114</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"adminName4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wales"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">700139535</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"connectedCompanies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Inyanga Marine Energy Group"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1864854.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">122610</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project Developer"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"infrastructureProjectRole2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tech Developer"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tocardo"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1691857.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">12724</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other Project Participant"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"connectedInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Government of UK"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_200780.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4360</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Government"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EireComposites"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_521479.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"investorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">47672</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"infrastructureProjectRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tech Developer"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get all the infrastructure projects of an investor, you should use the following endpoint:</p>
+
+<p><code>GET /infrastructure-projects/connected-entities/investor/{investorID}</code></p>
+
+<p>It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at <a href="#investors-list">Investor List</a>, variable “id”, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
 </tr>
 </tbody></table>
 <h1 id='commercial-deal-details'>Commercial Deal Details</h1>
