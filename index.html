@@ -417,6 +417,23 @@
               </ul>
           </li>
           <li>
+            <a href="#fund-details" class="toc-h1 toc-link" data-title="Fund Details">Fund Details</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#limited-partners" class="toc-h2 toc-link" data-title="Limited partners">Limited partners</a>
+                  </li>
+                  <li>
+                    <a href="#investments" class="toc-h2 toc-link" data-title="Investments">Investments</a>
+                  </li>
+                  <li>
+                    <a href="#news-3" class="toc-h2 toc-link" data-title="News">News</a>
+                  </li>
+                  <li>
+                    <a href="#other-sources" class="toc-h2 toc-link" data-title="Other sources">Other sources</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#filters-structure" class="toc-h1 toc-link" data-title="Filters structure">Filters structure</a>
               <ul class="toc-list-h2">
                   <li>
@@ -4318,6 +4335,360 @@ JWT access tokens expire after a configurable period. When the token expires, au
 <p><code>GET /infrastructure-projects/news/{infrastructureProjectID}</code></p>
 
 <p>It takes a single parameter, indicated as “infrastructureProjectID” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
+<h1 id='fund-details'>Fund Details</h1>
+<blockquote>
+<p>To get the details of a fund, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/funds/14702'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div>
+<blockquote>
+<p>In case of a 200 response, the response body will contain the requested fund, with the format specified at section <a href="#fund">Fund</a>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Next Bharat Ventures Impact Fund II"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"thesis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Impact"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Refers to investments that seek both financial returns and positive social or environmental outcomes. Impact investors typically focus on issues such as social equality, environmental sustainability, and community development. Climate investing, due to its environmental focus, is often considered part of the broader Impact investing thesis."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Early"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Early-stage venture funds focus on companies that have a developed product or service and are seeking capital to scale operations. These funds typically participate in Series A and Series B rounds, helping startups grow their teams, acquire customers, and refine their business models."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"instrument"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Equity"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This refers to funds that invest by purchasing ownership stakes in companies, typically in the form of stocks or shares. Equity investors gain returns through dividends or capital appreciation when the company grows and becomes more valuable."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-07-07T10:32:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"targetSizeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalCapitalRaised"</span><span class="p">:</span><span class="w"> </span><span class="mf">20000000000.00</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalCapitalRaisedUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">208283191.27</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalCapitalRaisedEUR"</span><span class="p">:</span><span class="w"> </span><span class="mf">182670936.00</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalCapitalRaisedCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INR"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"deployedCapitalCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"realisedValueCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"unrealisedValueCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"managers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Next Bharat Ventures"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44849</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"swapnaneel_ray"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14702</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To get the fund information, you should use the following endpoint:</p>
+
+<p><code>GET /funds/{fundID}</code></p>
+
+<p>It takes a single parameter, indicated as “fundID” in the example, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
+<h2 id='limited-partners'>Limited partners</h2>
+<blockquote>
+<p>To get all the limited partners of a fund, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/funds/2/limited-partners'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"fundID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fundsSubscribed"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"investor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"acquisitionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-06-14T17:10:17.403"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-08-07T05:03:30.649734"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"visibilityStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"visibleTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Temasek"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Temasek is an investment company that makes long-term investments across public and private markets, with an emphasis on growth-stage and strategic opportunities.&lt;br&gt;&lt;br&gt;It invests across a broad range of sectors—including financial services, telecommunications, consumer, life sciences and technology—and pursues a global geographic focus."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"descriptionWithPunctuation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Temasek is an investment company that makes long term investments across public and private markets with an emphasis on growth stage and strategic opportunities br br It invests across a broad range of sectors including financial services telecommunications consumer life sciences and technology and pursues a global geographic focus"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://temasek.com.sg/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"temasek.com.sg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alumninetwork@temasek.com.sg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+65 6828 6828"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_515810.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"searchableLocation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asia"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Singapore"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"continent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asia"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"alpha2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SG"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">192</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Singapore"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cityAsciiName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Singapore"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isSearchable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">901114</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"linkedinUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/company/temasek-holdings/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"facebookUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://facebook.com/temasekholdings/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"twitterUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/temasek/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foundedYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">1974</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"investorSince"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-28T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sizeRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"rangeTextFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"501 - 1000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"dealsCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">156</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">17515846</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDealType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Series B"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"filterable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"assignable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"lastDealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-07-16T07:17:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxDealAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">13528563594</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxDealAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">16000000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minDealAmountEUR"</span><span class="p">:</span><span class="w"> </span><span class="mi">7064677</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minDealAmountUSD"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isLimitedPartner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companyExitCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundsManagedCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fundsSubscribedCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ventureInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"growthInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">77</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"infrastructureInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyoutInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialPartnershipCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"acquisitionCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"equityInvestmentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">151</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commercialBuyCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isFinancialInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isVentureInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isGrowthInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isInfrastructureInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isBuyoutInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isStrategic"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCommercialBuyer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isEquityInvestor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isAcquirer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCommercialPartner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"platformOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">4784</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"primaryType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investment Company"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"secondaryTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Holding Company"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"entityTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investor"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1154</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the limited partners of a fund, you should use the following endpoint:</p>
+
+<p><code>GET /funds/{fundID}/limited-partners</code></p>
+
+<p>It takes one parameter, indicated as “fundID”, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
+<h2 id='investments'>Investments</h2>
+<blockquote>
+<p>To get all the investments of a fund, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/funds/14701/investments'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"companyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">181674</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1767272.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aegis Energy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pitchline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aegis Energy is creating a network of multi-energy refueling hubs for commercial vehicles.</span><span class="se">\n\n</span><span class="s2">Aegis Energy's multi-energy hubs offer electric charging, Hydrotreated Vegetable Oil (HVO), hydrogen, and bio-CNG. These clean energy hubs are located at major motorway junctions, ports, and intermodal terminals for efficient recharging and refueling. Facilities include bookable electric charging, driver amenities such as food, calm spaces, clean toilets, and showers, ensuring convenience for trucks and vans.</span><span class="se">\n\n</span><span class="s2">Aegis Energy develops an innovation that contributes to:</span><span class="se">\n</span><span class="s2">Climate change mitigation byenabling low-carbon transport."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryHQ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dealDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-01-20T12:40:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dealType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Growth equity"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coInvestors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4875</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the investments of a fund, you should use the following endpoint:</p>
+
+<p><code>GET /funds/{fundID}/investments</code></p>
+
+<p>It takes one parameter, indicated as “fundID”, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
+<h2 id='news-3'>News</h2>
+<blockquote>
+<p>To get all the news of a fund, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/funds/14701/news'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.infrastructureinvestor.com/quinbrook-hits-587m-final-close-for-second-uk-renewables-fund/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To be able to copy &amp; paste content to share with others please contact us at subscriptions@pei.group to upgrade your subscription to the appropriate licence"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fundID"</span><span class="p">:</span><span class="w"> </span><span class="mi">14701</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"newsDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-07-08T10:08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6864</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the news of a fund, you should use the following endpoint:</p>
+
+<p><code>GET /funds/{fundID}/news</code></p>
+
+<p>It takes one parameter, indicated as “fundID”, and has the following response codes:</p>
+
+<table><thead>
+<tr>
+<th>Response code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Request successful</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, wrong user role to access</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden, insufficient access level</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Resource not found</td>
+</tr>
+</tbody></table>
+<h2 id='other-sources'>Other sources</h2>
+<blockquote>
+<p>To get all the other sources of a fund, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> GET <span class="s1">'https://api-new.netzeroinsights.com/funds/14701/other-sources'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://onlineservices.glasgow.gov.uk/councillorsandcommittees/viewSelectedDocument.asp?c=P62AFQDN8181UTDXT1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glasgow City Council"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fundID"</span><span class="p">:</span><span class="w"> </span><span class="mi">14701</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14353</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>To get the other sources of a fund, you should use the following endpoint:</p>
+
+<p><code>GET /funds/{fundID}/other-sources</code></p>
+
+<p>It takes one parameter, indicated as “fundID”, and has the following response codes:</p>
 
 <table><thead>
 <tr>
