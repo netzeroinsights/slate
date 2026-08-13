@@ -1650,6 +1650,141 @@ It takes a single parameter, indicated as “companyID” in the example, which 
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
 
+## Company Infrastructure Projects
+
+> To get all the infrastructure projects of a company, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/infrastructure-projects/connected-entities/company/69965' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain the requested infrastructure projects, with the format specified at section [Infrastructure Project](#infrastructure-project).
+
+```json
+[
+  {
+    "acquisitionDate": "2025-06-25T23:13:06.34",
+    "updatedDate": "2026-06-29T10:48:05.189037",
+    "name": "Wayagamack Mill Carbon Capture Project – Kruger & Mantel",
+    "announcedDate": "2024-11-04T00:00:00",
+    "description": "Kruger is investing $23.75 million in a groundbreaking carbon capture and reuse project at its Wayagamack Mill in Québec. This initiative, backed by both Canadian and Québec governments and in partnership with Mantel Capture Inc., will test a novel carbon capture technology using molten borate salt in an industrial setting for the first time. The aim is to directly integrate the system into the mill's steam boiler to achieve carbon neutrality. The two-year test phase begins soon, with full operation expected in fall 2025, potentially leading to widespread deployment across the mill. This project highlights a collaborative effort to reduce emissions and ensure the long-term sustainability of Canada's forestry sector. For this project, Kruger is partnering with the developers of the carbon capture technology, Mantel Capture Inc., a North American start-up founded by engineers and scientists from the Massachusetts Institute of Technology (MIT). Together, they are investing a total of $6.1 million.",
+    "shortName": "Wayagamack Mill Carbon Capture Project",
+    "foak": false,
+    "announcedYear": 2024,
+    "constructionStartYear": 2024,
+    "operationStartYear": 2025,
+    "totalFundingCurrency": "USD",
+    "totalFunding": 23750000,
+    "totalFundingUSD": 23750000,
+    "totalFundingEUR": 22343611,
+    "source": "supratim_mitra",
+    "status": "Announced",
+    "trl": {
+      "label": "7-8",
+      "description": "Finalizing",
+      "id": 11
+    },
+    "searchableLocations": [
+      {
+        "continent": {
+          "name": "North America",
+          "id": 4
+        },
+        "country": {
+          "name": "Canada",
+          "continent": {
+            "name": "North America",
+            "id": 4
+          },
+          "alpha2": "CA",
+          "id": 38
+        },
+        "cityName": "Trois-Rivieres",
+        "cityAsciiName": "Trois-Rivieres",
+        "adminID4": 513,
+        "adminName4": "Quebec",
+        "platformOrder": 1060,
+        "isSearchable": true,
+        "id": 775524
+      }
+    ],
+    "connectedCompanies": [
+      {
+        "name": "Kruger",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_636233.jpg",
+        "companyID": 69965,
+        "infrastructureProjectRole": "Project Developer",
+        "infrastructureProjectRole2": "Investor",
+        "entityTypes": [
+          {
+            "label": "Company",
+            "id": 1
+          }
+        ],
+        "id": 4
+      },
+      {
+        "name": "Mantel",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_311895.jpg",
+        "companyID": 88039,
+        "infrastructureProjectRole": "Project Developer",
+        "infrastructureProjectRole2": "Investor",
+        "entityTypes": [
+          {
+            "label": "Company",
+            "id": 1
+          }
+        ],
+        "id": 5
+      }
+    ],
+    "connectedInvestors": [
+      {
+        "name": "Government Of Canada",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_495647.jpg",
+        "investorID": 7107,
+        "infrastructureProjectRole": "Investor",
+        "entityTypes": [
+          {
+            "label": "Government",
+            "id": 4
+          }
+        ],
+        "id": 202197
+      },
+      {
+        "name": "Government of Quebec",
+        "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_489966.png",
+        "investorID": 9573,
+        "infrastructureProjectRole": "Investor",
+        "entityTypes": [
+          {
+            "label": "Government",
+            "id": 4
+          }
+        ],
+        "id": 202198
+      }
+    ],
+    "id": 3
+  }
+]
+```
+
+To get all the infrastructure projects of a company, you should use the following endpoint:
+
+`GET /infrastructure-projects/connected-entities/company/{companyID}`
+
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable “id”, and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
+
 # Investor Details
 
 > To get the details of an Investor, use this code:
@@ -1893,6 +2028,139 @@ It takes a single parameter, indicated as “investorID” in the example, which
 |---------------|--------------------------------------|
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
+
+## Investor Infrastructure Projects
+
+> To get all the infrastructure projects of an investor, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/infrastructure-projects/connected-entities/investor/47672' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain the requested infrastructure projects, with the format specified at section [Infrastructure Project](#infrastructure-project).
+
+```json
+[
+  [
+    {
+      "acquisitionDate": "2025-06-25T23:03:04.073",
+      "updatedDate": "2026-06-29T10:48:05.189037",
+      "name": "HydroWing Tidal Energy Project – Inyanga Marine Energy Group, Prysmian, iconsys & EireComposites",
+      "announcedDate": "2024-12-16T00:00:00",
+      "description": "Inyanga Marine Energy Group has unveiled its 20MW HydroWing tidal energy project for the Morlais site in Wales, integrating Tocardo T3 turbines in a modular, scalable system. Designed for efficient deployment, the HydroWing offers up to 60% cost savings on fixation and a similar boost in energy yield, thanks to features like road-transportable substructures, compact containerized turbines, and plug-and-play installation. The project is backed by the UK Government’s Contracts for Difference (CfD) scheme, which includes a government-backed offtake agreement guaranteeing a fixed price per megawatt-hour (MWh) for the electricity generated. A demonstration is scheduled for 2025, with full deployment planned by 2028, marking a major step toward the global commercialization of tidal stream energy.",
+      "shortName": "HydroWing Tidal Energy Project",
+      "foak": false,
+      "announcedYear": 2024,
+      "constructionStartYear": 2025,
+      "operationStartYear": 2028,
+      "capacity": "20 MW of HydroWing tidal energy",
+      "source": "harsha_vardhan",
+      "status": "Under construction",
+      "trl": {
+        "label": "7-8",
+        "description": "Finalizing",
+        "id": 11
+      },
+      "searchableLocations": [
+        {
+          "continent": {
+            "name": "Europe",
+            "id": 3
+          },
+          "country": {
+            "name": "United Kingdom",
+            "continent": {
+              "name": "Europe",
+              "id": 3
+            },
+            "alpha2": "GB",
+            "id": 225
+          },
+          "cityName": "Anglesey",
+          "cityAsciiName": "Anglesey",
+          "adminID4": 3114,
+          "adminName4": "Wales",
+          "platformOrder": 60,
+          "isSearchable": true,
+          "id": 700139535
+        }
+      ],
+      "connectedCompanies": [
+        {
+          "name": "Inyanga Marine Energy Group",
+          "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1864854.jpg",
+          "companyID": 122610,
+          "infrastructureProjectRole": "Project Developer",
+          "infrastructureProjectRole2": "Tech Developer",
+          "entityTypes": [
+            {
+              "label": "Company",
+              "id": 1
+            }
+          ],
+          "id": 1
+        },
+        {
+          "name": "Tocardo",
+          "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1691857.jpg",
+          "companyID": 12724,
+          "infrastructureProjectRole": "Other Project Participant",
+          "entityTypes": [
+            {
+              "label": "Company",
+              "id": 1
+            }
+          ],
+          "id": 2
+        }
+      ],
+      "connectedInvestors": [
+        {
+          "name": "Government of UK",
+          "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_200780.png",
+          "investorID": 4360,
+          "infrastructureProjectRole": "Investor",
+          "entityTypes": [
+            {
+              "label": "Government",
+              "id": 4
+            }
+          ],
+          "id": 1
+        },
+        {
+          "name": "EireComposites",
+          "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_521479.jpg",
+          "investorID": 47672,
+          "infrastructureProjectRole": "Tech Developer",
+          "entityTypes": [
+            {
+              "label": "Company",
+              "id": 1
+            }
+          ],
+          "id": 3
+        }
+      ],
+      "id": 2
+    }
+  ]
+]
+```
+
+To get all the infrastructure projects of an investor, you should use the following endpoint:
+
+`GET /infrastructure-projects/connected-entities/investor/{investorID}`
+
+It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investor List](#investors-list), variable “id”, and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
 
 # Commercial Deal Details
 
