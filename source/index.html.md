@@ -2379,6 +2379,110 @@ It takes a single parameter, indicated as “investorID” in the example, which
 | 403           | Forbidden, insufficient access level    |
 | 404           | Resource not found                      |
 
+## Investor Funds
+
+> To get all the funds of an investor, use this code:
+
+```shell
+curl -v -X POST 'https://api-new.netzeroinsights.com/funds/search-by-investor' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN' \
+-H 'Content-Type: application/json' \                 
+-d '{"type": MANAGER, "investorID": 6344}'
+```
+
+> In case of a 200 response, the response body will contain the requested funds, with the format specified at section [Fund](#fund).
+
+```json
+[
+  {
+    "name": "Acre Venture Partners III ",
+    "thesis": {
+      "label": "Climate",
+      "description": "Refers to an investment thesis focused on climate-related opportunities. This could involve investments in sectors like renewable energy, sustainable agriculture, or companies working toward decarbonization and addressing climate change.",
+      "id": 2
+    },
+    "type": {
+      "label": "Venture Early",
+      "description": "Early-stage venture funds focus on companies that have a developed product or service and are seeking capital to scale operations. These funds typically participate in Series A and Series B rounds, helping startups grow their teams, acquire customers, and refine their business models.",
+      "id": 2
+    },
+    "instrument": {
+      "label": "Equity",
+      "description": "This refers to funds that invest by purchasing ownership stakes in companies, typically in the form of stocks or shares. Equity investors gain returns through dividends or capital appreciation when the company grows and becomes more valuable.",
+      "id": 1
+    },
+    "startDate": "2022-02-20T00:00:00",
+    "endDate": "2024-03-19T00:00:00",
+    "targetSize": 150000000,
+    "targetSizeUSD": 150000000,
+    "targetSizeEUR": 132209111.11,
+    "targetSizeCurrency": "USD",
+    "totalCapitalRaised": 140000000,
+    "totalCapitalRaisedUSD": 140000000,
+    "totalCapitalRaisedEUR": 135550100,
+    "totalCapitalRaisedCurrency": "USD",
+    "deployedCapitalCurrency": "USD",
+    "realisedValueCurrency": "USD",
+    "unrealisedValueCurrency": "USD",
+    "managers": [
+      {
+        "name": "Acre Venture Partners",
+        "id": 6344
+      }
+    ],
+    "source": "platform_all",
+    "id": 32
+  },
+  {
+    "name": "Acre Venture Partners Fund II",
+    "thesis": {
+      "label": "Impact",
+      "description": "Refers to investments that seek both financial returns and positive social or environmental outcomes. Impact investors typically focus on issues such as social equality, environmental sustainability, and community development. Climate investing, due to its environmental focus, is often considered part of the broader Impact investing thesis.",
+      "id": 3
+    },
+    "type": {
+      "label": "Venture Early",
+      "description": "Early-stage venture funds focus on companies that have a developed product or service and are seeking capital to scale operations. These funds typically participate in Series A and Series B rounds, helping startups grow their teams, acquire customers, and refine their business models.",
+      "id": 2
+    },
+    "instrument": {
+      "label": "Equity",
+      "description": "This refers to funds that invest by purchasing ownership stakes in companies, typically in the form of stocks or shares. Equity investors gain returns through dividends or capital appreciation when the company grows and becomes more valuable.",
+      "id": 1
+    },
+    "startDate": "2019-12-27T00:00:00",
+    "targetSize": 125000000,
+    "targetSizeUSD": 125000000,
+    "targetSizeEUR": 112449040.91,
+    "targetSizeCurrency": "USD",
+    "totalCapitalRaisedCurrency": "USD",
+    "deployedCapitalCurrency": "USD",
+    "realisedValueCurrency": "USD",
+    "unrealisedValueCurrency": "USD",
+    "managers": [
+      {
+        "name": "Acre Venture Partners",
+        "id": 6344
+      }
+    ],
+    "source": "platform_all",
+    "id": 33
+  }
+]
+```
+
+To get all the funds of an investor, you should use the following endpoint:
+
+`POST /funds/search-by-investor`
+
+With a JSON request body in the format specified at the section [Fund Search Request](#fund-search-request).
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
+
 # Commercial Deal Details
 
 > To get the details of a commercial deal, use this code:
@@ -3256,7 +3360,7 @@ This is the main filter used when searching for startups/companies, investors, o
 | searchableLocationIDs     | List of int    | See Section [Searchable Locations](#searchable-locations) for the accepted values                                              |
 | regionIDs                 | List of int    | See Section [Investor Regions](#investor-regions) for accepted values                                                          |
 | coInvestorIDs             | List of int    | See Section [Investors](#investors) for accepted values                                                                        |
-| investmentIDs             | List of int    | Using the endpoint [Company List](#startup-list) it's possible to fetch their ids to be used here                    |
+| investmentIDs             | List of int    | Using the endpoint [Company List](#startup-list) it's possible to fetch their ids to be used here                              |
 | numberOfDealsFrom         | int            | Minimum number of deals                                                                                                        |
 | numberOfDealsTo           | int            | Maximum number of deals                                                                                                        |
 | foundedYearFrom           | int            | Starting founded year of the investor                                                                                          |
@@ -3309,23 +3413,30 @@ This is the commercial deal filter used when searching for commercial deals.
 
 ## Company Contact Filter
 
-| Parameter name  | Parameter type | Description                                                                                         |
-|-----------------|----------------|-----------------------------------------------------------------------------------------------------|
+| Parameter name  | Parameter type | Description                                                                              |
+|-----------------|----------------|------------------------------------------------------------------------------------------|
 | companyID       | int            | ID of the requested company, taken from a previous call of [Company List](#startup-list) |
-| isDecisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities                           |
-| departmentID    | int            | Optional, contact role, see Section [Role](#role) for accepted values                               |
-| pageSize        | int            | Number of records to return per page                                                                |
-| pageNumber      | int            | Index of the current page                                                                           |
+| isDecisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities                |
+| departmentID    | int            | Optional, contact role, see Section [Role](#role) for accepted values                    |
+| pageSize        | int            | Number of records to return per page                                                     |
+| pageNumber      | int            | Index of the current page                                                                |
 
 ## Investor Contact Filter
 
-| Parameter name  | Parameter type | Description                                                                                             |
-|-----------------|----------------|---------------------------------------------------------------------------------------------------------|
+| Parameter name  | Parameter type | Description                                                                                  |
+|-----------------|----------------|----------------------------------------------------------------------------------------------|
 | investorID      | int            | ID of the requested investor, taken from a previous call of [Investor List](#investors-list) |
-| isDecisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities                               |
-| departmentID    | int            | Optional, contact role, see Section [Role](#role) for accepted values                                   |
-| pageSize        | int            | Number of records to return per page                                                                    |
-| pageNumber      | int            | Index of the current page                                                                               |
+| isDecisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities                    |
+| departmentID    | int            | Optional, contact role, see section [Role](#role) for accepted values                        |
+| pageSize        | int            | Number of records to return per page                                                         |
+| pageNumber      | int            | Index of the current page                                                                    |
+
+## Fund Search Request
+
+| Parameter name | Parameter type | Description                                                                                                       |
+|----------------|----------------|-------------------------------------------------------------------------------------------------------------------|
+| type           | string         | Specifies the investor’s role in the fund, see section [Fund Search Type](#fund-search-types) for accepted values |
+| investorID     | int            | ID of the requested investor, taken from a previous call of [Investor List](#investors-list)                      | 
 
 # Response structures
 
@@ -3494,6 +3605,49 @@ This is the commercial deal filter used when searching for commercial deals.
 | connectedInvestors    | Investors connected to the infrastructure project                             |
 | tags                  | See Section [Tags](#tags-2) for accepted values                               |
 
+## Fund
+
+| Name                       | Content                                                                                                       |
+|----------------------------|---------------------------------------------------------------------------------------------------------------|
+| id                         | Internal fund ID                                                                                              |
+| name                       | Name of the fund                                                                                              |
+| website                    | Fund’s website URL                                                                                            |
+| thesis                     | Investment thesis of the fund, see section [Fund Theses](#fund-theses) for accepted values                    |
+| type                       | Type of the fund, see section [Fund Types](#fund-types) for accepted values                                   |
+| instrument                 | Investment instrument used by the fund, see section [Fund Instruments](#fund-instruments) for accepted values |
+| startDate                  | Fund start date                                                                                               |
+| endDate                    | Fund end date                                                                                                 |
+| targetSize                 | Target size of the fund in its original currency                                                              |
+| targetSizeUSD              | Target size of the fund in USD                                                                                |
+| targetSizeEUR              | Target size of the fund in EUR                                                                                |
+| targetSizeCurrency         | Currency of the fund’s target size                                                                            |
+| targetSizeDate             | Date associated with the fund’s target size                                                                   |
+| totalCapitalRaised         | Total capital raised in the fund’s original currency                                                          |
+| totalCapitalRaisedUSD      | Total capital raised in USD                                                                                   |
+| totalCapitalRaisedEUR      | Total capital raised in EUR                                                                                   |
+| totalCapitalRaisedCurrency | Currency of the total capital raised                                                                          |
+| totalCapitalRaisedDate     | Date associated with the total capital raised                                                                 |
+| deployedCapital            | Total capital deployed in the fund’s original currency                                                        |
+| deployedCapitalUSD         | Total capital deployed in USD                                                                                 |
+| deployedCapitalEUR         | Total capital deployed in EUR                                                                                 |
+| deployedCapitalCurrency    | Currency of the deployed capital                                                                              |
+| deployedCapitalDate        | Date associated with the deployed capital                                                                     |
+| realisedValue              | Realised value of the fund’s investments in the original currency                                             |
+| realisedValueUSD           | Realised value of the fund’s investments in USD                                                               |
+| realisedValueEUR           | Realised value of the fund’s investments in EUR                                                               |
+| realisedValueCurrency      | Currency of the realised value                                                                                |
+| realisedValueDate          | Date associated with the realised value                                                                       |
+| unrealisedValue            | Unrealised value of the fund’s investments in the original currency                                           |
+| unrealisedValueUSD         | Unrealised value of the fund’s investments in USD                                                             |
+| unrealisedValueEUR         | Unrealised value of the fund’s investments in EUR                                                             |
+| unrealisedValueCurrency    | Currency of the unrealised value                                                                              |
+| unrealisedValueDate        | Date associated with the unrealised value                                                                     |
+| netIRR                     | Net internal rate of return of the fund                                                                       |
+| vintageYear                | Year in which the fund was established                                                                        |
+| managers                   | Investors managing the fund                                                                                   |
+| limitedPartners            | Investors participating as limited partners in the fund                                                       |
+| source                     | Source from which the fund information was obtained                                                           |
+
 # Additional tables
 
 ## Visibility Statuses
@@ -3514,6 +3668,42 @@ This is the commercial deal filter used when searching for commercial deals.
 | INVESTOR                  |
 | ADVISOR                   |
 | OTHER_PROJECT_PARTICIPANT |
+
+## Fund Search Types
+
+| Label   |
+|---------|
+| MANAGER |
+| PARTNER |
+
+## Fund Theses
+
+| ID | Label       |
+|----|-------------|
+| 1  | Generalist  |
+| 2  | Climate     |
+| 3  | Impact      |
+| 4  | Undisclosed |
+
+## Fund Types
+
+| ID | Label                   |
+|----|-------------------------|
+| 1  | Venture Pre Seed & Seed |
+| 2  | Venture Early           |
+| 3  | Venture Late/Expansion  |
+| 4  | Private Equity Growth   |
+| 5  | Private Equity Buyout   |
+| 6  | Infrastructure          |
+
+## Fund Instruments
+
+| ID | Label         |
+|----|---------------|
+| 1  | Equity        |
+| 2  | Debt          |
+| 3  | Equity & Debt |
+| 4  | Undisclosed   |
 
 ## Searchable Locations
 
