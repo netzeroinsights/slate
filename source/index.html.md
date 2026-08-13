@@ -1064,7 +1064,7 @@ To get a company overview and taxonomy, you should use the following endpoint:
 
 `GET /companies/{companyID}`
 
-It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-20), variable “id”, and has the following response codes:
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable “id”, and has the following response codes:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
@@ -1366,7 +1366,7 @@ To get the company's deals information, you should use the following endpoint:
 
 `GET /deals/company/{companyID}`
 
-It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-20), variable “id”, and has the following response codes:
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable “id”, and has the following response codes:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
@@ -1456,7 +1456,7 @@ To get all the investors of a company, you should use the following endpoint:
 
 `GET /investors/company/{companyID}`
 
-It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-2-0), variable “id”, and has the following response codes:
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable “id”, and has the following response codes:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
@@ -1643,7 +1643,7 @@ To get all the commercial deals of a company, you should use the following endpo
 
 `GET /commercial-deals/connected-entities/company/{companyID}`
 
-It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-2-0), variable “id”, and has the following response codes:
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable “id”, and has the following response codes:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
@@ -1716,7 +1716,7 @@ To get the investor information, you should use the following endpoint:
 
 `GET /investors/{investorID}`
 
-It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investor List](#investors-list-system-20), variable “id”, and has the following response codes:
+It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investor List](#investors-list), variable “id”, and has the following response codes:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
@@ -1887,7 +1887,7 @@ To get all the commercial deals of an investor, you should use the following end
 
 `GET /commercial-deals/connected-entities/investor/{investorID}`
 
-It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investors List](#investors-list-system-2-0), variable “investorID”, and has the following response codes:
+It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investors List](#investors-list), variable “investorID”, and has the following response codes:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
@@ -2771,7 +2771,7 @@ This is the main filter used when searching for startups/companies, investors, o
 | searchableLocationIDs     | List of int    | See Section [Searchable Locations](#searchable-locations) for the accepted values                                              |
 | regionIDs                 | List of int    | See Section [Investor Regions](#investor-regions) for accepted values                                                          |
 | coInvestorIDs             | List of int    | See Section [Investors](#investors) for accepted values                                                                        |
-| investmentIDs             | List of int    | Using the endpoint [Company List](#startup-list-system-20) it's possible to fetch their ids to be used here                    |
+| investmentIDs             | List of int    | Using the endpoint [Company List](#startup-list) it's possible to fetch their ids to be used here                    |
 | numberOfDealsFrom         | int            | Minimum number of deals                                                                                                        |
 | numberOfDealsTo           | int            | Maximum number of deals                                                                                                        |
 | foundedYearFrom           | int            | Starting founded year of the investor                                                                                          |
@@ -2826,7 +2826,7 @@ This is the commercial deal filter used when searching for commercial deals.
 
 | Parameter name  | Parameter type | Description                                                                                         |
 |-----------------|----------------|-----------------------------------------------------------------------------------------------------|
-| companyID       | int            | ID of the requested company, taken from a previous call of [Company List](#startup-list-system-2-0) |
+| companyID       | int            | ID of the requested company, taken from a previous call of [Company List](#startup-list) |
 | isDecisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities                           |
 | departmentID    | int            | Optional, contact role, see Section [Role](#role) for accepted values                               |
 | pageSize        | int            | Number of records to return per page                                                                |
@@ -2836,7 +2836,7 @@ This is the commercial deal filter used when searching for commercial deals.
 
 | Parameter name  | Parameter type | Description                                                                                             |
 |-----------------|----------------|---------------------------------------------------------------------------------------------------------|
-| investorID      | int            | ID of the requested investor, taken from a previous call of [Investor List](#investors-list-system-2-0) |
+| investorID      | int            | ID of the requested investor, taken from a previous call of [Investor List](#investors-list) |
 | isDecisionMaker | boolean        | Optional, if true only returns contacts with decision making capabilities                               |
 | departmentID    | int            | Optional, contact role, see Section [Role](#role) for accepted values                                   |
 | pageSize        | int            | Number of records to return per page                                                                    |
@@ -3648,7 +3648,7 @@ To get a startup overview and taxonomy, you should use the following endpoint:
 
 `GET /getStartup/{clientID}`
 
-It takes a single parameter, indicated as “clientID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-10), variable “clientID”, and has the following response codes:
+It takes a single parameter, indicated as “clientID” in the example, which is taken from a previous call of the endpoint at [Startup List](#old-startup-list), variable “clientID”, and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
@@ -3740,7 +3740,7 @@ To get all the investors of a startup, you should use the following endpoint:
 
 `GET /investors/{clientID}`
 
-It takes a single parameter, indicated as “clientID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-1-0), variable “clientID”, and has the following response codes:
+It takes a single parameter, indicated as “clientID” in the example, which is taken from a previous call of the endpoint at [Startup List](#old-startup-list), variable “clientID”, and has the following response codes:
 
 | Response code | Meaning            |
 |---------------|--------------------|
@@ -4042,7 +4042,7 @@ To get all the commercial deals of a startup, you should use the following endpo
 
 `GET /commercial-deals/connected-entities/company/{companyID}`
 
-It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list-system-1-0), variable “id”, and has the following response codes:
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#old-startup-list), variable “id”, and has the following response codes:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
@@ -4359,7 +4359,7 @@ To get all the commercial deals of an investor, you should use the following end
 
 `GET /commercial-deals/connected-entities/investor/{investorID}`
 
-It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investors List](#investors-list-system-1-0), variable “investorID”, and has the following response codes:
+It takes a single parameter, indicated as “investorID” in the example, which is taken from a previous call of the endpoint at [Investors List](#old-investors-list), variable “investorID”, and has the following response codes:
 
 | Response code | Meaning                              |
 |---------------|--------------------------------------|
