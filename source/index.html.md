@@ -3207,6 +3207,302 @@ It takes a single parameter, indicated as “infrastructureProjectID” in the e
 | 403           | Forbidden, insufficient access level    |
 | 404           | Resource not found                      |
 
+# Fund Details
+
+> To get the details of afund, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/funds/14702' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+> In case of a 200 response, the response body will contain the requested fund, with the format specified at section [Fund](#fund).
+
+```json
+{
+  "name": "Next Bharat Ventures Impact Fund II",
+  "thesis": {
+    "label": "Impact",
+    "description": "Refers to investments that seek both financial returns and positive social or environmental outcomes. Impact investors typically focus on issues such as social equality, environmental sustainability, and community development. Climate investing, due to its environmental focus, is often considered part of the broader Impact investing thesis.",
+    "id": 3
+  },
+  "type": {
+    "label": "Venture Early",
+    "description": "Early-stage venture funds focus on companies that have a developed product or service and are seeking capital to scale operations. These funds typically participate in Series A and Series B rounds, helping startups grow their teams, acquire customers, and refine their business models.",
+    "id": 2
+  },
+  "instrument": {
+    "label": "Equity",
+    "description": "This refers to funds that invest by purchasing ownership stakes in companies, typically in the form of stocks or shares. Equity investors gain returns through dividends or capital appreciation when the company grows and becomes more valuable.",
+    "id": 1
+  },
+  "startDate": "2026-07-07T10:32:00",
+  "targetSizeCurrency": "USD",
+  "totalCapitalRaised": 20000000000.00,
+  "totalCapitalRaisedUSD": 208283191.27,
+  "totalCapitalRaisedEUR": 182670936.00,
+  "totalCapitalRaisedCurrency": "INR",
+  "deployedCapitalCurrency": "USD",
+  "realisedValueCurrency": "USD",
+  "unrealisedValueCurrency": "USD",
+  "managers": [
+    {
+      "name": "Next Bharat Ventures",
+      "id": 44849
+    }
+  ],
+  "source": "swapnaneel_ray",
+  "id": 14702
+}
+```
+To get the fund information, you should use the following endpoint:
+
+`GET /funds/{fundID}`
+
+It takes a single parameter, indicated as “fundID” in the example, and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
+
+## Limited partners
+
+> To get all the limited partners of a fund, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/funds/2/limited-partners' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+```json
+[
+  {
+    "fundID": 2,
+    "fundsSubscribed": 14,
+    "investor": {
+      "acquisitionDate": "2023-06-14T17:10:17.403",
+      "updatedDate": "2026-08-07T05:03:30.649734",
+      "visibilityStatus": {
+        "visibleTo": "ALL",
+        "id": 1
+      },
+      "name": "Temasek",
+      "description": "Temasek is an investment company that makes long-term investments across public and private markets, with an emphasis on growth-stage and strategic opportunities.<br><br>It invests across a broad range of sectors—including financial services, telecommunications, consumer, life sciences and technology—and pursues a global geographic focus.",
+      "descriptionWithPunctuation": "Temasek is an investment company that makes long term investments across public and private markets with an emphasis on growth stage and strategic opportunities br br It invests across a broad range of sectors including financial services telecommunications consumer life sciences and technology and pursues a global geographic focus",
+      "website": "https://temasek.com.sg/",
+      "domain": "temasek.com.sg",
+      "email": "alumninetwork@temasek.com.sg",
+      "phone": "+65 6828 6828",
+      "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Investors/Inv_client_515810.jpg",
+      "searchableLocation": {
+        "continent": {
+          "name": "Asia",
+          "id": 1
+        },
+        "country": {
+          "name": "Singapore",
+          "continent": {
+            "name": "Asia",
+            "id": 1
+          },
+          "alpha2": "SG",
+          "id": 192
+        },
+        "cityName": "Singapore",
+        "cityAsciiName": "Singapore",
+        "platformOrder": 60,
+        "isSearchable": true,
+        "id": 901114
+      },
+      "linkedinUrl": "https://www.linkedin.com/company/temasek-holdings/",
+      "facebookUrl": "https://facebook.com/temasekholdings/",
+      "twitterUrl": "https://twitter.com/temasek/",
+      "foundedYear": 1974,
+      "investorSince": "2016-06-28T00:00:00",
+      "sizeRange": {
+        "rangeTextFormat": "501 - 1000",
+        "id": 6
+      },
+      "dealsCount": 156,
+      "lastDealAmountEUR": 17515846,
+      "lastDealAmountUSD": "20000000",
+      "lastDealType": {
+        "label": "Series B",
+        "filterable": false,
+        "assignable": true,
+        "id": 92
+      },
+      "lastDealDate": "2026-07-16T07:17:00",
+      "maxDealAmountEUR": 13528563594,
+      "maxDealAmountUSD": 16000000000,
+      "minDealAmountEUR": 7064677,
+      "minDealAmountUSD": 8000000,
+      "isLimitedPartner": true,
+      "companyExitCount": 13,
+      "fundsManagedCount": 2,
+      "fundsSubscribedCount": 14,
+      "ventureInvestmentCount": 73,
+      "growthInvestmentCount": 77,
+      "infrastructureInvestmentCount": 3,
+      "buyoutInvestmentCount": 0,
+      "commercialPartnershipCount": 3,
+      "acquisitionCount": 0,
+      "equityInvestmentCount": 151,
+      "commercialBuyCount": 0,
+      "isFinancialInvestor": true,
+      "isVentureInvestor": false,
+      "isGrowthInvestor": false,
+      "isInfrastructureInvestor": true,
+      "isBuyoutInvestor": false,
+      "isStrategic": false,
+      "isCommercialBuyer": false,
+      "isEquityInvestor": true,
+      "isAcquirer": false,
+      "isCommercialPartner": true,
+      "platformOrder": 4784,
+      "primaryType": {
+        "label": "Investment Company",
+        "id": 72
+      },
+      "secondaryTypes": [
+        {
+          "label": "Holding Company",
+          "id": 60
+        }
+      ],
+      "entityTypes": [
+        {
+          "label": "Investor",
+          "id": 2
+        }
+      ],
+      "id": 1154
+    }
+  }
+]
+```
+
+To get the limited partners of a fund, you should use the following endpoint:
+
+`GET /funds/{fundID}/limited-partners`
+
+It takes one parameter, indicated as “fundID”, and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
+
+## Investments
+
+> To get all the investments of a fund, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/funds/14701/investments' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+```json
+[
+  {
+    "companyID": 181674,
+    "logoUrl": "https://d1gpx4pnpaaoyd.cloudfront.net/Startups/client_1767272.jpg",
+    "name": "Aegis Energy",
+    "pitchline": "Aegis Energy is creating a network of multi-energy refueling hubs for commercial vehicles.\n\nAegis Energy's multi-energy hubs offer electric charging, Hydrotreated Vegetable Oil (HVO), hydrogen, and bio-CNG. These clean energy hubs are located at major motorway junctions, ports, and intermodal terminals for efficient recharging and refueling. Facilities include bookable electric charging, driver amenities such as food, calm spaces, clean toilets, and showers, ensuring convenience for trucks and vans.\n\nAegis Energy develops an innovation that contributes to:\nClimate change mitigation byenabling low-carbon transport.",
+    "countryHQ": "United Kingdom",
+    "dealDate": "2025-01-20T12:40:00",
+    "dealType": "Growth equity",
+    "coInvestors": [],
+    "id": 4875
+  }
+]
+```
+
+To get the investments of a fund, you should use the following endpoint:
+
+`GET /funds/{fundID}/investments`
+
+It takes one parameter, indicated as “fundID”, and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
+
+## News
+
+> To get all the news of a fund, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/funds/14701/news' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+```json
+[
+  {
+    "url": "https://www.infrastructureinvestor.com/quinbrook-hits-587m-final-close-for-second-uk-renewables-fund/",
+    "title": "To be able to copy & paste content to share with others please contact us at subscriptions@pei.group to upgrade your subscription to the appropriate licence",
+    "fundID": 14701,
+    "newsDate": "2026-07-08T10:08:00",
+    "id": 6864
+  }
+]
+```
+
+To get the news of a fund, you should use the following endpoint:
+
+`GET /funds/{fundID}/news`
+
+It takes one parameter, indicated as “fundID”, and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
+
+## Other sources
+
+> To get all the other sources of a fund, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/funds/14701/other-sources' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+```
+
+```json
+[
+  {
+    "url": "https://onlineservices.glasgow.gov.uk/councillorsandcommittees/viewSelectedDocument.asp?c=P62AFQDN8181UTDXT1",
+    "title": "Glasgow City Council",
+    "fundID": 14701,
+    "id": 14353
+  }
+]
+```
+
+To get the other sources of a fund, you should use the following endpoint:
+
+`GET /funds/{fundID}/other-sources`
+
+It takes one parameter, indicated as “fundID”, and has the following response codes:
+
+| Response code | Meaning                                 |
+|---------------|-----------------------------------------|
+| 200           | Request successful                      |
+| 401           | Unauthorized, wrong user role to access |
+| 403           | Forbidden, insufficient access level    |
+| 404           | Resource not found                      |
+
 # Filters structure
 
 ## Company Sort Fields
