@@ -22,19 +22,24 @@ meta:
 
 # Introduction
 
+<aside class="notice">
+The old, deprecated version of our APIs (marked as "[OLD]" in this documentation) will be supported until **February 28th, 2027**.
+Please migrate to the new version before that date.
+</aside>
+
 Our REST APIs give all the functionalities needed to interact with our database. All these services are exclusively usable with https standard, and only after having been authenticated.
 
 For brevity, the possible error codes for all endpoints are at the end of the document.
 
 Each endpoint in this documentation should be called using the appropriate domain for the environment and API version you are integrating with.
 
-| Environment           | Domain                                  | Description                                |
-|-----------------------|-----------------------------------------|--------------------------------------------|
-| System 1.0 Production | `https://api.netzeroinsights.com`       | Base URL for the legacy System 1.0 API     |
-| System 2.0 Production | `https://api-new.netzeroinsights.com`   | Base URL for the System 2.0 production API |
-| System 2.0 Stage      | `https://api-stage.netzeroinsights.com` | Base URL for the System 2.0 staging API    |
+| Environment      | Domain                                  | Description                             |
+|------------------|-----------------------------------------|-----------------------------------------|
+| [OLD] Production | `https://api.netzeroinsights.com`       | Base URL for the legacy [OLD] API       |
+| Production       | `https://api-new.netzeroinsights.com`   | Base URL for the current production API |
+| Stage            | `https://api-stage.netzeroinsights.com` | Base URL for the current staging API    |
 
-# Security System 2.0
+# Security
 
 ## Login
 
@@ -49,7 +54,7 @@ curl -v -X POST 'https://api-new.netzeroinsights.com/auth/login?email={YOUR_EMAI
 >
 > Using the -v ("verbose") flag lets you see the full response, in which you can find the **access_token** in the headers.
 
-System 2.0 APIs use **JWT Bearer Token** authentication instead of session-based authentication.
+APIs use **JWT Bearer Token** authentication instead of session-based authentication.
 
 Before using any other API, you should first login using the following endpoint:
 
@@ -104,7 +109,7 @@ It takes no parameter and has the following response code:
 | 403           | Forbidden, insufficient access level |
 
 
-# Startup List System 2.0
+# Startup List
 
 > To get startup list, use this code:
 
@@ -347,7 +352,7 @@ The possible response codes are:
 | 400           | Bad request, invalid fields          |
 | 403           | Forbidden, insufficient access level |
 
-# Deals List System 2.0
+# Deals List
 
 > To get the deals list, use this code:
 
@@ -607,7 +612,7 @@ The possible response codes are:
 | 400           | Bad request, invalid fields          |
 | 403           | Forbidden, insufficient access level |
 
-# Investors List System 2.0
+# Investors List
 
 > To get the investors list, use this code:
 
@@ -788,7 +793,7 @@ The possible response codes are:
 | 400           | Bad request, invalid fields          |
 | 403           | Forbidden, insufficient access level |
 
-# Commercial Deals List System 2.0
+# Commercial Deals List
 
 > To get the commercial deals list, use this code:
 
@@ -899,7 +904,7 @@ The possible response codes are:
 | 403           | Forbidden, insufficient access level |
 | 404           | Resource not found                   |
 
-# Company Details System 2.0
+# Company Details
 
 ## Company Overview and Taxonomy
 
@@ -1645,7 +1650,7 @@ It takes a single parameter, indicated as “companyID” in the example, which 
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
 
-# Investor Details System 2.0
+# Investor Details
 
 > To get the details of an Investor, use this code:
 
@@ -1889,7 +1894,7 @@ It takes a single parameter, indicated as “investorID” in the example, which
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
 
-# Commercial Deal Details System 2.0
+# Commercial Deal Details
 
 > To get the details of a commercial deal, use this code:
 
@@ -2258,7 +2263,7 @@ It takes a single parameter, indicated as “commercialDealID” in the example,
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
 
-# Infrastructure Project Details System 2.0
+# Infrastructure Project Details
 
 > To get the details of an infrastructure project, use this code:
 
@@ -2613,7 +2618,7 @@ It takes a single parameter, indicated as “infrastructureProjectID” in the e
 | 403           | Forbidden, insufficient access level    |
 | 404           | Resource not found                      |
 
-# Filters structure System 2.0
+# Filters structure
 
 ## Company Sort Fields
 
@@ -2837,7 +2842,7 @@ This is the commercial deal filter used when searching for commercial deals.
 | pageSize        | int            | Number of records to return per page                                                                    |
 | pageNumber      | int            | Index of the current page                                                                               |
 
-# Response structures System 2.0
+# Response structures
 
 ## Company Search
 
@@ -3004,7 +3009,7 @@ This is the commercial deal filter used when searching for commercial deals.
 | connectedInvestors    | Investors connected to the infrastructure project                             |
 | tags                  | See Section [Tags](#tags-2) for accepted values                               |
 
-# Additional tables System 2.0
+# Additional tables
 
 ## Visibility Statuses
 
@@ -3301,7 +3306,7 @@ The possible response codes are:
 
 
 
-# Security System 1.0
+# [OLD] Security
 
 ## Login
 
@@ -3372,7 +3377,7 @@ Please note that manually closing a session is not required, since it will be cl
 30 minutes. This endpoint is mainly used if you need to use different accounts.
 </aside>
 
-# Startup List System 1.0
+# [OLD] Startup List
 
 > To get startup list, use this code:
 
@@ -3410,7 +3415,7 @@ The possible response codes are:
 |---------------|--------------------|
 | 200           | Request successful |
 
-# Deals List System 1.0
+# [OLD] Deals List 
 
 > To get the deals list, use this code:
 
@@ -3448,7 +3453,7 @@ The possible response codes are:
 |---------------|--------------------|
 | 200           | Request successful |
 
-# Investors List System 1.0
+# [OLD] Investors List
 
 > To get the investors list, use this code:
 
@@ -3486,7 +3491,7 @@ The possible response codes are:
 |---------------|--------------------|
 | 200           | Request successful |
 
-# Startup Details System 1.0
+# [OLD] Startup Details
 
 All the information related to a startup is divided into different sections: 
 
@@ -4044,7 +4049,7 @@ It takes a single parameter, indicated as “companyID” in the example, which 
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
 
-# Deal Details System 1.0
+# [OLD] Deal Details
 
 > To get the details of a Deal, use this code:
 
@@ -4160,7 +4165,7 @@ It takes a single parameter, indicated as “fundingRoundID” in the example, a
 | 200           | Request successful |
 
 
-# Investor Details System 1.0
+# [OLD] Investor Details
 
 > To get the details of an Investor, use this code:
 
