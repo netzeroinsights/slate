@@ -3209,7 +3209,7 @@ It takes a single parameter, indicated as “infrastructureProjectID” in the e
 
 # Fund Details
 
-> To get the details of afund, use this code:
+> To get the details of a fund, use this code:
 
 ```shell
 curl -v -X GET 'https://api-new.netzeroinsights.com/funds/14702' \
