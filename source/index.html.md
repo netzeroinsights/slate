@@ -1378,7 +1378,7 @@ It takes a single parameter, indicated as “companyID” in the example, which 
 > To get all the investors of a company, use this code:
 
 ```shell
-curl -v -X GET 'https://api-new.netzeroinsights.com/investors/company/57352'
+curl -v -X GET 'https://api-new.netzeroinsights.com/investors/company/57352' \
 -H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
 ```
 
@@ -1462,6 +1462,223 @@ It takes a single parameter, indicated as “companyID” in the example, which 
 |---------------|--------------------------------------|
 | 200           | Request successful                   |
 | 403           | Forbidden, insufficient access level |
+
+## Company TRLs
+
+> To get the TRL over time information of a company, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/trls/16441' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+``` 
+
+> In case of a 200 response, the response body will contain the company's all trl data, with the JSON structured like the following:
+
+```json
+[
+    {
+        "acquisitionDate": "2025-08-09T10:23:39.007",
+        "updatedDate": "2026-06-12T05:19:59.112417",
+        "companyID": 16441,
+        "trl": {
+            "label": "7-8",
+            "description": "Finalizing",
+            "id": 11
+        },
+        "referenceYear": 2014,
+        "rationale": "The company began operations as a vertically integrated solar and storage developer, owning and operating utility-scale projects across the U.S., indicating demonstration and scale-up readiness.",
+        "isExtrapolated": false,
+        "id": 872324
+    },
+    {
+        "acquisitionDate": "2025-08-09T10:23:39.007",
+        "updatedDate": "2026-06-12T05:19:59.112417",
+        "companyID": 16441,
+        "trl": {
+            "label": "9",
+            "description": "Completed",
+            "id": 12
+        },
+        "referenceYear": 2020,
+        "rationale": "In 2020, the company underwent recapitalization with HPS and Temasek acquiring full equity, enabling strategic growth and optimization of its operating portfolio and development pipeline. This milestone reflects full commercial readiness through sustained operations and investment-backed expansion. In 2021, EQT Infrastructure acquired the company, committing to further investments in operations, digitalization, and sustainability. This acquisition supported continued commercial deployment and scaling of solar and storage assets. In 2022, the company closed financing for its largest solar project, the 270MW Shakes project in Texas, and acquired 400MW of standalone energy storage projects. These achievements demonstrate full commercial readiness through large-scale deployments and strategic acquisitions. In 2024, the company completed construction of the Zier Hybrid Solar Site in Texas, integrating 208MW of photovoltaic capacity. This operational milestone confirms full commercial readiness with advanced hybrid infrastructure. In 2025, the company partnered with Meta to develop the 396MW Hanson Solar project in Texas, reinforcing its commercial maturity through strategic corporate partnerships and large-scale project development.",
+        "isExtrapolated": false,
+        "id": 872330
+    },
+    {
+        "acquisitionDate": "2025-08-09T10:23:39.007",
+        "updatedDate": "2026-06-12T05:19:59.112417",
+        "companyID": 16441,
+        "trl": {
+            "label": "9",
+            "description": "Completed",
+            "id": 12
+        },
+        "referenceYear": 2026,
+        "rationale": "The company has been operating at TRL 9 since 2020.",
+        "isExtrapolated": false,
+        "id": 872335
+    }
+]
+```
+
+To get the TRL over time information of a company, you should use the following endpoint:
+
+`GET /trls/{companyID}`
+
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable “id”, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+
+## Company Employees
+
+> To get the employees over time information of a company, use this code:
+
+```shell
+curl -v -X GET 'https://api-new.netzeroinsights.com/companies/timeline/16441' \
+-H 'Authorization: Bearer EXAMPLE_ACCESS_TOKEN'
+``` 
+
+> In case of a 200 response, the response body will contain the company's employees’ data, with the JSON structured like the following:
+
+```json
+[
+    {
+        "year": 2020,
+        "quarter": 3,
+        "count": 328,
+        "verified": false
+    },
+    {
+        "year": 2021,
+        "quarter": 4,
+        "count": 301,
+        "verified": true
+    },
+    {
+        "year": 2022,
+        "quarter": 1,
+        "count": 307,
+        "verified": true
+    },
+    {
+        "year": 2022,
+        "quarter": 2,
+        "count": 311,
+        "verified": true
+    },
+    {
+        "year": 2022,
+        "quarter": 3,
+        "count": 335,
+        "verified": true
+    },
+    {
+        "year": 2022,
+        "quarter": 4,
+        "count": 345,
+        "verified": true
+    },
+    {
+        "year": 2023,
+        "quarter": 1,
+        "count": 350,
+        "verified": true
+    },
+    {
+        "year": 2023,
+        "quarter": 2,
+        "count": 367,
+        "verified": true
+    },
+    {
+        "year": 2023,
+        "quarter": 3,
+        "count": 373,
+        "verified": true
+    },
+    {
+        "year": 2023,
+        "quarter": 4,
+        "count": 369,
+        "verified": true
+    },
+    {
+        "year": 2024,
+        "quarter": 1,
+        "count": 371,
+        "verified": true
+    },
+    {
+        "year": 2024,
+        "quarter": 2,
+        "count": 372,
+        "verified": true
+    },
+    {
+        "year": 2024,
+        "quarter": 3,
+        "count": 381,
+        "verified": true
+    },
+    {
+        "year": 2024,
+        "quarter": 4,
+        "count": 390,
+        "verified": true
+    },
+    {
+        "year": 2025,
+        "quarter": 1,
+        "count": 396,
+        "verified": true
+    },
+    {
+        "year": 2025,
+        "quarter": 2,
+        "count": 417,
+        "verified": true
+    },
+    {
+        "year": 2025,
+        "quarter": 3,
+        "count": 440,
+        "verified": true
+    },
+    {
+        "year": 2025,
+        "quarter": 4,
+        "count": 429,
+        "verified": true
+    },
+    {
+        "year": 2026,
+        "quarter": 1,
+        "count": 427,
+        "verified": true
+    },
+    {
+        "year": 2026,
+        "quarter": 2,
+        "count": 437,
+        "verified": true
+    }
+]
+```
+
+To get the employees over time information of a company, you should use the following endpoint:
+
+`GET /companies/timeline/{companyID}`
+
+It takes a single parameter, indicated as “companyID” in the example, which is taken from a previous call of the endpoint at [Startup List](#startup-list), variable “id”, and has the following response codes:
+
+| Response code | Meaning                              |
+|---------------|--------------------------------------|
+| 200           | Request successful                   |
+| 403           | Forbidden, insufficient access level |
+| 404           | Resource not found                   |
 
 ## Company Contacts
 
